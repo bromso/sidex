@@ -295,8 +295,21 @@ impl Database {
 
     /// V4: `window_state` stores OS frame geometry only; workbench layout lives in `kv_store`.
     fn migration_v4(&self) -> Result<()> {
-        self.conn
-            .execute_batch(
+        let conn = &self.conn;
+        let has_window_state = Self::table_exists(conn, "window_state")?;
+        let has_window_state_v4 = Self::table_exists(conn, "window_state_v4")?;
+
+        conn.execute_batch("BEGIN IMMEDIATE")
+            .context("begin migration v4")?;
+
+        let migration_result = (|| -> Result<()> {
+            if has_window_state_v4 && !has_window_state {
+                conn.execute_batch("ALTER TABLE window_state_v4 RENAME TO window_state;")
+                    .context("rename window_state_v4 after interrupted drop")?;
+                return Ok(());
+            }
+
+            conn.execute_batch(
                 "
                 CREATE TABLE IF NOT EXISTS window_state_v4 (
                     id              INTEGER PRIMARY KEY CHECK (id = 1),
@@ -306,16 +319,52 @@ impl Database {
                     height          INTEGER NOT NULL,
                     is_maximized    INTEGER NOT NULL DEFAULT 0
                 );
-
-                INSERT OR IGNORE INTO window_state_v4 (id, x, y, width, height, is_maximized)
-                SELECT id, x, y, width, height, is_maximized FROM window_state;
-
-                DROP TABLE IF EXISTS window_state;
-                ALTER TABLE window_state_v4 RENAME TO window_state;
                 ",
             )
-            .context("migration v4")?;
+            .context("create window_state_v4")?;
+
+            if has_window_state {
+                conn.execute_batch(
+                    "
+                    INSERT OR IGNORE INTO window_state_v4 (id, x, y, width, height, is_maximized)
+                    SELECT id, x, y, width, height, is_maximized FROM window_state;
+
+                    DROP TABLE window_state;
+                    ",
+                )
+                .context("copy and drop legacy window_state")?;
+            }
+
+            if Self::table_exists(conn, "window_state_v4")? {
+                conn.execute_batch("ALTER TABLE window_state_v4 RENAME TO window_state;")
+                    .context("rename window_state_v4")?;
+            }
+
+            Ok(())
+        })();
+
+        match migration_result {
+            Ok(()) => conn
+                .execute_batch("COMMIT")
+                .context("commit migration v4")?,
+            Err(e) => {
+                let _ = conn.execute_batch("ROLLBACK");
+                return Err(e).context("migration v4");
+            }
+        }
+
         Ok(())
+    }
+
+    fn table_exists(conn: &Connection, name: &str) -> Result<bool> {
+        let count: i64 = conn
+            .query_row(
+                "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name = ?1",
+                [name],
+                |row| row.get(0),
+            )
+            .context("query sqlite_master")?;
+        Ok(count > 0)
     }
 }
 
@@ -350,6 +399,54 @@ mod tests {
         let tmp = tempfile::TempDir::new().unwrap();
         let db = Database::open(&tmp.path().join("test.db")).unwrap();
         db.vacuum().unwrap();
+    }
+
+    #[test]
+    fn migration_v4_survives_interrupted_rename() {
+        let tmp = tempfile::TempDir::new().unwrap();
+        let path = tmp.path().join("test.db");
+        let conn = Connection::open(&path).unwrap();
+        conn.execute_batch(
+            "
+            PRAGMA user_version = 3;
+            CREATE TABLE window_state (
+                id INTEGER PRIMARY KEY CHECK (id = 1),
+                x INTEGER NOT NULL,
+                y INTEGER NOT NULL,
+                width INTEGER NOT NULL,
+                height INTEGER NOT NULL,
+                is_maximized INTEGER NOT NULL DEFAULT 0
+            );
+            INSERT INTO window_state (id, x, y, width, height, is_maximized)
+            VALUES (1, 10, 20, 800, 600, 0);
+            CREATE TABLE window_state_v4 (
+                id INTEGER PRIMARY KEY CHECK (id = 1),
+                x INTEGER NOT NULL,
+                y INTEGER NOT NULL,
+                width INTEGER NOT NULL,
+                height INTEGER NOT NULL,
+                is_maximized INTEGER NOT NULL DEFAULT 0
+            );
+            INSERT INTO window_state_v4 (id, x, y, width, height, is_maximized)
+            VALUES (1, 10, 20, 800, 600, 0);
+            DROP TABLE window_state;
+            ",
+        )
+        .unwrap();
+        drop(conn);
+
+        let db = Database::open(&path).unwrap();
+        assert_eq!(db.schema_version().unwrap(), CURRENT_SCHEMA_VERSION);
+        let (x, width): (i64, i64) = db
+            .conn()
+            .query_row(
+                "SELECT x, width FROM window_state WHERE id = 1",
+                [],
+                |row| Ok((row.get(0)?, row.get(1)?)),
+            )
+            .unwrap();
+        assert_eq!((x, width), (10, 800));
+        assert!(!Database::table_exists(db.conn(), "window_state_v4").unwrap());
     }
 
     #[test]
