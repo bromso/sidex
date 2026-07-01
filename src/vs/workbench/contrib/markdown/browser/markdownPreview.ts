@@ -12,11 +12,13 @@ import { WebviewInitInfo } from '../../webview/browser/webview.js';
 import { asWebviewUri } from '../../webview/common/webview.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
 import { DEFAULT_MARKDOWN_STYLES } from './markdownDocumentRenderer.js';
 import * as marked from '../../../../base/common/marked/marked.js';
 
 const MARKDOWN_PREVIEW_VIEW_TYPE = 'sidex.markdown.preview';
+const PREVIEW_OPEN_FILES_KEY = 'markdown.preview.openFiles';
 
 const HAS_SCHEME = /^\w[\w\d+.-]*:/;
 
@@ -51,7 +53,8 @@ export class MarkdownPreviewManager extends Disposable {
 		@IEditorService private readonly _editorService: IEditorService,
 		@IWebviewWorkbenchService private readonly _webviewWorkbenchService: IWebviewWorkbenchService,
 		@ITextFileService private readonly _textFileService: ITextFileService,
-		@ILogService private readonly _logService: ILogService
+		@ILogService private readonly _logService: ILogService,
+		@IStorageService private readonly _storageService: IStorageService
 	) {
 		super();
 	}
@@ -73,12 +76,23 @@ export class MarkdownPreviewManager extends Disposable {
 		this._createOrUpdateWebview(resource, side);
 	}
 
+	static readonly ID = 'workbench.contrib.markdownPreview';
+
 	toggle(): void {
 		if (this._webviewInput) {
 			this._closePreview();
 		} else {
 			this.showPreview();
 		}
+	}
+
+	hasActivePreview(): boolean {
+		return this._webviewInput !== undefined && !this._webviewInput.isDisposed();
+	}
+
+	static wasPreviewOpen(storageService: IStorageService, resource: URI): boolean {
+		const openFiles: string[] = JSON.parse(storageService.get(PREVIEW_OPEN_FILES_KEY, StorageScope.WORKSPACE, '[]'));
+		return openFiles.includes(resource.toString());
 	}
 
 	private _createOrUpdateWebview(resource: URI, side?: boolean): void {
@@ -115,6 +129,14 @@ export class MarkdownPreviewManager extends Disposable {
 					this._currentResource = undefined;
 				})
 			);
+
+			const openFiles: string[] = JSON.parse(
+				this._storageService.get(PREVIEW_OPEN_FILES_KEY, StorageScope.WORKSPACE, '[]')
+			);
+			if (!openFiles.includes(resource.toString())) {
+				openFiles.push(resource.toString());
+				this._storageService.store(PREVIEW_OPEN_FILES_KEY, openFiles, StorageScope.WORKSPACE, StorageTarget.MACHINE);
+			}
 		} else {
 			this._webviewInput.setWebviewTitle(title);
 		}
@@ -215,6 +237,13 @@ export class MarkdownPreviewManager extends Disposable {
 
 	private _closePreview(): void {
 		if (this._webviewInput) {
+			if (this._currentResource) {
+				const openFiles: string[] = JSON.parse(
+					this._storageService.get(PREVIEW_OPEN_FILES_KEY, StorageScope.WORKSPACE, '[]')
+				);
+				const filtered = openFiles.filter((f: string) => f !== this._currentResource!.toString());
+				this._storageService.store(PREVIEW_OPEN_FILES_KEY, filtered, StorageScope.WORKSPACE, StorageTarget.MACHINE);
+			}
 			this._clearDebounceTimer();
 			this._webviewInput.dispose();
 			this._webviewInput = undefined;

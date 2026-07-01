@@ -516,65 +516,69 @@ pub fn get_available_shells() -> Vec<ShellInfo> {
         return shells;
     }
 
-    let default_shell = get_default_shell();
-    let mut seen_paths = std::collections::HashSet::new();
-    let mut shells = Vec::new();
+    #[cfg(not(target_os = "windows"))]
+    {
+        let default_shell = get_default_shell();
+        let mut seen_paths = std::collections::HashSet::new();
+        let mut shells = Vec::new();
 
-    // Read /etc/shells (same as VS Code: terminalProfiles.ts detectAvailableUnixProfiles)
-    if let Ok(contents) = std::fs::read_to_string("/etc/shells") {
-        for line in contents.lines() {
-            let trimmed = if let Some(idx) = line.find('#') {
-                &line[..idx]
-            } else {
-                line
-            };
-            let trimmed = trimmed.trim();
-            if trimmed.is_empty() {
-                continue;
-            }
-            let path = std::path::Path::new(trimmed);
-            if path.exists() && seen_paths.insert(trimmed.to_string()) {
-                let name = path
-                    .file_name()
-                    .and_then(|n| n.to_str())
-                    .unwrap_or("sh")
-                    .to_string();
-                shells.push(ShellInfo {
-                    name: name.clone(),
-                    path: trimmed.to_string(),
-                    is_default: trimmed == default_shell
-                        || path.file_name().and_then(|n| n.to_str())
-                            == std::path::Path::new(&default_shell)
-                                .file_name()
-                                .and_then(|n| n.to_str()),
-                });
-            }
-        }
-    }
-
-    // Fallback if /etc/shells wasn't readable
-    if shells.is_empty() {
-        let candidates: &[(&str, &str)] = &[
-            ("zsh", "/bin/zsh"),
-            ("bash", "/bin/bash"),
-            ("fish", "/usr/bin/fish"),
-            ("fish", "/usr/local/bin/fish"),
-            ("fish", "/opt/homebrew/bin/fish"),
-            ("sh", "/bin/sh"),
-        ];
-        let mut seen_names = std::collections::HashSet::new();
-        for (name, shell_path) in candidates {
-            if std::path::Path::new(shell_path).exists() && seen_names.insert(name.to_string()) {
-                shells.push(ShellInfo {
-                    name: name.to_string(),
-                    path: shell_path.to_string(),
-                    is_default: *shell_path == default_shell,
-                });
+        // Read /etc/shells (same as VS Code: terminalProfiles.ts detectAvailableUnixProfiles)
+        if let Ok(contents) = std::fs::read_to_string("/etc/shells") {
+            for line in contents.lines() {
+                let trimmed = if let Some(idx) = line.find('#') {
+                    &line[..idx]
+                } else {
+                    line
+                };
+                let trimmed = trimmed.trim();
+                if trimmed.is_empty() {
+                    continue;
+                }
+                let path = std::path::Path::new(trimmed);
+                if path.exists() && seen_paths.insert(trimmed.to_string()) {
+                    let name = path
+                        .file_name()
+                        .and_then(|n| n.to_str())
+                        .unwrap_or("sh")
+                        .to_string();
+                    shells.push(ShellInfo {
+                        name: name.clone(),
+                        path: trimmed.to_string(),
+                        is_default: trimmed == default_shell
+                            || path.file_name().and_then(|n| n.to_str())
+                                == std::path::Path::new(&default_shell)
+                                    .file_name()
+                                    .and_then(|n| n.to_str()),
+                    });
+                }
             }
         }
-    }
 
-    shells
+        // Fallback if /etc/shells wasn't readable
+        if shells.is_empty() {
+            let candidates: &[(&str, &str)] = &[
+                ("zsh", "/bin/zsh"),
+                ("bash", "/bin/bash"),
+                ("fish", "/usr/bin/fish"),
+                ("fish", "/usr/local/bin/fish"),
+                ("fish", "/opt/homebrew/bin/fish"),
+                ("sh", "/bin/sh"),
+            ];
+            let mut seen_names = std::collections::HashSet::new();
+            for (name, shell_path) in candidates {
+                if std::path::Path::new(shell_path).exists() && seen_names.insert(name.to_string())
+                {
+                    shells.push(ShellInfo {
+                        name: name.to_string(),
+                        path: shell_path.to_string(),
+                        is_default: *shell_path == default_shell,
+                    });
+                }
+            }
+        }
+
+        shells
+    }
 }
 
 #[derive(Debug, Clone, Serialize)]

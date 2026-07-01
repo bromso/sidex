@@ -6,19 +6,90 @@
 import '../common/markdownColors.js';
 import './media/markdown.css';
 
+import { Disposable } from '../../../../base/common/lifecycle.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { EditorInput } from '../../../common/editor/editorInput.js';
+import { IEditorService } from '../../../services/editor/common/editorService.js';
+import {
+	IWorkbenchContribution,
+	WorkbenchPhase,
+	registerWorkbenchContribution2
+} from '../../../common/contributions.js';
 import { MarkdownPreviewManager } from './markdownPreview.js';
 
+let _previewManager: MarkdownPreviewManager | undefined;
+
+function getOrCreateManager(accessor: ServicesAccessor): MarkdownPreviewManager {
+	if (!_previewManager) {
+		_previewManager = accessor.get(IInstantiationService).createInstance(MarkdownPreviewManager);
+	}
+	return _previewManager;
+}
+
+class MarkdownPreviewAutoReopen extends Disposable implements IWorkbenchContribution {
+	static readonly ID = 'workbench.contrib.markdownPreviewAutoReopen';
+
+	private _didAutoReopen = false;
+
+	constructor(
+		@IEditorService editorService: IEditorService,
+		@IInstantiationService private readonly _instantiationService: IInstantiationService,
+		@IStorageService private readonly _storageService: IStorageService
+	) {
+		super();
+
+		const startupTimer = setTimeout(() => {
+			this._didAutoReopen = true;
+		}, 3000);
+		this._register({ dispose: () => clearTimeout(startupTimer) });
+
+		this._register(
+			editorService.onDidVisibleEditorsChange(() => {
+				if (this._didAutoReopen) {
+					return;
+				}
+				this._onVisibleEditorsChanged(editorService);
+			})
+		);
+	}
+
+	private _onVisibleEditorsChanged(editorService: IEditorService): void {
+		const activeEditor = editorService.activeEditor;
+		if (!(activeEditor instanceof EditorInput)) {
+			return;
+		}
+
+		const resource = activeEditor.resource;
+		if (!resource || !resource.path.endsWith('.md')) {
+			return;
+		}
+
+		if (_previewManager && _previewManager.hasActivePreview()) {
+			return;
+		}
+
+		if (!MarkdownPreviewManager.wasPreviewOpen(this._storageService, resource)) {
+			return;
+		}
+
+		this._didAutoReopen = true;
+		const manager = this._instantiationService.createInstance(MarkdownPreviewManager);
+		_previewManager = manager;
+		manager.showPreview(true);
+	}
+}
+
+registerWorkbenchContribution2(MarkdownPreviewAutoReopen.ID, MarkdownPreviewAutoReopen, WorkbenchPhase.BlockStartup);
+
 CommandsRegistry.registerCommand('markdown.showPreview', accessor => {
-	const instantiationService = accessor.get(IInstantiationService);
-	const manager = instantiationService.createInstance(MarkdownPreviewManager);
+	const manager = getOrCreateManager(accessor);
 	manager.showPreview();
 });
 
 CommandsRegistry.registerCommand('markdown.showPreviewToSide', accessor => {
-	const instantiationService = accessor.get(IInstantiationService);
-	const manager = instantiationService.createInstance(MarkdownPreviewManager);
+	const manager = getOrCreateManager(accessor);
 	manager.showPreview(true);
 });
 
@@ -27,8 +98,7 @@ CommandsRegistry.registerCommand('markdown.showSource', _accessor => {
 });
 
 CommandsRegistry.registerCommand('markdown.togglePreview', accessor => {
-	const instantiationService = accessor.get(IInstantiationService);
-	const manager = instantiationService.createInstance(MarkdownPreviewManager);
+	const manager = getOrCreateManager(accessor);
 	manager.toggle();
 });
 
