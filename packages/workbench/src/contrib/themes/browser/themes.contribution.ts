@@ -31,10 +31,7 @@ import {
 	IExtensionManagementService,
 	IGalleryExtension
 } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
-import {
-	IColorRegistry,
-	Extensions as ColorRegistryExtensions
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IColorRegistry, Extensions as ColorRegistryExtensions } from '@sidex/platform/theme/common/colorRegistry.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { Color } from '@sidex/base/common/color.js';
 import { ColorScheme, isHighContrast } from '@sidex/platform/theme/common/theme.js';

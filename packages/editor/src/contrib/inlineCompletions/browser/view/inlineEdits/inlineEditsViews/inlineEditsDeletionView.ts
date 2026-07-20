@@ -5,12 +5,7 @@
 import { n } from '@sidex/base/browser/dom.js';
 import { Event } from '@sidex/base/common/event.js';
 import { Disposable } from '@sidex/base/common/lifecycle.js';
-import {
-	constObservable,
-	derived,
-	derivedObservableWithCache,
-	IObservable
-} from '@sidex/base/common/observable.js';
+import { constObservable, derived, derivedObservableWithCache, IObservable } from '@sidex/base/common/observable.js';
 import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
 import { ICodeEditor } from '../../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor, observableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';

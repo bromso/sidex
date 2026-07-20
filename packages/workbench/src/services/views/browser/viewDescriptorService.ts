@@ -27,13 +27,7 @@ import {
 import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
-import {
-	toDisposable,
-	DisposableStore,
-	Disposable,
-	IDisposable,
-	DisposableMap
-} from '@sidex/base/common/lifecycle.js';
+import { toDisposable, DisposableStore, Disposable, IDisposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
 import {
 	ViewPaneContainer,
 	ViewPaneContainerAction,

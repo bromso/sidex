@@ -12,11 +12,7 @@ import * as Platform from '@sidex/base/common/platform.js';
 import { IStringDictionary } from '@sidex/base/common/collections.js';
 import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 
-import {
-	IWorkspace,
-	IWorkspaceContextService,
-	IWorkspaceFolder
-} from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspace, IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 
 import {
 	ContributedTask,

@@ -68,10 +68,7 @@ import { isSCMRepository } from './util.js';
 import { SCMHistoryViewPane } from './scmHistoryViewPane.js';
 import { QuickDiffModelService, IQuickDiffModelService } from './quickDiffModel.js';
 import { QuickDiffEditorController } from './quickDiffWidget.js';
-import {
-	EditorContributionInstantiation,
-	registerEditorContribution
-} from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContributionInstantiation, registerEditorContribution } from '@sidex/editor/browser/editorExtensions.js';
 import { RemoteNameContext, ResourceContextKey as _ResourceContextKey } from '../../../common/contextkeys.js';
 import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { SCMAccessibilityHelp } from './scmAccessibilityHelp.js';

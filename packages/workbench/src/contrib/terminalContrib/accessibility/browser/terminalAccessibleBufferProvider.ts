@@ -13,10 +13,7 @@ import {
 	IAccessibleViewSymbol
 } from '@sidex/platform/accessibility/browser/accessibleView.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
-import {
-	TerminalCapability,
-	ITerminalCommand
-} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalCapability, ITerminalCommand } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand

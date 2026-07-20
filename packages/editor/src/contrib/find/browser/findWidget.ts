@@ -40,10 +40,7 @@ import {
 } from './findModel.js';
 import { FindReplaceState, FindReplaceStateChangedEvent } from './findState.js';
 import * as nls from '@sidex/base/nls.js';
-import {
-	AccessibilitySupport,
-	IAccessibilityService
-} from '@sidex/platform/accessibility/common/accessibility.js';
+import { AccessibilitySupport, IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import {
 	ContextScopedFindInput,
 	ContextScopedReplaceInput

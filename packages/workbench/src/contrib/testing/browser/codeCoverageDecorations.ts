@@ -49,15 +49,8 @@ import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instant
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ILogService } from '@sidex/platform/log/common/log.js';
-import {
-	bindContextKey,
-	observableConfigValue
-} from '@sidex/platform/observable/common/platformObservableUtils.js';
-import {
-	IQuickInputButton,
-	IQuickInputService,
-	QuickPickInput
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { bindContextKey, observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { IQuickInputButton, IQuickInputService, QuickPickInput } from '@sidex/platform/quickinput/common/quickInput.js';
 import { ActiveEditorContext } from '../../../common/contextkeys.js';
 import { TEXT_FILE_EDITOR_ID } from '../../files/common/files.js';
 import { getTestingConfiguration, TestingConfigKeys } from '../common/configuration.js';

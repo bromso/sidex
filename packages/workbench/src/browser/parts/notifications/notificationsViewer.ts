@@ -4,14 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IListVirtualDelegate, IListRenderer } from '@sidex/base/browser/ui/list/list.js';
-import {
-	clearNode,
-	addDisposableListener,
-	EventType,
-	EventHelper,
-	$,
-	isEventLike
-} from '@sidex/base/browser/dom.js';
+import { clearNode, addDisposableListener, EventType, EventHelper, $, isEventLike } from '@sidex/base/browser/dom.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';

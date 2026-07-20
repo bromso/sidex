@@ -21,13 +21,7 @@ import {
 	TerminalShellType,
 	WindowsShellType
 } from '@sidex/platform/terminal/common/terminal.js';
-import {
-	IProcessEnvironment,
-	isWindows,
-	isMacintosh,
-	language,
-	OperatingSystem
-} from '@sidex/base/common/platform.js';
+import { IProcessEnvironment, isWindows, isMacintosh, language, OperatingSystem } from '@sidex/base/common/platform.js';
 import { escapeNonWindowsPath, sanitizeCwd } from '@sidex/platform/terminal/common/terminalEnvironment.js';
 import { isNumber, isString } from '@sidex/base/common/types.js';
 import { IHistoryService } from '../../../services/history/common/history.js';

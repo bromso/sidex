@@ -5,10 +5,7 @@
 
 import { addDisposableListener, getActiveWindow } from '@sidex/base/browser/dom.js';
 import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
-import {
-	AccessibilitySupport,
-	IAccessibilityService
-} from '@sidex/platform/accessibility/common/accessibility.js';
+import { AccessibilitySupport, IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { EditorOption, IComputedEditorOptions } from '../../../../common/config/editorOptions.js';
 import { EndOfLineSequence } from '../../../../common/model.js';
 import { ViewContext } from '../../../../common/viewModel/viewContext.js';

@@ -24,11 +24,7 @@ import {
 } from '../../../common/contributions.js';
 import { KEYBOARD_LAYOUT_OPEN_PICKER } from '../common/preferences.js';
 import { isMacintosh, isWindows } from '@sidex/base/common/platform.js';
-import {
-	QuickPickInput,
-	IQuickInputService,
-	IQuickPickItem
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { QuickPickInput, IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';

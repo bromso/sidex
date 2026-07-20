@@ -78,10 +78,7 @@ import {
 	createActionViewItem,
 	getFlatActionBarActions
 } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
-import {
-	IMarkdownRendererService,
-	openLinkFromMarkdown
-} from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IMarkdownRendererService, openLinkFromMarkdown } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import { DragAndDropController } from '@sidex/editor/contrib/dnd/browser/dnd.js';
 import { CopyPasteController } from '@sidex/editor/contrib/dropOrPasteInto/browser/copyPasteController.js';
 import { DropIntoEditorController } from '@sidex/editor/contrib/dropOrPasteInto/browser/dropIntoEditorController.js';

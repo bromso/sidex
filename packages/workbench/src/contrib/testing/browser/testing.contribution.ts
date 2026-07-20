@@ -4,10 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	EditorContributionInstantiation,
-	registerEditorContribution
-} from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContributionInstantiation, registerEditorContribution } from '@sidex/editor/browser/editorExtensions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';

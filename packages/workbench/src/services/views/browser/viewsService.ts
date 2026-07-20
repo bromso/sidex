@@ -3,13 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {
-	Disposable,
-	IDisposable,
-	toDisposable,
-	DisposableStore,
-	DisposableMap
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, IDisposable, toDisposable, DisposableStore, DisposableMap } from '@sidex/base/common/lifecycle.js';
 import {
 	IViewDescriptorService,
 	ViewContainer,

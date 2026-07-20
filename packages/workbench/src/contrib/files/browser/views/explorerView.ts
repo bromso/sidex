@@ -6,10 +6,7 @@
 import * as nls from '@sidex/base/nls.js';
 import { URI } from '@sidex/base/common/uri.js';
 import * as perf from '@sidex/base/common/performance.js';
-import {
-	WorkbenchActionExecutedEvent,
-	WorkbenchActionExecutedClassification
-} from '@sidex/base/common/actions.js';
+import { WorkbenchActionExecutedEvent, WorkbenchActionExecutedClassification } from '@sidex/base/common/actions.js';
 import { memoize } from '@sidex/base/common/decorators.js';
 import {
 	IFilesConfiguration,
@@ -44,11 +41,7 @@ import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
-import {
-	IContextKeyService,
-	IContextKey,
-	ContextKeyExpr
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextKeyService, IContextKey, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { ResourceContextKey } from '../../../../common/contextkeys.js';
 import { IDecorationsService } from '../../../../services/decorations/common/decorations.js';
 import { WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';

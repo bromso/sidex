@@ -18,11 +18,7 @@ import {
 import { isWindows } from '@sidex/base/common/platform.js';
 import { localize2 } from '@sidex/base/nls.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
-import {
-	ContextKeyExpr,
-	IContextKey,
-	IContextKeyService
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';

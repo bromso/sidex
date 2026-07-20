@@ -31,11 +31,7 @@ import { IModelService } from '@sidex/editor/common/services/model.js';
 import { ICommandService, CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { Schemas } from '@sidex/base/common/network.js';
-import {
-	IDialogService,
-	IConfirmationResult,
-	getFileNamesMessage
-} from '@sidex/platform/dialogs/common/dialogs.js';
+import { IDialogService, IConfirmationResult, getFileNamesMessage } from '@sidex/platform/dialogs/common/dialogs.js';
 import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { Constants } from '@sidex/base/common/uint.js';

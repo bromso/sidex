@@ -23,13 +23,7 @@ import {
 } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchLayoutService } from '../../../../services/layout/browser/layoutService.js';
 import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
-import {
-	IDisposable,
-	Disposable,
-	dispose,
-	toDisposable,
-	DisposableStore
-} from '@sidex/base/common/lifecycle.js';
+import { IDisposable, Disposable, dispose, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { IFileLabelOptions, IResourceLabel, ResourceLabels } from '../../../../browser/labels.js';
 import {

@@ -27,11 +27,7 @@ import { Emitter, Event } from '@sidex/base/common/event.js';
 import { DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
 import { MenuId } from '@sidex/platform/actions/common/actions.js';
-import {
-	HiddenItemStrategy,
-	MenuWorkbenchToolBar,
-	WorkbenchToolBar
-} from '@sidex/platform/actions/browser/toolbar.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar, WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';

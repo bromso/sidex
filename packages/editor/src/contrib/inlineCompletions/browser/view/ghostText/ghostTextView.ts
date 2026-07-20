@@ -7,12 +7,7 @@ import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
 import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import { Codicon } from '@sidex/base/common/codicons.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';
-import {
-	Disposable,
-	DisposableStore,
-	MutableDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,

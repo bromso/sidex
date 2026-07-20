@@ -9,12 +9,7 @@ import { HighlightedLabel, IHighlight } from '@sidex/base/browser/ui/highlighted
 import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import { AsyncDataTree, IAsyncDataTreeViewState } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
-import {
-	ITreeContextMenuEvent,
-	ITreeMouseEvent,
-	ITreeNode,
-	ITreeRenderer
-} from '@sidex/base/browser/ui/tree/tree.js';
+import { ITreeContextMenuEvent, ITreeMouseEvent, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
 import { IAction, toAction } from '@sidex/base/common/actions.js';
 import { coalesce } from '@sidex/base/common/arrays.js';
 import { RunOnceScheduler } from '@sidex/base/common/async.js';

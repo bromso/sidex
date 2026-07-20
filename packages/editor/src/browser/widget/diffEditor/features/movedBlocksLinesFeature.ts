@@ -6,12 +6,7 @@
 import { h } from '@sidex/base/browser/dom.js';
 import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { Action } from '@sidex/base/common/actions.js';
-import {
-	booleanComparator,
-	compareBy,
-	numberComparator,
-	tieBreakComparators
-} from '@sidex/base/common/arrays.js';
+import { booleanComparator, compareBy, numberComparator, tieBreakComparators } from '@sidex/base/common/arrays.js';
 import { findMaxIdx } from '@sidex/base/common/arraysFind.js';
 import { Codicon } from '@sidex/base/common/codicons.js';
 import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';

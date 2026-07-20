@@ -7,10 +7,7 @@ import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { FileAccess } from '@sidex/base/common/network.js';
 import { isMacintosh, isWeb } from '@sidex/base/common/platform.js';
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	EditorContributionInstantiation,
-	registerEditorContribution
-} from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContributionInstantiation, registerEditorContribution } from '@sidex/editor/browser/editorExtensions.js';
 import * as nls from '@sidex/base/nls.js';
 import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { ICommandActionTitle, Icon } from '@sidex/platform/action/common/action.js';

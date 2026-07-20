@@ -6,10 +6,7 @@
 import { getCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { EditorAction, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
 import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
-import {
-	DocumentFormattingEditProvider,
-	DocumentRangeFormattingEditProvider
-} from '@sidex/editor/common/languages.js';
+import { DocumentFormattingEditProvider, DocumentRangeFormattingEditProvider } from '@sidex/editor/common/languages.js';
 import * as nls from '@sidex/base/nls.js';
 import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';

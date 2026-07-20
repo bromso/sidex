@@ -17,11 +17,7 @@ import {
 	type IKeybindings
 } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
-import {
-	GeneralShellType,
-	TerminalSettingId,
-	WindowsShellType
-} from '@sidex/platform/terminal/common/terminal.js';
+import { GeneralShellType, TerminalSettingId, WindowsShellType } from '@sidex/platform/terminal/common/terminal.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IConfigurationResolverService } from '../../../../services/configurationResolver/common/configurationResolver.js';
 import { IHistoryService } from '../../../../services/history/common/history.js';

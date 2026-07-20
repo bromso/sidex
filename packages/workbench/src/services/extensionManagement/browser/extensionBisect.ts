@@ -21,11 +21,7 @@ import {
 import { IHostService } from '../../host/browser/host.js';
 import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
-import {
-	ContextKeyExpr,
-	IContextKeyService,
-	RawContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';

@@ -85,10 +85,7 @@ import { TypingInterval } from './typingSpeed.js';
 import { StringReplacement } from '../../../../common/core/edits/stringEdit.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	IDefaultAccountService,
-	IDefaultAccount
-} from '@sidex/platform/accounts/common/nullDefaultAccount.js';
+import { IDefaultAccountService, IDefaultAccount } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
 import { Schemas } from '@sidex/base/common/network.js';
 import { getInlineCompletionsController } from '../controller/common.js';
 

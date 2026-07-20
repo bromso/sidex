@@ -77,11 +77,7 @@ import { IHostService } from '../../../services/host/browser/host.js';
 import { WindowTitle } from './windowTitle.js';
 import { CommandCenterControl } from './commandCenterControl.js';
 import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
-import {
-	HiddenItemStrategy,
-	MenuWorkbenchToolBar,
-	WorkbenchToolBar
-} from '@sidex/platform/actions/browser/toolbar.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar, WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { ACCOUNTS_ACTIVITY_ID, GLOBAL_ACTIVITY_ID } from '../../../common/activity.js';
 import {
 	AccountsActivityActionViewItem,
@@ -93,11 +89,7 @@ import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import { IEditorGroupsContainer, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { ActionRunner, IAction } from '@sidex/base/common/actions.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import {
-	ActionsOrientation,
-	IActionViewItem,
-	prepareActions
-} from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ActionsOrientation, IActionViewItem, prepareActions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { EDITOR_CORE_NAVIGATION_COMMANDS } from '../editor/editorCommands.js';
 import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
 import { EditorPane } from '../editor/editorPane.js';

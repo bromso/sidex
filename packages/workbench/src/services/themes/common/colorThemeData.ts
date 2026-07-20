@@ -36,11 +36,7 @@ import {
 	editorForeground,
 	DEFAULT_COLOR_CONFIG_VALUE
 } from '@sidex/platform/theme/common/colorRegistry.js';
-import {
-	IFontTokenOptions,
-	ITokenStyle,
-	getThemeTypeSelector
-} from '@sidex/platform/theme/common/themeService.js';
+import { IFontTokenOptions, ITokenStyle, getThemeTypeSelector } from '@sidex/platform/theme/common/themeService.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { getParseErrorMessage } from '@sidex/base/common/jsonErrorMessages.js';
 import { URI } from '@sidex/base/common/uri.js';

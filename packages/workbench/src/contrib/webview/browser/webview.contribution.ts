@@ -4,12 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { getActiveElement } from '@sidex/base/browser/dom.js';
-import {
-	MultiCommand,
-	RedoCommand,
-	SelectAllCommand,
-	UndoCommand
-} from '@sidex/editor/browser/editorExtensions.js';
+import { MultiCommand, RedoCommand, SelectAllCommand, UndoCommand } from '@sidex/editor/browser/editorExtensions.js';
 import { CopyAction, CutAction, PasteAction } from '@sidex/editor/contrib/clipboard/browser/clipboard.js';
 import * as nls from '@sidex/base/nls.js';
 import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';

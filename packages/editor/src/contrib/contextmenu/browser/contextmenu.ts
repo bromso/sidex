@@ -32,10 +32,7 @@ import { IContextMenuService, IContextViewService } from '@sidex/platform/contex
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
-import {
-	IWorkspaceContextService,
-	isStandaloneEditorWorkspace
-} from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, isStandaloneEditorWorkspace } from '@sidex/platform/workspace/common/workspace.js';
 
 export class ContextMenuController implements IEditorContribution {
 	public static readonly ID = 'editor.contrib.contextmenu';

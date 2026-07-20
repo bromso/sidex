@@ -18,11 +18,7 @@ import {
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { ToggleSidebarPositionAction, ToggleSidebarVisibilityAction } from '../../actions/layoutActions.js';
-import {
-	IThemeService,
-	IColorTheme,
-	registerThemingParticipant
-} from '@sidex/platform/theme/common/themeService.js';
+import { IThemeService, IColorTheme, registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import {
 	ACTIVITY_BAR_BACKGROUND,
 	ACTIVITY_BAR_BORDER,

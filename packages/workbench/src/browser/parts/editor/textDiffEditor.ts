@@ -7,10 +7,7 @@ import { localize } from '@sidex/base/nls.js';
 import { deepClone } from '@sidex/base/common/objects.js';
 import { isObject, assertReturnsDefined } from '@sidex/base/common/types.js';
 import { ICodeEditor, IDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
-import {
-	IDiffEditorOptions,
-	IEditorOptions as ICodeEditorOptions
-} from '@sidex/editor/common/config/editorOptions.js';
+import { IDiffEditorOptions, IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import { AbstractTextEditor, IEditorConfiguration } from './textEditor.js';
 import {
 	TEXT_DIFF_EDITOR_ID,

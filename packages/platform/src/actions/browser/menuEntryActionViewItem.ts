@@ -29,12 +29,7 @@ import { Event } from '@sidex/base/common/event.js';
 import { UILabelProvider } from '@sidex/base/common/keybindingLabels.js';
 import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { KeyCode } from '@sidex/base/common/keyCodes.js';
-import {
-	combinedDisposable,
-	DisposableStore,
-	MutableDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { combinedDisposable, DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { isLinux, isWindows, OS } from '@sidex/base/common/platform.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { assertType } from '@sidex/base/common/types.js';

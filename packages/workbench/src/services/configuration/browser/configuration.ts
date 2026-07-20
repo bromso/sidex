@@ -49,11 +49,7 @@ import {
 	APPLICATION_SCOPES
 } from '../common/configuration.js';
 import { IStoredWorkspaceFolder } from '@sidex/platform/workspaces/common/workspaces.js';
-import {
-	WorkbenchState,
-	IWorkspaceFolder,
-	IWorkspaceIdentifier
-} from '@sidex/platform/workspace/common/workspace.js';
+import { WorkbenchState, IWorkspaceFolder, IWorkspaceIdentifier } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	ConfigurationScope,
 	Extensions,

@@ -4,12 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IRange } from '@sidex/editor/common/core/range.js';
-import {
-	ICodeEditorViewState,
-	IDiffEditorViewState,
-	IEditor,
-	ScrollType
-} from '@sidex/editor/common/editorCommon.js';
+import { ICodeEditorViewState, IDiffEditorViewState, IEditor, ScrollType } from '@sidex/editor/common/editorCommon.js';
 import {
 	ITextEditorOptions,
 	TextEditorSelectionRevealType,

@@ -7,13 +7,7 @@ import { createDecorator } from '@sidex/platform/instantiation/common/instantiat
 import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { Event, Emitter } from '@sidex/base/common/event.js';
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	Disposable,
-	IDisposable,
-	toDisposable,
-	DisposableStore,
-	DisposableMap
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, IDisposable, toDisposable, DisposableStore, DisposableMap } from '@sidex/base/common/lifecycle.js';
 import { ResourceMap } from '@sidex/base/common/map.js';
 import {
 	IWorkingCopy,

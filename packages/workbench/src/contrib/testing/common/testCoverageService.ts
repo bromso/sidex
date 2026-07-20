@@ -10,10 +10,7 @@ import { IObservable, ISettableObservable, observableValue, transaction } from '
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
-import {
-	bindContextKey,
-	observableConfigValue
-} from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { bindContextKey, observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { TestingConfigKeys } from './configuration.js';
 import { Testing } from './constants.js';
 import { TestCoverage } from './testCoverage.js';

@@ -5,10 +5,7 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.js';
-import {
-	IColorRegistry,
-	Extensions as ColorRegistryExtensions
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IColorRegistry, Extensions as ColorRegistryExtensions } from '@sidex/platform/theme/common/colorRegistry.js';
 import { Color } from '@sidex/base/common/color.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { Disposable } from '@sidex/base/common/lifecycle.js';

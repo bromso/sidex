@@ -4,8 +4,15 @@ import type { Plugin } from 'vite';
 import { createNlsCollector, scanSource, transformSource } from './transform';
 
 export interface NlsPluginOptions {
-	/** Absolute path to the directory scanned for localize() calls. */
-	sourceRoot: string;
+	/**
+	 * Absolute paths to the directories scanned for localize() calls.
+	 *
+	 * List the layer packages explicitly rather than their common parent:
+	 * scanning all of packages/ would sweep in packages/build, whose tests
+	 * contain localize() calls and would put test strings in the shipped
+	 * message table.
+	 */
+	sourceRoots: string[];
 }
 
 /**
@@ -31,8 +38,8 @@ export function walkDir(dir: string): string[] {
 
 export function nlsPlugin(options: NlsPluginOptions): Plugin {
 	const collector = createNlsCollector();
-	const sourceRoot = path.resolve(options.sourceRoot);
-	const normalizedRoot = sourceRoot.split(path.sep).join('/');
+	const sourceRoots = options.sourceRoots.map(r => path.resolve(r));
+	const normalizedRoots = sourceRoots.map(r => r.split(path.sep).join('/'));
 
 	return {
 		name: 'vite-plugin-nls',
@@ -50,7 +57,7 @@ export function nlsPlugin(options: NlsPluginOptions): Plugin {
 		// same tree emit different tables and different chunk hashes. The cost is
 		// ~108 extra entries for messages no reachable module imports.
 		buildStart() {
-			const files = walkDir(sourceRoot).filter(f => f.endsWith('.ts'));
+			const files = sourceRoots.flatMap(root => walkDir(root)).filter(f => f.endsWith('.ts'));
 			let count = 0;
 			for (const file of files) {
 				count += scanSource(fs.readFileSync(file, 'utf-8'), collector);
@@ -62,7 +69,7 @@ export function nlsPlugin(options: NlsPluginOptions): Plugin {
 
 		transform(code, id) {
 			const normalizedId = id.split(path.sep).join('/');
-			if (!normalizedId.startsWith(normalizedRoot) || !normalizedId.endsWith('.ts')) {
+			if (!normalizedRoots.some(root => normalizedId.startsWith(root)) || !normalizedId.endsWith('.ts')) {
 				return null;
 			}
 			const out = transformSource(code, collector);

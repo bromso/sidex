@@ -7,12 +7,7 @@ import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
 import * as cssValue from '@sidex/base/browser/cssValue.js';
 import { DeferredPromise, timeout, type MaybePromise } from '@sidex/base/common/async.js';
 import { debounce, memoize } from '@sidex/base/common/decorators.js';
-import {
-	DynamicListEventMultiplexer,
-	Emitter,
-	Event,
-	IDynamicListEventMultiplexer
-} from '@sidex/base/common/event.js';
+import { DynamicListEventMultiplexer, Emitter, Event, IDynamicListEventMultiplexer } from '@sidex/base/common/event.js';
 import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { Schemas } from '@sidex/base/common/network.js';
 import { isMacintosh, isWeb } from '@sidex/base/common/platform.js';

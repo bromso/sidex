@@ -3,12 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {
-	CancelablePromise,
-	createCancelablePromise,
-	Delayer,
-	RunOnceScheduler
-} from '@sidex/base/common/async.js';
+import { CancelablePromise, createCancelablePromise, Delayer, RunOnceScheduler } from '@sidex/base/common/async.js';
 import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { illegalArgument, onUnexpectedError } from '@sidex/base/common/errors.js';
 import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';

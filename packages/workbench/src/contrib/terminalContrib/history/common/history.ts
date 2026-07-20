@@ -20,11 +20,7 @@ import {
 } from '@sidex/platform/files/common/files.js';
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
-import {
-	GeneralShellType,
-	PosixShellType,
-	TerminalShellType
-} from '@sidex/platform/terminal/common/terminal.js';
+import { GeneralShellType, PosixShellType, TerminalShellType } from '@sidex/platform/terminal/common/terminal.js';
 import { IRemoteAgentService } from '../../../../services/remote/common/remoteAgentService.js';
 import { TerminalHistorySettingId } from './terminal.history.js';
 

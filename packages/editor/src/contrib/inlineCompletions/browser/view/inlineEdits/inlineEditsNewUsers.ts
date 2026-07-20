@@ -5,12 +5,7 @@
 
 import { timeout } from '@sidex/base/common/async.js';
 import { BugIndicatingError } from '@sidex/base/common/errors.js';
-import {
-	Disposable,
-	DisposableStore,
-	IDisposable,
-	MutableDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	derived,

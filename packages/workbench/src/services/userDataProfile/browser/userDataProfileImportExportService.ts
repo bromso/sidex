@@ -7,10 +7,7 @@ import { InstantiationType, registerSingleton } from '@sidex/platform/instantiat
 import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	IUserDataProfile,
-	ProfileResourceTypeFlags
-} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfile, ProfileResourceTypeFlags } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import {
 	IUserDataProfileImportExportService,
 	IUserDataProfileContentHandler,

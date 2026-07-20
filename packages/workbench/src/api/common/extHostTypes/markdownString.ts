@@ -4,10 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import {
-	MarkdownString as BaseMarkdownString,
-	MarkdownStringTrustedOptions
-} from '@sidex/base/common/htmlContent.js';
+import { MarkdownString as BaseMarkdownString, MarkdownStringTrustedOptions } from '@sidex/base/common/htmlContent.js';
 import { es5ClassCompat } from './es5ClassCompat.js';
 
 @es5ClassCompat

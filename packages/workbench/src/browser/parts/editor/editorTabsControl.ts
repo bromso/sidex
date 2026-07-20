@@ -8,11 +8,7 @@ import { localize } from '@sidex/base/nls.js';
 import { DataTransfers } from '@sidex/base/browser/dnd.js';
 import { $, Dimension, getActiveWindow, getWindow, isMouseEvent } from '@sidex/base/browser/dom.js';
 import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
-import {
-	ActionsOrientation,
-	IActionViewItem,
-	prepareActions
-} from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ActionsOrientation, IActionViewItem, prepareActions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { IAction, ActionRunner } from '@sidex/base/common/actions.js';
 import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';

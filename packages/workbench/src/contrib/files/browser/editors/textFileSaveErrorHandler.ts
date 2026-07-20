@@ -8,11 +8,7 @@ import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
 import { basename, isEqual } from '@sidex/base/common/resources.js';
 import { Action } from '@sidex/base/common/actions.js';
 import { URI } from '@sidex/base/common/uri.js';
-import {
-	FileOperationError,
-	FileOperationResult,
-	IWriteFileOptions
-} from '@sidex/platform/files/common/files.js';
+import { FileOperationError, FileOperationResult, IWriteFileOptions } from '@sidex/platform/files/common/files.js';
 import {
 	ITextFileService,
 	ISaveErrorHandler,
@@ -26,11 +22,7 @@ import { IWorkbenchContribution } from '../../../../common/contributions.js';
 import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { ResourceMap } from '@sidex/base/common/map.js';
 import { DiffEditorInput } from '../../../../common/editor/diffEditorInput.js';
-import {
-	IContextKey,
-	IContextKeyService,
-	RawContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TextFileContentProvider } from '../../common/files.js';
 import { FileEditorInput } from './fileEditorInput.js';
 import { SAVE_FILE_AS_LABEL } from '../fileConstants.js';

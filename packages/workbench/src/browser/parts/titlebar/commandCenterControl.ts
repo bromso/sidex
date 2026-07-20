@@ -4,10 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { isActiveDocument, reset } from '@sidex/base/browser/dom.js';
-import {
-	BaseActionViewItem,
-	IBaseActionViewItemOptions
-} from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { BaseActionViewItem, IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
 import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
 import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
@@ -18,11 +15,7 @@ import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { autorun } from '@sidex/base/common/observable.js';
 import { localize } from '@sidex/base/nls.js';
 import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
-import {
-	HiddenItemStrategy,
-	MenuWorkbenchToolBar,
-	WorkbenchToolBar
-} from '@sidex/platform/actions/browser/toolbar.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar, WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { MenuId, MenuRegistry, SubmenuItemAction } from '@sidex/platform/actions/common/actions.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';

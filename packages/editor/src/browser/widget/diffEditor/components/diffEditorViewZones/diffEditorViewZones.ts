@@ -8,13 +8,7 @@ import { ArrayQueue } from '@sidex/base/common/arrays.js';
 import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { Codicon } from '@sidex/base/common/codicons.js';
 import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
-import {
-	IObservable,
-	autorun,
-	derived,
-	observableFromEvent,
-	observableValue
-} from '@sidex/base/common/observable.js';
+import { IObservable, autorun, derived, observableFromEvent, observableValue } from '@sidex/base/common/observable.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { applyFontInfo } from '../../../../config/domFontInfo.js';

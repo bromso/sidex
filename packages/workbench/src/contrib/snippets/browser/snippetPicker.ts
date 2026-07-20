@@ -6,11 +6,7 @@
 import * as nls from '@sidex/base/nls.js';
 import { ISnippetsService } from './snippets.js';
 import { Snippet, SnippetSource } from './snippetsFile.js';
-import {
-	IQuickPickItem,
-	IQuickInputService,
-	QuickPickInput
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickPickItem, IQuickInputService, QuickPickInput } from '@sidex/platform/quickinput/common/quickInput.js';
 import { Codicon } from '@sidex/base/common/codicons.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { Event } from '@sidex/base/common/event.js';

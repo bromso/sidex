@@ -7,13 +7,7 @@ import { Barrier } from '@sidex/base/common/async.js';
 import { isUriComponents, URI, UriComponents } from '@sidex/base/common/uri.js';
 import { Event, Emitter } from '@sidex/base/common/event.js';
 import { IObservable, observableValue, observableValueOpts, transaction } from '@sidex/base/common/observable.js';
-import {
-	IDisposable,
-	DisposableStore,
-	combinedDisposable,
-	dispose,
-	Disposable
-} from '@sidex/base/common/lifecycle.js';
+import { IDisposable, DisposableStore, combinedDisposable, dispose, Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ISCMService,
 	ISCMRepository,

@@ -13,10 +13,7 @@ import { IRange } from '../../../common/core/range.js';
 import { IDiffEditor, IEditor, ScrollType } from '../../../common/editorCommon.js';
 import { IModelDeltaDecoration, ITextModel, OverviewRulerLane } from '../../../common/model.js';
 import { overviewRulerRangeHighlight } from '../../../common/core/editorColorRegistry.js';
-import {
-	IQuickAccessProvider,
-	IQuickAccessProviderRunOptions
-} from '@sidex/platform/quickinput/common/quickAccess.js';
+import { IQuickAccessProvider, IQuickAccessProviderRunOptions } from '@sidex/platform/quickinput/common/quickAccess.js';
 import { IKeyMods, IQuickPick, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 import { status } from '@sidex/base/browser/ui/aria/aria.js';

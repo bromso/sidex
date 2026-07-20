@@ -14,10 +14,7 @@ import { Checkbox, TriStateCheckbox } from '@sidex/base/browser/ui/toggle/toggle
 import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import { Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
-import {
-	ICompressedTreeElement,
-	ICompressedTreeNode
-} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressedTreeElement, ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
 import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
 import { ITreeContextMenuEvent, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
 import { Action } from '@sidex/base/common/actions.js';
@@ -35,10 +32,7 @@ import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import {
-	getActionBarActions,
-	getContextMenuActions
-} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { getActionBarActions, getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';

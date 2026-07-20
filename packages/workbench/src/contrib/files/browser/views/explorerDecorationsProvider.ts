@@ -8,10 +8,7 @@ import { Event, Emitter } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IDecorationsProvider, IDecorationData } from '../../../../services/decorations/common/decorations.js';
-import {
-	listInvalidItemForeground,
-	listDeemphasizedForeground
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { listInvalidItemForeground, listDeemphasizedForeground } from '@sidex/platform/theme/common/colorRegistry.js';
 import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { explorerRootErrorEmitter } from './explorerViewer.js';
 import { ExplorerItem } from '../../common/explorerModel.js';

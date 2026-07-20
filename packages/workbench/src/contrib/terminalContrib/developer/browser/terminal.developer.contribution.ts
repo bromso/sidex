@@ -26,10 +26,7 @@ import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js'
 import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
-import {
-	ITerminalCommand,
-	TerminalCapability
-} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalCommand, TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { ITerminalLogService, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import {

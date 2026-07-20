@@ -32,11 +32,7 @@ import {
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IDimension } from '@sidex/editor/common/core/2d/dimension.js';
 import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
-import {
-	ContextKeyValue,
-	IContextKeyService,
-	RawContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyValue, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { IGroupModelChangeEvent } from '../../../common/editor/editorGroupModel.js';
 import { IRectangle } from '@sidex/platform/window/common/window.js';

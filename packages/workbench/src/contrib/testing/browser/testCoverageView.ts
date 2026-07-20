@@ -6,10 +6,7 @@
 import * as dom from '@sidex/base/browser/dom.js';
 import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { IIdentityProvider, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
-import {
-	ICompressedTreeElement,
-	ICompressedTreeNode
-} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressedTreeElement, ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
 import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
 import { ITreeNode, ITreeSorter } from '@sidex/base/browser/ui/tree/tree.js';
 import { findLast } from '@sidex/base/common/arraysFind.js';
@@ -43,11 +40,7 @@ import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { WorkbenchCompressibleObjectTree } from '@sidex/platform/list/browser/listService.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
-import {
-	IQuickInputService,
-	IQuickPickItem,
-	QuickPickInput
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickItem, QuickPickInput } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IResourceLabel, ResourceLabels } from '../../../browser/labels.js';
 import { IViewPaneOptions, ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';

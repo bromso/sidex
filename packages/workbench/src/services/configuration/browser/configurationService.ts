@@ -137,10 +137,7 @@ import {
 	IUserDataProfileService
 } from '../../userDataProfile/common/userDataProfile.js';
 import { IPolicyService, NullPolicyService } from '@sidex/platform/policy/common/policy.js';
-import {
-	IUserDataProfile,
-	IUserDataProfilesService
-} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfile, IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IJSONEditingService } from '../common/jsonEditing.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';

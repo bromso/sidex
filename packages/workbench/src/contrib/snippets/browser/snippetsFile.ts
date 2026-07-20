@@ -6,12 +6,7 @@
 import { parse as jsonParse, getNodeType } from '@sidex/base/common/json.js';
 import { localize } from '@sidex/base/nls.js';
 import { extname, basename } from '@sidex/base/common/path.js';
-import {
-	SnippetParser,
-	Variable,
-	Placeholder,
-	Text
-} from '@sidex/editor/contrib/snippet/browser/snippetParser.js';
+import { SnippetParser, Variable, Placeholder, Text } from '@sidex/editor/contrib/snippet/browser/snippetParser.js';
 import { KnownSnippetVariableNames } from '@sidex/editor/contrib/snippet/browser/snippetVariables.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { IFileService } from '@sidex/platform/files/common/files.js';

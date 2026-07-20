@@ -5,12 +5,7 @@
 
 import { canASAR } from '@sidex/base/amdX.js';
 import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
-import {
-	AppResourcePath,
-	FileAccess,
-	nodeModulesAsarPath,
-	nodeModulesPath
-} from '@sidex/base/common/network.js';
+import { AppResourcePath, FileAccess, nodeModulesAsarPath, nodeModulesPath } from '@sidex/base/common/network.js';
 import { IObservable } from '@sidex/base/common/observable.js';
 import { isWeb } from '@sidex/base/common/platform.js';
 import { URI, UriComponents } from '@sidex/base/common/uri.js';

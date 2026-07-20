@@ -27,7 +27,10 @@ import {
 	StorageScope,
 	StorageTarget
 } from '@sidex/platform/storage/common/storage.js';
-import { IConfigurationChangeEvent, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import {
+	IConfigurationChangeEvent,
+	IConfigurationService
+} from '@sidex/platform/configuration/common/configuration.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { LifecyclePhase, ILifecycleService, WillShutdownEvent } from '../services/lifecycle/common/lifecycle.js';

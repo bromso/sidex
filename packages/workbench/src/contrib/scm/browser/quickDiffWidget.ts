@@ -21,13 +21,7 @@ import {
 	PeekViewWidget
 } from '@sidex/editor/contrib/peekView/browser/peekView.js';
 import { editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
-import {
-	IMenu,
-	IMenuService,
-	MenuId,
-	MenuItemAction,
-	MenuRegistry
-} from '@sidex/platform/actions/common/actions.js';
+import { IMenu, IMenuService, MenuId, MenuItemAction, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '@sidex/editor/browser/editorBrowser.js';
 import { EditorAction, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';

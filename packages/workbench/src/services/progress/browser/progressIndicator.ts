@@ -6,11 +6,7 @@
 import { Emitter, Event } from '@sidex/base/common/event.js';
 import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
-import {
-	IProgressRunner,
-	IProgressIndicator,
-	emptyProgressRunner
-} from '@sidex/platform/progress/common/progress.js';
+import { IProgressRunner, IProgressIndicator, emptyProgressRunner } from '@sidex/platform/progress/common/progress.js';
 import { IEditorGroupView } from '../../../browser/parts/editor/editor.js';
 import { GroupModelChangeKind } from '../../../common/editor.js';
 

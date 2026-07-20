@@ -72,11 +72,7 @@ import {
 	TAB_LAST_PINNED_BORDER,
 	TAB_SELECTED_BORDER_TOP
 } from '../../../common/theme.js';
-import {
-	activeContrastBorder,
-	contrastBorder,
-	editorBackground
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { activeContrastBorder, contrastBorder, editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	ResourcesDropHandler,
 	DraggedEditorIdentifier,

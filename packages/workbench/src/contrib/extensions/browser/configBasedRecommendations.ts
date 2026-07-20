@@ -10,10 +10,7 @@ import {
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
 import { localize } from '@sidex/base/nls.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import {
-	IWorkspaceContextService,
-	IWorkspaceFoldersChangeEvent
-} from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, IWorkspaceFoldersChangeEvent } from '@sidex/platform/workspace/common/workspace.js';
 import { Emitter } from '@sidex/base/common/event.js';
 
 type ConfigBasedExtensionRecommendation = ExtensionRecommendation & { whenNotInstalled: string[] | undefined };

@@ -6,11 +6,7 @@
 import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
 import { $, Dimension, addStandardDisposableListener, append } from '@sidex/base/browser/dom.js';
 import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
-import {
-	ITableContextMenuEvent,
-	ITableRenderer,
-	ITableVirtualDelegate
-} from '@sidex/base/browser/ui/table/table.js';
+import { ITableContextMenuEvent, ITableRenderer, ITableVirtualDelegate } from '@sidex/base/browser/ui/table/table.js';
 import { binarySearch2 } from '@sidex/base/common/arrays.js';
 import { Color } from '@sidex/base/common/color.js';
 import { Emitter } from '@sidex/base/common/event.js';
@@ -59,7 +55,7 @@ import { IEditorGroup } from '../../../services/editor/common/editorGroupsServic
 import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { IMenu, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
 import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
-import { COPY_ADDRESS_ID, COPY_ADDRESS_LABEL } from '../../../../workbench/contrib/debug/browser/debugCommands.js';
+import { COPY_ADDRESS_ID, COPY_ADDRESS_LABEL } from './debugCommands.js';
 import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 

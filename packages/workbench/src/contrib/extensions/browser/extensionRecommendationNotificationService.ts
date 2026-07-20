@@ -40,10 +40,7 @@ import {
 import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
-import {
-	IUserDataSyncEnablementService,
-	SyncResource
-} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
+import { IUserDataSyncEnablementService, SyncResource } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { IExtension, IExtensionsWorkbenchService } from '../common/extensions.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import {

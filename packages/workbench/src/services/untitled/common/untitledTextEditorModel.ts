@@ -15,10 +15,7 @@ import {
 	ITextResourceConfigurationService
 } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { ITextModel } from '@sidex/editor/common/model.js';
-import {
-	createTextBufferFactory,
-	createTextBufferFactoryFromStream
-} from '@sidex/editor/common/model/textModel.js';
+import { createTextBufferFactory, createTextBufferFactoryFromStream } from '@sidex/editor/common/model/textModel.js';
 import { ITextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { IWorkingCopyService } from '../../workingCopy/common/workingCopyService.js';
 import {

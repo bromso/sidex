@@ -9,10 +9,7 @@ import { Schemas } from '@sidex/base/common/network.js';
 import { isBoolean, isObject, isString } from '@sidex/base/common/types.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor, isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
-import {
-	EditorContributionInstantiation,
-	registerEditorContribution
-} from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContributionInstantiation, registerEditorContribution } from '@sidex/editor/browser/editorExtensions.js';
 import { Context as SuggestContext } from '@sidex/editor/contrib/suggest/browser/suggest.js';
 import * as nls from '@sidex/base/nls.js';
 import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';

@@ -10,10 +10,7 @@ import { autorun, derived, globalTransaction, observableValue } from '@sidex/bas
 import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { MenuId } from '@sidex/platform/actions/common/actions.js';
-import {
-	IContextKeyService,
-	type IScopedContextKeyService
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextKeyService, type IScopedContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IDiffEditorOptions } from '../../../common/config/editorOptions.js';

@@ -14,11 +14,7 @@ import { IInstantiationService } from '@sidex/platform/instantiation/common/inst
 import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { switchTerminalShowTabsTitle } from './terminalActions.js';
-import {
-	INotificationService,
-	IPromptChoice,
-	Severity
-} from '@sidex/platform/notification/common/notification.js';
+import { INotificationService, IPromptChoice, Severity } from '@sidex/platform/notification/common/notification.js';
 import {
 	ICreateTerminalOptions,
 	ITerminalConfigurationService,
@@ -35,11 +31,7 @@ import { IViewDescriptorService } from '../../../common/views.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IMenu, IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
 import { ITerminalProfileResolverService, ITerminalProfileService, TerminalCommandId } from '../common/terminal.js';
-import {
-	TerminalSettingId,
-	ITerminalProfile,
-	TerminalLocation
-} from '@sidex/platform/terminal/common/terminal.js';
+import { TerminalSettingId, ITerminalProfile, TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	ActionViewItem,
 	IBaseActionViewItemOptions,

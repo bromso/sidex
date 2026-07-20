@@ -105,25 +105,12 @@ import { IJSONEditingService } from '../../../services/configuration/common/json
 import { ITextEditorSelection } from '@sidex/platform/editor/common/editor.js';
 import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
-import {
-	MenuId,
-	IMenuService,
-	MenuItemAction,
-	SubmenuItemAction
-} from '@sidex/platform/actions/common/actions.js';
+import { MenuId, IMenuService, MenuItemAction, SubmenuItemAction } from '@sidex/platform/actions/common/actions.js';
 import { PICK_WORKSPACE_FOLDER_COMMAND_ID } from '../../../browser/actions/workspaceCommands.js';
-import {
-	INotificationService,
-	IPromptChoice,
-	Severity
-} from '@sidex/platform/notification/common/notification.js';
+import { INotificationService, IPromptChoice, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import {
-	IQuickPickItem,
-	IQuickInputService,
-	QuickPickItem
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickPickItem, IQuickInputService, QuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 import {

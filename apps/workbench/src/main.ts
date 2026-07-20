@@ -8,7 +8,7 @@ import { loadNlsMessages } from './nls-loader.js';
 async function sidexOpenFolder() {
 	try {
 		const { open } = await import('@tauri-apps/plugin-dialog');
-		const { URI } = await import('./vs/base/common/uri.js');
+		const { URI } = await import('@sidex/base/common/uri.js');
 		const selected = await open({ directory: true, multiple: false });
 		if (selected && typeof selected === 'string') {
 			navigateToFolder(URI.file(selected).toString());
@@ -30,19 +30,19 @@ async function boot() {
 	await loadNlsMessages();
 
 	await Promise.all([
-		import('./vs/workbench/workbench.common.main.js').catch(e => {
+		import('@sidex/workbench/workbench.common.main.js').catch(e => {
 			console.error('[SideX] Barrel "common" failed:', e);
 			throw e;
 		}),
-		import('./vs/workbench/browser/web.main.js').catch(e => {
+		import('@sidex/workbench/browser/web.main.js').catch(e => {
 			console.error('[SideX] Barrel "web.main" failed:', e);
 			throw e;
 		}),
-		import('./vs/workbench/browser/parts/dialogs/dialog.web.contribution.js').catch(e => {
+		import('@sidex/workbench/browser/parts/dialogs/dialog.web.contribution.js').catch(e => {
 			console.error('[SideX] Barrel "web-dialog" failed:', e);
 			throw e;
 		}),
-		import('./vs/workbench/workbench.web.main.js').catch(e => {
+		import('@sidex/workbench/workbench.web.main.js').catch(e => {
 			console.error('[SideX] Barrel "web-services" failed:', e);
 			throw e;
 		})
@@ -60,7 +60,7 @@ async function boot() {
 			SideXExtensionService,
 			SideXKeymapService,
 			SideXFileSystemProvider
-		} = await import('./vs/platform/sidex/common/sidexServices.js');
+		} = await import('@sidex/platform/sidex/common/sidexServices.js');
 
 		(globalThis as any).__SIDEX_SERVICES__ = {
 			editor: SideXEditorBridge.getInstance(),
@@ -77,8 +77,8 @@ async function boot() {
 		console.log('[SideX] Rust bridge services initialized');
 	}
 
-	const { create } = await import('./vs/workbench/browser/web.factory.js');
-	const { URI } = await import('./vs/base/common/uri.js');
+	const { create } = await import('@sidex/workbench/browser/web.factory.js');
+	const { URI } = await import('@sidex/base/common/uri.js');
 
 	if (document.readyState === 'loading') {
 		await new Promise<void>(r => window.addEventListener('DOMContentLoaded', () => r()));

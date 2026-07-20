@@ -8,10 +8,7 @@ import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import Severity from '@sidex/base/common/severity.js';
 import { EXTENSION_IDENTIFIER_PATTERN } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
-import {
-	Extensions,
-	IJSONContributionRegistry
-} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { Extensions, IJSONContributionRegistry } from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IMessage } from './extensions.js';
 import {

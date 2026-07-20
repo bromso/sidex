@@ -5,13 +5,7 @@
 
 import { IAction, SubmenuAction } from '@sidex/base/common/actions.js';
 import { Event, MicrotaskEmitter } from '@sidex/base/common/event.js';
-import {
-	DisposableStore,
-	dispose,
-	IDisposable,
-	markAsSingleton,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { DisposableStore, dispose, IDisposable, markAsSingleton, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { LinkedList } from '@sidex/base/common/linkedList.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ICommandAction, ICommandActionTitle, Icon, ILocalizedString } from '../../action/common/action.js';

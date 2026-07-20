@@ -6,11 +6,7 @@
 import { IDimension } from '@sidex/base/browser/dom.js';
 import { Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
 import { Color } from '@sidex/base/common/color.js';
-import {
-	Event,
-	IDynamicListEventMultiplexer,
-	type DynamicListEventMultiplexer
-} from '@sidex/base/common/event.js';
+import { Event, IDynamicListEventMultiplexer, type DynamicListEventMultiplexer } from '@sidex/base/common/event.js';
 import { DisposableStore, IDisposable, type IReference } from '@sidex/base/common/lifecycle.js';
 import { OperatingSystem } from '@sidex/base/common/platform.js';
 import { URI, UriComponents } from '@sidex/base/common/uri.js';

@@ -7,10 +7,7 @@ import * as dom from '@sidex/base/browser/dom.js';
 import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import { IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
-import {
-	ICompressedTreeElement,
-	ICompressedTreeNode
-} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressedTreeElement, ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
 import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
 import { ITreeContextMenuEvent, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
 import { Action, ActionRunner, IAction, Separator } from '@sidex/base/common/actions.js';

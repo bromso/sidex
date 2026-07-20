@@ -5,12 +5,7 @@
 import type * as TreeSitter from '@vscode/tree-sitter-wasm';
 import { TaskQueue } from '@sidex/base/common/async.js';
 import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
-import {
-	IObservable,
-	observableValue,
-	transaction,
-	IObservableWithChange
-} from '@sidex/base/common/observable.js';
+import { IObservable, observableValue, transaction, IObservableWithChange } from '@sidex/base/common/observable.js';
 import { setTimeout0 } from '@sidex/base/common/platform.js';
 import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';

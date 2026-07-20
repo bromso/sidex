@@ -8,12 +8,7 @@ import { renderMarkdown } from '@sidex/base/browser/markdownRenderer.js';
 import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { getAnchorRect, IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
 import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
-import {
-	IListEvent,
-	IListMouseEvent,
-	IListRenderer,
-	IListVirtualDelegate
-} from '@sidex/base/browser/ui/list/list.js';
+import { IListEvent, IListMouseEvent, IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import { IListAccessibilityProvider, List } from '@sidex/base/browser/ui/list/listWidget.js';
 import { IAction, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
 import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';

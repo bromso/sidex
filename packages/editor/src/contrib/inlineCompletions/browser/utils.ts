@@ -14,11 +14,7 @@ import {
 	transaction,
 	IReader
 } from '@sidex/base/common/observable.js';
-import {
-	ContextKeyValue,
-	IContextKeyService,
-	RawContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyValue, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { bindContextKey } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { Position } from '../../../common/core/position.js';
 import { PositionOffsetTransformer } from '../../../common/core/text/positionToOffset.js';

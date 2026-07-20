@@ -8,11 +8,7 @@ import { IAction } from '@sidex/base/common/actions.js';
 import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import * as dom from '@sidex/base/browser/dom.js';
 import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
-import {
-	SelectBox,
-	ISelectOptionItem,
-	SeparatorSelectOption
-} from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { SelectBox, ISelectOptionItem, SeparatorSelectOption } from '@sidex/base/browser/ui/selectBox/selectBox.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IDebugService, IDebugSession, IDebugConfiguration, IConfig, ILaunch, State } from '../common/debug.js';

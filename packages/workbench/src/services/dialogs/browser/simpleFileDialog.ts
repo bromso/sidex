@@ -6,12 +6,7 @@
 import * as nls from '@sidex/base/nls.js';
 import * as resources from '@sidex/base/common/resources.js';
 import * as objects from '@sidex/base/common/objects.js';
-import {
-	IFileService,
-	IFileStat,
-	FileKind,
-	IFileStatWithPartialMetadata
-} from '@sidex/platform/files/common/files.js';
+import { IFileService, IFileStat, FileKind, IFileStatWithPartialMetadata } from '@sidex/platform/files/common/files.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
@@ -20,11 +15,7 @@ import {
 } from '@sidex/platform/quickinput/common/quickInput.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { isWindows, OperatingSystem } from '@sidex/base/common/platform.js';
-import {
-	ISaveDialogOptions,
-	IOpenDialogOptions,
-	IFileDialogService
-} from '@sidex/platform/dialogs/common/dialogs.js';
+import { ISaveDialogOptions, IOpenDialogOptions, IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { INotificationService } from '@sidex/platform/notification/common/notification.js';

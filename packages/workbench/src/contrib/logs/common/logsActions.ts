@@ -5,12 +5,7 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { Action } from '@sidex/base/common/actions.js';
-import {
-	ILoggerService,
-	LogLevel,
-	LogLevelToLocalizedString,
-	isLogLevel
-} from '@sidex/platform/log/common/log.js';
+import { ILoggerService, LogLevel, LogLevelToLocalizedString, isLogLevel } from '@sidex/platform/log/common/log.js';
 import {
 	IQuickInputButton,
 	IQuickInputService,

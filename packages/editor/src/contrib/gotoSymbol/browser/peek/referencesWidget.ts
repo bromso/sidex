@@ -40,10 +40,7 @@ import * as nls from '@sidex/base/nls.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { ILabelService } from '@sidex/platform/label/common/label.js';
-import {
-	IWorkbenchAsyncDataTreeOptions,
-	WorkbenchAsyncDataTree
-} from '@sidex/platform/list/browser/listService.js';
+import { IWorkbenchAsyncDataTreeOptions, WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { FileReferences, OneReference, ReferencesModel } from '../referencesModel.js';
 import { ITreeDragAndDrop, ITreeDragOverReaction } from '@sidex/base/browser/ui/tree/tree.js';

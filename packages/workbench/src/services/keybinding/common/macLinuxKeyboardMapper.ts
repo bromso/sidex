@@ -25,10 +25,7 @@ import { OperatingSystem } from '@sidex/base/common/platform.js';
 import { IKeyboardEvent } from '@sidex/platform/keybinding/common/keybinding.js';
 import { IKeyboardMapper } from '@sidex/platform/keyboardLayout/common/keyboardMapper.js';
 import { BaseResolvedKeybinding } from '@sidex/platform/keybinding/common/baseResolvedKeybinding.js';
-import {
-	IMacLinuxKeyboardMapping,
-	IMacLinuxKeyMapping
-} from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
+import { IMacLinuxKeyboardMapping, IMacLinuxKeyMapping } from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
 
 /**
  * A map from character to key codes.

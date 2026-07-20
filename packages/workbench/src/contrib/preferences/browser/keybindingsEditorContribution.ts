@@ -10,10 +10,7 @@ import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { Range } from '@sidex/editor/common/core/range.js';
-import {
-	registerEditorContribution,
-	EditorContributionInstantiation
-} from '@sidex/editor/browser/editorExtensions.js';
+import { registerEditorContribution, EditorContributionInstantiation } from '@sidex/editor/browser/editorExtensions.js';
 import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
 import { SmartSnippetInserter } from '../common/smartSnippetInserter.js';

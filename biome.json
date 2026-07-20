@@ -8,15 +8,15 @@
 			"!node_modules/**",
 			"!src-tauri/target/**",
 			"!extensions/**",
-			"!src/vscode-dts/**",
-			"!src/typings/**",
+			"!packages/vscode-dts/**",
+			"!apps/workbench/src/typings/**",
 			"!**/test/**/fixtures/**",
 			"!**/*.min.js",
 			"!**/*.min.css",
 			"!crates/**",
 			"!src-wasm/**",
 			"!target/**",
-			"!src/vs/platform/extensionManagement/common/extensionNls.ts"
+			"!packages/platform/src/extensionManagement/common/extensionNls.ts"
 		]
 	},
 	"formatter": {
@@ -39,8 +39,8 @@
 			"!**/*.min.js",
 			"!**/*.min.css",
 			"!**/extensions/",
-			"!src/vscode-dts/",
-			"!src/typings/",
+			"!packages/vscode-dts/",
+			"!apps/workbench/src/typings/",
 			"!**/test/**/fixtures/"
 		]
 	},
@@ -53,8 +53,8 @@
 			"!node_modules/**",
 			"!src-tauri/target/**",
 			"!extensions/**",
-			"!src/vscode-dts/**",
-			"!src/typings/**",
+			"!packages/vscode-dts/**",
+			"!apps/workbench/src/typings/**",
 			"!**/test/**/fixtures/**"
 		]
 	},

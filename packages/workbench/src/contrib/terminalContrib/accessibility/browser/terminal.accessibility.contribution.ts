@@ -25,10 +25,7 @@ import { IConfigurationService } from '@sidex/platform/configuration/common/conf
 import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
-import {
-	ITerminalCommand,
-	TerminalCapability
-} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalCommand, TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand

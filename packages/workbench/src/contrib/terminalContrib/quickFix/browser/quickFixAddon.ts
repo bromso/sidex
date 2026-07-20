@@ -5,12 +5,7 @@
 
 import type { ITerminalAddon } from '@xterm/headless';
 import { Emitter, Event } from '@sidex/base/common/event.js';
-import {
-	Disposable,
-	DisposableStore,
-	MutableDisposable,
-	type IDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, MutableDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ITerminalCapabilityStore,
 	ITerminalCommand,

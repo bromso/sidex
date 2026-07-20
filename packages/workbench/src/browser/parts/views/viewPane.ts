@@ -23,11 +23,7 @@ import { createCSSRule } from '@sidex/base/browser/domStylesheets.js';
 import { asCssValueWithDefault, asCSSUrl } from '@sidex/base/browser/cssValue.js';
 import { DisposableMap, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { Action, IAction, IActionRunner } from '@sidex/base/common/actions.js';
-import {
-	ActionsOrientation,
-	IActionViewItem,
-	prepareActions
-} from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ActionsOrientation, IActionViewItem, prepareActions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';

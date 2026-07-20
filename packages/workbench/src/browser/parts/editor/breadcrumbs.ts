@@ -8,10 +8,7 @@ import { Emitter, Event } from '@sidex/base/common/event.js';
 import * as glob from '@sidex/base/common/glob.js';
 import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import {
-	IConfigurationOverrides,
-	IConfigurationService
-} from '@sidex/platform/configuration/common/configuration.js';
+import { IConfigurationOverrides, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	Extensions,
 	IConfigurationRegistry,

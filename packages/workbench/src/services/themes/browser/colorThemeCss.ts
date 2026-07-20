@@ -3,11 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {
-	IColorTheme,
-	ICssStyleCollector,
-	IThemingParticipant
-} from '@sidex/platform/theme/common/themeService.js';
+import { IColorTheme, ICssStyleCollector, IThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { asCssVariableName, getColorRegistry } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	asCssVariableName as asSizeCssVariableName,

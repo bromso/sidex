@@ -15,11 +15,7 @@ import { IFileService } from '@sidex/platform/files/common/files.js';
 import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
-import {
-	IQuickInputService,
-	IQuickPickItem,
-	QuickPickInput
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickItem, QuickPickInput } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { SnippetsAction } from './abstractSnippetsActions.js';
 import { ISnippetsService } from '../snippets.js';

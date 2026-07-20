@@ -3,12 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {
-	booleanComparator,
-	compareBy,
-	compareUndefinedSmallest,
-	numberComparator
-} from '@sidex/base/common/arrays.js';
+import { booleanComparator, compareBy, compareUndefinedSmallest, numberComparator } from '@sidex/base/common/arrays.js';
 import { findLastMax } from '@sidex/base/common/arraysFind.js';
 import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';

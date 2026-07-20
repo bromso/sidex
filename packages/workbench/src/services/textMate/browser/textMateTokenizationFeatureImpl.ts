@@ -15,11 +15,7 @@ import * as resources from '@sidex/base/common/resources.js';
 import * as types from '@sidex/base/common/types.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { StandardTokenType } from '@sidex/editor/common/encodedTokenAttributes.js';
-import {
-	ITokenizationSupport,
-	LazyTokenizationSupport,
-	TokenizationRegistry
-} from '@sidex/editor/common/languages.js';
+import { ITokenizationSupport, LazyTokenizationSupport, TokenizationRegistry } from '@sidex/editor/common/languages.js';
 import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	generateTokensCSSForColorMap,

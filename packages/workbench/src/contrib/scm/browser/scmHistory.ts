@@ -5,12 +5,7 @@
 
 import { localize } from '@sidex/base/nls.js';
 import { deepClone } from '@sidex/base/common/objects.js';
-import {
-	badgeBackground,
-	chartsBlue,
-	chartsPurple,
-	foreground
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { badgeBackground, chartsBlue, chartsPurple, foreground } from '@sidex/platform/theme/common/colorRegistry.js';
 import { asCssVariable, ColorIdentifier, registerColor } from '@sidex/platform/theme/common/colorUtils.js';
 import {
 	ISCMHistoryItem,

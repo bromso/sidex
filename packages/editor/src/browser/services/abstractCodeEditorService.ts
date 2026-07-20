@@ -7,13 +7,7 @@ import * as dom from '@sidex/base/browser/dom.js';
 import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
 import * as cssJs from '@sidex/base/browser/cssValue.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';
-import {
-	IDisposable,
-	DisposableStore,
-	Disposable,
-	toDisposable,
-	DisposableMap
-} from '@sidex/base/common/lifecycle.js';
+import { IDisposable, DisposableStore, Disposable, toDisposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
 import { LinkedList } from '@sidex/base/common/linkedList.js';
 import * as strings from '@sidex/base/common/strings.js';
 import { URI } from '@sidex/base/common/uri.js';

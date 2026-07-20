@@ -7,11 +7,7 @@ import { VSBuffer } from '@sidex/base/common/buffer.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';
 import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ISocket, SocketCloseEventType } from '@sidex/base/parts/ipc/common/ipc.net.js';
-import {
-	ManagedSocket,
-	RemoteSocketHalf,
-	connectManagedSocket
-} from '@sidex/platform/remote/common/managedSocket.js';
+import { ManagedSocket, RemoteSocketHalf, connectManagedSocket } from '@sidex/platform/remote/common/managedSocket.js';
 import {
 	ManagedRemoteConnection,
 	RemoteConnectionType

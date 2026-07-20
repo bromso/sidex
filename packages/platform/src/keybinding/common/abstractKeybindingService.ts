@@ -10,12 +10,7 @@ import { illegalState } from '@sidex/base/common/errors.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IME } from '@sidex/base/common/ime.js';
 import { KeyCode } from '@sidex/base/common/keyCodes.js';
-import {
-	Keybinding,
-	ResolvedChord,
-	ResolvedKeybinding,
-	SingleModifierChord
-} from '@sidex/base/common/keybindings.js';
+import { Keybinding, ResolvedChord, ResolvedKeybinding, SingleModifierChord } from '@sidex/base/common/keybindings.js';
 import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import * as nls from '@sidex/base/nls.js';
 

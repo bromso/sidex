@@ -11,7 +11,10 @@ import { relativePath } from '@sidex/base/common/resources.js';
 import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ParsedExpression, IExpression, parse } from '@sidex/base/common/glob.js';
 import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
-import { IConfigurationService, IConfigurationChangeEvent } from '@sidex/platform/configuration/common/configuration.js';
+import {
+	IConfigurationService,
+	IConfigurationChangeEvent
+} from '@sidex/platform/configuration/common/configuration.js';
 import { Schemas } from '@sidex/base/common/network.js';
 import { ResourceSet } from '@sidex/base/common/map.js';
 import { getDriveLetter } from '@sidex/base/common/extpath.js';

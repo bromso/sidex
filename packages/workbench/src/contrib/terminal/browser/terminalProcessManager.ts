@@ -4,13 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Emitter, Event } from '@sidex/base/common/event.js';
-import {
-	Disposable,
-	dispose,
-	IDisposable,
-	MutableDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, dispose, IDisposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { Schemas } from '@sidex/base/common/network.js';
 import { IProcessEnvironment, isMacintosh, isWindows, OperatingSystem, OS } from '@sidex/base/common/platform.js';
 import { URI } from '@sidex/base/common/uri.js';

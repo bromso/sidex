@@ -123,7 +123,10 @@ import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js
 import { TunnelSource } from '../services/remote/common/tunnelModel.js';
 import { mainWindow } from '@sidex/base/browser/window.js';
 import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
-import { IDefaultAccountService, NullDefaultAccountService } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
+import {
+	IDefaultAccountService,
+	NullDefaultAccountService
+} from '@sidex/platform/accounts/common/nullDefaultAccount.js';
 
 export interface IBrowserMainWorkbench {
 	startup(): IInstantiationService;

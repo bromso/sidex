@@ -26,10 +26,7 @@ import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
-import {
-	IMarkdownRendererService,
-	openLinkFromMarkdown
-} from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IMarkdownRendererService, openLinkFromMarkdown } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { createWorkbenchDialogOptions } from './dialog.js';
 import { IHostService } from '../../../services/host/browser/host.js';

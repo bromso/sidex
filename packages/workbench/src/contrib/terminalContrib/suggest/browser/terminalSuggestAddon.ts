@@ -43,12 +43,7 @@ import {
 	ITerminalLogService
 } from '@sidex/platform/terminal/common/terminal.js';
 import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
-import {
-	createCancelablePromise,
-	CancelablePromise,
-	IntervalTimer,
-	TimeoutTimer
-} from '@sidex/base/common/async.js';
+import { createCancelablePromise, CancelablePromise, IntervalTimer, TimeoutTimer } from '@sidex/base/common/async.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { ISimpleSuggestWidgetFontInfo } from '../../../../services/suggest/browser/simpleSuggestWidgetRenderer.js';

@@ -35,13 +35,7 @@ import {
 	createActionViewItem,
 	getFlatActionBarActions
 } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
-import {
-	IMenu,
-	IMenuService,
-	MenuId,
-	MenuItemAction,
-	MenuRegistry
-} from '@sidex/platform/actions/common/actions.js';
+import { IMenu, IMenuService, MenuId, MenuItemAction, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,

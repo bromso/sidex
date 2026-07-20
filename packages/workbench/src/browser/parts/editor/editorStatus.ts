@@ -51,11 +51,7 @@ import { deepClone } from '@sidex/base/common/objects.js';
 import { ICodeEditor, getCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { Schemas } from '@sidex/base/common/network.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import {
-	IQuickInputService,
-	IQuickPickItem,
-	QuickPickInput
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickItem, QuickPickInput } from '@sidex/platform/quickinput/common/quickInput.js';
 import { getIconClassesForLanguageId } from '@sidex/editor/common/services/getIconClasses.js';
 import { Promises, timeout } from '@sidex/base/common/async.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';

@@ -63,10 +63,7 @@ import { TextSearchCompleteMessage } from '../../../services/search/common/searc
 import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { renderSearchMessage } from '../../search/browser/searchMessage.js';
-import {
-	EditorExtensionsRegistry,
-	IEditorContributionDescription
-} from '@sidex/editor/browser/editorExtensions.js';
+import { EditorExtensionsRegistry, IEditorContributionDescription } from '@sidex/editor/browser/editorExtensions.js';
 import { UnusualLineTerminatorsDetector } from '@sidex/editor/contrib/unusualLineTerminators/browser/unusualLineTerminators.js';
 import { defaultToggleStyles, getInputBoxStyle } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { ILogService } from '@sidex/platform/log/common/log.js';

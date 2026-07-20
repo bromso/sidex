@@ -19,10 +19,7 @@ import { ModelDecorationOptions } from '@sidex/editor/common/model/textModel.js'
 import { IModelService } from '@sidex/editor/common/services/model.js';
 import { IFileStatWithPartialMetadata, IFileService } from '@sidex/platform/files/common/files.js';
 import { ILabelService } from '@sidex/platform/label/common/label.js';
-import {
-	overviewRulerFindMatchForeground,
-	minimapFindMatch
-} from '@sidex/platform/theme/common/colorRegistry.js';
+import { overviewRulerFindMatchForeground, minimapFindMatch } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	IFileMatch,
 	IPatternInfo,

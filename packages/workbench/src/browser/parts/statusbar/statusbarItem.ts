@@ -15,10 +15,7 @@ import {
 	StatusbarEntryKinds,
 	TooltipContent
 } from '../../../services/statusbar/browser/statusbar.js';
-import {
-	WorkbenchActionExecutedEvent,
-	WorkbenchActionExecutedClassification
-} from '@sidex/base/common/actions.js';
+import { WorkbenchActionExecutedEvent, WorkbenchActionExecutedClassification } from '@sidex/base/common/actions.js';
 import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ThemeColor } from '@sidex/base/common/themables.js';
 import { isThemeColor } from '@sidex/editor/common/editorCommon.js';

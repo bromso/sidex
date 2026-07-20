@@ -12,12 +12,7 @@ import { basename, extUri } from '@sidex/base/common/resources.js';
 import { splitLines } from '@sidex/base/common/strings.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { IRange, Range } from '@sidex/editor/common/core/range.js';
-import {
-	IMarker,
-	IMarkerData,
-	IRelatedInformation,
-	MarkerSeverity
-} from '@sidex/platform/markers/common/markers.js';
+import { IMarker, IMarkerData, IRelatedInformation, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import { unsupportedSchemas } from '@sidex/platform/markers/common/markerService.js';
 
 export type MarkerElement = ResourceMarkers | Marker | RelatedInformation;

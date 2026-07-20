@@ -10,11 +10,7 @@ import type { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { ITerminalCompletion, mapLspKindToTerminalKind, TerminalCompletionItemKind } from './terminalCompletionItem.js';
 import { IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { Position } from '@sidex/editor/common/core/position.js';
-import {
-	CompletionItemLabel,
-	CompletionItemProvider,
-	CompletionTriggerKind
-} from '@sidex/editor/common/languages.js';
+import { CompletionItemLabel, CompletionItemProvider, CompletionTriggerKind } from '@sidex/editor/common/languages.js';
 import { LspTerminalModelContentProvider } from './lspTerminalModelContentProvider.js';
 import { MarkdownString } from '@sidex/base/common/htmlContent.js';
 import { GeneralShellType, TerminalShellType } from '@sidex/platform/terminal/common/terminal.js';

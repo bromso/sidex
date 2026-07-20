@@ -6,13 +6,7 @@
 import { IDimension } from '@sidex/base/browser/dom.js';
 import { findLast } from '@sidex/base/common/arraysFind.js';
 import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
-import {
-	Disposable,
-	DisposableStore,
-	IDisposable,
-	IReference,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, IReference, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IObservableWithChange,

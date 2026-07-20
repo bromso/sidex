@@ -48,10 +48,7 @@ import {
 import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { FileOperation, IFileService } from '@sidex/platform/files/common/files.js';
 import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
-import {
-	Extensions,
-	IJSONContributionRegistry
-} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { Extensions, IJSONContributionRegistry } from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
 import { AbstractKeybindingService } from '@sidex/platform/keybinding/common/abstractKeybindingService.js';
 import {
 	IKeybindingService,

@@ -17,10 +17,7 @@ import {
 	IQuickPickSeparator,
 	QuickInputButtonLocation
 } from '@sidex/platform/quickinput/common/quickInput.js';
-import {
-	ITerminalCommand,
-	TerminalCapability
-} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalCommand, TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { collapseTildePath } from '@sidex/platform/terminal/common/terminalEnvironment.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ITerminalInstance } from '../../../terminal/browser/terminal.js';

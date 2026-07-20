@@ -6,13 +6,7 @@
 import { DeferredPromise } from '@sidex/base/common/async.js';
 import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { Event } from '@sidex/base/common/event.js';
-import {
-	Disposable,
-	DisposableStore,
-	IDisposable,
-	isDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, isDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import {

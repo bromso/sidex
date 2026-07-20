@@ -4,13 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IFilter, matchesFuzzy, matchesFuzzy2 } from '@sidex/base/common/filters.js';
-import {
-	IExpression,
-	splitGlobAware,
-	getEmptyExpression,
-	ParsedExpression,
-	parse
-} from '@sidex/base/common/glob.js';
+import { IExpression, splitGlobAware, getEmptyExpression, ParsedExpression, parse } from '@sidex/base/common/glob.js';
 import * as strings from '@sidex/base/common/strings.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { relativePath } from '@sidex/base/common/resources.js';

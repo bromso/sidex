@@ -17,12 +17,7 @@ import type {
 import { $, addDisposableListener, addStandardDisposableListener, getWindow } from '@sidex/base/browser/dom.js';
 import { debounce, throttle } from '@sidex/base/common/decorators.js';
 import { Event } from '@sidex/base/common/event.js';
-import {
-	Disposable,
-	MutableDisposable,
-	combinedDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, MutableDisposable, combinedDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
 import './media/stickyScroll.css';
 import { localize } from '@sidex/base/nls.js';

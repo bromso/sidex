@@ -7,12 +7,7 @@ import * as nls from '@sidex/base/nls.js';
 import * as semver from '@sidex/base/common/semver/semver.js';
 import { Event, Emitter } from '@sidex/base/common/event.js';
 import { index } from '@sidex/base/common/arrays.js';
-import {
-	CancelablePromise,
-	Promises,
-	ThrottledDelayer,
-	createCancelablePromise
-} from '@sidex/base/common/async.js';
+import { CancelablePromise, Promises, ThrottledDelayer, createCancelablePromise } from '@sidex/base/common/async.js';
 import { CancellationError, getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
 import { Disposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { IPager, singlePagePager } from '@sidex/base/common/paging.js';

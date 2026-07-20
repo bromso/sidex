@@ -3,10 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import {
-	ISingleFolderWorkspaceIdentifier,
-	IWorkspaceIdentifier
-} from '@sidex/platform/workspace/common/workspace.js';
+import { ISingleFolderWorkspaceIdentifier, IWorkspaceIdentifier } from '@sidex/platform/workspace/common/workspace.js';
 import { URI } from '@sidex/base/common/uri.js';
 import { hash } from '@sidex/base/common/hash.js';
 

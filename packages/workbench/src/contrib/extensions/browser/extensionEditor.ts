@@ -15,13 +15,7 @@ import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/c
 import { isCancellationError } from '@sidex/base/common/errors.js';
 import { Emitter, Event } from '@sidex/base/common/event.js';
 import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
-import {
-	Disposable,
-	DisposableStore,
-	MutableDisposable,
-	dispose,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { Disposable, DisposableStore, MutableDisposable, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { Schemas, matchesScheme } from '@sidex/base/common/network.js';
 import { isNative } from '@sidex/base/common/platform.js';
 import { isUndefined } from '@sidex/base/common/types.js';

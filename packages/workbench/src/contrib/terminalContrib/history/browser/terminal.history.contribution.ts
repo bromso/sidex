@@ -10,11 +10,7 @@ import { localize2 } from '@sidex/base/nls.js';
 import { AccessibleViewProviderId } from '@sidex/platform/accessibility/browser/accessibleView.js';
 import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
 import { MenuId } from '@sidex/platform/actions/common/actions.js';
-import {
-	ContextKeyExpr,
-	IContextKeyService,
-	type IContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr, IContextKeyService, type IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';

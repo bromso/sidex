@@ -27,10 +27,7 @@ import {
 } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
 import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
-import {
-	KeybindingsRegistry,
-	KeybindingWeight
-} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	IListService,
 	WorkbenchListFocusContextKey,

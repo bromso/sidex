@@ -6,13 +6,7 @@
 import { Separator } from '@sidex/base/common/actions.js';
 import { h } from '@sidex/base/browser/dom.js';
 import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
-import {
-	autorun,
-	constObservable,
-	derived,
-	IObservable,
-	observableFromEvent
-} from '@sidex/base/common/observable.js';
+import { autorun, constObservable, derived, IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
 import { URI } from '@sidex/base/common/uri.js';
 import {
 	getActionBarActions,

@@ -5,12 +5,7 @@
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
 import { addDisposableListener } from '@sidex/base/browser/dom.js';
-import {
-	combinedDisposable,
-	Disposable,
-	MutableDisposable,
-	toDisposable
-} from '@sidex/base/common/lifecycle.js';
+import { combinedDisposable, Disposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';

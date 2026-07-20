@@ -29,10 +29,7 @@ import { ScrollType } from '@sidex/editor/common/editorCommon.js';
 import { SearchWidget, SearchOptions } from './preferencesWidgets.js';
 import { Promises, timeout } from '@sidex/base/common/async.js';
 import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
-import {
-	defaultInputBoxStyles,
-	defaultKeybindingLabelStyles
-} from '@sidex/platform/theme/browser/defaultStyles.js';
+import { defaultInputBoxStyles, defaultKeybindingLabelStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 
 export interface KeybindingsSearchOptions extends SearchOptions {
 	recordEnter?: boolean;

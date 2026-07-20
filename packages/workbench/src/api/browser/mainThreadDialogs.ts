@@ -11,11 +11,7 @@ import {
 	MainThreadDialogSaveOptions
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import {
-	IFileDialogService,
-	IOpenDialogOptions,
-	ISaveDialogOptions
-} from '@sidex/platform/dialogs/common/dialogs.js';
+import { IFileDialogService, IOpenDialogOptions, ISaveDialogOptions } from '@sidex/platform/dialogs/common/dialogs.js';
 
 @extHostNamedCustomer(MainContext.MainThreadDialogs)
 export class MainThreadDialogs implements MainThreadDiaglogsShape {

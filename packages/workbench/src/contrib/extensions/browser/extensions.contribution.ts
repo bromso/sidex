@@ -34,11 +34,7 @@ import {
 	ConfigurationScope,
 	IConfigurationRegistry
 } from '@sidex/platform/configuration/common/configurationRegistry.js';
-import {
-	ContextKeyExpr,
-	IContextKeyService,
-	RawContextKey
-} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IDialogService, IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	ExtensionGalleryManifestStatus,

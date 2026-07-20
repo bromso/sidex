@@ -25,11 +25,7 @@ import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { MenuItemAction } from '@sidex/platform/actions/common/actions.js';
 import { MenuEntryActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { TerminalCommandId } from '../common/terminal.js';
-import {
-	ITerminalBackend,
-	TerminalLocation,
-	TerminalSettingId
-} from '@sidex/platform/terminal/common/terminal.js';
+import { ITerminalBackend, TerminalLocation, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import { Codicon } from '@sidex/base/common/codicons.js';
 import { Action } from '@sidex/base/common/actions.js';
 import { DEFAULT_LABELS_CONTAINER, IResourceLabel, ResourceLabels } from '../../../browser/labels.js';

@@ -22,10 +22,7 @@ import { Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
 import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
-import {
-	KeybindingsRegistry,
-	KeybindingWeight
-} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { EditorAction, ServicesAccessor } from '../../../../browser/editorExtensions.js';

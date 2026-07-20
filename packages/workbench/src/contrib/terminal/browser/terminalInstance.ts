@@ -52,11 +52,7 @@ import { ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver
 import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IProductService } from '@sidex/platform/product/common/productService.js';
-import {
-	IQuickInputService,
-	IQuickPickItem,
-	QuickPickItem
-} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickItem, QuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IMarkProperties, TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';

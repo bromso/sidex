@@ -37,12 +37,7 @@ import * as languages from '@sidex/editor/common/languages.js';
 import { EndOfLineSequence, TrackedRangeStickiness } from '@sidex/editor/common/model.js';
 import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
-import {
-	IMarkerData,
-	IRelatedInformation,
-	MarkerSeverity,
-	MarkerTag
-} from '@sidex/platform/markers/common/markers.js';
+import { IMarkerData, IRelatedInformation, MarkerSeverity, MarkerTag } from '@sidex/platform/markers/common/markers.js';
 import { ProgressLocation as MainProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { DEFAULT_EDITOR_ASSOCIATION, SaveReason } from '../../common/editor.js';
 import { IViewBadge } from '../../common/views.js';
