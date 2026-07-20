@@ -10,7 +10,7 @@ import { SerializedError, transformErrorFromSerialization } from '../../../base/
 import { FileAccess } from '../../../base/common/network.js';
 import Severity from '../../../base/common/severity.js';
 import { URI, UriComponents } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../platform/commands/common/commands.js';
 import { ILocalExtension } from '../../../platform/extensionManagement/common/extensionManagement.js';
 import { areSameExtensions } from '../../../platform/extensionManagement/common/extensionManagementUtil.js';

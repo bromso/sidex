@@ -11,7 +11,7 @@ import { isNumber, isObject, isString, isUndefined } from '../../../../base/comm
 import { URI, UriComponents } from '../../../../base/common/uri.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry, ICommandHandler, ICommandService } from '../../../../platform/commands/common/commands.js';

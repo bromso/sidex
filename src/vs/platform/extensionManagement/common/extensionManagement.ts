@@ -11,7 +11,7 @@ import { IPager } from '../../../base/common/paging.js';
 import { Platform } from '../../../base/common/platform.js';
 import { PolicyCategory } from '../../../base/common/policy.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

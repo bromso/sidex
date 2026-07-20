@@ -11,7 +11,7 @@ import {
 	UndoCommand
 } from '../../../../editor/browser/editorExtensions.js';
 import { CopyAction, CutAction, PasteAction } from '../../../../editor/contrib/clipboard/browser/clipboard.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
 import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
 import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';

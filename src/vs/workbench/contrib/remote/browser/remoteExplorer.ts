@@ -8,7 +8,7 @@
 
 import './media/remoteExplorer.css';
 
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Disposable as _Disposable } from '../../../../base/common/lifecycle.js';
 import { IViewPaneOptions, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
@@ -32,7 +32,7 @@ import { ICommandService } from '../../../../platform/commands/common/commands.j
 import { Codicon } from '../../../../base/common/codicons.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { localize2 } from '../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
 import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
 import { ITreeRenderer, ITreeNode, IAsyncDataSource } from '../../../../base/browser/ui/tree/tree.js';

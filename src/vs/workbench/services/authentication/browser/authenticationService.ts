@@ -14,7 +14,7 @@ import {
 } from '../../../../base/common/lifecycle.js';
 import { equalsIgnoreCase, isFalsyOrWhitespace } from '../../../../base/common/strings.js';
 import { isString } from '../../../../base/common/types.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
 import { IProductService } from '../../../../platform/product/common/productService.js';
 import { ISecretStorageService } from '../../../../platform/secrets/common/secrets.js';

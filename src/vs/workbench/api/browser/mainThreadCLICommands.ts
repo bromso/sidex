@@ -7,7 +7,7 @@ import { Schemas } from '../../../base/common/network.js';
 import { isWeb } from '../../../base/common/platform.js';
 import { isString } from '../../../base/common/types.js';
 import { URI, UriComponents } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry, ICommandService } from '../../../platform/commands/common/commands.js';
 import {
 	IExtensionGalleryService,

@@ -11,7 +11,7 @@ import {
 	MutableDisposable
 } from '../../../../base/common/lifecycle.js';
 import { scopesMatch } from '../../../../base/common/oauth.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';

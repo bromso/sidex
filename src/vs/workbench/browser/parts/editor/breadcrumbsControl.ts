@@ -30,7 +30,7 @@ import { basename, extUri } from '../../../../base/common/resources.js';
 import { URI } from '../../../../base/common/uri.js';
 import { DocumentSymbol } from '../../../../editor/common/languages.js';
 import { OutlineElement } from '../../../../editor/contrib/documentSymbols/browser/outlineModel.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

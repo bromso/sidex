@@ -11,7 +11,7 @@ import { Emitter, Event } from '../../../base/common/event.js';
 import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
 import { isString } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry

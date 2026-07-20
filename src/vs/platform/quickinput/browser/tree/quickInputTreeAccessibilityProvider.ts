@@ -8,7 +8,7 @@ import { CheckBoxAccessibleState } from '../../../../base/browser/ui/list/listVi
 import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
 import { Event, IValueWithChangeEvent } from '../../../../base/common/event.js';
 import { getCodiconAriaLabel } from '../../../../base/common/iconLabels.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IQuickTreeCheckboxEvent, IQuickTreeItem } from '../../common/quickInput.js';
 /**
  * Accessibility provider for QuickTree.

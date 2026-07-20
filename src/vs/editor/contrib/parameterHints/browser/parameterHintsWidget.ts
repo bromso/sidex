@@ -26,7 +26,7 @@ import { IMarkdownRendererService } from '../../../../platform/markdown/browser/
 import { IRenderedMarkdown } from '../../../../base/browser/markdownRenderer.js';
 import { ParameterHintsModel } from './parameterHintsModel.js';
 import { Context } from './provideSignatureHelp.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { listHighlightForeground, registerColor } from '../../../../platform/theme/common/colorRegistry.js';
 import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';

@@ -34,7 +34,7 @@ import {
 	peekViewTitleForeground,
 	peekViewTitleInfoForeground
 } from '../../../../editor/contrib/peekView/browser/peekView.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { fillInActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import { Action2, IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';

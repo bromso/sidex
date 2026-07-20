@@ -16,7 +16,7 @@ import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.
 import { Schemas } from '../../../../base/common/network.js';
 import { URI } from '../../../../base/common/uri.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';

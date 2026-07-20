@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { observableFromEvent } from '../../../../base/common/observable.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IConfigurationNode } from '../../../../platform/configuration/common/configurationRegistry.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';

@@ -53,7 +53,7 @@ import { GutterIndicatorMenuContent } from './gutterIndicatorMenu.js';
 import { assertNever } from '../../../../../../../base/common/assert.js';
 import { Command, InlineCompletionCommand, IInlineCompletionModelInfo } from '../../../../../../common/languages.js';
 import { InlineSuggestionItem } from '../../../model/inlineSuggestionItem.js';
-import { localize } from '../../../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { InlineCompletionsModel } from '../../../model/inlineCompletionsModel.js';
 import { InlineSuggestAlternativeAction } from '../../../model/InlineSuggestAlternativeAction.js';
 import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';

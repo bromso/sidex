@@ -6,7 +6,7 @@
 import { cloneAndChange, safeStringify } from '../../../base/common/objects.js';
 import { isObject } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { LoggerGroup } from '../../log/common/log.js';

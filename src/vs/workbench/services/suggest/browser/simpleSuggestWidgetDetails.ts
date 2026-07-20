@@ -10,7 +10,7 @@ import { ThemeIcon } from '../../../../base/common/themables.js';
 import { Emitter, Event } from '../../../../base/common/event.js';
 import { DisposableStore } from '../../../../base/common/lifecycle.js';
 import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { SimpleCompletionItem } from './simpleCompletionItem.js';
 import { MarkdownString } from '../../../../base/common/htmlContent.js';
 import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';

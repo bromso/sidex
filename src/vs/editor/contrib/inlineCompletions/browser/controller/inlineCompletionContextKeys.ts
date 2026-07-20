@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { RawContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
-import { localize } from '../../../../../nls.js';
-import * as nls from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export abstract class InlineCompletionContextKeys {
 	public static readonly inlineSuggestionVisible = new RawContextKey<boolean>(

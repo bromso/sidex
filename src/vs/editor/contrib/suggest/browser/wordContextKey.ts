@@ -7,7 +7,7 @@ import { IDisposable } from '../../../../base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export class WordContextKey {
 	static readonly AtEnd = new RawContextKey<boolean>('atEndOfWord', false, {

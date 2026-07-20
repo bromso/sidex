@@ -7,7 +7,7 @@ import { assertNever } from '../../../../../../base/common/assert.js';
 import { Color } from '../../../../../../base/common/color.js';
 import { BugIndicatingError } from '../../../../../../base/common/errors.js';
 import { IObservable, observableFromEventOpts } from '../../../../../../base/common/observable.js';
-import { localize } from '../../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	buttonBackground,
 	buttonForeground,

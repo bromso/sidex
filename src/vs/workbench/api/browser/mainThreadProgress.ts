@@ -19,7 +19,7 @@ import {
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { ICommandService } from '../../../platform/commands/common/commands.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { onUnexpectedExternalError } from '../../../base/common/errors.js';
 import { toAction } from '../../../base/common/actions.js';
 import { NotificationPriority } from '../../../platform/notification/common/notification.js';

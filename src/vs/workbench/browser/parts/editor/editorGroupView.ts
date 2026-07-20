@@ -101,7 +101,7 @@ import {
 import { EditorPanes } from './editorPanes.js';
 import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
 import { EditorProgressIndicator } from '../../../services/progress/browser/progressIndicator.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { coalesce } from '../../../../base/common/arrays.js';
 import { DisposableStore, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
 import { ITelemetryData, ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';

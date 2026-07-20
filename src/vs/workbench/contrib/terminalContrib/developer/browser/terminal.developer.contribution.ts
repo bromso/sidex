@@ -17,7 +17,7 @@ import {
 	dispose
 } from '../../../../../base/common/lifecycle.js';
 import { URI } from '../../../../../base/common/uri.js';
-import { localize, localize2 } from '../../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../../platform/action/common/actionCommonCategories.js';
 import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
 import { ICommandService } from '../../../../../platform/commands/common/commands.js';

@@ -20,7 +20,7 @@ import {
 } from '../../../../editor/browser/services/bulkEditService.js';
 import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
 import { WorkspaceEdit } from '../../../../editor/common/languages.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { Extensions, IConfigurationRegistry } from '../../../../platform/configuration/common/configurationRegistry.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';

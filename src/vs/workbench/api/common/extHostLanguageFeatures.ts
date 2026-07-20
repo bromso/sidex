@@ -24,7 +24,7 @@ import { ISelection, Selection } from '../../../editor/common/core/selection.js'
 import * as languages from '../../../editor/common/languages.js';
 import { IAutoClosingPairConditional } from '../../../editor/common/languages/languageConfiguration.js';
 import { encodeSemanticTokensDto } from '../../../editor/common/services/semanticTokensDto.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
 import { ILogService } from '../../../platform/log/common/log.js';
 import { isProposedApiEnabled } from '../../services/extensions/common/extensions.js';

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/compositepart.css';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { defaultGenerator } from '../../../base/common/idGenerator.js';
 import { IDisposable, dispose, DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
 import { Emitter } from '../../../base/common/event.js';

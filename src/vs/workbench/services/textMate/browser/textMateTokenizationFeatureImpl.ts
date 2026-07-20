@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { importAMDNodeModule } from '../../../../amdX.js';
+import { importAMDNodeModule } from '@sidex/base/amdX.js';
 import * as domStylesheets from '../../../../base/browser/domStylesheets.js';
 import { equals as equalArray } from '../../../../base/common/arrays.js';
 import { Color } from '../../../../base/common/color.js';
@@ -25,7 +25,7 @@ import {
 	generateTokensCSSForColorMap,
 	generateTokensCSSForFontMap
 } from '../../../../editor/common/languages/supports/tokenization.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
@@ -477,7 +477,7 @@ export class TextMateTokenizationFeature extends Disposable implements ITextMate
 			}
 			return await response.arrayBuffer();
 		} else {
-			const { canASAR } = await import('../../../../amdX.js');
+			const { canASAR } = await import('@sidex/base/amdX.js');
 			const { FileAccess, nodeModulesAsarUnpackedPath, nodeModulesPath } = await import(
 				'../../../../base/common/network.js'
 			);

@@ -16,7 +16,7 @@ import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../..
 import { observableValue } from '../../../../../base/common/observable.js';
 import { ICodeEditor } from '../../../../../editor/browser/editorBrowser.js';
 import { ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { FloatingClickMenu } from '../../../../../platform/actions/browser/floatingMenu.js';
 import { createActionViewItem } from '../../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import { MenuWorkbenchToolBar } from '../../../../../platform/actions/browser/toolbar.js';

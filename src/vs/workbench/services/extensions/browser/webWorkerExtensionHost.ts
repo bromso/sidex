@@ -17,7 +17,7 @@ import { joinPath } from '../../../../base/common/resources.js';
 import { URI } from '../../../../base/common/uri.js';
 import { generateUuid } from '../../../../base/common/uuid.js';
 import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
-import { getNLSLanguage, getNLSMessages } from '../../../../nls.js';
+import { getNLSLanguage, getNLSMessages } from '@sidex/base/nls.js';
 import { ILabelService } from '../../../../platform/label/common/label.js';
 import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
 import { ILogService, ILoggerService } from '../../../../platform/log/common/log.js';

@@ -16,7 +16,7 @@ import {
 	DisposableMap
 } from '../../../../../base/common/lifecycle.js';
 import { isWindows } from '../../../../../base/common/platform.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,

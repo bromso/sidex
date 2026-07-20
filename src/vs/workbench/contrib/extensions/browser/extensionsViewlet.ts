@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/extensionsViewlet.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { timeout, Delayer } from '../../../../base/common/async.js';
 import { isCancellationError } from '../../../../base/common/errors.js';
 import { createErrorWithActions } from '../../../../base/common/errorMessage.js';

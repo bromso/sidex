@@ -9,7 +9,7 @@ import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
 import { Disposable, DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
 import { isWindows } from '../../../../../base/common/platform.js';
 import { Position } from '../../../../../editor/common/core/position.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import {
 	AccessibleViewProviderId,
 	IAccessibleViewService,

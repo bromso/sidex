@@ -45,7 +45,7 @@ import { SyncDescriptor } from '../../../platform/instantiation/common/descripto
 import { ViewPaneContainer } from '../../browser/parts/views/viewPaneContainer.js';
 import { Codicon } from '../../../base/common/codicons.js';
 import { registerIcon } from '../../../platform/theme/common/iconRegistry.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { MarshalledId } from '../../../base/common/marshallingIds.js';
 import { ICellRange } from '../../contrib/notebook/common/notebookRange.js';
 import { Schemas } from '../../../base/common/network.js';

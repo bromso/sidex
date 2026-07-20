@@ -6,7 +6,7 @@
 import { alert } from '../../../../base/browser/ui/aria/aria.js';
 import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
 import { TabFocus } from '../../../browser/config/tabFocus.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 

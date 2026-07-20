@@ -14,7 +14,7 @@ import { IExtUri } from '../../../base/common/resources.js';
 import { isObject, isString } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
 import { IHeaders } from '../../../base/parts/request/common/request.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	allSettings,
 	ConfigurationScope,

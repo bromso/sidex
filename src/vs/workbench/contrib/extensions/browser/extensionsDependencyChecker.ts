@@ -8,7 +8,7 @@ import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { MenuRegistry, MenuId } from '../../../../platform/actions/common/actions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
 import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
 import { Action } from '../../../../base/common/actions.js';

@@ -4,7 +4,7 @@
  *  `sidex-editor` / `sidex-text` crates via Tauri IPC.
  *--------------------------------------------------------------------------------------------*/
 
-import { invoke } from '../../../sidex-bridge.js';
+import { invoke } from '@sidex/base/sidex-bridge.js';
 
 export class SideXEditorBridge {
 	private static instance: SideXEditorBridge;

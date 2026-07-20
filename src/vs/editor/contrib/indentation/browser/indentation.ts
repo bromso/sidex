@@ -5,7 +5,7 @@
 
 import { DisposableStore } from '../../../../base/common/lifecycle.js';
 import * as strings from '../../../../base/common/strings.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {

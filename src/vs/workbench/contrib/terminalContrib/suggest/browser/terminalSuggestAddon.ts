@@ -60,7 +60,7 @@ import {
 	TerminalCompletionItemKind,
 	type ITerminalCompletion
 } from './terminalCompletionItem.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { TerminalSuggestTelemetry } from './terminalSuggestTelemetry.js';
 import {
 	terminalSymbolAliasIcon,

@@ -21,7 +21,7 @@ import { KeyCode } from '../../../common/keyCodes.js';
 import { IAction } from '../../../common/actions.js';
 import type { IActionViewItemProvider } from '../actionbar/actionbar.js';
 import './findInput.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { DisposableStore, MutableDisposable } from '../../../common/lifecycle.js';
 import { IHistory } from '../../../common/history.js';
 import type { IHoverLifecycleOptions } from '../hover/hover.js';

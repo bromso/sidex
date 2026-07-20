@@ -5,7 +5,7 @@
 
 import { EventType } from '../../../../../base/browser/dom.js';
 import { Emitter, Event } from '../../../../../base/common/event.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	QuickPickItem,
 	IQuickInputService,

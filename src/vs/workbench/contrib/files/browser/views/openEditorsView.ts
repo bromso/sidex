@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/openeditors.css';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { RunOnceScheduler } from '../../../../../base/common/async.js';
 import {
 	IAction,

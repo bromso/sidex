@@ -53,7 +53,7 @@ import { ILanguageFeaturesService } from '../../../../editor/common/services/lan
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ContentHoverController } from '../../../../editor/contrib/hover/browser/contentHoverController.js';
 import { HoverStartMode, HoverStartSource } from '../../../../editor/contrib/hover/browser/hoverOperation.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';

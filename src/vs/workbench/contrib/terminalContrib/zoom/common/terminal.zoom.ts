@@ -5,7 +5,7 @@
 
 import type { IStringDictionary } from '../../../../../base/common/collections.js';
 import { isMacintosh } from '../../../../../base/common/platform.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import type { IConfigurationPropertySchema } from '../../../../../platform/configuration/common/configurationRegistry.js';
 
 export const enum TerminalZoomCommandId {

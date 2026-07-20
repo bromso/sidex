@@ -22,7 +22,7 @@ import {
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { WorkbenchList } from '../../../../platform/list/browser/listService.js';
 import { getExtensionId } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
 import { IListRenderer, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';

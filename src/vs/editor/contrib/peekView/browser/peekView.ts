@@ -20,7 +20,7 @@ import { EmbeddedCodeEditorWidget } from '../../../browser/widget/codeEditor/emb
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { IOptions, IStyles, ZoneWidget } from '../../zoneWidget/browser/zoneWidget.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import { IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';

@@ -43,7 +43,7 @@ import {
 import { LogLevel } from '../../../../../platform/log/common/log.js';
 import { INotificationService } from '../../../../../platform/notification/common/notification.js';
 import { MarkNavigationAddon, ScrollPosition } from './markNavigationAddon.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IColorTheme, IThemeService } from '../../../../../platform/theme/common/themeService.js';
 import { PANEL_BACKGROUND } from '../../../../common/theme.js';
 import {

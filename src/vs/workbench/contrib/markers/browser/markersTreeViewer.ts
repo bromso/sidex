@@ -33,7 +33,7 @@ import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/lis
 import { isUndefinedOrNull } from '../../../../base/common/types.js';
 import { URI } from '../../../../base/common/uri.js';
 import { Action, IAction, toAction } from '../../../../base/common/actions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CancelablePromise, createCancelablePromise, Delayer } from '../../../../base/common/async.js';
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { Range } from '../../../../editor/common/core/range.js';

@@ -20,7 +20,7 @@ import { HistoryNavigator, IHistory } from '../../../common/history.js';
 import { equals } from '../../../common/objects.js';
 import { ScrollbarVisibility } from '../../../common/scrollable.js';
 import './inputBox.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MutableDisposable, type IDisposable } from '../../../common/lifecycle.js';
 
 const $ = dom.$;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { hasWorkspaceFileExtension, IWorkspaceContextService } from '../../../platform/workspace/common/workspace.js';
 import { IWorkspaceEditingService } from '../../services/workspaces/common/workspaceEditing.js';
 import { dirname } from '../../../base/common/resources.js';

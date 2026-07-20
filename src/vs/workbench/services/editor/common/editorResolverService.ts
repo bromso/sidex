@@ -10,7 +10,7 @@ import { Schemas } from '../../../../base/common/network.js';
 import { posix } from '../../../../base/common/path.js';
 import { basename } from '../../../../base/common/resources.js';
 import { URI } from '../../../../base/common/uri.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
 import {
 	Extensions as ConfigurationExtensions,

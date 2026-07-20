@@ -8,7 +8,7 @@ import { Disposable, IDisposable, isDisposable } from '../../../base/common/life
 import { Schemas } from '../../../base/common/network.js';
 import Severity from '../../../base/common/severity.js';
 import { URI } from '../../../base/common/uri.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IDialogService } from '../../dialogs/common/dialogs.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { INotificationService } from '../../notification/common/notification.js';

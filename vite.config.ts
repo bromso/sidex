@@ -35,6 +35,10 @@ export default defineConfig({
   envPrefix: ['VITE_', 'TAURI_'],
   resolve: {
     alias: {
+      // Temporary: nls.ts, amdX.ts and sidex-bridge.ts are imported as
+      // @sidex/base/* ahead of the move that puts them in packages/base.
+      // Task 14 repoints this at the real package.
+      '@sidex/base': path.resolve(__dirname, 'src/vs'),
       'vs': path.resolve(__dirname, 'src/vs'),
     },
   },

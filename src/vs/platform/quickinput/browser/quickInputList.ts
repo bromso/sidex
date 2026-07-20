@@ -38,7 +38,7 @@ import { observableValue, observableValueOpts, transaction } from '../../../base
 import { OS } from '../../../base/common/platform.js';
 import { escape, ltrim } from '../../../base/common/strings.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { IContextMenuService } from '../../contextview/browser/contextView.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';

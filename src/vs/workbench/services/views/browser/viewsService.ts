@@ -30,7 +30,7 @@ import {
 import { Event, Emitter } from '../../../../base/common/event.js';
 import { isString } from '../../../../base/common/types.js';
 import { MenuId, registerAction2, Action2, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
 import { IPaneComposite } from '../../../common/panecomposite.js';

@@ -19,7 +19,7 @@ import {
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import { Event } from '../../../../base/common/event.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 import { FoldingController } from '../../../../editor/contrib/folding/browser/folding.js';
 import { ColorDetector } from '../../../../editor/contrib/colorPicker/browser/colorDetector.js';

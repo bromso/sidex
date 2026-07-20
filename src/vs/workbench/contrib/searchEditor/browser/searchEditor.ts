@@ -21,7 +21,7 @@ import { ICodeEditorViewState } from '../../../../editor/common/editorCommon.js'
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
 import { ReferencesController } from '../../../../editor/contrib/gotoSymbol/browser/peek/referencesController.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';

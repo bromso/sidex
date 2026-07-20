@@ -10,7 +10,7 @@ import * as resources from '../../../base/common/resources.js';
 import { isFalsyOrWhitespace } from '../../../base/common/strings.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
 import {
 	ExtensionIdentifier,

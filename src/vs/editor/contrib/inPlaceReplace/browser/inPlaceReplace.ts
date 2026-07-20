@@ -22,7 +22,7 @@ import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { IInplaceReplaceSupportResult } from '../../../common/languages.js';
 import { IEditorWorkerService } from '../../../common/services/editorWorker.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { InPlaceReplaceCommand } from './inPlaceReplaceCommand.js';
 import './inPlaceReplace.css';

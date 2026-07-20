@@ -62,7 +62,7 @@ import { ResourceLabel } from '../../labels.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
 import { mainWindow } from '../../../../base/browser/window.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import {
 	CLOSE_MODAL_EDITOR_COMMAND_ID,

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ExtensionIdentifierMap, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import * as semver from '../../../../base/common/semver/semver.js';
 import { Mutable } from '../../../../base/common/types.js';

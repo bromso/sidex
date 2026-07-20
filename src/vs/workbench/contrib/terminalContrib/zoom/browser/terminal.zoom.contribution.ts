@@ -23,7 +23,7 @@ import {
 } from '../../../terminal/browser/terminalExtensions.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { isNumber } from '../../../../../base/common/types.js';
 import { defaultTerminalFontSize } from '../../../terminal/common/terminalConfiguration.js';
 import { TerminalZoomCommandId, TerminalZoomSettingId } from '../common/terminal.zoom.js';

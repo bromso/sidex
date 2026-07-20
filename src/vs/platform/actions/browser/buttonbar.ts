@@ -18,7 +18,7 @@ import { Emitter, Event } from '../../../base/common/event.js';
 import { IMarkdownString, isMarkdownString, MarkdownString } from '../../../base/common/htmlContent.js';
 import { DisposableStore } from '../../../base/common/lifecycle.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { getActionBarActions } from './menuEntryActionViewItem.js';
 import { IToolBarRenderOptions } from './toolbar.js';
 import { MenuId, IMenuService, MenuItemAction, IMenuActionOptions } from '../common/actions.js';

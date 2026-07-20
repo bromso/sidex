@@ -5,7 +5,7 @@
 
 import { CharCode } from '../../../base/common/charCode.js';
 import { illegalState } from '../../../base/common/errors.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export const enum TokenType {
 	LParen,

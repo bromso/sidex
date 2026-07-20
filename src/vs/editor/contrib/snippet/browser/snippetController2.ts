@@ -24,7 +24,7 @@ import { ILanguageFeaturesService } from '../../../common/services/languageFeatu
 import { Choice } from './snippetParser.js';
 import { showSimpleSuggestions } from '../../suggest/browser/suggest.js';
 import { OvertypingCapturer } from '../../suggest/browser/suggestOvertypingCapturer.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	ContextKeyExpr,
 	IContextKey,

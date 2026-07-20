@@ -8,7 +8,7 @@ import {
 	EditorContributionInstantiation,
 	registerEditorContribution
 } from '../../../../editor/browser/editorExtensions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
 import {

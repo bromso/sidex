@@ -16,7 +16,7 @@ import { IPosition, Position } from '../../../../editor/common/core/position.js'
 import { IRange } from '../../../../editor/common/core/range.js';
 import * as editorCommon from '../../../../editor/common/editorCommon.js';
 import { ITextModel as EditorIModel } from '../../../../editor/common/model.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
 import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';

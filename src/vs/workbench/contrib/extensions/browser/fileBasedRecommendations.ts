@@ -10,7 +10,7 @@ import {
 	IExtensionIgnoredRecommendationsService
 } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { IExtensionsWorkbenchService, IExtension } from '../common/extensions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { StorageScope, IStorageService, StorageTarget } from '../../../../platform/storage/common/storage.js';
 import { IProductService } from '../../../../platform/product/common/productService.js';
 import {

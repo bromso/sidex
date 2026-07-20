@@ -6,7 +6,7 @@
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IDisposable } from '../../../../base/common/lifecycle.js';
 import { DeferredPromise, timeout } from '../../../../base/common/async.js';
 import { ILogService } from '../../../../platform/log/common/log.js';

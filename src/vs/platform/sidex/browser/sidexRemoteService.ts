@@ -10,7 +10,7 @@
  *  access SSH / WSL / container / codespace management directly.
  *--------------------------------------------------------------------------------------------*/
 
-import { invoke, isTauri } from '../../../sidex-bridge.js';
+import { invoke, isTauri } from '@sidex/base/sidex-bridge.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 

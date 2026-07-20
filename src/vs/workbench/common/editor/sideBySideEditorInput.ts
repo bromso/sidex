@@ -6,7 +6,7 @@
 import { Event } from '../../../base/common/event.js';
 import { IMarkdownString } from '../../../base/common/htmlContent.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
 import { Registry } from '../../../platform/registry/common/platform.js';
 import {

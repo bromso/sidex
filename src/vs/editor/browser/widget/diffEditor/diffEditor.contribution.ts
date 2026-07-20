@@ -17,7 +17,7 @@ import {
 	ToggleUseInlineViewWhenSpaceIsLimited
 } from './commands.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { ContextKeyEqualsExpr, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';

@@ -26,7 +26,7 @@ import { IModelDeltaDecoration, ITextModel, TrackedRangeStickiness } from '../..
 import { ModelDecorationOptions } from '../../../../editor/common/model/textModel.js';
 import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
 import { CodeActionKind } from '../../../../editor/contrib/codeAction/common/types.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import {
 	Extensions as ConfigurationExtensions,

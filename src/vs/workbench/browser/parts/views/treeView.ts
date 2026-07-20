@@ -46,7 +46,7 @@ import { URI } from '../../../../base/common/uri.js';
 import { generateUuid } from '../../../../base/common/uuid.js';
 import './media/views.css';
 import { VSDataTransfer } from '../../../../base/common/dataTransfer.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	createActionViewItem,
 	getContextMenuActions

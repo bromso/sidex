@@ -17,7 +17,7 @@ import {
 	PlatformToString
 } from '../../../base/common/platform.js';
 import { escapeRegExpCharacters } from '../../../base/common/strings.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';

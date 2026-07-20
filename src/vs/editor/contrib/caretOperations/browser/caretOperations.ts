@@ -13,7 +13,7 @@ import {
 import { ICommand } from '../../../common/editorCommon.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { MoveCaretCommand } from './moveCaretCommand.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 class MoveCaretAction extends EditorAction {
 	private readonly left: boolean;

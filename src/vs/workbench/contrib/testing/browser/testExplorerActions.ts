@@ -23,7 +23,7 @@ import { SymbolNavigationAction } from '../../../../editor/contrib/gotoSymbol/br
 import { ReferencesModel } from '../../../../editor/contrib/gotoSymbol/browser/referencesModel.js';
 import { MessageController } from '../../../../editor/contrib/message/browser/messageController.js';
 import { PeekContext } from '../../../../editor/contrib/peekView/browser/peekView.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { Action2, IAction2Options, MenuId } from '../../../../platform/actions/common/actions.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';

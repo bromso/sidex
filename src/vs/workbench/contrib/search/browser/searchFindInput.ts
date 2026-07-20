@@ -11,7 +11,7 @@ import { ContextScopedFindInput } from '../../../../platform/history/browser/con
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { NotebookFindFilters } from '../../notebook/browser/contrib/find/findFilters.js';
 import { NotebookFindInputFilterButton } from '../../notebook/browser/contrib/find/notebookFindReplaceWidget.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Emitter } from '../../../../base/common/event.js';
 
 export class SearchFindInput extends ContextScopedFindInput {

@@ -11,7 +11,7 @@ import { ICodeEditorService } from '../../../browser/services/codeEditorService.
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { ITextModel } from '../../../common/model.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfirmationResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
 
 const ignoreUnusualLineTerminators = 'ignoreUnusualLineTerminators';

@@ -6,7 +6,7 @@
 import { groupBy } from '../../../../base/common/arrays.js';
 import { isDefined } from '../../../../base/common/types.js';
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import {
 	QuickPickInput,

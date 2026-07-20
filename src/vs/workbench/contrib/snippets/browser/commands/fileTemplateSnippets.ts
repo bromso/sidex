@@ -8,7 +8,7 @@ import { compare } from '../../../../../base/common/strings.js';
 import { getCodeEditor } from '../../../../../editor/browser/editorBrowser.js';
 import { ILanguageService } from '../../../../../editor/common/languages/language.js';
 import { SnippetController2 } from '../../../../../editor/contrib/snippet/browser/snippetController2.js';
-import { localize, localize2 } from '../../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
 import {
 	IQuickInputService,

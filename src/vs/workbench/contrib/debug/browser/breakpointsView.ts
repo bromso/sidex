@@ -34,7 +34,7 @@ import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
 import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	getActionBarActions,
 	getContextMenuActions

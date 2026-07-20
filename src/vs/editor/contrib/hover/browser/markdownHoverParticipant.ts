@@ -29,7 +29,7 @@ import {
 	IRenderedHoverParts,
 	RenderedHoverParts
 } from './hoverTypes.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';

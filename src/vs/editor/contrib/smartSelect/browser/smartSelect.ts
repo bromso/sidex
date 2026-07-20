@@ -27,7 +27,7 @@ import { ITextModel } from '../../../common/model.js';
 import * as languages from '../../../common/languages.js';
 import { BracketSelectionRangeProvider } from './bracketSelections.js';
 import { WordSelectionRangeProvider } from './wordSelections.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';

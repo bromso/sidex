@@ -7,7 +7,7 @@ import { raceTimeout } from '../../../../../base/common/async.js';
 import { CancellationTokenSource } from '../../../../../base/common/cancellation.js';
 import { LcsDiff, StringDiffSequence } from '../../../../../base/common/diff/diff.js';
 import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry, ICommandService } from '../../../../../platform/commands/common/commands.js';
 import { ServicesAccessor } from '../../../../browser/editorExtensions.js';
 import { IBulkEditService, ResourceTextEdit } from '../../../../browser/services/bulkEditService.js';

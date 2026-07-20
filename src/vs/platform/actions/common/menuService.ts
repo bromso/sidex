@@ -28,7 +28,7 @@ import { ContextKeyExpression, IContextKeyService } from '../../contextkey/commo
 import { IAction, Separator, toAction } from '../../../base/common/actions.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
 import { removeFastWithoutKeepingOrder } from '../../../base/common/arrays.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 
 export class MenuService implements IMenuService {

@@ -5,7 +5,7 @@
 
 import { stripIcons } from '../../../../base/common/iconLabels.js';
 import { IEditor } from '../../../common/editorCommon.js';
-import { ILocalizedString } from '../../../../nls.js';
+import { ILocalizedString } from '@sidex/base/nls.js';
 import { isLocalizedString } from '../../../../platform/action/common/action.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';

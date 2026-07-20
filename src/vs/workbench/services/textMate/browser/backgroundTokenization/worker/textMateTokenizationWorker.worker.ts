@@ -14,7 +14,7 @@ import {
 } from '../../../common/TMScopeRegistry.js';
 import type { IOnigLib, IRawTheme, StackDiff } from 'vscode-textmate';
 import { TextMateWorkerTokenizer } from './textMateWorkerTokenizer.js';
-import { importAMDNodeModule } from '../../../../../../amdX.js';
+import { importAMDNodeModule } from '@sidex/base/amdX.js';
 import { IWebWorkerServerRequestHandler, IWebWorkerServer } from '../../../../../../base/common/worker/webWorker.js';
 import { TextMateWorkerHost } from './textMateWorkerHost.js';
 import { ISerializedAnnotation } from '../../../../../../editor/common/model/tokens/annotations.js';

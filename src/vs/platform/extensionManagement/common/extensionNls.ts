@@ -6,7 +6,7 @@
 import { isObject, isString } from '../../../base/common/types.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { IExtensionManifest } from '../../extensions/common/extensions.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILogger } from '../../log/common/log.js';
 
 export interface ITranslations {

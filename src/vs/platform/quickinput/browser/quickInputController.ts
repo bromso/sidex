@@ -15,7 +15,7 @@ import { Disposable, DisposableStore, dispose } from '../../../base/common/lifec
 import Severity from '../../../base/common/severity.js';
 import { isString } from '../../../base/common/types.js';
 import { isModifierKey } from '../../../base/common/keyCodes.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IInputBox,
 	IInputOptions,

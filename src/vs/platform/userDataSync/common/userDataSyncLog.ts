@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { joinPath } from '../../../base/common/resources.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { AbstractLogger, ILogger, ILoggerService } from '../../log/common/log.js';
 import { IUserDataSyncLogService, USER_DATA_SYNC_LOG_ID } from './userDataSync.js';

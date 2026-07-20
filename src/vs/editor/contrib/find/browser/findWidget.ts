@@ -39,7 +39,7 @@ import {
 	MATCHES_LIMIT
 } from './findModel.js';
 import { FindReplaceState, FindReplaceStateChangedEvent } from './findState.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySupport,
 	IAccessibilityService

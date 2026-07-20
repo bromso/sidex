@@ -5,7 +5,7 @@
 
 import { Modifiers } from './keybindings.js';
 import { OperatingSystem } from './platform.js';
-import * as nls from '../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export interface ModifierLabels {
 	readonly ctrlKey: string;

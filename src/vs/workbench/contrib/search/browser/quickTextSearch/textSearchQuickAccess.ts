@@ -8,7 +8,7 @@ import { ResourceSet } from '../../../../../base/common/map.js';
 import { basenameOrAuthority, dirname } from '../../../../../base/common/resources.js';
 import { ThemeIcon } from '../../../../../base/common/themables.js';
 import { IRange } from '../../../../../editor/common/core/range.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { ITextEditorSelection } from '../../../../../platform/editor/common/editor.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';

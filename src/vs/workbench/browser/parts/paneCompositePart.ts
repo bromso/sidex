@@ -34,7 +34,7 @@ import { IThemeService } from '../../../platform/theme/common/themeService.js';
 import { IContextKey, IContextKeyService } from '../../../platform/contextkey/common/contextkey.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
 import { IComposite } from '../../common/composite.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CompositeDragAndDropObserver, toggleDropEffect } from '../dnd.js';
 import { EDITOR_DRAG_AND_DROP_BACKGROUND } from '../../common/theme.js';
 import { IMenuService, MenuId } from '../../../platform/actions/common/actions.js';

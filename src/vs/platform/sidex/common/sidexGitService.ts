@@ -3,7 +3,7 @@
  *  Routes git operations through the Rust `sidex-git` crate via Tauri IPC.
  *--------------------------------------------------------------------------------------------*/
 
-import { invoke } from '../../../sidex-bridge.js';
+import { invoke } from '@sidex/base/sidex-bridge.js';
 
 export class SideXGitService {
 	async status(repoRoot: string): Promise<any> {

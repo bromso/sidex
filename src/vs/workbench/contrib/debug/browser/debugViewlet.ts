@@ -7,7 +7,7 @@ import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar
 import { IAction } from '../../../../base/common/actions.js';
 import { DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
 import './media/debugViewlet.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	Action2,

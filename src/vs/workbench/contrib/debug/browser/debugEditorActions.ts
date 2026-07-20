@@ -13,7 +13,7 @@ import { Position } from '../../../../editor/common/core/position.js';
 import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
 import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
 import { MessageController } from '../../../../editor/contrib/message/browser/messageController.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../../../platform/action/common/action.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

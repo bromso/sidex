@@ -7,7 +7,7 @@ import { CancellationToken } from '../../../../base/common/cancellation.js';
 import { Event } from '../../../../base/common/event.js';
 import { createSingleCallFunction } from '../../../../base/common/functional.js';
 import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { getCodeEditor, isDiffEditor } from '../../../browser/editorBrowser.js';
 import { IRange } from '../../../common/core/range.js';
 import { IDiffEditor, IEditor, ScrollType } from '../../../common/editorCommon.js';

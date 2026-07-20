@@ -26,7 +26,7 @@ import { KeyCode } from '../../../common/keyCodes.js';
 import { Disposable, DisposableStore, IDisposable } from '../../../common/lifecycle.js';
 import { ScrollEvent } from '../../../common/scrollable.js';
 import './paneview.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IView, Sizing, SplitView } from './splitview.js';
 import { applyDragImage } from '../dnd/dnd.js';
 

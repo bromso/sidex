@@ -44,7 +44,7 @@ import {
 	ClickLinkGesture,
 	ClickLinkMouseEvent
 } from '../../../../editor/contrib/gotoSymbol/browser/link/clickLinkGesture.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import { MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';

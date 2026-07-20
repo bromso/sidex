@@ -6,7 +6,7 @@
 import { Emitter, Event } from '../../../../base/common/event.js';
 import { IDebugAdapter } from './debug.js';
 import { timeout } from '../../../../base/common/async.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 /**
  * Abstract implementation of the low level API for a debug adapter.

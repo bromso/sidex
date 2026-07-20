@@ -21,7 +21,7 @@ import { OverviewRulerFeature } from '../features/overviewRulerFeature.js';
 import { EditorOptions, IEditorOptions } from '../../../../common/config/editorOptions.js';
 import { Position } from '../../../../common/core/position.js';
 import { IContentSizeChangedEvent } from '../../../../common/editorCommon.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
 import { DiffEditorOptions } from '../diffEditorOptions.js';

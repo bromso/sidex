@@ -6,7 +6,7 @@
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
 import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
 import { DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { InstantiationType, registerSingleton } from '../../../../../platform/instantiation/common/extensions.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';

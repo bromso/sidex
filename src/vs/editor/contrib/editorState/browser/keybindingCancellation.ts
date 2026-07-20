@@ -12,7 +12,7 @@ import { CancellationTokenSource, CancellationToken } from '../../../../base/com
 import { LinkedList } from '../../../../base/common/linkedList.js';
 import { createDecorator, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 const IEditorCancellationTokens = createDecorator<IEditorCancellationTokens>('IEditorCancelService');
 

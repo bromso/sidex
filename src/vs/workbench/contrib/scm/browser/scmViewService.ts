@@ -48,7 +48,7 @@ import {
 	IQuickPickSeparator
 } from '../../../../platform/quickinput/common/quickInput.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
 import { getSCMRepositoryIcon } from './util.js';
 

@@ -9,7 +9,7 @@ import { Schemas } from '../../../base/common/network.js';
 import { isWeb } from '../../../base/common/platform.js';
 import { escape } from '../../../base/common/strings.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
 import { IOpenerService } from '../../../platform/opener/common/opener.js';
 import { IProductService } from '../../../platform/product/common/productService.js';

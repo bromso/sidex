@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IWindowOpenable } from '../../../platform/window/common/window.js';
 import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
 import { MenuRegistry, MenuId, Action2, registerAction2 } from '../../../platform/actions/common/actions.js';

@@ -131,7 +131,7 @@ import { IStringDictionary } from '../../../../base/common/collections.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import { IWorkbenchAssignmentService } from '../../assignment/common/assignmentService.js';
 import { isUndefined } from '../../../../base/common/types.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	DidChangeUserDataProfileEvent,
 	IUserDataProfileService

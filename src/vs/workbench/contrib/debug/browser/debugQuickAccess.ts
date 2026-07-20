@@ -9,7 +9,7 @@ import {
 	IPickerQuickAccessItem,
 	TriggerAction
 } from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';
 import { IDebugService } from '../common/debug.js';
 import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';

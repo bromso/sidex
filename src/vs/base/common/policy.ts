@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 export interface IPolicyData {
 	readonly chat_preview_features_enabled?: boolean;
 	readonly chat_agent_enabled?: boolean;

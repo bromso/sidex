@@ -32,7 +32,7 @@ import { isLinux, isMacintosh } from '../../../../../base/common/platform.js';
 import { INotificationService } from '../../../../../platform/notification/common/notification.js';
 import { registerActiveInstanceAction, registerActiveXtermAction } from '../../../terminal/browser/terminalActions.js';
 import { TerminalCommandId } from '../../../terminal/common/terminal.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
 import { TerminalContextKeys } from '../../../terminal/common/terminalContextKey.js';
 import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';

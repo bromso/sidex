@@ -27,7 +27,7 @@ import { OS } from '../../../base/common/platform.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import { URI } from '../../../base/common/uri.js';
 import './actionWidget.css';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IContextViewService } from '../../contextview/browser/contextView.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 import { IOpenerService } from '../../opener/common/opener.js';

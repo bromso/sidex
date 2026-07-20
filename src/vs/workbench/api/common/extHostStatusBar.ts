@@ -18,7 +18,7 @@ import {
 	ExtHostStatusBarShape,
 	StatusBarItemDto
 } from './extHost.protocol.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsConverter } from './extHostCommands.js';
 import { DisposableStore } from '../../../base/common/lifecycle.js';
 import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';

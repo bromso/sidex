@@ -53,7 +53,7 @@ import {
 } from './foldingModel.js';
 import { HiddenRangeModel } from './hiddenRangeModel.js';
 import { IndentRangeProvider } from './indentRangeProvider.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { FoldingDecorationProvider } from './foldingDecorations.js';

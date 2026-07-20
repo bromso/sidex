@@ -33,7 +33,7 @@ import {
 	IEditorNavigationQuickAccessOptions,
 	IQuickAccessTextEditorContext
 } from './editorNavigationQuickAccess.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IKeyMods,
 	IQuickInputButton,

@@ -29,7 +29,7 @@ import { KeyCode } from '../../../common/keyCodes.js';
 import { Disposable, DisposableStore, IDisposable } from '../../../common/lifecycle.js';
 import { ThemeIcon } from '../../../common/themables.js';
 import './button.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import type { IManagedHover } from '../hover/hover.js';
 import { getBaseLayerHoverDelegate } from '../hover/hoverDelegate2.js';
 import { IActionProvider } from '../dropdown/dropdown.js';

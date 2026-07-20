@@ -16,7 +16,7 @@ import { KeyCode } from '../../../base/common/keyCodes.js';
 import { parseLinkedText } from '../../../base/common/linkedText.js';
 import { URI } from '../../../base/common/uri.js';
 import './media/quickInput.css';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { DisposableStore } from '../../../base/common/lifecycle.js';
 import { IQuickInputButton } from '../common/quickInput.js';
 import { IAction } from '../../../base/common/actions.js';

@@ -24,7 +24,7 @@ import { IContextKey, IContextKeyService } from '../../../../platform/contextkey
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
 import { TerminalSettingId } from '../../../../platform/terminal/common/terminal.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { openContextMenu } from './terminalContextMenu.js';
 import { TerminalStorageKeys } from '../common/terminalStorageKeys.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';

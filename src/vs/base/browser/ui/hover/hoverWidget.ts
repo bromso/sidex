@@ -9,7 +9,7 @@ import { DomScrollableElement } from '../scrollbar/scrollableElement.js';
 import { KeyCode } from '../../../common/keyCodes.js';
 import { Disposable } from '../../../common/lifecycle.js';
 import './hoverWidget.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 const $ = dom.$;
 

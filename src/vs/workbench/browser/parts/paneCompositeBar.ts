@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ActionsOrientation } from '../../../base/browser/ui/actionbar/actionbar.js';
 import { IActivityService } from '../../services/activity/common/activity.js';
 import { IWorkbenchLayoutService, Parts } from '../../services/layout/browser/layoutService.js';

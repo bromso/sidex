@@ -7,7 +7,7 @@ import { Emitter, Event } from '../../../../base/common/event.js';
 import severity from '../../../../base/common/severity.js';
 import { isObject, isString } from '../../../../base/common/types.js';
 import { generateUuid } from '../../../../base/common/uuid.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import {
 	IDebugConfiguration,

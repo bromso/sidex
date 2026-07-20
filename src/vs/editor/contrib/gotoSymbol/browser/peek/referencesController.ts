@@ -16,7 +16,7 @@ import { IEditorContribution } from '../../../../common/editorCommon.js';
 import { Location } from '../../../../common/languages.js';
 import { PeekContext } from '../../../peekView/browser/peekView.js';
 import { getOuterEditor } from '../../../../browser/widget/codeEditor/embeddedCodeEditorWidget.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { CommandsRegistry } from '../../../../../platform/commands/common/commands.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import {

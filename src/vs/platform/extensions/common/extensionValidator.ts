@@ -6,7 +6,7 @@
 import { isEqualOrParent, joinPath } from '../../../base/common/resources.js';
 import Severity from '../../../base/common/severity.js';
 import { URI } from '../../../base/common/uri.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import * as semver from '../../../base/common/semver/semver.js';
 import { IExtensionManifest, parseApiProposals } from './extensions.js';
 import { allApiProposals } from './extensionsApiProposals.js';

@@ -14,7 +14,7 @@ import { ICodeEditor, isCodeEditor } from '../../../../editor/browser/editorBrow
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
 import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
 import { ITextResourcePropertiesService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../../../platform/action/common/action.js';
 import { Action2, MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';

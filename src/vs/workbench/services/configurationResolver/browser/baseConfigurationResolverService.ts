@@ -11,7 +11,7 @@ import { IProcessEnvironment } from '../../../../base/common/platform.js';
 import * as Types from '../../../../base/common/types.js';
 import { URI as uri } from '../../../../base/common/uri.js';
 import { ICodeEditor, isCodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import {
 	ConfigurationTarget,

@@ -14,7 +14,7 @@ import { Counter } from '../../../base/common/numbers.js';
 import { basename, basenameOrAuthority, dirname, ExtUri, relativePath } from '../../../base/common/resources.js';
 import { compare } from '../../../base/common/strings.js';
 import { isUriComponents, URI, UriComponents } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
 import { FileSystemProviderCapabilities } from '../../../platform/files/common/files.js';
 import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';

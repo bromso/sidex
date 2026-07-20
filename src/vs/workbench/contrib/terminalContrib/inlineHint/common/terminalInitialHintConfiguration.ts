@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IStringDictionary } from '../../../../../base/common/collections.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationPropertySchema } from '../../../../../platform/configuration/common/configurationRegistry.js';
 import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
 

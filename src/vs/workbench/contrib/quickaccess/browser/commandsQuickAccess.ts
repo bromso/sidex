@@ -13,7 +13,7 @@ import { Language } from '../../../../base/common/platform.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { IEditor } from '../../../../editor/common/editorCommon.js';
 import { AbstractEditorCommandsQuickAccessProvider } from '../../../../editor/contrib/quickAccess/browser/commandsQuickAccess.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { isLocalizedString } from '../../../../platform/action/common/action.js';
 import {
 	Action2,

@@ -26,7 +26,7 @@ import Severity from '../../../../base/common/severity.js';
 import * as Types from '../../../../base/common/types.js';
 import { URI } from '../../../../base/common/uri.js';
 import * as UUID from '../../../../base/common/uuid.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
 import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IFileService, IFileStatWithPartialMetadata } from '../../../../platform/files/common/files.js';

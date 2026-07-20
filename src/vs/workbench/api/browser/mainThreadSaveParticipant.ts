@@ -5,7 +5,7 @@
 
 import { CancellationToken } from '../../../base/common/cancellation.js';
 import { shouldSynchronizeModel } from '../../../editor/common/model.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
 import { IProgressStep, IProgress } from '../../../platform/progress/common/progress.js';
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';

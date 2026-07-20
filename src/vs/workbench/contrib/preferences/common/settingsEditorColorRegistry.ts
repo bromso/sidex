@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Color, RGBA } from '../../../../base/common/color.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	editorWidgetBorder,
 	focusBorder,

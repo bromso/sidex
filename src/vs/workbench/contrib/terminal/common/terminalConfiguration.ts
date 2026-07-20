@@ -8,7 +8,7 @@ import type { IStringDictionary } from '../../../../base/common/collections.js';
 import { IJSONSchemaSnippet } from '../../../../base/common/jsonSchema.js';
 import { isMacintosh, isWindows } from '../../../../base/common/platform.js';
 import { isString } from '../../../../base/common/types.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

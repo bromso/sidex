@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Disposable } from '../../../base/common/lifecycle.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	IGalleryExtension,
 	AllowedExtensionsConfigKey,

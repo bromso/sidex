@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/editorplaceholder.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { truncate } from '../../../../base/common/strings.js';
 import Severity from '../../../../base/common/severity.js';
 import { IEditorOpenContext, isEditorOpenError } from '../../../common/editor.js';

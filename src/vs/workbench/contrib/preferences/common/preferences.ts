@@ -7,7 +7,7 @@ import { raceTimeout } from '../../../../base/common/async.js';
 import { CancellationToken } from '../../../../base/common/cancellation.js';
 import { IStringDictionary } from '../../../../base/common/collections.js';
 import { IExtensionRecommendations } from '../../../../base/common/product.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import {
 	IExtensionGalleryService,

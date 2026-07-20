@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Event } from '../../../base/common/event.js';
 import { basename, extname } from '../../../base/common/path.js';
 import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';

@@ -31,7 +31,7 @@ import {
 	IStatusbarService,
 	StatusbarAlignment
 } from '../../services/statusbar/browser/statusbar.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 @extHostNamedCustomer(MainContext.MainThreadOutputService)
 export class MainThreadOutputService extends Disposable implements MainThreadOutputServiceShape {

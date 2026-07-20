@@ -7,7 +7,7 @@ import { BreadcrumbsWidget } from '../../../../base/browser/ui/breadcrumbs/bread
 import { Emitter, Event } from '../../../../base/common/event.js';
 import * as glob from '../../../../base/common/glob.js';
 import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IConfigurationOverrides,
 	IConfigurationService

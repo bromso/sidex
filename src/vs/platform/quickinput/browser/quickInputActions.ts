@@ -6,7 +6,7 @@
 import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
 import { isMacintosh } from '../../../base/common/platform.js';
 import { PartialExcept } from '../../../base/common/types.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandHandler } from '../../commands/common/commands.js';
 import { ContextKeyExpr } from '../../contextkey/common/contextkey.js';
 import { InputFocusedContext } from '../../contextkey/common/contextkeys.js';

@@ -8,7 +8,7 @@ import {
 	IExecutableBasedExtensionTip
 } from '../../../../platform/extensionManagement/common/extensionManagement.js';
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 
 export class ExeBasedRecommendations extends ExtensionRecommendations {

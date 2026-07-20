@@ -6,7 +6,7 @@
 import { createCommandUri } from '../../../../base/common/htmlContent.js';
 import { DisposableStore } from '../../../../base/common/lifecycle.js';
 import { isCodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../../../platform/action/common/action.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import {

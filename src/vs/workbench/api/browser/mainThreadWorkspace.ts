@@ -8,7 +8,7 @@ import { isCancellationError } from '../../../base/common/errors.js';
 import { Disposable, DisposableMap, IDisposable } from '../../../base/common/lifecycle.js';
 import { isNative } from '../../../base/common/platform.js';
 import { URI, UriComponents } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
 import { IFileService } from '../../../platform/files/common/files.js';
 import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';

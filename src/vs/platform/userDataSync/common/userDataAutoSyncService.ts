@@ -19,7 +19,7 @@ import { Disposable, IDisposable, MutableDisposable, toDisposable } from '../../
 import { isWeb } from '../../../base/common/platform.js';
 import { isEqual } from '../../../base/common/resources.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IMeteredConnectionService } from '../../meteredConnection/common/meteredConnection.js';
 import { IProductService } from '../../product/common/productService.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';

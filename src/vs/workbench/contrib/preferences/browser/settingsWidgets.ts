@@ -22,7 +22,7 @@ import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.j
 import { isIOS } from '../../../../base/common/platform.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { isDefined, isUndefinedOrNull } from '../../../../base/common/types.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';

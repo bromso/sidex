@@ -16,7 +16,7 @@ import { Action, IAction, IActionRunner, Separator } from '../../../../base/comm
 import { Delayer } from '../../../../base/common/async.js';
 import { Emitter } from '../../../../base/common/event.js';
 import { Iterable } from '../../../../base/common/iterator.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';

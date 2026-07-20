@@ -15,7 +15,7 @@ import { basename } from '../../../base/common/path.js';
 import { isEqual, isEqualOrParent, toLocalResource } from '../../../base/common/resources.js';
 import { URI, UriComponents } from '../../../base/common/uri.js';
 import { generateUuid } from '../../../base/common/uuid.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IFileDialogService } from '../../../platform/dialogs/common/dialogs.js';
 import { FileOperation, IFileService } from '../../../platform/files/common/files.js';
 import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';

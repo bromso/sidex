@@ -18,7 +18,7 @@ import { KeyCode } from '../../../../base/common/keyCodes.js';
 import { DisposableStore, IDisposable, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
 import { removeAnsiEscapeCodes } from '../../../../base/common/strings.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';

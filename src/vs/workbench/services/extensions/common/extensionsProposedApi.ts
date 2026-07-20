@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Disposable } from '../../../../base/common/lifecycle.js';
 import {
 	ExtensionIdentifier,

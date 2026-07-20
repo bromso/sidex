@@ -5,7 +5,7 @@
 
 import { Emitter, Event } from './event.js';
 import { Disposable, IDisposable } from './lifecycle.js';
-import * as nls from '../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export interface ITelemetryData {
 	readonly from?: string;

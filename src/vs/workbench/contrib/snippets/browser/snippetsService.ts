@@ -11,7 +11,7 @@ import { URI } from '../../../../base/common/uri.js';
 import { Position } from '../../../../editor/common/core/position.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
 import { setSnippetSuggestSupport } from '../../../../editor/contrib/suggest/browser/suggest.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
 import { FileChangeType, IFileService } from '../../../../platform/files/common/files.js';
 import { ILifecycleService, LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';

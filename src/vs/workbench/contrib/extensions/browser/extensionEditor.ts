@@ -32,7 +32,7 @@ import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.j
 import { TokenizationRegistry } from '../../../../editor/common/languages.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
 import { generateTokensCSSForColorMap } from '../../../../editor/common/languages/supports/tokenization.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import {
 	ContextKeyExpr,

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import './output.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
 import { IEditorOptions as ICodeEditorOptions } from '../../../../editor/common/config/editorOptions.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
@@ -45,7 +45,7 @@ import { ServiceCollection } from '../../../../platform/instantiation/common/ser
 import { IEditorConfiguration } from '../../../browser/parts/editor/textEditor.js';
 import { computeEditorAriaLabel } from '../../../browser/editor.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
 import { LogLevel } from '../../../../platform/log/common/log.js';
 import {

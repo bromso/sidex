@@ -24,7 +24,7 @@ import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../../edi
 import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
 import { IModelDeltaDecoration, TrackedRangeStickiness } from '../../../../editor/common/model.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';

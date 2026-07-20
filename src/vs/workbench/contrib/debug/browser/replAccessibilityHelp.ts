@@ -15,7 +15,7 @@ import { Disposable } from '../../../../base/common/lifecycle.js';
 import { getReplView, Repl } from './repl.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CONTEXT_IN_DEBUG_REPL } from '../common/debug.js';
 
 export class ReplAccessibilityHelp implements IAccessibleViewImplementation {

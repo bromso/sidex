@@ -25,7 +25,7 @@ import * as cssValue from '../../../../base/browser/cssValue.js';
 import { IThemeService } from '../../../../platform/theme/common/themeService.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { isFalsyOrWhitespace } from '../../../../base/common/strings.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { isCancellationError } from '../../../../base/common/errors.js';
 import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';

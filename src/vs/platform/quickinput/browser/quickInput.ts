@@ -24,7 +24,7 @@ import { isIOS } from '../../../base/common/platform.js';
 import Severity from '../../../base/common/severity.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import './media/quickInput.css';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IInputBox,
 	IKeyMods,

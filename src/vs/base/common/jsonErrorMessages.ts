@@ -6,7 +6,7 @@
 /**
  * Extracted from json.ts to keep json nls free.
  */
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ParseErrorCode } from './json.js';
 
 export function getParseErrorMessage(errorCode: ParseErrorCode): string {

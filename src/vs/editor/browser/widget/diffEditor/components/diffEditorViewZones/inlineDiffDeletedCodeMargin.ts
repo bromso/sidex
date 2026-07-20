@@ -15,7 +15,7 @@ import { DiffEditorWidget } from '../../diffEditorWidget.js';
 import { EditorOption } from '../../../../../common/config/editorOptions.js';
 import { DetailedLineRangeMapping } from '../../../../../common/diff/rangeMapping.js';
 import { EndOfLineSequence, ITextModel } from '../../../../../common/model.js';
-import { localize } from '../../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IClipboardService } from '../../../../../../platform/clipboard/common/clipboardService.js';
 import { IContextMenuService } from '../../../../../../platform/contextview/browser/contextView.js';
 import { enableCopySelection } from './copySelection.js';

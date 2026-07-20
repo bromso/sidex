@@ -5,7 +5,7 @@
 
 import * as arrays from './arrays.js';
 import * as types from './types.js';
-import * as nls from '../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IAction } from './actions.js';
 
 function exceptionToErrorMessage(exception: any, verbose: boolean): string {

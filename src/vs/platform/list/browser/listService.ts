@@ -62,7 +62,7 @@ import {
 	IDisposable,
 	toDisposable
 } from '../../../base/common/lifecycle.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import {
 	Extensions as ConfigurationExtensions,

@@ -7,7 +7,7 @@ import { Event } from '../../../base/common/event.js';
 import { VSBuffer } from '../../../base/common/buffer.js';
 import { UriComponents } from '../../../base/common/uri.js';
 import { IElementData } from '../../browserElements/common/browserElements.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 const commandPrefix = 'workbench.action.browser';
 export enum BrowserViewCommandId {

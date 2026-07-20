@@ -34,7 +34,7 @@ import { CodeLens, Command } from '../../../common/languages.js';
 import { CodeLensItem, CodeLensModel, getCodeLensModel } from './codelens.js';
 import { ICodeLensCache } from './codeLensCache.js';
 import { CodeLensHelper, CodeLensWidget } from './codelensWidget.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';
 import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';

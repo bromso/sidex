@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/editorstatus.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { getWindowById, runAtThisOrScheduleAtNextAnimationFrame } from '../../../../base/browser/dom.js';
 import { format, compare, splitLines } from '../../../../base/common/strings.js';
 import { extname, basename, isEqual } from '../../../../base/common/resources.js';

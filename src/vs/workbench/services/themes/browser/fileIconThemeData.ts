@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { URI } from '../../../../base/common/uri.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import * as paths from '../../../../base/common/path.js';
 import * as resources from '../../../../base/common/resources.js';
 import * as Json from '../../../../base/common/json.js';

@@ -11,7 +11,7 @@ import { ILanguageSelection, ILanguageService } from '../../../../editor/common/
 import { ITextModel } from '../../../../editor/common/model.js';
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ITextModelContentProvider, ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ITestResultService } from './testResultService.js';
 import { TestMessageType } from './testTypes.js';

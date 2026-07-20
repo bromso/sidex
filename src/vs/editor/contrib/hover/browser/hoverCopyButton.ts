@@ -6,7 +6,7 @@
 import { Disposable } from '../../../../base/common/lifecycle.js';
 import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import { SimpleButton } from '../../find/browser/findWidget.js';
 import { status } from '../../../../base/browser/ui/aria/aria.js';

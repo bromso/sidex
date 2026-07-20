@@ -11,7 +11,7 @@ import { HistoryInputBox, IHistoryInputOptions } from '../../../base/browser/ui/
 import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
 import { ContextKeyExpr, IContextKey, IContextKeyService, RawContextKey } from '../../contextkey/common/contextkey.js';
 import { KeybindingsRegistry, KeybindingWeight } from '../../keybinding/common/keybindingsRegistry.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
 import { isActiveElement } from '../../../base/browser/dom.js';
 

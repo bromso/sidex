@@ -5,7 +5,7 @@
 
 import { AsyncDataTree } from './asyncDataTree.js';
 import { Action } from '../../../common/actions.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export class CollapseAllAction<TInput, T, TFilterData = void> extends Action {
 	constructor(

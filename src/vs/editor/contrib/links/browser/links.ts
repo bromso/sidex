@@ -44,7 +44,7 @@ import {
 	ClickLinkMouseEvent
 } from '../../gotoSymbol/browser/link/clickLinkGesture.js';
 import { getLinks, Link, LinksList } from './getLinks.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';
 import { IOpenerService } from '../../../../platform/opener/common/opener.js';
 

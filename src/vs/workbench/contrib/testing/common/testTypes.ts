@@ -8,7 +8,7 @@ import { MarshalledId } from '../../../../base/common/marshallingIds.js';
 import { URI, UriComponents } from '../../../../base/common/uri.js';
 import { IPosition, Position } from '../../../../editor/common/core/position.js';
 import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { TestId } from './testId.js';
 
 export const enum TestResultState {

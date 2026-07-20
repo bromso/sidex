@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Action, IAction, IActionRunner } from '../../../common/actions.js';
 import { Codicon } from '../../../common/codicons.js';
 import { Emitter } from '../../../common/event.js';

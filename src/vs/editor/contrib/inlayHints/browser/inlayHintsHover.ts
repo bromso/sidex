@@ -18,7 +18,7 @@ import { RenderedInlayHintLabelPart, InlayHintsController } from './inlayHintsCo
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import * as platform from '../../../../base/common/platform.js';
 import { asCommandLink } from './inlayHints.js';
 import { isNonEmptyArray } from '../../../../base/common/arrays.js';

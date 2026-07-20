@@ -24,7 +24,7 @@ import {
 import { Emitter, Event, PauseableEmitter } from '../../../../base/common/event.js';
 import { MutableDisposable, Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
 import { clamp } from '../../../../base/common/numbers.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { SuggestWidgetStatus } from '../../../../editor/contrib/suggest/browser/suggestWidgetStatus.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';

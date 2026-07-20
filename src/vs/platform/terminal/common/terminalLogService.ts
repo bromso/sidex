@@ -5,7 +5,7 @@
 
 import { Disposable } from '../../../base/common/lifecycle.js';
 import { Event } from '../../../base/common/event.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILogger, ILoggerService, LogLevel } from '../../log/common/log.js';
 import { ITerminalLogService } from './terminal.js';
 import { IWorkspaceContextService } from '../../workspace/common/workspace.js';

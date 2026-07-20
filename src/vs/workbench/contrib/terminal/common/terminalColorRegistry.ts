@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { editorOverviewRulerBorder } from '../../../../editor/common/core/editorColorRegistry.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 import {
 	registerColor,

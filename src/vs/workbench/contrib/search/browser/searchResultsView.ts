@@ -10,7 +10,7 @@ import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/lis
 import { ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
 import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
 import * as paths from '../../../../base/common/path.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { FileKind } from '../../../../platform/files/common/files.js';
 import { ILabelService } from '../../../../platform/label/common/label.js';

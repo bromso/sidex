@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/keybindings.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { OS } from '../../../../base/common/platform.js';
 import { Disposable, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
 import { Event, Emitter } from '../../../../base/common/event.js';

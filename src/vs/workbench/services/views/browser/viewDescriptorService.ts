@@ -47,7 +47,7 @@ import { generateUuid } from '../../../../base/common/uuid.js';
 import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
 import { getViewsStateStorageId, ViewContainerModel } from '../common/viewContainerModel.js';
 import { registerAction2, Action2, MenuId } from '../../../../platform/actions/common/actions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IStringDictionary } from '../../../../base/common/collections.js';
 import { ILogger, ILoggerService } from '../../../../platform/log/common/log.js';
 import { Lazy } from '../../../../base/common/lazy.js';

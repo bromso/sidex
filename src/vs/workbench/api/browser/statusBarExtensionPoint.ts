@@ -5,7 +5,7 @@
 
 import { IJSONSchema, TypeFromJsonSchema } from '../../../base/common/jsonSchema.js';
 import { DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
 import { isProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 import { ExtensionsRegistry } from '../../services/extensions/common/extensionsRegistry.js';

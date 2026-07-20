@@ -16,7 +16,7 @@ import * as Platform from '../../../../base/common/platform.js';
 import * as resources from '../../../../base/common/resources.js';
 import Severity from '../../../../base/common/severity.js';
 import * as Types from '../../../../base/common/types.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { IFileService } from '../../../../platform/files/common/files.js';

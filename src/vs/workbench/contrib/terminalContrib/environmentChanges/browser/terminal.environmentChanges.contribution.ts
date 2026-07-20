@@ -8,7 +8,7 @@ import { Event } from '../../../../../base/common/event.js';
 import { ITextModel } from '../../../../../editor/common/model.js';
 import { IModelService } from '../../../../../editor/common/services/model.js';
 import { ITextModelContentProvider, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { localize, localize2 } from '../../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import {
 	EnvironmentVariableMutatorType,

@@ -25,7 +25,7 @@ import { posix } from '../../../../base/common/path.js';
 import { commonSuffixLength } from '../../../../base/common/strings.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { IRange } from '../../../../editor/common/core/range.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandActionTitle, Icon } from '../../../../platform/action/common/action.js';
 import {
 	getActionBarActions,

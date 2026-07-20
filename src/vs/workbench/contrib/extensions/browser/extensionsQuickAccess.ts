@@ -9,7 +9,7 @@ import {
 	PickerQuickAccessProvider
 } from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
 import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IExtensionGalleryService,
 	IExtensionManagementService,

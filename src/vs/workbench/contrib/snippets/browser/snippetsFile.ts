@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { parse as jsonParse, getNodeType } from '../../../../base/common/json.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { extname, basename } from '../../../../base/common/path.js';
 import {
 	SnippetParser,

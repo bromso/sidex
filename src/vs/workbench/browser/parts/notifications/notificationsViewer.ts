@@ -14,7 +14,7 @@ import {
 } from '../../../../base/browser/dom.js';
 import { IOpenerService } from '../../../../platform/opener/common/opener.js';
 import { URI } from '../../../../base/common/uri.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ButtonBar, IButtonOptions } from '../../../../base/browser/ui/button/button.js';
 import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
 import { ActionRunner, IAction, IActionRunner, Separator, toAction } from '../../../../base/common/actions.js';

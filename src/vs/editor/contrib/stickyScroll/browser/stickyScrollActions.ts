@@ -5,7 +5,7 @@
 
 import { KeyCode } from '../../../../base/common/keyCodes.js';
 import { EditorAction2, ServicesAccessor } from '../../../browser/editorExtensions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

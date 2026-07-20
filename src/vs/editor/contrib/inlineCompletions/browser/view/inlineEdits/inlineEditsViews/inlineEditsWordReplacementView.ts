@@ -21,7 +21,7 @@ import {
 	observableValue
 } from '../../../../../../../base/common/observable.js';
 import { OS } from '../../../../../../../base/common/platform.js';
-import { localize } from '../../../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IHoverService } from '../../../../../../../platform/hover/browser/hover.js';
 import { IKeybindingService } from '../../../../../../../platform/keybinding/common/keybinding.js';
 import { editorHoverForeground } from '../../../../../../../platform/theme/common/colorRegistry.js';

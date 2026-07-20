@@ -41,7 +41,7 @@ import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.
 import { IStatusbarService } from '../../../services/statusbar/browser/statusbar.js';
 import { ITitleService } from '../../../services/title/browser/titleService.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import {
 	IsAuxiliaryWindowContext,

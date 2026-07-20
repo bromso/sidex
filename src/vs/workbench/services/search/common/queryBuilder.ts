@@ -15,7 +15,7 @@ import * as strings from '../../../../base/common/strings.js';
 import { assertReturnsDefined, isDefined } from '../../../../base/common/types.js';
 import { URI, URI as uri, UriComponents } from '../../../../base/common/uri.js';
 import { isMultilineRegexSource } from '../../../../editor/common/model/textModelSearch.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';

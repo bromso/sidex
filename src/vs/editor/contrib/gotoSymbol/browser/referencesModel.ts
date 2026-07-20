@@ -17,7 +17,7 @@ import { Position } from '../../../common/core/position.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { Location, LocationLink } from '../../../common/languages.js';
 import { ITextEditorModel, ITextModelService } from '../../../common/services/resolverService.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export class OneReference {
 	readonly id: string = defaultGenerator.nextId();

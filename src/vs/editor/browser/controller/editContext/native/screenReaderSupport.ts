@@ -5,7 +5,7 @@
 
 import { FastDomNode } from '../../../../../base/browser/fastDomNode.js';
 import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
 import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';

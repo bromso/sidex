@@ -48,7 +48,7 @@ import {
 } from '../../../../base/browser/ui/list/list.js';
 import { IFileIconTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
 import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IOutline, IOutlineComparator } from '../../../services/outline/browser/outline.js';
 import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
 import { IEditorService, SIDE_GROUP } from '../../../services/editor/common/editorService.js';

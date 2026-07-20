@@ -17,7 +17,7 @@ import { LineRange, LineRangeSet } from '../../../../common/core/ranges/lineRang
 import { Range } from '../../../../common/core/range.js';
 import { LineRangeMapping, RangeMapping } from '../../../../common/diff/rangeMapping.js';
 import { GlyphMarginLane } from '../../../../common/model.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 const emptyArr: never[] = [];
 

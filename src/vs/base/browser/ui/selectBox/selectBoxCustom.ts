@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import * as arrays from '../../../common/arrays.js';
 import { Emitter, Event } from '../../../common/event.js';
 import { KeyCode, KeyCodeUtils } from '../../../common/keyCodes.js';

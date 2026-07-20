@@ -5,7 +5,7 @@
 
 import { Readable, ReadableStream, newWriteableStream, listenStream } from '../../../../base/common/stream.js';
 import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { importAMDNodeModule } from '../../../../amdX.js';
+import { importAMDNodeModule } from '@sidex/base/amdX.js';
 import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
 import { coalesce } from '../../../../base/common/arrays.js';
 

@@ -14,7 +14,7 @@ import {
 	registerEditorContribution
 } from '../../../../editor/browser/editorExtensions.js';
 import { Context as SuggestContext } from '../../../../editor/contrib/suggest/browser/suggest.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { Action2, MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';

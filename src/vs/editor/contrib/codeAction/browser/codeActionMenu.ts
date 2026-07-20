@@ -10,7 +10,7 @@ import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
 import { CodeAction } from '../../../common/languages.js';
 import { CodeActionItem, CodeActionKind } from '../common/types.js';
 import '../../symbolIcons/browser/symbolIcons.js'; // The codicon symbol colors are defined here and must be loaded to get colors
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ActionListItemKind, IActionListItem } from '../../../../platform/actionWidget/browser/actionList.js';
 import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
 

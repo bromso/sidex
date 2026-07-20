@@ -10,7 +10,7 @@ import { Event, IValueWithChangeEvent } from '../../../base/common/event.js';
 import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
 import { FileAccess } from '../../../base/common/network.js';
 import { derived, observableFromEvent, ValueWithChangeEventFromObservable } from '../../../base/common/observable.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';

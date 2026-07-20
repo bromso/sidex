@@ -8,7 +8,7 @@ import { distinct, equals } from '../../../../base/common/arrays.js';
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Emitter } from '../../../../base/common/event.js';
 import {
 	IExtensionsConfigContent,

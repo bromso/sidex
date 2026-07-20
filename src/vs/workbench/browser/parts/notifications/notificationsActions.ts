@@ -5,7 +5,7 @@
 
 import './media/notificationsActions.css';
 import { INotificationViewItem, NotificationsPosition } from '../../../common/notifications.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Action } from '../../../../base/common/actions.js';
 import {
 	CLEAR_NOTIFICATION,

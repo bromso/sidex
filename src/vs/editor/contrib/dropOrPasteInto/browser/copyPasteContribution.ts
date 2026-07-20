@@ -6,7 +6,7 @@
 import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
 import { IJSONSchema, TypeFromJsonSchema } from '../../../../base/common/jsonSchema.js';
 import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {

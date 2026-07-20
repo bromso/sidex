@@ -31,7 +31,7 @@ import { Selection } from '../../../../editor/common/core/selection.js';
 import { IEditor } from '../../../../editor/common/editorCommon.js';
 import { CommonFindController } from '../../../../editor/contrib/find/browser/findController.js';
 import { MultiCursorSelectionController } from '../../../../editor/contrib/multicursor/browser/multicursor.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';

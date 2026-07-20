@@ -14,7 +14,7 @@ import { getCodeEditor, ICodeEditor } from '../../../../editor/browser/editorBro
 import { IPosition } from '../../../../editor/common/core/position.js';
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import {
 	Extensions,

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/bannerpart.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { $, addDisposableListener, append, clearNode, EventType, isHTMLElement } from '../../../../base/browser/dom.js';
 import { asCSSUrl } from '../../../../base/browser/cssValue.js';
 import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';

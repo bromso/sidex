@@ -22,7 +22,7 @@ import {
 } from '../common/extensions.js';
 import { append, $, reset, addDisposableListener, EventType, finalHandler } from '../../../../base/browser/dom.js';
 import * as platform from '../../../../base/common/platform.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExtensionManagementServerService } from '../../../services/extensionManagement/common/extensionManagement.js';
 import {
 	IExtensionIgnoredRecommendationsService,

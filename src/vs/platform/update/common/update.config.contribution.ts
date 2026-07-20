@@ -5,7 +5,7 @@
 
 import { isWeb, isWindows } from '../../../base/common/platform.js';
 import { PolicyCategory } from '../../../base/common/policy.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions as ConfigurationExtensions,

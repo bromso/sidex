@@ -8,7 +8,7 @@ import { getProgressAccessibilitySignalScheduler } from './progressAccessibility
 import { RunOnceScheduler } from '../../../common/async.js';
 import { Disposable, IDisposable, MutableDisposable } from '../../../common/lifecycle.js';
 import { isNumber } from '../../../common/types.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import './progressbar.css';
 
 const CSS_DONE = 'done';

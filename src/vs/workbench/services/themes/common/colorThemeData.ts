@@ -25,7 +25,7 @@ import {
 	THEME_SCOPE_WILDCARD
 } from './workbenchThemeService.js';
 import { convertSettings } from './themeCompatibility.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import * as types from '../../../../base/common/types.js';
 import * as resources from '../../../../base/common/resources.js';
 import {

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './textAreaEditContext.css';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import * as browser from '../../../../../base/browser/browser.js';
 import { FastDomNode, createFastDomNode } from '../../../../../base/browser/fastDomNode.js';
 import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';

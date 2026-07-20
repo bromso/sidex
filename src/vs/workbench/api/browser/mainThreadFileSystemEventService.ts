@@ -12,7 +12,7 @@ import {
 	MainContext,
 	MainThreadFileSystemEventServiceShape
 } from '../common/extHost.protocol.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IWorkingCopyFileOperationParticipant,
 	IWorkingCopyFileService,

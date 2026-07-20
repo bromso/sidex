@@ -17,7 +17,7 @@ import {
 	OverviewRulerLane,
 	TrackedRangeStickiness
 } from '../../../../editor/common/model.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
 import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';

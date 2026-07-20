@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { sep } from '../../../../base/common/path.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
 import {

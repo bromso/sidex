@@ -11,7 +11,7 @@ import { EditorAction2, ServicesAccessor } from '../../editorExtensions.js';
 import { ICodeEditorService } from '../../services/codeEditorService.js';
 import { DiffEditorWidget } from './diffEditorWidget.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import { localize2 } from '../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../../../platform/action/common/action.js';
 import { Action2, MenuId } from '../../../../platform/actions/common/actions.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

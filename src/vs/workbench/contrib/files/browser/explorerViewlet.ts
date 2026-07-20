@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/explorerviewlet.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { mark } from '../../../../base/common/performance.js';
 import { VIEWLET_ID, VIEW_ID, IFilesConfiguration, ExplorerViewletVisibleContext } from '../common/files.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';

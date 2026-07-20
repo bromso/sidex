@@ -15,7 +15,7 @@ import { SnippetEditorAction } from './abstractSnippetsActions.js';
 import { pickSnippet } from '../snippetPicker.js';
 import { Snippet } from '../snippetsFile.js';
 import { ISnippetsService } from '../snippets.js';
-import { localize2 } from '../../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 
 export async function getSurroundableSnippets(
 	snippetsService: ISnippetsService,

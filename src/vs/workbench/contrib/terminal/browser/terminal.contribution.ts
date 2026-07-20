@@ -7,7 +7,7 @@ import { getFontSnippets } from '../../../../base/browser/fonts.js';
 import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
 import { Schemas } from '../../../../base/common/network.js';
 import { URI } from '../../../../base/common/uri.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	Extensions as DragAndDropExtensions,
 	IDragAndDropContributionRegistry,

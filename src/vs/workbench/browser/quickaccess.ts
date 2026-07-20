@@ -6,7 +6,7 @@
 import { Disposable } from '../../base/common/lifecycle.js';
 import { getIEditor } from '../../editor/browser/editorBrowser.js';
 import { ICodeEditorViewState, IDiffEditorViewState } from '../../editor/common/editorCommon.js';
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandHandler } from '../../platform/commands/common/commands.js';
 import { ContextKeyExpr, RawContextKey } from '../../platform/contextkey/common/contextkey.js';
 import { IResourceEditorInput, ITextResourceEditorInput } from '../../platform/editor/common/editor.js';

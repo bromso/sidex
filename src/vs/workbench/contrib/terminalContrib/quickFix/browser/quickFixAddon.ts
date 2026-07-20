@@ -19,7 +19,7 @@ import {
 import * as dom from '../../../../../base/browser/dom.js';
 import { IAction } from '../../../../../base/common/actions.js';
 import { asArray } from '../../../../../base/common/arrays.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
 import { DecorationSelector, updateLayout } from '../../../terminal/browser/xterm/decorationStyles.js';

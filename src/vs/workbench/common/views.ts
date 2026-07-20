@@ -7,7 +7,7 @@ import { Command } from '../../editor/common/languages.js';
 import { UriComponents, URI } from '../../base/common/uri.js';
 import { Event, Emitter } from '../../base/common/event.js';
 import { ContextKeyExpression } from '../../platform/contextkey/common/contextkey.js';
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../platform/instantiation/common/instantiation.js';
 import { IDisposable, Disposable, toDisposable } from '../../base/common/lifecycle.js';
 import { ThemeIcon } from '../../base/common/themables.js';

@@ -9,7 +9,7 @@ import { EditorAction, registerEditorAction, ServicesAccessor } from '../../../b
 import { CursorChangeReason } from '../../../common/cursorEvents.js';
 import { CursorMoveCommands } from '../../../common/cursor/cursorMoveCommands.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 
 interface ExpandLinesSelectionArgs {

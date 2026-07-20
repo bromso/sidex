@@ -11,7 +11,7 @@ import { parse } from '../../../base/common/json.js';
 import { OperatingSystem, OS } from '../../../base/common/platform.js';
 import { isUndefined } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { FileOperationError, FileOperationResult, IFileService } from '../../files/common/files.js';

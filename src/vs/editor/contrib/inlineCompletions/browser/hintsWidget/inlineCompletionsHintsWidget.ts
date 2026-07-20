@@ -26,7 +26,7 @@ import {
 } from '../../../../../base/common/observable.js';
 import { OS } from '../../../../../base/common/platform.js';
 import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	MenuEntryActionViewItem,
 	getActionBarActions

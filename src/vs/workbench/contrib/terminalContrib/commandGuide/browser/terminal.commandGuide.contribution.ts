@@ -11,7 +11,7 @@ import {
 	MutableDisposable,
 	toDisposable
 } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
 import { listInactiveSelectionBackground } from '../../../../../platform/theme/common/colorRegistry.js';

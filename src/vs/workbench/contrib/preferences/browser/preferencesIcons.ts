@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Codicon } from '../../../../base/common/codicons.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
 
 export const settingsScopeDropDownIcon = registerIcon(

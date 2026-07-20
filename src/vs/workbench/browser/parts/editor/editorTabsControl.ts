@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/editortabscontrol.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { DataTransfers } from '../../../../base/browser/dnd.js';
 import { $, Dimension, getActiveWindow, getWindow, isMouseEvent } from '../../../../base/browser/dom.js';
 import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';

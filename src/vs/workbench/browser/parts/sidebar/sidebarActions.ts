@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/sidebarpart.css';
-import { localize2 } from '../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
 import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';

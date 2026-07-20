@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Emitter, Event } from '../../../../base/common/event.js';
 import { AppResourcePath as _AppResourcePath, FileAccess as _FileAccess } from '../../../../base/common/network.js';
 import { Disposable } from '../../../../base/common/lifecycle.js';

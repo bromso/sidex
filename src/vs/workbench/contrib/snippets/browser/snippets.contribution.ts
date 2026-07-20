@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';

@@ -11,7 +11,7 @@ import { DomScrollableElement } from '../scrollbar/scrollableElement.js';
 import { Emitter } from '../../../common/event.js';
 import { IDisposable, DisposableStore, Disposable, MutableDisposable } from '../../../common/lifecycle.js';
 import { ThemeIcon } from '../../../common/themables.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IMatch } from '../../../common/filters.js';
 import { ScrollbarVisibility } from '../../../common/scrollable.js';
 import { HighlightedLabel } from '../highlightedlabel/highlightedLabel.js';

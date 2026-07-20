@@ -13,7 +13,7 @@ import { IAccessibleViewImplementation } from '../../../../platform/accessibilit
 import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
 import { Disposable } from '../../../../base/common/lifecycle.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { AccessibilityHelpNLS } from '../../../../editor/common/standaloneStrings.js';

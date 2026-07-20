@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	INotificationViewItem,
 	INotificationsModel,

@@ -36,7 +36,7 @@ import { ITextModel, TextModelResolvedOptions } from '../../../../common/model.j
 import { LineTokens } from '../../../../common/tokens/lineTokens.js';
 import { RenderLineInput, renderViewLine2 } from '../../../../common/viewLayout/viewLineRenderer.js';
 import { ViewLineRenderingData } from '../../../../common/viewModel.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService

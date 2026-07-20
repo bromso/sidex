@@ -25,7 +25,7 @@ import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { computeIndentLevel } from '../../../common/model/utils.js';
 import { autoFixCommandId, quickFixCommandId } from './codeAction.js';
 import { CodeActionSet, CodeActionTrigger } from '../common/types.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
 import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
 import { Range } from '../../../common/core/range.js';

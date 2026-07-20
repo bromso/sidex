@@ -7,7 +7,7 @@ import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorAction, registerEditorAction, ServicesAccessor } from '../../../browser/editorExtensions.js';
 import { InsertFinalNewLineCommand } from './insertFinalNewLineCommand.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export class InsertFinalNewLineAction extends EditorAction {
 	public static readonly ID = 'editor.action.insertFinalNewLine';

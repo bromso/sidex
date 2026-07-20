@@ -43,7 +43,7 @@ import { IAction, ActionRunner, Action } from '../../../../base/common/actions.j
 import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
 import { IConfigurationService, ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
 import { ThrottledDelayer } from '../../../../base/common/async.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
 import {
 	CodeEditorWidget,

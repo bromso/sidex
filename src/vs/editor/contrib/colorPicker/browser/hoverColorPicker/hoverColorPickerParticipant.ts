@@ -23,7 +23,7 @@ import {
 	RenderedHoverParts
 } from '../../../hover/browser/hoverTypes.js';
 import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	BaseColor,
 	ColorPickerWidgetType,

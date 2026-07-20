@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { importAMDNodeModule, resolveAmdNodeModulePath } from '../../../../amdX.js';
+import { importAMDNodeModule, resolveAmdNodeModulePath } from '@sidex/base/amdX.js';
 import * as domSanitize from '../../../../base/browser/domSanitize.js';
 import { MarkdownSanitizerConfig } from '../../../../base/browser/markdownRenderer.js';
 import { CodeWindow } from '../../../../base/browser/window.js';

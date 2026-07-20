@@ -6,7 +6,7 @@
 import { fromNow, getDurationString } from '../../../../../base/common/date.js';
 import { isNumber } from '../../../../../base/common/types.js';
 import type { ThemeIcon } from '../../../../../base/common/themables.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import type { ITerminalCommand } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
 import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';

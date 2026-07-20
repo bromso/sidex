@@ -97,7 +97,7 @@ import { FileKind } from '../../../../platform/files/common/files.js';
 import { compareFileNames, comparePaths } from '../../../../base/common/comparers.js';
 import { FuzzyScore, createMatches, IMatch } from '../../../../base/common/filters.js';
 import { IViewDescriptorService } from '../../../common/views.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
 import { compare } from '../../../../base/common/strings.js';

@@ -5,7 +5,7 @@
 
 import { isUndefined } from '../../../../base/common/types.js';
 import { Event } from '../../../../base/common/event.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
 import {
 	IUserDataProfile,

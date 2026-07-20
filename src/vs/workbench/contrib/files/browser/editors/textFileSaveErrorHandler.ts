@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { toErrorMessage } from '../../../../../base/common/errorMessage.js';
 import { basename, isEqual } from '../../../../../base/common/resources.js';
 import { Action } from '../../../../../base/common/actions.js';

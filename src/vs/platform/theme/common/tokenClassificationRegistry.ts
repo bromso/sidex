@@ -8,7 +8,7 @@ import { Color } from '../../../base/common/color.js';
 import { Emitter, Event } from '../../../base/common/event.js';
 import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
 import { Disposable } from '../../../base/common/lifecycle.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry

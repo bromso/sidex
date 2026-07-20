@@ -23,7 +23,7 @@ import { IEditorContribution, IEditorDecorationsCollection } from '../../../comm
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { IModelDeltaDecoration, OverviewRulerLane, TrackedRangeStickiness } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';

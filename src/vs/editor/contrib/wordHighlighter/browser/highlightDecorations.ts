@@ -7,7 +7,7 @@ import './highlightDecorations.css';
 import { MinimapPosition, OverviewRulerLane, TrackedRangeStickiness } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { DocumentHighlightKind } from '../../../common/languages.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	activeContrastBorder,
 	editorSelectionHighlight,

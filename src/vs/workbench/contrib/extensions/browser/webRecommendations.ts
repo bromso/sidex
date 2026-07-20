@@ -6,7 +6,7 @@
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
 import { IProductService } from '../../../../platform/product/common/productService.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExtensionManagementServerService } from '../../../services/extensionManagement/common/extensionManagement.js';
 
 export class WebRecommendations extends ExtensionRecommendations {

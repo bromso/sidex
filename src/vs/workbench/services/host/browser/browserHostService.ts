@@ -52,7 +52,7 @@ import { ILifecycleService, BeforeShutdownEvent, ShutdownReason } from '../../li
 import { BrowserLifecycleService } from '../../lifecycle/browser/lifecycleService.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import { getWorkspaceIdentifier } from '../../workspaces/browser/workspaces.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import Severity from '../../../../base/common/severity.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
 import { DomEmitter } from '../../../../base/browser/event.js';

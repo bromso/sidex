@@ -31,7 +31,7 @@ import {
 	getOnTypeFormattingEdits
 } from './format.js';
 import { FormattingEdit } from './formattingEdit.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService

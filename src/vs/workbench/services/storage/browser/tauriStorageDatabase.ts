@@ -10,7 +10,7 @@ import {
 	IStorageItemsChangeEvent,
 	IUpdateRequest
 } from '../../../../base/parts/storage/common/storage.js';
-import { invoke, isTauri } from '../../../../sidex-bridge.js';
+import { invoke, isTauri } from '@sidex/base/sidex-bridge.js';
 
 /**
  * Storage database backed by the SideX Tauri (`storage_*`) commands,

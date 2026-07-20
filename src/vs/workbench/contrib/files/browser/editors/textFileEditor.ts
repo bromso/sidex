@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { mark } from '../../../../../base/common/performance.js';
 import { assertReturnsDefined } from '../../../../../base/common/types.js';
 import { IPathService } from '../../../../services/path/common/pathService.js';

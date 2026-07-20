@@ -18,7 +18,7 @@ import { ITextModel } from '../../../common/model.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { Text, Variable, VariableResolver } from './snippetParser.js';
 import { OvertypingCapturer } from '../../suggest/browser/suggestOvertypingCapturer.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ILabelService } from '../../../../platform/label/common/label.js';
 import {
 	WORKSPACE_EXTENSION,

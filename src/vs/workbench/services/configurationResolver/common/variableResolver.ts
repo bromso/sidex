@@ -10,7 +10,7 @@ import { IProcessEnvironment, isWindows } from '../../../../base/common/platform
 import * as process from '../../../../base/common/process.js';
 import * as types from '../../../../base/common/types.js';
 import { URI as uri } from '../../../../base/common/uri.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILabelService } from '../../../../platform/label/common/label.js';
 import { IWorkspaceFolderData } from '../../../../platform/workspace/common/workspace.js';
 import {

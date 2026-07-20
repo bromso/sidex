@@ -16,7 +16,7 @@ import {
 	vUnion,
 	vWithJsonSchemaRef
 } from '../../../../../base/common/validation.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
 import { Action2, MenuId } from '../../../../../platform/actions/common/actions.js';
 import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';

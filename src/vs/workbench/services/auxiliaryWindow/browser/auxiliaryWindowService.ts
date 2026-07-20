@@ -34,7 +34,7 @@ import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../..
 import { mark } from '../../../../base/common/performance.js';
 import { isFirefox, isWeb } from '../../../../base/common/platform.js';
 import Severity from '../../../../base/common/severity.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';

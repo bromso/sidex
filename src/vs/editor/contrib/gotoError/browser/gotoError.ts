@@ -24,7 +24,7 @@ import { Range } from '../../../common/core/range.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { IMarkerNavigationService, MarkerList } from './markerNavigationService.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';

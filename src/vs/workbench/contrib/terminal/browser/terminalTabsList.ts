@@ -18,7 +18,7 @@ import {
 	ITerminalEditingService,
 	TerminalDataTransfers
 } from './terminal.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import * as DOM from '../../../../base/browser/dom.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';

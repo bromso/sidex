@@ -6,7 +6,7 @@
 import './media/workspaceTrustEditor.css';
 import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
 import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import {
 	ConfigurationScope,

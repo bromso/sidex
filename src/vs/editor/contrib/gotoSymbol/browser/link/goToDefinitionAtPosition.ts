@@ -23,7 +23,7 @@ import { ILanguageService } from '../../../../common/languages/language.js';
 import { ITextModelService } from '../../../../common/services/resolverService.js';
 import { ClickLinkGesture, ClickLinkKeyboardEvent, ClickLinkMouseEvent } from './clickLinkGesture.js';
 import { PeekContext } from '../../../peekView/browser/peekView.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
 import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
 import { DefinitionAction } from '../goToCommands.js';

@@ -8,7 +8,7 @@ import { CancellationToken } from '../../../base/common/cancellation.js';
 import { canceled } from '../../../base/common/errors.js';
 import { IDataTransformer, IErrorTransformer, WriteableStream } from '../../../base/common/stream.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	createFileSystemProviderError,
 	ensureFileSystemProviderError,

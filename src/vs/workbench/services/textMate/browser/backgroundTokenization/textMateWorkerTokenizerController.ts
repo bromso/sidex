@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { importAMDNodeModule } from '../../../../../amdX.js';
+import { importAMDNodeModule } from '@sidex/base/amdX.js';
 import { Disposable } from '../../../../../base/common/lifecycle.js';
 import { IObservable, autorun, keepObserved } from '../../../../../base/common/observable.js';
 import { Proxied } from '../../../../../base/common/worker/webWorker.js';

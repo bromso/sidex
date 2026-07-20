@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IAction, Separator, toAction } from '../../../base/common/actions.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IWorkbenchLayoutService } from '../../services/layout/browser/layoutService.js';
 import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
 import { Disposable } from '../../../base/common/lifecycle.js';

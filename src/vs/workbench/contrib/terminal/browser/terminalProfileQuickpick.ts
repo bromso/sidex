@@ -22,7 +22,7 @@ import {
 } from '../../../../platform/terminal/common/terminal.js';
 import { getUriClasses, getColorClass, createColorStyleElement } from './terminalIcon.js';
 import { configureTerminalProfileIcon } from './terminalIcons.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IThemeService } from '../../../../platform/theme/common/themeService.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { ITerminalProfileResolverService, ITerminalProfileService } from '../common/terminal.js';

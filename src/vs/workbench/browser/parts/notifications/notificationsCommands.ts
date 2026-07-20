@@ -15,7 +15,7 @@ import {
 	NotificationsSettings
 } from '../../../common/notifications.js';
 import { Action2, MenuRegistry, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IListService, WorkbenchList } from '../../../../platform/list/browser/listService.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
 import {

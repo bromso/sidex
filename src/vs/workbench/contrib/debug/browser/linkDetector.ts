@@ -12,7 +12,7 @@ import { Schemas } from '../../../../base/common/network.js';
 import * as osPath from '../../../../base/common/path.js';
 import * as platform from '../../../../base/common/platform.js';
 import { URI } from '../../../../base/common/uri.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IFileService } from '../../../../platform/files/common/files.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';

@@ -18,7 +18,7 @@ import {
 } from '../../services/languageDetection/common/languageDetectionWorkerService.js';
 import { ThrottledDelayer } from '../../../base/common/async.js';
 import { IAccessibilityService } from '../../../platform/accessibility/common/accessibility.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IMarkdownString } from '../../../base/common/htmlContent.js';
 import { TextModelEditSource } from '../../../editor/common/textModelEditSource.js';
 

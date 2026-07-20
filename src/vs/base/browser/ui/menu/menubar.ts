@@ -31,7 +31,7 @@ import { Disposable, DisposableStore, dispose, IDisposable } from '../../../comm
 import { isMacintosh } from '../../../common/platform.js';
 import * as strings from '../../../common/strings.js';
 import './menubar.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { mainWindow } from '../../window.js';
 
 const $ = DOM.$;

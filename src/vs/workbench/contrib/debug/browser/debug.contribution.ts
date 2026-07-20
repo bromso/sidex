@@ -11,7 +11,7 @@ import {
 	EditorContributionInstantiation,
 	registerEditorContribution
 } from '../../../../editor/browser/editorExtensions.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
 import { ICommandActionTitle, Icon } from '../../../../platform/action/common/action.js';
 import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';

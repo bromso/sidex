@@ -31,7 +31,7 @@ import { parseLinkedText } from '../../../../base/common/linkedText.js';
 import { Schemas } from '../../../../base/common/network.js';
 import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
 import { URI } from '../../../../base/common/uri.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

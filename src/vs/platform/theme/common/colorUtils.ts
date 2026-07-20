@@ -14,7 +14,7 @@ import {
 } from '../../jsonschemas/common/jsonContributionRegistry.js';
 import * as platform from '../../registry/common/platform.js';
 import { IColorTheme } from './themeService.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Disposable } from '../../../base/common/lifecycle.js';
 
 //  ------ API types

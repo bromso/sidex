@@ -2,7 +2,7 @@
  *  SideX Extension API Service
  *--------------------------------------------------------------------------------------------*/
 
-import { invoke } from '../../../sidex-bridge.js';
+import { invoke } from '@sidex/base/sidex-bridge.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { CommandsRegistry } from '../../commands/common/commands.js';

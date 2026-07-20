@@ -40,7 +40,7 @@ import { AbstractTree, TreeFindMatchType, TreeFindMode } from '../../../base/bro
 import { isActiveElement } from '../../../base/browser/dom.js';
 import { Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
 import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IHoverService } from '../../../platform/hover/browser/hover.js';
 
 function ensureDOMFocus(widget: ListWidget | undefined): void {

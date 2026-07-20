@@ -12,7 +12,7 @@ import { EditorCommand, registerEditorCommand } from '../../../browser/editorExt
 import { ICodeEditorService } from '../../../browser/services/codeEditorService.js';
 import { Range } from '../../../common/core/range.js';
 import { OneReference, ReferencesModel } from './referencesModel.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';

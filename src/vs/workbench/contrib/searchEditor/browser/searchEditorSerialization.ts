@@ -9,7 +9,7 @@ import './media/searchEditor.css';
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
 import { Range } from '../../../../editor/common/core/range.js';
 import type { ITextModel } from '../../../../editor/common/model.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import type { SearchConfiguration } from './constants.js';
 import { ITextQuery, SearchSortOrder } from '../../../services/search/common/search.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';

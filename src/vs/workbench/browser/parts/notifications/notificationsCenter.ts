@@ -28,7 +28,7 @@ import { NotificationsList } from './notificationsList.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { $, Dimension, isAncestorOfActiveElement } from '../../../../base/browser/dom.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
 import {
 	ClearAllNotificationsAction,

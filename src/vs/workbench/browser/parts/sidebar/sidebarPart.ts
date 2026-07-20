@@ -49,7 +49,7 @@ import { IConfigurationService } from '../../../../platform/configuration/common
 import { Action2, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { Separator } from '../../../../base/common/actions.js';
 import { ToggleActivityBarVisibilityActionId } from '../../actions/layoutActions.js';
-import { localize2 } from '../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';
 import { VisibleViewContainersTracker } from '../visibleViewContainersTracker.js';
 import { Extensions } from '../../panecomposite.js';

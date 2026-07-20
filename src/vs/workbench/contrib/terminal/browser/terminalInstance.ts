@@ -34,7 +34,7 @@ import { OS, OperatingSystem, isMacintosh, isWindows } from '../../../../base/co
 import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
 import { URI } from '../../../../base/common/uri.js';
 import { TabFocus } from '../../../../editor/browser/config/tabFocus.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
 import {
 	AccessibilitySignal,
@@ -138,7 +138,7 @@ import { IHistoryService } from '../../../services/history/common/history.js';
 import { isHorizontal, IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { importAMDNodeModule as _importAMDNodeModule } from '../../../../amdX.js';
+import { importAMDNodeModule as _importAMDNodeModule } from '@sidex/base/amdX.js';
 import type { IMarker, Terminal as XTermTerminal, IBufferLine } from '@xterm/xterm';
 import { AccessibilityCommandId } from '../../accessibility/common/accessibilityCommands.js';
 import { terminalStrings } from '../common/terminalStrings.js';

@@ -39,7 +39,7 @@ import {
 } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
 import { Disposable } from '../../../../base/common/lifecycle.js';
 import { ITranslations, localizeManifest } from '../../../../platform/extensionManagement/common/extensionNls.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import * as semver from '../../../../base/common/semver/semver.js';
 import { isString, isUndefined } from '../../../../base/common/types.js';
 import { getErrorMessage } from '../../../../base/common/errors.js';

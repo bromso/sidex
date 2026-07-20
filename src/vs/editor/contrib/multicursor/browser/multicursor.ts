@@ -27,7 +27,7 @@ import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { FindMatch, ITextModel } from '../../../common/model.js';
 import { CommonFindController } from '../../find/browser/findController.js';
 import { FindOptionOverride, INewFindReplaceState } from '../../find/browser/findState.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';

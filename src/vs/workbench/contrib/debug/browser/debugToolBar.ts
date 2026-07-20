@@ -25,7 +25,7 @@ import { Platform, platform } from '../../../../base/common/platform.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { URI } from '../../../../base/common/uri.js';
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandAction, ICommandActionTitle } from '../../../../platform/action/common/action.js';
 import {
 	DropdownWithPrimaryActionViewItem,

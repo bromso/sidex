@@ -5,7 +5,7 @@
 
 import './media/activitybarpart.css';
 import './media/activityaction.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
 import { Part } from '../../part.js';
 import {

@@ -5,7 +5,7 @@
 import '../colorPicker.css';
 import * as dom from '../../../../../base/browser/dom.js';
 import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Emitter } from '../../../../../base/common/event.js';
 import { registerIcon } from '../../../../../platform/theme/common/iconRegistry.js';
 import { ThemeIcon } from '../../../../../base/common/themables.js';

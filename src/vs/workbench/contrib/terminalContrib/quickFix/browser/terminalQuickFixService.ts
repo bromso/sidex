@@ -5,7 +5,7 @@
 
 import { Emitter } from '../../../../../base/common/event.js';
 import { IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ITerminalCommandSelector } from '../../../../../platform/terminal/common/terminal.js';
 import { ITerminalQuickFixService, ITerminalQuickFixProvider, ITerminalQuickFixProviderSelector } from './quickFix.js';
 import { isProposedApiEnabled } from '../../../../services/extensions/common/extensions.js';

@@ -7,7 +7,7 @@ import type { IHoverAction } from '../../../../base/browser/ui/hover/hover.js';
 import { asArray } from '../../../../base/common/arrays.js';
 import { MarkdownString } from '../../../../base/common/htmlContent.js';
 import { basename } from '../../../../base/common/path.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { StorageScope, StorageTarget, type IStorageService } from '../../../../platform/storage/common/storage.js';
 import type { ITerminalStatusHoverAction } from '../common/terminal.js';
 import { TerminalStorageKeys } from '../common/terminalStorageKeys.js';

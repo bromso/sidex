@@ -6,7 +6,7 @@
 import { Emitter, Event } from '../../../../base/common/event.js';
 import { autorun, IReader, observableValue } from '../../../../base/common/observable.js';
 import { setTimeout0 } from '../../../../base/common/platform.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IQuickTree,
 	IQuickTreeItem,

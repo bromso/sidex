@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { distinct, coalesce } from '../../../../base/common/arrays.js';
 import * as strings from '../../../../base/common/strings.js';
 import { OperatingSystem, Language } from '../../../../base/common/platform.js';

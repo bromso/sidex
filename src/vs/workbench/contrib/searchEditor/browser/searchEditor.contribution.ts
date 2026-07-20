@@ -13,7 +13,7 @@ import {
 	ToggleRegexKeybinding,
 	ToggleWholeWordKeybinding
 } from '../../../../editor/contrib/find/browser/findModel.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';

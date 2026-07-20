@@ -5,7 +5,7 @@
 
 import { assertNever } from '../../../../base/common/assert.js';
 import { clamp } from '../../../../base/common/numbers.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { chartsGreen, chartsRed, chartsYellow } from '../../../../platform/theme/common/colorRegistry.js';
 import { asCssVariableName } from '../../../../platform/theme/common/colorUtils.js';
 import { CoverageBarSource } from './testCoverageBars.js';

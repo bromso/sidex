@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { isFirefox } from '../../base/browser/browser.js';
 import { KeyCode, KeyMod } from '../../base/common/keyCodes.js';
 import * as types from '../../base/common/types.js';

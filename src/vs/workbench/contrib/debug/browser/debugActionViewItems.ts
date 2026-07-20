@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IAction } from '../../../../base/common/actions.js';
 import { KeyCode } from '../../../../base/common/keyCodes.js';
 import * as dom from '../../../../base/browser/dom.js';

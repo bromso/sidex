@@ -21,7 +21,7 @@ import { IStoredFileWorkingCopy, IStoredFileWorkingCopyModel } from './storedFil
 import { LinkedList } from '../../../../base/common/linkedList.js';
 import { CancellationError, isCancellationError } from '../../../../base/common/errors.js';
 import { NotificationPriority } from '../../../../platform/notification/common/notification.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export class StoredFileWorkingCopySaveParticipant extends Disposable {
 	private readonly saveParticipants = new LinkedList<IStoredFileWorkingCopySaveParticipant>();

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Emitter, Event } from '../../../base/common/event.js';
 import { MainContext, MainThreadAuthenticationShape, ExtHostAuthenticationShape } from './extHost.protocol.js';
 import { Disposable, ProgressLocation } from './extHostTypes.js';

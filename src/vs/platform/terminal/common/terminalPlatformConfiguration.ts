@@ -6,7 +6,7 @@
 import { Codicon, getAllCodicons } from '../../../base/common/codicons.js';
 import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
 import { OperatingSystem, Platform, PlatformToString } from '../../../base/common/platform.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

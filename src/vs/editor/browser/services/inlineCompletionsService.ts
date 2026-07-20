@@ -7,7 +7,7 @@ import { TimeoutTimer } from '../../../base/common/async.js';
 import { BugIndicatingError } from '../../../base/common/errors.js';
 import { Emitter, Event } from '../../../base/common/event.js';
 import { Disposable } from '../../../base/common/lifecycle.js';
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Action2 } from '../../../platform/actions/common/actions.js';
 import { ContextKeyExpr, IContextKeyService, RawContextKey } from '../../../platform/contextkey/common/contextkey.js';
 import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';

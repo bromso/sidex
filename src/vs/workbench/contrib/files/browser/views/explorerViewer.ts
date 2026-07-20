@@ -51,7 +51,7 @@ import {
 import { ExplorerFindProviderActive, IFilesConfiguration, UndoConfirmLevel } from '../../common/files.js';
 import { dirname, joinPath, distinctParents, relativePath } from '../../../../../base/common/resources.js';
 import { InputBox, MessageType } from '../../../../../base/browser/ui/inputbox/inputBox.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createSingleCallFunction } from '../../../../../base/common/functional.js';
 import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
 import { equals, deepClone } from '../../../../../base/common/objects.js';

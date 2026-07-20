@@ -2,7 +2,7 @@
  *  SideX - Marketplace + installed-extension bridge.
  *--------------------------------------------------------------------------------------------*/
 
-import { invoke } from '../../../sidex-bridge.js';
+import { invoke } from '@sidex/base/sidex-bridge.js';
 
 export interface MarketplaceExtensionResult {
 	id: string;

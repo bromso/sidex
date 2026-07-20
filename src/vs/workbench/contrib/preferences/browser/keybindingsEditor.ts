@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/keybindingsEditor.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Delayer } from '../../../../base/common/async.js';
 import * as DOM from '../../../../base/browser/dom.js';
 import { isIOS, OS } from '../../../../base/common/platform.js';

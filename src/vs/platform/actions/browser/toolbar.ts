@@ -20,7 +20,7 @@ import { BugIndicatingError } from '../../../base/common/errors.js';
 import { Emitter } from '../../../base/common/event.js';
 import { Iterable } from '../../../base/common/iterator.js';
 import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createActionViewItem, getActionBarActions } from './menuEntryActionViewItem.js';
 import {
 	IMenu,

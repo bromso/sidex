@@ -20,7 +20,7 @@ import { CancellationTokenSource } from '../../../base/common/cancellation.js';
 import { isMarkdownString, type IMarkdownString } from '../../../base/common/htmlContent.js';
 import { IDisposable } from '../../../base/common/lifecycle.js';
 import { isFunction, isString } from '../../../base/common/types.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 type IManagedHoverResolvedContent = IMarkdownString | string | HTMLElement | undefined;
 

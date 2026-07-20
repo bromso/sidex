@@ -35,7 +35,7 @@ import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { ProgressLocation } from '../../../../platform/progress/common/progress.js';
 import { Severity } from '../../../../platform/notification/common/notification.js';
 import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { localize2 } from '../../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { ExtensionGalleryManifestStatus } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
 
 export const VIEWLET_ID = 'workbench.view.extensions';

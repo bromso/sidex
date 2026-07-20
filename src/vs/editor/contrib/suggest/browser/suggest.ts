@@ -18,7 +18,7 @@ import { ITextModel } from '../../../common/model.js';
 import * as languages from '../../../common/languages.js';
 import { ITextModelService } from '../../../common/services/resolverService.js';
 import { SnippetParser } from '../../snippet/browser/snippetParser.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';

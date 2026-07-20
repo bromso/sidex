@@ -8,7 +8,7 @@ import { mixin } from '../../../base/common/objects.js';
 import { isWeb } from '../../../base/common/platform.js';
 import { PolicyCategory } from '../../../base/common/policy.js';
 import { escapeRegExpCharacters } from '../../../base/common/strings.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import {
 	ConfigurationScope,

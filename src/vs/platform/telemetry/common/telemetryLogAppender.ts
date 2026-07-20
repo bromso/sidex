@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Disposable } from '../../../base/common/lifecycle.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { ILogger, ILoggerService } from '../../log/common/log.js';
 import { IProductService } from '../../product/common/productService.js';

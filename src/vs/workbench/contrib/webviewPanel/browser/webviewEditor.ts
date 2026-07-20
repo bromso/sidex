@@ -9,7 +9,7 @@ import { Emitter, Event } from '../../../../base/common/event.js';
 import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
 import { isWeb } from '../../../../base/common/platform.js';
 import { generateUuid } from '../../../../base/common/uuid.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	IContextKeyService,
 	IScopedContextKeyService,

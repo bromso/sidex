@@ -11,7 +11,7 @@ import { RenderIndentGuides } from '../../../../base/browser/ui/tree/abstractTre
 import { ITreeElement, ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
 import { Iterable } from '../../../../base/common/iterator.js';
 import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { IHoverService } from '../../../../platform/hover/browser/hover.js';

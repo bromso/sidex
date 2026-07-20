@@ -8,7 +8,7 @@ import { IStringDictionary } from '../../../base/common/collections.js';
 import { Emitter, Event } from '../../../base/common/event.js';
 import { IJSONSchema } from '../../../base/common/jsonSchema.js';
 import * as types from '../../../base/common/types.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { getLanguageTagSettingPlainKey } from './configuration.js';
 import {
 	Extensions as JSONExtensions,

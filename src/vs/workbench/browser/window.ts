@@ -33,7 +33,7 @@ import { matchesScheme, Schemas } from '../../base/common/network.js';
 import { isIOS, isMacintosh } from '../../base/common/platform.js';
 import Severity from '../../base/common/severity.js';
 import { URI } from '../../base/common/uri.js';
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry } from '../../platform/commands/common/commands.js';
 import { IDialogService, IPromptButton } from '../../platform/dialogs/common/dialogs.js';
 import { IInstantiationService, ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';

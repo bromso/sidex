@@ -9,7 +9,7 @@ import { illegalArgument, isCancellationError, onUnexpectedExternalError } from 
 import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
 import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
 import { URI } from '../../../../base/common/uri.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService

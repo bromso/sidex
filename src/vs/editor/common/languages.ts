@@ -23,7 +23,7 @@ import { LanguageSelector } from './languageSelector.js';
 import * as model from './model.js';
 import { TokenizationRegistry as TokenizationRegistryImpl } from './tokenizationRegistry.js';
 import { ContiguousMultilineTokens } from './tokens/contiguousMultilineTokens.js';
-import { localize } from '../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ExtensionIdentifier } from '../../platform/extensions/common/extensions.js';
 import { IMarkerData } from '../../platform/markers/common/markers.js';
 import { EditDeltaInfo } from './textModelEditSource.js';

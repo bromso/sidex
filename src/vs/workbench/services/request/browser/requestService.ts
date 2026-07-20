@@ -18,7 +18,7 @@ import {
 } from '../../../../platform/request/common/request.js';
 import { request } from '../../../../base/parts/request/common/requestImpl.js';
 import { ILoggerService } from '../../../../platform/log/common/log.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { LogService } from '../../../../platform/log/common/logService.js';
 import { windowLogGroup } from '../../log/common/logConstants.js';
 import { bufferToStream, VSBuffer } from '../../../../base/common/buffer.js';

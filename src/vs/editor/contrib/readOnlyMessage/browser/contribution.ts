@@ -10,7 +10,7 @@ import { EditorContributionInstantiation, registerEditorContribution } from '../
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { MessageController } from '../../message/browser/messageController.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 export class ReadOnlyMessageController extends Disposable implements IEditorContribution {
 	public static readonly ID = 'editor.contrib.readOnlyMessageController';

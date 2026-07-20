@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/panelpart.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
 import {
 	MenuId,

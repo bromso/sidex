@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { isMacintosh } from '../../../../base/common/platform.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ICommandHandler } from '../../../../platform/commands/common/commands.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';

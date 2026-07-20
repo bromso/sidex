@@ -8,7 +8,7 @@ import { AnchorAlignment } from '../../../../base/browser/ui/contextview/context
 import { DropdownMenuActionViewItem } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
 import { IAction, IActionRunner, Separator } from '../../../../base/common/actions.js';
 import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
 import { SuggestEnabledInput } from '../../codeEditor/browser/suggestEnabledInput/suggestEnabledInput.js';
 import {

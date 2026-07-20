@@ -52,7 +52,7 @@ import {
 	areSameExtensions,
 	computeTargetPlatform
 } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IProductService } from '../../../../platform/product/common/productService.js';
 import { Schemas } from '../../../../base/common/network.js';
 import { IDownloadService } from '../../../../platform/download/common/download.js';

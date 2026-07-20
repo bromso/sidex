@@ -5,7 +5,7 @@
 
 import { Disposable } from '../../../../base/common/lifecycle.js';
 import { FoldingController } from '../../../../editor/contrib/folding/browser/folding.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
 import {
 	Extensions as WorkbenchExtensions,

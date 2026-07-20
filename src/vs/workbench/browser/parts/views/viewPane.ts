@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/paneviewlet.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Event, Emitter } from '../../../../base/common/event.js';
 import { asCssVariable, foreground } from '../../../../platform/theme/common/colorRegistry.js';
 import {

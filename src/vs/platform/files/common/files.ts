@@ -14,7 +14,7 @@ import { ReadableStreamEvents } from '../../../base/common/stream.js';
 import { startsWithIgnoreCase } from '../../../base/common/strings.js';
 import { isNumber } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { isWeb } from '../../../base/common/platform.js';
 import { Schemas } from '../../../base/common/network.js';

@@ -36,7 +36,7 @@ import { EditorLayoutInfo } from '../../../../common/config/editorOptions.js';
 import { LineRange } from '../../../../common/core/ranges/lineRange.js';
 import { OffsetRange, OffsetRangeSet } from '../../../../common/core/ranges/offsetRange.js';
 import { MovedText } from '../../../../common/diff/linesDiffComputer.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export class MovedBlocksLinesFeature extends Disposable {
 	public static readonly movedCodeBlockPadding = 4;

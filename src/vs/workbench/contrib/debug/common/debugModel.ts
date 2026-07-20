@@ -17,7 +17,7 @@ import { isString, isUndefinedOrNull } from '../../../../base/common/types.js';
 import { URI, URI as uri } from '../../../../base/common/uri.js';
 import { generateUuid } from '../../../../base/common/uuid.js';
 import { IRange, Range } from '../../../../editor/common/core/range.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
 import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
 import { IEditorPane } from '../../../common/editor.js';

@@ -10,7 +10,7 @@ import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
 import { ResourceMap, ResourceSet } from '../../../base/common/map.js';
 import { Schemas } from '../../../base/common/network.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	IMarker,
 	IMarkerData,

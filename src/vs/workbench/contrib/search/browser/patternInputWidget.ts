@@ -12,7 +12,7 @@ import { Widget } from '../../../../base/browser/ui/widget.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import { Emitter, Event as CommonEvent } from '../../../../base/common/event.js';
 import { KeyCode } from '../../../../base/common/keyCodes.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ContextScopedHistoryInputBox } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
 import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

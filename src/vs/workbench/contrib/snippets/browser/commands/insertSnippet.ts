@@ -8,7 +8,7 @@ import { ServicesAccessor } from '../../../../../editor/browser/editorExtensions
 import { EditorContextKeys } from '../../../../../editor/common/editorContextKeys.js';
 import { ILanguageService } from '../../../../../editor/common/languages/language.js';
 import { SnippetController2 } from '../../../../../editor/contrib/snippet/browser/snippetController2.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { SnippetEditorAction } from './abstractSnippetsActions.js';

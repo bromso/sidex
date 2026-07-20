@@ -26,7 +26,7 @@ import { Widget } from '../../../base/browser/ui/widget.js';
 import { AnchorPosition } from '../../../base/browser/ui/contextview/contextview.js';
 import { IMarkdownRendererService } from '../../markdown/browser/markdownRenderer.js';
 import { isMarkdownString } from '../../../base/common/htmlContent.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { isMacintosh } from '../../../base/common/platform.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { status } from '../../../base/browser/ui/aria/aria.js';

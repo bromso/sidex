@@ -5,7 +5,7 @@
 
 import { Codicon } from '../../../base/common/codicons.js';
 import { isUriComponents, URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExtensionTerminalProfile, ITerminalProfile, TerminalIcon } from './terminal.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import { isObject, isString, type SingleOrMany } from '../../../base/common/types.js';

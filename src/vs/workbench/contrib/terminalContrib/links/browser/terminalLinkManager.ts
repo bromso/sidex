@@ -8,7 +8,7 @@ import { IMarkdownString, MarkdownString } from '../../../../../base/common/html
 import { DisposableStore, dispose, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
 import { isMacintosh, OS } from '../../../../../base/common/platform.js';
 import { URI } from '../../../../../base/common/uri.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { ITunnelService } from '../../../../../platform/tunnel/common/tunnel.js';

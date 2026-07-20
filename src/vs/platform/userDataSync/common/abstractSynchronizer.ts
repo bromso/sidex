@@ -17,7 +17,7 @@ import { uppercaseFirstLetter } from '../../../base/common/strings.js';
 import { isString, isUndefined } from '../../../base/common/types.js';
 import { URI } from '../../../base/common/uri.js';
 import { IHeaders } from '../../../base/parts/request/common/request.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import {

@@ -10,7 +10,7 @@ import { IProcessEnvironment, isLinux, OperatingSystem } from '../../../../base/
 import Severity from '../../../../base/common/severity.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { URI } from '../../../../base/common/uri.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
 import {
 	ISerializedCommandDetectionCapability,

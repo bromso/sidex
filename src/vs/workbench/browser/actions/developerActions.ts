@@ -5,7 +5,7 @@
 
 import './media/actions.css';
 
-import { localize, localize2 } from '../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
 import { DomEmitter } from '../../../base/browser/event.js';
 import { Color } from '../../../base/common/color.js';

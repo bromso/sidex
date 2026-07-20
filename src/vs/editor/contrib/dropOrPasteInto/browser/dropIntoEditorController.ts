@@ -11,7 +11,7 @@ import { VSDataTransfer } from '../../../../base/common/dataTransfer.js';
 import { isCancellationError } from '../../../../base/common/errors.js';
 import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
 import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
 import { LocalSelectionTransfer } from '../../../../platform/dnd/browser/dnd.js';

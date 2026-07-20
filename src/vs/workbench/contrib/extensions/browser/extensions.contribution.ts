@@ -17,7 +17,7 @@ import { PolicyCategory } from '../../../../base/common/policy.js';
 import { URI, UriComponents } from '../../../../base/common/uri.js';
 import { MultiCommand } from '../../../../editor/browser/editorExtensions.js';
 import { CopyAction, CutAction, PasteAction } from '../../../../editor/contrib/clipboard/browser/clipboard.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import {
 	Action2,

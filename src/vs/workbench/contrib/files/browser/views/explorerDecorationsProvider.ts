@@ -5,7 +5,7 @@
 
 import { URI } from '../../../../../base/common/uri.js';
 import { Event, Emitter } from '../../../../../base/common/event.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
 import { IDecorationsProvider, IDecorationData } from '../../../../services/decorations/common/decorations.js';
 import {

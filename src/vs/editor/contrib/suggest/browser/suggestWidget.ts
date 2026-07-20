@@ -32,7 +32,7 @@ import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IPosition } from '../../../common/core/position.js';
 import { SuggestWidgetStatus } from './suggestWidgetStatus.js';
 import '../../symbolIcons/browser/symbolIcons.js'; // The codicon symbol colors are defined here and must be loaded to get colors
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';

@@ -81,7 +81,7 @@ import { CancellationToken, CancellationTokenSource } from '../../../common/canc
 import { IContextViewProvider } from '../contextview/contextview.js';
 import { FuzzyScore } from '../../../common/filters.js';
 import { insertInto, splice } from '../../../common/arrays.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export interface IAsyncDataTreeNode<TInput, T> {
 	element: TInput | T;

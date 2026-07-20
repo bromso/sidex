@@ -8,7 +8,7 @@ import { VSBuffer } from '../../../base/common/buffer.js';
 import { CancellationToken } from '../../../base/common/cancellation.js';
 import { Event } from '../../../base/common/event.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ConfigurationTarget, IConfigurationService } from '../../configuration/common/configuration.js';
 import { ConfigurationModelParser } from '../../configuration/common/configurationModels.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

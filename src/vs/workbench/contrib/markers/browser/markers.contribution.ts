@@ -9,7 +9,7 @@ import { Extensions, IConfigurationRegistry } from '../../../../platform/configu
 import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
 import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { Marker, RelatedInformation, ResourceMarkers } from './markersModel.js';
 import { MarkersView } from './markersView.js';
 import { MenuId, registerAction2, Action2 } from '../../../../platform/actions/common/actions.js';

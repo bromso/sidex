@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { isObject } from '../../../../base/common/types.js';
 import { IJSONSchema, IJSONSchemaMap, IJSONSchemaSnippet } from '../../../../base/common/jsonSchema.js';
 import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';

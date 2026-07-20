@@ -36,7 +36,7 @@ import {
 	TreeElement
 } from './referencesTree.js';
 import * as peekView from '../../../peekView/browser/peekView.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
 import { ILabelService } from '../../../../../platform/label/common/label.js';

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { registerColor, editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
 
 export const multiDiffEditorHeaderBackground = registerColor(

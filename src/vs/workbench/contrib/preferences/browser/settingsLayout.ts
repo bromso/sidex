@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { isWeb, isWindows } from '../../../../base/common/platform.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ISetting, ISettingsGroup } from '../../../services/preferences/common/preferences.js';
 
 export interface ITOCFilter {

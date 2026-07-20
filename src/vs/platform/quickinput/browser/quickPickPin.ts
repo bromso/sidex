@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Codicon } from '../../../base/common/codicons.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IQuickPick, IQuickPickItem, QuickPickItem } from '../common/quickInput.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
 import { ThemeIcon } from '../../../base/common/themables.js';

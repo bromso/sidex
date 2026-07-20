@@ -24,7 +24,7 @@ import {
 } from '../../../../../../../base/common/observable.js';
 import { OS } from '../../../../../../../base/common/platform.js';
 import { ThemeIcon } from '../../../../../../../base/common/themables.js';
-import { localize } from '../../../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ICommandService } from '../../../../../../../platform/commands/common/commands.js';
 import { IContextKeyService } from '../../../../../../../platform/contextkey/common/contextkey.js';
 import { nativeHoverDelegate } from '../../../../../../../platform/hover/browser/hover.js';

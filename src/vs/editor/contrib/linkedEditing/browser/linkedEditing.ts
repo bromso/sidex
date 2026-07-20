@@ -34,7 +34,7 @@ import { IModelDeltaDecoration, ITextModel, TrackedRangeStickiness } from '../..
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { LinkedEditingRangeProvider, LinkedEditingRanges } from '../../../common/languages.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	ContextKeyExpr,
 	IContextKey,

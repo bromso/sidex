@@ -7,7 +7,7 @@ import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
 import { Schemas } from '../../../../../base/common/network.js';
 import { isIOS, isMacintosh, isWindows } from '../../../../../base/common/platform.js';
 import { isObject, isString } from '../../../../../base/common/types.js';
-import { localize, localize2 } from '../../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
 import { ContextKeyExpr, type ContextKeyExpression } from '../../../../../platform/contextkey/common/contextkey.js';
 import type { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';

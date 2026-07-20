@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { CancellationToken } from '../../../base/common/cancellation.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { IDisposable } from '../../../base/common/lifecycle.js';

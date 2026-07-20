@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { isIOS, isLinux, isMacintosh, isMobile, isWeb, isWindows } from '../../../base/common/platform.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { RawContextKey } from './contextkey.js';
 
 const _isSideX = !!(globalThis as any).__SIDEX_TAURI__;

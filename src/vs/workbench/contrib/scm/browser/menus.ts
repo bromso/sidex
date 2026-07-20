@@ -8,7 +8,7 @@ import { equals } from '../../../../base/common/arrays.js';
 import { Emitter } from '../../../../base/common/event.js';
 import { DisposableStore, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
 import './media/scm.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { getActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import { IMenu, IMenuService, MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
 import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';

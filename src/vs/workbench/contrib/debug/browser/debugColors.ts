@@ -19,7 +19,7 @@ import {
 import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
 import { ThemeIcon } from '../../../../base/common/themables.js';
 import { Color } from '../../../../base/common/color.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import * as icons from './debugIcons.js';
 import { isHighContrast } from '../../../../platform/theme/common/theme.js';
 

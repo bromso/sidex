@@ -38,7 +38,7 @@ import {
 import { isLinux, isWindows, OS } from '../../../base/common/platform.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import { assertType } from '../../../base/common/types.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { ICommandAction, isICommandActionToggleInfo } from '../../action/common/action.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';

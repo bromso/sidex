@@ -14,7 +14,7 @@ import { Disposable, DisposableStore, IDisposable } from '../../../base/common/l
 import { LRUCache } from '../../../base/common/map.js';
 import { ThemeIcon } from '../../../base/common/themables.js';
 import { TfIdfCalculator, normalizeTfIdfScores } from '../../../base/common/tfIdf.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { ICommandService } from '../../commands/common/commands.js';
 import { IConfigurationChangeEvent, IConfigurationService } from '../../configuration/common/configuration.js';

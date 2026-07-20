@@ -10,7 +10,7 @@ import {
 	DocumentFormattingEditProvider,
 	DocumentRangeFormattingEditProvider
 } from '../../../../editor/common/languages.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
 import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
 import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';

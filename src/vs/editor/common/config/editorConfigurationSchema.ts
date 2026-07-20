@@ -7,7 +7,7 @@ import type { IJSONSchemaSnippet } from '../../../base/common/jsonSchema.js';
 import { diffEditorDefaultOptions } from './diffEditor.js';
 import { editorOptionsRegistry } from './editorOptions.js';
 import { EDITOR_MODEL_DEFAULTS } from '../core/misc/textModelDefaults.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

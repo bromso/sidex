@@ -11,7 +11,7 @@ import { Disposable } from '../../../../base/common/lifecycle.js';
 import { IObservable, observableValue } from '../../../../base/common/observable.js';
 import { language } from '../../../../base/common/platform.js';
 import { WellDefinedPrefixTree } from '../../../../base/common/prefixTree.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
 import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
 import { IComputedStateAccessor, refreshComputedState } from './getComputedState.js';

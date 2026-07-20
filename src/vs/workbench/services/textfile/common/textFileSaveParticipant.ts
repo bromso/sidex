@@ -15,7 +15,7 @@ import {
 import { ITextFileSaveParticipant, ITextFileEditorModel, ITextFileSaveParticipantContext } from './textfiles.js';
 import { IDisposable, Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
 import { LinkedList } from '../../../../base/common/linkedList.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { NotificationPriority } from '../../../../platform/notification/common/notification.js';
 import { CancellationError, isCancellationError } from '../../../../base/common/errors.js';
 

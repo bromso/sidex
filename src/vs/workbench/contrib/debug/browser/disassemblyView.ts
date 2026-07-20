@@ -26,7 +26,7 @@ import { IRange, Range } from '../../../../editor/common/core/range.js';
 import { StringBuilder } from '../../../../editor/common/core/stringBuilder.js';
 import { ITextModel } from '../../../../editor/common/model.js';
 import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';

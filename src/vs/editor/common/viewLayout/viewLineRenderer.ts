@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { CharCode } from '../../../base/common/charCode.js';
 import * as strings from '../../../base/common/strings.js';
 import { IViewLineTokens } from '../tokens/lineTokens.js';

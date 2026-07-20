@@ -7,7 +7,7 @@ import { EventHelper } from '../../../../base/browser/dom.js';
 import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
 import { IDialogOptions } from '../../../../base/browser/ui/dialog/dialog.js';
 import { fromNow } from '../../../../base/common/date.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
 import { ResultKind } from '../../../../platform/keybinding/common/keybindingResolver.js';

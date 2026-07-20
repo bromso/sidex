@@ -14,7 +14,7 @@ import { parse } from '../../../base/common/marshalling.js';
 import { Schemas } from '../../../base/common/network.js';
 import { isNative, isWeb } from '../../../base/common/platform.js';
 import { URI, UriComponents } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IDialogService } from '../../dialogs/common/dialogs.js';
 import { IBaseTextResourceEditorInput, ITextEditorSelection } from '../../editor/common/editor.js';
 import { ByteSize } from '../../files/common/files.js';

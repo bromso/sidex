@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize2 } from '../../../nls.js';
+import { localize2 } from '@sidex/base/nls.js';
 import { Categories } from '../../action/common/actionCommonCategories.js';
 import { Action2, IMenuService } from './actions.js';
 import { ServicesAccessor } from '../../instantiation/common/instantiation.js';

@@ -9,7 +9,7 @@ import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.
 import { Checkbox } from '../../../../base/browser/ui/toggle/toggle.js';
 import { Emitter, Event } from '../../../../base/common/event.js';
 import { Disposable } from '../../../../base/common/lifecycle.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import type { IHoverService } from '../../../../platform/hover/browser/hover.js';
 import { defaultCheckboxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
 import { ITreeItem, ITreeItemCheckboxState } from '../../../common/views.js';

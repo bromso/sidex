@@ -46,7 +46,7 @@ import { ILanguageFeaturesService } from '../../../../editor/common/services/lan
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ITextResourcePropertiesService } from '../../../../editor/common/services/textResourceConfiguration.js';
 import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService

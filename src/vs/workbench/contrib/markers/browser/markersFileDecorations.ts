@@ -17,7 +17,7 @@ import {
 import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
 import { URI } from '../../../../base/common/uri.js';
 import { Event } from '../../../../base/common/event.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
 import { listErrorForeground, listWarningForeground } from '../../../../platform/theme/common/colorRegistry.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Queue } from '../../../../base/common/async.js';
 import * as json from '../../../../base/common/json.js';
 import * as objects from '../../../../base/common/objects.js';

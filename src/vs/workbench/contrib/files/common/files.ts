@@ -29,7 +29,7 @@ import { IEditorGroup } from '../../../services/editor/common/editorGroupsServic
 import { Event } from '../../../../base/common/event.js';
 import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExpression } from '../../../../base/common/glob.js';
 
 /**

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	AuthenticationSession,

@@ -29,7 +29,7 @@ import { IDiffEditorOptions, IEditorOptions } from '../../../../../editor/common
 import { ITextModel } from '../../../../../editor/common/model.js';
 import { IResolvedTextEditorModel, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
 import { peekViewResultsBackground } from '../../../../../editor/contrib/peekView/browser/peekView.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';

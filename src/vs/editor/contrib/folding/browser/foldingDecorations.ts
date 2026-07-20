@@ -13,7 +13,7 @@ import {
 } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { IDecorationProvider } from './foldingModel.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	editorSelectionBackground,
 	iconForeground,

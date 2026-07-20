@@ -13,7 +13,7 @@ import {
 	SYMBOL_ICON_FOLDER_FOREGROUND
 } from '../../../../../editor/contrib/symbolIcons/browser/symbolIcons.js';
 import { registerColor } from '../../../../../platform/theme/common/colorUtils.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { registerIcon } from '../../../../../platform/theme/common/iconRegistry.js';
 import { Codicon } from '../../../../../base/common/codicons.js';
 

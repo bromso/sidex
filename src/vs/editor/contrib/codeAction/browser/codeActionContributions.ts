@@ -22,7 +22,7 @@ import {
 } from './codeActionCommands.js';
 import { CodeActionController } from './codeActionController.js';
 import { LightBulbWidget } from './lightBulbWidget.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,

@@ -49,7 +49,7 @@ import {
 	IQuickPickItem,
 	IQuickPickSeparator
 } from '../../../../platform/quickinput/common/quickInput.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';

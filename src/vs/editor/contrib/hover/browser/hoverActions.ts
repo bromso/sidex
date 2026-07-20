@@ -32,7 +32,7 @@ import { AccessibilitySupport } from '../../../../platform/accessibility/common/
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 import { ContentHoverController } from './contentHoverController.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import './hover.css';
 
 enum HoverFocusBehavior {

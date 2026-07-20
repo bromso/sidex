@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as extensionsRegistry from '../../../services/extensions/common/extensionsRegistry.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IDebuggerContribution, ICompound, IBreakpointContribution } from './debug.js';
 import { launchSchemaId } from '../../../services/configuration/common/configuration.js';
 import { IJSONSchema } from '../../../../base/common/jsonSchema.js';

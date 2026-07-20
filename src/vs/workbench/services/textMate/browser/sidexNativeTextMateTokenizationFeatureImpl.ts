@@ -40,7 +40,7 @@ import { ITMSyntaxExtensionPoint, grammarsExtPoint } from '../common/TMGrammars.
 import { IValidGrammarDefinition } from '../common/TMScopeRegistry.js';
 import * as resources from '../../../../base/common/resources.js';
 import * as types from '../../../../base/common/types.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { getNativeTextMate } from '../../../../platform/sidex/browser/sidexTextMateService.js';
 import { ITextMateTokenizationService } from './textMateTokenizationFeature.js';
 import type { IGrammar } from 'vscode-textmate';

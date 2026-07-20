@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { KeyMod, KeyChord, KeyCode } from '../../../../base/common/keyCodes.js';
 import { ModesRegistry } from '../../../../editor/common/languages/modesRegistry.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
@@ -89,7 +89,7 @@ import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.j
 import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../platform/accessibility/common/accessibility.js';
 import { IsWindowsContext } from '../../../../platform/contextkey/common/contextkeys.js';
 import { FocusedViewContext } from '../../../common/contextkeys.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { viewFilterSubmenu } from '../../../browser/parts/views/viewFilter.js';
 import { ViewAction } from '../../../browser/parts/views/viewPane.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';

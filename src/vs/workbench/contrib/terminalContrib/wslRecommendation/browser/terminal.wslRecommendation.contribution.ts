@@ -6,7 +6,7 @@
 import { Disposable, type IDisposable } from '../../../../../base/common/lifecycle.js';
 import { basename } from '../../../../../base/common/path.js';
 import { isWindows } from '../../../../../base/common/platform.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExtensionManagementService } from '../../../../../platform/extensionManagement/common/extensionManagement.js';
 import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
 import {

@@ -18,7 +18,7 @@ import { basename, isEqual, joinPath } from '../../../base/common/resources.js';
 import * as semver from '../../../base/common/semver/semver.js';
 import Severity from '../../../base/common/severity.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IProductVersion, Metadata } from './extensionManagement.js';
 import {

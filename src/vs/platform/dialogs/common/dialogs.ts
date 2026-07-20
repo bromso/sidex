@@ -10,7 +10,7 @@ import { IMarkdownString } from '../../../base/common/htmlContent.js';
 import { basename } from '../../../base/common/resources.js';
 import Severity from '../../../base/common/severity.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { ITelemetryData } from '../../telemetry/common/telemetry.js';
 import { MessageBoxOptions } from '../../../base/parts/sandbox/common/electronTypes.js';

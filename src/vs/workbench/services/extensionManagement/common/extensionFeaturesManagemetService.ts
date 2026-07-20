@@ -19,7 +19,7 @@ import { Registry } from '../../../../platform/registry/common/platform.js';
 import { IStringDictionary } from '../../../../base/common/collections.js';
 import { Mutable, isBoolean } from '../../../../base/common/types.js';
 import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import { IStorageChangeEvent } from '../../../../base/parts/storage/common/storage.js';
 import { distinct } from '../../../../base/common/arrays.js';

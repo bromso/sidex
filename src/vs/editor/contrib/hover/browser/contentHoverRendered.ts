@@ -25,7 +25,7 @@ import * as dom from '../../../../base/browser/dom.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
 import { MarkdownHoverParticipant } from './markdownHoverParticipant.js';
 import { HoverColorPickerParticipant } from '../../colorPicker/browser/hoverColorPicker/hoverColorPickerParticipant.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { InlayHintsHover } from '../../inlayHints/browser/inlayHintsHover.js';
 import { BugIndicatingError } from '../../../../base/common/errors.js';
 import { HoverAction } from '../../../../base/browser/ui/hover/hoverWidget.js';

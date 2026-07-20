@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/extensionActions.css';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IAction, Action, Separator, SubmenuAction, IActionChangeEvent } from '../../../../base/common/actions.js';
 import { Delayer, Promises, Throttler } from '../../../../base/common/async.js';
 import * as DOM from '../../../../base/browser/dom.js';

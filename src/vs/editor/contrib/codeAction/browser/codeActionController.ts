@@ -15,7 +15,7 @@ import { Lazy } from '../../../../base/common/lazy.js';
 import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
 import { derivedOpts, IObservable, observableValue } from '../../../../base/common/observable.js';
 import { Event } from '../../../../base/common/event.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IActionListDelegate } from '../../../../platform/actionWidget/browser/actionList.js';
 import { IActionWidgetService } from '../../../../platform/actionWidget/browser/actionWidget.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';

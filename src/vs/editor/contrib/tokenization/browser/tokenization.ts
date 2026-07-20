@@ -6,7 +6,7 @@
 import { StopWatch } from '../../../../base/common/stopwatch.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorAction, registerEditorAction, ServicesAccessor } from '../../../browser/editorExtensions.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 class ForceRetokenizeAction extends EditorAction {
 	constructor() {

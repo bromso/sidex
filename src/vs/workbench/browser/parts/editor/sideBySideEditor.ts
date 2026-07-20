@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/sidebysideeditor.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Dimension, $, clearNode } from '../../../../base/browser/dom.js';
 import { multibyteAwareBtoa } from '../../../../base/common/strings.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';

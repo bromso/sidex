@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/progressService.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { IDisposable, dispose, DisposableStore, Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
 import {
 	IProgressService,

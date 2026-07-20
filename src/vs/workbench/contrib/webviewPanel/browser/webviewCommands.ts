@@ -5,7 +5,7 @@
 
 import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
 import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { Action2, MenuId } from '../../../../platform/actions/common/actions.js';
 import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
 import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';

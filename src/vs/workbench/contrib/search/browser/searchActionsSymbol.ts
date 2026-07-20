@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
 import * as Constants from '../common/constants.js';
 import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';

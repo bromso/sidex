@@ -9,7 +9,7 @@ import { basename, joinPath } from '../../../../../base/common/resources.js';
 import { URI } from '../../../../../base/common/uri.js';
 import { ILanguageService } from '../../../../../editor/common/languages/language.js';
 import { getIconClassesForLanguageId } from '../../../../../editor/common/services/getIconClasses.js';
-import * as nls from '../../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId } from '../../../../../platform/actions/common/actions.js';
 import { IFileService } from '../../../../../platform/files/common/files.js';
 import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';

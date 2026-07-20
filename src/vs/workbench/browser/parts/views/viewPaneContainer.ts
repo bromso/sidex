@@ -24,7 +24,7 @@ import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
 import { combinedDisposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
 import { assertReturnsDefined } from '../../../../base/common/types.js';
 import './media/paneviewlet.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	Action2,

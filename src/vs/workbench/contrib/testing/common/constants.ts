@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { stripIcons } from '../../../../base/common/iconLabels.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { TestResultState, TestRunProfileBitset } from './testTypes.js';
 
 export const enum Testing {

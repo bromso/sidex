@@ -11,7 +11,7 @@ import { MarshalledId } from '../../../base/common/marshallingIds.js';
 import { cloneAndChange, distinct, equals } from '../../../base/common/objects.js';
 import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
 import { URI } from '../../../base/common/uri.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry } from '../../commands/common/commands.js';
 import { ConfigurationTarget, IConfigurationService } from '../../configuration/common/configuration.js';
 import {

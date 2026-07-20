@@ -7,7 +7,7 @@ import { Action, IAction } from '../../../../../base/common/actions.js';
 import { disposableTimeout } from '../../../../../base/common/async.js';
 import { decodeBase64 } from '../../../../../base/common/buffer.js';
 import { Disposable, DisposableStore, type IDisposable } from '../../../../../base/common/lifecycle.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	NotificationPriority,
 	Severity,

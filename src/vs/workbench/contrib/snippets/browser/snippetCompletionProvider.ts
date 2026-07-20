@@ -21,7 +21,7 @@ import {
 } from '../../../../editor/common/languages.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
 import { SnippetParser } from '../../../../editor/contrib/snippet/browser/snippetParser.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { ISnippetsService } from './snippets.js';
 import { Snippet, SnippetSource } from './snippetsFile.js';
 import { isPatternInWord } from '../../../../base/common/filters.js';

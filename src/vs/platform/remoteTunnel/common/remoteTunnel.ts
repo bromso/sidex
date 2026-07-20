@@ -5,7 +5,7 @@
 
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { Event } from '../../../base/common/event.js';
-import { localize } from '../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 export interface IRemoteTunnelSession {
 	readonly providerId: string;

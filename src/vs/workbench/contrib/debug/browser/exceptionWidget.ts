@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/exceptionWidget.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import * as dom from '../../../../base/browser/dom.js';
 import { ZoneWidget } from '../../../../editor/contrib/zoneWidget/browser/zoneWidget.js';
 import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';

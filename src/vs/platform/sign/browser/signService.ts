@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { importAMDNodeModule, resolveAmdNodeModulePath } from '../../../amdX.js';
+import { importAMDNodeModule, resolveAmdNodeModulePath } from '@sidex/base/amdX.js';
 import { WindowIntervalTimer } from '../../../base/browser/dom.js';
 import { mainWindow } from '../../../base/browser/window.js';
 import { memoize } from '../../../base/common/decorators.js';

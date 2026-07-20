@@ -15,7 +15,7 @@ import { EventMultiplexer } from '../../../common/event.js';
 import { ResolvedKeybinding } from '../../../common/keybindings.js';
 import { Disposable, DisposableStore, toDisposable } from '../../../common/lifecycle.js';
 import './toolbar.css';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IHoverDelegate } from '../hover/hoverDelegate.js';
 import { createInstantHoverDelegate } from '../hover/hoverDelegateFactory.js';
 

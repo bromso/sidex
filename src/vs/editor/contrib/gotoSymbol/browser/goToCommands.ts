@@ -26,7 +26,7 @@ import { ReferencesModel } from './referencesModel.js';
 import { ISymbolNavigationService } from './symbolNavigation.js';
 import { MessageController } from '../../message/browser/messageController.js';
 import { PeekContext } from '../../peekView/browser/peekView.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import {
 	IAction2F1RequiredOptions,
 	IAction2Options,

@@ -22,7 +22,7 @@ import {
 } from '../../../services/statusbar/browser/statusbar.js';
 import { Disposable, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
 import { HIDE_NOTIFICATIONS_CENTER, SHOW_NOTIFICATIONS_CENTER } from './notificationsCommands.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { INotificationService, NotificationsFilter } from '../../../../platform/notification/common/notification.js';
 import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
 

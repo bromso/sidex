@@ -41,7 +41,7 @@ import {
 import { FindOptionsWidget } from './findOptionsWidget.js';
 import { FindReplaceState, FindReplaceStateChangedEvent, INewFindReplaceState } from './findState.js';
 import { FindWidget, IFindController, NLS_NO_RESULTS } from './findWidget.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { MenuId } from '../../../../platform/actions/common/actions.js';
 import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
 import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';

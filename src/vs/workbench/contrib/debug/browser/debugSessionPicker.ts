@@ -2,7 +2,7 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { matchesFuzzy } from '../../../../base/common/filters.js';
 import { DisposableStore } from '../../../../base/common/lifecycle.js';
 import { IDebugService, IDebugSession, REPL_VIEW_ID } from '../common/debug.js';

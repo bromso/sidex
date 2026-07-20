@@ -35,7 +35,7 @@ import {
 	IRenderedHoverParts,
 	RenderedHoverParts
 } from './hoverTypes.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
 import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';

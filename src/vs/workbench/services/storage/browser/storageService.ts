@@ -32,7 +32,7 @@ import {
 import { isUserDataProfile, IUserDataProfile } from '../../../../platform/userDataProfile/common/userDataProfile.js';
 import { IAnyWorkspaceIdentifier } from '../../../../platform/workspace/common/workspace.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { isTauri } from '../../../../sidex-bridge.js';
+import { isTauri } from '@sidex/base/sidex-bridge.js';
 import { TauriStorageDatabase } from './tauriStorageDatabase.js';
 
 const STORAGE_DATABASE_PREFIX = 'vscode-web-state-db-';

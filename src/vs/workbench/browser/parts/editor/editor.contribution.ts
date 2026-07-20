@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Registry } from '../../../../platform/registry/common/platform.js';
-import { localize, localize2 } from '../../../../nls.js';
+import { localize, localize2 } from '@sidex/base/nls.js';
 import { IEditorPaneRegistry, EditorPaneDescriptor } from '../../editor.js';
 import { IEditorFactoryRegistry, EditorExtensions } from '../../../common/editor.js';
 import {

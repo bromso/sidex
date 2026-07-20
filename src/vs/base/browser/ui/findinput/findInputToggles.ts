@@ -5,7 +5,7 @@
 
 import { Toggle } from '../toggle/toggle.js';
 import { Codicon } from '../../../common/codicons.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { type IHoverLifecycleOptions } from '../hover/hover.js';
 
 export interface IFindInputToggleOpts {

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { registerColor } from '../../../../../platform/theme/common/colorUtils.js';
 
 export const terminalStickyScrollBackground = registerColor(

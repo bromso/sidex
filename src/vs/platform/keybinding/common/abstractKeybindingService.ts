@@ -17,7 +17,7 @@ import {
 	SingleModifierChord
 } from '../../../base/common/keybindings.js';
 import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import * as nls from '../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 
 import { ICommandService } from '../../commands/common/commands.js';
 import { IContextKeyService, IContextKeyServiceTarget } from '../../contextkey/common/contextkey.js';

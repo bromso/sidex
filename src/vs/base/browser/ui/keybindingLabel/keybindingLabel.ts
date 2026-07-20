@@ -13,7 +13,7 @@ import { Disposable } from '../../../common/lifecycle.js';
 import { equals } from '../../../common/objects.js';
 import { OperatingSystem } from '../../../common/platform.js';
 import './keybindingLabel.css';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 
 const $ = dom.$;
 

@@ -8,7 +8,7 @@ import * as dom from '../../../../../base/browser/dom.js';
 import { Color } from '../../../../../base/common/color.js';
 import { Disposable } from '../../../../../base/common/lifecycle.js';
 import { ColorPickerModel } from '../colorPickerModel.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { editorHoverBackground } from '../../../../../platform/theme/common/colorRegistry.js';
 import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
 import { CloseButton } from './colorPickerCloseButton.js';

@@ -11,7 +11,7 @@ import { MoveOperations } from '../../../common/cursor/cursorMoveOperations.js';
 import { Range } from '../../../common/core/range.js';
 import { ICommand } from '../../../common/editorCommon.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
 
 class TransposeLettersAction extends EditorAction {

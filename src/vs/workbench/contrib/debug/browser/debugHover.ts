@@ -31,7 +31,7 @@ import { Range } from '../../../../editor/common/core/range.js';
 import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
 import { ModelDecorationOptions } from '../../../../editor/common/model/textModel.js';
 import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import * as nls from '../../../../nls.js';
+import * as nls from '@sidex/base/nls.js';
 import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
 import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';

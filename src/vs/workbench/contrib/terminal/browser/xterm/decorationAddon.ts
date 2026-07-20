@@ -16,7 +16,7 @@ import {
 	toDisposable
 } from '../../../../../base/common/lifecycle.js';
 import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { localize } from '../../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService

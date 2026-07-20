@@ -6,7 +6,7 @@
 import { IEnvironmentVariableInfo } from '../common/environmentVariable.js';
 import { ITerminalStatus, ITerminalStatusHoverAction, TerminalCommandId } from '../common/terminal.js';
 import { ITerminalService } from './terminal.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { Codicon } from '../../../../base/common/codicons.js';
 import {
 	EnvironmentVariableScope,

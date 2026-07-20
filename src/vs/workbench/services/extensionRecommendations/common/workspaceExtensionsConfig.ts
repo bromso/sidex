@@ -24,7 +24,7 @@ import {
 } from '../../../../platform/quickinput/common/quickInput.js';
 import { IModelService } from '../../../../editor/common/services/model.js';
 import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { localize } from '../../../../nls.js';
+import { localize } from '@sidex/base/nls.js';
 import { URI } from '../../../../base/common/uri.js';
 import { IJSONEditingService, IJSONValue } from '../../configuration/common/jsonEditing.js';
 import { ResourceMap } from '../../../../base/common/map.js';
