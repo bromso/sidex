@@ -174,16 +174,7 @@
 						"useBlockStatements": "warn",
 						"useConsistentBuiltinInstantiation": "warn",
 						"useConst": "warn",
-						"useNamingConvention": {
-							"level": "warn",
-							"options": {
-								"strictCase": false,
-								"requireAscii": false,
-								"conventions": [
-									{ "selector": { "kind": "class" }, "formats": ["PascalCase"] }
-								]
-							}
-						},
+						"useNamingConvention": "off",
 						"useSpreadOverApply": "off",
 						"useThrowOnlyError": "warn"
 					},
