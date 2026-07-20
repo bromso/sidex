@@ -9,6 +9,8 @@ node_modules/
 dist/
 out/
 build/
+# @sidex/build is a workspace package, not build output.
+!packages/build/
 *.tsbuildinfo
 
 # ── Rust / Cargo ─────────────────────────────────────────────────────────────
