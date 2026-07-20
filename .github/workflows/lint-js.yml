@@ -7,7 +7,7 @@ on:
       - ".github/workflows/lint-js.yml"
       - "src/**"
       - "tsconfig.json"
-      - "eslint.config.*"
+      - "biome.json"
       - "package.json"
       - "bun.lock"
   pull_request:
@@ -16,7 +16,7 @@ on:
       - ".github/workflows/lint-js.yml"
       - "src/**"
       - "tsconfig.json"
-      - "eslint.config.*"
+      - "biome.json"
       - "package.json"
       - "bun.lock"
 
@@ -48,8 +48,8 @@ jobs:
       - name: Type check
         run: npx tsc --noEmit
 
-  eslint:
-    name: ESLint
+  biome:
+    name: Biome
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:

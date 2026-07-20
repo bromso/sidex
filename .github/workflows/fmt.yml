@@ -10,8 +10,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  prettier:
-    name: Prettier
+  biome-format:
+    name: Biome format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
