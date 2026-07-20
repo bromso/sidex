@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import * as path from 'path';
-import { nlsPlugin } from './scripts/vite-plugin-nls';
+import { nlsPlugin } from './packages/build/src/nls/plugin';
 
 function quietMissingSourceMaps() {
   const skip = [/\/vscode-textmate\/.*\.js\.map$/];
@@ -24,7 +24,7 @@ export default defineConfig({
   clearScreen: false,
   assetsInclude: ['**/*.wasm', '**/*.json', '**/*.tmLanguage.json'],
   publicDir: 'public',
-  plugins: [nlsPlugin(), quietMissingSourceMaps()],
+  plugins: [nlsPlugin({ sourceRoot: path.resolve(__dirname, 'src/vs') }), quietMissingSourceMaps()],
   server: {
     port: 1420,
     strictPort: true,
