@@ -431,11 +431,9 @@ export function createExtHostComments(
 			return this._state!;
 		}
 
-		set state(
-			newState:
-				| vscode.CommentThreadState
-				| { resolved?: vscode.CommentThreadState; applicability?: vscode.CommentThreadApplicability }
-		) {
+		set state(newState:
+			| vscode.CommentThreadState
+			| { resolved?: vscode.CommentThreadState; applicability?: vscode.CommentThreadApplicability }) {
 			this._state = newState;
 			if (typeof newState === 'object') {
 				checkProposedApiEnabled(this.extensionDescription, 'commentThreadApplicability');
@@ -552,11 +550,9 @@ export function createExtHostComments(
 					| undefined {
 					return that.state;
 				},
-				set state(
-					value:
-						| vscode.CommentThreadState
-						| { resolved?: vscode.CommentThreadState; applicability?: vscode.CommentThreadApplicability }
-				) {
+				set state(value:
+					| vscode.CommentThreadState
+					| { resolved?: vscode.CommentThreadState; applicability?: vscode.CommentThreadApplicability }) {
 					that.state = value;
 				},
 				reveal: (

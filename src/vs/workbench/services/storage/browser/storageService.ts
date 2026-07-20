@@ -58,8 +58,8 @@ export class BrowserStorageService extends AbstractStorageService {
 	get hasPendingUpdate(): boolean {
 		return Boolean(
 			this.applicationStorageDatabase?.hasPendingUpdate ||
-			this.profileStorageDatabase?.hasPendingUpdate ||
-			this.workspaceStorageDatabase?.hasPendingUpdate
+				this.profileStorageDatabase?.hasPendingUpdate ||
+				this.workspaceStorageDatabase?.hasPendingUpdate
 		);
 	}
 

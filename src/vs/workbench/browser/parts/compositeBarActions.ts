@@ -163,7 +163,7 @@ export class CompositeBarActionViewItem extends BaseActionViewItem {
 	protected container!: HTMLElement;
 	protected label!: HTMLElement;
 	protected badge!: HTMLElement;
-	declare protected readonly options: ICompositeBarActionViewItemOptions;
+	protected declare readonly options: ICompositeBarActionViewItemOptions;
 
 	private badgeContent: HTMLElement | undefined;
 	private readonly badgeDisposable = this._register(new MutableDisposable<DisposableStore>());

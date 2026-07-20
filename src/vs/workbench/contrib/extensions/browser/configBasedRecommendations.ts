@@ -3,17 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IExtensionTipsService, IConfigBasedExtensionTip } from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import {
+	IExtensionTipsService,
+	IConfigBasedExtensionTip
+} from '../../../../platform/extensionManagement/common/extensionManagement.js';
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
 import { localize } from '../../../../nls.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { IWorkspaceContextService, IWorkspaceFoldersChangeEvent } from '../../../../platform/workspace/common/workspace.js';
+import {
+	IWorkspaceContextService,
+	IWorkspaceFoldersChangeEvent
+} from '../../../../platform/workspace/common/workspace.js';
 import { Emitter } from '../../../../base/common/event.js';
 
 type ConfigBasedExtensionRecommendation = ExtensionRecommendation & { whenNotInstalled: string[] | undefined };
 
 export class ConfigBasedRecommendations extends ExtensionRecommendations {
-
 	private importantTips: IConfigBasedExtensionTip[] = [];
 	private otherTips: IConfigBasedExtensionTip[] = [];
 
@@ -21,16 +26,22 @@ export class ConfigBasedRecommendations extends ExtensionRecommendations {
 	readonly onDidChangeRecommendations = this._onDidChangeRecommendations.event;
 
 	private _otherRecommendations: ConfigBasedExtensionRecommendation[] = [];
-	get otherRecommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> { return this._otherRecommendations; }
+	get otherRecommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> {
+		return this._otherRecommendations;
+	}
 
 	private _importantRecommendations: ConfigBasedExtensionRecommendation[] = [];
-	get importantRecommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> { return this._importantRecommendations; }
+	get importantRecommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> {
+		return this._importantRecommendations;
+	}
 
-	get recommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> { return [...this.importantRecommendations, ...this.otherRecommendations]; }
+	get recommendations(): ReadonlyArray<ConfigBasedExtensionRecommendation> {
+		return [...this.importantRecommendations, ...this.otherRecommendations];
+	}
 
 	constructor(
 		@IExtensionTipsService private readonly extensionTipsService: IExtensionTipsService,
-		@IWorkspaceContextService private readonly workspaceContextService: IWorkspaceContextService,
+		@IWorkspaceContextService private readonly workspaceContextService: IWorkspaceContextService
 	) {
 		super();
 	}
@@ -65,7 +76,11 @@ export class ConfigBasedRecommendations extends ExtensionRecommendations {
 			const oldImportantRecommended = this.importantTips;
 			await this.fetch();
 			// Suggest only if at least one of the newly added recommendations was not suggested before
-			if (this.importantTips.some(current => oldImportantRecommended.every(old => current.extensionId !== old.extensionId))) {
+			if (
+				this.importantTips.some(current =>
+					oldImportantRecommended.every(old => current.extensionId !== old.extensionId)
+				)
+			) {
 				this._onDidChangeRecommendations.fire();
 			}
 		}
@@ -76,10 +91,12 @@ export class ConfigBasedRecommendations extends ExtensionRecommendations {
 			extension: tip.extensionId,
 			reason: {
 				reasonId: ExtensionRecommendationReason.WorkspaceConfig,
-				reasonText: localize('exeBasedRecommendation', "This extension is recommended because of the current workspace configuration")
+				reasonText: localize(
+					'exeBasedRecommendation',
+					'This extension is recommended because of the current workspace configuration'
+				)
 			},
 			whenNotInstalled: tip.whenNotInstalled
 		};
 	}
-
 }

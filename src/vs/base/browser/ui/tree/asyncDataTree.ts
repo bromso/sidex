@@ -180,11 +180,9 @@ class AsyncDataTreeNodeWrapper<TInput, T, TFilterData> implements ITreeNode<TInp
 	constructor(private node: ITreeNode<IAsyncDataTreeNode<TInput, T> | null, TFilterData>) {}
 }
 
-class AsyncDataTreeRenderer<TInput, T, TFilterData, TTemplateData> implements ITreeRenderer<
-	IAsyncDataTreeNode<TInput, T>,
-	TFilterData,
-	IDataTreeListTemplateData<TTemplateData>
-> {
+class AsyncDataTreeRenderer<TInput, T, TFilterData, TTemplateData>
+	implements ITreeRenderer<IAsyncDataTreeNode<TInput, T>, TFilterData, IDataTreeListTemplateData<TTemplateData>>
+{
 	readonly templateId: string;
 	private renderedNodes = new Map<IAsyncDataTreeNode<TInput, T>, IDataTreeListTemplateData<TTemplateData>>();
 
@@ -673,8 +671,7 @@ export interface IAsyncDataTreeOptionsUpdate<T> extends IAbstractTreeOptionsUpda
 export interface IAsyncDataTreeUpdateChildrenOptions<T> extends IObjectTreeSetChildrenOptions<T> {}
 
 export interface IAsyncDataTreeOptions<T, TFilterData = void>
-	extends
-		IAsyncDataTreeOptionsUpdate<T>,
+	extends IAsyncDataTreeOptionsUpdate<T>,
 		Pick<
 			IAbstractTreeOptions<T, TFilterData>,
 			Exclude<keyof IAbstractTreeOptions<T, TFilterData>, 'collapseByDefault'>
@@ -1757,10 +1754,9 @@ type CompressibleAsyncDataTreeNodeMapper<TInput, T, TFilterData> = WeakMapper<
 	ITreeNode<ICompressedTreeNode<TInput | T>, TFilterData>
 >;
 
-class CompressibleAsyncDataTreeNodeWrapper<TInput, T, TFilterData> implements ITreeNode<
-	ICompressedTreeNode<TInput | T>,
-	TFilterData
-> {
+class CompressibleAsyncDataTreeNodeWrapper<TInput, T, TFilterData>
+	implements ITreeNode<ICompressedTreeNode<TInput | T>, TFilterData>
+{
 	get element(): ICompressedTreeNode<TInput | T> {
 		return {
 			elements: this.node.element.elements.map(e => e.element),
@@ -1796,11 +1792,10 @@ class CompressibleAsyncDataTreeNodeWrapper<TInput, T, TFilterData> implements IT
 	constructor(private node: ITreeNode<ICompressedTreeNode<IAsyncDataTreeNode<TInput, T>>, TFilterData>) {}
 }
 
-class CompressibleAsyncDataTreeRenderer<TInput, T, TFilterData, TTemplateData> implements ICompressibleTreeRenderer<
-	IAsyncDataTreeNode<TInput, T>,
-	TFilterData,
-	IDataTreeListTemplateData<TTemplateData>
-> {
+class CompressibleAsyncDataTreeRenderer<TInput, T, TFilterData, TTemplateData>
+	implements
+		ICompressibleTreeRenderer<IAsyncDataTreeNode<TInput, T>, TFilterData, IDataTreeListTemplateData<TTemplateData>>
+{
 	readonly templateId: string;
 	private renderedNodes = new Map<IAsyncDataTreeNode<TInput, T>, IDataTreeListTemplateData<TTemplateData>>();
 	private disposables: IDisposable[] = [];
@@ -1922,10 +1917,8 @@ function asCompressibleObjectTreeOptions<TInput, T, TFilterData>(
 	);
 }
 
-export interface ICompressibleAsyncDataTreeOptions<T, TFilterData = void> extends IAsyncDataTreeOptions<
-	T,
-	TFilterData
-> {
+export interface ICompressibleAsyncDataTreeOptions<T, TFilterData = void>
+	extends IAsyncDataTreeOptions<T, TFilterData> {
 	readonly compressionEnabled?: boolean;
 	readonly keyboardNavigationLabelProvider?: ICompressibleKeyboardNavigationLabelProvider<T>;
 }
@@ -1935,7 +1928,7 @@ export interface ICompressibleAsyncDataTreeOptionsUpdate<T> extends IAsyncDataTr
 }
 
 export class CompressibleAsyncDataTree<TInput, T, TFilterData = void> extends AsyncDataTree<TInput, T, TFilterData> {
-	declare protected readonly tree: CompressibleObjectTree<IAsyncDataTreeNode<TInput, T>, TFilterData>;
+	protected declare readonly tree: CompressibleObjectTree<IAsyncDataTreeNode<TInput, T>, TFilterData>;
 	protected readonly compressibleNodeMapper: CompressibleAsyncDataTreeNodeMapper<TInput, T, TFilterData> =
 		new WeakMapper(node => new CompressibleAsyncDataTreeNodeWrapper(node));
 	private filter?: ITreeFilter<T, TFilterData>;

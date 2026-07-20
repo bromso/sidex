@@ -485,10 +485,8 @@ export enum QuickPickFocus {
 /**
  * Represents a quick pick control that allows the user to select an item from a list of options.
  */
-export interface IQuickPick<
-	T extends IQuickPickItem,
-	O extends { useSeparators: boolean } = { useSeparators: false }
-> extends IQuickInput {
+export interface IQuickPick<T extends IQuickPickItem, O extends { useSeparators: boolean } = { useSeparators: false }>
+	extends IQuickInput {
 	/**
 	 * The type of the quick input.
 	 */

@@ -27,7 +27,6 @@ import { LogLevel } from '../platform/log/common/log.js';
 export {
 	// Factory
 	create,
-
 	// Basic Types
 	URI,
 	Event,
@@ -37,7 +36,6 @@ export {
 	LogLevel,
 	RemoteAuthorityResolverError,
 	RemoteAuthorityResolverErrorCode,
-
 	// Facade API
 	env,
 	window,

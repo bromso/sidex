@@ -4221,7 +4221,7 @@ class EditorQuickSuggestions extends BaseEditorOption<
 	boolean | QuickSuggestionsValue | IQuickSuggestionsOptions,
 	InternalQuickSuggestionsOptions
 > {
-	declare public readonly defaultValue: InternalQuickSuggestionsOptions;
+	public declare readonly defaultValue: InternalQuickSuggestionsOptions;
 
 	constructor() {
 		const defaults: InternalQuickSuggestionsOptions = {

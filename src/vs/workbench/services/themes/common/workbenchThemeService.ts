@@ -671,7 +671,7 @@ export interface ITextMateThemingRule {
 export interface ITokenColorizationSetting {
 	foreground?: string;
 	background?: string;
-	fontStyle?: string; /* [italic|bold|underline|strikethrough] */
+	fontStyle?: string /* [italic|bold|underline|strikethrough] */;
 	fontFamily?: string;
 	fontSize?: number;
 	lineHeight?: number;
@@ -679,7 +679,7 @@ export interface ITokenColorizationSetting {
 
 export interface ISemanticTokenColorizationSetting {
 	foreground?: string;
-	fontStyle?: string; /* [italic|bold|underline|strikethrough] */
+	fontStyle?: string /* [italic|bold|underline|strikethrough] */;
 	bold?: boolean;
 	underline?: boolean;
 	strikethrough?: boolean;

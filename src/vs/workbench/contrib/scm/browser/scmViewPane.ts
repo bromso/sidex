@@ -211,11 +211,9 @@ interface ActionButtonTemplate {
 	readonly templateDisposable: IDisposable;
 }
 
-export class ActionButtonRenderer implements ICompressibleTreeRenderer<
-	ISCMActionButton,
-	FuzzyScore,
-	ActionButtonTemplate
-> {
+export class ActionButtonRenderer
+	implements ICompressibleTreeRenderer<ISCMActionButton, FuzzyScore, ActionButtonTemplate>
+{
 	static readonly DEFAULT_HEIGHT = 28;
 
 	static readonly TEMPLATE_ID = 'actionButton';
@@ -624,11 +622,14 @@ class RepositoryPaneActionRunner extends ActionRunner {
 	}
 }
 
-class ResourceRenderer implements ICompressibleTreeRenderer<
-	ISCMResource | IResourceNode<ISCMResource, ISCMResourceGroup>,
-	FuzzyScore | LabelFuzzyScore,
-	ResourceTemplate
-> {
+class ResourceRenderer
+	implements
+		ICompressibleTreeRenderer<
+			ISCMResource | IResourceNode<ISCMResource, ISCMResourceGroup>,
+			FuzzyScore | LabelFuzzyScore,
+			ResourceTemplate
+		>
+{
 	static readonly TEMPLATE_ID = 'resource';
 	get templateId(): string {
 		return ResourceRenderer.TEMPLATE_ID;
@@ -995,7 +996,9 @@ export class SCMTreeSorter implements ITreeSorter<TreeElement> {
 	}
 }
 
-export class SCMTreeKeyboardNavigationLabelProvider implements ICompressibleKeyboardNavigationLabelProvider<TreeElement> {
+export class SCMTreeKeyboardNavigationLabelProvider
+	implements ICompressibleKeyboardNavigationLabelProvider<TreeElement>
+{
 	constructor(
 		private viewMode: () => ViewMode,
 		@ILabelService private readonly labelService: ILabelService

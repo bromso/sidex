@@ -338,7 +338,9 @@ export interface IWorkbenchListOptionsUpdate extends IListOptionsUpdate {
 }
 
 export interface IWorkbenchListOptions<T>
-	extends IWorkbenchListOptionsUpdate, IResourceNavigatorOptions, IListOptions<T> {
+	extends IWorkbenchListOptionsUpdate,
+		IResourceNavigatorOptions,
+		IListOptions<T> {
 	readonly selectionNavigation?: boolean;
 }
 
@@ -485,7 +487,9 @@ export class WorkbenchList<T> extends List<T> {
 }
 
 export interface IWorkbenchPagedListOptions<T>
-	extends IWorkbenchListOptionsUpdate, IResourceNavigatorOptions, IPagedListOptions<T> {
+	extends IWorkbenchListOptionsUpdate,
+		IResourceNavigatorOptions,
+		IPagedListOptions<T> {
 	readonly selectionNavigation?: boolean;
 }
 
@@ -616,7 +620,9 @@ export interface IWorkbenchTableOptionsUpdate extends ITableOptionsUpdate {
 }
 
 export interface IWorkbenchTableOptions<T>
-	extends IWorkbenchTableOptionsUpdate, IResourceNavigatorOptions, ITableOptions<T> {
+	extends IWorkbenchTableOptionsUpdate,
+		IResourceNavigatorOptions,
+		ITableOptions<T> {
 	readonly selectionNavigation?: boolean;
 }
 
@@ -925,7 +931,7 @@ abstract class ResourceNavigator<T> extends Disposable {
 }
 
 class ListResourceNavigator<T> extends ResourceNavigator<T> {
-	declare protected readonly widget: List<T> | PagedList<T>;
+	protected declare readonly widget: List<T> | PagedList<T>;
 
 	constructor(widget: List<T> | PagedList<T>, options: IResourceNavigatorOptions) {
 		super(widget, options);
@@ -938,7 +944,7 @@ class ListResourceNavigator<T> extends ResourceNavigator<T> {
 }
 
 class TableResourceNavigator<TRow> extends ResourceNavigator<TRow> {
-	declare protected readonly widget: Table<TRow>;
+	protected declare readonly widget: Table<TRow>;
 
 	constructor(widget: Table<TRow>, options: IResourceNavigatorOptions) {
 		super(widget, options);
@@ -950,7 +956,7 @@ class TableResourceNavigator<TRow> extends ResourceNavigator<TRow> {
 }
 
 class TreeResourceNavigator<T, TFilterData> extends ResourceNavigator<T> {
-	declare protected readonly widget:
+	protected declare readonly widget:
 		| ObjectTree<T, TFilterData>
 		| CompressibleObjectTree<T, TFilterData>
 		| DataTree<any, T, TFilterData>
@@ -1000,7 +1006,8 @@ function createKeyboardNavigationEventFilter(keybindingService: IKeybindingServi
 }
 
 export interface IWorkbenchObjectTreeOptions<T, TFilterData>
-	extends IObjectTreeOptions<T, TFilterData>, IResourceNavigatorOptions {
+	extends IObjectTreeOptions<T, TFilterData>,
+		IResourceNavigatorOptions {
 	readonly accessibilityProvider: IListAccessibilityProvider<T>;
 	readonly overrideStyles?: IStyleOverride<IListStyles>;
 	readonly selectionNavigation?: boolean;
@@ -1060,8 +1067,7 @@ export interface IWorkbenchCompressibleObjectTreeOptionsUpdate<T> extends ICompr
 }
 
 export interface IWorkbenchCompressibleObjectTreeOptions<T, TFilterData>
-	extends
-		IWorkbenchCompressibleObjectTreeOptionsUpdate<T>,
+	extends IWorkbenchCompressibleObjectTreeOptionsUpdate<T>,
 		ICompressibleObjectTreeOptions<T, TFilterData>,
 		IResourceNavigatorOptions {
 	readonly accessibilityProvider: IListAccessibilityProvider<T>;
@@ -1129,7 +1135,9 @@ export interface IWorkbenchDataTreeOptionsUpdate<T> extends IAbstractTreeOptions
 }
 
 export interface IWorkbenchDataTreeOptions<T, TFilterData>
-	extends IWorkbenchDataTreeOptionsUpdate<T>, IDataTreeOptions<T, TFilterData>, IResourceNavigatorOptions {
+	extends IWorkbenchDataTreeOptionsUpdate<T>,
+		IDataTreeOptions<T, TFilterData>,
+		IResourceNavigatorOptions {
 	readonly accessibilityProvider: IListAccessibilityProvider<T>;
 	readonly selectionNavigation?: boolean;
 }
@@ -1193,7 +1201,9 @@ export interface IWorkbenchAsyncDataTreeOptionsUpdate<T> extends IAsyncDataTreeO
 }
 
 export interface IWorkbenchAsyncDataTreeOptions<T, TFilterData>
-	extends IWorkbenchAsyncDataTreeOptionsUpdate<T>, IAsyncDataTreeOptions<T, TFilterData>, IResourceNavigatorOptions {
+	extends IWorkbenchAsyncDataTreeOptionsUpdate<T>,
+		IAsyncDataTreeOptions<T, TFilterData>,
+		IResourceNavigatorOptions {
 	readonly accessibilityProvider: IListAccessibilityProvider<T>;
 	readonly selectionNavigation?: boolean;
 }
@@ -1255,7 +1265,8 @@ export class WorkbenchAsyncDataTree<TInput, T, TFilterData = void> extends Async
 }
 
 export interface IWorkbenchCompressibleAsyncDataTreeOptions<T, TFilterData>
-	extends ICompressibleAsyncDataTreeOptions<T, TFilterData>, IResourceNavigatorOptions {
+	extends ICompressibleAsyncDataTreeOptions<T, TFilterData>,
+		IResourceNavigatorOptions {
 	readonly accessibilityProvider: IListAccessibilityProvider<T>;
 	readonly overrideStyles?: IStyleOverride<IListStyles>;
 	readonly selectionNavigation?: boolean;

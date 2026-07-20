@@ -17,16 +17,24 @@ import { IExtensionHostManager } from './extensionHostManagers.js';
 import { IExtensionDescriptionDelta } from './extensionHostProtocol.js';
 import { IResolveAuthorityResult } from './extensionHostProxy.js';
 import { ExtensionRunningLocation } from './extensionRunningLocation.js';
-import { ActivationKind, ExtensionActivationReason, ExtensionHostStartup, IExtensionHost, IExtensionInspectInfo, IInternalExtensionService } from './extensions.js';
+import {
+	ActivationKind,
+	ExtensionActivationReason,
+	ExtensionHostStartup,
+	IExtensionHost,
+	IExtensionInspectInfo,
+	IInternalExtensionService
+} from './extensions.js';
 import { ResponsiveState } from './rpcProtocol.js';
 
 /**
  * Waits until `start()` and only if it has extensions proceeds to really start.
  */
 export class LazyCreateExtensionHostManager extends Disposable implements IExtensionHostManager {
-
 	public readonly onDidExit: Event<[number, string | null]>;
-	private readonly _onDidChangeResponsiveState: Emitter<ResponsiveState> = this._register(new Emitter<ResponsiveState>());
+	private readonly _onDidChangeResponsiveState: Emitter<ResponsiveState> = this._register(
+		new Emitter<ResponsiveState>()
+	);
 	public readonly onDidChangeResponsiveState: Event<ResponsiveState> = this._onDidChangeResponsiveState.event;
 
 	private readonly _extensionHost: IExtensionHost;
@@ -75,8 +83,15 @@ export class LazyCreateExtensionHostManager extends Disposable implements IExten
 
 	private _createActual(reason: string): ExtensionHostManager {
 		this._logService.info(`Creating lazy extension host (${this.friendyName}). Reason: ${reason}`);
-		this._actual = this._register(this._instantiationService.createInstance(ExtensionHostManager, this._extensionHost, this._initialActivationEvents, this._internalExtensionService));
-		this._register(this._actual.onDidChangeResponsiveState((e) => this._onDidChangeResponsiveState.fire(e)));
+		this._actual = this._register(
+			this._instantiationService.createInstance(
+				ExtensionHostManager,
+				this._extensionHost,
+				this._initialActivationEvents,
+				this._internalExtensionService
+			)
+		);
+		this._register(this._actual.onDidChangeResponsiveState(e => this._onDidChangeResponsiveState.fire(e)));
 		return this._actual;
 	}
 
@@ -115,7 +130,9 @@ export class LazyCreateExtensionHostManager extends Disposable implements IExten
 			return this._actual.deltaExtensions(extensionsDelta);
 		}
 		if (extensionsDelta.myToAdd.length > 0) {
-			const actual = this._createActual(`contains ${extensionsDelta.myToAdd.length} new extension(s) (installed or enabled): ${extensionsDelta.myToAdd.map(extId => extId.value)}`);
+			const actual = this._createActual(
+				`contains ${extensionsDelta.myToAdd.length} new extension(s) (installed or enabled): ${extensionsDelta.myToAdd.map(extId => extId.value)}`
+			);
 			await actual.ready();
 			return;
 		}
@@ -185,10 +202,16 @@ export class LazyCreateExtensionHostManager extends Disposable implements IExten
 		throw new Error(`Cannot resolve canonical URI`);
 	}
 
-	public async start(extensionRegistryVersionId: number, allExtensions: IExtensionDescription[], myExtensions: ExtensionIdentifier[]): Promise<void> {
+	public async start(
+		extensionRegistryVersionId: number,
+		allExtensions: IExtensionDescription[],
+		myExtensions: ExtensionIdentifier[]
+	): Promise<void> {
 		if (myExtensions.length > 0) {
 			// there are actual extensions, so let's launch the extension host (auto-start)
-			const actual = this._createActual(`contains ${myExtensions.length} extension(s): ${myExtensions.map(extId => extId.value)}.`);
+			const actual = this._createActual(
+				`contains ${myExtensions.length} extension(s): ${myExtensions.map(extId => extId.value)}.`
+			);
 			const result = actual.ready();
 			this._startCalled.open();
 			return result;

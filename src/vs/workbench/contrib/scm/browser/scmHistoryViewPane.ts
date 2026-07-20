@@ -556,11 +556,9 @@ interface HistoryItemTemplate {
 	readonly disposables: IDisposable;
 }
 
-class HistoryItemRenderer implements ICompressibleTreeRenderer<
-	SCMHistoryItemViewModelTreeElement,
-	LabelFuzzyScore,
-	HistoryItemTemplate
-> {
+class HistoryItemRenderer
+	implements ICompressibleTreeRenderer<SCMHistoryItemViewModelTreeElement, LabelFuzzyScore, HistoryItemTemplate>
+{
 	static readonly TEMPLATE_ID = 'history-item';
 	get templateId(): string {
 		return HistoryItemRenderer.TEMPLATE_ID;
@@ -877,12 +875,15 @@ interface HistoryItemChangeTemplate {
 	readonly disposables: IDisposable;
 }
 
-class HistoryItemChangeRenderer implements ICompressibleTreeRenderer<
-	| SCMHistoryItemChangeViewModelTreeElement
-	| IResourceNode<SCMHistoryItemChangeViewModelTreeElement, SCMHistoryItemViewModelTreeElement>,
-	void,
-	HistoryItemChangeTemplate
-> {
+class HistoryItemChangeRenderer
+	implements
+		ICompressibleTreeRenderer<
+			| SCMHistoryItemChangeViewModelTreeElement
+			| IResourceNode<SCMHistoryItemChangeViewModelTreeElement, SCMHistoryItemViewModelTreeElement>,
+			void,
+			HistoryItemChangeTemplate
+		>
+{
 	static readonly TEMPLATE_ID = 'history-item-change';
 	get templateId(): string {
 		return HistoryItemChangeRenderer.TEMPLATE_ID;
@@ -1040,11 +1041,9 @@ interface LoadMoreTemplate {
 	readonly disposables: IDisposable;
 }
 
-class HistoryItemLoadMoreRenderer implements ICompressibleTreeRenderer<
-	SCMHistoryItemLoadMoreTreeElement,
-	void,
-	LoadMoreTemplate
-> {
+class HistoryItemLoadMoreRenderer
+	implements ICompressibleTreeRenderer<SCMHistoryItemLoadMoreTreeElement, void, LoadMoreTemplate>
+{
 	static readonly TEMPLATE_ID = 'historyItemLoadMore';
 	get templateId(): string {
 		return HistoryItemLoadMoreRenderer.TEMPLATE_ID;
@@ -1177,7 +1176,9 @@ class SCMHistoryTreeIdentityProvider implements IIdentityProvider<TreeElement> {
 	}
 }
 
-class SCMHistoryTreeKeyboardNavigationLabelProvider implements ICompressibleKeyboardNavigationLabelProvider<TreeElement> {
+class SCMHistoryTreeKeyboardNavigationLabelProvider
+	implements ICompressibleKeyboardNavigationLabelProvider<TreeElement>
+{
 	getKeyboardNavigationLabel(element: TreeElement): { toString(): string } | { toString(): string }[] | undefined {
 		if (isSCMRepository(element)) {
 			return undefined;

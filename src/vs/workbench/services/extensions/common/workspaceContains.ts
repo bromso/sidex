@@ -30,7 +30,10 @@ export interface IExtensionActivationResult {
 	activationEvent: string;
 }
 
-export function checkActivateWorkspaceContainsExtension(host: IExtensionActivationHost, desc: IExtensionDescription): Promise<IExtensionActivationResult | undefined> {
+export function checkActivateWorkspaceContainsExtension(
+	host: IExtensionActivationHost,
+	desc: IExtensionDescription
+): Promise<IExtensionActivationResult | undefined> {
 	const activationEvents = desc.activationEvents;
 	if (!activationEvents) {
 		return Promise.resolve(undefined);
@@ -57,7 +60,9 @@ export function checkActivateWorkspaceContainsExtension(host: IExtensionActivati
 	const { promise, resolve } = promiseWithResolvers<IExtensionActivationResult | undefined>();
 	const activate = (activationEvent: string) => resolve({ activationEvent });
 
-	const fileNamePromise = Promise.all(fileNames.map((fileName) => _activateIfFileName(host, fileName, activate))).then(() => { });
+	const fileNamePromise = Promise.all(fileNames.map(fileName => _activateIfFileName(host, fileName, activate))).then(
+		() => {}
+	);
 	const globPatternPromise = _activateIfGlobPatterns(host, desc.identifier, globPatterns, activate);
 
 	Promise.all([fileNamePromise, globPatternPromise]).then(() => {
@@ -68,7 +73,11 @@ export function checkActivateWorkspaceContainsExtension(host: IExtensionActivati
 	return promise;
 }
 
-async function _activateIfFileName(host: IExtensionActivationHost, fileName: string, activate: (activationEvent: string) => void): Promise<void> {
+async function _activateIfFileName(
+	host: IExtensionActivationHost,
+	fileName: string,
+	activate: (activationEvent: string) => void
+): Promise<void> {
 	// find exact path
 	for (const uri of host.folders) {
 		if (await host.exists(resources.joinPath(URI.revive(uri), fileName))) {
@@ -79,7 +88,12 @@ async function _activateIfFileName(host: IExtensionActivationHost, fileName: str
 	}
 }
 
-async function _activateIfGlobPatterns(host: IExtensionActivationHost, extensionId: ExtensionIdentifier, globPatterns: string[], activate: (activationEvent: string) => void): Promise<void> {
+async function _activateIfGlobPatterns(
+	host: IExtensionActivationHost,
+	extensionId: ExtensionIdentifier,
+	globPatterns: string[],
+	activate: (activationEvent: string) => void
+): Promise<void> {
 	if (globPatterns.length === 0) {
 		return Promise.resolve(undefined);
 	}
@@ -89,7 +103,9 @@ async function _activateIfGlobPatterns(host: IExtensionActivationHost, extension
 
 	const timer = setTimeout(async () => {
 		tokenSource.cancel();
-		host.logService.info(`Not activating extension '${extensionId.value}': Timed out while searching for 'workspaceContains' pattern ${globPatterns.join(',')}`);
+		host.logService.info(
+			`Not activating extension '${extensionId.value}': Timed out while searching for 'workspaceContains' pattern ${globPatterns.join(',')}`
+		);
 	}, WORKSPACE_CONTAINS_TIMEOUT);
 
 	let exists: boolean = false;
@@ -114,16 +130,19 @@ export function checkGlobFileExists(
 	accessor: ServicesAccessor,
 	folders: readonly UriComponents[],
 	includes: string[],
-	token: CancellationToken,
+	token: CancellationToken
 ): Promise<boolean> {
 	const instantiationService = accessor.get(IInstantiationService);
 	const searchService = accessor.get(ISearchService);
 	const queryBuilder = instantiationService.createInstance(QueryBuilder);
-	const query = queryBuilder.file(folders.map(folder => toWorkspaceFolder(URI.revive(folder))), {
-		_reason: 'checkExists',
-		includePattern: includes,
-		exists: true
-	});
+	const query = queryBuilder.file(
+		folders.map(folder => toWorkspaceFolder(URI.revive(folder))),
+		{
+			_reason: 'checkExists',
+			includePattern: includes,
+			exists: true
+		}
+	);
 
 	return searchService.fileSearch(query, token).then(
 		result => {
@@ -135,5 +154,6 @@ export function checkGlobFileExists(
 			}
 
 			return false;
-		});
+		}
+	);
 }

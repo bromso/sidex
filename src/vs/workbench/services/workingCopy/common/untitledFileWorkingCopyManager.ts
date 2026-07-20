@@ -40,9 +40,8 @@ export interface IUntitledFileWorkingCopySaveEvent {
  * handle all operations that are working copy related, such as save/revert,
  * backup and resolving.
  */
-export interface IUntitledFileWorkingCopyManager<
-	M extends IUntitledFileWorkingCopyModel
-> extends IBaseFileWorkingCopyManager<M, IUntitledFileWorkingCopy<M>> {
+export interface IUntitledFileWorkingCopyManager<M extends IUntitledFileWorkingCopyModel>
+	extends IBaseFileWorkingCopyManager<M, IUntitledFileWorkingCopy<M>> {
 	/**
 	 * An event for when an untitled file working copy was saved.
 	 * At the point the event fires, the untitled file working copy is

@@ -13,10 +13,8 @@ import { ILogService } from '../../../../platform/log/common/log.js';
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
 import { IFileWorkingCopy, IFileWorkingCopyModel } from './fileWorkingCopy.js';
 
-export interface IBaseFileWorkingCopyManager<
-	M extends IFileWorkingCopyModel,
-	W extends IFileWorkingCopy<M>
-> extends IDisposable {
+export interface IBaseFileWorkingCopyManager<M extends IFileWorkingCopyModel, W extends IFileWorkingCopy<M>>
+	extends IDisposable {
 	/**
 	 * An event for when a file working copy was created.
 	 */

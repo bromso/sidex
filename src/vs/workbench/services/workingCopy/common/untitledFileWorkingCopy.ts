@@ -25,9 +25,8 @@ import { emptyStream } from '../../../../base/common/stream.js';
 /**
  * Untitled file specific working copy model factory.
  */
-export interface IUntitledFileWorkingCopyModelFactory<
-	M extends IUntitledFileWorkingCopyModel
-> extends IFileWorkingCopyModelFactory<M> {}
+export interface IUntitledFileWorkingCopyModelFactory<M extends IUntitledFileWorkingCopyModel>
+	extends IFileWorkingCopyModelFactory<M> {}
 
 /**
  * The underlying model of a untitled file working copy provides
@@ -61,9 +60,8 @@ export interface IUntitledFileWorkingCopy<M extends IUntitledFileWorkingCopyMode
 	isResolved(): boolean;
 }
 
-export interface IResolvedUntitledFileWorkingCopy<
-	M extends IUntitledFileWorkingCopyModel
-> extends IUntitledFileWorkingCopy<M> {
+export interface IResolvedUntitledFileWorkingCopy<M extends IUntitledFileWorkingCopyModel>
+	extends IUntitledFileWorkingCopy<M> {
 	/**
 	 * A resolved untitled file working copy has a resolved model.
 	 */

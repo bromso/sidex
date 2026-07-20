@@ -84,11 +84,9 @@ interface IRawObjectReplTemplateData {
 	elementStore: DisposableStore;
 }
 
-export class ReplEvaluationInputsRenderer implements ITreeRenderer<
-	ReplEvaluationInput,
-	FuzzyScore,
-	IReplEvaluationInputTemplateData
-> {
+export class ReplEvaluationInputsRenderer
+	implements ITreeRenderer<ReplEvaluationInput, FuzzyScore, IReplEvaluationInputTemplateData>
+{
 	static readonly ID = 'replEvaluationInput';
 
 	get templateId(): string {
@@ -153,11 +151,9 @@ export class ReplGroupRenderer implements ITreeRenderer<ReplGroup, FuzzyScore, I
 	}
 }
 
-export class ReplEvaluationResultsRenderer implements ITreeRenderer<
-	ReplEvaluationResult | Variable,
-	FuzzyScore,
-	IReplEvaluationResultTemplateData
-> {
+export class ReplEvaluationResultsRenderer
+	implements ITreeRenderer<ReplEvaluationResult | Variable, FuzzyScore, IReplEvaluationResultTemplateData>
+{
 	static readonly ID = 'replEvaluationResult';
 
 	get templateId(): string {
@@ -194,11 +190,9 @@ export class ReplEvaluationResultsRenderer implements ITreeRenderer<
 	}
 }
 
-export class ReplOutputElementRenderer implements ITreeRenderer<
-	ReplOutputElement,
-	FuzzyScore,
-	IOutputReplElementTemplateData
-> {
+export class ReplOutputElementRenderer
+	implements ITreeRenderer<ReplOutputElement, FuzzyScore, IOutputReplElementTemplateData>
+{
 	static readonly ID = 'outputReplElement';
 
 	constructor(
@@ -341,11 +335,9 @@ export class ReplVariablesRenderer extends AbstractExpressionsRenderer<IExpressi
 	}
 }
 
-export class ReplRawObjectsRenderer implements ITreeRenderer<
-	RawObjectReplElement,
-	FuzzyScore,
-	IRawObjectReplTemplateData
-> {
+export class ReplRawObjectsRenderer
+	implements ITreeRenderer<RawObjectReplElement, FuzzyScore, IRawObjectReplTemplateData>
+{
 	static readonly ID = 'rawObject';
 
 	constructor(private readonly expressionRenderer: DebugExpressionRenderer) {}

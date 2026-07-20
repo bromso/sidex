@@ -191,7 +191,8 @@ export function handleBugIndicatingErrorRecovery(message: string) {
  * A settable observable.
  */
 export interface ISettableObservable<T, TChange = void>
-	extends IObservableWithChange<T, TChange>, ISettable<T, TChange> {}
+	extends IObservableWithChange<T, TChange>,
+		ISettable<T, TChange> {}
 
 export interface IReaderWithStore extends IReader {
 	/**

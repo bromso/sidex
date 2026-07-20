@@ -9,9 +9,8 @@ import { IExtensionDescription } from '../../../../platform/extensions/common/ex
 import { IWorkbenchIssueService } from '../../issue/common/issue.js';
 
 export class ReportExtensionIssueAction extends Action {
-
 	private static readonly _id = 'workbench.extensions.action.reportExtensionIssue';
-	private static readonly _label = nls.localize('reportExtensionIssue', "Report Issue");
+	private static readonly _label = nls.localize('reportExtensionIssue', 'Report Issue');
 
 	// TODO: Consider passing in IExtensionStatus or IExtensionHostProfile for additional data
 	constructor(
@@ -25,7 +24,7 @@ export class ReportExtensionIssueAction extends Action {
 
 	override async run(): Promise<void> {
 		await this.issueService.openReporter({
-			extensionId: this.extension.identifier.value,
+			extensionId: this.extension.identifier.value
 		});
 	}
 }

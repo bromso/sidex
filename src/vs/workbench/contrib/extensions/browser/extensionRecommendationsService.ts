@@ -4,8 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { IExtensionManagementService, IExtensionGalleryService, InstallOperation, InstallExtensionResult } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IExtensionRecommendationsService, ExtensionRecommendationReason, IExtensionIgnoredRecommendationsService } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
+import {
+	IExtensionManagementService,
+	IExtensionGalleryService,
+	InstallOperation,
+	InstallExtensionResult
+} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import {
+	IExtensionRecommendationsService,
+	ExtensionRecommendationReason,
+	IExtensionIgnoredRecommendationsService
+} from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
 import { shuffle } from '../../../../base/common/arrays.js';
@@ -31,7 +40,6 @@ import { IUserDataInitializationService } from '../../../services/userData/brows
 import { isString } from '../../../../base/common/types.js';
 
 export class ExtensionRecommendationsService extends Disposable implements IExtensionRecommendationsService {
-
 	declare readonly _serviceBrand: undefined;
 
 	// Recommendations
@@ -57,11 +65,13 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 		@ITelemetryService private readonly telemetryService: ITelemetryService,
 		@IEnvironmentService private readonly environmentService: IEnvironmentService,
 		@IExtensionManagementService private readonly extensionManagementService: IExtensionManagementService,
-		@IExtensionIgnoredRecommendationsService private readonly extensionRecommendationsManagementService: IExtensionIgnoredRecommendationsService,
-		@IExtensionRecommendationNotificationService private readonly extensionRecommendationNotificationService: IExtensionRecommendationNotificationService,
+		@IExtensionIgnoredRecommendationsService
+		private readonly extensionRecommendationsManagementService: IExtensionIgnoredRecommendationsService,
+		@IExtensionRecommendationNotificationService
+		private readonly extensionRecommendationNotificationService: IExtensionRecommendationNotificationService,
 		@IExtensionsWorkbenchService private readonly extensionsWorkbenchService: IExtensionsWorkbenchService,
 		@IRemoteExtensionsScannerService private readonly remoteExtensionsScannerService: IRemoteExtensionsScannerService,
-		@IUserDataInitializationService private readonly userDataInitializationService: IUserDataInitializationService,
+		@IUserDataInitializationService private readonly userDataInitializationService: IUserDataInitializationService
 	) {
 		super();
 
@@ -93,8 +103,11 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 			await Promise.allSettled([
 				this.remoteExtensionsScannerService.whenExtensionsReady(),
 				this.userDataInitializationService.whenInitializationFinished(),
-				this.lifecycleService.when(LifecyclePhase.Restored)]);
-		} catch (_error) { /* ignore */ }
+				this.lifecycleService.when(LifecyclePhase.Restored)
+			]);
+		} catch (_error) {
+			/* ignore */
+		}
 
 		// activate all recommendations
 		await Promise.all([
@@ -107,7 +120,13 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 			this.remoteRecommendations.activate()
 		]);
 
-		this._register(Event.any(this.workspaceRecommendations.onDidChangeRecommendations, this.configBasedRecommendations.onDidChangeRecommendations, this.extensionRecommendationsManagementService.onDidChangeIgnoredRecommendations)(() => this._onDidChangeRecommendations.fire()));
+		this._register(
+			Event.any(
+				this.workspaceRecommendations.onDidChangeRecommendations,
+				this.configBasedRecommendations.onDidChangeRecommendations,
+				this.extensionRecommendationsManagementService.onDidChangeIgnoredRecommendations
+			)(() => this._onDidChangeRecommendations.fire())
+		);
 
 		this.promptWorkspaceRecommendations();
 	}
@@ -124,7 +143,8 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 		/* Activate proactive recommendations */
 		this.activateProactiveRecommendations();
 
-		const output: { [id: string]: { reasonId: ExtensionRecommendationReason; reasonText: string } } = Object.create(null);
+		const output: { [id: string]: { reasonId: ExtensionRecommendationReason; reasonText: string } } =
+			Object.create(null);
 
 		const allRecommendations = [
 			...this.configBasedRecommendations.recommendations,
@@ -133,7 +153,7 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 			...this.workspaceRecommendations.recommendations,
 			...this.keymapRecommendations.recommendations,
 			...this.languageRecommendations.recommendations,
-			...this.webRecommendations.recommendations,
+			...this.webRecommendations.recommendations
 		];
 
 		for (const { extension, reason } of allRecommendations) {
@@ -174,7 +194,7 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 		const recommendations = [
 			...this.fileBasedRecommendations.importantRecommendations,
 			...this.configBasedRecommendations.importantRecommendations,
-			...this.exeBasedRecommendations.importantRecommendations,
+			...this.exeBasedRecommendations.importantRecommendations
 		];
 
 		const extensionIds = this.toExtensionIds(recommendations);
@@ -214,8 +234,12 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 
 	async getExeBasedRecommendations(exe?: string): Promise<{ important: string[]; others: string[] }> {
 		await this.exeBasedRecommendations.activate();
-		const { important, others } = exe ? this.exeBasedRecommendations.getRecommendations(exe)
-			: { important: this.exeBasedRecommendations.importantRecommendations, others: this.exeBasedRecommendations.otherRecommendations };
+		const { important, others } = exe
+			? this.exeBasedRecommendations.getRecommendations(exe)
+			: {
+					important: this.exeBasedRecommendations.importantRecommendations,
+					others: this.exeBasedRecommendations.otherRecommendations
+				};
 		return { important: this.toExtensionIds(important), others: this.toExtensionIds(others) };
 	}
 
@@ -238,7 +262,10 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 							]
 						}
 					*/
-					this.telemetryService.publicLog('extensionGallery:install:recommendations', { ...e.source.telemetryData, recommendationReason: recommendationReason.reasonId });
+					this.telemetryService.publicLog('extensionGallery:install:recommendations', {
+						...e.source.telemetryData,
+						recommendationReason: recommendationReason.reasonId
+					});
 				}
 			}
 		}
@@ -247,7 +274,11 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 	private toExtensionIds(recommendations: ReadonlyArray<ExtensionRecommendation>): string[] {
 		const extensionIds: string[] = [];
 		for (const { extension } of recommendations) {
-			if (isString(extension) && this.isExtensionAllowedToBeRecommended(extension) && !extensionIds.includes(extension.toLowerCase())) {
+			if (
+				isString(extension) &&
+				this.isExtensionAllowedToBeRecommended(extension) &&
+				!extensionIds.includes(extension.toLowerCase())
+			) {
 				extensionIds.push(extension.toLowerCase());
 			}
 		}
@@ -263,7 +294,12 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 		const allowedRecommendations = [
 			...this.workspaceRecommendations.recommendations,
 			...this.configBasedRecommendations.importantRecommendations.filter(
-				recommendation => !recommendation.whenNotInstalled || recommendation.whenNotInstalled.every(id => installed.every(local => !areSameExtensions(local.identifier, { id }))))
+				recommendation =>
+					!recommendation.whenNotInstalled ||
+					recommendation.whenNotInstalled.every(id =>
+						installed.every(local => !areSameExtensions(local.identifier, { id }))
+					)
+			)
 		]
 			.map(({ extension }) => extension)
 			.filter(extension => !isString(extension) || this.isExtensionAllowedToBeRecommended(extension));

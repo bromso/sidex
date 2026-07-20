@@ -10,7 +10,12 @@ import { ExtensionHostKind } from './extensionHostKind.js';
 import { IExtensionDescriptionDelta } from './extensionHostProtocol.js';
 import { IResolveAuthorityResult } from './extensionHostProxy.js';
 import { ExtensionRunningLocation } from './extensionRunningLocation.js';
-import { ActivationKind, ExtensionActivationReason, ExtensionHostStartup, IExtensionInspectInfo } from './extensions.js';
+import {
+	ActivationKind,
+	ExtensionActivationReason,
+	ExtensionHostStartup,
+	IExtensionInspectInfo
+} from './extensions.js';
 import { ResponsiveState } from './rpcProtocol.js';
 
 export interface IExtensionHostManager {
@@ -36,7 +41,11 @@ export interface IExtensionHostManager {
 	 * Returns `null` if no resolver for `remoteAuthority` is found.
 	 */
 	getCanonicalURI(remoteAuthority: string, uri: URI): Promise<URI | null>;
-	start(extensionRegistryVersionId: number, allExtensions: readonly IExtensionDescription[], myExtensions: ExtensionIdentifier[]): Promise<void>;
+	start(
+		extensionRegistryVersionId: number,
+		allExtensions: readonly IExtensionDescription[],
+		myExtensions: ExtensionIdentifier[]
+	): Promise<void>;
 	extensionTestsExecute(): Promise<number>;
 	setRemoteEnvironment(env: { [key: string]: string | null }): Promise<void>;
 }

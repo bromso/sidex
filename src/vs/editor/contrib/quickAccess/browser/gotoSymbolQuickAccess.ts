@@ -73,7 +73,7 @@ export abstract class AbstractGotoSymbolQuickAccessProvider extends AbstractEdit
 	static SCOPE_PREFIX = ':';
 	static PREFIX_BY_CATEGORY = `${this.PREFIX}${this.SCOPE_PREFIX}`;
 
-	declare protected readonly options: IGotoSymbolQuickAccessProviderOptions;
+	protected declare readonly options: IGotoSymbolQuickAccessProviderOptions;
 
 	constructor(
 		@ILanguageFeaturesService private readonly _languageFeaturesService: ILanguageFeaturesService,
@@ -264,8 +264,8 @@ export abstract class AbstractGotoSymbolQuickAccessProvider extends AbstractEdit
 							findLast(items, item =>
 								Boolean(
 									item.type !== 'separator' &&
-									item.range &&
-									Range.containsPosition(item.range.decoration, positionToEnclose)
+										item.range &&
+										Range.containsPosition(item.range.decoration, positionToEnclose)
 								)
 							)
 						);

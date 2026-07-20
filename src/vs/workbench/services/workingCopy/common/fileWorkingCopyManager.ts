@@ -61,10 +61,8 @@ import { Codicon } from '../../../../base/common/codicons.js';
 import { listErrorForeground } from '../../../../platform/theme/common/colorRegistry.js';
 import { IProgressService } from '../../../../platform/progress/common/progress.js';
 
-export interface IFileWorkingCopyManager<
-	S extends IStoredFileWorkingCopyModel,
-	U extends IUntitledFileWorkingCopyModel
-> extends IBaseFileWorkingCopyManager<S | U, IFileWorkingCopy<S | U>> {
+export interface IFileWorkingCopyManager<S extends IStoredFileWorkingCopyModel, U extends IUntitledFileWorkingCopyModel>
+	extends IBaseFileWorkingCopyManager<S | U, IFileWorkingCopy<S | U>> {
 	/**
 	 * Provides access to the manager for stored file working copies.
 	 */

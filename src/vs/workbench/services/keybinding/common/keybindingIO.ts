@@ -15,7 +15,7 @@ export interface IUserKeybindingItem {
 	when: ContextKeyExpression | undefined;
 	_sourceKey:
 		| string
-		| undefined; /** captures `key` field from `keybindings.json`; `this.keybinding !== null` implies `_sourceKey !== null` */
+		| undefined /** captures `key` field from `keybindings.json`; `this.keybinding !== null` implies `_sourceKey !== null` */;
 }
 
 export class KeybindingIO {

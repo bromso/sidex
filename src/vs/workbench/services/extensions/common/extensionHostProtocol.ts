@@ -101,7 +101,7 @@ export enum UIKind {
 export const enum ExtensionHostExitCode {
 	// nodejs uses codes 1-13 and exit codes >128 are signal exits
 	VersionMismatch = 55,
-	UnexpectedError = 81,
+	UnexpectedError = 81
 }
 
 export interface IExtHostReadyMessage {
@@ -130,9 +130,15 @@ export function createMessageOfType(type: MessageType): VSBuffer {
 	const result = VSBuffer.alloc(1);
 
 	switch (type) {
-		case MessageType.Initialized: result.writeUInt8(1, 0); break;
-		case MessageType.Ready: result.writeUInt8(2, 0); break;
-		case MessageType.Terminate: result.writeUInt8(3, 0); break;
+		case MessageType.Initialized:
+			result.writeUInt8(1, 0);
+			break;
+		case MessageType.Ready:
+			result.writeUInt8(2, 0);
+			break;
+		case MessageType.Terminate:
+			result.writeUInt8(3, 0);
+			break;
 	}
 
 	return result;
@@ -144,14 +150,18 @@ export function isMessageOfType(message: VSBuffer, type: MessageType): boolean {
 	}
 
 	switch (message.readUInt8(0)) {
-		case 1: return type === MessageType.Initialized;
-		case 2: return type === MessageType.Ready;
-		case 3: return type === MessageType.Terminate;
-		default: return false;
+		case 1:
+			return type === MessageType.Initialized;
+		case 2:
+			return type === MessageType.Ready;
+		case 3:
+			return type === MessageType.Terminate;
+		default:
+			return false;
 	}
 }
 
 export const enum NativeLogMarkers {
 	Start = 'START_NATIVE_LOG',
-	End = 'END_NATIVE_LOG',
+	End = 'END_NATIVE_LOG'
 }

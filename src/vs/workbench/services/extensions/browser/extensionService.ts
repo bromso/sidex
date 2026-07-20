@@ -17,25 +17,65 @@ import { ILogService } from '../../../../platform/log/common/log.js';
 import { INotificationService } from '../../../../platform/notification/common/notification.js';
 import { IProductService } from '../../../../platform/product/common/productService.js';
 import { PersistentConnectionEventType } from '../../../../platform/remote/common/remoteAgentConnection.js';
-import { IRemoteAuthorityResolverService, RemoteAuthorityResolverError, ResolverResult } from '../../../../platform/remote/common/remoteAuthorityResolver.js';
+import {
+	IRemoteAuthorityResolverService,
+	RemoteAuthorityResolverError,
+	ResolverResult
+} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
 import { IRemoteExtensionsScannerService } from '../../../../platform/remote/common/remoteExtensionsScanner.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
 import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
 import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
-import { IWebExtensionsScannerService, IWorkbenchExtensionEnablementService, IWorkbenchExtensionManagementService } from '../../extensionManagement/common/extensionManagement.js';
-import { IWebWorkerExtensionHostDataProvider, IWebWorkerExtensionHostInitData, WebWorkerExtensionHost } from './webWorkerExtensionHost.js';
+import {
+	IWebExtensionsScannerService,
+	IWorkbenchExtensionEnablementService,
+	IWorkbenchExtensionManagementService
+} from '../../extensionManagement/common/extensionManagement.js';
+import {
+	IWebWorkerExtensionHostDataProvider,
+	IWebWorkerExtensionHostInitData,
+	WebWorkerExtensionHost
+} from './webWorkerExtensionHost.js';
 import { FetchFileSystemProvider } from './webWorkerFileSystemProvider.js';
-import { AbstractExtensionService, IExtensionHostFactory, LocalExtensions, RemoteExtensions, ResolvedExtensions, ResolverExtensions, checkEnabledAndProposedAPI, isResolverExtension } from '../common/abstractExtensionService.js';
+import {
+	AbstractExtensionService,
+	IExtensionHostFactory,
+	LocalExtensions,
+	RemoteExtensions,
+	ResolvedExtensions,
+	ResolverExtensions,
+	checkEnabledAndProposedAPI,
+	isResolverExtension
+} from '../common/abstractExtensionService.js';
 import { ExtensionDescriptionRegistrySnapshot } from '../common/extensionDescriptionRegistry.js';
-import { ExtensionHostKind, ExtensionRunningPreference, IExtensionHostKindPicker, extensionHostKindToString, extensionRunningPreferenceToString } from '../common/extensionHostKind.js';
+import {
+	ExtensionHostKind,
+	ExtensionRunningPreference,
+	IExtensionHostKindPicker,
+	extensionHostKindToString,
+	extensionRunningPreferenceToString
+} from '../common/extensionHostKind.js';
 import { IExtensionManifestPropertiesService } from '../common/extensionManifestPropertiesService.js';
 import { ExtensionRunningLocation } from '../common/extensionRunningLocation.js';
-import { ExtensionRunningLocationTracker, filterExtensionDescriptions } from '../common/extensionRunningLocationTracker.js';
-import { ExtensionHostExtensions, ExtensionHostStartup, IExtensionHost, IExtensionService, toExtensionDescription } from '../common/extensions.js';
+import {
+	ExtensionRunningLocationTracker,
+	filterExtensionDescriptions
+} from '../common/extensionRunningLocationTracker.js';
+import {
+	ExtensionHostExtensions,
+	ExtensionHostStartup,
+	IExtensionHost,
+	IExtensionService,
+	toExtensionDescription
+} from '../common/extensions.js';
 import { ExtensionsProposedApi } from '../common/extensionsProposedApi.js';
 import { dedupExtensions } from '../common/extensionsUtil.js';
-import { IRemoteExtensionHostDataProvider, IRemoteExtensionHostInitData, RemoteExtensionHost } from '../common/remoteExtensionHost.js';
+import {
+	IRemoteExtensionHostDataProvider,
+	IRemoteExtensionHostInitData,
+	RemoteExtensionHost
+} from '../common/remoteExtensionHost.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 import { IRemoteExplorerService } from '../../remote/common/remoteExplorerService.js';
@@ -44,11 +84,11 @@ import { IUserDataProfileService } from '../../userDataProfile/common/userDataPr
 import { AsyncIterableEmitter, AsyncIterableProducer } from '../../../../base/common/async.js';
 
 export class ExtensionService extends AbstractExtensionService implements IExtensionService {
-
 	constructor(
 		@IInstantiationService instantiationService: IInstantiationService,
 		@INotificationService notificationService: INotificationService,
-		@IBrowserWorkbenchEnvironmentService private readonly _browserEnvironmentService: IBrowserWorkbenchEnvironmentService,
+		@IBrowserWorkbenchEnvironmentService
+		private readonly _browserEnvironmentService: IBrowserWorkbenchEnvironmentService,
 		@ITelemetryService telemetryService: ITelemetryService,
 		@IWorkbenchExtensionEnablementService extensionEnablementService: IWorkbenchExtensionEnablementService,
 		@IFileService fileService: IFileService,
@@ -65,9 +105,10 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 		@IRemoteAuthorityResolverService remoteAuthorityResolverService: IRemoteAuthorityResolverService,
 		@IUserDataInitializationService private readonly _userDataInitializationService: IUserDataInitializationService,
 		@IUserDataProfileService private readonly _userDataProfileService: IUserDataProfileService,
-		@IWorkspaceTrustManagementService private readonly _workspaceTrustManagementService: IWorkspaceTrustManagementService,
+		@IWorkspaceTrustManagementService
+		private readonly _workspaceTrustManagementService: IWorkspaceTrustManagementService,
 		@IRemoteExplorerService private readonly _remoteExplorerService: IRemoteExplorerService,
-		@IDialogService dialogService: IDialogService,
+		@IDialogService dialogService: IDialogService
 	) {
 		const extensionsProposedApi = instantiationService.createInstance(ExtensionsProposedApi);
 		const extensionHostFactory = new BrowserExtensionHostFactory(
@@ -127,12 +168,22 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 	private async _scanWebExtensions(): Promise<IExtensionDescription[]> {
 		if (!this._scanWebExtensionsPromise) {
 			this._scanWebExtensionsPromise = (async () => {
-				const system: IExtensionDescription[] = [], user: IExtensionDescription[] = [], development: IExtensionDescription[] = [];
+				const system: IExtensionDescription[] = [],
+					user: IExtensionDescription[] = [],
+					development: IExtensionDescription[] = [];
 				try {
 					await Promise.all([
-						this._webExtensionsScannerService.scanSystemExtensions().then(extensions => system.push(...extensions.map(e => toExtensionDescription(e)))),
-						this._webExtensionsScannerService.scanUserExtensions(this._userDataProfileService.currentProfile.extensionsResource, { skipInvalidExtensions: true }).then(extensions => user.push(...extensions.map(e => toExtensionDescription(e)))),
-						this._webExtensionsScannerService.scanExtensionsUnderDevelopment().then(extensions => development.push(...extensions.map(e => toExtensionDescription(e, true))))
+						this._webExtensionsScannerService
+							.scanSystemExtensions()
+							.then(extensions => system.push(...extensions.map(e => toExtensionDescription(e)))),
+						this._webExtensionsScannerService
+							.scanUserExtensions(this._userDataProfileService.currentProfile.extensionsResource, {
+								skipInvalidExtensions: true
+							})
+							.then(extensions => user.push(...extensions.map(e => toExtensionDescription(e)))),
+						this._webExtensionsScannerService
+							.scanExtensionsUnderDevelopment()
+							.then(extensions => development.push(...extensions.map(e => toExtensionDescription(e, true))))
 					]);
 				} catch (error) {
 					this._logService.error(error);
@@ -141,9 +192,7 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 					`[SideX-Extensions] scanned system=${system.length} user=${user.length} dev=${development.length}`
 				);
 				const rustSys = system.find(e => e.identifier?.value?.toLowerCase?.() === 'vscode.rust');
-				this._logService.info(
-					`[SideX-Extensions] vscode.rust in system? ${rustSys ? 'YES' : 'NO'}`
-				);
+				this._logService.info(`[SideX-Extensions] vscode.rust in system? ${rustSys ? 'YES' : 'NO'}`);
 				return dedupExtensions(system, user, [], development, this._logService);
 			})();
 		}
@@ -204,11 +253,13 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 		// monitor for breakage
 		const connection = this._remoteAgentService.getConnection();
 		if (connection) {
-			this._register(connection.onDidStateChange(async (e: any) => {
-				if (e.type === PersistentConnectionEventType.ConnectionLost) {
-					this._remoteAuthorityResolverService._clearResolvedAuthority(remoteAuthority);
-				}
-			}));
+			this._register(
+				connection.onDidStateChange(async (e: any) => {
+					if (e.type === PersistentConnectionEventType.ConnectionLost) {
+						this._remoteAuthorityResolverService._clearResolvedAuthority(remoteAuthority);
+					}
+				})
+			);
 			this._register(connection.onReconnecting(() => this._resolveAuthorityAgain()));
 		}
 
@@ -232,7 +283,6 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 }
 
 class BrowserExtensionHostFactory implements IExtensionHostFactory {
-
 	constructor(
 		private readonly _extensionsProposedApi: ExtensionsProposedApi,
 		private readonly _scanWebExtensions: () => Promise<IExtensionDescription[]>,
@@ -240,11 +290,16 @@ class BrowserExtensionHostFactory implements IExtensionHostFactory {
 		@IInstantiationService private readonly _instantiationService: IInstantiationService,
 		@IRemoteAgentService private readonly _remoteAgentService: IRemoteAgentService,
 		@IRemoteAuthorityResolverService private readonly _remoteAuthorityResolverService: IRemoteAuthorityResolverService,
-		@IWorkbenchExtensionEnablementService private readonly _extensionEnablementService: IWorkbenchExtensionEnablementService,
-		@ILogService private readonly _logService: ILogService,
-	) { }
+		@IWorkbenchExtensionEnablementService
+		private readonly _extensionEnablementService: IWorkbenchExtensionEnablementService,
+		@ILogService private readonly _logService: ILogService
+	) {}
 
-	createExtensionHost(runningLocations: ExtensionRunningLocationTracker, runningLocation: ExtensionRunningLocation, isInitialStart: boolean): IExtensionHost | null {
+	createExtensionHost(
+		runningLocations: ExtensionRunningLocationTracker,
+		runningLocation: ExtensionRunningLocation,
+		isInitialStart: boolean
+	): IExtensionHost | null {
 		switch (runningLocation.kind) {
 			case ExtensionHostKind.LocalProcess: {
 				return null;
@@ -254,40 +309,72 @@ class BrowserExtensionHostFactory implements IExtensionHostFactory {
 					return null;
 				}
 				const startup = ExtensionHostStartup.LazyAutoStart;
-				return this._instantiationService.createInstance(WebWorkerExtensionHost, runningLocation, startup, this._createLocalExtensionHostDataProvider(runningLocations, runningLocation, isInitialStart));
+				return this._instantiationService.createInstance(
+					WebWorkerExtensionHost,
+					runningLocation,
+					startup,
+					this._createLocalExtensionHostDataProvider(runningLocations, runningLocation, isInitialStart)
+				);
 			}
 			case ExtensionHostKind.Remote: {
 				const remoteAgentConnection = this._remoteAgentService.getConnection();
 				if (remoteAgentConnection) {
-					return this._instantiationService.createInstance(RemoteExtensionHost, runningLocation, this._createRemoteExtensionHostDataProvider(runningLocations, remoteAgentConnection.remoteAuthority));
+					return this._instantiationService.createInstance(
+						RemoteExtensionHost,
+						runningLocation,
+						this._createRemoteExtensionHostDataProvider(runningLocations, remoteAgentConnection.remoteAuthority)
+					);
 				}
 				return null;
 			}
 		}
 	}
 
-	private _createLocalExtensionHostDataProvider(runningLocations: ExtensionRunningLocationTracker, desiredRunningLocation: ExtensionRunningLocation, isInitialStart: boolean): IWebWorkerExtensionHostDataProvider {
+	private _createLocalExtensionHostDataProvider(
+		runningLocations: ExtensionRunningLocationTracker,
+		desiredRunningLocation: ExtensionRunningLocation,
+		isInitialStart: boolean
+	): IWebWorkerExtensionHostDataProvider {
 		return {
 			getInitData: async (): Promise<IWebWorkerExtensionHostInitData> => {
 				if (isInitialStart) {
 					// Here we load even extensions that would be disabled by workspace trust
-					const localExtensions = checkEnabledAndProposedAPI(this._logService, this._extensionEnablementService, this._extensionsProposedApi, await this._scanWebExtensions(), /* ignore workspace trust */true);
+					const localExtensions = checkEnabledAndProposedAPI(
+						this._logService,
+						this._extensionEnablementService,
+						this._extensionsProposedApi,
+						await this._scanWebExtensions(),
+						/* ignore workspace trust */ true
+					);
 					const runningLocation = runningLocations.computeRunningLocation(localExtensions, [], false);
-					const myExtensions = filterExtensionDescriptions(localExtensions, runningLocation, extRunningLocation => desiredRunningLocation.equals(extRunningLocation));
-					const extensions = new ExtensionHostExtensions(0, localExtensions, myExtensions.map(extension => extension.identifier));
+					const myExtensions = filterExtensionDescriptions(localExtensions, runningLocation, extRunningLocation =>
+						desiredRunningLocation.equals(extRunningLocation)
+					);
+					const extensions = new ExtensionHostExtensions(
+						0,
+						localExtensions,
+						myExtensions.map(extension => extension.identifier)
+					);
 					return { extensions };
 				} else {
 					// restart case
 					const snapshot = await this._getExtensionRegistrySnapshotWhenReady();
 					const myExtensions = runningLocations.filterByRunningLocation(snapshot.extensions, desiredRunningLocation);
-					const extensions = new ExtensionHostExtensions(snapshot.versionId, snapshot.extensions, myExtensions.map(extension => extension.identifier));
+					const extensions = new ExtensionHostExtensions(
+						snapshot.versionId,
+						snapshot.extensions,
+						myExtensions.map(extension => extension.identifier)
+					);
 					return { extensions };
 				}
 			}
 		};
 	}
 
-	private _createRemoteExtensionHostDataProvider(runningLocations: ExtensionRunningLocationTracker, remoteAuthority: string): IRemoteExtensionHostDataProvider {
+	private _createRemoteExtensionHostDataProvider(
+		runningLocations: ExtensionRunningLocationTracker,
+		remoteAuthority: string
+	): IRemoteExtensionHostDataProvider {
 		return {
 			remoteAuthority: remoteAuthority,
 			getInitData: async (): Promise<IRemoteExtensionHostInitData> => {
@@ -299,7 +386,11 @@ class BrowserExtensionHostFactory implements IExtensionHostFactory {
 				}
 
 				const myExtensions = runningLocations.filterByExtensionHostKind(snapshot.extensions, ExtensionHostKind.Remote);
-				const extensions = new ExtensionHostExtensions(snapshot.versionId, snapshot.extensions, myExtensions.map(extension => extension.identifier));
+				const extensions = new ExtensionHostExtensions(
+					snapshot.versionId,
+					snapshot.extensions,
+					myExtensions.map(extension => extension.identifier)
+				);
 
 				return {
 					connectionData: this._remoteAuthorityResolverService.getConnectionData(remoteAuthority),
@@ -308,7 +399,7 @@ class BrowserExtensionHostFactory implements IExtensionHostFactory {
 					extensionHostLogsPath: remoteEnv.extensionHostLogsPath,
 					globalStorageHome: remoteEnv.globalStorageHome,
 					workspaceStorageHome: remoteEnv.workspaceStorageHome,
-					extensions,
+					extensions
 				};
 			}
 		};
@@ -316,18 +407,33 @@ class BrowserExtensionHostFactory implements IExtensionHostFactory {
 }
 
 export class BrowserExtensionHostKindPicker implements IExtensionHostKindPicker {
+	constructor(@ILogService private readonly _logService: ILogService) {}
 
-	constructor(
-		@ILogService private readonly _logService: ILogService,
-	) { }
-
-	pickExtensionHostKind(extensionId: ExtensionIdentifier, extensionKinds: ExtensionKind[], isInstalledLocally: boolean, isInstalledRemotely: boolean, preference: ExtensionRunningPreference): ExtensionHostKind | null {
-		const result = BrowserExtensionHostKindPicker.pickRunningLocation(extensionKinds, isInstalledLocally, isInstalledRemotely, preference);
-		this._logService.trace(`pickRunningLocation for ${extensionId.value}, extension kinds: [${extensionKinds.join(', ')}], isInstalledLocally: ${isInstalledLocally}, isInstalledRemotely: ${isInstalledRemotely}, preference: ${extensionRunningPreferenceToString(preference)} => ${extensionHostKindToString(result)}`);
+	pickExtensionHostKind(
+		extensionId: ExtensionIdentifier,
+		extensionKinds: ExtensionKind[],
+		isInstalledLocally: boolean,
+		isInstalledRemotely: boolean,
+		preference: ExtensionRunningPreference
+	): ExtensionHostKind | null {
+		const result = BrowserExtensionHostKindPicker.pickRunningLocation(
+			extensionKinds,
+			isInstalledLocally,
+			isInstalledRemotely,
+			preference
+		);
+		this._logService.trace(
+			`pickRunningLocation for ${extensionId.value}, extension kinds: [${extensionKinds.join(', ')}], isInstalledLocally: ${isInstalledLocally}, isInstalledRemotely: ${isInstalledRemotely}, preference: ${extensionRunningPreferenceToString(preference)} => ${extensionHostKindToString(result)}`
+		);
 		return result;
 	}
 
-	public static pickRunningLocation(extensionKinds: ExtensionKind[], isInstalledLocally: boolean, isInstalledRemotely: boolean, preference: ExtensionRunningPreference): ExtensionHostKind | null {
+	public static pickRunningLocation(
+		extensionKinds: ExtensionKind[],
+		isInstalledLocally: boolean,
+		isInstalledRemotely: boolean,
+		preference: ExtensionRunningPreference
+	): ExtensionHostKind | null {
 		const result: ExtensionHostKind[] = [];
 		let canRunRemotely = false;
 		for (const extensionKind of extensionKinds) {
@@ -359,7 +465,7 @@ export class BrowserExtensionHostKindPicker implements IExtensionHostKindPicker 
 		if (canRunRemotely) {
 			result.push(ExtensionHostKind.Remote);
 		}
-		return (result.length > 0 ? result[0] : null);
+		return result.length > 0 ? result[0] : null;
 	}
 }
 

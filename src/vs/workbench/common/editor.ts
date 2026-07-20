@@ -996,7 +996,10 @@ export interface IUntypedFileEditorInput extends ITextResourceEditorInput {
  * to register this kind of input to the platform.
  */
 export interface IFileEditorInput
-	extends EditorInput, IEncodingSupport, ILanguageSupport, EditorInputWithPreferredResource {
+	extends EditorInput,
+		IEncodingSupport,
+		ILanguageSupport,
+		EditorInputWithPreferredResource {
 	/**
 	 * Gets the resource this file input is about. This will always be the
 	 * canonical form of the resource, so it may differ from the original

@@ -17,7 +17,10 @@ import { Action2, registerAction2 } from '../../../../platform/actions/common/ac
 import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
 import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
 import { ILogService } from '../../../../platform/log/common/log.js';
-import { RemoteAuthorityResolverErrorCode, getRemoteAuthorityPrefix } from '../../../../platform/remote/common/remoteAuthorityResolver.js';
+import {
+	RemoteAuthorityResolverErrorCode,
+	getRemoteAuthorityPrefix
+} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
 import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
@@ -27,7 +30,14 @@ import { IExtensionHostManager } from './extensionHostManagers.js';
 import { IExtensionDescriptionDelta } from './extensionHostProtocol.js';
 import { IExtensionHostProxy, IResolveAuthorityResult } from './extensionHostProxy.js';
 import { ExtensionRunningLocation } from './extensionRunningLocation.js';
-import { ActivationKind, ExtensionActivationReason, ExtensionHostStartup, IExtensionHost, IExtensionInspectInfo, IInternalExtensionService } from './extensions.js';
+import {
+	ActivationKind,
+	ExtensionActivationReason,
+	ExtensionHostStartup,
+	IExtensionHost,
+	IExtensionInspectInfo,
+	IInternalExtensionService
+} from './extensions.js';
 import { Proxied, ProxyIdentifier } from './proxyIdentifier.js';
 import { IRPCProtocolLogger, RPCProtocol, RequestInitiator, ResponsiveState } from './rpcProtocol.js';
 
@@ -38,9 +48,21 @@ const LOG_USE_COLORS = true;
 type ExtensionHostStartupClassification = {
 	owner: 'alexdima';
 	comment: 'The startup state of the extension host';
-	time: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The time reported by Date.now().' };
-	action: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The action: starting, success or error.' };
-	kind: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The extension host kind: LocalProcess, LocalWebWorker or Remote.' };
+	time: {
+		classification: 'SystemMetaData';
+		purpose: 'PerformanceAndHealth';
+		comment: 'The time reported by Date.now().';
+	};
+	action: {
+		classification: 'SystemMetaData';
+		purpose: 'PerformanceAndHealth';
+		comment: 'The action: starting, success or error.';
+	};
+	kind: {
+		classification: 'SystemMetaData';
+		purpose: 'PerformanceAndHealth';
+		comment: 'The extension host kind: LocalProcess, LocalWebWorker or Remote.';
+	};
 	errorName?: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The error name.' };
 	errorMessage?: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The error message.' };
 	errorStack?: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The error stack.' };
@@ -56,10 +78,11 @@ type ExtensionHostStartupEvent = {
 };
 
 export class ExtensionHostManager extends Disposable implements IExtensionHostManager {
-
 	public readonly onDidExit: Event<[number, string | null]>;
 
-	private readonly _onDidChangeResponsiveState: Emitter<ResponsiveState> = this._register(new Emitter<ResponsiveState>());
+	private readonly _onDidChangeResponsiveState: Emitter<ResponsiveState> = this._register(
+		new Emitter<ResponsiveState>()
+	);
 	public readonly onDidChangeResponsiveState: Event<ResponsiveState> = this._onDidChangeResponsiveState.event;
 
 	/**
@@ -96,7 +119,7 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 		@IInstantiationService private readonly _instantiationService: IInstantiationService,
 		@IWorkbenchEnvironmentService private readonly _environmentService: IWorkbenchEnvironmentService,
 		@ITelemetryService private readonly _telemetryService: ITelemetryService,
-		@ILogService private readonly _logService: ILogService,
+		@ILogService private readonly _logService: ILogService
 	) {
 		super();
 		this._cachedActivationEvents = new Map<string, Promise<void>>();
@@ -112,23 +135,30 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 			action: 'starting',
 			kind: extensionHostKindToString(this.kind)
 		};
-		this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>('extensionHostStartup', startingTelemetryEvent);
+		this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>(
+			'extensionHostStartup',
+			startingTelemetryEvent
+		);
 
 		this._proxy = this._extensionHost.start().then(
-			(protocol) => {
-
+			protocol => {
 				// Track healthy extension host startup
 				const successTelemetryEvent: ExtensionHostStartupEvent = {
 					time: Date.now(),
 					action: 'success',
 					kind: extensionHostKindToString(this.kind)
 				};
-				this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>('extensionHostStartup', successTelemetryEvent);
+				this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>(
+					'extensionHostStartup',
+					successTelemetryEvent
+				);
 
 				return this._createExtensionHostCustomers(this.kind, protocol);
 			},
-			(err) => {
-				this._logService.error(`Error received from starting extension host (kind: ${extensionHostKindToString(this.kind)})`);
+			err => {
+				this._logService.error(
+					`Error received from starting extension host (kind: ${extensionHostKindToString(this.kind)})`
+				);
 				this._logService.error(err);
 
 				// Track errors during extension host startup
@@ -147,17 +177,22 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 				if (err && err.stack) {
 					failureTelemetryEvent.errorStack = err.stack;
 				}
-				this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>('extensionHostStartup', failureTelemetryEvent);
+				this._telemetryService.publicLog2<ExtensionHostStartupEvent, ExtensionHostStartupClassification>(
+					'extensionHostStartup',
+					failureTelemetryEvent
+				);
 
 				return null;
 			}
 		);
 		this._proxy.then(() => {
 			this._hasStarted = true;
-			initialActivationEvents.forEach((activationEvent) => this.activateByEvent(activationEvent, ActivationKind.Normal));
-			this._register(registerLatencyTestProvider({
-				measure: () => this.measure()
-			}));
+			initialActivationEvents.forEach(activationEvent => this.activateByEvent(activationEvent, ActivationKind.Normal));
+			this._register(
+				registerLatencyTestProvider({
+					measure: () => this.measure()
+				})
+			);
 		});
 	}
 
@@ -216,7 +251,7 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 			sw.stop();
 			sum += sw.elapsed();
 		}
-		return (sum / COUNT);
+		return sum / COUNT;
 	}
 
 	private static _convert(byteCount: number, elapsedMillis: number): number {
@@ -246,8 +281,10 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 		return ExtensionHostManager._convert(SIZE, sw.elapsed());
 	}
 
-	private _createExtensionHostCustomers(kind: ExtensionHostKind, protocol: IMessagePassingProtocol): IExtensionHostProxy {
-
+	private _createExtensionHostCustomers(
+		kind: ExtensionHostKind,
+		protocol: IMessagePassingProtocol
+	): IExtensionHostProxy {
 		let logger: IRPCProtocolLogger | null = null;
 		if (LOG_EXTENSION_HOST_COMMUNICATION || this._environmentService.logExtensionHostCommunication) {
 			logger = new RPCLogger(kind);
@@ -256,14 +293,19 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 		}
 
 		this._rpcProtocol = new RPCProtocol(protocol, logger);
-		this._register(this._rpcProtocol.onDidChangeResponsiveState((responsiveState: ResponsiveState) => this._onDidChangeResponsiveState.fire(responsiveState)));
+		this._register(
+			this._rpcProtocol.onDidChangeResponsiveState((responsiveState: ResponsiveState) =>
+				this._onDidChangeResponsiveState.fire(responsiveState)
+			)
+		);
 		let extensionHostProxy: IExtensionHostProxy | null = null as IExtensionHostProxy | null;
 		let mainProxyIdentifiers: ProxyIdentifier<any>[] = [];
 		const extHostContext: IInternalExtHostContext = {
 			remoteAuthority: this._extensionHost.remoteAuthority,
 			extensionHostKind: this.kind,
 			getProxy: <T>(identifier: ProxyIdentifier<T>): Proxied<T> => this._rpcProtocol!.getProxy(identifier),
-			set: <T, R extends T>(identifier: ProxyIdentifier<T>, instance: R): R => this._rpcProtocol!.set(identifier, instance),
+			set: <T, R extends T>(identifier: ProxyIdentifier<T>, instance: R): R =>
+				this._rpcProtocol!.set(identifier, instance),
 			dispose: (): void => this._rpcProtocol!.dispose(),
 			assertRegistered: (identifiers: ProxyIdentifier<any>[]): void => this._rpcProtocol!.assertRegistered(identifiers),
 			drain: (): Promise<void> => this._rpcProtocol!.drain(),
@@ -275,7 +317,7 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 			},
 			_setAllMainProxyIdentifiers: (value: ProxyIdentifier<any>[]): void => {
 				mainProxyIdentifiers = value;
-			},
+			}
 			//#endregion
 		};
 
@@ -371,7 +413,8 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 
 	public async resolveAuthority(remoteAuthority: string, resolveAttempt: number): Promise<IResolveAuthorityResult> {
 		const sw = StopWatch.create(false);
-		const prefix = () => `[${extensionHostKindToString(this._extensionHost.runningLocation.kind)}${this._extensionHost.runningLocation.affinity}][resolveAuthority(${getRemoteAuthorityPrefix(remoteAuthority)},${resolveAttempt})][${sw.elapsed()}ms] `;
+		const prefix = () =>
+			`[${extensionHostKindToString(this._extensionHost.runningLocation.kind)}${this._extensionHost.runningLocation.affinity}][resolveAuthority(${getRemoteAuthorityPrefix(remoteAuthority)},${resolveAttempt})][${sw.elapsed()}ms] `;
 		const logInfo = (msg: string) => this._logService.info(`${prefix()}${msg}`);
 		const logError = (msg: string, err: any = undefined) => this._logService.error(`${prefix()}${msg}`, err);
 
@@ -422,12 +465,20 @@ export class ExtensionHostManager extends Disposable implements IExtensionHostMa
 		return proxy.getCanonicalURI(remoteAuthority, uri);
 	}
 
-	public async start(extensionRegistryVersionId: number, allExtensions: IExtensionDescription[], myExtensions: ExtensionIdentifier[]): Promise<void> {
+	public async start(
+		extensionRegistryVersionId: number,
+		allExtensions: IExtensionDescription[],
+		myExtensions: ExtensionIdentifier[]
+	): Promise<void> {
 		const proxy = await this._proxy;
 		if (!proxy) {
 			return;
 		}
-		const deltaExtensions = this._extensionHost.extensions!.set(extensionRegistryVersionId, allExtensions, myExtensions);
+		const deltaExtensions = this._extensionHost.extensions!.set(
+			extensionRegistryVersionId,
+			allExtensions,
+			myExtensions
+		);
 		return proxy.startExtensionHost(deltaExtensions);
 	}
 
@@ -503,20 +554,31 @@ function pretty(data: any): any {
 }
 
 class RPCLogger implements IRPCProtocolLogger {
-
 	private _totalIncoming = 0;
 	private _totalOutgoing = 0;
 
-	constructor(
-		private readonly _kind: ExtensionHostKind
-	) { }
+	constructor(private readonly _kind: ExtensionHostKind) {}
 
-	private _log(direction: string, totalLength: number, msgLength: number, req: number, initiator: RequestInitiator, str: string, data: any): void {
+	private _log(
+		direction: string,
+		totalLength: number,
+		msgLength: number,
+		req: number,
+		initiator: RequestInitiator,
+		str: string,
+		data: any
+	): void {
 		data = pretty(data);
 
 		const colorTable = colorTables[initiator];
 		const color = LOG_USE_COLORS ? colorTable[req % colorTable.length] : '#000000';
-		let args = [`%c[${extensionHostKindToString(this._kind)}][${direction}]%c[${String(totalLength).padStart(7)}]%c[len: ${String(msgLength).padStart(5)}]%c${String(req).padStart(5)} - ${str}`, 'color: darkgreen', 'color: grey', 'color: grey', `color: ${color}`];
+		let args = [
+			`%c[${extensionHostKindToString(this._kind)}][${direction}]%c[${String(totalLength).padStart(7)}]%c[len: ${String(msgLength).padStart(5)}]%c${String(req).padStart(5)} - ${str}`,
+			'color: darkgreen',
+			'color: grey',
+			'color: grey',
+			`color: ${color}`
+		];
 		if (/\($/.test(str)) {
 			args = args.concat(data);
 			args.push(')');
@@ -546,21 +608,23 @@ type RPCTelemetryDataClassification = {
 	owner: 'jrieken';
 	comment: 'Insights about RPC message sizes';
 	type: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The type of the RPC message' };
-	length: { classification: 'SystemMetaData'; purpose: 'PerformanceAndHealth'; comment: 'The byte-length of the RPC message' };
+	length: {
+		classification: 'SystemMetaData';
+		purpose: 'PerformanceAndHealth';
+		comment: 'The byte-length of the RPC message';
+	};
 };
 
 class TelemetryRPCLogger implements IRPCProtocolLogger {
-
 	static isEnabled(): boolean {
 		return Math.random() < 0.0001; // 0.01% of users
 	}
 
 	private readonly _pendingRequests = new Map<number, string>();
 
-	constructor(@ITelemetryService private readonly _telemetryService: ITelemetryService) { }
+	constructor(@ITelemetryService private readonly _telemetryService: ITelemetryService) {}
 
 	logIncoming(msgLength: number, req: number, initiator: RequestInitiator, str: string): void {
-
 		if (initiator === RequestInitiator.LocalSide && /^receiveReply(Err)?:/.test(str)) {
 			// log the size of reply messages
 			const requestStr = this._pendingRequests.get(req) ?? 'unknown_reply';
@@ -581,7 +645,6 @@ class TelemetryRPCLogger implements IRPCProtocolLogger {
 	}
 
 	logOutgoing(msgLength: number, req: number, initiator: RequestInitiator, str: string): void {
-
 		if (initiator === RequestInitiator.LocalSide && str.startsWith('request: ')) {
 			this._pendingRequests.set(req, str);
 			this._telemetryService.publicLog2<RPCTelemetryData, RPCTelemetryDataClassification>('extensionhost.outgoing', {
@@ -622,39 +685,43 @@ function getLatencyTestProviders(): ExtHostLatencyProvider[] {
 	return providers.slice(0);
 }
 
-registerAction2(class MeasureExtHostLatencyAction extends Action2 {
-
-	constructor() {
-		super({
-			id: 'editor.action.measureExtHostLatency',
-			title: nls.localize2('measureExtHostLatency', "Measure Extension Host Latency"),
-			category: Categories.Developer,
-			f1: true
-		});
-	}
-
-	async run(accessor: ServicesAccessor) {
-
-		const editorService = accessor.get(IEditorService);
-
-		const measurements = await Promise.all(getLatencyTestProviders().map(provider => provider.measure()));
-		editorService.openEditor({ resource: undefined, contents: measurements.map(MeasureExtHostLatencyAction._print).join('\n\n'), options: { pinned: true } });
-	}
-
-	private static _print(m: ExtHostLatencyResult | null): string {
-		if (!m) {
-			return '';
+registerAction2(
+	class MeasureExtHostLatencyAction extends Action2 {
+		constructor() {
+			super({
+				id: 'editor.action.measureExtHostLatency',
+				title: nls.localize2('measureExtHostLatency', 'Measure Extension Host Latency'),
+				category: Categories.Developer,
+				f1: true
+			});
 		}
-		return `${m.remoteAuthority ? `Authority: ${m.remoteAuthority}\n` : ``}Roundtrip latency: ${m.latency.toFixed(3)}ms\nUp: ${MeasureExtHostLatencyAction._printSpeed(m.up)}\nDown: ${MeasureExtHostLatencyAction._printSpeed(m.down)}\n`;
-	}
 
-	private static _printSpeed(n: number): string {
-		if (n <= 1024) {
-			return `${n} bps`;
+		async run(accessor: ServicesAccessor) {
+			const editorService = accessor.get(IEditorService);
+
+			const measurements = await Promise.all(getLatencyTestProviders().map(provider => provider.measure()));
+			editorService.openEditor({
+				resource: undefined,
+				contents: measurements.map(MeasureExtHostLatencyAction._print).join('\n\n'),
+				options: { pinned: true }
+			});
 		}
-		if (n < 1024 * 1024) {
-			return `${(n / 1024).toFixed(1)} kbps`;
+
+		private static _print(m: ExtHostLatencyResult | null): string {
+			if (!m) {
+				return '';
+			}
+			return `${m.remoteAuthority ? `Authority: ${m.remoteAuthority}\n` : ``}Roundtrip latency: ${m.latency.toFixed(3)}ms\nUp: ${MeasureExtHostLatencyAction._printSpeed(m.up)}\nDown: ${MeasureExtHostLatencyAction._printSpeed(m.down)}\n`;
 		}
-		return `${(n / 1024 / 1024).toFixed(1)} Mbps`;
+
+		private static _printSpeed(n: number): string {
+			if (n <= 1024) {
+				return `${n} bps`;
+			}
+			if (n < 1024 * 1024) {
+				return `${(n / 1024).toFixed(1)} kbps`;
+			}
+			return `${(n / 1024 / 1024).toFixed(1)} Mbps`;
+		}
 	}
-});
+);

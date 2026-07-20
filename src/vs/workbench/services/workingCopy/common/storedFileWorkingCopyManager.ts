@@ -52,9 +52,8 @@ import { IProgressService } from '../../../../platform/progress/common/progress.
  * operations that are working copy related, such as save/revert, backup
  * and resolving.
  */
-export interface IStoredFileWorkingCopyManager<
-	M extends IStoredFileWorkingCopyModel
-> extends IBaseFileWorkingCopyManager<M, IStoredFileWorkingCopy<M>> {
+export interface IStoredFileWorkingCopyManager<M extends IStoredFileWorkingCopyModel>
+	extends IBaseFileWorkingCopyManager<M, IStoredFileWorkingCopy<M>> {
 	/**
 	 * An event for when a stored file working copy was resolved.
 	 */
@@ -123,9 +122,8 @@ export interface IStoredFileWorkingCopyManager<
 	canDispose(workingCopy: IStoredFileWorkingCopy<M>): true | Promise<true>;
 }
 
-export interface IStoredFileWorkingCopySaveEvent<
-	M extends IStoredFileWorkingCopyModel
-> extends IBaseStoredFileWorkingCopySaveEvent {
+export interface IStoredFileWorkingCopySaveEvent<M extends IStoredFileWorkingCopyModel>
+	extends IBaseStoredFileWorkingCopySaveEvent {
 	/**
 	 * The stored file working copy that was successfully saved.
 	 */

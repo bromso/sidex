@@ -54,7 +54,7 @@ export interface IObjectTreeSetChildrenOptions<T> {
 }
 
 export class ObjectTree<T, TFilterData = void> extends AbstractTree<T | null, TFilterData, T | null> {
-	declare protected model: IObjectTreeModel<T, TFilterData>;
+	protected declare model: IObjectTreeModel<T, TFilterData>;
 
 	override get onDidChangeCollapseState(): Event<ICollapseStateChangeEvent<T | null, TFilterData>> {
 		return this.model.onDidChangeCollapseState;
@@ -116,11 +116,8 @@ interface ICompressedTreeNodeProvider<T, TFilterData> {
 	getCompressedTreeNode(location: T | null): ITreeNode<ICompressedTreeNode<T> | null, TFilterData>;
 }
 
-export interface ICompressibleTreeRenderer<T, TFilterData = void, TTemplateData = void> extends ITreeRenderer<
-	T,
-	TFilterData,
-	TTemplateData
-> {
+export interface ICompressibleTreeRenderer<T, TFilterData = void, TTemplateData = void>
+	extends ITreeRenderer<T, TFilterData, TTemplateData> {
 	renderCompressedElements(
 		node: ITreeNode<ICompressedTreeNode<T>, TFilterData>,
 		index: number,
@@ -140,11 +137,9 @@ interface CompressibleTemplateData<T, TFilterData, TTemplateData> {
 	readonly data: TTemplateData;
 }
 
-class CompressibleRenderer<T, TFilterData, TTemplateData> implements ITreeRenderer<
-	T,
-	TFilterData,
-	CompressibleTemplateData<T, TFilterData, TTemplateData>
-> {
+class CompressibleRenderer<T, TFilterData, TTemplateData>
+	implements ITreeRenderer<T, TFilterData, CompressibleTemplateData<T, TFilterData, TTemplateData>>
+{
 	readonly templateId: string;
 	readonly onDidChangeTwistieState: Event<T> | undefined;
 
@@ -361,7 +356,7 @@ export class CompressibleObjectTree<T, TFilterData = void>
 	extends ObjectTree<T, TFilterData>
 	implements ICompressedTreeNodeProvider<T, TFilterData>
 {
-	declare protected model: CompressibleObjectTreeModel<T, TFilterData>;
+	protected declare model: CompressibleObjectTreeModel<T, TFilterData>;
 
 	constructor(
 		user: string,

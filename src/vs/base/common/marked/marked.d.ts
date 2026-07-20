@@ -586,10 +586,8 @@ export interface MarkedExtension {
 	 */
 	walkTokens?: ((token: Token) => void | Promise<void>) | undefined | null;
 }
-export interface MarkedOptions extends Omit<
-	MarkedExtension,
-	'hooks' | 'renderer' | 'tokenizer' | 'extensions' | 'walkTokens'
-> {
+export interface MarkedOptions
+	extends Omit<MarkedExtension, 'hooks' | 'renderer' | 'tokenizer' | 'extensions' | 'walkTokens'> {
 	/**
 	 * Hooks are methods that hook into some part of marked.
 	 */

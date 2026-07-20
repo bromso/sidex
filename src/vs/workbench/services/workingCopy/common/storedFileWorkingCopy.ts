@@ -60,9 +60,8 @@ import { isCancellationError } from '../../../../base/common/errors.js';
 /**
  * Stored file specific working copy model factory.
  */
-export interface IStoredFileWorkingCopyModelFactory<
-	M extends IStoredFileWorkingCopyModel
-> extends IFileWorkingCopyModelFactory<M> {}
+export interface IStoredFileWorkingCopyModelFactory<M extends IStoredFileWorkingCopyModel>
+	extends IFileWorkingCopyModelFactory<M> {}
 
 /**
  * The underlying model of a stored file working copy provides some
@@ -127,7 +126,8 @@ export interface IStoredFileWorkingCopyModelContentChangedEvent {
  * a secure way to prevent data loss.
  */
 export interface IStoredFileWorkingCopy<M extends IStoredFileWorkingCopyModel>
-	extends IResourceWorkingCopy, IFileWorkingCopy<M> {
+	extends IResourceWorkingCopy,
+		IFileWorkingCopy<M> {
 	/**
 	 * An event for when a stored file working copy was resolved.
 	 */
@@ -194,9 +194,8 @@ export interface IStoredFileWorkingCopy<M extends IStoredFileWorkingCopyModel>
 	save(options?: IStoredFileWorkingCopySaveAsOptions): Promise<boolean>;
 }
 
-export interface IResolvedStoredFileWorkingCopy<
-	M extends IStoredFileWorkingCopyModel
-> extends IStoredFileWorkingCopy<M> {
+export interface IResolvedStoredFileWorkingCopy<M extends IStoredFileWorkingCopyModel>
+	extends IStoredFileWorkingCopy<M> {
 	/**
 	 * A resolved stored file working copy has a resolved model.
 	 */

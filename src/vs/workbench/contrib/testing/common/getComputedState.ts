@@ -141,7 +141,7 @@ export const refreshComputedState = <T extends object>(
 				// moveToState remains the same, the new higher priority node state
 				accessor.setComputedState(parent, newState);
 				toUpdate.add(parent);
-			} else /* newProirity < oldPriority */ {
+			} /* newProirity < oldPriority */ else {
 				// Update all parts whose statese might have been based on this one
 				if (prev === undefined || statePriority[prev] > oldPriority) {
 					break;

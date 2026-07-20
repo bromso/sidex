@@ -30,7 +30,7 @@ export interface INormalizedVersion {
 	minorMustEqual: boolean;
 	patchBase: number;
 	patchMustEqual: boolean;
-	notBefore: number; /* milliseconds timestamp, or 0 */
+	notBefore: number /* milliseconds timestamp, or 0 */;
 	isMinimum: boolean;
 }
 
@@ -39,7 +39,7 @@ const NOT_BEFORE_REGEXP = /^-(\d{4})(\d{2})(\d{2})(\d{2})?(\d{2})?$/;
 
 export function isValidVersionStr(version: string): boolean {
 	version = version.trim();
-	return (version === '*' || VERSION_REGEXP.test(version));
+	return version === '*' || VERSION_REGEXP.test(version);
 }
 
 export function parseVersion(version: string): IParsedVersion | null {
@@ -71,11 +71,11 @@ export function parseVersion(version: string): IParsedVersion | null {
 		hasCaret: m[1] === '^',
 		hasGreaterEquals: m[1] === '>=',
 		majorBase: m[2] === 'x' ? 0 : parseInt(m[2], 10),
-		majorMustEqual: (m[2] === 'x' ? false : true),
+		majorMustEqual: m[2] === 'x' ? false : true,
 		minorBase: m[4] === 'x' ? 0 : parseInt(m[4], 10),
-		minorMustEqual: (m[4] === 'x' ? false : true),
+		minorMustEqual: m[4] === 'x' ? false : true,
 		patchBase: m[6] === 'x' ? 0 : parseInt(m[6], 10),
-		patchMustEqual: (m[6] === 'x' ? false : true),
+		patchMustEqual: m[6] === 'x' ? false : true,
 		preRelease: m[8] || null
 	};
 }
@@ -118,11 +118,15 @@ export function normalizeVersion(version: IParsedVersion | null): INormalizedVer
 		patchBase: patchBase,
 		patchMustEqual: patchMustEqual,
 		isMinimum: version.hasGreaterEquals,
-		notBefore,
+		notBefore
 	};
 }
 
-export function isValidVersion(_inputVersion: string | INormalizedVersion, _inputDate: ProductDate, _desiredVersion: string | INormalizedVersion): boolean {
+export function isValidVersion(
+	_inputVersion: string | INormalizedVersion,
+	_inputDate: ProductDate,
+	_desiredVersion: string | INormalizedVersion
+): boolean {
 	let version: INormalizedVersion | null;
 	if (typeof _inputVersion === 'string') {
 		version = normalizeVersion(parseVersion(_inputVersion));
@@ -202,7 +206,7 @@ export function isValidVersion(_inputVersion: string | INormalizedVersion, _inpu
 
 	if (majorBase > desiredMajorBase) {
 		// higher major version
-		return (!majorMustEqual);
+		return !majorMustEqual;
 	}
 
 	// at this point, majorBase are equal
@@ -214,7 +218,7 @@ export function isValidVersion(_inputVersion: string | INormalizedVersion, _inpu
 
 	if (minorBase > desiredMinorBase) {
 		// higher minor version
-		return (!minorMustEqual);
+		return !minorMustEqual;
 	}
 
 	// at this point, minorBase are equal
@@ -226,7 +230,7 @@ export function isValidVersion(_inputVersion: string | INormalizedVersion, _inpu
 
 	if (patchBase > desiredPatchBase) {
 		// higher patch version
-		return (!patchMustEqual);
+		return !patchMustEqual;
 	}
 
 	// at this point, patchBase are equal
@@ -240,88 +244,191 @@ export function isValidVersion(_inputVersion: string | INormalizedVersion, _inpu
 
 type ProductDate = string | Date | undefined;
 
-export function validateExtensionManifest(productVersion: string, productDate: ProductDate, extensionLocation: URI, extensionManifest: IExtensionManifest, extensionIsBuiltin: boolean, validateApiVersion: boolean): readonly [Severity, string][] {
+export function validateExtensionManifest(
+	productVersion: string,
+	productDate: ProductDate,
+	extensionLocation: URI,
+	extensionManifest: IExtensionManifest,
+	extensionIsBuiltin: boolean,
+	validateApiVersion: boolean
+): readonly [Severity, string][] {
 	const validations: [Severity, string][] = [];
 	if (typeof extensionManifest.publisher !== 'undefined' && typeof extensionManifest.publisher !== 'string') {
-		validations.push([Severity.Error, nls.localize('extensionDescription.publisher', "property publisher must be of type `string`.")]);
+		validations.push([
+			Severity.Error,
+			nls.localize('extensionDescription.publisher', 'property publisher must be of type `string`.')
+		]);
 		return validations;
 	}
 	if (typeof extensionManifest.name !== 'string') {
-		validations.push([Severity.Error, nls.localize('extensionDescription.name', "property `{0}` is mandatory and must be of type `string`", 'name')]);
+		validations.push([
+			Severity.Error,
+			nls.localize('extensionDescription.name', 'property `{0}` is mandatory and must be of type `string`', 'name')
+		]);
 		return validations;
 	}
 	if (typeof extensionManifest.version !== 'string') {
-		validations.push([Severity.Error, nls.localize('extensionDescription.version', "property `{0}` is mandatory and must be of type `string`", 'version')]);
+		validations.push([
+			Severity.Error,
+			nls.localize(
+				'extensionDescription.version',
+				'property `{0}` is mandatory and must be of type `string`',
+				'version'
+			)
+		]);
 		return validations;
 	}
 	if (!extensionManifest.engines) {
-		validations.push([Severity.Error, nls.localize('extensionDescription.engines', "property `{0}` is mandatory and must be of type `object`", 'engines')]);
+		validations.push([
+			Severity.Error,
+			nls.localize(
+				'extensionDescription.engines',
+				'property `{0}` is mandatory and must be of type `object`',
+				'engines'
+			)
+		]);
 		return validations;
 	}
 	if (typeof extensionManifest.engines.vscode !== 'string') {
-		validations.push([Severity.Error, nls.localize('extensionDescription.engines.vscode', "property `{0}` is mandatory and must be of type `string`", 'engines.vscode')]);
+		validations.push([
+			Severity.Error,
+			nls.localize(
+				'extensionDescription.engines.vscode',
+				'property `{0}` is mandatory and must be of type `string`',
+				'engines.vscode'
+			)
+		]);
 		return validations;
 	}
 	if (typeof extensionManifest.extensionDependencies !== 'undefined') {
 		if (!isStringArray(extensionManifest.extensionDependencies)) {
-			validations.push([Severity.Error, nls.localize('extensionDescription.extensionDependencies', "property `{0}` can be omitted or must be of type `string[]`", 'extensionDependencies')]);
+			validations.push([
+				Severity.Error,
+				nls.localize(
+					'extensionDescription.extensionDependencies',
+					'property `{0}` can be omitted or must be of type `string[]`',
+					'extensionDependencies'
+				)
+			]);
 			return validations;
 		}
 	}
 	if (typeof extensionManifest.extensionAffinity !== 'undefined') {
 		if (!isStringArray(extensionManifest.extensionAffinity)) {
-			validations.push([Severity.Error, nls.localize('extensionDescription.extensionAffinity', "property `{0}` can be omitted or must be of type `string[]`", 'extensionAffinity')]);
+			validations.push([
+				Severity.Error,
+				nls.localize(
+					'extensionDescription.extensionAffinity',
+					'property `{0}` can be omitted or must be of type `string[]`',
+					'extensionAffinity'
+				)
+			]);
 			return validations;
 		}
 	}
 	if (typeof extensionManifest.activationEvents !== 'undefined') {
 		if (!isStringArray(extensionManifest.activationEvents)) {
-			validations.push([Severity.Error, nls.localize('extensionDescription.activationEvents1', "property `{0}` can be omitted or must be of type `string[]`", 'activationEvents')]);
+			validations.push([
+				Severity.Error,
+				nls.localize(
+					'extensionDescription.activationEvents1',
+					'property `{0}` can be omitted or must be of type `string[]`',
+					'activationEvents'
+				)
+			]);
 			return validations;
 		}
 		if (typeof extensionManifest.main === 'undefined' && typeof extensionManifest.browser === 'undefined') {
-			validations.push([Severity.Error, nls.localize('extensionDescription.activationEvents2', "property `{0}` should be omitted if the extension doesn't have a `{1}` or `{2}` property.", 'activationEvents', 'main', 'browser')]);
+			validations.push([
+				Severity.Error,
+				nls.localize(
+					'extensionDescription.activationEvents2',
+					"property `{0}` should be omitted if the extension doesn't have a `{1}` or `{2}` property.",
+					'activationEvents',
+					'main',
+					'browser'
+				)
+			]);
 			return validations;
 		}
 	}
 	if (typeof extensionManifest.extensionKind !== 'undefined') {
 		if (typeof extensionManifest.main === 'undefined') {
-			validations.push([Severity.Warning, nls.localize('extensionDescription.extensionKind', "property `{0}` can be defined only if property `main` is also defined.", 'extensionKind')]);
+			validations.push([
+				Severity.Warning,
+				nls.localize(
+					'extensionDescription.extensionKind',
+					'property `{0}` can be defined only if property `main` is also defined.',
+					'extensionKind'
+				)
+			]);
 			// not a failure case
 		}
 	}
 	if (typeof extensionManifest.main !== 'undefined') {
 		if (typeof extensionManifest.main !== 'string') {
-			validations.push([Severity.Error, nls.localize('extensionDescription.main1', "property `{0}` can be omitted or must be of type `string`", 'main')]);
+			validations.push([
+				Severity.Error,
+				nls.localize('extensionDescription.main1', 'property `{0}` can be omitted or must be of type `string`', 'main')
+			]);
 			return validations;
 		} else {
 			const mainLocation = joinPath(extensionLocation, extensionManifest.main);
 			if (!isEqualOrParent(mainLocation, extensionLocation)) {
-				validations.push([Severity.Warning, nls.localize('extensionDescription.main2', "Expected `main` ({0}) to be included inside extension's folder ({1}). This might make the extension non-portable.", mainLocation.path, extensionLocation.path)]);
+				validations.push([
+					Severity.Warning,
+					nls.localize(
+						'extensionDescription.main2',
+						"Expected `main` ({0}) to be included inside extension's folder ({1}). This might make the extension non-portable.",
+						mainLocation.path,
+						extensionLocation.path
+					)
+				]);
 				// not a failure case
 			}
 		}
 	}
 	if (typeof extensionManifest.browser !== 'undefined') {
 		if (typeof extensionManifest.browser !== 'string') {
-			validations.push([Severity.Error, nls.localize('extensionDescription.browser1', "property `{0}` can be omitted or must be of type `string`", 'browser')]);
+			validations.push([
+				Severity.Error,
+				nls.localize(
+					'extensionDescription.browser1',
+					'property `{0}` can be omitted or must be of type `string`',
+					'browser'
+				)
+			]);
 			return validations;
 		} else {
 			const browserLocation = joinPath(extensionLocation, extensionManifest.browser);
 			if (!isEqualOrParent(browserLocation, extensionLocation)) {
-				validations.push([Severity.Warning, nls.localize('extensionDescription.browser2', "Expected `browser` ({0}) to be included inside extension's folder ({1}). This might make the extension non-portable.", browserLocation.path, extensionLocation.path)]);
+				validations.push([
+					Severity.Warning,
+					nls.localize(
+						'extensionDescription.browser2',
+						"Expected `browser` ({0}) to be included inside extension's folder ({1}). This might make the extension non-portable.",
+						browserLocation.path,
+						extensionLocation.path
+					)
+				]);
 				// not a failure case
 			}
 		}
 	}
 
 	if (!semver.valid(extensionManifest.version)) {
-		validations.push([Severity.Error, nls.localize('notSemver', "Extension version is not semver compatible.")]);
+		validations.push([Severity.Error, nls.localize('notSemver', 'Extension version is not semver compatible.')]);
 		return validations;
 	}
 
 	const notices: string[] = [];
-	const validExtensionVersion = isValidExtensionVersion(productVersion, productDate, extensionManifest, extensionIsBuiltin, notices);
+	const validExtensionVersion = isValidExtensionVersion(
+		productVersion,
+		productDate,
+		extensionManifest,
+		extensionIsBuiltin,
+		notices
+	);
 	if (!validExtensionVersion) {
 		for (const notice of notices) {
 			validations.push([Severity.Error, notice]);
@@ -340,9 +447,17 @@ export function validateExtensionManifest(productVersion: string, productDate: P
 	return validations;
 }
 
-export function isValidExtensionVersion(productVersion: string, productDate: ProductDate, extensionManifest: IExtensionManifest, extensionIsBuiltin: boolean, notices: string[]): boolean {
-
-	if (extensionIsBuiltin || (typeof extensionManifest.main === 'undefined' && typeof extensionManifest.browser === 'undefined')) {
+export function isValidExtensionVersion(
+	productVersion: string,
+	productDate: ProductDate,
+	extensionManifest: IExtensionManifest,
+	extensionIsBuiltin: boolean,
+	notices: string[]
+): boolean {
+	if (
+		extensionIsBuiltin ||
+		(typeof extensionManifest.main === 'undefined' && typeof extensionManifest.browser === 'undefined')
+	) {
 		// No version check for builtin or declarative extensions
 		return true;
 	}
@@ -357,13 +472,20 @@ export function isEngineValid(engine: string, version: string, date: ProductDate
 
 export function areApiProposalsCompatible(apiProposals: string[]): boolean;
 export function areApiProposalsCompatible(apiProposals: string[], notices: string[]): boolean;
-export function areApiProposalsCompatible(apiProposals: string[], productApiProposals: Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }>): boolean;
-export function areApiProposalsCompatible(apiProposals: string[], arg1?: string[] | Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }>): boolean {
+export function areApiProposalsCompatible(
+	apiProposals: string[],
+	productApiProposals: Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }>
+): boolean;
+export function areApiProposalsCompatible(
+	apiProposals: string[],
+	arg1?: string[] | Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }>
+): boolean {
 	if (apiProposals.length === 0) {
 		return true;
 	}
 	const notices: string[] | undefined = Array.isArray(arg1) ? arg1 : undefined;
-	const productApiProposals: Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }> = (Array.isArray(arg1) ? undefined : arg1) ?? allApiProposals;
+	const productApiProposals: Readonly<{ [proposalName: string]: Readonly<{ proposal: string; version?: number }> }> =
+		(Array.isArray(arg1) ? undefined : arg1) ?? allApiProposals;
 	const incompatibleProposals: string[] = [];
 	const parsedProposals = parseApiProposals(apiProposals);
 	for (const { proposalName, version } of parsedProposals) {
@@ -378,11 +500,25 @@ export function areApiProposalsCompatible(apiProposals: string[], arg1?: string[
 	if (incompatibleProposals.length) {
 		if (notices) {
 			if (incompatibleProposals.length === 1) {
-				notices.push(nls.localize('apiProposalMismatch1', "This extension is using the API proposal '{0}' that is not compatible with the current version of VS Code.", incompatibleProposals[0]));
+				notices.push(
+					nls.localize(
+						'apiProposalMismatch1',
+						"This extension is using the API proposal '{0}' that is not compatible with the current version of VS Code.",
+						incompatibleProposals[0]
+					)
+				);
 			} else {
-				notices.push(nls.localize('apiProposalMismatch2', "This extension is using the API proposals {0} and '{1}' that are not compatible with the current version of VS Code.",
-					incompatibleProposals.slice(0, incompatibleProposals.length - 1).map(p => `'${p}'`).join(', '),
-					incompatibleProposals[incompatibleProposals.length - 1]));
+				notices.push(
+					nls.localize(
+						'apiProposalMismatch2',
+						"This extension is using the API proposals {0} and '{1}' that are not compatible with the current version of VS Code.",
+						incompatibleProposals
+							.slice(0, incompatibleProposals.length - 1)
+							.map(p => `'${p}'`)
+							.join(', '),
+						incompatibleProposals[incompatibleProposals.length - 1]
+					)
+				);
 			}
 		}
 		return false;
@@ -390,11 +526,21 @@ export function areApiProposalsCompatible(apiProposals: string[], arg1?: string[
 	return true;
 }
 
-function isVersionValid(currentVersion: string, date: ProductDate, requestedVersion: string, notices: string[] = []): boolean {
-
+function isVersionValid(
+	currentVersion: string,
+	date: ProductDate,
+	requestedVersion: string,
+	notices: string[] = []
+): boolean {
 	const desiredVersion = normalizeVersion(parseVersion(requestedVersion));
 	if (!desiredVersion) {
-		notices.push(nls.localize('versionSyntax', "Could not parse `engines.vscode` value {0}. Please use, for example: ^1.22.0, ^1.22.x, etc.", requestedVersion));
+		notices.push(
+			nls.localize(
+				'versionSyntax',
+				'Could not parse `engines.vscode` value {0}. Please use, for example: ^1.22.0, ^1.22.x, etc.',
+				requestedVersion
+			)
+		);
 		return false;
 	}
 
@@ -404,19 +550,38 @@ function isVersionValid(currentVersion: string, date: ProductDate, requestedVers
 	if (desiredVersion.majorBase === 0) {
 		// force that major and minor must be specific
 		if (!desiredVersion.majorMustEqual || !desiredVersion.minorMustEqual) {
-			notices.push(nls.localize('versionSpecificity1', "Version specified in `engines.vscode` ({0}) is not specific enough. For vscode versions before 1.0.0, please define at a minimum the major and minor desired version. E.g. ^0.10.0, 0.10.x, 0.11.0, etc.", requestedVersion));
+			notices.push(
+				nls.localize(
+					'versionSpecificity1',
+					'Version specified in `engines.vscode` ({0}) is not specific enough. For vscode versions before 1.0.0, please define at a minimum the major and minor desired version. E.g. ^0.10.0, 0.10.x, 0.11.0, etc.',
+					requestedVersion
+				)
+			);
 			return false;
 		}
 	} else {
 		// force that major must be specific
 		if (!desiredVersion.majorMustEqual) {
-			notices.push(nls.localize('versionSpecificity2', "Version specified in `engines.vscode` ({0}) is not specific enough. For vscode versions after 1.0.0, please define at a minimum the major desired version. E.g. ^1.10.0, 1.10.x, 1.x.x, 2.x.x, etc.", requestedVersion));
+			notices.push(
+				nls.localize(
+					'versionSpecificity2',
+					'Version specified in `engines.vscode` ({0}) is not specific enough. For vscode versions after 1.0.0, please define at a minimum the major desired version. E.g. ^1.10.0, 1.10.x, 1.x.x, 2.x.x, etc.',
+					requestedVersion
+				)
+			);
 			return false;
 		}
 	}
 
 	if (!isValidVersion(currentVersion, date, desiredVersion)) {
-		notices.push(nls.localize('versionMismatch', "Extension is not compatible with Code {0}. Extension requires: {1}.", currentVersion, requestedVersion));
+		notices.push(
+			nls.localize(
+				'versionMismatch',
+				'Extension is not compatible with Code {0}. Extension requires: {1}.',
+				currentVersion,
+				requestedVersion
+			)
+		);
 		return false;
 	}
 

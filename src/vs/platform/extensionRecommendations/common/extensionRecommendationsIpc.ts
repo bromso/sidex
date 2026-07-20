@@ -11,7 +11,9 @@ import {
 	RecommendationsNotificationResult
 } from './extensionRecommendations.js';
 
-export class ExtensionRecommendationNotificationServiceChannelClient implements IExtensionRecommendationNotificationService {
+export class ExtensionRecommendationNotificationServiceChannelClient
+	implements IExtensionRecommendationNotificationService
+{
 	declare readonly _serviceBrand: undefined;
 
 	constructor(private readonly channel: IChannel) {}

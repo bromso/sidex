@@ -24,10 +24,8 @@ export interface IXtermAddonNameToCtor {
 }
 
 // This interface lets a maps key and value be linked with generics
-interface IImportedXtermAddonMap extends Map<
-	keyof IXtermAddonNameToCtor,
-	IXtermAddonNameToCtor[keyof IXtermAddonNameToCtor]
-> {
+interface IImportedXtermAddonMap
+	extends Map<keyof IXtermAddonNameToCtor, IXtermAddonNameToCtor[keyof IXtermAddonNameToCtor]> {
 	get<K extends keyof IXtermAddonNameToCtor>(name: K): IXtermAddonNameToCtor[K] | undefined;
 	set<K extends keyof IXtermAddonNameToCtor>(name: K, value: IXtermAddonNameToCtor[K]): this;
 }

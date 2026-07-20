@@ -34,5 +34,4 @@ export interface IExtensionHostStarter {
 	enableInspectPort(id: string): Promise<boolean>;
 	waitForExit(id: string, maxWaitTimeMs: number): Promise<void>;
 	kill(id: string): Promise<void>;
-
 }

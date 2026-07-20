@@ -274,12 +274,9 @@ export class MainThreadTreeViews extends Disposable implements MainThreadTreeVie
 		disposables.add(treeView.onDidChangeVisibility(isVisible => this._proxy.$setVisible(treeViewId, isVisible)));
 		disposables.add(
 			treeView.onDidChangeCheckboxState(items => {
-				this._proxy.$changeCheckboxState(
-					treeViewId,
-					<CheckboxUpdate[]>items.map(item => {
+				this._proxy.$changeCheckboxState(treeViewId, <CheckboxUpdate[]>items.map(item => {
 						return { treeItemHandle: item.handle, newState: item.checkbox?.isChecked ?? false };
-					})
-				);
+					}));
 			})
 		);
 	}

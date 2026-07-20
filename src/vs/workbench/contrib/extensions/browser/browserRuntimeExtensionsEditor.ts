@@ -10,7 +10,6 @@ import { AbstractRuntimeExtensionsEditor, IRuntimeExtension } from './abstractRu
 import { ReportExtensionIssueAction } from '../common/reportExtensionIssueAction.js';
 
 export class RuntimeExtensionsEditor extends AbstractRuntimeExtensionsEditor {
-
 	protected _getProfileInfo(): IExtensionHostProfile | null {
 		return null;
 	}

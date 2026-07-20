@@ -129,10 +129,8 @@ function splice<T>(
 	};
 }
 
-interface ICompressedObjectTreeModelOptions<T, TFilterData> extends IObjectTreeModelOptions<
-	ICompressedTreeNode<T>,
-	TFilterData
-> {
+interface ICompressedObjectTreeModelOptions<T, TFilterData>
+	extends IObjectTreeModelOptions<ICompressedTreeNode<T>, TFilterData> {
 	readonly compressionEnabled?: boolean;
 }
 
@@ -148,11 +146,9 @@ const wrapIdentityProvider = <T>(base: IIdentityProvider<T>): IIdentityProvider<
 });
 
 // Exported only for test reasons, do not use directly
-export class CompressedObjectTreeModel<T, TFilterData = void> implements ITreeModel<
-	ICompressedTreeNode<T> | null,
-	TFilterData,
-	T | null
-> {
+export class CompressedObjectTreeModel<T, TFilterData = void>
+	implements ITreeModel<ICompressedTreeNode<T> | null, TFilterData, T | null>
+{
 	readonly rootRef = null;
 
 	get onDidSpliceRenderedNodes(): Event<ITreeListSpliceData<ICompressedTreeNode<T> | null, TFilterData>> {

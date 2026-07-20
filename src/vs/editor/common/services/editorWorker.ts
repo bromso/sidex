@@ -84,7 +84,6 @@ export type ICharChange = [
 	originalStartColumn: number,
 	originalEndLine: number,
 	originalEndColumn: number,
-
 	modifiedStartLine: number,
 	modifiedStartColumn: number,
 	modifiedEndLine: number,

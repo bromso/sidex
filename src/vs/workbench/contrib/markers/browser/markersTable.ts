@@ -189,10 +189,9 @@ class MarkerCodeColumnRenderer implements ITableRenderer<MarkerTableItem, IMarke
 	}
 }
 
-class MarkerMessageColumnRenderer implements ITableRenderer<
-	MarkerTableItem,
-	IMarkerHighlightedLabelColumnTemplateData
-> {
+class MarkerMessageColumnRenderer
+	implements ITableRenderer<MarkerTableItem, IMarkerHighlightedLabelColumnTemplateData>
+{
 	static readonly TEMPLATE_ID = 'message';
 
 	readonly templateId: string = MarkerMessageColumnRenderer.TEMPLATE_ID;

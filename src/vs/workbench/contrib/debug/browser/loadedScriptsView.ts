@@ -725,11 +725,9 @@ interface ILoadedScriptsItemTemplateData {
 	label: IResourceLabel;
 }
 
-class LoadedScriptsRenderer implements ICompressibleTreeRenderer<
-	BaseTreeItem,
-	FuzzyScore,
-	ILoadedScriptsItemTemplateData
-> {
+class LoadedScriptsRenderer
+	implements ICompressibleTreeRenderer<BaseTreeItem, FuzzyScore, ILoadedScriptsItemTemplateData>
+{
 	static readonly ID = 'lsrenderer';
 
 	constructor(private labels: ResourceLabels) {}

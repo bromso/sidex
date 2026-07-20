@@ -81,7 +81,10 @@ export function createCancelablePromise<T>(callback: (token: CancellationToken) 
 		then<
 			TResult1 = T,
 			TResult2 = never
-		>(resolve?: ((value: T) => TResult1 | Promise<TResult1>) | undefined | null, reject?: ((reason: unknown) => TResult2 | Promise<TResult2>) | undefined | null): Promise<TResult1 | TResult2> {
+		>(
+			resolve?: ((value: T) => TResult1 | Promise<TResult1>) | undefined | null,
+			reject?: ((reason: unknown) => TResult2 | Promise<TResult2>) | undefined | null
+		): Promise<TResult1 | TResult2> {
 			return promise.then(resolve, reject);
 		}
 		catch<

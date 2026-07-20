@@ -167,10 +167,8 @@ export interface ITreeElementRenderDetails extends IListElementRenderDetails {
 	readonly indent: number;
 }
 
-export interface ITreeRenderer<T, TFilterData = void, TTemplateData = void> extends IListRenderer<
-	ITreeNode<T, TFilterData>,
-	TTemplateData
-> {
+export interface ITreeRenderer<T, TFilterData = void, TTemplateData = void>
+	extends IListRenderer<ITreeNode<T, TFilterData>, TTemplateData> {
 	renderElement(
 		element: ITreeNode<T, TFilterData>,
 		index: number,

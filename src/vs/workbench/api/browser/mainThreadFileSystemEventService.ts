@@ -146,7 +146,7 @@ export class MainThreadFileSystemEventService implements MainThreadFileSystemEve
 								"Extension '{0}' wants to make refactoring changes with this file move",
 								data.extensionNames[0]
 							);
-						} else /* if (operation === FileOperation.DELETE) */ {
+						} /* if (operation === FileOperation.DELETE) */ else {
 							message = localize(
 								'ask.1.delete',
 								"Extension '{0}' wants to make refactoring changes with this file deletion",
@@ -172,7 +172,7 @@ export class MainThreadFileSystemEventService implements MainThreadFileSystemEve
 								'{0} extensions want to make refactoring changes with this file move',
 								data.extensionNames.length
 							);
-						} else /* if (operation === FileOperation.DELETE) */ {
+						} /* if (operation === FileOperation.DELETE) */ else {
 							message = localize(
 								{ key: 'ask.N.delete', comment: ['{0} is a number, e.g "3 extensions want..."'] },
 								'{0} extensions want to make refactoring changes with this file deletion',

@@ -5,7 +5,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { invoke } from '@tauri-apps/api/core';
-import { Disposable, DisposableStore as _DisposableStore, toDisposable as _toDisposable } from '../../../../base/common/lifecycle.js';
+import {
+	Disposable,
+	DisposableStore as _DisposableStore,
+	toDisposable as _toDisposable
+} from '../../../../base/common/lifecycle.js';
 import { Emitter } from '../../../../base/common/event.js';
 import * as languages from '../../../../editor/common/languages.js';
 import { LanguageSelector } from '../../../../editor/common/languageSelector.js';
@@ -15,7 +19,11 @@ import { Position } from '../../../../editor/common/core/position.js';
 import { Range } from '../../../../editor/common/core/range.js';
 import { URI } from '../../../../base/common/uri.js';
 import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IWorkbenchContribution, WorkbenchPhase, registerWorkbenchContribution2 } from '../../../common/contributions.js';
+import {
+	IWorkbenchContribution,
+	WorkbenchPhase,
+	registerWorkbenchContribution2
+} from '../../../common/contributions.js';
 
 interface ExtHostMessage {
 	id?: number;
@@ -43,8 +51,10 @@ class ExtHostConnection extends Disposable {
 				resolve();
 			};
 			ws.onerror = () => reject(new Error('ext host ws failed'));
-			ws.onclose = () => { this._ws = null; };
-			ws.onmessage = (ev) => {
+			ws.onclose = () => {
+				this._ws = null;
+			};
+			ws.onmessage = ev => {
 				try {
 					const msg: ExtHostMessage = JSON.parse(ev.data);
 					if (msg.event) {
@@ -59,7 +69,7 @@ class ExtHostConnection extends Disposable {
 							p.resolve(msg.result);
 						}
 					}
-				} catch { }
+				} catch {}
 			};
 		});
 	}
@@ -99,12 +109,14 @@ class ExtHostConnection extends Disposable {
 }
 
 function toMonacoRange(r: any): Range {
-	if (!r) { return new Range(1, 1, 1, 1); }
+	if (!r) {
+		return new Range(1, 1, 1, 1);
+	}
 	return new Range(
 		(r.start?.line ?? r.startLineNumber ?? 0) + 1,
 		(r.start?.character ?? r.startColumn ?? 0) + 1,
 		(r.end?.line ?? r.endLineNumber ?? 0) + 1,
-		(r.end?.character ?? r.endColumn ?? 0) + 1,
+		(r.end?.character ?? r.endColumn ?? 0) + 1
 	);
 }
 
@@ -113,14 +125,11 @@ function toExtPos(pos: Position): { line: number; character: number } {
 }
 
 export class TauriExtensionHostBridge extends Disposable implements IWorkbenchContribution {
-
 	static readonly ID = 'workbench.contrib.tauriExtensionHostBridge';
 
 	private _conn: ExtHostConnection | null = null;
 
-	constructor(
-		@ILanguageFeaturesService private readonly _langFeatures: ILanguageFeaturesService,
-	) {
+	constructor(@ILanguageFeaturesService private readonly _langFeatures: ILanguageFeaturesService) {
 		super();
 		this._boot();
 	}
@@ -133,7 +142,7 @@ export class TauriExtensionHostBridge extends Disposable implements IWorkbenchCo
 
 			await conn.request('initialize', {
 				workspaceFolders: [],
-				extensionPaths: [],
+				extensionPaths: []
 			});
 
 			this._registerProviders(conn);
@@ -148,114 +157,160 @@ export class TauriExtensionHostBridge extends Disposable implements IWorkbenchCo
 	private _registerProviders(conn: ExtHostConnection): void {
 		const selector: LanguageSelector = { scheme: 'file' };
 
-		this._register(this._langFeatures.completionProvider.register(selector, {
-			_debugDisplayName: 'TauriExtHostCompletion',
-			provideCompletionItems: async (model: ITextModel, position: Position, _context, token: CancellationToken) => {
-				if (token.isCancellationRequested) { return { suggestions: [] }; }
-				try {
-					const result = await conn.request('provideCompletionItems', {
-						uri: model.uri.toString(),
-						position: toExtPos(position),
-					});
-					if (!result?.items?.length) { return { suggestions: [] }; }
-					return {
-						suggestions: result.items.map((item: any) => ({
-							label: item.label || '',
-							kind: item.kind ?? languages.CompletionItemKind.Text,
-							insertText: item.insertText || item.label || '',
-							detail: item.detail,
-							documentation: item.documentation,
-							sortText: item.sortText,
-							filterText: item.filterText,
-							range: undefined!,
-						})),
-					};
-				} catch { return { suggestions: [] }; }
-			}
-		}));
+		this._register(
+			this._langFeatures.completionProvider.register(selector, {
+				_debugDisplayName: 'TauriExtHostCompletion',
+				provideCompletionItems: async (model: ITextModel, position: Position, _context, token: CancellationToken) => {
+					if (token.isCancellationRequested) {
+						return { suggestions: [] };
+					}
+					try {
+						const result = await conn.request('provideCompletionItems', {
+							uri: model.uri.toString(),
+							position: toExtPos(position)
+						});
+						if (!result?.items?.length) {
+							return { suggestions: [] };
+						}
+						return {
+							suggestions: result.items.map((item: any) => ({
+								label: item.label || '',
+								kind: item.kind ?? languages.CompletionItemKind.Text,
+								insertText: item.insertText || item.label || '',
+								detail: item.detail,
+								documentation: item.documentation,
+								sortText: item.sortText,
+								filterText: item.filterText,
+								range: undefined!
+							}))
+						};
+					} catch {
+						return { suggestions: [] };
+					}
+				}
+			})
+		);
 
-		this._register(this._langFeatures.hoverProvider.register(selector, {
-			provideHover: async (model: ITextModel, position: Position, token: CancellationToken) => {
-				if (token.isCancellationRequested) { return null; }
-				try {
-					const result = await conn.request('provideHover', {
-						uri: model.uri.toString(),
-						position: toExtPos(position),
-					});
-					if (!result?.contents?.length) { return null; }
-					return {
-						contents: result.contents.map((c: any) => ({
-							value: typeof c === 'string' ? c : c?.value || '',
-						})),
-						range: result.range ? toMonacoRange(result.range) : undefined,
-					};
-				} catch { return null; }
-			}
-		}));
+		this._register(
+			this._langFeatures.hoverProvider.register(selector, {
+				provideHover: async (model: ITextModel, position: Position, token: CancellationToken) => {
+					if (token.isCancellationRequested) {
+						return null;
+					}
+					try {
+						const result = await conn.request('provideHover', {
+							uri: model.uri.toString(),
+							position: toExtPos(position)
+						});
+						if (!result?.contents?.length) {
+							return null;
+						}
+						return {
+							contents: result.contents.map((c: any) => ({
+								value: typeof c === 'string' ? c : c?.value || ''
+							})),
+							range: result.range ? toMonacoRange(result.range) : undefined
+						};
+					} catch {
+						return null;
+					}
+				}
+			})
+		);
 
-		this._register(this._langFeatures.definitionProvider.register(selector, {
-			provideDefinition: async (model: ITextModel, position: Position, token: CancellationToken) => {
-				if (token.isCancellationRequested) { return null; }
-				try {
-					const result = await conn.request('provideDefinition', {
-						uri: model.uri.toString(),
-						position: toExtPos(position),
-					});
-					if (!result) { return null; }
-					const locs = Array.isArray(result) ? result : [result];
-					return locs.filter((l: any) => l?.uri).map((l: any) => ({
-						uri: URI.parse(l.uri),
-						range: toMonacoRange(l.range),
-					}));
-				} catch { return null; }
-			}
-		}));
+		this._register(
+			this._langFeatures.definitionProvider.register(selector, {
+				provideDefinition: async (model: ITextModel, position: Position, token: CancellationToken) => {
+					if (token.isCancellationRequested) {
+						return null;
+					}
+					try {
+						const result = await conn.request('provideDefinition', {
+							uri: model.uri.toString(),
+							position: toExtPos(position)
+						});
+						if (!result) {
+							return null;
+						}
+						const locs = Array.isArray(result) ? result : [result];
+						return locs
+							.filter((l: any) => l?.uri)
+							.map((l: any) => ({
+								uri: URI.parse(l.uri),
+								range: toMonacoRange(l.range)
+							}));
+					} catch {
+						return null;
+					}
+				}
+			})
+		);
 
-		this._register(this._langFeatures.referenceProvider.register(selector, {
-			provideReferences: async (model: ITextModel, position: Position, _context, token: CancellationToken) => {
-				if (token.isCancellationRequested) { return null; }
-				try {
-					const result = await conn.request('provideReferences', {
-						uri: model.uri.toString(),
-						position: toExtPos(position),
-					});
-					if (!Array.isArray(result)) { return null; }
-					return result.filter((l: any) => l?.uri).map((l: any) => ({
-						uri: URI.parse(l.uri),
-						range: toMonacoRange(l.range),
-					}));
-				} catch { return null; }
-			}
-		}));
+		this._register(
+			this._langFeatures.referenceProvider.register(selector, {
+				provideReferences: async (model: ITextModel, position: Position, _context, token: CancellationToken) => {
+					if (token.isCancellationRequested) {
+						return null;
+					}
+					try {
+						const result = await conn.request('provideReferences', {
+							uri: model.uri.toString(),
+							position: toExtPos(position)
+						});
+						if (!Array.isArray(result)) {
+							return null;
+						}
+						return result
+							.filter((l: any) => l?.uri)
+							.map((l: any) => ({
+								uri: URI.parse(l.uri),
+								range: toMonacoRange(l.range)
+							}));
+					} catch {
+						return null;
+					}
+				}
+			})
+		);
 
-		this._register(this._langFeatures.documentSymbolProvider.register(selector, {
-			provideDocumentSymbols: async (model: ITextModel, token: CancellationToken) => {
-				if (token.isCancellationRequested) { return null; }
-				try {
-					const result = await conn.request('provideDocumentSymbols', {
-						uri: model.uri.toString(),
-					});
-					if (!Array.isArray(result)) { return null; }
-					return result.map((s: any) => ({
-						name: s.name || '',
-						detail: s.detail || '',
-						kind: s.kind ?? languages.SymbolKind.Variable,
-						range: toMonacoRange(s.range),
-						selectionRange: toMonacoRange(s.selectionRange || s.range),
-						tags: [],
-						children: [],
-					}));
-				} catch { return null; }
-			}
-		}));
+		this._register(
+			this._langFeatures.documentSymbolProvider.register(selector, {
+				provideDocumentSymbols: async (model: ITextModel, token: CancellationToken) => {
+					if (token.isCancellationRequested) {
+						return null;
+					}
+					try {
+						const result = await conn.request('provideDocumentSymbols', {
+							uri: model.uri.toString()
+						});
+						if (!Array.isArray(result)) {
+							return null;
+						}
+						return result.map((s: any) => ({
+							name: s.name || '',
+							detail: s.detail || '',
+							kind: s.kind ?? languages.SymbolKind.Variable,
+							range: toMonacoRange(s.range),
+							selectionRange: toMonacoRange(s.selectionRange || s.range),
+							tags: [],
+							children: []
+						}));
+					} catch {
+						return null;
+					}
+				}
+			})
+		);
 	}
 
 	private _listenEvents(conn: ExtHostConnection): void {
-		this._register(conn.onEvent((event) => {
-			if (event.type === 'showMessage') {
-				console.log(`[ext] ${event.severity}: ${event.message}`);
-			}
-		}));
+		this._register(
+			conn.onEvent(event => {
+				if (event.type === 'showMessage') {
+					console.log(`[ext] ${event.severity}: ${event.message}`);
+				}
+			})
+		);
 	}
 
 	notifyDocumentOpened(uri: string, languageId: string, version: number, text: string): void {
@@ -271,8 +326,4 @@ export class TauriExtensionHostBridge extends Disposable implements IWorkbenchCo
 	}
 }
 
-registerWorkbenchContribution2(
-	TauriExtensionHostBridge.ID,
-	TauriExtensionHostBridge,
-	WorkbenchPhase.AfterRestored,
-);
+registerWorkbenchContribution2(TauriExtensionHostBridge.ID, TauriExtensionHostBridge, WorkbenchPhase.AfterRestored);

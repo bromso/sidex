@@ -100,11 +100,9 @@ interface ArtifactGroupTemplate {
 	readonly templateDisposable: IDisposable;
 }
 
-class ArtifactGroupRenderer implements ICompressibleTreeRenderer<
-	SCMArtifactGroupTreeElement,
-	FuzzyScore,
-	ArtifactGroupTemplate
-> {
+class ArtifactGroupRenderer
+	implements ICompressibleTreeRenderer<SCMArtifactGroupTreeElement, FuzzyScore, ArtifactGroupTemplate>
+{
 	static readonly TEMPLATE_ID = 'artifactGroup';
 	get templateId(): string {
 		return ArtifactGroupRenderer.TEMPLATE_ID;
@@ -208,11 +206,14 @@ interface ArtifactTemplate {
 	readonly templateDisposable: IDisposable;
 }
 
-class ArtifactRenderer implements ICompressibleTreeRenderer<
-	SCMArtifactTreeElement | IResourceNode<SCMArtifactTreeElement, SCMArtifactGroupTreeElement>,
-	FuzzyScore,
-	ArtifactTemplate
-> {
+class ArtifactRenderer
+	implements
+		ICompressibleTreeRenderer<
+			SCMArtifactTreeElement | IResourceNode<SCMArtifactTreeElement, SCMArtifactGroupTreeElement>,
+			FuzzyScore,
+			ArtifactTemplate
+		>
+{
 	static readonly TEMPLATE_ID = 'artifact';
 	get templateId(): string {
 		return ArtifactRenderer.TEMPLATE_ID;

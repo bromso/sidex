@@ -884,11 +884,9 @@ interface IBreakpointsFolderTemplateData {
 
 const breakpointIdToActionBarDomeNode = new Map<string, HTMLElement>();
 
-class BreakpointsFolderRenderer implements ICompressibleTreeRenderer<
-	BreakpointsFolderItem,
-	void,
-	IBreakpointsFolderTemplateData
-> {
+class BreakpointsFolderRenderer
+	implements ICompressibleTreeRenderer<BreakpointsFolderItem, void, IBreakpointsFolderTemplateData>
+{
 	static readonly ID = 'breakpointFolder';
 
 	constructor(
@@ -1221,11 +1219,9 @@ class BreakpointsRenderer implements ICompressibleTreeRenderer<IBreakpoint, void
 	}
 }
 
-class ExceptionBreakpointsRenderer implements ICompressibleTreeRenderer<
-	IExceptionBreakpoint,
-	void,
-	IExceptionBreakpointTemplateData
-> {
+class ExceptionBreakpointsRenderer
+	implements ICompressibleTreeRenderer<IExceptionBreakpoint, void, IExceptionBreakpointTemplateData>
+{
 	constructor(
 		private menu: IMenu,
 		private breakpointHasMultipleModes: IContextKey<boolean>,
@@ -1352,11 +1348,9 @@ class ExceptionBreakpointsRenderer implements ICompressibleTreeRenderer<
 	}
 }
 
-class FunctionBreakpointsRenderer implements ICompressibleTreeRenderer<
-	FunctionBreakpoint,
-	void,
-	IFunctionBreakpointTemplateData
-> {
+class FunctionBreakpointsRenderer
+	implements ICompressibleTreeRenderer<FunctionBreakpoint, void, IFunctionBreakpointTemplateData>
+{
 	constructor(
 		private menu: IMenu,
 		private breakpointSupportsCondition: IContextKey<boolean>,
@@ -1668,11 +1662,9 @@ class DataBreakpointsRenderer implements ICompressibleTreeRenderer<DataBreakpoin
 	}
 }
 
-class InstructionBreakpointsRenderer implements ICompressibleTreeRenderer<
-	IInstructionBreakpoint,
-	void,
-	IInstructionBreakpointTemplateData
-> {
+class InstructionBreakpointsRenderer
+	implements ICompressibleTreeRenderer<IInstructionBreakpoint, void, IInstructionBreakpointTemplateData>
+{
 	constructor(
 		@IDebugService private readonly debugService: IDebugService,
 		@IHoverService private readonly hoverService: IHoverService,
@@ -1799,11 +1791,9 @@ class InstructionBreakpointsRenderer implements ICompressibleTreeRenderer<
 	}
 }
 
-class FunctionBreakpointInputRenderer implements ICompressibleTreeRenderer<
-	IFunctionBreakpoint,
-	void,
-	IFunctionBreakpointInputTemplateData
-> {
+class FunctionBreakpointInputRenderer
+	implements ICompressibleTreeRenderer<IFunctionBreakpoint, void, IFunctionBreakpointInputTemplateData>
+{
 	constructor(
 		private view: BreakpointsView,
 		private debugService: IDebugService,
@@ -1970,11 +1960,9 @@ class FunctionBreakpointInputRenderer implements ICompressibleTreeRenderer<
 	}
 }
 
-class DataBreakpointInputRenderer implements ICompressibleTreeRenderer<
-	IDataBreakpoint,
-	void,
-	IDataBreakpointInputTemplateData
-> {
+class DataBreakpointInputRenderer
+	implements ICompressibleTreeRenderer<IDataBreakpoint, void, IDataBreakpointInputTemplateData>
+{
 	constructor(
 		private view: BreakpointsView,
 		private debugService: IDebugService,
@@ -2128,11 +2116,9 @@ class DataBreakpointInputRenderer implements ICompressibleTreeRenderer<
 	}
 }
 
-class ExceptionBreakpointInputRenderer implements ICompressibleTreeRenderer<
-	IExceptionBreakpoint,
-	void,
-	IExceptionBreakpointInputTemplateData
-> {
+class ExceptionBreakpointInputRenderer
+	implements ICompressibleTreeRenderer<IExceptionBreakpoint, void, IExceptionBreakpointInputTemplateData>
+{
 	constructor(
 		private view: BreakpointsView,
 		private debugService: IDebugService,

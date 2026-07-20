@@ -26,17 +26,20 @@ export type IExtHostNamedCustomer<T extends IDisposable> = [ProxyIdentifier<T>, 
 export type IExtHostCustomerCtor<T extends IDisposable> = IConstructorSignature<T, [IExtHostContext]>;
 
 export function extHostNamedCustomer<T extends IDisposable>(id: ProxyIdentifier<T>) {
-	return function <Services extends BrandedService[]>(ctor: { new(context: IExtHostContext, ...services: Services): T }): void {
+	return function <Services extends BrandedService[]>(ctor: {
+		new (context: IExtHostContext, ...services: Services): T;
+	}): void {
 		ExtHostCustomersRegistryImpl.INSTANCE.registerNamedCustomer(id, ctor as IExtHostCustomerCtor<T>);
 	};
 }
 
-export function extHostCustomer<T extends IDisposable, Services extends BrandedService[]>(ctor: { new(context: IExtHostContext, ...services: Services): T }): void {
+export function extHostCustomer<T extends IDisposable, Services extends BrandedService[]>(ctor: {
+	new (context: IExtHostContext, ...services: Services): T;
+}): void {
 	ExtHostCustomersRegistryImpl.INSTANCE.registerCustomer(ctor as IExtHostCustomerCtor<T>);
 }
 
 export namespace ExtHostCustomersRegistry {
-
 	export function getNamedCustomers(): IExtHostNamedCustomer<IDisposable>[] {
 		return ExtHostCustomersRegistryImpl.INSTANCE.getNamedCustomers();
 	}
@@ -47,7 +50,6 @@ export namespace ExtHostCustomersRegistry {
 }
 
 class ExtHostCustomersRegistryImpl {
-
 	public static readonly INSTANCE = new ExtHostCustomersRegistryImpl();
 
 	private _namedCustomers: IExtHostNamedCustomer<IDisposable>[];

@@ -13,27 +13,39 @@ export const ExtensionsConfigurationSchema: IJSONSchema = {
 	allowComments: true,
 	allowTrailingCommas: true,
 	type: 'object',
-	title: localize('app.extensions.json.title', "Extensions"),
+	title: localize('app.extensions.json.title', 'Extensions'),
 	additionalProperties: false,
 	properties: {
 		recommendations: {
 			type: 'array',
-			description: localize('app.extensions.json.recommendations', "List of extensions which should be recommended for users of this workspace. The identifier of an extension is always '${publisher}.${name}'. For example: 'vscode.csharp'."),
+			description: localize(
+				'app.extensions.json.recommendations',
+				"List of extensions which should be recommended for users of this workspace. The identifier of an extension is always '${publisher}.${name}'. For example: 'vscode.csharp'."
+			),
 			items: {
 				type: 'string',
 				pattern: EXTENSION_IDENTIFIER_PATTERN,
-				errorMessage: localize('app.extension.identifier.errorMessage', "Expected format '${publisher}.${name}'. Example: 'vscode.csharp'.")
-			},
+				errorMessage: localize(
+					'app.extension.identifier.errorMessage',
+					"Expected format '${publisher}.${name}'. Example: 'vscode.csharp'."
+				)
+			}
 		},
 		unwantedRecommendations: {
 			type: 'array',
-			description: localize('app.extensions.json.unwantedRecommendations', "List of extensions recommended by VS Code that should not be recommended for users of this workspace. The identifier of an extension is always '${publisher}.${name}'. For example: 'vscode.csharp'."),
+			description: localize(
+				'app.extensions.json.unwantedRecommendations',
+				"List of extensions recommended by VS Code that should not be recommended for users of this workspace. The identifier of an extension is always '${publisher}.${name}'. For example: 'vscode.csharp'."
+			),
 			items: {
 				type: 'string',
 				pattern: EXTENSION_IDENTIFIER_PATTERN,
-				errorMessage: localize('app.extension.identifier.errorMessage', "Expected format '${publisher}.${name}'. Example: 'vscode.csharp'.")
-			},
-		},
+				errorMessage: localize(
+					'app.extension.identifier.errorMessage',
+					"Expected format '${publisher}.${name}'. Example: 'vscode.csharp'."
+				)
+			}
+		}
 	}
 };
 

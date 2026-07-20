@@ -38,7 +38,9 @@ export function registerSingleton<T, Services extends BrandedService[]>(
 ): void {
 	if (!(ctorOrDescriptor instanceof SyncDescriptor)) {
 		ctorOrDescriptor = new SyncDescriptor<T>(
-			ctorOrDescriptor as new (...args: unknown[]) => T,
+			ctorOrDescriptor as new (
+				...args: unknown[]
+			) => T,
 			[],
 			Boolean(supportsDelayedInstantiation)
 		);

@@ -19,9 +19,7 @@ export class IPCExtHostConnection {
 
 	public readonly type = ExtHostConnectionType.IPC;
 
-	constructor(
-		public readonly pipeName: string
-	) { }
+	constructor(public readonly pipeName: string) {}
 
 	public serialize(env: IProcessEnvironment): void {
 		env[IPCExtHostConnection.ENV_KEY] = this.pipeName;

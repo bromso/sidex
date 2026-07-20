@@ -568,11 +568,9 @@ interface IFilteredToTemplate {
 	actions: ActionBar;
 }
 
-class CurrentlyFilteredToRenderer implements ICompressibleTreeRenderer<
-	CoverageTreeElement,
-	FuzzyScore,
-	IFilteredToTemplate
-> {
+class CurrentlyFilteredToRenderer
+	implements ICompressibleTreeRenderer<CoverageTreeElement, FuzzyScore, IFilteredToTemplate>
+{
 	public static readonly ID = 'C';
 	public readonly templateId = CurrentlyFilteredToRenderer.ID;
 
@@ -727,11 +725,9 @@ interface DeclarationTemplateData {
 	label: HTMLElement;
 }
 
-class DeclarationCoverageRenderer implements ICompressibleTreeRenderer<
-	CoverageTreeElement,
-	FuzzyScore,
-	DeclarationTemplateData
-> {
+class DeclarationCoverageRenderer
+	implements ICompressibleTreeRenderer<CoverageTreeElement, FuzzyScore, DeclarationTemplateData>
+{
 	public static readonly ID = 'N';
 	public readonly templateId = DeclarationCoverageRenderer.ID;
 

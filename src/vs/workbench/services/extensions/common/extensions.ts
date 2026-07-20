@@ -7,9 +7,21 @@ import { Event } from '../../../../base/common/event.js';
 import Severity from '../../../../base/common/severity.js';
 import { URI } from '../../../../base/common/uri.js';
 import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
-import { getExtensionId, getGalleryExtensionId } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import {
+	getExtensionId,
+	getGalleryExtensionId
+} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
 import { ImplicitActivationEvents } from '../../../../platform/extensionManagement/common/implicitActivationEvents.js';
-import { ExtensionIdentifier, ExtensionIdentifierMap, ExtensionIdentifierSet, ExtensionType, IExtension, IExtensionContributions, IExtensionDescription, TargetPlatform } from '../../../../platform/extensions/common/extensions.js';
+import {
+	ExtensionIdentifier,
+	ExtensionIdentifierMap,
+	ExtensionIdentifierSet,
+	ExtensionType,
+	IExtension,
+	IExtensionContributions,
+	IExtensionDescription,
+	TargetPlatform
+} from '../../../../platform/extensions/common/extensions.js';
 import { ApiProposalName } from '../../../../platform/extensions/common/extensionsApiProposals.js';
 import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
 import { IV8Profile } from '../../../../platform/profiling/common/profiling.js';
@@ -29,7 +41,7 @@ export const nullExtensionDescription = Object.freeze<IExtensionDescription>({
 	targetPlatform: TargetPlatform.UNDEFINED,
 	isUserBuiltin: false,
 	isUnderDevelopment: false,
-	preRelease: false,
+	preRelease: false
 });
 
 export type WebWorkerExtHostConfigValue = boolean | 'auto';
@@ -54,7 +66,7 @@ export interface IExtensionsStatus {
 }
 
 export class MissingExtensionDependency {
-	constructor(readonly dependency: string) { }
+	constructor(readonly dependency: string) {}
 }
 
 /**
@@ -109,7 +121,7 @@ export const enum ExtensionHostStartup {
 	/**
 	 * The extension host should be launched lazily and only when it has extensions it needs to host. It doesn't require a `$startExtensionHost` call.
 	 */
-	LazyAutoStart = 3,
+	LazyAutoStart = 3
 }
 
 export interface IExtensionInspectInfo {
@@ -173,7 +185,11 @@ export class ExtensionHostExtensions {
 		};
 	}
 
-	public set(versionId: number, allExtensions: IExtensionDescription[], myExtensions: ExtensionIdentifier[]): IExtensionDescriptionDelta {
+	public set(
+		versionId: number,
+		allExtensions: IExtensionDescription[],
+		myExtensions: ExtensionIdentifier[]
+	): IExtensionDescriptionDelta {
 		if (this._versionId > versionId) {
 			throw new Error(`ExtensionHostExtensions: invalid versionId ${versionId} (current: ${this._versionId})`);
 		}
@@ -186,10 +202,10 @@ export class ExtensionHostExtensions {
 		const newExtensionsMap = extensionDescriptionArrayToMap(allExtensions);
 		const extensionsAreTheSame = (a: IExtensionDescription, b: IExtensionDescription) => {
 			return (
-				(a.extensionLocation.toString() === b.extensionLocation.toString())
-				|| (a.isBuiltin === b.isBuiltin)
-				|| (a.isUserBuiltin === b.isUserBuiltin)
-				|| (a.isUnderDevelopment === b.isUnderDevelopment)
+				a.extensionLocation.toString() === b.extensionLocation.toString() ||
+				a.isBuiltin === b.isBuiltin ||
+				a.isUserBuiltin === b.isUserBuiltin ||
+				a.isUnderDevelopment === b.isUnderDevelopment
 			);
 		};
 
@@ -312,7 +328,9 @@ export class ExtensionHostExtensions {
 	}
 }
 
-function extensionDescriptionArrayToMap(extensions: IExtensionDescription[]): ExtensionIdentifierMap<IExtensionDescription> {
+function extensionDescriptionArrayToMap(
+	extensions: IExtensionDescription[]
+): ExtensionIdentifierMap<IExtensionDescription> {
 	const result = new ExtensionIdentifierMap<IExtensionDescription>();
 	for (const extension of extensions) {
 		result.set(extension.identifier, extension);
@@ -324,15 +342,16 @@ export function isProposedApiEnabled(extension: IExtensionDescription, _proposal
 	if (!extension.enabledApiProposals) {
 		return false;
 	}
-	return true;// extension.enabledApiProposals.includes(proposal);
+	return true; // extension.enabledApiProposals.includes(proposal);
 }
 
 export function checkProposedApiEnabled(extension: IExtensionDescription, proposal: ApiProposalName): void {
 	if (!isProposedApiEnabled(extension, proposal)) {
-		throw new Error(`Extension '${extension.identifier.value}' CANNOT use API proposal: ${proposal}.\nIts package.json#enabledApiProposals-property declares: ${extension.enabledApiProposals?.join(', ') ?? '[]'} but NOT ${proposal}.\n The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ${extension.identifier.value}`);
+		throw new Error(
+			`Extension '${extension.identifier.value}' CANNOT use API proposal: ${proposal}.\nIts package.json#enabledApiProposals-property declares: ${extension.enabledApiProposals?.join(', ') ?? '[]'} but NOT ${proposal}.\n The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ${extension.identifier.value}`
+		);
 	}
 }
-
 
 /**
  * Extension id or one of the four known program states.
@@ -351,8 +370,7 @@ export class ActivationTimes {
 		public readonly activateCallTime: number,
 		public readonly activateResolvedTime: number,
 		public readonly activationReason: ExtensionActivationReason
-	) {
-	}
+	) {}
 }
 
 export class ExtensionPointContribution<T> {
@@ -386,7 +404,6 @@ export const enum ActivationKind {
 }
 
 export interface WillStopExtensionHostsEvent {
-
 	/**
 	 * A human readable reason for stopping the extension hosts
 	 * that e.g. can be shown in a confirmation dialog to the
@@ -431,7 +448,10 @@ export interface IExtensionService {
 	/**
 	 * Fired when the available extensions change (i.e. when extensions are added or removed).
 	 */
-	readonly onDidChangeExtensions: Event<{ readonly added: readonly IExtensionDescription[]; readonly removed: readonly IExtensionDescription[] }>;
+	readonly onDidChangeExtensions: Event<{
+		readonly added: readonly IExtensionDescription[];
+		readonly removed: readonly IExtensionDescription[];
+	}>;
 
 	/**
 	 * All registered extensions.
@@ -510,7 +530,9 @@ export interface IExtensionService {
 	/**
 	 * Read all contributions to an extension point.
 	 */
-	readExtensionPointContributions<T extends IExtensionContributions[keyof IExtensionContributions]>(extPoint: IExtensionPoint<T>): Promise<ExtensionPointContribution<T>[]>;
+	readExtensionPointContributions<T extends IExtensionContributions[keyof IExtensionContributions]>(
+		extPoint: IExtensionPoint<T>
+	): Promise<ExtensionPointContribution<T>[]>;
 
 	/**
 	 * Get information about extensions status.
@@ -538,7 +560,10 @@ export interface IExtensionService {
 	/**
 	 * Starts the extension hosts. If updates are provided, the extension hosts are started with the given updates.
 	 */
-	startExtensionHosts(updates?: { readonly toAdd: readonly IExtension[]; readonly toRemove: readonly string[] }): Promise<void>;
+	startExtensionHosts(updates?: {
+		readonly toAdd: readonly IExtension[];
+		readonly toRemove: readonly string[];
+	}): Promise<void>;
 
 	/**
 	 * Modify the environment of the remote extension host
@@ -550,7 +575,13 @@ export interface IExtensionService {
 export interface IInternalExtensionService {
 	_activateById(extensionId: ExtensionIdentifier, reason: ExtensionActivationReason): Promise<void>;
 	_onWillActivateExtension(extensionId: ExtensionIdentifier): void;
-	_onDidActivateExtension(extensionId: ExtensionIdentifier, codeLoadingTime: number, activateCallTime: number, activateResolvedTime: number, activationReason: ExtensionActivationReason): void;
+	_onDidActivateExtension(
+		extensionId: ExtensionIdentifier,
+		codeLoadingTime: number,
+		activateCallTime: number,
+		activateResolvedTime: number,
+		activationReason: ExtensionActivationReason
+	): void;
 	_onDidActivateExtensionError(extensionId: ExtensionIdentifier, error: Error): void;
 	_onExtensionRuntimeError(extensionId: ExtensionIdentifier, err: Error): void;
 }
@@ -563,14 +594,17 @@ export function toExtension(extensionDescription: IExtensionDescription): IExten
 	return {
 		type: extensionDescription.isBuiltin ? ExtensionType.System : ExtensionType.User,
 		isBuiltin: extensionDescription.isBuiltin || extensionDescription.isUserBuiltin,
-		identifier: { id: getGalleryExtensionId(extensionDescription.publisher, extensionDescription.name), uuid: extensionDescription.uuid },
+		identifier: {
+			id: getGalleryExtensionId(extensionDescription.publisher, extensionDescription.name),
+			uuid: extensionDescription.uuid
+		},
 		manifest: extensionDescription,
 		location: extensionDescription.extensionLocation,
 		targetPlatform: extensionDescription.targetPlatform,
 		validations: [],
 		isValid: true,
 		preRelease: extensionDescription.preRelease,
-		publisherDisplayName: extensionDescription.publisherDisplayName,
+		publisherDisplayName: extensionDescription.publisherDisplayName
 	};
 }
 
@@ -591,7 +625,6 @@ export function toExtensionDescription(extension: IExtension, isUnderDevelopment
 	};
 }
 
-
 export class NullExtensionService implements IExtensionService {
 	declare readonly _serviceBrand: undefined;
 	readonly onDidRegisterExtensions: Event<void> = Event.None;
@@ -601,17 +634,42 @@ export class NullExtensionService implements IExtensionService {
 	readonly onDidChangeResponsiveChange: Event<IResponsiveStateChangeEvent> = Event.None;
 	readonly onWillStop: Event<WillStopExtensionHostsEvent> = Event.None;
 	readonly extensions = [];
-	activateByEvent(_activationEvent: string): Promise<void> { return Promise.resolve(undefined); }
-	activateById(_extensionId: ExtensionIdentifier, _reason: ExtensionActivationReason): Promise<void> { return Promise.resolve(undefined); }
-	activationEventIsDone(_activationEvent: string): boolean { return false; }
-	whenInstalledExtensionsRegistered(): Promise<boolean> { return Promise.resolve(true); }
-	getExtension() { return Promise.resolve(undefined); }
-	readExtensionPointContributions<T>(_extPoint: IExtensionPoint<T>): Promise<ExtensionPointContribution<T>[]> { return Promise.resolve(Object.create(null)); }
-	getExtensionsStatus(): { [id: string]: IExtensionsStatus } { return Object.create(null); }
-	getInspectPorts(_extensionHostKind: ExtensionHostKind, _tryEnableInspector: boolean): Promise<IExtensionInspectInfo[]> { return Promise.resolve([]); }
-	async stopExtensionHosts(): Promise<boolean> { return true; }
-	async startExtensionHosts(): Promise<void> { }
-	async setRemoteEnvironment(_env: { [key: string]: string | null }): Promise<void> { }
-	canAddExtension(): boolean { return false; }
-	canRemoveExtension(): boolean { return false; }
+	activateByEvent(_activationEvent: string): Promise<void> {
+		return Promise.resolve(undefined);
+	}
+	activateById(_extensionId: ExtensionIdentifier, _reason: ExtensionActivationReason): Promise<void> {
+		return Promise.resolve(undefined);
+	}
+	activationEventIsDone(_activationEvent: string): boolean {
+		return false;
+	}
+	whenInstalledExtensionsRegistered(): Promise<boolean> {
+		return Promise.resolve(true);
+	}
+	getExtension() {
+		return Promise.resolve(undefined);
+	}
+	readExtensionPointContributions<T>(_extPoint: IExtensionPoint<T>): Promise<ExtensionPointContribution<T>[]> {
+		return Promise.resolve(Object.create(null));
+	}
+	getExtensionsStatus(): { [id: string]: IExtensionsStatus } {
+		return Object.create(null);
+	}
+	getInspectPorts(
+		_extensionHostKind: ExtensionHostKind,
+		_tryEnableInspector: boolean
+	): Promise<IExtensionInspectInfo[]> {
+		return Promise.resolve([]);
+	}
+	async stopExtensionHosts(): Promise<boolean> {
+		return true;
+	}
+	async startExtensionHosts(): Promise<void> {}
+	async setRemoteEnvironment(_env: { [key: string]: string | null }): Promise<void> {}
+	canAddExtension(): boolean {
+		return false;
+	}
+	canRemoveExtension(): boolean {
+		return false;
+	}
 }

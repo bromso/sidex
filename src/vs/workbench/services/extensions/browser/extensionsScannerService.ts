@@ -4,7 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IExtensionsProfileScannerService } from '../../../../platform/extensionManagement/common/extensionsProfileScannerService.js';
-import { AbstractExtensionsScannerService, IExtensionsScannerService, Translations, } from '../../../../platform/extensionManagement/common/extensionsScannerService.js';
+import {
+	AbstractExtensionsScannerService,
+	IExtensionsScannerService,
+	Translations
+} from '../../../../platform/extensionManagement/common/extensionsScannerService.js';
 import { IFileService } from '../../../../platform/files/common/files.js';
 import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
@@ -16,7 +20,6 @@ import { IWorkbenchEnvironmentService } from '../../environment/common/environme
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
 
 export class ExtensionsScannerService extends AbstractExtensionsScannerService implements IExtensionsScannerService {
-
 	constructor(
 		@IUserDataProfileService userDataProfileService: IUserDataProfileService,
 		@IUserDataProfilesService userDataProfilesService: IUserDataProfilesService,
@@ -26,20 +29,27 @@ export class ExtensionsScannerService extends AbstractExtensionsScannerService i
 		@IWorkbenchEnvironmentService environmentService: IWorkbenchEnvironmentService,
 		@IProductService productService: IProductService,
 		@IUriIdentityService uriIdentityService: IUriIdentityService,
-		@IInstantiationService instantiationService: IInstantiationService,
+		@IInstantiationService instantiationService: IInstantiationService
 	) {
 		super(
 			uriIdentityService.extUri.joinPath(environmentService.userRoamingDataHome, 'systemExtensions'),
 			uriIdentityService.extUri.joinPath(environmentService.userRoamingDataHome, 'userExtensions'),
 			uriIdentityService.extUri.joinPath(environmentService.userRoamingDataHome, 'userExtensions', 'control.json'),
 			userDataProfileService.currentProfile,
-			userDataProfilesService, extensionsProfileScannerService, fileService, logService, environmentService, productService, uriIdentityService, instantiationService);
+			userDataProfilesService,
+			extensionsProfileScannerService,
+			fileService,
+			logService,
+			environmentService,
+			productService,
+			uriIdentityService,
+			instantiationService
+		);
 	}
 
 	protected async getTranslations(): Promise<Translations> {
 		return {};
 	}
-
 }
 
 registerSingleton(IExtensionsScannerService, ExtensionsScannerService, InstantiationType.Delayed);

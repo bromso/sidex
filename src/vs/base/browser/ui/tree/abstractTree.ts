@@ -450,10 +450,9 @@ class EventCollection<T> implements Collection<T>, IDisposable {
 	}
 }
 
-export class TreeRenderer<T, TFilterData, TRef, TTemplateData> implements IListRenderer<
-	ITreeNode<T, TFilterData>,
-	ITreeListTemplateData<TTemplateData>
-> {
+export class TreeRenderer<T, TFilterData, TRef, TTemplateData>
+	implements IListRenderer<ITreeNode<T, TFilterData>, ITreeListTemplateData<TTemplateData>>
+{
 	private static readonly DefaultIndent = 8;
 
 	readonly templateId: string;

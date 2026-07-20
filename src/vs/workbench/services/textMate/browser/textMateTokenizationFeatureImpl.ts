@@ -478,8 +478,9 @@ export class TextMateTokenizationFeature extends Disposable implements ITextMate
 			return await response.arrayBuffer();
 		} else {
 			const { canASAR } = await import('../../../../amdX.js');
-			const { FileAccess, nodeModulesAsarUnpackedPath, nodeModulesPath } =
-				await import('../../../../base/common/network.js');
+			const { FileAccess, nodeModulesAsarUnpackedPath, nodeModulesPath } = await import(
+				'../../../../base/common/network.js'
+			);
 			const response = await fetch(
 				canASAR && this._environmentService.isBuilt
 					? FileAccess.asBrowserUri(`${nodeModulesAsarUnpackedPath}/vscode-oniguruma/release/onig.wasm`).toString(true)

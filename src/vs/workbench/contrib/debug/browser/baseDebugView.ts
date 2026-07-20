@@ -108,10 +108,9 @@ export const expressionAndScopeLabelProvider: IKeyboardNavigationLabelProvider<I
 	}
 };
 
-export abstract class AbstractExpressionDataSource<Input, Element extends IExpression> implements IAsyncDataSource<
-	Input,
-	Element
-> {
+export abstract class AbstractExpressionDataSource<Input, Element extends IExpression>
+	implements IAsyncDataSource<Input, Element>
+{
 	constructor(
 		@IDebugService protected debugService: IDebugService,
 		@IDebugVisualizerService protected debugVisualizer: IDebugVisualizerService
@@ -143,11 +142,9 @@ export abstract class AbstractExpressionDataSource<Input, Element extends IExpre
 	protected abstract doGetChildren(element: Input | Element): Promise<Element[]>;
 }
 
-export abstract class AbstractExpressionsRenderer<T = IExpression> implements ITreeRenderer<
-	T,
-	FuzzyScore,
-	IExpressionTemplateData
-> {
+export abstract class AbstractExpressionsRenderer<T = IExpression>
+	implements ITreeRenderer<T, FuzzyScore, IExpressionTemplateData>
+{
 	constructor(
 		@IDebugService protected debugService: IDebugService,
 		@IContextViewService private readonly contextViewService: IContextViewService,

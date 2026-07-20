@@ -357,10 +357,9 @@ interface IAbstractFrameRendererTemplateData {
 	templateStore: DisposableStore;
 }
 
-abstract class AbstractFrameRenderer<T extends IAbstractFrameRendererTemplateData> implements IListRenderer<
-	ListItem,
-	T
-> {
+abstract class AbstractFrameRenderer<T extends IAbstractFrameRendererTemplateData>
+	implements IListRenderer<ListItem, T>
+{
 	public abstract templateId: string;
 
 	constructor(@IInstantiationService protected readonly instantiationService: IInstantiationService) {}

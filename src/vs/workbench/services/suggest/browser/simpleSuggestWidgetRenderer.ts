@@ -56,10 +56,9 @@ export interface ISimpleSuggestWidgetFontInfo {
 	letterSpacing: number;
 }
 
-export class SimpleSuggestWidgetItemRenderer implements IListRenderer<
-	SimpleCompletionItem,
-	ISimpleSuggestionTemplateData
-> {
+export class SimpleSuggestWidgetItemRenderer
+	implements IListRenderer<SimpleCompletionItem, ISimpleSuggestionTemplateData>
+{
 	private readonly _onDidToggleDetails = new Emitter<void>();
 	readonly onDidToggleDetails: Event<void> = this._onDidToggleDetails.event;
 

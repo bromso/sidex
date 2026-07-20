@@ -161,11 +161,9 @@ interface RelatedInformationFilterData {
 
 export type FilterData = ResourceMarkersFilterData | MarkerFilterData | RelatedInformationFilterData;
 
-export class ResourceMarkersRenderer implements ITreeRenderer<
-	ResourceMarkers,
-	ResourceMarkersFilterData,
-	IResourceMarkersTemplateData
-> {
+export class ResourceMarkersRenderer
+	implements ITreeRenderer<ResourceMarkers, ResourceMarkersFilterData, IResourceMarkersTemplateData>
+{
 	private renderedNodes = new Map<ResourceMarkers, IResourceMarkersTemplateData[]>();
 	private readonly disposables = new DisposableStore();
 
@@ -489,11 +487,9 @@ class MarkerWidget extends Disposable {
 	}
 }
 
-export class RelatedInformationRenderer implements ITreeRenderer<
-	RelatedInformation,
-	RelatedInformationFilterData,
-	IRelatedInformationTemplateData
-> {
+export class RelatedInformationRenderer
+	implements ITreeRenderer<RelatedInformation, RelatedInformationFilterData, IRelatedInformationTemplateData>
+{
 	constructor(@ILabelService private readonly labelService: ILabelService) {}
 
 	templateId = TemplateId.RelatedInformation;

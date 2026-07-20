@@ -1466,9 +1466,11 @@ export class WorkspaceService extends Disposable implements IWorkbenchConfigurat
 		// Use same instance of ConfigurationEditing to make sure all writes go through the same queue
 		this.configurationEditing =
 			this.configurationEditing ?? this.createConfigurationEditingService(this.instantiationService);
-		await (
-			await this.configurationEditing
-		).writeConfiguration(editableConfigurationTarget, { key, value }, { scopes: overrides, ...options });
+		await (await this.configurationEditing).writeConfiguration(
+			editableConfigurationTarget,
+			{ key, value },
+			{ scopes: overrides, ...options }
+		);
 
 		// Bridge write to Rust sidex-settings so the in-memory SettingsStore
 		// stays in sync with what was just persisted to disk. This is best

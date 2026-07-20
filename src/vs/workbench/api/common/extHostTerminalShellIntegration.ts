@@ -30,8 +30,9 @@ export class ExtHostTerminalShellIntegration extends Disposable implements IExtH
 	readonly onDidChangeTerminalShellIntegration = this._register(
 		new Emitter<vscode.TerminalShellIntegrationChangeEvent>()
 	).event;
-	readonly onDidStartTerminalShellExecution = this._register(new Emitter<vscode.TerminalShellExecutionStartEvent>())
-		.event;
+	readonly onDidStartTerminalShellExecution = this._register(
+		new Emitter<vscode.TerminalShellExecutionStartEvent>()
+	).event;
 	readonly onDidEndTerminalShellExecution = this._register(new Emitter<vscode.TerminalShellExecutionEndEvent>()).event;
 
 	constructor(

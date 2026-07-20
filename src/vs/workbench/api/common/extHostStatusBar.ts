@@ -219,13 +219,11 @@ export class ExtHostStatusBarEntry implements vscode.StatusBarItem {
 		this.update();
 	}
 
-	public set tooltip2(
-		tooltip:
-			| vscode.MarkdownString
-			| string
-			| undefined
-			| ((token: vscode.CancellationToken) => Promise<vscode.MarkdownString | string | undefined>)
-	) {
+	public set tooltip2(tooltip:
+		| vscode.MarkdownString
+		| string
+		| undefined
+		| ((token: vscode.CancellationToken) => Promise<vscode.MarkdownString | string | undefined>)) {
 		if (this._extension) {
 			checkProposedApiEnabled(this._extension, 'statusBarItemTooltip');
 		}

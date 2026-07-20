@@ -40,13 +40,9 @@ import type {
 	IColorPresentation as _IColorPresentation,
 	SelectionRange,
 	SemanticTokens,
-	SemanticTokensLegend,
+	SemanticTokensLegend
 } from '../../../../editor/common/languages.js';
-import {
-	CompletionItemKind,
-	DocumentHighlightKind,
-	SymbolKind,
-} from '../../../../editor/common/languages.js';
+import { CompletionItemKind, DocumentHighlightKind, SymbolKind } from '../../../../editor/common/languages.js';
 import type { LanguageSelector } from '../../../../editor/common/languageSelector.js';
 import { URI } from '../../../../base/common/uri.js';
 import { Range } from '../../../../editor/common/core/range.js';
@@ -61,7 +57,7 @@ import {
 	wasmProvideDocumentSymbolsAll,
 	wasmProvideFormattingAll,
 	type IExtensionPlatformBootstrap,
-	type IExtensionManifestSummary,
+	type IExtensionManifestSummary
 } from './extensionPlatformClient.js';
 import { listen } from '@tauri-apps/api/event';
 import { ITerminalService, ITerminalGroupService } from '../../terminal/browser/terminal.js';
@@ -75,11 +71,21 @@ import { IWebviewWorkbenchService } from '../../webviewPanel/browser/webviewWork
 import type { WebviewInput } from '../../webviewPanel/browser/webviewEditorInput.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Extensions as ViewExtensions, type IViewsRegistry, type ITreeViewDescriptor, type ITreeViewDataProvider as _ITreeViewDataProvider, type ITreeItem as _ITreeItem } from '../../../common/views.js';
+import {
+	Extensions as ViewExtensions,
+	type IViewsRegistry,
+	type ITreeViewDescriptor,
+	type ITreeViewDataProvider as _ITreeViewDataProvider,
+	type ITreeItem as _ITreeItem
+} from '../../../common/views.js';
 import { TreeView, TreeViewPane } from '../../../browser/parts/views/treeView.js';
 import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
 import { IWorkbenchExtensionManagementService } from '../../../services/extensionManagement/common/extensionManagement.js';
-import type { DidUninstallExtensionEvent, InstallExtensionResult, IGalleryExtension } from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import type {
+	DidUninstallExtensionEvent,
+	InstallExtensionResult,
+	IGalleryExtension
+} from '../../../../platform/extensionManagement/common/extensionManagement.js';
 import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
 import { ICommandService } from '../../../../platform/commands/common/commands.js';
 import { IWebviewViewService } from '../../webviewView/browser/webviewViewService.js';
@@ -88,14 +94,12 @@ import { IWebviewService } from '../../webview/browser/webview.js';
 import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
 import type { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
 
-
-
 function modelToParams(model: ITextModel, position: Position) {
 	return {
 		uri: model.uri.toString(),
 		languageId: model.getLanguageId(),
 		version: model.getVersionId(),
-		position: { line: position.lineNumber - 1, character: position.column - 1 },
+		position: { line: position.lineNumber - 1, character: position.column - 1 }
 	};
 }
 
@@ -108,7 +112,7 @@ function toVscRange(r: { start: { line: number; character: number }; end: { line
 		startLineNumber: r.start.line + 1,
 		startColumn: r.start.character + 1,
 		endLineNumber: r.end.line + 1,
-		endColumn: r.end.character + 1,
+		endColumn: r.end.character + 1
 	};
 }
 
@@ -123,8 +127,6 @@ function sanitizeForExtHost(text: string): string {
 		.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '');
 }
 
-
-
 interface HandshakeMessage {
 	type: 'sidex:handshake';
 	connectionToken: string;
@@ -136,7 +138,6 @@ interface HandshakeMessage {
 type ProviderCapabilities = Record<string, unknown[][]>;
 
 class TauriExtensionHostContribution extends Disposable implements IWorkbenchContribution {
-
 	static readonly ID = 'workbench.contrib.tauriExtensionHost';
 
 	private _ws: WebSocket | undefined;
@@ -144,12 +145,15 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	private _msgId = 0;
 	private _reconnectTimer: ReturnType<typeof setTimeout> | undefined;
 	private _reconnectAttempts = 0;
-	private _pendingCallbacks = new Map<number, {
-		resolve: (v: unknown) => void;
-		reject: (e: Error) => void;
-		timeoutHandle: ReturnType<typeof setTimeout>;
-		type: string;
-	}>();
+	private _pendingCallbacks = new Map<
+		number,
+		{
+			resolve: (v: unknown) => void;
+			reject: (e: Error) => void;
+			timeoutHandle: ReturnType<typeof setTimeout>;
+			type: string;
+		}
+	>();
 	private _connected = false;
 	private _handshakeSeen = false;
 	private _providerRegistrations: IDisposable[] = [];
@@ -194,10 +198,11 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		@IWebviewWorkbenchService private readonly webviewWorkbenchService: IWebviewWorkbenchService,
 		@IInstantiationService private readonly instantiationService: IInstantiationService,
 		@ICommandService private readonly commandService: ICommandService,
-		@IWorkbenchExtensionManagementService private readonly extensionManagementService: IWorkbenchExtensionManagementService,
+		@IWorkbenchExtensionManagementService
+		private readonly extensionManagementService: IWorkbenchExtensionManagementService,
 		@IWebviewViewService private readonly webviewViewService: IWebviewViewService,
 		@IWebviewService private readonly webviewService: IWebviewService,
-		@ICodeEditorService private readonly codeEditorService: ICodeEditorService,
+		@ICodeEditorService private readonly codeEditorService: ICodeEditorService
 	) {
 		super();
 		this._init();
@@ -207,18 +212,22 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if ((globalThis as any).__SIDEX_TAURI__ !== true) {
 			return;
 		}
-		this._register(this.extensionManagementService.onDidInstallExtensions((results) => {
-			for (const result of results) {
-				if (result.local && !result.error) {
-					this._hotLoadInstalledExtension(result);
+		this._register(
+			this.extensionManagementService.onDidInstallExtensions(results => {
+				for (const result of results) {
+					if (result.local && !result.error) {
+						this._hotLoadInstalledExtension(result);
+					}
 				}
-			}
-		}));
-		this._register(this.extensionManagementService.onDidUninstallExtension((event) => {
-			if (!event.error) {
-				this._removeUninstalledExtension(event);
-			}
-		}));
+			})
+		);
+		this._register(
+			this.extensionManagementService.onDidUninstallExtension(event => {
+				if (!event.error) {
+					this._removeUninstalledExtension(event);
+				}
+			})
+		);
 		try {
 			const bootstrap = await bootstrapExtensionPlatform();
 			this._applyBootstrap(bootstrap);
@@ -259,7 +268,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 
 			this.logService.info(`[ExtHost] Hot-loading extension ${extId} from ${installed.path}`);
-			const loadResult = await this._request<{ extensionId?: string; alreadyActive?: boolean }>('loadExtension', { extensionPath: installed.path });
+			const loadResult = await this._request<{ extensionId?: string; alreadyActive?: boolean }>('loadExtension', {
+				extensionPath: installed.path
+			});
 			if (loadResult?.extensionId && !loadResult.alreadyActive) {
 				this._send({ id: this._nextId(), type: 'activateExtension', params: { extensionId: loadResult.extensionId } });
 			}
@@ -293,8 +304,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 		const workspaceFolders = this.workspaceContextService
 			.getWorkspace()
-			.folders
-			.map(folder => folder.uri)
+			.folders.map(folder => folder.uri)
 			.filter(uri => uri.scheme === 'file')
 			.map(uri => uri.fsPath);
 		if (workspaceFolders.length > 0) {
@@ -309,7 +319,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	private _syncDocumentsToWasm(): void {
 		for (const model of this.modelService.getModels()) {
 			if (isSyncedModelScheme(model.uri.scheme)) {
-				wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(() => {});
+				wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(
+					() => {}
+				);
 			}
 		}
 
@@ -318,38 +330,50 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 		this._wasmDocSyncInitialized = true;
 
-		this._register(this.modelService.onModelAdded(model => {
-			if (isSyncedModelScheme(model.uri.scheme)) {
-				wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(() => {});
-			}
-		}));
-		this._register(this.modelService.onModelRemoved(model => {
-			if (isSyncedModelScheme(model.uri.scheme)) {
-				wasmCloseDocument(model.uri.toString()).catch(() => {});
-			}
-		}));
+		this._register(
+			this.modelService.onModelAdded(model => {
+				if (isSyncedModelScheme(model.uri.scheme)) {
+					wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(
+						() => {}
+					);
+				}
+			})
+		);
+		this._register(
+			this.modelService.onModelRemoved(model => {
+				if (isSyncedModelScheme(model.uri.scheme)) {
+					wasmCloseDocument(model.uri.toString()).catch(() => {});
+				}
+			})
+		);
 
-		this._register(this.modelService.onModelAdded(model => {
-			if (!isSyncedModelScheme(model.uri.scheme)) {
-				return;
-			}
-			const key = `wasm-change-${model.uri.toString()}`;
-			if (this._modelContentListeners.has(key)) {
-				return;
-			}
-			const disposable = model.onDidChangeContent(() => {
-				wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(() => {});
-			});
-			this._modelContentListeners.set(key, disposable);
-		}));
-		this._register(this.modelService.onModelRemoved(model => {
-			const key = `wasm-change-${model.uri.toString()}`;
-			const listener = this._modelContentListeners.get(key);
-			if (listener) {
-				listener.dispose();
-				this._modelContentListeners.delete(key);
-			}
-		}));
+		this._register(
+			this.modelService.onModelAdded(model => {
+				if (!isSyncedModelScheme(model.uri.scheme)) {
+					return;
+				}
+				const key = `wasm-change-${model.uri.toString()}`;
+				if (this._modelContentListeners.has(key)) {
+					return;
+				}
+				const disposable = model.onDidChangeContent(() => {
+					wasmSyncDocument(model.uri.toString(), model.getLanguageId(), sanitizeForExtHost(model.getValue())).catch(
+						() => {}
+					);
+				});
+				this._modelContentListeners.set(key, disposable);
+			})
+		);
+		this._register(
+			this.modelService.onModelRemoved(model => {
+				const key = `wasm-change-${model.uri.toString()}`;
+				const listener = this._modelContentListeners.get(key);
+				if (listener) {
+					listener.dispose();
+					this._modelContentListeners.delete(key);
+				}
+			})
+		);
 	}
 
 	private _wasmProviderRegistrations: IDisposable[] = [];
@@ -359,16 +383,26 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		this._wasmProviderRegistrations = [];
 
 		const wasmLanguages: LanguageSelector = [
-			'css', 'scss', 'less',
-			'html', 'htm',
-			'json', 'jsonc',
-			'typescript', 'typescriptreact', 'javascript', 'javascriptreact',
+			'css',
+			'scss',
+			'less',
+			'html',
+			'htm',
+			'json',
+			'jsonc',
+			'typescript',
+			'typescriptreact',
+			'javascript',
+			'javascriptreact',
 			'php',
 			'markdown',
 			'rust',
 			'go',
-			'c', 'cpp', 'objective-c', 'objective-cpp',
-			'python',
+			'c',
+			'cpp',
+			'objective-c',
+			'objective-cpp',
+			'python'
 		];
 
 		this._wasmProviderRegistrations.push(
@@ -381,7 +415,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 							model.getLanguageId(),
 							model.getVersionId(),
 							position.lineNumber - 1,
-							position.column - 1,
+							position.column - 1
 						);
 						if (!result?.items?.length) {
 							return null;
@@ -402,7 +436,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 							startLineNumber: position.lineNumber,
 							startColumn: wordStart + 1,
 							endLineNumber: position.lineNumber,
-							endColumn: position.column,
+							endColumn: position.column
 						};
 
 						const suggestions = this._normalizeCompletionItems(result.items);
@@ -419,7 +453,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 						this.logService.warn(`[WASM] completion error: ${(e as Error)?.message}`);
 						return null;
 					}
-				},
+				}
 			})
 		);
 
@@ -432,35 +466,37 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 							model.getLanguageId(),
 							model.getVersionId(),
 							position.lineNumber - 1,
-							position.column - 1,
+							position.column - 1
 						);
 						if (!result?.contents?.length) {
 							return null;
 						}
 						const contents = result.contents.map((c: any) => {
-						let val = typeof c === 'string' ? c : String(c?.value ?? '');
-						val = val.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-					return { value: val };
-					});
-					const lspRange = result.range ? toVscRange(result.range) : undefined;
+							let val = typeof c === 'string' ? c : String(c?.value ?? '');
+							val = val.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+							return { value: val };
+						});
+						const lspRange = result.range ? toVscRange(result.range) : undefined;
 						const wordRange = (() => {
 							const word = model.getWordAtPosition(position);
-							return word ? {
-								startLineNumber: position.lineNumber,
-								startColumn: word.startColumn,
-								endLineNumber: position.lineNumber,
-								endColumn: word.endColumn,
-							} : undefined;
+							return word
+								? {
+										startLineNumber: position.lineNumber,
+										startColumn: word.startColumn,
+										endLineNumber: position.lineNumber,
+										endColumn: word.endColumn
+									}
+								: undefined;
 						})();
 						return {
 							contents,
-							range: lspRange ?? wordRange,
+							range: lspRange ?? wordRange
 						} satisfies Hover;
 					} catch (e) {
 						this.logService.warn(`[WASM] hover error: ${(e as Error)?.message}`);
 						return null;
 					}
-				},
+				}
 			})
 		);
 
@@ -473,7 +509,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 							model.getLanguageId(),
 							model.getVersionId(),
 							position.lineNumber - 1,
-							position.column - 1,
+							position.column - 1
 						);
 						if (!Array.isArray(result) || !result.length) {
 							return null;
@@ -482,7 +518,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					} catch {
 						return null;
 					}
-				},
+				}
 			})
 		);
 
@@ -493,7 +529,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 						const result = await wasmProvideDocumentSymbolsAll(
 							model.uri.toString(),
 							model.getLanguageId(),
-							model.getVersionId(),
+							model.getVersionId()
 						);
 						if (!Array.isArray(result) || !result.length) {
 							return null;
@@ -502,7 +538,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					} catch {
 						return null;
 					}
-				},
+				}
 			})
 		);
 
@@ -515,7 +551,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 							model.getLanguageId(),
 							model.getVersionId(),
 							options.tabSize,
-							options.insertSpaces,
+							options.insertSpaces
 						);
 						if (!Array.isArray(result) || !result.length) {
 							return null;
@@ -524,7 +560,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					} catch {
 						return null;
 					}
-				},
+				}
 			})
 		);
 
@@ -544,8 +580,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._reconnectAttempts = 0;
 				const workspaceFolders = this.workspaceContextService
 					.getWorkspace()
-					.folders
-					.map(folder => folder.uri)
+					.folders.map(folder => folder.uri)
 					.filter(uri => uri.scheme === 'file')
 					.map(uri => uri.fsPath);
 				this._send({ id: this._nextId(), type: 'initialize', params: { extensionPaths: [], workspaceFolders } });
@@ -554,13 +589,17 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._startEditorTracking();
 			};
 
-			ws.onmessage = (event) => {
+			ws.onmessage = event => {
 				try {
 					this._handleMessage(JSON.parse(event.data as string));
-				} catch { /* ignore malformed messages */ }
+				} catch {
+					/* ignore malformed messages */
+				}
 			};
 
-			ws.onerror = () => { /* handled by onclose */ };
+			ws.onerror = () => {
+				/* handled by onclose */
+			};
 
 			ws.onclose = () => {
 				this._ws = undefined;
@@ -571,12 +610,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._scheduleReconnect();
 			};
 
-			window.addEventListener('beforeunload', () => {
-				if (this._ws?.readyState === WebSocket.OPEN) {
-					this._ws.close(1000, 'page-unload');
-					this._ws = undefined;
-				}
-			}, { once: true });
+			window.addEventListener(
+				'beforeunload',
+				() => {
+					if (this._ws?.readyState === WebSocket.OPEN) {
+						this._ws.close(1000, 'page-unload');
+						this._ws = undefined;
+					}
+				},
+				{ once: true }
+			);
 		} catch {
 			this._scheduleReconnect();
 		}
@@ -608,15 +651,31 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		this._langConfigDisposables.forEach(d => d.dispose());
 		this._statusBarItems.forEach(a => a.dispose());
 		this._statusBarItems.clear();
-		this._extTerminals.forEach(t => { try { t.dispose(); } catch {} });
+		this._extTerminals.forEach(t => {
+			try {
+				t.dispose();
+			} catch {}
+		});
 		this._extTerminals.clear();
 		this._activeProgressResolvers.forEach(r => r());
 		this._activeProgressResolvers.clear();
-		this._webviewPanels.forEach(p => { try { p.dispose(); } catch {} });
+		this._webviewPanels.forEach(p => {
+			try {
+				p.dispose();
+			} catch {}
+		});
 		this._webviewPanels.clear();
-		this._webviewViewDisposables.forEach(d => { try { d.dispose(); } catch {} });
+		this._webviewViewDisposables.forEach(d => {
+			try {
+				d.dispose();
+			} catch {}
+		});
 		this._webviewViewDisposables.clear();
-		this._treeViews.forEach(t => { try { t.dispose(); } catch {} });
+		this._treeViews.forEach(t => {
+			try {
+				t.dispose();
+			} catch {}
+		});
 		this._treeViews.clear();
 		this._modelContentListeners.forEach(d => d.dispose());
 		this._modelContentListeners.clear();
@@ -690,7 +749,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				resolve: resolve as (v: unknown) => void,
 				reject,
 				timeoutHandle,
-				type,
+				type
 			});
 			this._send({ id, type, params });
 		});
@@ -710,9 +769,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const cb = this._pendingCallbacks.get(msg.id)!;
 			this._pendingCallbacks.delete(msg.id);
 			clearTimeout(cb.timeoutHandle);
-			msg.error
-				? cb.reject(new Error(String(msg.error)))
-				: cb.resolve(msg.result);
+			msg.error ? cb.reject(new Error(String(msg.error))) : cb.resolve(msg.result);
 			return;
 		}
 
@@ -912,27 +969,39 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private _onExecuteWorkbenchCommand(reqId: number, command: string, args: any[]): void {
 		this.commandService.executeCommand(command, ...(args || [])).then(
-			(result) => {
+			result => {
 				const editorState = this._getActiveEditorState();
-				this._send({ id: this._nextId(), type: 'workbenchCommandResult', params: { reqId, result: result ?? null, editorState } });
+				this._send({
+					id: this._nextId(),
+					type: 'workbenchCommandResult',
+					params: { reqId, result: result ?? null, editorState }
+				});
 			},
 			(err: unknown) => {
-				this._send({ id: this._nextId(), type: 'workbenchCommandResult', params: { reqId, error: err instanceof Error ? err.message : String(err) } });
+				this._send({
+					id: this._nextId(),
+					type: 'workbenchCommandResult',
+					params: { reqId, error: err instanceof Error ? err.message : String(err) }
+				});
 			}
 		);
 	}
 
 	private _getActiveEditorState(): { editorId: string; selections: any[] } | null {
-		if (!this._activeTrackedEditorId) {return null;}
+		if (!this._activeTrackedEditorId) {
+			return null;
+		}
 		const entry = this._trackedEditors.get(this._activeTrackedEditorId);
-		if (!entry) {return null;}
+		if (!entry) {
+			return null;
+		}
 		const allSelections = entry.editor.getSelections() || [];
 		return {
 			editorId: this._activeTrackedEditorId,
 			selections: allSelections.map((s: any) => ({
 				anchor: { line: s.selectionStartLineNumber - 1, character: s.selectionStartColumn - 1 },
-				active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 },
-			})),
+				active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 }
+			}))
 		};
 	}
 
@@ -955,9 +1024,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 		const disposable = CommandsRegistry.registerCommand(commandId, (_accessor, ...args: any[]) => {
 			this.logService.info(`[ExtHost] CMD INVOKE: ${commandId}`);
-			return this._request('executeCommand', { command: commandId, args: args.map(a => {
-				try { return JSON.parse(JSON.stringify(a)); } catch { return String(a); }
-			}) });
+			return this._request('executeCommand', {
+				command: commandId,
+				args: args.map(a => {
+					try {
+						return JSON.parse(JSON.stringify(a));
+					} catch {
+						return String(a);
+					}
+				})
+			});
 		});
 		this._registeredCommands.set(commandId, disposable);
 	}
@@ -973,10 +1049,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			if (!this._connected) {
 				return this.commandService.executeCommand('default:type', args);
 			}
-			return this._request('executeCommand', {
-				command: 'type',
-				args: [args],
-			}, { timeoutMs: 2000 }).catch(() => {
+			return this._request(
+				'executeCommand',
+				{
+					command: 'type',
+					args: [args]
+				},
+				{ timeoutMs: 2000 }
+			).catch(() => {
 				return this.commandService.executeCommand('default:type', args);
 			});
 		});
@@ -989,64 +1069,92 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private _onTrySetSelections(editorId: string, selections: any[]): void {
 		const editor = this._findTrackedEditor(editorId);
-		if (!editor || !selections?.length) {return;}
+		if (!editor || !selections?.length) {
+			return;
+		}
 		const editorSelections = selections.map((s: any) => ({
 			selectionStartLineNumber: (s.anchor?.line ?? 0) + 1,
 			selectionStartColumn: (s.anchor?.character ?? 0) + 1,
 			positionLineNumber: (s.active?.line ?? 0) + 1,
-			positionColumn: (s.active?.character ?? 0) + 1,
+			positionColumn: (s.active?.character ?? 0) + 1
 		}));
 		editor.setSelections(editorSelections);
 	}
 
 	private _onTrySetOptions(editorId: string, options: any): void {
 		const editor = this._findTrackedEditor(editorId);
-		if (!editor || !options) {return;}
+		if (!editor || !options) {
+			return;
+		}
 		const opts: Record<string, unknown> = {};
-		if (options.cursorStyle !== undefined) {opts.cursorStyle = options.cursorStyle;}
+		if (options.cursorStyle !== undefined) {
+			opts.cursorStyle = options.cursorStyle;
+		}
 		if (options.lineNumbers !== undefined) {
 			opts.lineNumbers = options.lineNumbers === 2 ? 'relative' : options.lineNumbers === 1 ? 'on' : 'off';
 		}
-		if (Object.keys(opts).length) {(editor as any).updateOptions(opts);}
+		if (Object.keys(opts).length) {
+			(editor as any).updateOptions(opts);
+		}
 		if (options.tabSize !== undefined || options.insertSpaces !== undefined) {
 			const model = editor.getModel();
-			if (model) {model.updateOptions({ tabSize: options.tabSize, insertSpaces: options.insertSpaces });}
+			if (model) {
+				model.updateOptions({ tabSize: options.tabSize, insertSpaces: options.insertSpaces });
+			}
 		}
 	}
 
 	private _onTryRevealRange(editorId: string, range: any, revealType: number): void {
 		const editor = this._findTrackedEditor(editorId);
-		if (!editor || !range) {return;}
+		if (!editor || !range) {
+			return;
+		}
 		const monacoRange = new Range(
-			(range.start?.line ?? 0) + 1, (range.start?.character ?? 0) + 1,
-			(range.end?.line ?? 0) + 1, (range.end?.character ?? 0) + 1,
+			(range.start?.line ?? 0) + 1,
+			(range.start?.character ?? 0) + 1,
+			(range.end?.line ?? 0) + 1,
+			(range.end?.character ?? 0) + 1
 		);
 		switch (revealType) {
-			case 1: editor.revealRangeInCenter(monacoRange); break;
-			case 2: editor.revealRangeInCenterIfOutsideViewport(monacoRange); break;
-			case 3: editor.revealRangeAtTop(monacoRange); break;
-			default: editor.revealRange(monacoRange); break;
+			case 1:
+				editor.revealRangeInCenter(monacoRange);
+				break;
+			case 2:
+				editor.revealRangeInCenterIfOutsideViewport(monacoRange);
+				break;
+			case 3:
+				editor.revealRangeAtTop(monacoRange);
+				break;
+			default:
+				editor.revealRange(monacoRange);
+				break;
 		}
 	}
 
 	private _onTrySetDecorations(editorId: string, key: string, ranges: any[]): void {
 		const editor = this._findTrackedEditor(editorId);
-		if (!editor || !key) {return;}
+		if (!editor || !key) {
+			return;
+		}
 		const decorations = (ranges || []).map((r: any) => {
 			const range = r.range || r;
 			return {
 				range: new Range(
-					(range.start?.line ?? 0) + 1, (range.start?.character ?? 0) + 1,
-					(range.end?.line ?? 0) + 1, (range.end?.character ?? 0) + 1,
+					(range.start?.line ?? 0) + 1,
+					(range.start?.character ?? 0) + 1,
+					(range.end?.line ?? 0) + 1,
+					(range.end?.character ?? 0) + 1
 				),
-				options: { className: key },
+				options: { className: key }
 			};
 		});
 		(editor as any).setDecorationsByType('sidex-exthost', key, decorations);
 	}
 
 	private _onRegisterDecorationType(key: string, options: any): void {
-		if (!key || this._decorationTypes.has(key)) {return;}
+		if (!key || this._decorationTypes.has(key)) {
+			return;
+		}
 		try {
 			this.codeEditorService.registerDecorationType('sidex-exthost', key, options || {});
 			this._decorationTypes.set(key, { dispose: () => this.codeEditorService.removeDecorationType(key) });
@@ -1081,36 +1189,44 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				webviewView.webview.contentOptions = {
 					...webviewView.webview.contentOptions,
 					allowScripts: true,
-					localResourceRoots: [rootUri],
+					localResourceRoots: [rootUri]
 				};
 
-				listeners.push(webviewView.webview.onMessage(e => {
-					this._send({
-						id: this._nextId(),
-						type: 'webviewViewMessage',
-						params: { webviewHandle, message: e.message },
-					});
-				}));
+				listeners.push(
+					webviewView.webview.onMessage(e => {
+						this._send({
+							id: this._nextId(),
+							type: 'webviewViewMessage',
+							params: { webviewHandle, message: e.message }
+						});
+					})
+				);
 
 				webviewHandles.set(webviewHandle, { webview: webviewView.webview, listeners });
 
-				await this._request('resolveWebviewView', {
-					viewId,
-					webviewHandle,
-					title: webviewView.title,
-					state: undefined,
-				}, { timeoutMs: 30000 });
-			},
+				await this._request(
+					'resolveWebviewView',
+					{
+						viewId,
+						webviewHandle,
+						title: webviewView.title,
+						state: undefined
+					},
+					{ timeoutMs: 30000 }
+				);
+			}
 		});
 
 		this._webviewViewDisposables.set(viewId, {
 			dispose: () => {
 				registration.dispose();
 				for (const [, entry] of webviewHandles) {
-					for (const l of entry.listeners) { l.dispose(); }
+					for (const l of entry.listeners) {
+						l.dispose();
+					}
 				}
 				webviewHandles.clear();
-			},
+			}
 		});
 
 		(this as any)[`_wvvHandles_${viewId}`] = webviewHandles;
@@ -1128,7 +1244,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	private _onWebviewViewPostMessage(webviewHandle: string, message: any): void {
 		const handles = this._findWebviewHandles(webviewHandle);
 		if (handles) {
-			this.logService.info(`[ExtHost] webviewViewPostMessage → ${webviewHandle}: ${JSON.stringify(message).substring(0, 200)}`);
+			this.logService.info(
+				`[ExtHost] webviewViewPostMessage → ${webviewHandle}: ${JSON.stringify(message).substring(0, 200)}`
+			);
 			handles.webview.postMessage(message);
 		} else {
 			this.logService.warn(`[ExtHost] webviewViewPostMessage: handle ${webviewHandle} not found`);
@@ -1144,7 +1262,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private _findWebviewHandles(webviewHandle: string): { webview: any; listeners: IDisposable[] } | undefined {
 		for (const [viewId] of this._webviewViewDisposables) {
-			const map = (this as any)[`_wvvHandles_${viewId}`] as Map<string, { webview: any; listeners: IDisposable[] }> | undefined;
+			const map = (this as any)[`_wvvHandles_${viewId}`] as
+				| Map<string, { webview: any; listeners: IDisposable[] }>
+				| undefined;
 			if (map?.has(webviewHandle)) {
 				return map.get(webviewHandle);
 			}
@@ -1152,7 +1272,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		const viewIdMatch = webviewHandle.match(/^wvv-(.+)-\d+$/);
 		if (viewIdMatch) {
 			const viewId = viewIdMatch[1];
-			const map = (this as any)[`_wvvHandles_${viewId}`] as Map<string, { webview: any; listeners: IDisposable[] }> | undefined;
+			const map = (this as any)[`_wvvHandles_${viewId}`] as
+				| Map<string, { webview: any; listeners: IDisposable[] }>
+				| undefined;
 			if (map && map.size > 0) {
 				return [...map.values()].pop();
 			}
@@ -1192,8 +1314,10 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			webviewViewProviders: string[];
 			customEditorProviders: string[];
 		}>('getExtensionState', {}, { timeoutMs: 5000, allowBeforeHandshake: true }).then(
-			(state) => {
-				if (!state) { return; }
+			state => {
+				if (!state) {
+					return;
+				}
 				for (const cmd of state.commands) {
 					this._onCommandRegistered(cmd);
 				}
@@ -1201,7 +1325,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					this._onRegisterWebviewViewProvider(viewId);
 				}
 				const kiloCmds = state.commands.filter(c => c.startsWith('kilo-code'));
-				this.logService.info(`[ExtHost] Synced state: ${state.commands.length} commands (${kiloCmds.length} kilo), ${state.webviewViewProviders.length} webview views`);
+				this.logService.info(
+					`[ExtHost] Synced state: ${state.commands.length} commands (${kiloCmds.length} kilo), ${state.webviewViewProviders.length} webview views`
+				);
 				if (kiloCmds.length > 0) {
 					this.logService.info(`[ExtHost] Kilo commands: ${kiloCmds.join(', ')}`);
 				}
@@ -1250,13 +1376,17 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				}
 			}
 			const unique = [...new Set(all)];
-			return unique.length > 0 ? unique as LanguageSelector : '*';
+			return unique.length > 0 ? (unique as LanguageSelector) : '*';
 		};
 
 		// SideX: New capability format — `{selector, extensionId, displayName}[]`.
 		// Old format was just `selector[][]` (arrays of selectors). Normalize.
-		const normalizeProviders = (raw: any): Array<{ selector: unknown[]; extensionId?: string; displayName?: string }> => {
-			if (!Array.isArray(raw)) { return []; }
+		const normalizeProviders = (
+			raw: any
+		): Array<{ selector: unknown[]; extensionId?: string; displayName?: string }> => {
+			if (!Array.isArray(raw)) {
+				return [];
+			}
 			return raw.map((entry: any) => {
 				if (entry && typeof entry === 'object' && 'selector' in entry) {
 					return { selector: entry.selector, extensionId: entry.extensionId, displayName: entry.displayName };
@@ -1271,7 +1401,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this.languageFeatures.completionProvider.register(selectors(caps.completion), {
 					_debugDisplayName: 'tauriExtHost',
 					provideCompletionItems: (model, position, context, _token) =>
-						this._provideCompletionItems(model, position, context),
+						this._provideCompletionItems(model, position, context)
 				})
 			);
 		}
@@ -1279,8 +1409,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.hover) {
 			this._providerRegistrations.push(
 				this.languageFeatures.hoverProvider.register(selectors(caps.hover), {
-					provideHover: (model, position, _token) =>
-						this._provideHover(model, position),
+					provideHover: (model, position, _token) => this._provideHover(model, position)
 				})
 			);
 		}
@@ -1288,8 +1417,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.definition) {
 			this._providerRegistrations.push(
 				this.languageFeatures.definitionProvider.register(selectors(caps.definition), {
-					provideDefinition: (model, position, _token) =>
-						this._provideDefinition(model, position),
+					provideDefinition: (model, position, _token) => this._provideDefinition(model, position)
 				})
 			);
 		}
@@ -1298,7 +1426,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._providerRegistrations.push(
 				this.languageFeatures.typeDefinitionProvider.register(selectors(caps.typeDefinition), {
 					provideTypeDefinition: (model, position, _token) =>
-						this._provideGenericLocations('provideTypeDefinition', model, position),
+						this._provideGenericLocations('provideTypeDefinition', model, position)
 				})
 			);
 		}
@@ -1307,7 +1435,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._providerRegistrations.push(
 				this.languageFeatures.implementationProvider.register(selectors(caps.implementation), {
 					provideImplementation: (model, position, _token) =>
-						this._provideGenericLocations('provideImplementation', model, position),
+						this._provideGenericLocations('provideImplementation', model, position)
 				})
 			);
 		}
@@ -1316,7 +1444,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._providerRegistrations.push(
 				this.languageFeatures.declarationProvider.register(selectors(caps.declaration), {
 					provideDeclaration: (model, position, _token) =>
-						this._provideGenericLocations('provideDeclaration', model, position),
+						this._provideGenericLocations('provideDeclaration', model, position)
 				})
 			);
 		}
@@ -1324,8 +1452,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.references) {
 			this._providerRegistrations.push(
 				this.languageFeatures.referenceProvider.register(selectors(caps.references), {
-					provideReferences: (model, position, _context, _token) =>
-						this._provideReferences(model, position),
+					provideReferences: (model, position, _context, _token) => this._provideReferences(model, position)
 				})
 			);
 		}
@@ -1333,8 +1460,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.documentSymbol) {
 			this._providerRegistrations.push(
 				this.languageFeatures.documentSymbolProvider.register(selectors(caps.documentSymbol), {
-					provideDocumentSymbols: (model, _token) =>
-						this._provideDocumentSymbols(model),
+					provideDocumentSymbols: (model, _token) => this._provideDocumentSymbols(model)
 				})
 			);
 		}
@@ -1343,7 +1469,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._providerRegistrations.push(
 				this.languageFeatures.codeActionProvider.register(selectors(caps.codeAction), {
 					provideCodeActions: (model, rangeOrSelection, context, _token) =>
-						this._provideCodeActions(model, rangeOrSelection, context),
+						this._provideCodeActions(model, rangeOrSelection, context)
 				})
 			);
 		}
@@ -1351,8 +1477,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.codeLens) {
 			this._providerRegistrations.push(
 				this.languageFeatures.codeLensProvider.register(selectors(caps.codeLens), {
-					provideCodeLenses: (model, _token) =>
-						this._provideCodeLenses(model),
+					provideCodeLenses: (model, _token) => this._provideCodeLenses(model)
 				})
 			);
 		}
@@ -1364,8 +1489,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					this.languageFeatures.documentFormattingEditProvider.register(selectors([f.selector as unknown[]]), {
 						extensionId: f.extensionId ? new ExtensionIdentifier(f.extensionId) : undefined,
 						displayName: f.displayName,
-						provideDocumentFormattingEdits: (model, options, _token) =>
-							this._provideFormatting(model, options),
+						provideDocumentFormattingEdits: (model, options, _token) => this._provideFormatting(model, options)
 					} as any)
 				);
 			}
@@ -1379,7 +1503,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 						extensionId: f.extensionId ? new ExtensionIdentifier(f.extensionId) : undefined,
 						displayName: f.displayName,
 						provideDocumentRangeFormattingEdits: (model, range, options, _token) =>
-							this._provideRangeFormatting(model, range, options),
+							this._provideRangeFormatting(model, range, options)
 					} as any)
 				);
 			}
@@ -1391,7 +1515,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					signatureHelpTriggerCharacters: ['(', ','],
 					signatureHelpRetriggerCharacters: [','],
 					provideSignatureHelp: (model, position, _token, context) =>
-						this._provideSignatureHelp(model, position, context),
+						this._provideSignatureHelp(model, position, context)
 				})
 			);
 		}
@@ -1399,8 +1523,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.documentHighlight) {
 			this._providerRegistrations.push(
 				this.languageFeatures.documentHighlightProvider.register(selectors(caps.documentHighlight), {
-					provideDocumentHighlights: (model, position, _token) =>
-						this._provideDocumentHighlights(model, position),
+					provideDocumentHighlights: (model, position, _token) => this._provideDocumentHighlights(model, position)
 				})
 			);
 		}
@@ -1408,10 +1531,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.rename) {
 			this._providerRegistrations.push(
 				this.languageFeatures.renameProvider.register(selectors(caps.rename), {
-					provideRenameEdits: (model, position, newName, _token) =>
-						this._provideRenameEdits(model, position, newName),
-					resolveRenameLocation: (model, position, _token) =>
-						this._resolveRenameLocation(model, position),
+					provideRenameEdits: (model, position, newName, _token) => this._provideRenameEdits(model, position, newName),
+					resolveRenameLocation: (model, position, _token) => this._resolveRenameLocation(model, position)
 				})
 			);
 		}
@@ -1419,8 +1540,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.documentLink) {
 			this._providerRegistrations.push(
 				this.languageFeatures.linkProvider.register(selectors(caps.documentLink), {
-					provideLinks: (model, _token) =>
-						this._provideDocumentLinks(model),
+					provideLinks: (model, _token) => this._provideDocumentLinks(model)
 				})
 			);
 		}
@@ -1428,8 +1548,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.foldingRange) {
 			this._providerRegistrations.push(
 				this.languageFeatures.foldingRangeProvider.register(selectors(caps.foldingRange), {
-					provideFoldingRanges: (model, _context, _token) =>
-						this._provideFoldingRanges(model),
+					provideFoldingRanges: (model, _context, _token) => this._provideFoldingRanges(model)
 				})
 			);
 		}
@@ -1437,8 +1556,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.inlayHint) {
 			this._providerRegistrations.push(
 				this.languageFeatures.inlayHintsProvider.register(selectors(caps.inlayHint), {
-					provideInlayHints: (model, range, _token) =>
-						this._provideInlayHints(model, range),
+					provideInlayHints: (model, range, _token) => this._provideInlayHints(model, range)
 				})
 			);
 		}
@@ -1446,8 +1564,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.selectionRange) {
 			this._providerRegistrations.push(
 				this.languageFeatures.selectionRangeProvider.register(selectors(caps.selectionRange), {
-					provideSelectionRanges: (model, positions, _token) =>
-						this._provideSelectionRanges(model, positions),
+					provideSelectionRanges: (model, positions, _token) => this._provideSelectionRanges(model, positions)
 				})
 			);
 		}
@@ -1456,9 +1573,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._providerRegistrations.push(
 				this.languageFeatures.documentSemanticTokensProvider.register(selectors(caps.semanticTokens), {
 					getLegend: () => this._semanticTokensLegend,
-					provideDocumentSemanticTokens: (model, _lastResultId, _token) =>
-						this._provideSemanticTokens(model),
-					releaseDocumentSemanticTokens: () => {},
+					provideDocumentSemanticTokens: (model, _lastResultId, _token) => this._provideSemanticTokens(model),
+					releaseDocumentSemanticTokens: () => {}
 				})
 			);
 		}
@@ -1466,10 +1582,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (caps.color) {
 			this._providerRegistrations.push(
 				this.languageFeatures.colorProvider.register(selectors(caps.color), {
-					provideDocumentColors: (model, _token) =>
-						this._provideDocumentColors(model),
-					provideColorPresentations: (_model, _colorInfo, _token) =>
-						Promise.resolve([]),
+					provideDocumentColors: (model, _token) => this._provideDocumentColors(model),
+					provideColorPresentations: (_model, _colorInfo, _token) => Promise.resolve([])
 				})
 			);
 		}
@@ -1477,11 +1591,10 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		this.logService.info(`[ExtHost] Registered providers for: ${Object.keys(caps).join(', ')}`);
 	}
 
-
 	private async _provideCompletionItems(
 		model: ITextModel,
 		position: Position,
-		context: CompletionContext,
+		context: CompletionContext
 	): Promise<CompletionList | null> {
 		const startedAt = Date.now();
 		const languageId = model.getLanguageId();
@@ -1490,27 +1603,37 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		const pos = `${position.lineNumber}:${position.column}`;
 		if (!this._connected || !this._handshakeSeen) {
 			if (this._shouldLogFailureBurst('completion-skipped-not-ready')) {
-				this.logService.warn(`[ExtHost] completion skipped ${JSON.stringify({ languageId, uriScheme, uri, pos, reason: 'host-not-ready' })}`);
+				this.logService.warn(
+					`[ExtHost] completion skipped ${JSON.stringify({ languageId, uriScheme, uri, pos, reason: 'host-not-ready' })}`
+				);
 			}
 			return null;
 		}
 
 		try {
 			const timeoutMs = this._completionColdStart ? 20000 : 10000;
-			const result = await this._request<{ items: any[] } | null>('provideCompletionItems', {
-				...modelToParams(model, position),
-				triggerCharacter: context.triggerCharacter,
-				triggerKind: context.triggerKind,
-			}, { timeoutMs });
+			const result = await this._request<{ items: any[] } | null>(
+				'provideCompletionItems',
+				{
+					...modelToParams(model, position),
+					triggerCharacter: context.triggerCharacter,
+					triggerKind: context.triggerKind
+				},
+				{ timeoutMs }
+			);
 			let suggestions = this._normalizeCompletionItems(result?.items ?? []);
 			if (suggestions.length === 0) {
 				const fallbackPositions = this._completionFallbackPositions(model, position);
 				for (const fallbackPos of fallbackPositions) {
-					const fallbackResult = await this._request<{ items: any[] } | null>('provideCompletionItems', {
-						...modelToParams(model, fallbackPos),
-						triggerCharacter: undefined,
-						triggerKind: context.triggerKind,
-					}, { timeoutMs: Math.min(timeoutMs, 4000) });
+					const fallbackResult = await this._request<{ items: any[] } | null>(
+						'provideCompletionItems',
+						{
+							...modelToParams(model, fallbackPos),
+							triggerCharacter: undefined,
+							triggerKind: context.triggerKind
+						},
+						{ timeoutMs: Math.min(timeoutMs, 4000) }
+					);
 					suggestions = this._normalizeCompletionItems(fallbackResult?.items ?? []);
 					if (suggestions.length > 0) {
 						break;
@@ -1526,18 +1649,20 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 			return {
 				suggestions,
-				incomplete: false,
+				incomplete: false
 			};
 		} catch (error) {
 			const latencyMs = Date.now() - startedAt;
 			if (this._shouldLogFailureBurst('completion-error')) {
-				this.logService.warn(`[ExtHost] completion error ${JSON.stringify({
-					languageId,
-					uriScheme,
-					pos,
-					latencyMs,
-					error: error instanceof Error ? error.message : String(error),
-				})}`);
+				this.logService.warn(
+					`[ExtHost] completion error ${JSON.stringify({
+						languageId,
+						uriScheme,
+						pos,
+						latencyMs,
+						error: error instanceof Error ? error.message : String(error)
+					})}`
+				);
 			}
 			return null;
 		}
@@ -1608,8 +1733,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					startLineNumber: position.lineNumber,
 					startColumn: word.startColumn,
 					endLineNumber: position.lineNumber,
-					endColumn: word.endColumn,
-				},
+					endColumn: word.endColumn
+				}
 			} as CompletionItem);
 		};
 
@@ -1623,14 +1748,52 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 		}
 
-		if (languageId === 'typescript' || languageId === 'typescriptreact' || languageId === 'javascript' || languageId === 'javascriptreact') {
-			for (const kw of ['const', 'let', 'var', 'function', 'return', 'import', 'from', 'export', 'default', 'if', 'else', 'for', 'while', 'switch', 'case', 'break', 'continue', 'try', 'catch', 'finally', 'class', 'extends', 'implements', 'interface', 'type', 'async', 'await', 'new', 'this', 'super']) {
+		if (
+			languageId === 'typescript' ||
+			languageId === 'typescriptreact' ||
+			languageId === 'javascript' ||
+			languageId === 'javascriptreact'
+		) {
+			for (const kw of [
+				'const',
+				'let',
+				'var',
+				'function',
+				'return',
+				'import',
+				'from',
+				'export',
+				'default',
+				'if',
+				'else',
+				'for',
+				'while',
+				'switch',
+				'case',
+				'break',
+				'continue',
+				'try',
+				'catch',
+				'finally',
+				'class',
+				'extends',
+				'implements',
+				'interface',
+				'type',
+				'async',
+				'await',
+				'new',
+				'this',
+				'super'
+			]) {
 				push(kw, CompletionItemKind.Keyword);
 			}
 		}
 
 		if (out.length > 0 && this._shouldLogFailureBurst('completion-local-fallback', 3000)) {
-			this.logService.info(`[ExtHost] completion local-fallback ${JSON.stringify({ languageId, prefix, count: out.length })}`);
+			this.logService.info(
+				`[ExtHost] completion local-fallback ${JSON.stringify({ languageId, prefix, count: out.length })}`
+			);
 		}
 		return out;
 	}
@@ -1646,23 +1809,23 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 
 		const escaped = this._escapeForRegExp(word.word);
-		const occurrenceCount = (sanitizeForExtHost(model.getValue()).match(new RegExp(`\\b${escaped}\\b`, 'g')) || []).length;
+		const occurrenceCount = (sanitizeForExtHost(model.getValue()).match(new RegExp(`\\b${escaped}\\b`, 'g')) || [])
+			.length;
 		const label = occurrenceCount === 1 ? 'occurrence' : 'occurrences';
 		const hover: Hover = {
-			contents: [
-				{ value: `\`${word.word}\`` },
-				{ value: `${occurrenceCount} ${label} in file` },
-			],
+			contents: [{ value: `\`${word.word}\`` }, { value: `${occurrenceCount} ${label} in file` }],
 			range: {
 				startLineNumber: position.lineNumber,
 				startColumn: word.startColumn,
 				endLineNumber: position.lineNumber,
-				endColumn: word.endColumn,
-			},
+				endColumn: word.endColumn
+			}
 		};
 
 		if (this._shouldLogFailureBurst('hover-local-fallback', 3000)) {
-			this.logService.info(`[ExtHost] hover local-fallback ${JSON.stringify({ languageId: model.getLanguageId(), word: word.word })}`);
+			this.logService.info(
+				`[ExtHost] hover local-fallback ${JSON.stringify({ languageId: model.getLanguageId(), word: word.word })}`
+			);
 		}
 		return hover;
 	}
@@ -1680,7 +1843,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			new RegExp(`\\bclass\\s+${escaped}\\b`),
 			new RegExp(`\\binterface\\s+${escaped}\\b`),
 			new RegExp(`\\btype\\s+${escaped}\\b`),
-			new RegExp(`\\b(?:export\\s+)?(?:default\\s+)?${escaped}\\s*[:=]\\s*`),
+			new RegExp(`\\b(?:export\\s+)?(?:default\\s+)?${escaped}\\s*[:=]\\s*`)
 		];
 
 		for (let lineNumber = 1; lineNumber <= model.getLineCount(); lineNumber++) {
@@ -1698,10 +1861,12 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 				const location: Location = {
 					uri: model.uri,
-					range: new Range(lineNumber, symbolIndex + 1, lineNumber, symbolIndex + 1 + word.word.length),
+					range: new Range(lineNumber, symbolIndex + 1, lineNumber, symbolIndex + 1 + word.word.length)
 				};
 				if (this._shouldLogFailureBurst('definition-local-fallback', 3000)) {
-					this.logService.info(`[ExtHost] definition local-fallback ${JSON.stringify({ languageId: model.getLanguageId(), word: word.word, lineNumber })}`);
+					this.logService.info(
+						`[ExtHost] definition local-fallback ${JSON.stringify({ languageId: model.getLanguageId(), word: word.word, lineNumber })}`
+					);
 				}
 				return location;
 			}
@@ -1712,13 +1877,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private async _provideHover(model: ITextModel, position: Position): Promise<Hover | null> {
 		try {
-			const result = await this._request<{ contents: any[]; range?: any } | null>('provideHover', modelToParams(model, position));
+			const result = await this._request<{ contents: any[]; range?: any } | null>(
+				'provideHover',
+				modelToParams(model, position)
+			);
 			if (!result?.contents?.length) {
 				return this._fallbackHover(model, position);
 			}
 			return {
 				contents: result.contents.map(c => ({ value: typeof c === 'string' ? c : String(c?.value ?? '') })),
-				range: result.range ? toVscRange(result.range) : undefined,
+				range: result.range ? toVscRange(result.range) : undefined
 			};
 		} catch (error) {
 			if (this._shouldLogFailureBurst('hover-error', 3000)) {
@@ -1740,7 +1908,11 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 	}
 
-	private async _provideGenericLocations(method: string, model: ITextModel, position: Position): Promise<Location | Location[] | null> {
+	private async _provideGenericLocations(
+		method: string,
+		model: ITextModel,
+		position: Position
+	): Promise<Location | Location[] | null> {
 		try {
 			const result = await this._request<any>(method, modelToParams(model, position));
 			return result ? this._convertLocations(result) : null;
@@ -1763,7 +1935,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any[]>('provideDocumentSymbols', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1777,19 +1949,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	private async _provideCodeActions(
 		model: ITextModel,
 		rangeOrSelection: any,
-		context: any,
+		context: any
 	): Promise<CodeActionList | null> {
 		try {
 			const range = {
 				start: { line: rangeOrSelection.startLineNumber - 1, character: rangeOrSelection.startColumn - 1 },
-				end: { line: rangeOrSelection.endLineNumber - 1, character: rangeOrSelection.endColumn - 1 },
+				end: { line: rangeOrSelection.endLineNumber - 1, character: rangeOrSelection.endColumn - 1 }
 			};
 			const result = await this._request<any[]>('provideCodeActions', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
 				range,
-				context: { diagnostics: context.markers || [], triggerKind: context.trigger, only: context.only?.value },
+				context: { diagnostics: context.markers || [], triggerKind: context.trigger, only: context.only?.value }
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1801,9 +1973,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					diagnostics: a.diagnostics || [],
 					isPreferred: a.isPreferred || false,
 					edit: a.edit ? this._convertWorkspaceEdit(a.edit) : undefined,
-					command: a.command,
+					command: a.command
 				})),
-				dispose: () => {},
+				dispose: () => {}
 			} as CodeActionList;
 		} catch {
 			return null;
@@ -1815,7 +1987,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any[]>('provideCodeLenses', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1823,9 +1995,11 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			return {
 				lenses: result.map(l => ({
 					range: toVscRange(l.range),
-					command: l.command ? { id: l.command.command || l.command.id, title: l.command.title, arguments: l.command.arguments } : undefined,
+					command: l.command
+						? { id: l.command.command || l.command.id, title: l.command.title, arguments: l.command.arguments }
+						: undefined
 				})),
-				dispose: () => {},
+				dispose: () => {}
 			};
 		} catch {
 			return null;
@@ -1838,7 +2012,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
-				options,
+				options
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1853,14 +2027,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		try {
 			const r = {
 				start: { line: range.startLineNumber - 1, character: range.startColumn - 1 },
-				end: { line: range.endLineNumber - 1, character: range.endColumn - 1 },
+				end: { line: range.endLineNumber - 1, character: range.endColumn - 1 }
 			};
 			const result = await this._request<any[]>('provideRangeFormatting', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
 				range: r,
-				options,
+				options
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1871,11 +2045,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 	}
 
-	private async _provideSignatureHelp(model: ITextModel, position: Position, context: any): Promise<SignatureHelpResult | null> {
+	private async _provideSignatureHelp(
+		model: ITextModel,
+		position: Position,
+		context: any
+	): Promise<SignatureHelpResult | null> {
 		try {
 			const result = await this._request<any>('provideSignatureHelp', {
 				...modelToParams(model, position),
-				context: { triggerKind: context.triggerKind, triggerCharacter: context.triggerCharacter, isRetrigger: context.isRetrigger },
+				context: {
+					triggerKind: context.triggerKind,
+					triggerCharacter: context.triggerCharacter,
+					isRetrigger: context.isRetrigger
+				}
 			});
 			if (!result?.signatures?.length) {
 				return null;
@@ -1884,16 +2066,20 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				value: {
 					signatures: result.signatures.map((s: any) => ({
 						label: s.label,
-						documentation: s.documentation ? { value: typeof s.documentation === 'string' ? s.documentation : s.documentation.value || '' } : undefined,
+						documentation: s.documentation
+							? { value: typeof s.documentation === 'string' ? s.documentation : s.documentation.value || '' }
+							: undefined,
 						parameters: (s.parameters || []).map((p: any) => ({
 							label: p.label,
-							documentation: p.documentation ? { value: typeof p.documentation === 'string' ? p.documentation : p.documentation.value || '' } : undefined,
-						})),
+							documentation: p.documentation
+								? { value: typeof p.documentation === 'string' ? p.documentation : p.documentation.value || '' }
+								: undefined
+						}))
 					})),
 					activeSignature: result.activeSignature ?? 0,
-					activeParameter: result.activeParameter ?? 0,
+					activeParameter: result.activeParameter ?? 0
 				},
-				dispose: () => {},
+				dispose: () => {}
 			};
 		} catch {
 			return null;
@@ -1908,18 +2094,22 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 			return result.map(h => ({
 				range: toVscRange(h.range),
-				kind: h.kind ?? DocumentHighlightKind.Text,
+				kind: h.kind ?? DocumentHighlightKind.Text
 			}));
 		} catch {
 			return null;
 		}
 	}
 
-	private async _provideRenameEdits(model: ITextModel, position: Position, newName: string): Promise<WorkspaceEdit & Rejection | null> {
+	private async _provideRenameEdits(
+		model: ITextModel,
+		position: Position,
+		newName: string
+	): Promise<(WorkspaceEdit & Rejection) | null> {
 		try {
 			const result = await this._request<any>('provideRename', {
 				...modelToParams(model, position),
-				newName,
+				newName
 			});
 			if (!result?.edits?.length) {
 				return null;
@@ -1938,7 +2128,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 			return {
 				range: toVscRange(result.range),
-				text: result.placeholder || model.getWordAtPosition(position)?.word || '',
+				text: result.placeholder || model.getWordAtPosition(position)?.word || ''
 			};
 		} catch {
 			return null;
@@ -1950,7 +2140,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any[]>('provideDocumentLinks', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1958,8 +2148,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			return {
 				links: result.map(l => ({
 					range: toVscRange(l.range),
-					url: l.target ? URI.parse(l.target) : undefined,
-				})),
+					url: l.target ? URI.parse(l.target) : undefined
+				}))
 			};
 		} catch {
 			return null;
@@ -1971,7 +2161,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any[]>('provideFoldingRanges', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
@@ -1979,7 +2169,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			return result.map(f => ({
 				start: f.start + 1,
 				end: f.end + 1,
-				kind: f.kind !== undefined ? { value: f.kind } : undefined,
+				kind: f.kind !== undefined ? { value: f.kind } : undefined
 			}));
 		} catch {
 			return null;
@@ -1990,61 +2180,71 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		try {
 			const r = {
 				start: { line: range.startLineNumber - 1, character: range.startColumn - 1 },
-				end: { line: range.endLineNumber - 1, character: range.endColumn - 1 },
+				end: { line: range.endLineNumber - 1, character: range.endColumn - 1 }
 			};
 			const result = await this._request<any[]>('provideInlayHints', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
-				range: r,
+				range: r
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
 			}
 			return {
 				hints: result.map(h => ({
-					label: typeof h.label === 'string' ? h.label : (Array.isArray(h.label) ? h.label.map((p: any) => ({ label: p.value || '' })) : String(h.label)),
+					label:
+						typeof h.label === 'string'
+							? h.label
+							: Array.isArray(h.label)
+								? h.label.map((p: any) => ({ label: p.value || '' }))
+								: String(h.label),
 					position: toVscPosition(h.position),
 					kind: h.kind,
 					paddingLeft: h.paddingLeft,
-					paddingRight: h.paddingRight,
+					paddingRight: h.paddingRight
 				})),
-				dispose: () => {},
+				dispose: () => {}
 			};
 		} catch {
 			return null;
 		}
 	}
 
-
 	private _syncOpenDocuments(): void {
 		if (!this._documentsSyncInitialized) {
 			this._documentsSyncInitialized = true;
-			this._register(this.modelService.onModelAdded(model => {
-				if (isSyncedModelScheme(model.uri.scheme)) {
-					this._notifyDocumentOpened(model);
-					this._trackDocumentChanges(model);
-				}
-			}));
-			this._register(this.modelService.onModelRemoved(model => {
-				if (!isSyncedModelScheme(model.uri.scheme)) {
-					return;
-				}
-				const uri = model.uri.toString();
-				const listener = this._modelContentListeners.get(uri);
-				if (listener) {
-					listener.dispose();
-					this._modelContentListeners.delete(uri);
-				}
-				this._send({ id: this._nextId(), type: 'documentClosed', params: { uri } });
-			}));
-			this._register(this.textFileService.files.onDidSave((e) => {
-				this._send({
-					id: this._nextId(),
-					type: 'documentSaved',
-					params: { uri: e.model.resource.toString() },
-				});
-			}));
+			this._register(
+				this.modelService.onModelAdded(model => {
+					if (isSyncedModelScheme(model.uri.scheme)) {
+						this._notifyDocumentOpened(model);
+						this._trackDocumentChanges(model);
+					}
+				})
+			);
+			this._register(
+				this.modelService.onModelRemoved(model => {
+					if (!isSyncedModelScheme(model.uri.scheme)) {
+						return;
+					}
+					const uri = model.uri.toString();
+					const listener = this._modelContentListeners.get(uri);
+					if (listener) {
+						listener.dispose();
+						this._modelContentListeners.delete(uri);
+					}
+					this._send({ id: this._nextId(), type: 'documentClosed', params: { uri } });
+				})
+			);
+			this._register(
+				this.textFileService.files.onDidSave(e => {
+					this._send({
+						id: this._nextId(),
+						type: 'documentSaved',
+						params: { uri: e.model.resource.toString() }
+					});
+				})
+			);
 		}
 
 		for (const model of this.modelService.getModels()) {
@@ -2064,8 +2264,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
-				text,
-			},
+				text
+			}
 		});
 	}
 
@@ -2081,11 +2281,11 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const changes = e.changes.map(c => ({
 				range: {
 					start: { line: c.range.startLineNumber - 1, character: c.range.startColumn - 1 },
-					end: { line: c.range.endLineNumber - 1, character: c.range.endColumn - 1 },
+					end: { line: c.range.endLineNumber - 1, character: c.range.endColumn - 1 }
 				},
 				rangeOffset: c.rangeOffset,
 				rangeLength: c.rangeLength,
-				text: sanitizeForExtHost(c.text),
+				text: sanitizeForExtHost(c.text)
 			}));
 			const text = sanitizeForExtHost(model.getValue());
 			this._send({
@@ -2095,8 +2295,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					uri: model.uri.toString(),
 					version: model.getVersionId(),
 					text,
-					changes,
-				},
+					changes
+				}
 			});
 		});
 		this._modelContentListeners.set(uri, disposable);
@@ -2107,24 +2307,26 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			return;
 		}
 		this._activeEditorSyncInitialized = true;
-		this._register(this.editorService.onDidActiveEditorChange(() => {
-			if (this._connected) {
-				this._sendActiveEditor();
-			}
-		}));
+		this._register(
+			this.editorService.onDidActiveEditorChange(() => {
+				if (this._connected) {
+					this._sendActiveEditor();
+				}
+			})
+		);
 	}
 
 	private _sendActiveEditor(): void {
 		const editor = this.editorService.activeTextEditorControl;
-		const model = editor && 'getModel' in editor ? (editor as any).getModel() as ITextModel | null : null;
+		const model = editor && 'getModel' in editor ? ((editor as any).getModel() as ITextModel | null) : null;
 		if (model?.uri && isSyncedModelScheme(model.uri.scheme)) {
 			this._send({
 				id: this._nextId(),
 				type: 'activeEditorChanged',
 				params: {
 					uri: model.uri.toString(),
-					languageId: model.getLanguageId(),
-				},
+					languageId: model.getLanguageId()
+				}
 			});
 		} else {
 			this._send({ id: this._nextId(), type: 'activeEditorChanged', params: { uri: null } });
@@ -2132,7 +2334,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	}
 
 	private _startEditorTracking(): void {
-		if (this._editorTrackingInitialized) {return;}
+		if (this._editorTrackingInitialized) {
+			return;
+		}
 		this._editorTrackingInitialized = true;
 
 		const getEditorId = (editor: ICodeEditor): string => {
@@ -2141,7 +2345,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		};
 
 		const shouldTrack = (editor: ICodeEditor): boolean => {
-			if ((editor as any).isSimpleWidget) {return false;}
+			if ((editor as any).isSimpleWidget) {
+				return false;
+			}
 			const model = editor.getModel();
 			return !!model && isSyncedModelScheme(model.uri.scheme);
 		};
@@ -2156,114 +2362,146 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				documentUri: model.uri.toString(),
 				selections: selections.map((s: any) => ({
 					anchor: { line: s.selectionStartLineNumber - 1, character: s.selectionStartColumn - 1 },
-					active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 },
+					active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 }
 				})),
 				options: {
 					tabSize: model.getOptions().tabSize,
 					insertSpaces: model.getOptions().insertSpaces,
 					cursorStyle: config.get(/* EditorOption.cursorStyle */ 34),
-					lineNumbers: config.get(/* EditorOption.lineNumbers */ 76)?.renderType ?? 1,
+					lineNumbers: config.get(/* EditorOption.lineNumbers */ 76)?.renderType ?? 1
 				},
 				visibleRanges: visibleRanges.map((r: any) => ({
 					start: { line: r.startLineNumber - 1, character: r.startColumn - 1 },
-					end: { line: r.endLineNumber - 1, character: r.endColumn - 1 },
+					end: { line: r.endLineNumber - 1, character: r.endColumn - 1 }
 				})),
-				viewColumn: 1,
+				viewColumn: 1
 			};
 		};
 
 		const sendDelta = (removed: string[], added: any[], newActive: string | null | undefined) => {
-			if (!this._connected) {return;}
+			if (!this._connected) {
+				return;
+			}
 			const delta: any = {};
-			if (removed.length) {delta.removedEditors = removed;}
-			if (added.length) {delta.addedEditors = added;}
-			if (newActive !== undefined) {delta.newActiveEditor = newActive;}
+			if (removed.length) {
+				delta.removedEditors = removed;
+			}
+			if (added.length) {
+				delta.addedEditors = added;
+			}
+			if (newActive !== undefined) {
+				delta.newActiveEditor = newActive;
+			}
 			if (Object.keys(delta).length > 0) {
 				this._send({ id: this._nextId(), type: 'editorsDelta', params: delta });
 			}
 		};
 
 		const trackEditor = (editor: ICodeEditor) => {
-			if (!shouldTrack(editor)) {return;}
+			if (!shouldTrack(editor)) {
+				return;
+			}
 			const editorId = getEditorId(editor);
-			if (this._trackedEditors.has(editorId)) {return;}
+			if (this._trackedEditors.has(editorId)) {
+				return;
+			}
 
 			const listeners: IDisposable[] = [];
 
-			listeners.push(editor.onDidChangeCursorSelection((e) => {
-				if (!this._connected) {return;}
-				const model = editor.getModel();
-				if (!model || !isSyncedModelScheme(model.uri.scheme)) {return;}
-				const allSelections = editor.getSelections() || [];
-				this._send({
-					id: this._nextId(),
-					type: 'editorPropertiesChanged',
-					params: {
-						editorId,
-						selections: {
-							selections: allSelections.map((s: any) => ({
-								anchor: { line: s.selectionStartLineNumber - 1, character: s.selectionStartColumn - 1 },
-								active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 },
-							})),
-							source: e.source || 'keyboard',
-						},
-						options: null,
-						visibleRanges: null,
-					},
-				});
-			}));
-
-			listeners.push(editor.onDidChangeConfiguration(() => {
-				if (!this._connected) {return;}
-				const model = editor.getModel();
-				if (!model) {return;}
-				const config = editor.getOptions();
-				this._send({
-					id: this._nextId(),
-					type: 'editorPropertiesChanged',
-					params: {
-						editorId,
-						selections: null,
-						options: {
-							tabSize: model.getOptions().tabSize,
-							insertSpaces: model.getOptions().insertSpaces,
-							cursorStyle: config.get(34),
-							lineNumbers: config.get(76)?.renderType ?? 1,
-						},
-						visibleRanges: null,
-					},
-				});
-			}));
-
-			listeners.push(editor.onDidScrollChange(() => {
-				if (!this._connected) {return;}
-				const vr = editor.getVisibleRanges() || [];
-				this._send({
-					id: this._nextId(),
-					type: 'editorPropertiesChanged',
-					params: {
-						editorId,
-						selections: null,
-						options: null,
-						visibleRanges: vr.map((r: any) => ({
-							start: { line: r.startLineNumber - 1, character: r.startColumn - 1 },
-							end: { line: r.endLineNumber - 1, character: r.endColumn - 1 },
-						})),
-					},
-				});
-			}));
-
-			listeners.push(editor.onKeyDown((e: any) => {
-				if (!this._connected) {return;}
-				if (e.keyCode === 9 /* Escape */) {
-					const cmd = this._registeredCommands.has('extension.vim_escape') ? 'extension.vim_escape' : null;
-					if (cmd) {
-						e.preventDefault();
-						e.stopPropagation();
-						this._request('executeCommand', { command: cmd, args: [] }, { timeoutMs: 1000 }).catch(() => {});
+			listeners.push(
+				editor.onDidChangeCursorSelection(e => {
+					if (!this._connected) {
+						return;
 					}
-				}
-			}));
+					const model = editor.getModel();
+					if (!model || !isSyncedModelScheme(model.uri.scheme)) {
+						return;
+					}
+					const allSelections = editor.getSelections() || [];
+					this._send({
+						id: this._nextId(),
+						type: 'editorPropertiesChanged',
+						params: {
+							editorId,
+							selections: {
+								selections: allSelections.map((s: any) => ({
+									anchor: { line: s.selectionStartLineNumber - 1, character: s.selectionStartColumn - 1 },
+									active: { line: s.positionLineNumber - 1, character: s.positionColumn - 1 }
+								})),
+								source: e.source || 'keyboard'
+							},
+							options: null,
+							visibleRanges: null
+						}
+					});
+				})
+			);
+
+			listeners.push(
+				editor.onDidChangeConfiguration(() => {
+					if (!this._connected) {
+						return;
+					}
+					const model = editor.getModel();
+					if (!model) {
+						return;
+					}
+					const config = editor.getOptions();
+					this._send({
+						id: this._nextId(),
+						type: 'editorPropertiesChanged',
+						params: {
+							editorId,
+							selections: null,
+							options: {
+								tabSize: model.getOptions().tabSize,
+								insertSpaces: model.getOptions().insertSpaces,
+								cursorStyle: config.get(34),
+								lineNumbers: config.get(76)?.renderType ?? 1
+							},
+							visibleRanges: null
+						}
+					});
+				})
+			);
+
+			listeners.push(
+				editor.onDidScrollChange(() => {
+					if (!this._connected) {
+						return;
+					}
+					const vr = editor.getVisibleRanges() || [];
+					this._send({
+						id: this._nextId(),
+						type: 'editorPropertiesChanged',
+						params: {
+							editorId,
+							selections: null,
+							options: null,
+							visibleRanges: vr.map((r: any) => ({
+								start: { line: r.startLineNumber - 1, character: r.startColumn - 1 },
+								end: { line: r.endLineNumber - 1, character: r.endColumn - 1 }
+							}))
+						}
+					});
+				})
+			);
+
+			listeners.push(
+				editor.onKeyDown((e: any) => {
+					if (!this._connected) {
+						return;
+					}
+					if (e.keyCode === 9 /* Escape */) {
+						const cmd = this._registeredCommands.has('extension.vim_escape') ? 'extension.vim_escape' : null;
+						if (cmd) {
+							e.preventDefault();
+							e.stopPropagation();
+							this._request('executeCommand', { command: cmd, args: [] }, { timeoutMs: 1000 }).catch(() => {});
+						}
+					}
+				})
+			);
 
 			const model = editor.getModel()!;
 			this._trackedEditors.set(editorId, { editor, uri: model.uri.toString(), listeners });
@@ -2280,7 +2518,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		};
 
 		const updateState = () => {
-			if (!this._connected) {return;}
+			if (!this._connected) {
+				return;
+			}
 
 			const currentEditors = new Map<string, ICodeEditor>();
 			for (const editor of this.codeEditorService.listCodeEditors()) {
@@ -2328,7 +2568,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._initialEditorsDeltaSent = true;
 			} else {
 				activeChanged = activeId !== this._activeTrackedEditorId ? activeId : undefined;
-				if (activeChanged !== undefined) {this._activeTrackedEditorId = activeId;}
+				if (activeChanged !== undefined) {
+					this._activeTrackedEditorId = activeId;
+				}
 			}
 
 			sendDelta(removed, added, activeChanged);
@@ -2346,15 +2588,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			handleAddedEditor(existingEditor);
 		}
 
-		this._register(this.codeEditorService.onCodeEditorAdd((editor) => {
-			handleAddedEditor(editor);
-		}));
+		this._register(
+			this.codeEditorService.onCodeEditorAdd(editor => {
+				handleAddedEditor(editor);
+			})
+		);
 		this._register(this.codeEditorService.onCodeEditorRemove(() => updateState()));
 		this._register(this.editorService.onDidActiveEditorChange(() => updateState()));
 
 		updateState();
 	}
-
 
 	private static readonly _DIAG_OWNER = 'tauriExtHost';
 
@@ -2364,10 +2607,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 		const resource = URI.parse(uri);
 		const markers: IMarkerData[] = (diagnostics || []).map(d => {
-			const sev = d.severity === 0 ? MarkerSeverity.Error
-				: d.severity === 1 ? MarkerSeverity.Warning
-				: d.severity === 2 ? MarkerSeverity.Info
-				: MarkerSeverity.Hint;
+			const sev =
+				d.severity === 0
+					? MarkerSeverity.Error
+					: d.severity === 1
+						? MarkerSeverity.Warning
+						: d.severity === 2
+							? MarkerSeverity.Info
+							: MarkerSeverity.Hint;
 			return {
 				severity: sev,
 				message: d.message || '',
@@ -2376,31 +2623,29 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				startLineNumber: (d.range?.start?.line ?? 0) + 1,
 				startColumn: (d.range?.start?.character ?? 0) + 1,
 				endLineNumber: (d.range?.end?.line ?? 0) + 1,
-				endColumn: (d.range?.end?.character ?? 0) + 1,
+				endColumn: (d.range?.end?.character ?? 0) + 1
 			};
 		});
 		this.markerService.changeOne(TauriExtensionHostContribution._DIAG_OWNER, resource, markers);
 	}
-
 
 	private async _onApplyEdit(edits: any[]): Promise<void> {
 		if (!edits?.length) {
 			return;
 		}
 		try {
-			const textEdits = edits.map(e => new ResourceTextEdit(
-				URI.parse(e.uri),
-				{
-					range: toVscRange(e.range),
-					text: e.newText,
-				},
-			));
+			const textEdits = edits.map(
+				e =>
+					new ResourceTextEdit(URI.parse(e.uri), {
+						range: toVscRange(e.range),
+						text: e.newText
+					})
+			);
 			await this.bulkEditService.apply(textEdits);
 		} catch (e) {
 			this.logService.warn('[ExtHost] applyEdit failed:', e);
 		}
 	}
-
 
 	private async _onShowTextDocument(uri: string, _options?: any): Promise<void> {
 		if (!uri) {
@@ -2412,7 +2657,6 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			// best-effort
 		}
 	}
-
 
 	private async _onShowQuickPick(requestId: number, items: string[], options: any): Promise<void> {
 		try {
@@ -2431,7 +2675,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				placeHolder: options?.placeHolder,
 				prompt: options?.prompt,
 				value: options?.value,
-				password: options?.password,
+				password: options?.password
 			});
 			this._send({ id: this._nextId(), type: 'messageResponse', params: { requestId, value } });
 		} catch {
@@ -2439,14 +2683,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 	}
 
-	private async _onShowMessageRequest(requestId: number, severity: string, message: string, items: string[]): Promise<void> {
+	private async _onShowMessageRequest(
+		requestId: number,
+		severity: string,
+		message: string,
+		items: string[]
+	): Promise<void> {
 		if (!items?.length) {
 			return;
 		}
 		try {
 			const picked = await this.quickInputService.pick(
 				items.map(label => ({ label })),
-				{ placeHolder: message },
+				{ placeHolder: message }
 			);
 			const value = picked ? (Array.isArray(picked) ? picked[0]?.label : picked.label) : undefined;
 			this._send({ id: this._nextId(), type: 'messageResponse', params: { requestId, value } });
@@ -2454,7 +2703,6 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._send({ id: this._nextId(), type: 'messageResponse', params: { requestId, value: undefined } });
 		}
 	}
-
 
 	private _langConfigDisposables = new Map<string, IDisposable>();
 
@@ -2468,7 +2716,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (config.comments) {
 			langConfig.comments = {
 				lineComment: config.comments.lineComment ?? null,
-				blockComment: config.comments.blockComment ?? null,
+				blockComment: config.comments.blockComment ?? null
 			};
 		}
 		if (config.brackets) {
@@ -2481,26 +2729,40 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			langConfig.surroundingPairs = config.surroundingPairs;
 		}
 		if (config.wordPattern) {
-			try { langConfig.wordPattern = new RegExp(config.wordPattern); } catch { /* ignore invalid regex */ }
+			try {
+				langConfig.wordPattern = new RegExp(config.wordPattern);
+			} catch {
+				/* ignore invalid regex */
+			}
 		}
 		if (config.indentationRules) {
 			try {
 				langConfig.indentationRules = {
-					increaseIndentPattern: config.indentationRules.increaseIndentPattern ? new RegExp(config.indentationRules.increaseIndentPattern) : /(?:)/,
-					decreaseIndentPattern: config.indentationRules.decreaseIndentPattern ? new RegExp(config.indentationRules.decreaseIndentPattern) : /(?:)/,
+					increaseIndentPattern: config.indentationRules.increaseIndentPattern
+						? new RegExp(config.indentationRules.increaseIndentPattern)
+						: /(?:)/,
+					decreaseIndentPattern: config.indentationRules.decreaseIndentPattern
+						? new RegExp(config.indentationRules.decreaseIndentPattern)
+						: /(?:)/
 				};
-			} catch { /* ignore invalid regex */ }
+			} catch {
+				/* ignore invalid regex */
+			}
 		}
 
 		const disposable = this.langConfigService.register(language, langConfig);
 		this._langConfigDisposables.set(language, disposable);
 	}
 
-
 	private _activeWatches = new Map<number, number>(); // watcherId → Tauri watch_id
 	private _tauriWatchUnlisten: (() => void) | undefined;
 
-	private async _onStartFileWatch(watcherId: number, paths: string[], pattern: string, recursive: boolean): Promise<void> {
+	private async _onStartFileWatch(
+		watcherId: number,
+		paths: string[],
+		pattern: string,
+		recursive: boolean
+	): Promise<void> {
 		try {
 			const { invoke } = await import('@tauri-apps/api/core');
 
@@ -2517,17 +2779,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					debounce_ms: 200,
 					file_extensions: fileExtensions,
 					ignore_patterns: ['node_modules', '.git', '*.log'],
-					emit_content: false,
-				},
+					emit_content: false
+				}
 			});
 			this._activeWatches.set(watcherId, tauriWatchId);
 			this.logService.info(`[ExtHost] File watch ${watcherId} started (tauri=${tauriWatchId}) for ${pattern}`);
 
 			if (!this._tauriWatchUnlisten && !this._tauriWatchListenerPromise) {
-				this._tauriWatchListenerPromise = this._setupTauriWatchListener()
-					.finally(() => {
-						this._tauriWatchListenerPromise = undefined;
-					});
+				this._tauriWatchListenerPromise = this._setupTauriWatchListener().finally(() => {
+					this._tauriWatchListenerPromise = undefined;
+				});
 			}
 			await this._tauriWatchListenerPromise;
 		} catch (e) {
@@ -2550,7 +2811,6 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 	}
 
-
 	private _toWorkbenchAlignment(apiAlignment: number): StatusbarAlignment {
 		return apiAlignment === 2 ? StatusbarAlignment.RIGHT : StatusbarAlignment.LEFT;
 	}
@@ -2561,12 +2821,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			text: msg.text || '',
 			ariaLabel: msg.name || msg.id,
 			tooltip: msg.tooltip || undefined,
-			command: msg.command || undefined,
+			command: msg.command || undefined
 		};
 	}
 
 	private _onStatusBarItemShow(msg: any): void {
-		this.logService.info(`[ExtHost] statusBarItemShow: id=${msg.id} text="${msg.text}" alignment=${msg.alignment} priority=${msg.priority}`);
+		this.logService.info(
+			`[ExtHost] statusBarItemShow: id=${msg.id} text="${msg.text}" alignment=${msg.alignment} priority=${msg.priority}`
+		);
 		const existing = this._statusBarItems.get(msg.id);
 		if (existing) {
 			existing.update(this._makeStatusbarEntry(msg));
@@ -2577,7 +2839,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._makeStatusbarEntry(msg),
 				msg.id,
 				this._toWorkbenchAlignment(msg.alignment),
-				msg.priority ?? 0,
+				msg.priority ?? 0
 			);
 			this._statusBarItems.set(msg.id, accessor);
 			this.logService.info(`[ExtHost] statusBarItem created: ${msg.id}`);
@@ -2620,7 +2882,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				canSelectFiles: options?.canSelectFiles !== false,
 				canSelectFolders: options?.canSelectFolders === true,
 				canSelectMany: options?.canSelectMany === true,
-				defaultUri: options?.defaultUri ? URI.parse(options.defaultUri.toString()) : undefined,
+				defaultUri: options?.defaultUri ? URI.parse(options.defaultUri.toString()) : undefined
 			});
 			const uris = result ? result.map((u: URI) => u.toString()) : undefined;
 			this._send({ id: reqId, result: uris });
@@ -2633,7 +2895,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		try {
 			const result = await this.fileDialogService.showSaveDialog({
 				title: options?.title,
-				defaultUri: options?.defaultUri ? URI.parse(options.defaultUri.toString()) : undefined,
+				defaultUri: options?.defaultUri ? URI.parse(options.defaultUri.toString()) : undefined
 			});
 			this._send({ id: reqId, result: result ? result.toString() : undefined });
 		} catch {
@@ -2648,14 +2910,18 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		if (this._activeProgressResolvers.has(key)) {
 			return;
 		}
-		const progressLocation = location === 15 ? ProgressLocation.Notification
-			: location === 10 ? ProgressLocation.Window
-			: ProgressLocation.Notification;
+		const progressLocation =
+			location === 15
+				? ProgressLocation.Notification
+				: location === 10
+					? ProgressLocation.Window
+					: ProgressLocation.Notification;
 		this.progressService.withProgress(
 			{ location: progressLocation, title },
-			() => new Promise<void>((resolve) => {
-				this._activeProgressResolvers.set(key, resolve);
-			})
+			() =>
+				new Promise<void>(resolve => {
+					this._activeProgressResolvers.set(key, resolve);
+				})
 		);
 	}
 
@@ -2668,14 +2934,11 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 	}
 
-	private _onProgress(_msg: any): void {
-	}
+	private _onProgress(_msg: any): void {}
 
 	private async _onCreateTerminal(msg: any): Promise<void> {
 		try {
-			const location = msg.location?.viewColumn !== undefined
-				? { splitActiveTerminal: false }
-				: undefined;
+			const location = msg.location?.viewColumn !== undefined ? { splitActiveTerminal: false } : undefined;
 
 			const instance = await this.terminalService.createTerminal({
 				config: {
@@ -2685,9 +2948,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					env: msg.env || undefined,
 					name: msg.name || undefined,
 					strictEnv: msg.strictEnv || false,
-					isTransient: msg.isTransient || false,
+					isTransient: msg.isTransient || false
 				},
-				location,
+				location
 			});
 			if (instance) {
 				this._extTerminals.set(msg.terminalId, instance);
@@ -2733,7 +2996,10 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 	private async _onStopDebugging(sessionId?: string): Promise<void> {
 		try {
 			if (sessionId) {
-				const session = this.debugService.getModel().getSessions().find((s: any) => s.getId() === sessionId);
+				const session = this.debugService
+					.getModel()
+					.getSessions()
+					.find((s: any) => s.getId() === sessionId);
 				if (session) {
 					await this.debugService.stopSession(session);
 					return;
@@ -2761,25 +3027,25 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 					title: msg.title,
 					options: {
 						retainContextWhenHidden: msg.options?.retainContextWhenHidden ?? false,
-						enableFindWidget: msg.options?.enableFindWidget ?? false,
+						enableFindWidget: msg.options?.enableFindWidget ?? false
 					},
 					contentOptions: {
 						allowScripts: msg.options?.enableScripts ?? true,
-						localResourceRoots: [URI.from({ scheme: 'file', path: '/' })],
+						localResourceRoots: [URI.from({ scheme: 'file', path: '/' })]
 					},
-					extension: undefined,
+					extension: undefined
 				},
 				msg.viewType,
 				msg.title,
 				undefined,
-				{ preserveFocus: false },
+				{ preserveFocus: false }
 			);
 			this._webviewPanels.set(msg.panelId, webviewInput);
 			webviewInput.webview.onMessage(e => {
 				this._send({
 					id: this._nextId(),
 					type: 'webviewMessage',
-					params: { panelId: msg.panelId, message: e.message },
+					params: { panelId: msg.panelId, message: e.message }
 				});
 			});
 			webviewInput.onWillDispose(() => {
@@ -2787,7 +3053,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				this._send({
 					id: this._nextId(),
 					type: 'webviewPanelClosed',
-					params: { panelId: msg.panelId },
+					params: { panelId: msg.panelId }
 				});
 			});
 		} catch (e) {
@@ -2818,7 +3084,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private async _onWebviewPanelIcon(id: string, light: string | undefined, dark: string | undefined): Promise<void> {
 		const panel = this._webviewPanels.get(id);
-		if (!panel || (!light && !dark)) { return; }
+		if (!panel || (!light && !dark)) {
+			return;
+		}
 		try {
 			const { invoke } = await import('@tauri-apps/api/core');
 			const darkPath = dark || light || '';
@@ -2840,7 +3108,9 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private _getOrCreateTreeView(viewId: string): TreeView | null {
 		let treeView = this._treeViews.get(viewId);
-		if (treeView) {return treeView;}
+		if (treeView) {
+			return treeView;
+		}
 		const viewsRegistry = Registry.as<IViewsRegistry>(ViewExtensions.ViewsRegistry);
 		const existing = viewsRegistry.getView(viewId) as ITreeViewDescriptor | null;
 		if (existing?.treeView) {
@@ -2851,14 +3121,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			this._treeViews.set(viewId, treeView);
 			const explorerContainer = viewsRegistry.getViewContainer?.('workbench.view.explorer');
 			if (explorerContainer) {
-				viewsRegistry.registerViews([{
-					id: viewId,
-					name: { value: viewId, original: viewId },
-					ctorDescriptor: new SyncDescriptor(TreeViewPane),
-					treeView,
-					canToggleVisibility: true,
-					collapsed: true,
-				} as ITreeViewDescriptor], explorerContainer);
+				viewsRegistry.registerViews(
+					[
+						{
+							id: viewId,
+							name: { value: viewId, original: viewId },
+							ctorDescriptor: new SyncDescriptor(TreeViewPane),
+							treeView,
+							canToggleVisibility: true,
+							collapsed: true
+						} as ITreeViewDescriptor
+					],
+					explorerContainer
+				);
 			}
 			return treeView;
 		} catch (e) {
@@ -2882,10 +3157,18 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 
 	private _onTreeViewUpdate(viewId: string, msg: any): void {
 		const tv = this._getOrCreateTreeView(viewId);
-		if (!tv) {return;}
-		if (msg.message !== undefined) {tv.message = msg.message;}
-		if (msg.title !== undefined) {tv.title = msg.title;}
-		if (msg.description !== undefined) {tv.description = msg.description;}
+		if (!tv) {
+			return;
+		}
+		if (msg.message !== undefined) {
+			tv.message = msg.message;
+		}
+		if (msg.title !== undefined) {
+			tv.title = msg.title;
+		}
+		if (msg.description !== undefined) {
+			tv.description = msg.description;
+		}
 	}
 
 	private async _setupTauriWatchListener(): Promise<void> {
@@ -2894,22 +3177,24 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 		}
 		try {
 			const { listen } = await import('@tauri-apps/api/event');
-			const unlisten = await listen<{ watch_id: number; events: { path: string; kind: string; is_dir: boolean }[] }>('watch-batch', (event) => {
-				if (!this._connected) {
-					return;
+			const unlisten = await listen<{ watch_id: number; events: { path: string; kind: string; is_dir: boolean }[] }>(
+				'watch-batch',
+				event => {
+					if (!this._connected) {
+						return;
+					}
+					this._send({
+						id: this._nextId(),
+						type: 'fileWatchEvent',
+						params: { events: event.payload.events }
+					});
 				}
-				this._send({
-					id: this._nextId(),
-					type: 'fileWatchEvent',
-					params: { events: event.payload.events },
-				});
-			});
+			);
 			this._tauriWatchUnlisten = unlisten;
 		} catch (e) {
 			this.logService.warn('[ExtHost] Failed to setup Tauri watch listener:', e);
 		}
 	}
-
 
 	private async _provideSelectionRanges(model: ITextModel, positions: Position[]): Promise<SelectionRange[][] | null> {
 		try {
@@ -2917,7 +3202,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
 				version: model.getVersionId(),
-				positions: positions.map(p => ({ line: p.lineNumber - 1, character: p.column - 1 })),
+				positions: positions.map(p => ({ line: p.lineNumber - 1, character: p.column - 1 }))
 			});
 			if (!Array.isArray(result)) {
 				return null;
@@ -2943,14 +3228,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any>('provideSemanticTokens', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!result?.data) {
 				return null;
 			}
 			return {
 				data: new Uint32Array(result.data),
-				resultId: result.resultId,
+				resultId: result.resultId
 			};
 		} catch {
 			return null;
@@ -2962,20 +3247,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			const result = await this._request<any[]>('provideDocumentColors', {
 				uri: model.uri.toString(),
 				languageId: model.getLanguageId(),
-				version: model.getVersionId(),
+				version: model.getVersionId()
 			});
 			if (!Array.isArray(result) || !result.length) {
 				return null;
 			}
 			return result.map(c => ({
 				range: toVscRange(c.range),
-				color: { red: c.color.red, green: c.color.green, blue: c.color.blue, alpha: c.color.alpha },
+				color: { red: c.color.red, green: c.color.green, blue: c.color.blue, alpha: c.color.alpha }
 			}));
 		} catch {
 			return null;
 		}
 	}
-
 
 	private _normalizeCompletionItems(items: any[]): CompletionItem[] {
 		const normalized: CompletionItem[] = [];
@@ -2989,15 +3273,16 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 		}
 		if (dropped > 0 && this._shouldLogFailureBurst('completion-dropped-items', 10000)) {
-			this.logService.warn(`[ExtHost] completion dropped malformed items ${JSON.stringify({ dropped, accepted: normalized.length })}`);
+			this.logService.warn(
+				`[ExtHost] completion dropped malformed items ${JSON.stringify({ dropped, accepted: normalized.length })}`
+			);
 		}
 		return normalized;
 	}
 
 	private _tryConvertCompletionItem(item: any): CompletionItem | null {
-		const label = typeof item?.label === 'string'
-			? item.label
-			: (typeof item?.label?.label === 'string' ? item.label.label : '');
+		const label =
+			typeof item?.label === 'string' ? item.label : typeof item?.label?.label === 'string' ? item.label.label : '';
 		if (!label.trim()) {
 			return null;
 		}
@@ -3011,11 +3296,14 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			}
 		}
 
-		const documentationValue = item.documentation === undefined || item.documentation === null
-			? undefined
-			: (typeof item.documentation === 'string'
-				? item.documentation
-				: (typeof item.documentation?.value === 'string' ? item.documentation.value : String(item.documentation)));
+		const documentationValue =
+			item.documentation === undefined || item.documentation === null
+				? undefined
+				: typeof item.documentation === 'string'
+					? item.documentation
+					: typeof item.documentation?.value === 'string'
+						? item.documentation.value
+						: String(item.documentation);
 
 		return {
 			label,
@@ -3026,21 +3314,19 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			range,
 			sortText: typeof item.sortText === 'string' ? item.sortText : undefined,
 			filterText: typeof item.filterText === 'string' ? item.filterText : undefined,
-			preselect: Boolean(item.preselect),
+			preselect: Boolean(item.preselect)
 		} as CompletionItem;
 	}
 
 	private _convertLocation(loc: any): Location {
 		return {
 			uri: URI.parse(loc.uri),
-			range: toVscRange(loc.range),
+			range: toVscRange(loc.range)
 		};
 	}
 
 	private _convertLocations(result: any): Location | Location[] {
-		return Array.isArray(result)
-			? result.map(l => this._convertLocation(l))
-			: this._convertLocation(result);
+		return Array.isArray(result) ? result.map(l => this._convertLocation(l)) : this._convertLocation(result);
 	}
 
 	private _convertDocumentSymbol(s: any): DocumentSymbol {
@@ -3051,7 +3337,7 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			tags: [],
 			range: toVscRange(s.range),
 			selectionRange: toVscRange(s.selectionRange || s.range),
-			children: (s.children || []).map((c: any) => this._convertDocumentSymbol(c)),
+			children: (s.children || []).map((c: any) => this._convertDocumentSymbol(c))
 		} as DocumentSymbol;
 	}
 
@@ -3061,8 +3347,8 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 			versionId: undefined,
 			textEdit: {
 				range: toVscRange(e.range),
-				text: e.newText,
-			},
+				text: e.newText
+			}
 		}));
 		return { edits } as WorkspaceEdit & Rejection;
 	}
@@ -3071,5 +3357,5 @@ class TauriExtensionHostContribution extends Disposable implements IWorkbenchCon
 registerWorkbenchContribution2(
 	TauriExtensionHostContribution.ID,
 	TauriExtensionHostContribution,
-	WorkbenchPhase.AfterRestored,
+	WorkbenchPhase.AfterRestored
 );

@@ -31,10 +31,8 @@ export interface IObjectTreeModel<T, TFilterData = void> extends ITreeModel<T | 
 	resort(element?: T | null, recursive?: boolean): void;
 }
 
-export interface IObjectTreeModelSetChildrenOptions<T, TFilterData> extends IIndexTreeModelSpliceOptions<
-	T,
-	TFilterData
-> {}
+export interface IObjectTreeModelSetChildrenOptions<T, TFilterData>
+	extends IIndexTreeModelSpliceOptions<T, TFilterData> {}
 
 export interface IObjectTreeModelOptions<T, TFilterData> extends IIndexTreeModelOptions<T, TFilterData> {
 	readonly sorter?: ITreeSorter<T>;

@@ -29,7 +29,10 @@ export function parseExtensionDevOptions(environmentService: IEnvironmentService
 
 	const isExtensionDevDebug = debugOk && typeof environmentService.debugExtensionHost.port === 'number';
 	const isExtensionDevDebugBrk = debugOk && !!environmentService.debugExtensionHost.break;
-	const isExtensionDevTestFromCli = isExtensionDevHost && !!environmentService.extensionTestsLocationURI && !environmentService.debugExtensionHost.debugId;
+	const isExtensionDevTestFromCli =
+		isExtensionDevHost &&
+		!!environmentService.extensionTestsLocationURI &&
+		!environmentService.debugExtensionHost.debugId;
 	return {
 		isExtensionDevHost,
 		isExtensionDevDebug,

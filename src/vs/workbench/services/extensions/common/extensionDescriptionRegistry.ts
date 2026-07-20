@@ -3,7 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ExtensionIdentifier, ExtensionIdentifierMap, ExtensionIdentifierSet, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
+import {
+	ExtensionIdentifier,
+	ExtensionIdentifierMap,
+	ExtensionIdentifierSet,
+	IExtensionDescription
+} from '../../../../platform/extensions/common/extensions.js';
 import { Emitter } from '../../../../base/common/event.js';
 import * as path from '../../../../base/common/path.js';
 import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
@@ -13,7 +18,7 @@ export class DeltaExtensionsResult {
 	constructor(
 		public readonly versionId: number,
 		public readonly removedDueToLooping: IExtensionDescription[]
-	) { }
+	) {}
 }
 
 export interface IReadOnlyExtensionDescriptionRegistry {
@@ -23,12 +28,18 @@ export interface IReadOnlyExtensionDescriptionRegistry {
 	getAllExtensionDescriptions(): IExtensionDescription[];
 	getExtensionDescription(extensionId: ExtensionIdentifier | string): IExtensionDescription | undefined;
 	getExtensionDescriptionByUUID(uuid: string): IExtensionDescription | undefined;
-	getExtensionDescriptionByIdOrUUID(extensionId: ExtensionIdentifier | string, uuid: string | undefined): IExtensionDescription | undefined;
+	getExtensionDescriptionByIdOrUUID(
+		extensionId: ExtensionIdentifier | string,
+		uuid: string | undefined
+	): IExtensionDescription | undefined;
 }
 
 export class ExtensionDescriptionRegistry extends Disposable implements IReadOnlyExtensionDescriptionRegistry {
-
-	public static isHostExtension(extensionId: ExtensionIdentifier | string, myRegistry: ExtensionDescriptionRegistry, globalRegistry: ExtensionDescriptionRegistry): boolean {
+	public static isHostExtension(
+		extensionId: ExtensionIdentifier | string,
+		myRegistry: ExtensionDescriptionRegistry,
+		globalRegistry: ExtensionDescriptionRegistry
+	): boolean {
 		if (myRegistry.getExtensionDescription(extensionId)) {
 			// I have this extension
 			return false;
@@ -110,7 +121,10 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 
 		// Immediately remove looping extensions!
 		const looping = ExtensionDescriptionRegistry._findLoopingExtensions(this._extensionDescriptions);
-		this._extensionDescriptions = removeExtensions(this._extensionDescriptions, looping.map(ext => ext.identifier));
+		this._extensionDescriptions = removeExtensions(
+			this._extensionDescriptions,
+			looping.map(ext => ext.identifier)
+		);
 
 		this._initialize();
 		this._versionId++;
@@ -119,8 +133,7 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 	}
 
 	private static _findLoopingExtensions(extensionDescriptions: IExtensionDescription[]): IExtensionDescription[] {
-		const G = new class {
-
+		const G = new (class {
 			private _arcs = new Map<string, string[]>();
 			private _nodesSet = new Set<string>();
 			private _nodesArr: string[] = [];
@@ -162,7 +175,7 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 			getNodes(): string[] {
 				return this._nodesArr;
 			}
-		};
+		})();
 
 		const descs = new ExtensionIdentifierMap<IExtensionDescription>();
 		for (const extensionDescription of extensionDescriptions) {
@@ -176,7 +189,9 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 
 		// initialize with all extensions with no dependencies.
 		const good = new Set<string>();
-		G.getNodes().filter(id => G.getArcs(id).length === 0).forEach(id => good.add(id));
+		G.getNodes()
+			.filter(id => G.getArcs(id).length === 0)
+			.forEach(id => good.add(id));
 
 		// all other extensions will be processed below.
 		const nodes = G.getNodes().filter(id => !good.has(id));
@@ -220,10 +235,7 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 	}
 
 	public getSnapshot(): ExtensionDescriptionRegistrySnapshot {
-		return new ExtensionDescriptionRegistrySnapshot(
-			this._versionId,
-			this.getAllExtensionDescriptions()
-		);
+		return new ExtensionDescriptionRegistrySnapshot(this._versionId, this.getAllExtensionDescriptions());
 	}
 
 	public getExtensionDescription(extensionId: ExtensionIdentifier | string): IExtensionDescription | undefined {
@@ -240,11 +252,11 @@ export class ExtensionDescriptionRegistry extends Disposable implements IReadOnl
 		return undefined;
 	}
 
-	public getExtensionDescriptionByIdOrUUID(extensionId: ExtensionIdentifier | string, uuid: string | undefined): IExtensionDescription | undefined {
-		return (
-			this.getExtensionDescription(extensionId)
-			?? (uuid ? this.getExtensionDescriptionByUUID(uuid) : undefined)
-		);
+	public getExtensionDescriptionByIdOrUUID(
+		extensionId: ExtensionIdentifier | string,
+		uuid: string | undefined
+	): IExtensionDescription | undefined {
+		return this.getExtensionDescription(extensionId) ?? (uuid ? this.getExtensionDescriptionByUUID(uuid) : undefined);
 	}
 }
 
@@ -252,7 +264,7 @@ export class ExtensionDescriptionRegistrySnapshot {
 	constructor(
 		public readonly versionId: number,
 		public readonly extensions: readonly IExtensionDescription[]
-	) { }
+	) {}
 }
 
 export interface IActivationEventsReader {
@@ -260,7 +272,6 @@ export interface IActivationEventsReader {
 }
 
 export class LockableExtensionDescriptionRegistry implements IReadOnlyExtensionDescriptionRegistry {
-
 	private readonly _actual: ExtensionDescriptionRegistry;
 	private readonly _lock = new Lock();
 
@@ -273,7 +284,11 @@ export class LockableExtensionDescriptionRegistry implements IReadOnlyExtensionD
 		return new ExtensionDescriptionRegistryLock(this, lock);
 	}
 
-	public deltaExtensions(acquiredLock: ExtensionDescriptionRegistryLock, toAdd: IExtensionDescription[], toRemove: ExtensionIdentifier[]): DeltaExtensionsResult {
+	public deltaExtensions(
+		acquiredLock: ExtensionDescriptionRegistryLock,
+		toAdd: IExtensionDescription[],
+		toRemove: ExtensionIdentifier[]
+	): DeltaExtensionsResult {
 		if (!acquiredLock.isAcquiredFor(this)) {
 			throw new Error('Lock is not held');
 		}
@@ -301,13 +316,15 @@ export class LockableExtensionDescriptionRegistry implements IReadOnlyExtensionD
 	public getExtensionDescriptionByUUID(uuid: string): IExtensionDescription | undefined {
 		return this._actual.getExtensionDescriptionByUUID(uuid);
 	}
-	public getExtensionDescriptionByIdOrUUID(extensionId: ExtensionIdentifier | string, uuid: string | undefined): IExtensionDescription | undefined {
+	public getExtensionDescriptionByIdOrUUID(
+		extensionId: ExtensionIdentifier | string,
+		uuid: string | undefined
+	): IExtensionDescription | undefined {
 		return this._actual.getExtensionDescriptionByIdOrUUID(extensionId, uuid);
 	}
 }
 
 export class ExtensionDescriptionRegistryLock extends Disposable {
-
 	private _isDisposed = false;
 
 	constructor(
@@ -327,9 +344,7 @@ class LockCustomer {
 	public readonly promise: Promise<IDisposable>;
 	private readonly _resolve: (value: IDisposable) => void;
 
-	constructor(
-		public readonly name: string
-	) {
+	constructor(public readonly name: string) {
 		const withResolvers = promiseWithResolvers<IDisposable>();
 		this.promise = withResolvers.promise;
 		this._resolve = withResolvers.resolve;
@@ -368,7 +383,9 @@ class Lock {
 
 		const logLongRunningCustomerTimeout = setTimeout(() => {
 			if (customerHoldsLock) {
-				console.warn(`The customer named ${customer.name} has been holding on to the lock for 30s. This might be a problem.`);
+				console.warn(
+					`The customer named ${customer.name} has been holding on to the lock for 30s. This might be a problem.`
+				);
 			}
 		}, 30 * 1000 /* 30 seconds */);
 
@@ -401,8 +418,8 @@ const enum SortBucket {
  * In each bucket, extensions must be sorted alphabetically by their folder name.
  */
 function extensionCmp(a: IExtensionDescription, b: IExtensionDescription): number {
-	const aSortBucket = (a.isBuiltin ? SortBucket.Builtin : a.isUnderDevelopment ? SortBucket.Dev : SortBucket.User);
-	const bSortBucket = (b.isBuiltin ? SortBucket.Builtin : b.isUnderDevelopment ? SortBucket.Dev : SortBucket.User);
+	const aSortBucket = a.isBuiltin ? SortBucket.Builtin : a.isUnderDevelopment ? SortBucket.Dev : SortBucket.User;
+	const bSortBucket = b.isBuiltin ? SortBucket.Builtin : b.isUnderDevelopment ? SortBucket.Dev : SortBucket.User;
 	if (aSortBucket !== bSortBucket) {
 		return aSortBucket - bSortBucket;
 	}
