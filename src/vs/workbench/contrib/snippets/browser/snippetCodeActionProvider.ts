@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { CodeAction, CodeActionList, CodeActionProvider, WorkspaceEdit } from '../../../../editor/common/languages.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { CodeActionKind } from '../../../../editor/contrib/codeAction/common/types.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { CodeAction, CodeActionList, CodeActionProvider, WorkspaceEdit } from '@sidex/editor/common/languages.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { CodeActionKind } from '@sidex/editor/contrib/codeAction/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ApplyFileSnippetAction } from './commands/fileTemplateSnippets.js';
 import { getSurroundableSnippets, SurroundWithSnippetEditorAction } from './commands/surroundWithSnippet.js';

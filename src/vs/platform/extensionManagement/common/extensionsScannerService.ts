@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../base/common/arrays.js';
-import { ThrottledDelayer } from '../../../base/common/async.js';
-import * as objects from '../../../base/common/objects.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
-import { getNodeType, parse, ParseError } from '../../../base/common/json.js';
-import { getParseErrorMessage } from '../../../base/common/jsonErrorMessages.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { FileAccess, Schemas } from '../../../base/common/network.js';
-import * as path from '../../../base/common/path.js';
-import * as platform from '../../../base/common/platform.js';
-import { basename, isEqual, joinPath } from '../../../base/common/resources.js';
-import * as semver from '../../../base/common/semver/semver.js';
-import Severity from '../../../base/common/severity.js';
-import { URI } from '../../../base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { getNodeType, parse, ParseError } from '@sidex/base/common/json.js';
+import { getParseErrorMessage } from '@sidex/base/common/jsonErrorMessages.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { FileAccess, Schemas } from '@sidex/base/common/network.js';
+import * as path from '@sidex/base/common/path.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { basename, isEqual, joinPath } from '@sidex/base/common/resources.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IProductVersion, Metadata } from './extensionManagement.js';
@@ -46,8 +46,8 @@ import { FileOperationResult, IFileService, toFileOperationResult } from '../../
 import { createDecorator, IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { ILogService } from '../../log/common/log.js';
 import { IProductService } from '../../product/common/productService.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 import {
 	ExtensionsProfileScanningError,
 	ExtensionsProfileScanningErrorCode,

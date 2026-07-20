@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IContextKeyService,
 	IContextKey,
 	setConstant as setConstantContextKey
-} from '../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IsMacContext,
 	IsLinuxContext,
@@ -19,7 +19,7 @@ import {
 	IsIOSContext,
 	ProductQualityContext,
 	IsMobileContext
-} from '../../platform/contextkey/common/contextkeys.js';
+} from '@sidex/platform/contextkey/common/contextkeys.js';
 import {
 	SplitEditorsVertically,
 	InEditorZenModeContext,
@@ -62,22 +62,22 @@ import {
 	GroupDirection,
 	IEditorGroupsService
 } from '../services/editor/common/editorGroupsService.js';
-import { IConfigurationService } from '../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IWorkbenchEnvironmentService } from '../services/environment/common/environmentService.js';
 import {
 	WorkbenchState,
 	IWorkspaceContextService,
 	isTemporaryWorkspace
-} from '../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchLayoutService, Parts, positionToString } from '../services/layout/browser/layoutService.js';
-import { getRemoteName } from '../../platform/remote/common/remoteHosts.js';
-import { getVirtualWorkspaceScheme } from '../../platform/workspace/common/virtualWorkspace.js';
+import { getRemoteName } from '@sidex/platform/remote/common/remoteHosts.js';
+import { getVirtualWorkspaceScheme } from '@sidex/platform/workspace/common/virtualWorkspace.js';
 import { IWorkingCopyService } from '../services/workingCopy/common/workingCopyService.js';
-import { isNative } from '../../base/common/platform.js';
-import { IProductService } from '../../platform/product/common/productService.js';
-import { getTitleBarStyle } from '../../platform/window/common/window.js';
-import { mainWindow } from '../../base/browser/window.js';
-import { isFullscreen, onDidChangeFullscreen } from '../../base/browser/browser.js';
+import { isNative } from '@sidex/base/common/platform.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { getTitleBarStyle } from '@sidex/platform/window/common/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { isFullscreen, onDidChangeFullscreen } from '@sidex/base/browser/browser.js';
 import { IEditorService } from '../services/editor/common/editorService.js';
 
 export class WorkbenchContextKeysHandler extends Disposable {

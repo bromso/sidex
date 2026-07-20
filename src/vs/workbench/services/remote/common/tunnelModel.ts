@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { TunnelProtocol, TunnelPrivacyId, PortAttributesProvider } from '../../../../platform/tunnel/common/tunnel.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { TunnelProtocol, TunnelPrivacyId, PortAttributesProvider } from '@sidex/platform/tunnel/common/tunnel.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export const ACTIVATION_EVENT = 'onTunnel';
 export const forwardedPortsFeaturesEnabled = new RawContextKey<boolean>(

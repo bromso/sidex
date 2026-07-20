@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/editordroptarget.css';
-import { DataTransfers } from '../../../../base/browser/dnd.js';
+import { DataTransfers } from '@sidex/base/browser/dnd.js';
 import {
 	$,
 	addDisposableListener,
@@ -13,26 +13,26 @@ import {
 	EventType,
 	getWindow,
 	isAncestor
-} from '../../../../base/browser/dom.js';
-import { renderFormattedText } from '../../../../base/browser/formattedTextRenderer.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { toDisposable } from '../../../../base/common/lifecycle.js';
-import { isMacintosh, isWeb } from '../../../../base/common/platform.js';
-import { assertReturnsAllDefined, assertReturnsDefined } from '../../../../base/common/types.js';
+} from '@sidex/base/browser/dom.js';
+import { renderFormattedText } from '@sidex/base/browser/formattedTextRenderer.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh, isWeb } from '@sidex/base/common/platform.js';
+import { assertReturnsAllDefined, assertReturnsDefined } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { activeContrastBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { isTemporaryWorkspace, IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { activeContrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { isTemporaryWorkspace, IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	CodeDataTransfers,
 	containsDragType,
 	Extensions as DragAndDropExtensions,
 	IDragAndDropContributionRegistry,
 	LocalSelectionTransfer
-} from '../../../../platform/dnd/browser/dnd.js';
+} from '@sidex/platform/dnd/browser/dnd.js';
 import {
 	DraggedEditorGroupIdentifier,
 	DraggedEditorIdentifier,
@@ -56,8 +56,8 @@ import {
 	MergeGroupMode
 } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { ITreeViewsDnDService } from '../../../../editor/common/services/treeViewsDndService.js';
-import { DraggedTreeItemsIdentifier } from '../../../../editor/common/services/treeViewsDnd.js';
+import { ITreeViewsDnDService } from '@sidex/editor/common/services/treeViewsDndService.js';
+import { DraggedTreeItemsIdentifier } from '@sidex/editor/common/services/treeViewsDnd.js';
 
 interface IDropOperation {
 	splitDirection?: GroupDirection;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isSafari, isWebkitWebView } from '../../../base/browser/browser.js';
+import { isSafari, isWebkitWebView } from '@sidex/base/browser/browser.js';
 import {
 	$,
 	addDisposableListener,
@@ -11,13 +11,13 @@ import {
 	getActiveWindow,
 	isHTMLElement,
 	onDidRegisterWindow
-} from '../../../base/browser/dom.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { DeferredPromise } from '../../../base/common/async.js';
-import { Event } from '../../../base/common/event.js';
-import { hash } from '../../../base/common/hash.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IClipboardService } from '../common/clipboardService.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
 import { ILogService } from '../../log/common/log.js';

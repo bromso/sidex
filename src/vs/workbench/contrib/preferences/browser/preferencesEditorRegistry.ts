@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 
 export namespace Extensions {
 	export const PreferencesEditorPane = 'workbench.registry.preferences.editorPanes';

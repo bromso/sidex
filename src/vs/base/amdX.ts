@@ -10,10 +10,10 @@ import {
 	nodeModulesPath,
 	Schemas,
 	VSCODE_AUTHORITY
-} from './base/common/network.js';
-import * as platform from './base/common/platform.js';
-import { IProductConfiguration } from './base/common/product.js';
-import { generateUuid } from './base/common/uuid.js';
+} from './common/network.js';
+import * as platform from './common/platform.js';
+import { IProductConfiguration } from './common/product.js';
+import { generateUuid } from './common/uuid.js';
 
 export const canASAR = false; // TODO@esm: ASAR disabled in ESM
 

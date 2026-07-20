@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Language, Parser, Query } from '@vscode/tree-sitter-wasm';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IReader } from '../../../../base/common/observable.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IReader } from '@sidex/base/common/observable.js';
 
 export const ITreeSitterLibraryService = createDecorator<ITreeSitterLibraryService>('treeSitterLibraryService');
 

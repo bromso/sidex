@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import * as json from '../../../base/common/json.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { getOrSet, ResourceMap } from '../../../base/common/map.js';
-import * as objects from '../../../base/common/objects.js';
-import { IExtUri } from '../../../base/common/resources.js';
-import * as types from '../../../base/common/types.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as json from '@sidex/base/common/json.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { getOrSet, ResourceMap } from '@sidex/base/common/map.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import * as types from '@sidex/base/common/types.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	addToValueTree,
 	ConfigurationTarget,

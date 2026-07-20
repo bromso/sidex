@@ -2,27 +2,27 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { dirname } from '../../../../base/common/resources.js';
+import { dirname } from '@sidex/base/common/resources.js';
 import * as nls from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IListService, WorkbenchCompressibleAsyncDataTree } from '../../../../platform/list/browser/listService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IListService, WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import * as Constants from '../common/constants.js';
 import * as SearchEditorConstants from '../../searchEditor/browser/constants.js';
 import { OpenSearchEditorArgs } from '../../searchEditor/browser/searchEditor.contribution.js';
 import { ISearchConfiguration, ISearchConfigurationProperties } from '../../../services/search/common/search.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { resolveResourcesForSearchIncludes } from '../../../services/search/common/queryBuilder.js';
 import { getMultiSelectedResources, IExplorerService } from '../../files/browser/files.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	ExplorerFolderContext,
 	ExplorerRootContext,
@@ -31,11 +31,11 @@ import {
 } from '../../files/common/files.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 import { ExplorerViewPaneContainer } from '../../files/browser/explorerViewlet.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { category, getElementsToOperateOn, getSearchView, openSearchView } from './searchActionsBase.js';
 import { IConfigurationResolverService } from '../../../services/configurationResolver/common/configurationResolver.js';
 import { IHistoryService } from '../../../services/history/common/history.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { forcedExpandRecursively } from './searchActionsTopBar.js';

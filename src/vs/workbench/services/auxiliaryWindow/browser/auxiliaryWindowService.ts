@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getZoomLevel } from '../../../../base/browser/browser.js';
+import { getZoomLevel } from '@sidex/base/browser/browser.js';
 import {
 	$,
 	Dimension,
@@ -22,26 +22,26 @@ import {
 	registerWindow,
 	sharedMutationObserver,
 	trackAttributes
-} from '../../../../base/browser/dom.js';
-import { cloneGlobalStylesheets, isGlobalStylesheet } from '../../../../base/browser/domStylesheets.js';
-import { CodeWindow, ensureCodeWindow, mainWindow } from '../../../../base/browser/window.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { Barrier } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { mark } from '../../../../base/common/performance.js';
-import { isFirefox, isWeb } from '../../../../base/common/platform.js';
-import Severity from '../../../../base/common/severity.js';
+} from '@sidex/base/browser/dom.js';
+import { cloneGlobalStylesheets, isGlobalStylesheet } from '@sidex/base/browser/domStylesheets.js';
+import { CodeWindow, ensureCodeWindow, mainWindow } from '@sidex/base/browser/window.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { isFirefox, isWeb } from '@sidex/base/common/platform.js';
+import Severity from '@sidex/base/common/severity.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { DEFAULT_AUX_WINDOW_SIZE, IRectangle, WindowMinimumSize } from '../../../../platform/window/common/window.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { DEFAULT_AUX_WINDOW_SIZE, IRectangle, WindowMinimumSize } from '@sidex/platform/window/common/window.js';
 import { BaseWindow } from '../../../browser/window.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IHostService } from '../../host/browser/host.js';

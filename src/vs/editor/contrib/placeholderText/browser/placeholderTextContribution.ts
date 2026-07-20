@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { h } from '../../../../base/browser/dom.js';
-import { structuralEquals } from '../../../../base/common/equals.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { h } from '@sidex/base/browser/dom.js';
+import { structuralEquals } from '@sidex/base/common/equals.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	constObservable,
@@ -15,7 +15,7 @@ import {
 	derived,
 	IObservable,
 	IReader
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../browser/observableCodeEditor.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';

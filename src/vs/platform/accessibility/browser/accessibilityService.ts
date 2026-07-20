@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener } from '../../../base/browser/dom.js';
-import { alert, status } from '../../../base/browser/ui/aria/aria.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { addDisposableListener } from '@sidex/base/browser/dom.js';
+import { alert, status } from '@sidex/base/browser/ui/aria/aria.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	AccessibilitySupport,
 	CONTEXT_ACCESSIBILITY_MODE_ENABLED,

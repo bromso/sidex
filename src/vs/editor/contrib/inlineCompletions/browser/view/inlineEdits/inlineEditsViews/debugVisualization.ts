@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../../../../base/common/lifecycle.js';
-import { IReader, derived } from '../../../../../../../base/common/observable.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IReader, derived } from '@sidex/base/common/observable.js';
 import { Rect } from '../../../../../../common/core/2d/rect.js';
 
 export interface IVisualizationEffect {

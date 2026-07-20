@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { TerminalSettingId } from '../../../../platform/terminal/common/terminal.js';
-import { listErrorForeground, listWarningForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { spinningLoading } from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import { listErrorForeground, listWarningForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { spinningLoading } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ITerminalStatus } from '../common/terminal.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { isString } from '../../../../base/common/types.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { isString } from '@sidex/base/common/types.js';
 
 /**
  * The set of _internal_ terminal statuses, other components building on the terminal should put

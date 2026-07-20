@@ -4,25 +4,25 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IQuickPickSeparator, IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickPickSeparator, IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IPickerQuickAccessItem,
 	PickerQuickAccessProvider,
 	TriggerAction
-} from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { matchesFuzzy } from '../../../../base/common/filters.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { matchesFuzzy } from '@sidex/base/common/filters.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { ITaskService, Task } from '../common/taskService.js';
 import { CustomTask, ContributedTask, ConfiguringTask } from '../common/tasks.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { TaskQuickPick, ITaskTwoLevelQuickPickEntry } from './taskQuickPick.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { isString } from '../../../../base/common/types.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { isString } from '@sidex/base/common/types.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 
 export class TasksQuickAccessProvider extends PickerQuickAccessProvider<IPickerQuickAccessItem> {
 	static PREFIX = 'task ';

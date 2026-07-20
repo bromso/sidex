@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { UriDto } from '../../../base/common/uri.js';
-import { IChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { UriDto } from '@sidex/base/common/uri.js';
+import { IChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import {
 	IStorageDatabase,
 	IStorageItemsChangeEvent,
 	IUpdateRequest
-} from '../../../base/parts/storage/common/storage.js';
+} from '@sidex/base/parts/storage/common/storage.js';
 import { IUserDataProfile } from '../../userDataProfile/common/userDataProfile.js';
 import {
 	ISerializedSingleFolderWorkspaceIdentifier,

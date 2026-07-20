@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IEditorSerializer } from '../../../common/editor.js';
 import { WebviewContentOptions, WebviewExtensionDescription, WebviewOptions } from '../../webview/browser/webview.js';
 import { WebviewIconPath, WebviewInput } from './webviewEditorInput.js';
 import { IWebviewWorkbenchService } from './webviewWorkbenchService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export type SerializedWebviewOptions = WebviewOptions & WebviewContentOptions;
 

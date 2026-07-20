@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Promises } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
-import { Event } from '../../../base/common/event.js';
-import { toFormattedString } from '../../../base/common/jsonFormatter.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { compare } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { toFormattedString } from '@sidex/base/common/jsonFormatter.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { GlobalExtensionEnablementService } from '../../extensionManagement/common/extensionEnablementService.js';

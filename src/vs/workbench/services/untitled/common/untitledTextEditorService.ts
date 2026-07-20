@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { UntitledTextEditorModel, IUntitledTextEditorModel } from './untitledTextEditorModel.js';
-import { IFilesConfiguration } from '../../../../platform/files/common/files.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { Disposable, DisposableResourceMap, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { IFilesConfiguration } from '@sidex/platform/files/common/files.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { Disposable, DisposableResourceMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 
 export const IUntitledTextEditorService = createDecorator<IUntitledTextEditorService>('untitledTextEditorService');
 

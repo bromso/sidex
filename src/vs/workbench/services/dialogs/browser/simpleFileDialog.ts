@@ -4,55 +4,55 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as resources from '../../../../base/common/resources.js';
-import * as objects from '../../../../base/common/objects.js';
+import * as resources from '@sidex/base/common/resources.js';
+import * as objects from '@sidex/base/common/objects.js';
 import {
 	IFileService,
 	IFileStat,
 	FileKind,
 	IFileStatWithPartialMetadata
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPick,
 	ItemActivation
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { URI } from '../../../../base/common/uri.js';
-import { isWindows, OperatingSystem } from '../../../../base/common/platform.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isWindows, OperatingSystem } from '@sidex/base/common/platform.js';
 import {
 	ISaveDialogOptions,
 	IOpenDialogOptions,
 	IFileDialogService
-} from '../../../../platform/dialogs/common/dialogs.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { Schemas } from '../../../../base/common/network.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { IContextKeyService, IContextKey, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { equalsIgnoreCase, format, startsWithIgnoreCase } from '../../../../base/common/strings.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IRemoteAgentEnvironment } from '../../../../platform/remote/common/remoteAgentEnvironment.js';
-import { isValidBasename } from '../../../../base/common/extpath.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { createCancelablePromise, CancelablePromise } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ICommandHandler } from '../../../../platform/commands/common/commands.js';
+import { IContextKeyService, IContextKey, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { equalsIgnoreCase, format, startsWithIgnoreCase } from '@sidex/base/common/strings.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IRemoteAgentEnvironment } from '@sidex/platform/remote/common/remoteAgentEnvironment.js';
+import { isValidBasename } from '@sidex/base/common/extpath.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { createCancelablePromise, CancelablePromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ICommandHandler } from '@sidex/platform/commands/common/commands.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { normalizeDriveLetter } from '../../../../base/common/labels.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
 import { SaveReason } from '../../../common/editor.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { getActiveDocument } from '../../../../base/browser/dom.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { getActiveDocument } from '@sidex/base/browser/dom.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 
 export namespace OpenLocalFileCommand {
 	export const ID = 'workbench.action.files.openLocalFile';

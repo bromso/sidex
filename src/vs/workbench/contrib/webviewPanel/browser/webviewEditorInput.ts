@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { isDark } from '../../../../platform/theme/common/theme.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorInputCapabilities, GroupIdentifier, IUntypedEditorInput, Verbosity } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IOverlayWebview } from '../../webview/browser/webview.js';

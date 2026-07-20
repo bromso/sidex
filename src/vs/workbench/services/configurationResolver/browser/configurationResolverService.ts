@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { BaseConfigurationResolverService } from './baseConfigurationResolverService.js';
 import { IConfigurationResolverService } from '../common/configurationResolver.js';
 import { IEditorService } from '../../editor/common/editorService.js';

@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextKey, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { IEditorContribution } from '../../../../common/editorCommon.js';
 import { EditorContextKeys } from '../../../../common/editorContextKeys.js';
 import { StandaloneColorPickerWidget } from './standaloneColorPickerWidget.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export class StandaloneColorPickerController extends Disposable implements IEditorContribution {
 	public static ID = 'editor.contrib.standaloneColorPickerController';

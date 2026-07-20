@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { IBuffer, IBufferCell, IBufferLine, IMarker, Terminal } from '@xterm/headless';
-import { throttle } from '../../../../../base/common/decorators.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { throttle } from '@sidex/base/common/decorators.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ILogService, LogLevel } from '../../../../log/common/log.js';
 import { PosixShellType, TerminalShellType } from '../../terminal.js';
 import type { ITerminalCommand } from '../capabilities.js';

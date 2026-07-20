@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Barrier } from '../../../../base/common/async.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ILifecycleService,
 	WillShutdownEvent,
@@ -16,14 +16,14 @@ import {
 	BeforeShutdownErrorEvent,
 	InternalBeforeShutdownEvent
 } from './lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { mark } from '../../../../base/common/performance.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { mark } from '@sidex/base/common/performance.js';
 import {
 	IStorageService,
 	StorageScope,
 	StorageTarget,
 	WillSaveStateReason
-} from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/storage/common/storage.js';
 
 export abstract class AbstractLifecycleService extends Disposable implements ILifecycleService {
 	private static readonly LAST_SHUTDOWN_REASON_KEY = 'lifecyle.lastShutdownReason';

@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { RenderIndentGuides } from '../../../../base/browser/ui/tree/abstractTree.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { IObjectTreeElement, ObjectTreeElementCollapseState } from '../../../../base/browser/ui/tree/tree.js';
-import { IIdentityProvider } from '../../../../base/browser/ui/list/list.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { RenderIndentGuides } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { IObjectTreeElement, ObjectTreeElementCollapseState } from '@sidex/base/browser/ui/tree/tree.js';
+import { IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IInstantiationService } from '../../../instantiation/common/instantiation.js';
 import { WorkbenchObjectTree } from '../../../list/browser/listService.js';
 import {
@@ -24,7 +24,7 @@ import { QuickTreeAccessibilityProvider } from './quickInputTreeAccessibilityPro
 import { QuickInputTreeFilter } from './quickInputTreeFilter.js';
 import { QuickInputCheckboxStateHandler, QuickInputTreeRenderer } from './quickInputTreeRenderer.js';
 import { QuickInputTreeSorter } from './quickInputTreeSorter.js';
-import { Checkbox } from '../../../../base/browser/ui/toggle/toggle.js';
+import { Checkbox } from '@sidex/base/browser/ui/toggle/toggle.js';
 import { IQuickInputStyles } from '../quickInput.js';
 
 const $ = dom.$;

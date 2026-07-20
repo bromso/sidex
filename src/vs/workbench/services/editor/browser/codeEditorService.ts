@@ -9,17 +9,17 @@ import {
 	isDiffEditor,
 	isCompositeEditor,
 	getCodeEditor
-} from '../../../../editor/browser/editorBrowser.js';
-import { AbstractCodeEditorService } from '../../../../editor/browser/services/abstractCodeEditorService.js';
-import { ScrollType } from '../../../../editor/common/editorCommon.js';
-import { IResourceEditorInput } from '../../../../platform/editor/common/editor.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { AbstractCodeEditorService } from '@sidex/editor/browser/services/abstractCodeEditorService.js';
+import { ScrollType } from '@sidex/editor/common/editorCommon.js';
+import { IResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IWorkbenchEditorConfiguration } from '../../../common/editor.js';
 import { ACTIVE_GROUP, IEditorService, SIDE_GROUP } from '../common/editorService.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { applyTextEditorOptions } from '../../../common/editor/editorOptions.js';
 
 export class CodeEditorService extends AbstractCodeEditorService {

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { IContextKey, IContextKeyService, RawContextKey } from '../../contextkey/common/contextkey.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
@@ -55,8 +55,8 @@ import { IThemeService, Themable } from '../../theme/common/themeService.js';
 import { IQuickInputOptions, IQuickInputStyles, QuickInputHoverDelegate } from './quickInput.js';
 import { QuickInputController, IQuickInputControllerHost } from './quickInputController.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { getWindow } from '../../../base/browser/dom.js';
-import { IObservable, autorun, observableValue } from '../../../base/common/observable.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
+import { IObservable, autorun, observableValue } from '@sidex/base/common/observable.js';
 
 export class QuickInputService extends Themable implements IQuickInputService {
 	declare readonly _serviceBrand: undefined;

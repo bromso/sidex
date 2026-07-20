@@ -14,15 +14,15 @@ import {
 	Action2,
 	MenuItemAction,
 	MenuRegistry
-} from '../../../../platform/actions/common/actions.js';
+} from '@sidex/platform/actions/common/actions.js';
 import {
 	MenuBarVisibility,
 	IWindowOpenable,
 	getMenuBarVisibility,
 	MenuSettings,
 	hasNativeMenu
-} from '../../../../platform/window/common/window.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/window/common/window.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IAction,
 	Action,
@@ -33,48 +33,48 @@ import {
 	WorkbenchActionExecutedEvent,
 	WorkbenchActionExecutedClassification,
 	toAction
-} from '../../../../base/common/actions.js';
-import { addDisposableListener, Dimension, EventType } from '../../../../base/browser/dom.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { isMacintosh, isWeb, isIOS, isNative } from '../../../../base/common/platform.js';
+} from '@sidex/base/common/actions.js';
+import { addDisposableListener, Dimension, EventType } from '@sidex/base/browser/dom.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { isMacintosh, isWeb, isIOS, isNative } from '@sidex/base/common/platform.js';
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../platform/configuration/common/configuration.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	IRecentlyOpened,
 	isRecentFolder,
 	IRecent,
 	isRecentWorkspace,
 	IWorkspacesService
-} from '../../../../platform/workspaces/common/workspaces.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILabelService, Verbosity } from '../../../../platform/label/common/label.js';
-import { IUpdateService, StateType } from '../../../../platform/update/common/update.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/workspaces/common/workspaces.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILabelService, Verbosity } from '@sidex/platform/label/common/label.js';
+import { IUpdateService, StateType } from '@sidex/platform/update/common/update.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { MenuBar, IMenuBarOptions } from '../../../../base/browser/ui/menu/menubar.js';
-import { HorizontalDirection, IMenuDirection, VerticalDirection } from '../../../../base/browser/ui/menu/menu.js';
-import { mnemonicMenuLabel, unmnemonicLabel } from '../../../../base/common/labels.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { isFullscreen, onDidChangeFullscreen } from '../../../../base/browser/browser.js';
+import { MenuBar, IMenuBarOptions } from '@sidex/base/browser/ui/menu/menubar.js';
+import { HorizontalDirection, IMenuDirection, VerticalDirection } from '@sidex/base/browser/ui/menu/menu.js';
+import { mnemonicMenuLabel, unmnemonicLabel } from '@sidex/base/common/labels.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { isFullscreen, onDidChangeFullscreen } from '@sidex/base/browser/browser.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { BrowserFeatures } from '../../../../base/browser/canIUse.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IsMacNativeContext, IsWebContext } from '../../../../platform/contextkey/common/contextkeys.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IsMacNativeContext, IsWebContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { OpenRecentAction } from '../../actions/windowActions.js';
-import { isICommandActionToggleInfo } from '../../../../platform/action/common/action.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { defaultMenuStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { isICommandActionToggleInfo } from '@sidex/platform/action/common/action.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { defaultMenuStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { ActivityBarPosition } from '../../../services/layout/browser/layoutService.js';
 
 export type IOpenRecentAction = IAction & { uri: URI; remoteAuthority?: string };

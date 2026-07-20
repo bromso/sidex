@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addStandardDisposableListener, getDomNodePagePosition } from '../../../../../../base/browser/dom.js';
-import { Action } from '../../../../../../base/common/actions.js';
-import { Codicon } from '../../../../../../base/common/codicons.js';
-import { Disposable } from '../../../../../../base/common/lifecycle.js';
-import { isIOS } from '../../../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../../../base/common/themables.js';
+import { addStandardDisposableListener, getDomNodePagePosition } from '@sidex/base/browser/dom.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isIOS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { IEditorMouseEvent, MouseTargetType } from '../../../../editorBrowser.js';
 import { CodeEditorWidget } from '../../../codeEditor/codeEditorWidget.js';
 import { DiffEditorWidget } from '../../diffEditorWidget.js';
@@ -16,8 +16,8 @@ import { EditorOption } from '../../../../../common/config/editorOptions.js';
 import { DetailedLineRangeMapping } from '../../../../../common/diff/rangeMapping.js';
 import { EndOfLineSequence, ITextModel } from '../../../../../common/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../../../platform/clipboard/common/clipboardService.js';
-import { IContextMenuService } from '../../../../../../platform/contextview/browser/contextView.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { enableCopySelection } from './copySelection.js';
 import { RenderLinesResult } from './renderLines.js';
 

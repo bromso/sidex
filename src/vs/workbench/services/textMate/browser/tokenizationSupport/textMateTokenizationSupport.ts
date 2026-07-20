@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { StopWatch } from '../../../../../base/common/stopwatch.js';
-import { LanguageId, TokenMetadata } from '../../../../../editor/common/encodedTokenAttributes.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { LanguageId, TokenMetadata } from '@sidex/editor/common/encodedTokenAttributes.js';
 import {
 	EncodedTokenizationResult,
 	IBackgroundTokenizationStore,
@@ -14,8 +14,8 @@ import {
 	IState,
 	ITokenizationSupport,
 	TokenizationResult
-} from '../../../../../editor/common/languages.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
+} from '@sidex/editor/common/languages.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import type { IGrammar, StateStack } from 'vscode-textmate';
 
 export class TextMateTokenizationSupport extends Disposable implements ITokenizationSupport {

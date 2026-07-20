@@ -12,13 +12,13 @@ import {
 	WorkspaceFileEditOptions,
 	IWorkspaceTextEdit
 } from '../../common/languages.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { IProgress, IProgressStep } from '../../../platform/progress/common/progress.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { isObject } from '../../../base/common/types.js';
-import { UndoRedoSource } from '../../../platform/undoRedo/common/undoRedo.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { UndoRedoSource } from '@sidex/platform/undoRedo/common/undoRedo.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { TextModelEditSource } from '../../common/textModelEditSource.js';
 
 export const IBulkEditService = createDecorator<IBulkEditService>('IWorkspaceEditService');

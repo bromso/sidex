@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { isFirefox } from '../../base/browser/browser.js';
-import { KeyCode, KeyMod } from '../../base/common/keyCodes.js';
-import * as types from '../../base/common/types.js';
-import { status } from '../../base/browser/ui/aria/aria.js';
+import { isFirefox } from '@sidex/base/browser/browser.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import * as types from '@sidex/base/common/types.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
 import { ICodeEditor } from './editorBrowser.js';
 import {
 	Command,
@@ -31,16 +31,16 @@ import { Range } from '../common/core/range.js';
 import { Handler, ScrollType } from '../common/editorCommon.js';
 import { EditorContextKeys } from '../common/editorContextKeys.js';
 import { VerticalRevealType } from '../common/viewEvents.js';
-import { ICommandMetadata } from '../../platform/commands/common/commands.js';
-import { ContextKeyExpr } from '../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight, KeybindingsRegistry } from '../../platform/keybinding/common/keybindingsRegistry.js';
+import { ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight, KeybindingsRegistry } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { EditorOption } from '../common/config/editorOptions.js';
 import { IViewModel } from '../common/viewModel.js';
 import { ISelection } from '../common/core/selection.js';
-import { getActiveElement, isEditableElement } from '../../base/browser/dom.js';
+import { getActiveElement, isEditableElement } from '@sidex/base/browser/dom.js';
 import { EnterOperation } from '../common/cursor/cursorTypeEditOperations.js';
-import { TextEditorSelectionSource } from '../../platform/editor/common/editor.js';
+import { TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
 
 const CORE_WEIGHT = KeybindingWeight.EditorCore;
 

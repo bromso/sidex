@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IExtensionManifest,
 	ExtensionUntrustedWorkspaceSupportType,
@@ -11,21 +11,21 @@ import {
 	IExtensionIdentifier,
 	ALL_EXTENSION_KINDS,
 	ExtensionIdentifierMap
-} from '../../../../platform/extensions/common/extensions.js';
-import { ExtensionKind } from '../../../../platform/environment/common/environment.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ExtensionKind } from '@sidex/platform/environment/common/environment.js';
 import { ExtensionsRegistry } from './extensionsRegistry.js';
-import { getGalleryExtensionId } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ExtensionUntrustedWorkspaceSupport } from '../../../../base/common/product.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { getGalleryExtensionId } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ExtensionUntrustedWorkspaceSupport } from '@sidex/base/common/product.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { WORKSPACE_TRUST_EXTENSION_SUPPORT } from '../../workspaces/common/workspaceTrust.js';
-import { isBoolean } from '../../../../base/common/types.js';
-import { IWorkspaceTrustEnablementService } from '../../../../platform/workspace/common/workspaceTrust.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { isWeb } from '../../../../base/common/platform.js';
+import { isBoolean } from '@sidex/base/common/types.js';
+import { IWorkspaceTrustEnablementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { isWeb } from '@sidex/base/common/platform.js';
 
 export const IExtensionManifestPropertiesService = createDecorator<IExtensionManifestPropertiesService>(
 	'extensionManifestPropertiesService'

@@ -7,14 +7,14 @@ import {
 	IColorTheme,
 	ICssStyleCollector,
 	IThemingParticipant
-} from '../../../../platform/theme/common/themeService.js';
-import { asCssVariableName, getColorRegistry } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { asCssVariableName, getColorRegistry } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	asCssVariableName as asSizeCssVariableName,
 	getSizeRegistry,
 	sizeValueToCss
-} from '../../../../platform/theme/common/sizeRegistry.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
+} from '@sidex/platform/theme/common/sizeRegistry.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 
 /**
  * Generates CSS content (variables + theming participant rules) for a color theme.

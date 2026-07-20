@@ -6,7 +6,7 @@
 import * as nls from '@sidex/base/nls.js';
 
 // Import the effects we need
-import { Color } from '../../../../base/common/color.js';
+import { Color } from '@sidex/base/common/color.js';
 import { registerColor, darken, lighten, transparent, ifDefinedThenElse } from '../colorUtils.js';
 
 // Import the colors we need

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as strings from '../../../base/common/strings.js';
-import { Constants } from '../../../base/common/uint.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { InlineDecoration, InlineDecorationType } from '../viewModel/inlineDecorations.js';
 import { LinePartMetadata } from './linePart.js';
 

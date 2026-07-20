@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as performance from '../../../base/common/performance.js';
-import { OperatingSystem } from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
+import * as performance from '@sidex/base/common/performance.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IUserDataProfile } from '../../userDataProfile/common/userDataProfile.js';
 
 export interface IRemoteAgentEnvironment {

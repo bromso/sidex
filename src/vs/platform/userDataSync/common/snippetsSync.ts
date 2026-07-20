@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Event } from '../../../base/common/event.js';
-import { deepClone } from '../../../base/common/objects.js';
-import { URI } from '../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import {

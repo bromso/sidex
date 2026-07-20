@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableMap, IDisposable } from '../../../base/common/lifecycle.js';
-import { revive } from '../../../base/common/marshalling.js';
-import { CommandsRegistry, ICommandMetadata, ICommandService } from '../../../platform/commands/common/commands.js';
+import { DisposableMap, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { revive } from '@sidex/base/common/marshalling.js';
+import { CommandsRegistry, ICommandMetadata, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IExtHostContext, extHostNamedCustomer } from '../../services/extensions/common/extHostCustomers.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
 import { Dto, SerializableObjectWithBuffers } from '../../services/extensions/common/proxyIdentifier.js';
@@ -15,7 +15,7 @@ import {
 	MainContext,
 	MainThreadCommandsShape
 } from '../common/extHost.protocol.js';
-import { isString } from '../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 @extHostNamedCustomer(MainContext.MainThreadCommands)
 export class MainThreadCommands implements MainThreadCommandsShape {

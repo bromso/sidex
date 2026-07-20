@@ -10,7 +10,7 @@ import {
 	ProgressLocation,
 	IProgressOptions,
 	IProgressNotificationOptions
-} from '../../../platform/progress/common/progress.js';
+} from '@sidex/platform/progress/common/progress.js';
 import {
 	MainThreadProgressShape,
 	MainContext,
@@ -18,11 +18,11 @@ import {
 	ExtHostContext
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { localize } from '@sidex/base/nls.js';
-import { onUnexpectedExternalError } from '../../../base/common/errors.js';
-import { toAction } from '../../../base/common/actions.js';
-import { NotificationPriority } from '../../../platform/notification/common/notification.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { toAction } from '@sidex/base/common/actions.js';
+import { NotificationPriority } from '@sidex/platform/notification/common/notification.js';
 
 @extHostNamedCustomer(MainContext.MainThreadProgress)
 export class MainThreadProgress implements MainThreadProgressShape {

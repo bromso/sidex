@@ -4,32 +4,32 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { hasWorkspaceFileExtension, IWorkspaceContextService } from '../../../platform/workspace/common/workspace.js';
+import { hasWorkspaceFileExtension, IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkspaceEditingService } from '../../services/workspaces/common/workspaceEditing.js';
-import { dirname } from '../../../base/common/resources.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { mnemonicButtonLabel } from '../../../base/common/labels.js';
-import { CommandsRegistry, ICommandService } from '../../../platform/commands/common/commands.js';
-import { FileKind } from '../../../platform/files/common/files.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { IQuickInputService, IPickOptions, IQuickPickItem } from '../../../platform/quickinput/common/quickInput.js';
-import { getIconClasses } from '../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../editor/common/languages/language.js';
-import { IFileDialogService, IPickAndOpenOptions } from '../../../platform/dialogs/common/dialogs.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { Schemas } from '../../../base/common/network.js';
+import { dirname } from '@sidex/base/common/resources.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { mnemonicButtonLabel } from '@sidex/base/common/labels.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IQuickInputService, IPickOptions, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IFileDialogService, IPickAndOpenOptions } from '@sidex/platform/dialogs/common/dialogs.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	IFileToOpen,
 	IFolderToOpen,
 	IOpenEmptyWindowOptions,
 	IOpenWindowOptions,
 	IWorkspaceToOpen
-} from '../../../platform/window/common/window.js';
-import { IRecent, IWorkspacesService } from '../../../platform/workspaces/common/workspaces.js';
+} from '@sidex/platform/window/common/window.js';
+import { IRecent, IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
 import { IPathService } from '../../services/path/common/pathService.js';
-import { ILocalizedString } from '../../../platform/action/common/action.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 
 export const ADD_ROOT_FOLDER_COMMAND_ID = 'addRootFolder';
 export const ADD_ROOT_FOLDER_LABEL: ILocalizedString = localize2('addFolderToWorkspace', 'Add Folder to Workspace...');

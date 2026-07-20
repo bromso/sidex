@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { safeIntl } from '../../../base/common/date.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { LRUCache } from '../../../base/common/map.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { safeIntl } from '@sidex/base/common/date.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { LRUCache } from '@sidex/base/common/map.js';
 import { CharacterClassifier } from './characterClassifier.js';
 
 export const enum WordCharacterClass {

@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	EditorContributionInstantiation,
 	registerEditorContribution
-} from '../../../../editor/browser/editorExtensions.js';
+} from '@sidex/editor/browser/editorExtensions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
+import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	Extensions as ConfigurationExtensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
 import {

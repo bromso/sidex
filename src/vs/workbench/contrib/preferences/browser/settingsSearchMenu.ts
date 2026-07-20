@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
-import { DropdownMenuActionViewItem } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { IAction, IActionRunner, Separator } from '../../../../base/common/actions.js';
-import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { DropdownMenuActionViewItem } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { IAction, IActionRunner, Separator } from '@sidex/base/common/actions.js';
+import { SuggestController } from '@sidex/editor/contrib/suggest/browser/suggestController.js';
 import { localize } from '@sidex/base/nls.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { SuggestEnabledInput } from '../../codeEditor/browser/suggestEnabledInput/suggestEnabledInput.js';
 import {
 	ADVANCED_SETTING_TAG,

@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IExtensionsProfileScannerService } from '../../../../platform/extensionManagement/common/extensionsProfileScannerService.js';
+import { IExtensionsProfileScannerService } from '@sidex/platform/extensionManagement/common/extensionsProfileScannerService.js';
 import {
 	AbstractExtensionsScannerService,
 	IExtensionsScannerService,
 	Translations
-} from '../../../../platform/extensionManagement/common/extensionsScannerService.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/extensionManagement/common/extensionsScannerService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
 

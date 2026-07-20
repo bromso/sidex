@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Barrier } from '../../../base/common/async.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IChannelServer } from '../../../base/parts/ipc/common/ipc.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IChannelServer } from '@sidex/base/parts/ipc/common/ipc.js';
 import { IProductService } from '../../product/common/productService.js';
 import {
 	IExtensionGalleryManifest,

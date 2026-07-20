@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EventType, addDisposableListener, addStandardDisposableListener, h } from '../../../../../base/browser/dom.js';
-import { createFastDomNode } from '../../../../../base/browser/fastDomNode.js';
-import { IMouseWheelEvent } from '../../../../../base/browser/mouseEvent.js';
-import { ScrollbarState } from '../../../../../base/browser/ui/scrollbar/scrollbarState.js';
-import { Color } from '../../../../../base/common/color.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { EventType, addDisposableListener, addStandardDisposableListener, h } from '@sidex/base/browser/dom.js';
+import { createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ScrollbarState } from '@sidex/base/browser/ui/scrollbar/scrollbarState.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
@@ -16,7 +16,7 @@ import {
 	derived,
 	observableFromEvent,
 	observableSignalFromEvent
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { CodeEditorWidget } from '../../codeEditor/codeEditorWidget.js';
 import { DiffEditorEditors } from '../components/diffEditorEditors.js';
 import { DiffEditorViewModel } from '../diffEditorViewModel.js';
@@ -32,8 +32,8 @@ import {
 	diffOverviewRulerInserted,
 	diffOverviewRulerRemoved,
 	diffRemoved
-} from '../../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 
 export class OverviewRulerFeature extends Disposable {
 	private static readonly ONE_OVERVIEW_WIDTH = 15;

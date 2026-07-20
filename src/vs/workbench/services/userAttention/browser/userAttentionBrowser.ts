@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { Event } from '../../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	derived,
 	IObservable,
 	observableFromEvent,
 	observableValue
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import {
 	TotalTrueTimeObservable,
 	wasTrueRecently
-} from '../../../../base/common/observableInternal/experimental/time.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService, LogLevel } from '../../../../platform/log/common/log.js';
+} from '@sidex/base/common/observableInternal/experimental/time.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
 import { IHostService } from '../../host/browser/host.js';
 import { IUserAttentionService } from '../common/userAttentionService.js';
 

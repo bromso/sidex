@@ -8,11 +8,11 @@ import {
 	CancelableAsyncIterableProducer,
 	createCancelableAsyncIterableProducer,
 	RunOnceScheduler
-} from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 

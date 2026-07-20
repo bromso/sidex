@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CachedFunction } from '../../../../base/common/cache.js';
-import { RegExpOptions } from '../../../../base/common/strings.js';
+import { CachedFunction } from '@sidex/base/common/cache.js';
+import { RegExpOptions } from '@sidex/base/common/strings.js';
 import { LanguageConfiguration } from '../languageConfiguration.js';
 import { createBracketOrRegExp } from './richEditBrackets.js';
 

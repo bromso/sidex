@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Iterable } from '../../../../base/common/iterator.js';
-import { isLinux, isMacintosh, isWindows } from '../../../../base/common/platform.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { isLinux, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
 import { ConfiguredInput } from './configurationResolver.js';
 
 /** A replacement found in the object, as ${name} or ${name:arg} */

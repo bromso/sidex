@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { SnippetFile, Snippet } from './snippetsFile.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export const ISnippetsService = createDecorator<ISnippetsService>('snippetService');
 

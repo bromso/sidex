@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EventType } from '../../../../../base/browser/dom.js';
-import { IMarkdownString, MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { DisposableStore, dispose, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { isMacintosh, OS } from '../../../../../base/common/platform.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { EventType } from '@sidex/base/browser/dom.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh, OS } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ITunnelService } from '../../../../../platform/tunnel/common/tunnel.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITunnelService } from '@sidex/platform/tunnel/common/tunnel.js';
 import {
 	ITerminalLinkDetector,
 	ITerminalLinkOpener,
@@ -42,7 +42,7 @@ import {
 import { ILinkHoverTargetOptions, TerminalHover } from '../../../terminal/browser/widgets/terminalHoverWidget.js';
 import { TerminalWidgetManager } from '../../../terminal/browser/widgets/widgetManager.js';
 import { IXtermCore } from '../../../terminal/browser/xterm-private.js';
-import { ITerminalCapabilityStore } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ITerminalConfiguration,
 	ITerminalProcessInfo,
@@ -50,13 +50,13 @@ import {
 } from '../../../terminal/common/terminal.js';
 import type { ILink, ILinkProvider, IViewportRange, Terminal } from '@xterm/xterm';
 import { convertBufferRangeToViewport } from './terminalLinkHelpers.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { ITerminalLogService } from '../../../../../platform/terminal/common/terminal.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { ITerminalLogService } from '@sidex/platform/terminal/common/terminal.js';
 import { TerminalMultiLineLinkDetector } from './terminalMultiLineLinkDetector.js';
-import { INotificationService, Severity } from '../../../../../platform/notification/common/notification.js';
-import type { IHoverAction } from '../../../../../base/browser/ui/hover/hover.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { isString } from '../../../../../base/common/types.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import type { IHoverAction } from '@sidex/base/browser/ui/hover/hover.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export type XtermLinkMatcherHandler = (event: MouseEvent | undefined, link: string) => Promise<void>;
 

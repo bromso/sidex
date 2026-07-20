@@ -11,11 +11,11 @@ import {
 	SYMBOL_ICON_VARIABLE_FOREGROUND,
 	SYMBOL_ICON_FILE_FOREGROUND,
 	SYMBOL_ICON_FOLDER_FOREGROUND
-} from '../../../../../editor/contrib/symbolIcons/browser/symbolIcons.js';
-import { registerColor } from '../../../../../platform/theme/common/colorUtils.js';
+} from '@sidex/editor/contrib/symbolIcons/browser/symbolIcons.js';
+import { registerColor } from '@sidex/platform/theme/common/colorUtils.js';
 import { localize } from '@sidex/base/nls.js';
-import { registerIcon } from '../../../../../platform/theme/common/iconRegistry.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 export const TERMINAL_SYMBOL_ICON_FLAG_FOREGROUND = registerColor(
 	'terminalSymbolIcon.flagForeground',

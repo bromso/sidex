@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { IObservable } from '../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ColorIdentifier } from '../../../../platform/theme/common/colorUtils.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ColorIdentifier } from '@sidex/platform/theme/common/colorUtils.js';
 import { ISCMRepository } from './scm.js';
 
 export const SCMIncomingHistoryItemId = 'scm-graph-incoming-changes';

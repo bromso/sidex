@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../../base/common/map.js';
-import { TernarySearchTree } from '../../../../../base/common/ternarySearchTree.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IProgress, IProgressStep } from '../../../../../platform/progress/common/progress.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IReplaceService } from '../replace.js';
 import {
 	IFileMatch,

@@ -2,9 +2,9 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { ChildNode, n, ObserverNode, ObserverNodeWithElement } from '../../../../../../../../base/browser/dom.js';
-import { Event } from '../../../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../../../base/common/lifecycle.js';
+import { ChildNode, n, ObserverNode, ObserverNodeWithElement } from '@sidex/base/browser/dom.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -14,8 +14,8 @@ import {
 	derived,
 	derivedDisposable,
 	observableFromEvent
-} from '../../../../../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../../../../../browser/observableCodeEditor.js';
 import { Rect } from '../../../../../../../common/core/2d/rect.js';
@@ -28,15 +28,15 @@ import { DetailedLineRangeMapping } from '../../../../../../../common/diff/range
 import { OffsetRange } from '../../../../../../../common/core/ranges/offsetRange.js';
 import { LineRange } from '../../../../../../../common/core/ranges/lineRange.js';
 import { HideUnchangedRegionsFeature } from '../../../../../../../browser/widget/diffEditor/features/hideUnchangedRegionsFeature.js';
-import { Codicon } from '../../../../../../../../base/common/codicons.js';
-import { renderIcon } from '../../../../../../../../base/browser/ui/iconLabel/iconLabels.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import { SymbolKinds } from '../../../../../../../common/languages.js';
 import { debugLogHorizontalOffsetRanges, debugLogRects, debugView } from '../debugVisualization.js';
 import { distributeFlexBoxLayout } from '../../utils/flexBoxLayout.js';
 import { Point } from '../../../../../../../common/core/2d/point.js';
 import { Size2D } from '../../../../../../../common/core/2d/size.js';
-import { IThemeService } from '../../../../../../../../platform/theme/common/themeService.js';
-import { IKeybindingService } from '../../../../../../../../platform/keybinding/common/keybinding.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	getEditorBackgroundColor,
 	getEditorBlendedColor,
@@ -49,8 +49,8 @@ import {
 	asCssVariable,
 	descriptionForeground,
 	editorWidgetBackground
-} from '../../../../../../../../platform/theme/common/colorRegistry.js';
-import { editorWidgetBorder } from '../../../../../../../../platform/theme/common/colors/editorColors.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { editorWidgetBorder } from '@sidex/platform/theme/common/colors/editorColors.js';
 import { ILongDistancePreviewProps, LongDistancePreviewEditor } from './longDistancePreviewEditor.js';
 import { InlineSuggestionGutterMenuData, SimpleInlineSuggestModel } from '../../components/gutterIndicatorView.js';
 import { jumpToNextInlineEditId } from '../../../../controller/commandIds.js';
@@ -61,11 +61,11 @@ import {
 	WidgetPlacementContext
 } from './longDistnaceWidgetPlacement.js';
 import { InlineCompletionEditorType } from '../../../../model/provideInlineCompletions.js';
-import { basename } from '../../../../../../../../base/common/resources.js';
+import { basename } from '@sidex/base/common/resources.js';
 import { IModelService } from '../../../../../../../common/services/model.js';
 import { ILanguageService } from '../../../../../../../common/languages/language.js';
 import { getIconClasses } from '../../../../../../../common/services/getIconClasses.js';
-import { FileKind } from '../../../../../../../../platform/files/common/files.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
 import { TextModelValueReference } from '../../../../model/textModelValueReference.js';
 
 const BORDER_RADIUS = 6;

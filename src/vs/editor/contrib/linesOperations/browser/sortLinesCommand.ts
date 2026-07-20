@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { safeIntl } from '../../../../base/common/date.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { safeIntl } from '@sidex/base/common/date.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import { EditOperation, ISingleEditOperation } from '../../../common/core/editOperation.js';
 import { Range } from '../../../common/core/range.js';
 import { Selection } from '../../../common/core/selection.js';

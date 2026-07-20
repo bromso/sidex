@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { TestResultItem } from './testTypes.js';
 import { ITestResult } from './testResult.js';
-import { IEditor } from '../../../../editor/common/editorCommon.js';
+import { IEditor } from '@sidex/editor/common/editorCommon.js';
 import { MutableObservableValue } from './observableValue.js';
 
 export interface IShowResultOptions {

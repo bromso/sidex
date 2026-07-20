@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { RawContextKey, IContextKeyService, IContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { RawContextKey, IContextKeyService, IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IFilesConfiguration,
 	AutoSaveConfiguration,
@@ -21,22 +21,22 @@ import {
 	IBaseFileStat,
 	hasReadonlyCapability,
 	IFilesConfigurationNode
-} from '../../../../platform/files/common/files.js';
-import { equals } from '../../../../base/common/objects.js';
-import { URI } from '../../../../base/common/uri.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/files/common/files.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { ResourceGlobMatcher } from '../../../common/resources.js';
-import { GlobalIdleValue } from '../../../../base/common/async.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { LRUCache, ResourceMap } from '../../../../base/common/map.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+import { GlobalIdleValue } from '@sidex/base/common/async.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { LRUCache, ResourceMap } from '@sidex/base/common/map.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { EditorResourceAccessor, SaveReason, SideBySideEditor } from '../../../common/editor.js';
-import { IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
+import { IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 
 export const AutoSaveAfterShortDelayContext = new RawContextKey<boolean>('autoSaveAfterShortDelayContext', false, true);
 

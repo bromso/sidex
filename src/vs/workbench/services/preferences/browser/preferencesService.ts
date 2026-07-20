@@ -3,33 +3,33 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getErrorMessage } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { parse } from '../../../../base/common/json.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import * as network from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { CoreEditingCommands } from '../../../../editor/browser/coreCommands.js';
-import { getCodeEditor, ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { IPosition } from '../../../../editor/common/core/position.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { parse } from '@sidex/base/common/json.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import * as network from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CoreEditingCommands } from '@sidex/editor/browser/coreCommands.js';
+import { getCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	Extensions,
 	getDefaultValue,
 	IConfigurationRegistry,
 	OVERRIDE_PROPERTY_REGEX
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { FileOperationError, FileOperationResult } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { FileOperationError, FileOperationResult } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { DEFAULT_EDITOR_ASSOCIATION, IEditorPane } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
@@ -72,16 +72,16 @@ import {
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 import { ITextEditorService } from '../../textfile/common/textEditorService.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
-import { isObject } from '../../../../base/common/types.js';
-import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { SuggestController } from '@sidex/editor/contrib/suggest/browser/suggestController.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { ResourceSet } from '../../../../base/common/map.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { IURLService } from '../../../../platform/url/common/url.js';
-import { compareIgnoreCase } from '../../../../base/common/strings.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { IURLService } from '@sidex/platform/url/common/url.js';
+import { compareIgnoreCase } from '@sidex/base/common/strings.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 
 const emptyEditableSettingsContent = '{\n}';

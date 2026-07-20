@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../base/browser/fastDomNode.js';
-import { createTrustedTypesPolicy } from '../../../base/browser/trustedTypes.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { EditorOption } from '../../common/config/editorOptions.js';
 import { StringBuilder } from '../../common/core/stringBuilder.js';
 import * as viewEvents from '../../common/viewEvents.js';

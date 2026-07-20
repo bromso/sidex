@@ -28,10 +28,10 @@ import {
 	inputBorder,
 	widgetBorder,
 	scrollbarShadow
-} from '../../platform/theme/common/colorRegistry.js';
-import { IColorTheme } from '../../platform/theme/common/themeService.js';
-import { Color } from '../../base/common/color.js';
-import { ColorScheme } from '../../platform/theme/common/theme.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { Color } from '@sidex/base/common/color.js';
+import { ColorScheme } from '@sidex/platform/theme/common/theme.js';
 
 // < --- Workbench (not customizable) --- >
 

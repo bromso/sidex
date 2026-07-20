@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { removeAnsiEscapeCodes } from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageSelection, ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ITextModelContentProvider, ITextModelService } from '../../../../editor/common/services/resolverService.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageSelection, ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelContentProvider, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize } from '@sidex/base/nls.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ITestResultService } from './testResultService.js';

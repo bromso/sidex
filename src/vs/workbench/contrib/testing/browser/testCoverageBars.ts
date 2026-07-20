@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { h } from '../../../../base/browser/dom.js';
-import type { IManagedHover, IManagedHoverTooltipMarkdownString } from '../../../../base/browser/ui/hover/hover.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ITransaction, autorun, observableValue } from '../../../../base/common/observable.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { h } from '@sidex/base/browser/dom.js';
+import type { IManagedHover, IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ITransaction, autorun, observableValue } from '@sidex/base/common/observable.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	ExplorerExtensions,
 	IExplorerFileContribution,
@@ -30,7 +30,7 @@ import {
 } from '../common/configuration.js';
 import { AbstractFileCoverage } from '../common/testCoverage.js';
 import { ITestCoverageService } from '../common/testCoverageService.js';
-import { safeIntl } from '../../../../base/common/date.js';
+import { safeIntl } from '@sidex/base/common/date.js';
 
 export interface TestCoverageBarsOptions {
 	/**

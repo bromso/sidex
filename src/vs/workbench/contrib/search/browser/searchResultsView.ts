@@ -3,35 +3,35 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import * as paths from '../../../../base/common/path.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import * as paths from '@sidex/base/common/path.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { ISearchConfigurationProperties } from '../../../services/search/common/search.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IResourceLabel, ResourceLabels } from '../../../browser/labels.js';
 import { SearchView } from './searchView.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
-import { ICompressedTreeNode } from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { HiddenItemStrategy, MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { ISearchActionContext } from './searchActionsRemoveReplace.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { SearchContext } from '../common/constants.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import {
 	ISearchTreeMatch,
 	isSearchTreeMatch,

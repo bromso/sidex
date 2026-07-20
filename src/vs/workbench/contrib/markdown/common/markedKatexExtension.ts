@@ -2,8 +2,8 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import type * as marked from '../../../../base/common/marked/marked.js';
-import { htmlAttributeEncodeValue } from '../../../../base/common/strings.js';
+import type * as marked from '@sidex/base/common/marked/marked.js';
+import { htmlAttributeEncodeValue } from '@sidex/base/common/strings.js';
 
 export const mathInlineRegExp =
 	/(?:(?:^|[^a-zA-Z0-9]))(?<dollars>\${1,2})(?!\.|\(["'])((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\k<dollars>(?![a-zA-Z0-9])/;

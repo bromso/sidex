@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { fromNow, getDurationString } from '../../../../../base/common/date.js';
-import { isNumber } from '../../../../../base/common/types.js';
-import type { ThemeIcon } from '../../../../../base/common/themables.js';
+import { fromNow, getDurationString } from '@sidex/base/common/date.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import type { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import type { ITerminalCommand } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import type { ITerminalCommand } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import { terminalDecorationError, terminalDecorationIncomplete, terminalDecorationSuccess } from '../terminalIcons.js';
 
 const enum DecorationStyles {

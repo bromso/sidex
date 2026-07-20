@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { IInstantiationService, createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IInstantiationService, createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IEditorPane,
 	GroupIdentifier,
@@ -28,20 +28,20 @@ import {
 	IEditorOptions,
 	IModalEditorNavigation,
 	IModalEditorPartOptions
-} from '../../../../platform/editor/common/editor.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDimension } from '../../../../editor/common/core/2d/dimension.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/editor/common/editor.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDimension } from '@sidex/editor/common/core/2d/dimension.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ContextKeyValue,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IGroupModelChangeEvent } from '../../../common/editor/editorGroupModel.js';
-import { IRectangle } from '../../../../platform/window/common/window.js';
-import { IMenuChangeEvent, MenuId } from '../../../../platform/actions/common/actions.js';
-import { DeepPartial } from '../../../../base/common/types.js';
+import { IRectangle } from '@sidex/platform/window/common/window.js';
+import { IMenuChangeEvent, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { DeepPartial } from '@sidex/base/common/types.js';
 
 export const IEditorGroupsService = createDecorator<IEditorGroupsService>('editorGroupsService');
 

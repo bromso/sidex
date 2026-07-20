@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { SerializedError, onUnexpectedError, transformErrorFromSerialization } from '../../../base/common/errors.js';
+import { SerializedError, onUnexpectedError, transformErrorFromSerialization } from '@sidex/base/common/errors.js';
 import { extHostNamedCustomer } from '../../services/extensions/common/extHostCustomers.js';
 import { MainContext, MainThreadErrorsShape } from '../common/extHost.protocol.js';
 

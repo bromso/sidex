@@ -5,7 +5,7 @@
 
 import { localize } from '@sidex/base/nls.js';
 import { Registry } from '../../registry/common/platform.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 import {

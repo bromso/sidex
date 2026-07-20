@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../base/common/arrays.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import * as objects from '../../../base/common/objects.js';
-import * as platform from '../../../base/common/platform.js';
-import { ScrollbarVisibility } from '../../../base/common/scrollable.js';
-import { Constants } from '../../../base/common/uint.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import * as objects from '@sidex/base/common/objects.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { EDITOR_FONT_DEFAULTS, FONT_VARIATION_OFF, FONT_VARIATION_TRANSLATE, FontInfo } from './fontInfo.js';
 import { EDITOR_MODEL_DEFAULTS } from '../core/misc/textModelDefaults.js';
 import { USUAL_WORD_SEPARATORS } from '../core/wordHelper.js';
 import * as nls from '@sidex/base/nls.js';
-import { AccessibilitySupport } from '../../../platform/accessibility/common/accessibility.js';
-import { IConfigurationPropertySchema } from '../../../platform/configuration/common/configurationRegistry.js';
+import { AccessibilitySupport } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IConfigurationPropertySchema } from '@sidex/platform/configuration/common/configurationRegistry.js';
 
 //#region typed options
 

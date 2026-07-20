@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { asPromise } from '../../../base/common/async.js';
-import { Event, Emitter } from '../../../base/common/event.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { asPromise } from '@sidex/base/common/async.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 
 import { MainContext, MainThreadTaskShape, ExtHostTaskShape } from './extHost.protocol.js';
 import * as types from './extHostTypes.js';
@@ -14,19 +14,19 @@ import type * as vscode from 'vscode';
 import * as tasks from './shared/tasks.js';
 import { IExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
 import { IExtHostConfiguration } from './extHostConfiguration.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { IExtHostTerminalService } from './extHostTerminalService.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { Schemas } from '../../../base/common/network.js';
-import * as Platform from '../../../base/common/platform.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as Platform from '@sidex/base/common/platform.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IExtHostApiDeprecationService } from './extHostApiDeprecationService.js';
 import { USER_TASKS_GROUP_KEY } from '../../contrib/tasks/common/tasks.js';
-import { ErrorNoTelemetry, NotSupportedError } from '../../../base/common/errors.js';
-import { asArray } from '../../../base/common/arrays.js';
+import { ErrorNoTelemetry, NotSupportedError } from '@sidex/base/common/errors.js';
+import { asArray } from '@sidex/base/common/arrays.js';
 import { ITaskProblemMatcherStartedDto, ITaskProblemMatcherEndedDto } from './shared/tasks.js';
 
 export interface IExtHostTask extends ExtHostTaskShape {

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Color, RGBA } from '../../../../base/common/color.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	editorWidgetBorder,
@@ -20,7 +20,7 @@ import {
 	checkboxBorder,
 	checkboxForeground,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { PANEL_BORDER } from '../../../common/theme.js';
 
 // General setting colors

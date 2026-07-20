@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { basename } from '../../../../base/common/path.js';
-import * as Json from '../../../../base/common/json.js';
-import { Color } from '../../../../base/common/color.js';
+import { basename } from '@sidex/base/common/path.js';
+import * as Json from '@sidex/base/common/json.js';
+import { Color } from '@sidex/base/common/color.js';
 import {
 	ExtensionData,
 	ITokenColorCustomizations,
@@ -26,8 +26,8 @@ import {
 } from './workbenchThemeService.js';
 import { convertSettings } from './themeCompatibility.js';
 import * as nls from '@sidex/base/nls.js';
-import * as types from '../../../../base/common/types.js';
-import * as resources from '../../../../base/common/resources.js';
+import * as types from '@sidex/base/common/types.js';
+import * as resources from '@sidex/base/common/resources.js';
 import {
 	Extensions as ColorRegistryExtensions,
 	IColorRegistry,
@@ -35,15 +35,15 @@ import {
 	editorBackground,
 	editorForeground,
 	DEFAULT_COLOR_CONFIG_VALUE
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	IFontTokenOptions,
 	ITokenStyle,
 	getThemeTypeSelector
-} from '../../../../platform/theme/common/themeService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { getParseErrorMessage } from '../../../../base/common/jsonErrorMessages.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { getParseErrorMessage } from '@sidex/base/common/jsonErrorMessages.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { parse as parsePList } from './plistParser.js';
 import {
 	TokenStyle,
@@ -53,15 +53,15 @@ import {
 	TokenStyleValue,
 	TokenStyleData,
 	parseClassifierString
-} from '../../../../platform/theme/common/tokenClassificationRegistry.js';
+} from '@sidex/platform/theme/common/tokenClassificationRegistry.js';
 import { MatcherWithPriority, Matcher, createMatchers } from './textMateScopeMatcher.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { StorageScope, IStorageService, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { StorageScope, IStorageService, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { ThemeConfiguration } from './themeConfiguration.js';
-import { ColorScheme, ThemeTypeSelector } from '../../../../platform/theme/common/theme.js';
-import { ColorId, FontStyle, MetadataConsts } from '../../../../editor/common/encodedTokenAttributes.js';
-import { toStandardTokenType } from '../../../../editor/common/languages/supports/tokenization.js';
+import { ColorScheme, ThemeTypeSelector } from '@sidex/platform/theme/common/theme.js';
+import { ColorId, FontStyle, MetadataConsts } from '@sidex/editor/common/encodedTokenAttributes.js';
+import { toStandardTokenType } from '@sidex/editor/common/languages/supports/tokenization.js';
 
 const colorRegistry = Registry.as<IColorRegistry>(ColorRegistryExtensions.ColorContribution);
 

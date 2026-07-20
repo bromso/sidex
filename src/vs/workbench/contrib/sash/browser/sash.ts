@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { clamp } from '../../../../base/common/numbers.js';
-import { setGlobalSashSize, setGlobalHoverDelay } from '../../../../base/browser/ui/sash/sash.js';
-import { Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { setGlobalSashSize, setGlobalHoverDelay } from '@sidex/base/browser/ui/sash/sash.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { createStyleSheet } from '../../../../base/browser/domStylesheets.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
 
 export const minSize = 1;
 export const maxSize = 20; // see also https://ux.stackexchange.com/questions/39023/what-is-the-optimum-button-size-of-touch-screen-applications

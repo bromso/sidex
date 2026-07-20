@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { TimeoutTimer } from '../../../base/common/async.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { TimeoutTimer } from '@sidex/base/common/async.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action2 } from '../../../platform/actions/common/actions.js';
-import { ContextKeyExpr, IContextKeyService, RawContextKey } from '../../../platform/contextkey/common/contextkey.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
-import { createDecorator, ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { IQuickInputService, IQuickPickItem } from '../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../platform/telemetry/common/telemetry.js';
+import { Action2 } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 
 export const IInlineCompletionsService = createDecorator<IInlineCompletionsService>('IInlineCompletionsService');
 

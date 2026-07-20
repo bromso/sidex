@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action, IAction, Separator, SubmenuAction } from '../../../../base/common/actions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Action, IAction, Separator, SubmenuAction } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IMenu, MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { IMenu, MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IExtensionTerminalProfile,
 	ITerminalProfile,
 	TerminalLocation,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { ResourceContextKey } from '../../../common/contextkeys.js';
 import { TaskExecutionSupportedContext } from '../../tasks/common/taskService.js';
 import { ICreateTerminalOptions, ITerminalLocationOptions, ITerminalService } from './terminal.js';
@@ -22,8 +22,8 @@ import { TerminalCommandId, TERMINAL_VIEW_ID } from '../common/terminal.js';
 import { TerminalContextKeys, TerminalContextKeyStrings } from '../common/terminalContextKey.js';
 import { terminalStrings } from '../common/terminalStrings.js';
 import { ACTIVE_GROUP, AUX_WINDOW_GROUP, SIDE_GROUP } from '../../../services/editor/common/editorService.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { hasKey } from '../../../../base/common/types.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 export const enum TerminalContextMenuGroup {
 	Chat = '0_chat',

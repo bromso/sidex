@@ -2,7 +2,7 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as marked from '../../../../base/common/marked/marked.js';
+import * as marked from '@sidex/base/common/marked/marked.js';
 
 // Copied from https://github.com/Flet/github-slugger since we can't use esm yet.
 

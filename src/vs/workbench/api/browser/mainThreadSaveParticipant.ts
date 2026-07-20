@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { shouldSynchronizeModel } from '../../../editor/common/model.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { shouldSynchronizeModel } from '@sidex/editor/common/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { IProgressStep, IProgress } from '../../../platform/progress/common/progress.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgressStep, IProgress } from '@sidex/platform/progress/common/progress.js';
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ITextFileSaveParticipant,
@@ -16,8 +16,8 @@ import {
 	ITextFileSaveParticipantContext
 } from '../../services/textfile/common/textfiles.js';
 import { ExtHostContext, ExtHostDocumentSaveParticipantShape } from '../common/extHost.protocol.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { raceCancellationError } from '../../../base/common/async.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { raceCancellationError } from '@sidex/base/common/async.js';
 
 class ExtHostSaveParticipant implements ITextFileSaveParticipant {
 	private readonly _proxy: ExtHostDocumentSaveParticipantShape;

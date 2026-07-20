@@ -17,7 +17,7 @@ import { EditorInput } from '../../../common/editor/editorInput.js';
 import { EditorTabsControl } from './editorTabsControl.js';
 import { ResourceLabel, IResourceLabel } from '../../labels.js';
 import { TAB_ACTIVE_FOREGROUND, TAB_UNFOCUSED_ACTIVE_FOREGROUND } from '../../../common/theme.js';
-import { EventType as TouchEventType, GestureEvent, Gesture } from '../../../../base/browser/touch.js';
+import { EventType as TouchEventType, GestureEvent, Gesture } from '@sidex/base/browser/touch.js';
 import {
 	addDisposableListener,
 	EventType,
@@ -27,13 +27,13 @@ import {
 	DragAndDropObserver,
 	isHTMLElement,
 	$
-} from '../../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 import { CLOSE_EDITOR_COMMAND_ID, UNLOCK_GROUP_COMMAND_ID } from './editorCommands.js';
-import { Color } from '../../../../base/common/color.js';
-import { assertReturnsAllDefined } from '../../../../base/common/types.js';
-import { equals } from '../../../../base/common/objects.js';
-import { toDisposable } from '../../../../base/common/lifecycle.js';
-import { defaultBreadcrumbsWidgetStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { Color } from '@sidex/base/common/color.js';
+import { assertReturnsAllDefined } from '@sidex/base/common/types.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
+import { defaultBreadcrumbsWidgetStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IEditorTitleControlDimensions } from './editorTitleControl.js';
 import { BreadcrumbsControlFactory } from './breadcrumbsControl.js';
 

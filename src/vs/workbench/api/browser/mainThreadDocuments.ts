@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { IReference, dispose, Disposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { ITextModel, shouldSynchronizeModel } from '../../../editor/common/model.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { ITextModelService } from '../../../editor/common/services/resolverService.js';
-import { IFileService, FileOperation } from '../../../platform/files/common/files.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { IReference, dispose, Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { ITextModel, shouldSynchronizeModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { IFileService, FileOperation } from '@sidex/platform/files/common/files.js';
 import { ExtHostContext, ExtHostDocumentsShape, MainThreadDocumentsShape } from '../common/extHost.protocol.js';
 import {
 	EncodingMode,
@@ -20,15 +20,15 @@ import {
 } from '../../services/textfile/common/textfiles.js';
 import { IUntitledTextEditorModel } from '../../services/untitled/common/untitledTextEditorModel.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
-import { toLocalResource, extUri, IExtUri } from '../../../base/common/resources.js';
+import { toLocalResource, extUri, IExtUri } from '@sidex/base/common/resources.js';
 import { IWorkingCopyFileService } from '../../services/workingCopy/common/workingCopyFileService.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IPathService } from '../../services/path/common/pathService.js';
-import { ResourceMap } from '../../../base/common/map.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import { IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { ErrorNoTelemetry, onUnexpectedError } from '../../../base/common/errors.js';
-import { ISerializedModelContentChangedEvent } from '../../../editor/common/textModelEvents.js';
+import { ErrorNoTelemetry, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { ISerializedModelContentChangedEvent } from '@sidex/editor/common/textModelEvents.js';
 
 export class BoundModelReferenceCollection {
 	private _data = new Array<{ uri: URI; length: number; dispose(): void }>();

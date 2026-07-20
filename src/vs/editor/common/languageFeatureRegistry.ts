@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../base/common/event.js';
-import { IDisposable, toDisposable } from '../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ITextModel, shouldSynchronizeModel } from './model.js';
 import { LanguageFilter, LanguageSelector, score, selectLanguageIds } from './languageSelector.js';
-import { URI } from '../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 interface Entry<T> {
 	readonly selector: LanguageSelector;

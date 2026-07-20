@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as Types from '../../../../base/common/types.js';
-import * as resources from '../../../../base/common/resources.js';
-import { IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import * as Objects from '../../../../base/common/objects.js';
-import { UriComponents, URI } from '../../../../base/common/uri.js';
+import * as Types from '@sidex/base/common/types.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
 
 import { ProblemMatcher } from './problemMatcher.js';
-import { IWorkspaceFolder, IWorkspace } from '../../../../platform/workspace/common/workspace.js';
-import { RawContextKey, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
+import { IWorkspaceFolder, IWorkspace } from '@sidex/platform/workspace/common/workspace.js';
+import { RawContextKey, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TaskDefinitionRegistry } from './taskDefinitionRegistry.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { TerminalExitReason } from '../../../../platform/terminal/common/terminal.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { TerminalExitReason } from '@sidex/platform/terminal/common/terminal.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 
 export const USER_TASKS_GROUP_KEY = 'settings';
 

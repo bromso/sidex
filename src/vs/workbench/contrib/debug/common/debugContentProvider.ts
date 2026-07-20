@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI as uri } from '../../../../base/common/uri.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { getMimeTypes } from '../../../../editor/common/services/languagesAssociations.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ITextModelService, ITextModelContentProvider } from '../../../../editor/common/services/resolverService.js';
+import { getMimeTypes } from '@sidex/editor/common/services/languagesAssociations.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModelService, ITextModelContentProvider } from '@sidex/editor/common/services/resolverService.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { DEBUG_SCHEME, IDebugService, IDebugSession } from './debug.js';
 import { Source } from './debugSource.js';
-import { IEditorWorkerService } from '../../../../editor/common/services/editorWorker.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
-import { ErrorNoTelemetry } from '../../../../base/common/errors.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { IEditorWorkerService } from '@sidex/editor/common/services/editorWorker.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 /**
  * Debug URI format

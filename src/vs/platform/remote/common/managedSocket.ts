@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { ISocket, SocketCloseEvent, SocketDiagnosticsEventType } from '../../../base/parts/ipc/common/ipc.net.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ISocket, SocketCloseEvent, SocketDiagnosticsEventType } from '@sidex/base/parts/ipc/common/ipc.net.js';
 
 export interface RemoteSocketHalf {
 	onData: Emitter<VSBuffer>;

@@ -93,6 +93,24 @@ describe('rewriteSource', () => {
 		expect(rewriteSource(code, workbenchFile, ROOTS)).toBeNull();
 	});
 
+	test('rewrites real src/vs specifiers, which have no /src/ segment', () => {
+		// The shape that actually exists in the tree. Specifiers are relative to
+		// the src/vs layout, so the codemod must run against those roots — after
+		// the move they resolve outside every layer and get silently skipped.
+		const VS: Record<Layer, string> = {
+			base: '/repo/src/vs/base',
+			platform: '/repo/src/vs/platform',
+			editor: '/repo/src/vs/editor',
+			workbench: '/repo/src/vs/workbench'
+		};
+		const out = rewriteSource(
+			"import { Event } from '../../base/common/event.js';",
+			'/repo/src/vs/workbench/browser/foo.ts',
+			VS
+		);
+		expect(out).toBe("import { Event } from '@sidex/base/common/event.js';");
+	});
+
 	test('leaves an import that resolves inside its own layer alone', () => {
 		// platform/dnd/browser/dnd.ts imports '../../editor/common/editor.js',
 		// which resolves to platform/editor/ — a directory inside platform, not

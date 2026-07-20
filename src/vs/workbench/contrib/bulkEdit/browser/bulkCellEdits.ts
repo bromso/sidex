@@ -3,15 +3,15 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { groupBy } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { compare } from '../../../../base/common/strings.js';
-import { isObject } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ResourceEdit } from '../../../../editor/browser/services/bulkEditService.js';
-import { WorkspaceEditMetadata } from '../../../../editor/common/languages.js';
-import { IProgress } from '../../../../platform/progress/common/progress.js';
-import { UndoRedoGroup, UndoRedoSource } from '../../../../platform/undoRedo/common/undoRedo.js';
+import { groupBy } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ResourceEdit } from '@sidex/editor/browser/services/bulkEditService.js';
+import { WorkspaceEditMetadata } from '@sidex/editor/common/languages.js';
+import { IProgress } from '@sidex/platform/progress/common/progress.js';
+import { UndoRedoGroup, UndoRedoSource } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { getNotebookEditorFromEditorPane } from '../../notebook/browser/notebookBrowser.js';
 import {
 	CellUri,

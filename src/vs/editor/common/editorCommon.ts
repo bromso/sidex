@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../base/common/event.js';
-import { IMarkdownString } from '../../base/common/htmlContent.js';
-import { IDisposable } from '../../base/common/lifecycle.js';
-import { ThemeColor } from '../../base/common/themables.js';
-import { URI, UriComponents } from '../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { IEditorOptions } from './config/editorOptions.js';
 import { IDimension } from './core/2d/dimension.js';
 import { IPosition, Position } from './core/position.js';
@@ -23,7 +23,7 @@ import {
 	TrackedRangeStickiness
 } from './model.js';
 import { IModelDecorationsChangedEvent } from './textModelEvents.js';
-import { ICommandMetadata } from '../../platform/commands/common/commands.js';
+import { ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
 
 /**
  * A builder and helper for edit operations for a command.

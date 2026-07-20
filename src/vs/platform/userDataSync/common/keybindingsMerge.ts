@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { parse } from '../../../base/common/json.js';
-import { FormattingOptions } from '../../../base/common/jsonFormatter.js';
-import * as objects from '../../../base/common/objects.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { parse } from '@sidex/base/common/json.js';
+import { FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import * as objects from '@sidex/base/common/objects.js';
 import { ContextKeyExpr } from '../../contextkey/common/contextkey.js';
 import { IUserFriendlyKeybinding } from '../../keybinding/common/keybinding.js';
 import * as contentUtil from './content.js';

@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as semver from '../../../../base/common/semver/semver.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { index } from '../../../../base/common/arrays.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { index } from '@sidex/base/common/arrays.js';
 import {
 	CancelablePromise,
 	Promises,
 	ThrottledDelayer,
 	createCancelablePromise
-} from '../../../../base/common/async.js';
-import { CancellationError, getErrorMessage, isCancellationError } from '../../../../base/common/errors.js';
-import { Disposable, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { IPager, singlePagePager } from '../../../../base/common/paging.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/base/common/async.js';
+import { CancellationError, getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { Disposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IPager, singlePagePager } from '@sidex/base/common/paging.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	IExtensionGalleryService,
 	ILocalExtension,
@@ -46,7 +46,7 @@ import {
 	MaliciousExtensionInfo,
 	shouldRequireRepositorySignatureFor,
 	IGalleryExtensionVersion
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IWorkbenchExtensionEnablementService,
 	EnablementState,
@@ -62,11 +62,11 @@ import {
 	groupByExtension,
 	getGalleryExtensionId,
 	findMatchingMaliciousEntry
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IExtension,
 	ExtensionState,
@@ -89,19 +89,19 @@ import {
 	MODAL_GROUP,
 	SIDE_GROUP
 } from '../../../services/editor/common/editorService.js';
-import { IURLService, IURLHandler, IOpenURLOptions } from '../../../../platform/url/common/url.js';
+import { IURLService, IURLHandler, IOpenURLOptions } from '@sidex/platform/url/common/url.js';
 import { ExtensionsInput, IExtensionEditorOptions } from '../common/extensionsInput.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProgressOptions, IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProgressOptions, IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import {
 	INotificationService,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
-import * as resources from '../../../../base/common/resources.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/notification/common/notification.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import {
 	IExtensionManifest,
 	ExtensionType,
@@ -111,18 +111,18 @@ import {
 	IExtensionIdentifier,
 	IExtensionDescription,
 	isApplicationScopedExtension
-} from '../../../../platform/extensions/common/extensions.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { FileAccess } from '../../../../base/common/network.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { FileAccess } from '@sidex/base/common/network.js';
 import {
 	IIgnoredExtensionsManagementService,
 	IUserDataAutoSyncService,
 	IUserDataSyncEnablementService,
 	SyncResource
-} from '../../../../platform/userDataSync/common/nullUserDataSync.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { isBoolean, isDefined, isString, isUndefined } from '../../../../base/common/types.js';
+} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isBoolean, isDefined, isString, isUndefined } from '@sidex/base/common/types.js';
 import { IExtensionManifestPropertiesService } from '../../../services/extensions/common/extensionManifestPropertiesService.js';
 import {
 	IExtensionService,
@@ -130,30 +130,30 @@ import {
 	toExtension,
 	toExtensionDescription
 } from '../../../services/extensions/common/extensions.js';
-import { isWeb, language } from '../../../../base/common/platform.js';
-import { getLocale } from '../../../../platform/languagePacks/common/languagePacks.js';
+import { isWeb, language } from '@sidex/base/common/platform.js';
+import { getLocale } from '@sidex/platform/languagePacks/common/languagePacks.js';
 import { ILocaleService } from '../../../services/localization/common/locale.js';
-import { TelemetryTrustedValue } from '../../../../platform/telemetry/common/telemetryUtils.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
 import { ILifecycleService, LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import { IUserDataProfileService } from '../../../services/userDataProfile/common/userDataProfile.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { IDialogService, IFileDialogService, IPromptButton } from '../../../../platform/dialogs/common/dialogs.js';
-import { IUpdateService, StateType } from '../../../../platform/update/common/update.js';
-import { areApiProposalsCompatible, isEngineValid } from '../../../../platform/extensions/common/extensionValidator.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { IDialogService, IFileDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IUpdateService, StateType } from '@sidex/platform/update/common/update.js';
+import { areApiProposalsCompatible, isEngineValid } from '@sidex/platform/extensions/common/extensionValidator.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { ShowCurrentReleaseNotesActionId } from '../../update/common/update.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 import {
 	ExtensionGalleryResourceType,
 	getExtensionGalleryManifestResourceUri,
 	IExtensionGalleryManifestService
-} from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
-import { fromNow } from '../../../../base/common/date.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IMeteredConnectionService } from '../../../../platform/meteredConnection/common/meteredConnection.js';
+} from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
+import { fromNow } from '@sidex/base/common/date.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IMeteredConnectionService } from '@sidex/platform/meteredConnection/common/meteredConnection.js';
 
 interface IExtensionStateProvider<T> {
 	(extension: Extension): T;

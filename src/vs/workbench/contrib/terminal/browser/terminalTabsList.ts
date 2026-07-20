@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListService, WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IListService, WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	ITerminalConfigurationService,
 	ITerminalGroupService,
@@ -19,68 +19,68 @@ import {
 	TerminalDataTransfers
 } from './terminal.js';
 import { localize } from '@sidex/base/nls.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { MenuEntryActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { MenuEntryActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { TerminalCommandId } from '../common/terminal.js';
 import {
 	ITerminalBackend,
 	TerminalLocation,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Action } from '../../../../base/common/actions.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Action } from '@sidex/base/common/actions.js';
 import { DEFAULT_LABELS_CONTAINER, IResourceLabel, ResourceLabels } from '../../../browser/labels.js';
 import {
 	IDecorationData,
 	IDecorationsProvider,
 	IDecorationsService
 } from '../../../services/decorations/common/decorations.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import Severity from '../../../../base/common/severity.js';
-import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import Severity from '@sidex/base/common/severity.js';
+import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IListDragAndDrop,
 	IListDragOverReaction,
 	IListRenderer,
 	ListDragOverEffectPosition,
 	ListDragOverEffectType
-} from '../../../../base/browser/ui/list/list.js';
-import { DataTransfers, IDragAndDropData } from '../../../../base/browser/dnd.js';
-import { disposableTimeout } from '../../../../base/common/async.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { DataTransfers, IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
 import {
 	ElementsDragAndDropData,
 	ListViewTargetSector,
 	NativeDragAndDropData
-} from '../../../../base/browser/ui/list/listView.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/browser/ui/list/listView.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { getColorClass, getIconId, getUriClasses } from './terminalIcon.js';
 import { IEditableData } from '../../../common/views.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { InputBox, MessageType } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { CodeDataTransfers, containsDragType, getPathForFile } from '../../../../platform/dnd/browser/dnd.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { InputBox, MessageType } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { CodeDataTransfers, containsDragType, getPathForFile } from '@sidex/platform/dnd/browser/dnd.js';
 import { terminalStrings } from '../common/terminalStrings.js';
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
-import { IProcessDetails } from '../../../../platform/terminal/common/terminalProcess.js';
+import { IProcessDetails } from '@sidex/platform/terminal/common/terminalProcess.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
 import { getTerminalResourcesFromDragEvent, parseTerminalUri } from './terminalUri.js';
 import { getInstanceHoverInfo } from './terminalTooltip.js';
-import { defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { getColorForSeverity } from './terminalStatusList.js';
 import { TerminalContextActionRunner } from './terminalContextMenu.js';
-import type { IHoverAction } from '../../../../base/browser/ui/hover/hover.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IStorageService, StorageScope } from '../../../../platform/storage/common/storage.js';
+import type { IHoverAction } from '@sidex/base/browser/ui/hover/hover.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
 import { TerminalStorageKeys } from '../common/terminalStorageKeys.js';
-import { isObject } from '../../../../base/common/types.js';
+import { isObject } from '@sidex/base/common/types.js';
 
 const $ = DOM.$;
 

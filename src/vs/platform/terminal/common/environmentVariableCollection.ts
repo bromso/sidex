@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IProcessEnvironment, isWindows } from '../../../base/common/platform.js';
+import { IProcessEnvironment, isWindows } from '@sidex/base/common/platform.js';
 import {
 	EnvironmentVariableMutatorType,
 	EnvironmentVariableScope,

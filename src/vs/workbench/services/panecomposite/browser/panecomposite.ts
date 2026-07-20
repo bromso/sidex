@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
 import { PaneCompositeDescriptor } from '../../../browser/panecomposite.js';
-import { IProgressIndicator } from '../../../../platform/progress/common/progress.js';
+import { IProgressIndicator } from '@sidex/platform/progress/common/progress.js';
 import { IPaneComposite } from '../../../common/panecomposite.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { SINGLE_WINDOW_PARTS } from '../../layout/browser/layoutService.js';

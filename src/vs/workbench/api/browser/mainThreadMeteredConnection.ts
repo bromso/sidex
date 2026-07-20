@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IMeteredConnectionService } from '../../../platform/meteredConnection/common/meteredConnection.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IMeteredConnectionService } from '@sidex/platform/meteredConnection/common/meteredConnection.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,

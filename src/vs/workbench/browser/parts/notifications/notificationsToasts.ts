@@ -15,7 +15,7 @@ import {
 	NotificationsPosition,
 	getNotificationsPosition
 } from '../../../common/notifications.js';
-import { IDisposable, dispose, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IDisposable, dispose, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	addDisposableListener,
 	EventType,
@@ -29,32 +29,32 @@ import {
 	getActiveElement,
 	getDomNodePagePosition,
 	getClientArea
-} from '../../../../base/browser/dom.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/browser/dom.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { NotificationsList } from './notificationsList.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
 import { NOTIFICATIONS_TOAST_BORDER, NOTIFICATIONS_BACKGROUND } from '../../../common/theme.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { INotificationsToastController } from './notificationsCommands.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	Severity,
 	NotificationsFilter,
 	NotificationPriority,
 	withSeverityPrefix
-} from '../../../../platform/notification/common/notification.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
 import { ILifecycleService, LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { IntervalCounter } from '../../../../base/common/async.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { IntervalCounter } from '@sidex/base/common/async.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { NotificationsToastsVisibleContext } from '../../../common/contextkeys.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { DEFAULT_CUSTOM_TITLEBAR_HEIGHT } from '../../../../platform/window/common/window.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { DEFAULT_CUSTOM_TITLEBAR_HEIGHT } from '@sidex/platform/window/common/window.js';
 
 interface INotificationToast {
 	readonly item: INotificationViewItem;

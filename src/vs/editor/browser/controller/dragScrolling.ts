@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { EditorOption } from '../../common/config/editorOptions.js';
 import { Position } from '../../common/core/position.js';
 import { ViewContext } from '../../common/viewModel/viewContext.js';

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as browser from '../../../base/browser/browser.js';
-import * as arrays from '../../../base/common/arrays.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import * as objects from '../../../base/common/objects.js';
-import * as platform from '../../../base/common/platform.js';
+import * as browser from '@sidex/base/browser/browser.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as objects from '@sidex/base/common/objects.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { ElementSizeObserver } from './elementSizeObserver.js';
 import { FontMeasurements } from './fontMeasurements.js';
 import { migrateOptions } from './migrateOptions.js';
@@ -28,10 +28,10 @@ import { BareFontInfo, FontInfo, IValidatedEditorOptions } from '../../common/co
 import { createBareFontInfoFromValidatedSettings } from '../../common/config/fontInfoFromSettings.js';
 import { IDimension } from '../../common/core/2d/dimension.js';
 import { IEditorConfiguration } from '../../common/config/editorConfiguration.js';
-import { AccessibilitySupport, IAccessibilityService } from '../../../platform/accessibility/common/accessibility.js';
-import { getWindow, getWindowById } from '../../../base/browser/dom.js';
-import { PixelRatio } from '../../../base/browser/pixelRatio.js';
-import { MenuId } from '../../../platform/actions/common/actions.js';
+import { AccessibilitySupport, IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { getWindow, getWindowById } from '@sidex/base/browser/dom.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { InputMode } from '../../common/inputMode.js';
 
 export interface IEditorConstructionOptions extends IEditorOptions {

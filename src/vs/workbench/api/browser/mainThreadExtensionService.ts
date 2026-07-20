@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { toAction } from '../../../base/common/actions.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { SerializedError, transformErrorFromSerialization } from '../../../base/common/errors.js';
-import { FileAccess } from '../../../base/common/network.js';
-import Severity from '../../../base/common/severity.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { toAction } from '@sidex/base/common/actions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { SerializedError, transformErrorFromSerialization } from '@sidex/base/common/errors.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
-import { ILocalExtension } from '../../../platform/extensionManagement/common/extensionManagement.js';
-import { areSameExtensions } from '../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { INotificationService } from '../../../platform/notification/common/notification.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ILocalExtension } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	IRemoteConnectionData,
 	ManagedRemoteConnection,
@@ -23,7 +23,7 @@ import {
 	RemoteConnectionType,
 	ResolvedAuthority,
 	WebSocketRemoteConnection
-} from '../../../platform/remote/common/remoteAuthorityResolver.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 import {
 	ExtHostContext,
 	ExtHostExtensionServiceShape,

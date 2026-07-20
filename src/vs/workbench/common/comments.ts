@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { MarshalledId } from '../../base/common/marshallingIds.js';
-import { CommentThread } from '../../editor/common/languages.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { CommentThread } from '@sidex/editor/common/languages.js';
 
 export interface MarshalledCommentThread {
 	$mid: MarshalledId.CommentThread;

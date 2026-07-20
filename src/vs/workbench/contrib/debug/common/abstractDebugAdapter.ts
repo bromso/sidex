@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IDebugAdapter } from './debug.js';
-import { timeout } from '../../../../base/common/async.js';
+import { timeout } from '@sidex/base/common/async.js';
 import { localize } from '@sidex/base/nls.js';
 
 /**

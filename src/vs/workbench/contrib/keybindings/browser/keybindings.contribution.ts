@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { showWindowLogActionId } from '../../../services/log/common/logConstants.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
 import {
 	$,
 	addDisposableListener,
@@ -19,9 +19,9 @@ import {
 	getDomNodePagePosition,
 	getWindows,
 	onDidRegisterWindow
-} from '../../../../base/browser/dom.js';
-import { createCSSRule, createStyleSheet } from '../../../../base/browser/domStylesheets.js';
-import { Emitter } from '../../../../base/common/event.js';
+} from '@sidex/base/browser/dom.js';
+import { createCSSRule, createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
+import { Emitter } from '@sidex/base/common/event.js';
 
 class ToggleKeybindingsLogAction extends Action2 {
 	static disposable: IDisposable | undefined;

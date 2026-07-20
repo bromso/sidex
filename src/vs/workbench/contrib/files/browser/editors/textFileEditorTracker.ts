@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IWorkbenchContribution } from '../../../../common/contributions.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ITextFileService, TextFileEditorModelState } from '../../../../services/textfile/common/textfiles.js';
 import { ILifecycleService } from '../../../../services/lifecycle/common/lifecycle.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { distinct, coalesce } from '../../../../../base/common/arrays.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { distinct, coalesce } from '@sidex/base/common/arrays.js';
 import { IHostService } from '../../../../services/host/browser/host.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { RunOnceWorker } from '../../../../../base/common/async.js';
-import { ICodeEditorService } from '../../../../../editor/browser/services/codeEditorService.js';
+import { RunOnceWorker } from '@sidex/base/common/async.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
 import { IFilesConfigurationService } from '../../../../services/filesConfiguration/common/filesConfigurationService.js';
 import { FILE_EDITOR_INPUT_ID } from '../../common/files.js';
-import { Schemas } from '../../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { UntitledTextEditorInput } from '../../../../services/untitled/common/untitledTextEditorInput.js';
 import { IWorkingCopyEditorService } from '../../../../services/workingCopy/common/workingCopyEditorService.js';
 import { DEFAULT_EDITOR_ASSOCIATION } from '../../../../common/editor.js';

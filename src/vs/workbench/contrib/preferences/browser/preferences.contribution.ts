@@ -3,36 +3,36 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { isBoolean, isObject, isString } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditor, isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isBoolean, isObject, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor, isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	EditorContributionInstantiation,
 	registerEditorContribution
-} from '../../../../editor/browser/editorExtensions.js';
-import { Context as SuggestContext } from '../../../../editor/contrib/suggest/browser/suggest.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { Context as SuggestContext } from '@sidex/editor/contrib/suggest/browser/suggest.js';
 import * as nls from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { InputFocusedContext, IsMacNativeContext } from '../../../../platform/contextkey/common/contextkeys.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight, KeybindingsRegistry } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, MenuId, MenuRegistry, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { InputFocusedContext, IsMacNativeContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight, KeybindingsRegistry } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { PICK_WORKSPACE_FOLDER_COMMAND_ID } from '../../../browser/actions/workspaceCommands.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import { resolveCommandsContext } from '../../../browser/parts/editor/editorCommandsContext.js';

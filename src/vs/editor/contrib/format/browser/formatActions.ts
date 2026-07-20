@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -35,12 +35,12 @@ import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IEditorProgressService, Progress } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IEditorProgressService, Progress } from '@sidex/platform/progress/common/progress.js';
 
 export class FormatOnType implements IEditorContribution {
 	public static readonly ID = 'editor.contrib.autoFormat';

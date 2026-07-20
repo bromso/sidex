@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { SimpleFindWidget } from '../../codeEditor/browser/find/simpleFindWidget.js';
 import { KEYBINDING_CONTEXT_WEBVIEW_FIND_WIDGET_FOCUSED } from './webview.js';
 

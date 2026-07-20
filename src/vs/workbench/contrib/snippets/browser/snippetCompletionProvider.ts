@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { compare, compareSubstring } from '../../../../base/common/strings.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { compare, compareSubstring } from '@sidex/base/common/strings.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import {
 	CompletionItem,
 	CompletionItemKind,
@@ -18,18 +18,18 @@ import {
 	CompletionTriggerKind,
 	CompletionItemLabel,
 	Command
-} from '../../../../editor/common/languages.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { SnippetParser } from '../../../../editor/contrib/snippet/browser/snippetParser.js';
+} from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { SnippetParser } from '@sidex/editor/contrib/snippet/browser/snippetParser.js';
 import { localize } from '@sidex/base/nls.js';
 import { ISnippetsService } from './snippets.js';
 import { Snippet, SnippetSource } from './snippetsFile.js';
-import { isPatternInWord } from '../../../../base/common/filters.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { ILanguageConfigurationService } from '../../../../editor/common/languages/languageConfigurationRegistry.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IWordAtPosition } from '../../../../editor/common/core/wordHelper.js';
+import { isPatternInWord } from '@sidex/base/common/filters.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { ILanguageConfigurationService } from '@sidex/editor/common/languages/languageConfigurationRegistry.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IWordAtPosition } from '@sidex/editor/common/core/wordHelper.js';
 
 const markSnippetAsUsed = '_snippet.markAsUsed';
 

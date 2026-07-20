@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../../services/environment/browser/environmentService.js';
-import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { createScanner, SyntaxKind } from '../../../../base/common/json.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { createScanner, SyntaxKind } from '@sidex/base/common/json.js';
 
 const TRUSTED_DOMAINS_URI = URI.parse('trustedDomains:/Trusted Domains');
 

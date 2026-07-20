@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { cloneAndChange, safeStringify } from '../../../base/common/objects.js';
-import { isObject } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { cloneAndChange, safeStringify } from '@sidex/base/common/objects.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

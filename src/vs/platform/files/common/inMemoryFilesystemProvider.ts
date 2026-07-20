@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import * as resources from '../../../base/common/resources.js';
-import { ReadableStreamEvents, newWriteableStream } from '../../../base/common/stream.js';
-import { URI } from '../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { ReadableStreamEvents, newWriteableStream } from '@sidex/base/common/stream.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	FileChangeType,
 	IFileDeleteOptions,

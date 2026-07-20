@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action } from '../../../../base/common/actions.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export class OpenScmGroupAction extends Action {
 	static readonly ID = 'workbench.scm.action.openScmGroup';

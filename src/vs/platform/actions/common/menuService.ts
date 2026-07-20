@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { DebounceEmitter, Emitter, Event } from '../../../base/common/event.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { DebounceEmitter, Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	IMenu,
 	IMenuActionOptions,
@@ -25,9 +25,9 @@ import {
 import { ICommandAction, ILocalizedString } from '../../action/common/action.js';
 import { ICommandService } from '../../commands/common/commands.js';
 import { ContextKeyExpression, IContextKeyService } from '../../contextkey/common/contextkey.js';
-import { IAction, Separator, toAction } from '../../../base/common/actions.js';
+import { IAction, Separator, toAction } from '@sidex/base/common/actions.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
-import { removeFastWithoutKeepingOrder } from '../../../base/common/arrays.js';
+import { removeFastWithoutKeepingOrder } from '@sidex/base/common/arrays.js';
 import { localize } from '@sidex/base/nls.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 

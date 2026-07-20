@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { SetLogLevelAction } from './logsActions.js';
 import {
 	IWorkbenchContribution,
@@ -20,7 +20,7 @@ import {
 	isMultiSourceOutputChannelDescriptor,
 	isSingleSourceOutputChannelDescriptor
 } from '../../../services/output/common/output.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	CONTEXT_LOG_LEVEL,
 	ILoggerResource,
@@ -28,15 +28,15 @@ import {
 	LogLevel,
 	LogLevelToString,
 	isLogLevel
-} from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/log/common/log.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
 import { windowLogId, showWindowLogActionId } from '../../../services/log/common/logConstants.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { CounterSet } from '../../../../base/common/map.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { CounterSet } from '@sidex/base/common/map.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IDefaultLogLevelsService } from '../../../services/log/common/defaultLogLevels.js';
 
 registerAction2(

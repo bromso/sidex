@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getErrorMessage } from '../../../../base/common/errors.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { IExtensionStorageService } from '../../../../platform/extensionManagement/common/extensionStorage.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IExtensionStorageService } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
 import {
 	FileSystemProviderError,
 	FileSystemProviderErrorCode,
 	IFileService
-} from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 
 /**
  * An extension storage has following

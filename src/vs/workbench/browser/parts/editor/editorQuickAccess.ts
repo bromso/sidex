@@ -10,12 +10,12 @@ import {
 	quickPickItemScorerAccessor,
 	IQuickPickItemWithResource,
 	IQuickPick
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	PickerQuickAccessProvider,
 	IPickerQuickAccessItem,
 	TriggerAction
-} from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
 import { IEditorGroupsService, GroupsOrder } from '../../../services/editor/common/editorGroupsService.js';
 import {
 	EditorsOrder,
@@ -25,19 +25,19 @@ import {
 	GroupIdentifier
 } from '../../../common/editor.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
 import {
 	prepareQuery,
 	scoreItemFuzzy,
 	compareItemsByFuzzyScore,
 	FuzzyScorerCache
-} from '../../../../base/common/fuzzyScorer.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/base/common/fuzzyScorer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 interface IEditorQuickPickItem extends IQuickPickItemWithResource, IPickerQuickAccessItem {
 	groupId: GroupIdentifier;

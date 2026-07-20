@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { sumBy } from '../../../../base/common/arrays.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
+import { sumBy } from '@sidex/base/common/arrays.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { OffsetRange } from '../ranges/offsetRange.js';
 
 export abstract class BaseEdit<

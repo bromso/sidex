@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { coalesceInPlace } from '../../../../base/common/arrays.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesceInPlace } from '@sidex/base/common/arrays.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	CellEditType,
 	ICellMetadataEdit,

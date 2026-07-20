@@ -2,9 +2,9 @@
  *  SideX - Profile registry backed by the Rust `sidex-profiles` crate.
  *--------------------------------------------------------------------------------------------*/
 
-import { BroadcastDataChannel } from '../../../base/browser/broadcast.js';
-import { revive } from '../../../base/common/marshalling.js';
-import { UriDto } from '../../../base/common/uri.js';
+import { BroadcastDataChannel } from '@sidex/base/browser/broadcast.js';
+import { revive } from '@sidex/base/common/marshalling.js';
+import { UriDto } from '@sidex/base/common/uri.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
 import { ILogService } from '../../log/common/log.js';

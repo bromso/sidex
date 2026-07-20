@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { Range } from '../../../common/core/range.js';
@@ -20,17 +20,17 @@ import {
 	IHoverPart,
 	IHoverWidget
 } from './hoverTypes.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { HoverVerbosityAction } from '../../../common/standalone/standaloneEnums.js';
 import { ContentHoverWidget } from './contentHoverWidget.js';
 import { ContentHoverComputer, ContentHoverComputerOptions } from './contentHoverComputer.js';
 import { ContentHoverResult } from './contentHoverTypes.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { RenderedContentHover } from './contentHoverRendered.js';
 import { isMousePositionWithinElement } from './hoverUtils.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 
 export class ContentHoverWidgetWrapper extends Disposable implements IHoverWidget {
 	private _currentResult: ContentHoverResult | null = null;

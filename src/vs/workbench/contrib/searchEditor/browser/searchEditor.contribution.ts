@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { extname, isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { extname, isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	ToggleCaseSensitiveKeybinding,
 	ToggleRegexKeybinding,
 	ToggleWholeWordKeybinding
-} from '../../../../editor/contrib/find/browser/findModel.js';
+} from '@sidex/editor/contrib/find/browser/findModel.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import {
 	IWorkbenchContribution,
@@ -62,10 +62,10 @@ import {
 	IWorkingCopyEditorHandler,
 	IWorkingCopyEditorService
 } from '../../../services/workingCopy/common/workingCopyEditorService.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkingCopyIdentifier } from '../../../services/workingCopy/common/workingCopy.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { getActiveElement } from '../../../../base/browser/dom.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
 
 const OpenInEditorCommandId = 'search.action.openInEditor';
 const OpenNewEditorToSideCommandId = 'search.action.openNewEditorToSide';

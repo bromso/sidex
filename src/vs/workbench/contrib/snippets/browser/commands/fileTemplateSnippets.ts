@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { groupBy, isFalsyOrEmpty } from '../../../../../base/common/arrays.js';
-import { compare } from '../../../../../base/common/strings.js';
-import { getCodeEditor } from '../../../../../editor/browser/editorBrowser.js';
-import { ILanguageService } from '../../../../../editor/common/languages/language.js';
-import { SnippetController2 } from '../../../../../editor/contrib/snippet/browser/snippetController2.js';
+import { groupBy, isFalsyOrEmpty } from '@sidex/base/common/arrays.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { getCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { SnippetsAction } from './abstractSnippetsActions.js';
 import { ISnippetsService } from '../snippets.js';
 import { Snippet } from '../snippetsFile.js';

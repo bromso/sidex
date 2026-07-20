@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { IEditorPaneRegistry, EditorPaneDescriptor } from '../../editor.js';
 import { IEditorFactoryRegistry, EditorExtensions } from '../../../common/editor.js';
@@ -45,10 +45,10 @@ import {
 	ChangeLanguageAction,
 	EditorStatusContribution
 } from './editorStatus.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { MenuRegistry, MenuId, IMenuItem, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { MenuRegistry, MenuId, IMenuItem, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	CloseEditorsInOtherGroupsAction,
 	CloseAllEditorsAction,
@@ -210,23 +210,23 @@ import {
 	DIFF_SWAP_SIDES
 } from './diffEditorCommands.js';
 import { inQuickPickContext, getQuickNavigateHandler } from '../../quickaccess.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ContextKeyExpr, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ContextKeyExpr, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import { WorkbenchPhase, registerWorkbenchContribution2 } from '../../../common/contributions.js';
 import { EditorAutoSave } from './editorAutoSave.js';
 import {
 	IQuickAccessRegistry,
 	Extensions as QuickAccessExtensions
-} from '../../../../platform/quickinput/common/quickAccess.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
 import {
 	ActiveGroupEditorsByMostRecentlyUsedQuickAccess,
 	AllEditorsByAppearanceQuickAccess,
 	AllEditorsByMostRecentlyUsedQuickAccess
 } from './editorQuickAccess.js';
-import { FileAccess } from '../../../../base/common/network.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import {
 	UntitledTextEditorInputSerializer,
 	UntitledTextEditorWorkingCopyEditorHandler
@@ -245,10 +245,10 @@ import {
 	ZenShowMultipleEditorTabsAction,
 	ZenShowSingleEditorTabAction
 } from '../../actions/layoutActions.js';
-import { ICommandAction } from '../../../../platform/action/common/action.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { getFontSnippets } from '../../../../base/browser/fonts.js';
-import { registerEditorFontConfigurations } from '../../../../editor/common/config/editorConfigurationSchema.js';
+import { ICommandAction } from '@sidex/platform/action/common/action.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { getFontSnippets } from '@sidex/base/browser/fonts.js';
+import { registerEditorFontConfigurations } from '@sidex/editor/common/config/editorConfigurationSchema.js';
 
 //#region Editor Registrations
 

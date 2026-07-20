@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { GlobalIdleValue } from '../../../base/common/async.js';
-import { Event } from '../../../base/common/event.js';
-import { illegalState } from '../../../base/common/errors.js';
-import { DisposableStore, dispose, IDisposable, isDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { GlobalIdleValue } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { illegalState } from '@sidex/base/common/errors.js';
+import { DisposableStore, dispose, IDisposable, isDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { SyncDescriptor, SyncDescriptor0 } from './descriptors.js';
 import { Graph } from './graph.js';
 import {
@@ -17,7 +17,7 @@ import {
 	_util
 } from './instantiation.js';
 import { ServiceCollection } from './serviceCollection.js';
-import { LinkedList } from '../../../base/common/linkedList.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
 
 // TRACING
 const _enableAllTracing = false;

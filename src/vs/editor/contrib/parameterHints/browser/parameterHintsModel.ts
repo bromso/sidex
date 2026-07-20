@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, Delayer } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { CancelablePromise, createCancelablePromise, Delayer } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { CharacterSet } from '../../../common/core/characterClassifier.js';

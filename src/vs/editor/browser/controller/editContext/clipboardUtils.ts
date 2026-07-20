@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 import { IViewModel } from '../../../common/viewModel.js';
 import { Range } from '../../../common/core/range.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { Mimes } from '../../../../base/common/mime.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { Mimes } from '@sidex/base/common/mime.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { VSDataTransfer } from '../../../../base/common/dataTransfer.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { VSDataTransfer } from '@sidex/base/common/dataTransfer.js';
 import { toExternalVSDataTransfer } from '../../dataTransfer.js';
 
 export function generateDataToCopyAndStoreInMemory(

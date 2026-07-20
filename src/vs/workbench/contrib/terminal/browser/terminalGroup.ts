@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { TERMINAL_VIEW_ID } from '../common/terminal.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { IDisposable, Disposable, DisposableStore, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import { SplitView, Orientation, IView, Sizing } from '../../../../base/browser/ui/splitview/splitview.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IDisposable, Disposable, DisposableStore, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { SplitView, Orientation, IView, Sizing } from '@sidex/base/browser/ui/splitview/splitview.js';
 import { isHorizontal, IWorkbenchLayoutService, Position } from '../../../services/layout/browser/layoutService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ITerminalInstance,
 	Direction,
@@ -21,11 +21,11 @@ import {
 	IShellLaunchConfig,
 	ITerminalTabLayoutInfoById,
 	TerminalLocation
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { TerminalStatus } from './terminalStatusList.js';
-import { getWindow } from '../../../../base/browser/dom.js';
-import { asArray } from '../../../../base/common/arrays.js';
-import { hasKey, isNumber, type SingleOrMany } from '../../../../base/common/types.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { hasKey, isNumber, type SingleOrMany } from '@sidex/base/common/types.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 
 const enum Constants {

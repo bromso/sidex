@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindowById } from '../../../../base/browser/dom.js';
-import { isAuxiliaryWindow } from '../../../../base/browser/window.js';
-import { timeout } from '../../../../base/common/async.js';
-import { Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { basename } from '../../../../base/common/path.js';
-import { isString } from '../../../../base/common/types.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { TelemetryTrustedValue } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { TerminalCapability } from '../../../../platform/terminal/common/capabilities/capabilities.js';
+import { getWindowById } from '@sidex/base/browser/dom.js';
+import { isAuxiliaryWindow } from '@sidex/base/browser/window.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/path.js';
+import { isString } from '@sidex/base/common/types.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	TerminalLocation,
 	type IShellLaunchConfig,
 	type ShellIntegrationInjectionFailureReason
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import type { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
 import { ITerminalEditorService, ITerminalService, type ITerminalInstance } from './terminal.js';

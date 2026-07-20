@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { Selection } from '../core/selection.js';
 import { EndOfLineSequence, ICursorStateComputer, IValidEditOperation, ITextModel } from '../model.js';
 import { TextModel } from './textModel.js';
@@ -14,12 +14,12 @@ import {
 	UndoRedoElementType,
 	IWorkspaceUndoRedoElement,
 	UndoRedoGroup
-} from '../../../platform/undoRedo/common/undoRedo.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/platform/undoRedo/common/undoRedo.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { TextChange, compressConsecutiveTextChanges } from '../core/textChange.js';
-import * as buffer from '../../../base/common/buffer.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { basename } from '../../../base/common/resources.js';
+import * as buffer from '@sidex/base/common/buffer.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/resources.js';
 import { ISingleEditOperation } from '../core/editOperation.js';
 import { EditSources, TextModelEditSource } from '../textModelEditSource.js';
 

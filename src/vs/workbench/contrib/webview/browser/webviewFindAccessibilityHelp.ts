@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	AccessibleViewProviderId,
@@ -11,9 +11,9 @@ import {
 	AccessibleContentProvider,
 	IAccessibleViewContentProvider,
 	IAccessibleViewOptions
-} from '../../../../platform/accessibility/browser/accessibleView.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { KEYBINDING_CONTEXT_WEBVIEW_FIND_WIDGET_FOCUSED } from './webview.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 

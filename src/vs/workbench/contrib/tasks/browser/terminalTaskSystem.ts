@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { asArray } from '../../../../base/common/arrays.js';
-import * as Async from '../../../../base/common/async.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { isUNC } from '../../../../base/common/extpath.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedMap, Touch } from '../../../../base/common/map.js';
-import * as Objects from '../../../../base/common/objects.js';
-import * as path from '../../../../base/common/path.js';
-import * as Platform from '../../../../base/common/platform.js';
-import * as resources from '../../../../base/common/resources.js';
-import Severity from '../../../../base/common/severity.js';
-import * as Types from '../../../../base/common/types.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import * as Async from '@sidex/base/common/async.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { isUNC } from '@sidex/base/common/extpath.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedMap, Touch } from '@sidex/base/common/map.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import * as path from '@sidex/base/common/path.js';
+import * as Platform from '@sidex/base/common/platform.js';
+import * as resources from '@sidex/base/common/resources.js';
+import Severity from '@sidex/base/common/severity.js';
+import * as Types from '@sidex/base/common/types.js';
 import * as nls from '@sidex/base/nls.js';
 
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IMarkerData, IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IMarkerData, IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { Markers } from '../../markers/common/markers.js';
 import { ProblemMatcher, ProblemMatcherRegistry /*, ProblemPattern, getResource */ } from '../common/problemMatcher.js';
 
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IShellLaunchConfig, WaitOnExitValue } from '../../../../platform/terminal/common/terminal.js';
-import { formatMessageForTerminal } from '../../../../platform/terminal/common/terminalStrings.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IShellLaunchConfig, WaitOnExitValue } from '@sidex/platform/terminal/common/terminal.js';
+import { formatMessageForTerminal } from '@sidex/platform/terminal/common/terminalStrings.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { TaskTerminalStatus } from './taskTerminalStatus.js';
@@ -100,10 +100,10 @@ import { IWorkbenchEnvironmentService } from '../../../services/environment/comm
 import { IOutputService } from '../../../services/output/common/output.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TaskProblemMonitor } from './taskProblemMonitor.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { serializeVSCodeOscMessage } from '../../../../platform/terminal/common/xterm/shellIntegrationAddon.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { serializeVSCodeOscMessage } from '@sidex/platform/terminal/common/xterm/shellIntegrationAddon.js';
 
 interface ITerminalData {
 	terminal: ITerminalInstance;

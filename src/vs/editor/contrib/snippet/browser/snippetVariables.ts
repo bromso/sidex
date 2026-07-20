@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { normalizeDriveLetter } from '../../../../base/common/labels.js';
-import * as path from '../../../../base/common/path.js';
-import { dirname } from '../../../../base/common/resources.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import * as path from '@sidex/base/common/path.js';
+import { dirname } from '@sidex/base/common/resources.js';
 import {
 	commonPrefixLength,
 	getLeadingWhitespace,
 	isFalsyOrWhitespace,
 	splitLines
-} from '../../../../base/common/strings.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/strings.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { Selection } from '../../../common/core/selection.js';
 import { ITextModel } from '../../../common/model.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { Text, Variable, VariableResolver } from './snippetParser.js';
 import { OvertypingCapturer } from '../../suggest/browser/suggestOvertypingCapturer.js';
 import * as nls from '@sidex/base/nls.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	WORKSPACE_EXTENSION,
 	isSingleFolderWorkspaceIdentifier,
@@ -28,7 +28,7 @@ import {
 	ISingleFolderWorkspaceIdentifier,
 	IWorkspaceIdentifier,
 	isEmptyWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 
 export const KnownSnippetVariableNames = Object.freeze<{ [key: string]: true }>({
 	CURRENT_YEAR: true,

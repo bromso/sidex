@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { groupBy } from '../../../../base/common/arrays.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
+import { groupBy } from '@sidex/base/common/arrays.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import { localize } from '@sidex/base/nls.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import {
 	QuickPickInput,
 	IQuickPickItem,
 	IQuickInputService,
 	IQuickPickItemButtonEvent
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { testingUpdateProfiles } from './icons.js';
 import { testConfigurationGroupNames } from '../common/constants.js';
 import { InternalTestItem, ITestRunProfile, TestRunProfileBitset } from '../common/testTypes.js';
 import { canUseProfileWithTest, ITestProfileService } from '../common/testProfileService.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 
 interface IConfigurationPickerOptions {
 	/** Placeholder text */

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IHostService, IToastOptions, IToastResult } from './host.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IWindowSettings,
 	IWindowOpenable,
@@ -21,12 +21,12 @@ import {
 	IFileToOpen,
 	IOpenedMainWindow,
 	IOpenedAuxiliaryWindow
-} from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/window/common/window.js';
 import { isResourceEditorInput, pathsToEditors } from '../../../common/editor.js';
 import { whenEditorClosed } from '../../../browser/editor.js';
 import { IWorkspace, IWorkspaceProvider } from '../../../browser/web.api.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { ILabelService, Verbosity } from '../../../../platform/label/common/label.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ILabelService, Verbosity } from '@sidex/platform/label/common/label.js';
 import {
 	EventType,
 	ModifierKeyEmitter,
@@ -40,39 +40,39 @@ import {
 	onDidRegisterWindow,
 	trackFocus,
 	getWindows as getDOMWindows
-} from '../../../../base/browser/dom.js';
-import { Disposable, DisposableSet, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/browser/dom.js';
+import { Disposable, DisposableSet, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { parseLineAndColumnAware } from '../../../../base/common/extpath.js';
-import { IWorkspaceFolderCreationData } from '../../../../platform/workspaces/common/workspaces.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { parseLineAndColumnAware } from '@sidex/base/common/extpath.js';
+import { IWorkspaceFolderCreationData } from '@sidex/platform/workspaces/common/workspaces.js';
 import { IWorkspaceEditingService } from '../../workspaces/common/workspaceEditing.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ILifecycleService, BeforeShutdownEvent, ShutdownReason } from '../../lifecycle/common/lifecycle.js';
 import { BrowserLifecycleService } from '../../lifecycle/browser/lifecycleService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { getWorkspaceIdentifier } from '../../workspaces/browser/workspaces.js';
 import { localize } from '@sidex/base/nls.js';
-import Severity from '../../../../base/common/severity.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { DomEmitter } from '../../../../base/browser/event.js';
-import { isUndefined } from '../../../../base/common/types.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { isUndefined } from '@sidex/base/common/types.js';
 import {
 	isTemporaryWorkspace,
 	IWorkspaceContextService,
 	toWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { mainWindow, isAuxiliaryWindow } from '../../../../base/browser/window.js';
-import { isIOS, isMacintosh } from '../../../../base/common/platform.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { URI } from '../../../../base/common/uri.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { mainWindow, isAuxiliaryWindow } from '@sidex/base/browser/window.js';
+import { isIOS, isMacintosh } from '@sidex/base/common/platform.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { showBrowserToast } from './toasts.js';
 
 enum HostShutdownReason {

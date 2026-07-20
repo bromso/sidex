@@ -5,12 +5,12 @@
 
 import './media/sidebarpart.css';
 import { localize2 } from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { SideBarVisibleContext } from '../../../common/contextkeys.js';

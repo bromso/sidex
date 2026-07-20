@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import {
 	IJSONContributionRegistry,
 	Extensions as JSONExtensions
 } from '../../jsonschemas/common/jsonContributionRegistry.js';
 import * as platform from '../../registry/common/platform.js';
 import { IColorTheme } from './themeService.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { RunOnceScheduler } from '../../../base/common/async.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 
 //  ------ API types
 

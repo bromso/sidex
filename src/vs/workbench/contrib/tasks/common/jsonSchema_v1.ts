@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as Objects from '../../../../base/common/objects.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 
 import { ProblemMatcherRegistry } from './problemMatcher.js';
 

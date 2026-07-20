@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { IProcessEnvironment, OperatingSystem } from '../../../base/common/platform.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IProcessEnvironment, OperatingSystem } from '@sidex/base/common/platform.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import {
 	IPtyHostProcessReplayEvent,
@@ -14,15 +14,15 @@ import {
 	type ITerminalCommand
 } from './capabilities/capabilities.js';
 import { IGetTerminalLayoutInfoArgs, IProcessDetails, ISetTerminalLayoutInfoArgs } from './terminalProcess.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ISerializableEnvironmentVariableCollections } from './environmentVariable.js';
 import { IWorkspaceFolder } from '../../workspace/common/workspace.js';
 import { Registry } from '../../registry/common/platform.js';
-import type * as performance from '../../../base/common/performance.js';
+import type * as performance from '@sidex/base/common/performance.js';
 import { ILogService } from '../../log/common/log.js';
-import type { IAction } from '../../../base/common/actions.js';
-import type { IDisposable } from '../../../base/common/lifecycle.js';
-import type { SingleOrMany } from '../../../base/common/types.js';
+import type { IAction } from '@sidex/base/common/actions.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import type { SingleOrMany } from '@sidex/base/common/types.js';
 
 export const enum TerminalSettingPrefix {
 	AutomationProfile = 'terminal.integrated.automationProfile.',

@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getCodeEditor, ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, registerEditorAction } from '../../../../editor/browser/editorExtensions.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { getCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import {
 	DocumentFormattingEditProvider,
 	DocumentRangeFormattingEditProvider
-} from '../../../../editor/common/languages.js';
+} from '@sidex/editor/common/languages.js';
 import * as nls from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	formatDocumentRangesWithProvider,
 	formatDocumentWithProvider,
@@ -22,14 +22,14 @@ import {
 	FormattingConflicts,
 	FormattingMode,
 	FormattingKind
-} from '../../../../editor/contrib/format/browser/format.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/editor/contrib/format/browser/format.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
@@ -37,23 +37,23 @@ import {
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import { IExtensionService, toExtension } from '../../../services/extensions/common/extensions.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import {
 	INotificationService,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { IWorkbenchExtensionEnablementService } from '../../../services/extensionManagement/common/extensionManagement.js';
-import { editorConfigurationBaseNode } from '../../../../editor/common/config/editorConfigurationSchema.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
+import { editorConfigurationBaseNode } from '@sidex/editor/common/config/editorConfigurationSchema.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
 import { ILanguageStatusService } from '../../../services/languageStatus/common/languageStatusService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 
 type FormattingEditProvider = DocumentFormattingEditProvider | DocumentRangeFormattingEditProvider;
 

@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BroadcastDataChannel } from '../../../../base/browser/broadcast.js';
-import { isSafari } from '../../../../base/browser/browser.js';
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { IndexedDB } from '../../../../base/browser/indexedDB.js';
-import { DeferredPromise, Promises } from '../../../../base/common/async.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { BroadcastDataChannel } from '@sidex/base/browser/broadcast.js';
+import { isSafari } from '@sidex/base/browser/browser.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { IndexedDB } from '@sidex/base/browser/indexedDB.js';
+import { DeferredPromise, Promises } from '@sidex/base/common/async.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import {
 	InMemoryStorageDatabase,
 	isStorageItemsChangeEvent,
@@ -20,17 +20,17 @@ import {
 	IStorageItemsChangeEvent,
 	IUpdateRequest,
 	Storage
-} from '../../../../base/parts/storage/common/storage.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/base/parts/storage/common/storage.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	AbstractStorageService,
 	isProfileUsingDefaultStorage,
 	IS_NEW_KEY,
 	StorageScope,
 	StorageTarget
-} from '../../../../platform/storage/common/storage.js';
-import { isUserDataProfile, IUserDataProfile } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IAnyWorkspaceIdentifier } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { isUserDataProfile, IUserDataProfile } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IAnyWorkspaceIdentifier } from '@sidex/platform/workspace/common/workspace.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
 import { isTauri } from '@sidex/base/sidex-bridge.js';
 import { TauriStorageDatabase } from './tauriStorageDatabase.js';

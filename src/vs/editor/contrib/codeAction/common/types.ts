@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
 import { Position } from '../../../common/core/position.js';
 import * as languages from '../../../common/languages.js';
-import { ActionSet } from '../../../../platform/actionWidget/common/actionWidget.js';
+import { ActionSet } from '@sidex/platform/actionWidget/common/actionWidget.js';
 
 export const CodeActionKind = new (class {
 	public readonly QuickFix = new HierarchicalKind('quickfix');

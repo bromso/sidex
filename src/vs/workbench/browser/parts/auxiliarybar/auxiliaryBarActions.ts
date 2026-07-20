@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action2, MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
+import { Action2, MenuId, MenuRegistry, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 import {
 	AuxiliaryBarMaximizedContext,
 	AuxiliaryBarVisibleContext,
@@ -23,9 +23,9 @@ import {
 	Parts
 } from '../../../services/layout/browser/layoutService.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { SwitchCompositeViewAction } from '../compositeBarActions.js';
 
 const maximizeIcon = registerIcon(

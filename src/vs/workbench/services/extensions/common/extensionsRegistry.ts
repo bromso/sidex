@@ -4,29 +4,29 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import Severity from '../../../../base/common/severity.js';
-import { EXTENSION_IDENTIFIER_PATTERN } from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import Severity from '@sidex/base/common/severity.js';
+import { EXTENSION_IDENTIFIER_PATTERN } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	Extensions,
 	IJSONContributionRegistry
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IMessage } from './extensions.js';
 import {
 	IExtensionDescription,
 	EXTENSION_CATEGORIES,
 	ExtensionIdentifierSet
-} from '../../../../platform/extensions/common/extensions.js';
-import { ExtensionKind } from '../../../../platform/environment/common/environment.js';
-import { productSchemaId } from '../../../../platform/product/common/productService.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ExtensionKind } from '@sidex/platform/environment/common/environment.js';
+import { productSchemaId } from '@sidex/platform/product/common/productService.js';
 import {
 	ImplicitActivationEvents,
 	IActivationEventsGenerator
-} from '../../../../platform/extensionManagement/common/implicitActivationEvents.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { allApiProposals } from '../../../../platform/extensions/common/extensionsApiProposals.js';
+} from '@sidex/platform/extensionManagement/common/implicitActivationEvents.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { allApiProposals } from '@sidex/platform/extensions/common/extensionsApiProposals.js';
 
 const schemaRegistry = Registry.as<IJSONContributionRegistry>(Extensions.JSONContribution);
 

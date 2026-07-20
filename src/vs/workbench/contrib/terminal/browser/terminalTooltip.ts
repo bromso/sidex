@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IHoverAction } from '../../../../base/browser/ui/hover/hover.js';
-import { asArray } from '../../../../base/common/arrays.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { basename } from '../../../../base/common/path.js';
+import type { IHoverAction } from '@sidex/base/browser/ui/hover/hover.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { basename } from '@sidex/base/common/path.js';
 import { localize } from '@sidex/base/nls.js';
-import { StorageScope, StorageTarget, type IStorageService } from '../../../../platform/storage/common/storage.js';
+import { StorageScope, StorageTarget, type IStorageService } from '@sidex/platform/storage/common/storage.js';
 import type { ITerminalStatusHoverAction } from '../common/terminal.js';
 import { TerminalStorageKeys } from '../common/terminalStorageKeys.js';
 import { ITerminalInstance } from './terminal.js';

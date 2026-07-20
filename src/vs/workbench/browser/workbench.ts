@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './style.js';
-import { runWhenWindowIdle } from '../../base/browser/dom.js';
-import { Event, Emitter, setGlobalLeakWarningThreshold } from '../../base/common/event.js';
-import { RunOnceScheduler, timeout } from '../../base/common/async.js';
-import { isFirefox, isSafari, isChrome } from '../../base/browser/browser.js';
-import { mark } from '../../base/common/performance.js';
-import { onUnexpectedError, setUnexpectedErrorHandler } from '../../base/common/errors.js';
-import { Registry } from '../../platform/registry/common/platform.js';
-import { isWindows, isLinux, isWeb, isNative, isMacintosh } from '../../base/common/platform.js';
+import { runWhenWindowIdle } from '@sidex/base/browser/dom.js';
+import { Event, Emitter, setGlobalLeakWarningThreshold } from '@sidex/base/common/event.js';
+import { RunOnceScheduler, timeout } from '@sidex/base/common/async.js';
+import { isFirefox, isSafari, isChrome } from '@sidex/base/browser/browser.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { onUnexpectedError, setUnexpectedErrorHandler } from '@sidex/base/common/errors.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { isWindows, isLinux, isWeb, isNative, isMacintosh } from '@sidex/base/common/platform.js';
 import { IWorkbenchContributionsRegistry, Extensions as WorkbenchExtensions } from '../common/contributions.js';
 import { IEditorFactoryRegistry, EditorExtensions } from '../common/editor.js';
-import { getSingletonServiceDescriptors } from '../../platform/instantiation/common/extensions.js';
+import { getSingletonServiceDescriptors } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	Position,
 	Parts,
@@ -26,40 +26,40 @@ import {
 	WillSaveStateReason,
 	StorageScope,
 	StorageTarget
-} from '../../platform/storage/common/storage.js';
-import { IConfigurationChangeEvent, IConfigurationService } from '../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../platform/instantiation/common/serviceCollection.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { IConfigurationChangeEvent, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { LifecyclePhase, ILifecycleService, WillShutdownEvent } from '../services/lifecycle/common/lifecycle.js';
-import { INotificationService } from '../../platform/notification/common/notification.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { NotificationService } from '../services/notification/common/notificationService.js';
 import { NotificationsCenter } from './parts/notifications/notificationsCenter.js';
 import { NotificationsAlerts } from './parts/notifications/notificationsAlerts.js';
 import { NotificationsStatus } from './parts/notifications/notificationsStatus.js';
 import { registerNotificationCommands } from './parts/notifications/notificationsCommands.js';
 import { NotificationsToasts } from './parts/notifications/notificationsToasts.js';
-import { setARIAContainer } from '../../base/browser/ui/aria/aria.js';
-import { FontMeasurements } from '../../editor/browser/config/fontMeasurements.js';
-import { createBareFontInfoFromRawSettings } from '../../editor/common/config/fontInfoFromSettings.js';
-import { ILogService } from '../../platform/log/common/log.js';
-import { toErrorMessage } from '../../base/common/errorMessage.js';
+import { setARIAContainer } from '@sidex/base/browser/ui/aria/aria.js';
+import { FontMeasurements } from '@sidex/editor/browser/config/fontMeasurements.js';
+import { createBareFontInfoFromRawSettings } from '@sidex/editor/common/config/fontInfoFromSettings.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
 import { WorkbenchContextKeysHandler } from './contextkeys.js';
-import { coalesce } from '../../base/common/arrays.js';
-import { InstantiationService } from '../../platform/instantiation/common/instantiationService.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { InstantiationService } from '@sidex/platform/instantiation/common/instantiationService.js';
 import { Layout } from './layout.js';
 import { IHostService } from '../services/host/browser/host.js';
-import { IDialogService } from '../../platform/dialogs/common/dialogs.js';
-import { mainWindow } from '../../base/browser/window.js';
-import { PixelRatio } from '../../base/browser/pixelRatio.js';
-import { IHoverService, WorkbenchHoverDelegate } from '../../platform/hover/browser/hover.js';
-import { setHoverDelegateFactory } from '../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { setBaseLayerHoverDelegate } from '../../base/browser/ui/hover/hoverDelegate2.js';
-import { AccessibilityProgressSignalScheduler } from '../../platform/accessibilitySignal/browser/progressAccessibilitySignalScheduler.js';
-import { setProgressAccessibilitySignalScheduler } from '../../base/browser/ui/progressbar/progressAccessibilitySignal.js';
-import { AccessibleViewRegistry } from '../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
+import { IHoverService, WorkbenchHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { setHoverDelegateFactory } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { setBaseLayerHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate2.js';
+import { AccessibilityProgressSignalScheduler } from '@sidex/platform/accessibilitySignal/browser/progressAccessibilitySignalScheduler.js';
+import { setProgressAccessibilitySignalScheduler } from '@sidex/base/browser/ui/progressbar/progressAccessibilitySignal.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { NotificationAccessibleView } from './parts/notifications/notificationAccessibleView.js';
-import { IMarkdownRendererService } from '../../platform/markdown/browser/markdownRenderer.js';
-import { EditorMarkdownCodeBlockRenderer } from '../../editor/browser/widget/markdownRenderer/browser/editorMarkdownCodeBlockRenderer.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { EditorMarkdownCodeBlockRenderer } from '@sidex/editor/browser/widget/markdownRenderer/browser/editorMarkdownCodeBlockRenderer.js';
 
 export interface IWorkbenchOptions {
 	/**

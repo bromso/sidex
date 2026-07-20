@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { IMarkdownString } from '../../../../../base/common/htmlContent.js';
-import { Widget } from '../../../../../base/browser/ui/widget.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
 import { ITerminalWidget } from './widgets.js';
-import * as dom from '../../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import type { IViewportRange } from '@xterm/xterm';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
-import type { IHoverAction, IHoverTarget } from '../../../../../base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import type { IHoverAction, IHoverTarget } from '@sidex/base/browser/ui/hover/hover.js';
 
 const $ = dom.$;
 

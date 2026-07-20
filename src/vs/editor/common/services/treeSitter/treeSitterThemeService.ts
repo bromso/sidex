@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IObservable, IReader } from '../../../../base/common/observable.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IObservable, IReader } from '@sidex/base/common/observable.js';
 
 export const ITreeSitterThemeService = createDecorator<ITreeSitterThemeService>('treeSitterThemeService');
 

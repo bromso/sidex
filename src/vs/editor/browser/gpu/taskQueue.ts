@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../base/browser/dom.js';
-import { Disposable, toDisposable, type IDisposable } from '../../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { Disposable, toDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 /**
  * Copyright (c) 2022 The xterm.js authors. All rights reserved.

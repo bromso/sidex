@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IStringDictionary } from '../../../../../base/common/collections.js';
+import type { IStringDictionary } from '@sidex/base/common/collections.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IConfigurationPropertySchema,
 	IConfigurationNode,
 	Extensions as ConfigurationExtensions,
 	IConfigurationRegistry
-} from '../../../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../../../platform/registry/common/platform.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 
 export const enum TerminalSuggestSettingId {
 	Enabled = 'terminal.integrated.suggest.enabled',

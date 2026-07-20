@@ -3,7 +3,7 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import type { NotebookFindFilters } from './findFilters.js';
 
 export class NotebookFindInputFilterButton extends Disposable {

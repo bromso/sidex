@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	EXTENSION_INSTALL_SKIP_PUBLISHER_TRUST_CONTEXT,
 	IExtensionGalleryService,
@@ -15,7 +15,7 @@ import { areSameExtensions, getExtensionId } from './extensionManagementUtil.js'
 import { IExtensionStorageService } from './extensionStorage.js';
 import { ExtensionType } from '../../extensions/common/extensions.js';
 import { ILogService } from '../../log/common/log.js';
-import * as semver from '../../../base/common/semver/semver.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
 import { IUserDataProfile } from '../../userDataProfile/common/userDataProfile.js';
 
 /**

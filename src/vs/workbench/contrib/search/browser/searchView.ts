@@ -3,61 +3,61 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { MessageType } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { IIdentityProvider } from '../../../../base/browser/ui/list/list.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { MessageType } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
 import {
 	IAsyncDataSource,
 	ITreeContextMenuEvent,
 	ObjectTreeElementCollapseState
-} from '../../../../base/browser/ui/tree/tree.js';
-import { Delayer, RunOnceScheduler, Throttler } from '../../../../base/common/async.js';
-import * as errors from '../../../../base/common/errors.js';
-import { Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { isLinux } from '../../../../base/common/platform.js';
-import * as strings from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as network from '../../../../base/common/network.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { Delayer, RunOnceScheduler, Throttler } from '@sidex/base/common/async.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isLinux } from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as network from '@sidex/base/common/network.js';
 import './media/searchview.css';
-import { getCodeEditor, isCodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { EmbeddedCodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
-import { IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { IEditor } from '../../../../editor/common/editorCommon.js';
-import { CommonFindController } from '../../../../editor/contrib/find/browser/findController.js';
-import { MultiCursorSelectionController } from '../../../../editor/contrib/multicursor/browser/multicursor.js';
+import { getCodeEditor, isCodeEditor, isDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { EmbeddedCodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+import { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { IEditor } from '@sidex/editor/common/editorCommon.js';
+import { CommonFindController } from '@sidex/editor/contrib/find/browser/findController.js';
+import { MultiCursorSelectionController } from '@sidex/editor/contrib/multicursor/browser/multicursor.js';
 import * as nls from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IConfirmation, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { FileChangesEvent, FileChangeType, IFileService } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IConfirmation, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { FileChangesEvent, FileChangeType, IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	getSelectionKeyboardEvent,
 	WorkbenchCompressibleAsyncDataTree
-} from '../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService, withSelection } from '../../../../platform/opener/common/opener.js';
-import { IProgress, IProgressService, IProgressStep } from '../../../../platform/progress/common/progress.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { defaultInputBoxStyles, defaultToggleStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IFileIconTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService, withSelection } from '@sidex/platform/opener/common/opener.js';
+import { IProgress, IProgressService, IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { defaultInputBoxStyles, defaultToggleStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IFileIconTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { OpenFolderAction } from '../../../browser/actions/workspaceActions.js';
 import { ResourceListDnDHandler } from '../../../browser/dnd.js';
 import { ResourceLabels } from '../../../browser/labels.js';
@@ -103,13 +103,13 @@ import {
 import { AISearchKeyword, TextSearchCompleteMessage } from '../../../services/search/common/searchExtTypes.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
 import { INotebookService } from '../../notebook/common/notebookService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { ISearchViewModelWorkbenchService } from './searchTreeModel/searchViewModelWorkbenchService.js';
 import {
 	ISearchTreeMatch,
@@ -135,7 +135,7 @@ import {
 import { INotebookFileInstanceMatch, isIMatchInNotebook } from './notebookSearch/notebookSearchModelBase.js';
 import { searchMatchComparer } from './searchCompare.js';
 import { AIFolderMatchWorkspaceRootImpl } from './AISearch/aiSearchModel.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { forcedExpandRecursively } from './searchActionsTopBar.js';
 
 const $ = dom.$;

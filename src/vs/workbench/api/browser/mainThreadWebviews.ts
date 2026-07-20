@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Disposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { escape } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { escape } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { IOpenerService } from '../../../platform/opener/common/opener.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { IWebview, WebviewContentOptions, WebviewExtensionDescription } from '../../contrib/webview/browser/webview.js';
 import { IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { SerializableObjectWithBuffers } from '../../services/extensions/common/proxyIdentifier.js';

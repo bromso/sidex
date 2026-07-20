@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IDebugService, IDebugSession, VIEWLET_ID } from '../common/debug.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';

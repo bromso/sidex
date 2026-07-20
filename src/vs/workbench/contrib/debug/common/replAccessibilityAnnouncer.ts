@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IDebugService } from './debug.js';
 

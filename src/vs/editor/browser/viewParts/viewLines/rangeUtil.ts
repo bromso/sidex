@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Constants } from '../../../../base/common/uint.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { FloatHorizontalRange } from '../../view/renderingContext.js';
 import { DomReadingContext } from './domReadingContext.js';
 

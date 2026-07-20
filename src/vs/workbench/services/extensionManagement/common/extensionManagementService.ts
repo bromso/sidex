@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event, EventMultiplexer } from '../../../../base/common/event.js';
+import { Emitter, Event, EventMultiplexer } from '@sidex/base/common/event.js';
 import {
 	ILocalExtension,
 	IGalleryExtension,
@@ -25,7 +25,7 @@ import {
 	UninstallExtensionInfo,
 	IAllowedExtensionsService,
 	EXTENSION_INSTALL_SKIP_PUBLISHER_TRUST_CONTEXT
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	DidChangeProfileForServerEvent,
 	DidUninstallExtensionOnServerEvent,
@@ -43,51 +43,51 @@ import {
 	IExtensionManifest,
 	getWorkspaceSupportTypeMessage,
 	TargetPlatform
-} from '../../../../platform/extensions/common/extensions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	areSameExtensions,
 	computeTargetPlatform
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import { localize } from '@sidex/base/nls.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IDownloadService } from '../../../../platform/download/common/download.js';
-import { coalesce, distinct, isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { IDialogService, IPromptButton } from '../../../../platform/dialogs/common/dialogs.js';
-import Severity from '../../../../base/common/severity.js';
-import { IUserDataSyncEnablementService } from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IDownloadService } from '@sidex/platform/download/common/download.js';
+import { coalesce, distinct, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { IDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IUserDataSyncEnablementService } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { SyncResource } from '../../../services/userDataSync/common/userDataSync.js';
-import { Promises } from '../../../../base/common/async.js';
+import { Promises } from '@sidex/base/common/async.js';
 import {
 	IWorkspaceTrustRequestService,
 	WorkspaceTrustRequestButton
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IExtensionManifestPropertiesService } from '../../extensions/common/extensionManifestPropertiesService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { isString, isUndefined } from '../../../../base/common/types.js';
-import { FileChangesEvent, IFileService } from '../../../../platform/files/common/files.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CancellationError, getErrorMessage } from '../../../../base/common/errors.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { isString, isUndefined } from '@sidex/base/common/types.js';
+import { FileChangesEvent, IFileService } from '@sidex/platform/files/common/files.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationError, getErrorMessage } from '@sidex/base/common/errors.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	IExtensionsScannerService,
 	IScannedExtension
-} from '../../../../platform/extensionManagement/common/extensionsScannerService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { createCommandUri, IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
+} from '@sidex/platform/extensionManagement/common/extensionsScannerService.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { createCommandUri, IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 import { verifiedPublisherIcon } from './extensionsIcons.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { CommontExtensionManagementService } from '../../../../platform/extensionManagement/common/abstractExtensionManagementService.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { CommontExtensionManagementService } from '@sidex/platform/extensionManagement/common/abstractExtensionManagementService.js';
 
 const TrustedPublishersStorageKey = 'extensions.trustedPublishers';
 

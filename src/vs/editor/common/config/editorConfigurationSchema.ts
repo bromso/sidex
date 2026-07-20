@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IJSONSchemaSnippet } from '../../../base/common/jsonSchema.js';
+import type { IJSONSchemaSnippet } from '@sidex/base/common/jsonSchema.js';
 import { diffEditorDefaultOptions } from './diffEditor.js';
 import { editorOptionsRegistry } from './editorOptions.js';
 import { EDITOR_MODEL_DEFAULTS } from '../core/misc/textModelDefaults.js';
@@ -14,8 +14,8 @@ import {
 	IConfigurationNode,
 	IConfigurationPropertySchema,
 	IConfigurationRegistry
-} from '../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 
 export const editorConfigurationBaseNode = Object.freeze<IConfigurationNode>({
 	id: 'editor',

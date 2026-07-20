@@ -6,13 +6,13 @@
 import { createApiFactoryAndRegisterActors } from '../common/extHost.api.impl.js';
 import { ExtensionActivationTimesBuilder } from '../common/extHostExtensionActivator.js';
 import { AbstractExtHostExtensionService } from '../common/extHostExtensionService.js';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { RequireInterceptor } from '../common/extHostRequireInterceptor.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { ExtensionRuntime } from '../common/extHostTypes.js';
-import { timeout } from '../../../base/common/async.js';
+import { timeout } from '@sidex/base/common/async.js';
 import { ExtHostConsoleForwarder } from './extHostConsoleForwarder.js';
-import { extname } from '../../../base/common/path.js';
+import { extname } from '@sidex/base/common/path.js';
 
 class WorkerRequireInterceptor extends RequireInterceptor {
 	protected _installInterceptor() {}

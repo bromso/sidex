@@ -3,29 +3,29 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mainWindow } from '../../../../base/browser/window.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ExtensionKind } from '../../../../platform/environment/common/environment.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IAutomatedWindow, getLogs } from '../../../../platform/log/browser/log.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { PersistentConnectionEventType } from '../../../../platform/remote/common/remoteAgentConnection.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ExtensionKind } from '@sidex/platform/environment/common/environment.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IAutomatedWindow, getLogs } from '@sidex/platform/log/browser/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { PersistentConnectionEventType } from '@sidex/platform/remote/common/remoteAgentConnection.js';
 import {
 	IRemoteAuthorityResolverService,
 	RemoteAuthorityResolverError,
 	ResolverResult
-} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
-import { IRemoteExtensionsScannerService } from '../../../../platform/remote/common/remoteExtensionsScanner.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { IRemoteExtensionsScannerService } from '@sidex/platform/remote/common/remoteExtensionsScanner.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import {
 	IWebExtensionsScannerService,
@@ -81,7 +81,7 @@ import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 import { IRemoteExplorerService } from '../../remote/common/remoteExplorerService.js';
 import { IUserDataInitializationService } from '../../userData/browser/userDataInit.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { AsyncIterableEmitter, AsyncIterableProducer } from '../../../../base/common/async.js';
+import { AsyncIterableEmitter, AsyncIterableProducer } from '@sidex/base/common/async.js';
 
 export class ExtensionService extends AbstractExtensionService implements IExtensionService {
 	constructor(

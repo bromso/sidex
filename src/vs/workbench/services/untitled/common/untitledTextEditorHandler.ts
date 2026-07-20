@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { IEditorSerializer } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { ITextEditorService } from '../../textfile/common/textEditorService.js';
-import { isEqual, toLocalResource } from '../../../../base/common/resources.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { isEqual, toLocalResource } from '@sidex/base/common/resources.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 import { IPathService } from '../../path/common/pathService.js';

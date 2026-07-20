@@ -3,50 +3,50 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isKeyboardEvent, isMouseEvent, isPointerEvent, getActiveWindow } from '../../../../base/browser/dom.js';
-import { Action } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { isAbsolute } from '../../../../base/common/path.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { dirname } from '../../../../base/common/resources.js';
-import { hasKey, isObject, isString } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { EndOfLinePreference } from '../../../../editor/common/model.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
+import { isKeyboardEvent, isMouseEvent, isPointerEvent, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isAbsolute } from '@sidex/base/common/path.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { dirname } from '@sidex/base/common/resources.js';
+import { hasKey, isObject, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { EndOfLinePreference } from '@sidex/editor/common/model.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { AccessibleViewProviderId } from '../../../../platform/accessibility/browser/accessibleView.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../platform/accessibility/common/accessibility.js';
-import { Action2, IAction2Options, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IPickOptions, IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { TerminalCapability } from '../../../../platform/terminal/common/capabilities/capabilities.js';
+import { AccessibleViewProviderId } from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { Action2, IAction2Options, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IPickOptions, IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ITerminalProfile,
 	TerminalExitReason,
 	TerminalIcon,
 	TerminalLocation,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
-import { createProfileSchemaEnums } from '../../../../platform/terminal/common/terminalProfiles.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { createProfileSchemaEnums } from '@sidex/platform/terminal/common/terminalProfiles.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { PICK_WORKSPACE_FOLDER_COMMAND_ID } from '../../../browser/actions/workspaceCommands.js';
 import { CLOSE_EDITOR_COMMAND_ID } from '../../../browser/parts/editor/editorCommands.js';
 import { IConfigurationResolverService } from '../../../services/configurationResolver/common/configurationResolver.js';
@@ -84,14 +84,14 @@ import {
 	ITerminalService,
 	IXtermTerminal
 } from './terminal.js';
-import { isAuxiliaryWindow } from '../../../../base/browser/window.js';
+import { isAuxiliaryWindow } from '@sidex/base/browser/window.js';
 import { InstanceContext } from './terminalContextMenu.js';
 import { getColorClass, getIconId, getUriClasses } from './terminalIcon.js';
 import { killTerminalIcon, newTerminalIcon } from './terminalIcons.js';
 import { ITerminalQuickPickItem } from './terminalProfileQuickpick.js';
 import { TerminalTabList } from './terminalTabsList.js';
 import { ResourceContextKey } from '../../../common/contextkeys.js';
-import { SeparatorSelectOption } from '../../../../base/browser/ui/selectBox/selectBox.js';
+import { SeparatorSelectOption } from '@sidex/base/browser/ui/selectBox/selectBox.js';
 
 export const switchTerminalShowTabsTitle = localize('showTerminalTabs', 'Show Tabs');
 

@@ -3,18 +3,18 @@
  *  Rust crate; extension-level tunnel APIs accept registrations but perform no work.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ProvidedPortAttributes,
 	RemoteTunnel,
 	TunnelCreationOptions,
 	TunnelOptions,
 	TunnelPrivacyId
-} from '../../../platform/tunnel/common/tunnel.js';
+} from '@sidex/platform/tunnel/common/tunnel.js';
 import { ExtHostTunnelServiceShape, PortAttributesSelector, TunnelDto } from './extHost.protocol.js';
 import { CandidatePort } from '../../services/remote/common/tunnelModel.js';
 import type * as vscode from 'vscode';

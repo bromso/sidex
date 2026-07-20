@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { forEachAdjacent } from '../../../../../base/common/arrays.js';
-import { BugIndicatingError } from '../../../../../base/common/errors.js';
+import { forEachAdjacent } from '@sidex/base/common/arrays.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { OffsetRange } from '../../../core/ranges/offsetRange.js';
 
 /**

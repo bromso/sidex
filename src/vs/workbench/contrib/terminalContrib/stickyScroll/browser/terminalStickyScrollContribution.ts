@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { Event } from '../../../../../base/common/event.js';
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { ITerminalContribution, ITerminalInstance, IXtermTerminal } from '../../../terminal/browser/terminal.js';
 import type { ITerminalContributionContext } from '../../../terminal/browser/terminalExtensions.js';
 import { TerminalInstance, TerminalInstanceColorProvider } from '../../../terminal/browser/terminalInstance.js';

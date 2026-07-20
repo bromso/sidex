@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { illegalArgument } from '../../../../base/common/errors.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
 import { es5ClassCompat } from './es5ClassCompat.js';
 
 @es5ClassCompat

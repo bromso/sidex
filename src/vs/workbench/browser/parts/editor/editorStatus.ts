@@ -5,20 +5,20 @@
 
 import './media/editorstatus.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { getWindowById, runAtThisOrScheduleAtNextAnimationFrame } from '../../../../base/browser/dom.js';
-import { format, compare, splitLines } from '../../../../base/common/strings.js';
-import { extname, basename, isEqual } from '../../../../base/common/resources.js';
-import { areFunctions, assertReturnsDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IAction, toAction } from '../../../../base/common/actions.js';
-import { Language } from '../../../../base/common/platform.js';
+import { getWindowById, runAtThisOrScheduleAtNextAnimationFrame } from '@sidex/base/browser/dom.js';
+import { format, compare, splitLines } from '@sidex/base/common/strings.js';
+import { extname, basename, isEqual } from '@sidex/base/common/resources.js';
+import { areFunctions, assertReturnsDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import { Language } from '@sidex/base/common/platform.js';
 import { UntitledTextEditorInput } from '../../../services/untitled/common/untitledTextEditorInput.js';
 import { IFileEditorInput, EditorResourceAccessor, IEditorPane, SideBySideEditor } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { Disposable, MutableDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IEditorAction } from '../../../../editor/common/editorCommon.js';
-import { EndOfLineSequence } from '../../../../editor/common/model.js';
-import { TrimTrailingWhitespaceAction } from '../../../../editor/contrib/linesOperations/browser/linesOperations.js';
+import { Disposable, MutableDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IEditorAction } from '@sidex/editor/common/editorCommon.js';
+import { EndOfLineSequence } from '@sidex/editor/common/model.js';
+import { TrimTrailingWhitespaceAction } from '@sidex/editor/contrib/linesOperations/browser/linesOperations.js';
 import {
 	IndentUsingSpaces,
 	IndentUsingTabs,
@@ -26,17 +26,17 @@ import {
 	DetectIndentation,
 	IndentationToSpacesAction,
 	IndentationToTabsAction
-} from '../../../../editor/contrib/indentation/browser/indentation.js';
+} from '@sidex/editor/contrib/indentation/browser/indentation.js';
 import { BaseBinaryResourceEditor } from './binaryEditor.js';
 import { BinaryResourceDiffEditor } from './binaryDiffEditor.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IFileService, FILES_ASSOCIATIONS_CONFIG } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILanguageService, ILanguageSelection } from '../../../../editor/common/languages/language.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { ICommandService, CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IExtensionGalleryService } from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import { IFileService, FILES_ASSOCIATIONS_CONFIG } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILanguageService, ILanguageSelection } from '@sidex/editor/common/languages/language.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { ICommandService, CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IExtensionGalleryService } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	EncodingMode,
 	IEncodingSupport,
@@ -44,21 +44,21 @@ import {
 	ITextFileService
 } from '../../../services/textfile/common/textfiles.js';
 import { SUPPORTED_ENCODINGS } from '../../../services/textfile/common/encoding.js';
-import { ConfigurationChangedEvent, EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { ICodeEditor, getCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { ConfigurationChangedEvent, EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { ICodeEditor, getCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { getIconClassesForLanguageId } from '../../../../editor/common/services/getIconClasses.js';
-import { Promises, timeout } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { getIconClassesForLanguageId } from '@sidex/editor/common/services/getIconClasses.js';
+import { Promises, timeout } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import {
 	IStatusbarEntryAccessor,
@@ -66,8 +66,8 @@ import {
 	StatusbarAlignment,
 	IStatusbarEntry
 } from '../../../services/statusbar/browser/statusbar.js';
-import { IMarker, IMarkerService, MarkerSeverity, IMarkerData } from '../../../../platform/markers/common/markers.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IMarker, IMarkerService, MarkerSeverity, IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
 import {
 	AutomaticLanguageDetectionLikelyWrongClassification,
@@ -75,15 +75,15 @@ import {
 	IAutomaticLanguageDetectionLikelyWrongData,
 	ILanguageDetectionService
 } from '../../../services/languageDetection/common/languageDetectionWorkerService.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Action2 } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { TabFocus } from '../../../../editor/browser/config/tabFocus.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Action2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { TabFocus } from '@sidex/editor/browser/config/tabFocus.js';
 import { IEditorGroupsService, IEditorPart } from '../../../services/editor/common/editorGroupsService.js';
-import { InputMode } from '../../../../editor/common/inputMode.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { InputMode } from '@sidex/editor/common/inputMode.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 
 class SideBySideEditorEncodingSupport implements IEncodingSupport {
 	constructor(

@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { CharCode } from '../../../base/common/charCode.js';
-import * as strings from '../../../base/common/strings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { IViewLineTokens } from '../tokens/lineTokens.js';
 import { StringBuilder } from '../core/stringBuilder.js';
 import { LineDecoration, LineDecorationsNormalizer } from './lineDecorations.js';

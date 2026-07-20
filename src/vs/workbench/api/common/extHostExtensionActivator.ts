@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import * as errors from '../../../base/common/errors.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ExtensionDescriptionRegistry } from '../../services/extensions/common/extensionDescriptionRegistry.js';
-import { ExtensionIdentifier, ExtensionIdentifierMap } from '../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier, ExtensionIdentifierMap } from '@sidex/platform/extensions/common/extensions.js';
 import { ExtensionActivationReason, MissingExtensionDependency } from '../../services/extensions/common/extensions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { Barrier } from '../../../base/common/async.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Barrier } from '@sidex/base/common/async.js';
 
 /**
  * Represents the source code (module) of an extension.

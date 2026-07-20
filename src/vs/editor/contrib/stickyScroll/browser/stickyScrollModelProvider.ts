@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { OutlineElement, OutlineGroup, OutlineModel } from '../../documentSymbols/browser/outlineModel.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { CancelablePromise, createCancelablePromise, Delayer } from '../../../../base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { CancelablePromise, createCancelablePromise, Delayer } from '@sidex/base/common/async.js';
 import { FoldingController, RangesLimitReporter } from '../../folding/browser/folding.js';
 import { SyntaxRangeProvider } from '../../folding/browser/syntaxRangeProvider.js';
 import { IndentRangeProvider } from '../../folding/browser/indentRangeProvider.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { FoldingRegions } from '../../folding/browser/foldingRanges.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { StickyElement, StickyModel, StickyRange } from './stickyScrollElement.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 
 enum ModelProvider {

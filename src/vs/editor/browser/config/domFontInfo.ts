@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode } from '../../../base/browser/fastDomNode.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import { BareFontInfo } from '../../common/config/fontInfo.js';
 
 export function applyFontInfo(domNode: FastDomNode<HTMLElement> | HTMLElement, fontInfo: BareFontInfo): void {

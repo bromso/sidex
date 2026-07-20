@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { n } from '../../../../../../../../base/browser/dom.js';
-import { Disposable } from '../../../../../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../../../../../base/common/numbers.js';
+import { n } from '@sidex/base/browser/dom.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
 import {
 	IObservable,
 	derived,
@@ -13,8 +13,8 @@ import {
 	IReader,
 	autorun,
 	observableValue
-} from '../../../../../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor, observableCodeEditor } from '../../../../../../../browser/observableCodeEditor.js';
 import { EmbeddedCodeEditorWidget } from '../../../../../../../browser/widget/codeEditor/embeddedCodeEditorWidget.js';

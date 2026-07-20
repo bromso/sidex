@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assert } from '../../../../base/common/assert.js';
-import { splitLines } from '../../../../base/common/strings.js';
+import { assert } from '@sidex/base/common/assert.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 import { Position } from '../position.js';
 import { Range } from '../range.js';
 import { LineRange } from '../ranges/lineRange.js';

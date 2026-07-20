@@ -8,19 +8,19 @@ import {
 	compareBy,
 	compareUndefinedSmallest,
 	numberComparator
-} from '../../../../../base/common/arrays.js';
-import { findLastMax } from '../../../../../base/common/arraysFind.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../../base/common/cancellation.js';
-import { equalsIfDefined, thisEqualsC } from '../../../../../base/common/equals.js';
+} from '@sidex/base/common/arrays.js';
+import { findLastMax } from '@sidex/base/common/arraysFind.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { equalsIfDefined, thisEqualsC } from '@sidex/base/common/equals.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../../base/common/lifecycle.js';
-import { cloneAndChange } from '../../../../../base/common/objects.js';
+} from '@sidex/base/common/lifecycle.js';
+import { cloneAndChange } from '@sidex/base/common/objects.js';
 import {
 	derived,
 	IObservable,
@@ -30,15 +30,15 @@ import {
 	recordChangesLazy,
 	runOnChange,
 	transaction
-} from '../../../../../base/common/observable.js';
-import { observableReducerSettable } from '../../../../../base/common/observableInternal/experimental/reducer.js';
-import { isDefined } from '../../../../../base/common/types.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/base/common/observable.js';
+import { observableReducerSettable } from '@sidex/base/common/observableInternal/experimental/reducer.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
-import { observableConfigValue } from '../../../../../platform/observable/common/platformObservableUtils.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { StringEdit } from '../../../../common/core/edits/stringEdit.js';
 import { Position } from '../../../../common/core/position.js';
 import { Range } from '../../../../common/core/range.js';

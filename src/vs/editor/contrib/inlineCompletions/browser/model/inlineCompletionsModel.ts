@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mapFindFirst } from '../../../../../base/common/arraysFind.js';
-import { arrayEqualsC } from '../../../../../base/common/equals.js';
-import { BugIndicatingError, onUnexpectedExternalError } from '../../../../../base/common/errors.js';
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { mapFindFirst } from '@sidex/base/common/arraysFind.js';
+import { arrayEqualsC } from '@sidex/base/common/equals.js';
+import { BugIndicatingError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IObservableWithChange,
@@ -25,12 +25,12 @@ import {
 	recomputeInitiallyAndOnChange,
 	subtransaction,
 	transaction
-} from '../../../../../base/common/observable.js';
-import { firstNonWhitespaceIndex } from '../../../../../base/common/strings.js';
-import { isDefined } from '../../../../../base/common/types.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { firstNonWhitespaceIndex } from '@sidex/base/common/strings.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../../browser/observableCodeEditor.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
@@ -84,12 +84,12 @@ import { IInlineCompletionsService } from '../../../../browser/services/inlineCo
 import { TypingInterval } from './typingSpeed.js';
 import { StringReplacement } from '../../../../common/core/edits/stringEdit.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IDefaultAccountService,
 	IDefaultAccount
-} from '../../../../../workbench/services/accounts/browser/nullDefaultAccount.js';
-import { Schemas } from '../../../../../base/common/network.js';
+} from '@sidex/platform/accounts/common/nullDefaultAccount.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { getInlineCompletionsController } from '../controller/common.js';
 
 export class InlineCompletionsModel extends Disposable {

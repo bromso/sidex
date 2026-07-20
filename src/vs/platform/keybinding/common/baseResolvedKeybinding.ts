@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { illegalArgument } from '../../../base/common/errors.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
 import {
 	AriaLabelProvider,
 	ElectronAcceleratorLabelProvider,
 	UILabelProvider,
 	UserSettingsLabelProvider
-} from '../../../base/common/keybindingLabels.js';
-import { Chord, SingleModifierChord, ResolvedKeybinding, ResolvedChord } from '../../../base/common/keybindings.js';
-import { OperatingSystem } from '../../../base/common/platform.js';
+} from '@sidex/base/common/keybindingLabels.js';
+import { Chord, SingleModifierChord, ResolvedKeybinding, ResolvedChord } from '@sidex/base/common/keybindings.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
 
 export abstract class BaseResolvedKeybinding<T extends Chord> extends ResolvedKeybinding {
 	protected readonly _os: OperatingSystem;

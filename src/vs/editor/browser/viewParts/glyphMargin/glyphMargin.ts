@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { ArrayQueue } from '../../../../base/common/arrays.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { ArrayQueue } from '@sidex/base/common/arrays.js';
 import './glyphMargin.css';
 import { IGlyphMarginWidget, IGlyphMarginWidgetPosition } from '../../editorBrowser.js';
 import { DynamicViewOverlay } from '../../view/dynamicViewOverlay.js';

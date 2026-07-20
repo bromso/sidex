@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AsyncIterableProducer } from '../../../../../base/common/async.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { Range } from '../../../../common/core/range.js';
 import { IModelDecoration } from '../../../../common/model.js';
@@ -22,7 +22,7 @@ import {
 	IRenderedHoverParts,
 	RenderedHoverParts
 } from '../../../hover/browser/hoverTypes.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	BaseColor,
@@ -32,9 +32,9 @@ import {
 	updateEditorModel
 } from '../colorPickerParticipantUtils.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
-import { Dimension } from '../../../../../base/browser/dom.js';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
-import { Color } from '../../../../../base/common/color.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Color } from '@sidex/base/common/color.js';
 import { HoverStartSource } from '../../../hover/browser/hoverOperation.js';
 
 export class ColorHover implements IHoverPart, BaseColor {

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as Objects from '../../../../base/common/objects.js';
+import * as Objects from '@sidex/base/common/objects.js';
 import {
 	Task,
 	ContributedTask,
@@ -13,8 +13,8 @@ import {
 	TaskSorter,
 	KeyedTaskIdentifier
 } from '../common/tasks.js';
-import { IWorkspace, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
-import * as Types from '../../../../base/common/types.js';
+import { IWorkspace, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
+import * as Types from '@sidex/base/common/types.js';
 import { ITaskService, IWorkspaceFolderTaskResult } from '../common/taskService.js';
 import {
 	IQuickPickItem,
@@ -22,20 +22,20 @@ import {
 	IQuickPick,
 	IQuickInputButton,
 	IQuickInputService
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { Event } from '../../../../base/common/event.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { getColorClass, createColorStyleElement } from '../../terminal/browser/terminalIcon.js';
 import { TaskQuickPickEntryType } from './abstractTaskService.js';
-import { showWithPinnedItems } from '../../../../platform/quickinput/browser/quickPickPin.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { showWithPinnedItems } from '@sidex/platform/quickinput/browser/quickPickPin.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 
 export const QUICKOPEN_DETAIL_CONFIG = 'task.quickOpen.detail';
 export const QUICKOPEN_SKIP_CONFIG = 'task.quickOpen.skip';

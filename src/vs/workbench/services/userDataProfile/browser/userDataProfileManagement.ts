@@ -3,30 +3,30 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { CancellationError } from '../../../../base/common/errors.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { equals } from '../../../../base/common/objects.js';
-import { URI } from '../../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { CancellationError } from '@sidex/base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IRequestService, asJson } from '../../../../platform/request/common/request.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IRequestService, asJson } from '@sidex/platform/request/common/request.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IUserDataProfile,
 	IUserDataProfileOptions,
 	IUserDataProfilesService,
 	IUserDataProfileUpdateOptions
-} from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import {
 	isEmptyWorkspaceIdentifier,
 	IWorkspaceContextService,
 	toWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { CONFIG_NEW_WINDOW_PROFILE } from '../../../common/configuration.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';

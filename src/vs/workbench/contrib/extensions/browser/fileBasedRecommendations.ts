@@ -11,35 +11,35 @@ import {
 } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { IExtensionsWorkbenchService, IExtension } from '../common/extensions.js';
 import { localize } from '@sidex/base/nls.js';
-import { StorageScope, IStorageService, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { StorageScope, IStorageService, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	IFileContentCondition,
 	IFilePathCondition,
 	IFileLanguageCondition,
 	IFileOpenCondition
-} from '../../../../base/common/product.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { basename, extname } from '../../../../base/common/resources.js';
-import { match } from '../../../../base/common/glob.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/base/common/product.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basename, extname } from '@sidex/base/common/resources.js';
+import { match } from '@sidex/base/common/glob.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	IExtensionRecommendationNotificationService,
 	RecommendationsNotificationResult,
 	RecommendationSource
-} from '../../../../platform/extensionRecommendations/common/extensionRecommendations.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/extensionRecommendations/common/extensionRecommendations.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { CellUri } from '../../notebook/common/notebookCommon.js';
-import { disposableTimeout } from '../../../../base/common/async.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { isEmptyObject } from '../../../../base/common/types.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { isEmptyObject } from '@sidex/base/common/types.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
 import { IUntitledTextEditorService } from '../../../services/untitled/common/untitledTextEditorService.js';
 
 const promptedRecommendationsStorageKey = 'fileBasedRecommendations/promptedRecommendations';

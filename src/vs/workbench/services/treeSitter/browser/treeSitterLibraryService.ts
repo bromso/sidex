@@ -10,9 +10,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Language, Parser, Query } from '@vscode/tree-sitter-wasm';
-import { IReader } from '../../../../base/common/observable.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ITreeSitterLibraryService } from '../../../../editor/common/services/treeSitter/treeSitterLibraryService.js';
+import { IReader } from '@sidex/base/common/observable.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ITreeSitterLibraryService } from '@sidex/editor/common/services/treeSitter/treeSitterLibraryService.js';
 
 export class TreeSitterLibraryService extends Disposable implements ITreeSitterLibraryService {
 	declare readonly _serviceBrand: undefined;

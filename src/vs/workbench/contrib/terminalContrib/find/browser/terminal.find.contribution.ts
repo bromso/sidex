@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { IDimension } from '../../../../../base/browser/dom.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { Lazy } from '../../../../../base/common/lazy.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { IDimension } from '@sidex/base/browser/dom.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { findInFilesCommand } from '../../../search/browser/searchActionsFind.js';
 import {
 	IDetachedTerminalInstance,
@@ -271,7 +271,7 @@ registerActiveInstanceAction({
 
 // #region Accessibility Help
 
-import { AccessibleViewRegistry } from '../../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { TerminalFindAccessibilityHelp } from './terminalFindAccessibilityHelp.js';
 
 AccessibleViewRegistry.register(new TerminalFindAccessibilityHelp());

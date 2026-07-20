@@ -5,11 +5,11 @@
 
 import './textAreaEditContext.css';
 import * as nls from '@sidex/base/nls.js';
-import * as browser from '../../../../../base/browser/browser.js';
-import { FastDomNode, createFastDomNode } from '../../../../../base/browser/fastDomNode.js';
-import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import * as platform from '../../../../../base/common/platform.js';
-import * as strings from '../../../../../base/common/strings.js';
+import * as browser from '@sidex/base/browser/browser.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { applyFontInfo } from '../../../config/domFontInfo.js';
 import { ViewController } from '../../../view/viewController.js';
 import { PartFingerprint, PartFingerprints } from '../../../view/viewPart.js';
@@ -35,15 +35,15 @@ import {
 } from '../../../view/renderingContext.js';
 import { ViewContext } from '../../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../../common/viewEvents.js';
-import { AccessibilitySupport } from '../../../../../platform/accessibility/common/accessibility.js';
+import { AccessibilitySupport } from '@sidex/platform/accessibility/common/accessibility.js';
 import { IEditorAriaOptions } from '../../../editorBrowser.js';
-import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '../../../../../base/browser/ui/mouseCursor/mouseCursor.js';
+import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '@sidex/base/browser/ui/mouseCursor/mouseCursor.js';
 import { TokenizationRegistry } from '../../../../common/languages.js';
 import { ColorId, ITokenPresentation } from '../../../../common/encodedTokenAttributes.js';
-import { Color } from '../../../../../base/common/color.js';
-import { IME } from '../../../../../base/common/ime.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IME } from '@sidex/base/common/ime.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { AbstractEditContext } from '../editContext.js';
 import {
 	ICompositionData,

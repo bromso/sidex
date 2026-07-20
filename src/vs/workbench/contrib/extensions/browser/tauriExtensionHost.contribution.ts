@@ -1,22 +1,22 @@
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
 import type { IWorkbenchContribution } from '../../../common/contributions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import type { IMarkerData } from '../../../../platform/markers/common/markers.js';
-import { IBulkEditService, ResourceTextEdit } from '../../../../editor/browser/services/bulkEditService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import type { IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import { IBulkEditService, ResourceTextEdit } from '@sidex/editor/browser/services/bulkEditService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { ILanguageConfigurationService } from '../../../../editor/common/languages/languageConfigurationRegistry.js';
-import type { LanguageConfiguration } from '../../../../editor/common/languages/languageConfiguration.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { ILanguageConfigurationService } from '@sidex/editor/common/languages/languageConfigurationRegistry.js';
+import type { LanguageConfiguration } from '@sidex/editor/common/languages/languageConfiguration.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IStatusbarService, StatusbarAlignment } from '../../../services/statusbar/browser/statusbar.js';
 import type { IStatusbarEntryAccessor } from '../../../services/statusbar/browser/statusbar.js';
-import type { ITextModel } from '../../../../editor/common/model.js';
-import type { Position } from '../../../../editor/common/core/position.js';
-import type { CancellationToken as _CancellationToken } from '../../../../base/common/cancellation.js';
+import type { ITextModel } from '@sidex/editor/common/model.js';
+import type { Position } from '@sidex/editor/common/core/position.js';
+import type { CancellationToken as _CancellationToken } from '@sidex/base/common/cancellation.js';
 import type {
 	CompletionContext,
 	CompletionItem,
@@ -41,11 +41,11 @@ import type {
 	SelectionRange,
 	SemanticTokens,
 	SemanticTokensLegend
-} from '../../../../editor/common/languages.js';
-import { CompletionItemKind, DocumentHighlightKind, SymbolKind } from '../../../../editor/common/languages.js';
-import type { LanguageSelector } from '../../../../editor/common/languageSelector.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Range } from '../../../../editor/common/core/range.js';
+} from '@sidex/editor/common/languages.js';
+import { CompletionItemKind, DocumentHighlightKind, SymbolKind } from '@sidex/editor/common/languages.js';
+import type { LanguageSelector } from '@sidex/editor/common/languageSelector.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	bootstrapExtensionPlatform,
 	wasmSyncDocument,
@@ -61,16 +61,16 @@ import {
 } from './extensionPlatformClient.js';
 import { listen } from '@tauri-apps/api/event';
 import { ITerminalService, ITerminalGroupService } from '../../terminal/browser/terminal.js';
-import { INotificationService, Severity as _Severity } from '../../../../platform/notification/common/notification.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { INotificationService, Severity as _Severity } from '@sidex/platform/notification/common/notification.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IDebugService } from '../../debug/common/debug.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
 import { IWebviewWorkbenchService } from '../../webviewPanel/browser/webviewWorkbenchService.js';
 import type { WebviewInput } from '../../webviewPanel/browser/webviewEditorInput.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as ViewExtensions,
 	type IViewsRegistry,
@@ -79,20 +79,20 @@ import {
 	type ITreeItem as _ITreeItem
 } from '../../../common/views.js';
 import { TreeView, TreeViewPane } from '../../../browser/parts/views/treeView.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import { IWorkbenchExtensionManagementService } from '../../../services/extensionManagement/common/extensionManagement.js';
 import type {
 	DidUninstallExtensionEvent,
 	InstallExtensionResult,
 	IGalleryExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IWebviewViewService } from '../../webviewView/browser/webviewViewService.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { IWebviewService } from '../../webview/browser/webview.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import type { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import type { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 
 function modelToParams(model: ITextModel, position: Position) {
 	return {

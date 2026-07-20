@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 
 const idDescription = nls.localize(
 	'JsonSchema.input.id',

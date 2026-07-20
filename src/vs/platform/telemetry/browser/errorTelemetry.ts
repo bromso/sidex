@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mainWindow } from '../../../base/browser/window.js';
-import { ErrorNoTelemetry } from '../../../base/common/errors.js';
-import { toDisposable } from '../../../base/common/lifecycle.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
 import BaseErrorTelemetry, { ErrorEvent } from '../common/errorTelemetry.js';
 
 export default class ErrorTelemetry extends BaseErrorTelemetry {

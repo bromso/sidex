@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as strings from '../../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { Range } from '../../core/range.js';
 import { ITextModel } from '../../model.js';
 import { ILanguageConfigurationService } from '../languageConfigurationRegistry.js';

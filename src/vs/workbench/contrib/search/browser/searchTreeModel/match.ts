@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { memoize } from '../../../../../base/common/decorators.js';
-import { lcut } from '../../../../../base/common/strings.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { lcut } from '@sidex/base/common/strings.js';
 import { ISearchRange, ITextSearchMatch, OneLineRange } from '../../../../services/search/common/search.js';
 import { ISearchTreeMatch, ISearchTreeFileMatch, MATCH_PREFIX } from './searchTreeCommon.js';
-import { Range } from '../../../../../editor/common/core/range.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 
 export function textSearchResultToMatches(
 	rawMatch: ITextSearchMatch,

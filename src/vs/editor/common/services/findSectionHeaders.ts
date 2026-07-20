@@ -6,7 +6,7 @@
 import { IRange } from '../core/range.js';
 import { FoldingRules } from '../languages/languageConfiguration.js';
 import { isMultilineRegexSource } from '../model/textModelSearch.js';
-import { regExpLeadsToEndlessLoop } from '../../../base/common/strings.js';
+import { regExpLeadsToEndlessLoop } from '@sidex/base/common/strings.js';
 
 export interface ISectionHeaderFinderTarget {
 	getLineCount(): number;

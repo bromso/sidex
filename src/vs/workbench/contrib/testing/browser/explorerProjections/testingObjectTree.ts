@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ITreeNode } from '../../../../../base/browser/ui/tree/tree.js';
-import { WorkbenchObjectTree } from '../../../../../platform/list/browser/listService.js';
+import { ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { WorkbenchObjectTree } from '@sidex/platform/list/browser/listService.js';
 import { TestExplorerTreeElement, TestItemTreeElement } from './index.js';
 import { ISerializedTestTreeCollapseState } from './testingViewState.js';
 import { TestId } from '../../common/testId.js';

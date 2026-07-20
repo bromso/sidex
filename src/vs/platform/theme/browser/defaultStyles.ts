@@ -2,8 +2,8 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { IButtonStyles } from '../../../base/browser/ui/button/button.js';
-import { IKeybindingLabelStyles } from '../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IButtonStyles } from '@sidex/base/browser/ui/button/button.js';
+import { IKeybindingLabelStyles } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
 import {
 	ColorIdentifier,
 	keybindingLabelBackground,
@@ -108,18 +108,18 @@ import {
 	checkboxDisabledForeground,
 	widgetBorder
 } from '../common/colorRegistry.js';
-import { IProgressBarStyles } from '../../../base/browser/ui/progressbar/progressbar.js';
-import { ICheckboxStyles, IToggleStyles } from '../../../base/browser/ui/toggle/toggle.js';
-import { IDialogStyles } from '../../../base/browser/ui/dialog/dialog.js';
-import { IInputBoxStyles } from '../../../base/browser/ui/inputbox/inputBox.js';
-import { IFindWidgetStyles } from '../../../base/browser/ui/tree/abstractTree.js';
-import { ICountBadgeStyles } from '../../../base/browser/ui/countBadge/countBadge.js';
-import { IBreadcrumbsWidgetStyles } from '../../../base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
-import { IListStyles } from '../../../base/browser/ui/list/listWidget.js';
-import { ISelectBoxStyles } from '../../../base/browser/ui/selectBox/selectBox.js';
-import { Color } from '../../../base/common/color.js';
-import { IMenuStyles } from '../../../base/browser/ui/menu/menu.js';
-import { IRadioStyles } from '../../../base/browser/ui/radio/radio.js';
+import { IProgressBarStyles } from '@sidex/base/browser/ui/progressbar/progressbar.js';
+import { ICheckboxStyles, IToggleStyles } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IDialogStyles } from '@sidex/base/browser/ui/dialog/dialog.js';
+import { IInputBoxStyles } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { IFindWidgetStyles } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { ICountBadgeStyles } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { IBreadcrumbsWidgetStyles } from '@sidex/base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
+import { IListStyles } from '@sidex/base/browser/ui/list/listWidget.js';
+import { ISelectBoxStyles } from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IMenuStyles } from '@sidex/base/browser/ui/menu/menu.js';
+import { IRadioStyles } from '@sidex/base/browser/ui/radio/radio.js';
 
 export type IStyleOverride<T> = {
 	[P in keyof T]?: ColorIdentifier | undefined;

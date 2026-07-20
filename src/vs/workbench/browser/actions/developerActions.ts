@@ -6,10 +6,10 @@
 import './media/actions.css';
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { DomEmitter } from '../../../base/browser/event.js';
-import { Color } from '../../../base/common/color.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	IDisposable,
 	toDisposable,
@@ -18,7 +18,7 @@ import {
 	setDisposableTracker,
 	DisposableTracker,
 	DisposableInfo
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	getDomNodePagePosition,
 	append,
@@ -26,44 +26,44 @@ import {
 	getActiveDocument,
 	onDidRegisterWindow,
 	getWindows
-} from '../../../base/browser/dom.js';
-import { createCSSRule, createStyleSheet } from '../../../base/browser/domStylesheets.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService, RawContextKey } from '../../../platform/contextkey/common/contextkey.js';
-import { Context } from '../../../platform/contextkey/browser/contextKeyService.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { ILayoutService } from '../../../platform/layout/browser/layoutService.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { registerAction2, Action2, MenuRegistry } from '../../../platform/actions/common/actions.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
-import { clamp } from '../../../base/common/numbers.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+} from '@sidex/base/browser/dom.js';
+import { createCSSRule, createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Context } from '@sidex/platform/contextkey/browser/contextKeyService.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { registerAction2, Action2, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../platform/configuration/common/configurationRegistry.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkingCopyService } from '../../services/workingCopy/common/workingCopyService.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { IWorkingCopyBackupService } from '../../services/workingCopy/common/workingCopyBackup.js';
-import { ResolutionResult, ResultKind } from '../../../platform/keybinding/common/keybindingResolver.js';
-import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
+import { ResolutionResult, ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { IOutputService } from '../../services/output/common/output.js';
 import { windowLogId } from '../../services/log/common/logConstants.js';
-import { ByteSize } from '../../../platform/files/common/files.js';
-import { IQuickInputService, IQuickPickItem } from '../../../platform/quickinput/common/quickInput.js';
+import { ByteSize } from '@sidex/platform/files/common/files.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IUserDataProfileService } from '../../services/userDataProfile/common/userDataProfile.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
-import product from '../../../platform/product/common/product.js';
-import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
-import { IDefaultAccountService } from '../../services/accounts/browser/nullDefaultAccount.js';
+import product from '@sidex/platform/product/common/product.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IDefaultAccountService } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
 import { IAuthenticationService } from '../../services/authentication/common/authentication.js';
 import { IAuthenticationAccessService } from '../../services/authentication/browser/authenticationAccessService.js';
-import { IPolicyService } from '../../../platform/policy/common/policy.js';
+import { IPolicyService } from '@sidex/platform/policy/common/policy.js';
 
 class InspectContextKeysAction extends Action2 {
 	constructor() {

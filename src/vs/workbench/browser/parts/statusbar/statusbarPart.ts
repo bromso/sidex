@@ -12,10 +12,10 @@ import {
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { MultiWindowParts, Part } from '../../part.js';
-import { EventType as TouchEventType, Gesture, GestureEvent } from '../../../../base/browser/touch.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { EventType as TouchEventType, Gesture, GestureEvent } from '@sidex/base/browser/touch.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	StatusbarAlignment,
 	IStatusbarService,
@@ -27,9 +27,9 @@ import {
 	isStatusbarEntryPriority,
 	IStatusbarEntryPriority
 } from '../../../services/statusbar/browser/statusbar.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IAction, Separator, toAction } from '../../../../base/common/actions.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IAction, Separator, toAction } from '@sidex/base/common/actions.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	STATUS_BAR_BACKGROUND,
 	STATUS_BAR_FOREGROUND,
@@ -42,8 +42,8 @@ import {
 	STATUS_BAR_ITEM_FOCUS_BORDER,
 	STATUS_BAR_FOCUS_BORDER
 } from '../../../common/theme.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
-import { contrastBorder, activeContrastBorder } from '../../../../platform/theme/common/colorRegistry.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
+import { contrastBorder, activeContrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	EventHelper,
 	addDisposableListener,
@@ -52,19 +52,19 @@ import {
 	getWindow,
 	isHTMLElement,
 	$
-} from '../../../../base/browser/dom.js';
-import { createStyleSheet } from '../../../../base/browser/domStylesheets.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/base/browser/dom.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import { Parts, IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import { ToggleStatusbarVisibilityAction } from '../../actions/layoutActions.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
-import { hash } from '../../../../base/common/hash.js';
-import { WorkbenchHoverDelegate } from '../../../../platform/hover/browser/hover.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { WorkbenchHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
 import {
 	HideStatusbarEntryAction,
 	ManageExtensionAction,
@@ -73,12 +73,12 @@ import {
 import { IStatusbarViewModelEntry, StatusbarViewModel } from './statusbarModel.js';
 import { StatusbarEntryItem } from './statusbarItem.js';
 import { StatusBarFocused } from '../../../common/contextkeys.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IView } from '../../../../base/browser/ui/grid/grid.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IView } from '@sidex/base/browser/ui/grid/grid.js';
 import {
 	isManagedHoverTooltipHTMLElement,
 	isManagedHoverTooltipMarkdownString
-} from '../../../../base/browser/ui/hover/hover.js';
+} from '@sidex/base/browser/ui/hover/hover.js';
 
 export interface IStatusbarEntryContainer extends IDisposable {
 	/**

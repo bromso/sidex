@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseEvent, IMouseWheelEvent } from '../../../../base/browser/mouseEvent.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IAnchor } from '../../../../base/browser/ui/contextview/contextview.js';
-import { IAction, Separator, SubmenuAction } from '../../../../base/common/actions.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { isIOS } from '../../../../base/common/platform.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent, IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { IAction, Separator, SubmenuAction } from '@sidex/base/common/actions.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isIOS } from '@sidex/base/common/platform.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -26,16 +26,16 @@ import { IEditorContribution, ScrollType } from '../../../common/editorCommon.js
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { ITextModel } from '../../../common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { IMenuService, MenuId, SubmenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IMenuService, MenuId, SubmenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IWorkspaceContextService,
 	isStandaloneEditorWorkspace
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 
 export class ContextMenuController implements IEditorContribution {
 	public static readonly ID = 'editor.contrib.contextmenu';

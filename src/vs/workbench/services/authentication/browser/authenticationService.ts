@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableMap,
@@ -11,13 +11,13 @@ import {
 	IDisposable,
 	isDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { equalsIgnoreCase, isFalsyOrWhitespace } from '../../../../base/common/strings.js';
-import { isString } from '../../../../base/common/types.js';
+} from '@sidex/base/common/lifecycle.js';
+import { equalsIgnoreCase, isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import { isString } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { ISecretStorageService } from '../../../../platform/secrets/common/secrets.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
 import { IAuthenticationAccessService } from './authenticationAccessService.js';
 import {
 	AuthenticationProviderInformation,
@@ -34,18 +34,18 @@ import {
 } from '../common/authentication.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import { ActivationKind, IExtensionService } from '../../extensions/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import { ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.js';
-import { match } from '../../../../base/common/glob.js';
-import { URI } from '../../../../base/common/uri.js';
+import { match } from '@sidex/base/common/glob.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IAuthorizationProtectedResourceMetadata,
 	IAuthorizationServerMetadata,
 	parseWWWAuthenticateHeader
-} from '../../../../base/common/oauth.js';
-import { raceCancellation, raceTimeout } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
+} from '@sidex/base/common/oauth.js';
+import { raceCancellation, raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 
 export function getAuthenticationProviderActivationEvent(id: string): string {
 	return `onAuthenticationRequest:${id}`;

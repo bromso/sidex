@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IFileStatWithMetadata, IWriteFileOptions } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileStatWithMetadata, IWriteFileOptions } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IElevatedFileService } from '../common/elevatedFileService.js';
 
 export class BrowserElevatedFileService implements IElevatedFileService {

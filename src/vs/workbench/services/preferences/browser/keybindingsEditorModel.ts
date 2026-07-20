@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { distinct, coalesce } from '../../../../base/common/arrays.js';
-import * as strings from '../../../../base/common/strings.js';
-import { OperatingSystem, Language } from '../../../../base/common/platform.js';
+import { distinct, coalesce } from '@sidex/base/common/arrays.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { OperatingSystem, Language } from '@sidex/base/common/platform.js';
 import {
 	IMatch,
 	IFilter,
@@ -15,29 +15,29 @@ import {
 	matchesWords,
 	matchesBaseContiguousSubString,
 	matchesContiguousSubString
-} from '../../../../base/common/filters.js';
-import { ResolvedKeybinding, ResolvedChord } from '../../../../base/common/keybindings.js';
+} from '@sidex/base/common/filters.js';
+import { ResolvedKeybinding, ResolvedChord } from '@sidex/base/common/keybindings.js';
 import {
 	AriaLabelProvider,
 	UserSettingsLabelProvider,
 	UILabelProvider,
 	ModifierLabels as ModLabels
-} from '../../../../base/common/keybindingLabels.js';
-import { MenuRegistry } from '../../../../platform/actions/common/actions.js';
+} from '@sidex/base/common/keybindingLabels.js';
+import { MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import { EditorModel } from '../../../common/editor/editorModel.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResolvedKeybindingItem } from '../../../../platform/keybinding/common/resolvedKeybindingItem.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResolvedKeybindingItem } from '@sidex/platform/keybinding/common/resolvedKeybindingItem.js';
 import { getAllUnboundCommands } from '../../keybinding/browser/unboundCommands.js';
 import { IKeybindingItemEntry, KeybindingMatches, KeybindingMatch, IKeybindingItem } from '../common/preferences.js';
-import { ICommandAction, ILocalizedString } from '../../../../platform/action/common/action.js';
-import { isEmptyObject, isString } from '../../../../base/common/types.js';
+import { ICommandAction, ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { isEmptyObject, isString } from '@sidex/base/common/types.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
 	IExtensionDescription
-} from '../../../../platform/extensions/common/extensions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export const KEYBINDING_ENTRY_TEMPLATE_ID = 'keybinding.entry.template';
 

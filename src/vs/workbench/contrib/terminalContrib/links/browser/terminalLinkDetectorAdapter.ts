@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ITerminalLinkDetector, ITerminalSimpleLink, TerminalBuiltinLinkType, TerminalLinkType } from './links.js';
 import { TerminalLink } from './terminalLink.js';
 import { XtermLinkMatcherHandler } from './terminalLinkManager.js';

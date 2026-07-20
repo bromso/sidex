@@ -2,8 +2,8 @@
  *  SideX: Stub for removed comments service.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export interface ICommentController {
 	id: string;

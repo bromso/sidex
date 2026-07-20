@@ -3,31 +3,31 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { renderLabelWithIcons } from '../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Orientation, Sizing, SplitView } from '../../../../../base/browser/ui/splitview/splitview.js';
-import { findAsync } from '../../../../../base/common/arrays.js';
-import { Limiter } from '../../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../../base/common/cancellation.js';
-import { Emitter, Event, Relay } from '../../../../../base/common/event.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { observableValue } from '../../../../../base/common/observable.js';
-import { ICodeEditor } from '../../../../../editor/browser/editorBrowser.js';
-import { ITextModelService } from '../../../../../editor/common/services/resolverService.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Orientation, Sizing, SplitView } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { findAsync } from '@sidex/base/common/arrays.js';
+import { Limiter } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event, Relay } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { observableValue } from '@sidex/base/common/observable.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize } from '@sidex/base/nls.js';
-import { FloatingClickMenu } from '../../../../../platform/actions/browser/floatingMenu.js';
-import { createActionViewItem } from '../../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { MenuWorkbenchToolBar } from '../../../../../platform/actions/browser/toolbar.js';
-import { Action2, MenuId, registerAction2 } from '../../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../../platform/instantiation/common/serviceCollection.js';
-import { IQuickInputService } from '../../../../../platform/quickinput/common/quickInput.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { FloatingClickMenu } from '@sidex/platform/actions/browser/floatingMenu.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	AnyStackFrame,
 	CallStackFrame,

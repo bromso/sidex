@@ -10,34 +10,34 @@ import {
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../base/common/event.js';
-import * as dom from '../../../base/browser/dom.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import {
 	HoverAction,
 	HoverPosition,
 	HoverWidget as BaseHoverWidget,
 	getHoverAccessibleViewHint
-} from '../../../base/browser/ui/hover/hoverWidget.js';
-import { Widget } from '../../../base/browser/ui/widget.js';
-import { AnchorPosition } from '../../../base/browser/ui/contextview/contextview.js';
+} from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { AnchorPosition } from '@sidex/base/browser/ui/contextview/contextview.js';
 import { IMarkdownRendererService } from '../../markdown/browser/markdownRenderer.js';
-import { isMarkdownString } from '../../../base/common/htmlContent.js';
+import { isMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { localize } from '@sidex/base/nls.js';
-import { isMacintosh } from '../../../base/common/platform.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
-import { status } from '../../../base/browser/ui/aria/aria.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
 import {
 	HoverStyle,
 	type IHoverOptions,
 	type IHoverTarget,
 	type IHoverWidget
-} from '../../../base/browser/ui/hover/hover.js';
-import { TimeoutTimer } from '../../../base/common/async.js';
-import { isNumber } from '../../../base/common/types.js';
+} from '@sidex/base/browser/ui/hover/hover.js';
+import { TimeoutTimer } from '@sidex/base/common/async.js';
+import { isNumber } from '@sidex/base/common/types.js';
 
 const $ = dom.$;
 type TargetRect = {

@@ -3,14 +3,14 @@
  *  backend; extension-registered filesystem providers are accepted but not wired.
  *--------------------------------------------------------------------------------------------*/
 
-import { UriComponents } from '../../../base/common/uri.js';
+import { UriComponents } from '@sidex/base/common/uri.js';
 import { IMainContext, ExtHostFileSystemShape, MainThreadFileSystemShape, MainContext } from './extHost.protocol.js';
 import type * as vscode from 'vscode';
-import * as files from '../../../platform/files/common/files.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import * as files from '@sidex/platform/files/common/files.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ExtHostLanguageFeatures } from './extHostLanguageFeatures.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 
 export class ExtHostFileSystem implements ExtHostFileSystemShape {
 	private readonly _proxy: MainThreadFileSystemShape;

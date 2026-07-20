@@ -5,11 +5,11 @@
 
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { MainContext, MainThreadConsoleShape } from '../common/extHost.protocol.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { IRemoteConsoleLog, log } from '../../../base/common/console.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IRemoteConsoleLog, log } from '@sidex/base/common/console.js';
 import { logRemoteEntry, logRemoteEntryIfError } from '../../services/extensions/common/remoteConsoleUtil.js';
 import { parseExtensionDevOptions } from '../../services/extensions/common/extensionDevOptions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 @extHostNamedCustomer(MainContext.MainThreadConsole)
 export class MainThreadConsole implements MainThreadConsoleShape {

@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { IDecoration, ITerminalAddon, Terminal } from '@xterm/xterm';
-import * as dom from '../../../../../base/browser/dom.js';
-import { IAction, Separator } from '../../../../../base/common/actions.js';
-import { Emitter } from '../../../../../base/common/event.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IAction, Separator } from '@sidex/base/common/actions.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableMap,
@@ -14,20 +14,20 @@ import {
 	IDisposable,
 	dispose,
 	toDisposable
-} from '../../../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { INotificationService, Severity } from '../../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	CommandInvalidationReason,
 	ICommandDetectionCapability,
@@ -35,9 +35,9 @@ import {
 	ITerminalCapabilityStore,
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalSettingId, type IDecorationAddon } from '../../../../../platform/terminal/common/terminal.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalSettingId, type IDecorationAddon } from '@sidex/platform/terminal/common/terminal.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { terminalDecorationMark } from '../terminalIcons.js';
 import {
 	DecorationSelector,
@@ -51,10 +51,10 @@ import {
 	TERMINAL_COMMAND_DECORATION_SUCCESS_BACKGROUND_COLOR
 } from '../../common/terminalColorRegistry.js';
 import { ILifecycleService } from '../../../../services/lifecycle/common/lifecycle.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
-import { MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { isString } from '../../../../../base/common/types.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isString } from '@sidex/base/common/types.js';
 
 interface IDisposableDecoration {
 	decoration: IDecoration;

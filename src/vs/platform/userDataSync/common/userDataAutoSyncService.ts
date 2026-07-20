@@ -9,16 +9,16 @@ import {
 	disposableTimeout,
 	ThrottledDelayer,
 	timeout
-} from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { toLocalISOString } from '../../../base/common/date.js';
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable, MutableDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { isEqual } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IMeteredConnectionService } from '../../meteredConnection/common/meteredConnection.js';
 import { IProductService } from '../../product/common/productService.js';

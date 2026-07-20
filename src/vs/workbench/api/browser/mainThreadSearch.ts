@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { DisposableStore, dispose, IDisposable } from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { ITelemetryData, ITelemetryService } from '../../../platform/telemetry/common/telemetry.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITelemetryData, ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	IFileMatch,
@@ -24,9 +24,9 @@ import {
 	SearchProviderType
 } from '../../services/search/common/search.js';
 import { ExtHostContext, ExtHostSearchShape, MainContext, MainThreadSearchShape } from '../common/extHost.protocol.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 import * as Constants from '../../contrib/search/common/constants.js';
-import { IContextKeyService } from '../../../platform/contextkey/common/contextkey.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { AISearchKeyword } from '../../services/search/common/searchExtTypes.js';
 
 @extHostNamedCustomer(MainContext.MainThreadSearch)

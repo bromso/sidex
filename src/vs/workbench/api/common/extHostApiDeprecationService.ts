@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import * as extHostProtocol from './extHost.protocol.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 

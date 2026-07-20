@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { AbstractProblemCollector } from '../common/problemCollectors.js';
 import { ITerminalInstance } from '../../terminal/browser/terminal.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMarkerData, MarkerSeverity, IMarker as ITaskMarker } from '../../../../platform/markers/common/markers.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMarkerData, MarkerSeverity, IMarker as ITaskMarker } from '@sidex/platform/markers/common/markers.js';
 
 interface ITerminalMarkerData {
 	readonly resources: Map<string, URI>;

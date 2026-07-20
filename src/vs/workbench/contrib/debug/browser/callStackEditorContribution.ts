@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { IEditorContribution, IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IEditorContribution, IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
 import {
 	GlyphMarginLane,
 	IModelDecorationOptions,
 	IModelDeltaDecoration,
 	OverviewRulerLane,
 	TrackedRangeStickiness
-} from '../../../../editor/common/model.js';
+} from '@sidex/editor/common/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { debugStackframe, debugStackframeFocused } from './debugIcons.js';
 import { IDebugService, IStackFrame } from '../common/debug.js';
 import './media/callStackEditorContribution.css';

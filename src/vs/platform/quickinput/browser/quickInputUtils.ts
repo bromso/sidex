@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../base/browser/domStylesheets.js';
-import * as cssJs from '../../../base/browser/cssValue.js';
-import { DomEmitter } from '../../../base/browser/event.js';
-import { Event } from '../../../base/common/event.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { Gesture, EventType as GestureEventType } from '../../../base/browser/touch.js';
-import { renderLabelWithIcons } from '../../../base/browser/ui/iconLabel/iconLabels.js';
-import { IdGenerator } from '../../../base/common/idGenerator.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
-import { parseLinkedText } from '../../../base/common/linkedText.js';
-import { URI } from '../../../base/common/uri.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { Event } from '@sidex/base/common/event.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { Gesture, EventType as GestureEventType } from '@sidex/base/browser/touch.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { IdGenerator } from '@sidex/base/common/idGenerator.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './media/quickInput.css';
 import { localize } from '@sidex/base/nls.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IQuickInputButton } from '../common/quickInput.js';
-import { IAction } from '../../../base/common/actions.js';
+import { IAction } from '@sidex/base/common/actions.js';
 
 const iconPathToClass: Record<string, string> = {};
 const iconClassGenerator = new IdGenerator('quick-input-button-icon-');

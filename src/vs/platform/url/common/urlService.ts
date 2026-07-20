@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { first } from '../../../base/common/async.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { first } from '@sidex/base/common/async.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { IProductService } from '../../product/common/productService.js';
 import { IOpenURLOptions, IURLHandler, IURLService } from './url.js';
 

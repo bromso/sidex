@@ -5,22 +5,22 @@
 
 import './media/exceptionWidget.css';
 import * as nls from '@sidex/base/nls.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { ZoneWidget } from '../../../../editor/contrib/zoneWidget/browser/zoneWidget.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ZoneWidget } from '@sidex/editor/contrib/zoneWidget/browser/zoneWidget.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { IExceptionInfo, IDebugSession, IDebugEditorContribution, EDITOR_CONTRIBUTION_ID } from '../common/debug.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { IThemeService, IColorTheme } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Color } from '../../../../base/common/color.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { IThemeService, IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Color } from '@sidex/base/common/color.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { DebugLinkHoverBehavior, DebugLinkHoverBehaviorTypeData, LinkDetector } from './linkDetector.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Action } from '../../../../base/common/actions.js';
-import { widgetClose } from '../../../../platform/theme/common/iconRegistry.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { widgetClose } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 
 const $ = dom.$;
 

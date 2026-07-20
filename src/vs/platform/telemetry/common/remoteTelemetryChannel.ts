@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IServerChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import { TelemetryLevel } from './telemetry.js';
 import { ITelemetryAppender } from './telemetryUtils.js';
 import { IServerTelemetryService } from './serverTelemetryService.js';

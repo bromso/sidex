@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { isString } from '../../../base/common/types.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { isString } from '@sidex/base/common/types.js';
 import { IProcessDataEvent } from './terminal.js';
 
 interface TerminalDataBuffer extends IDisposable {

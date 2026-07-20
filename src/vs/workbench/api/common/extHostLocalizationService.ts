@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { LANGUAGE_DEFAULT } from '../../../base/common/platform.js';
-import { format2 } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { LANGUAGE_DEFAULT } from '@sidex/base/common/platform.js';
+import { format2 } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	ExtHostLocalizationShape,
 	IStringDetails,

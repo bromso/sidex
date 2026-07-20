@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Barrier } from '../../../base/common/async.js';
-import { isUriComponents, URI, UriComponents } from '../../../base/common/uri.js';
-import { Event, Emitter } from '../../../base/common/event.js';
-import { IObservable, observableValue, observableValueOpts, transaction } from '../../../base/common/observable.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { isUriComponents, URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IObservable, observableValue, observableValueOpts, transaction } from '@sidex/base/common/observable.js';
 import {
 	IDisposable,
 	DisposableStore,
 	combinedDisposable,
 	dispose,
 	Disposable
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	ISCMService,
 	ISCMRepository,
@@ -38,12 +38,12 @@ import {
 	SCMHistoryItemRefsChangeEventDto,
 	SCMHistoryItemRefDto
 } from '../common/extHost.protocol.js';
-import { Command } from '../../../editor/common/languages.js';
+import { Command } from '@sidex/editor/common/languages.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { IQuickDiffService } from '../../contrib/scm/common/quickDiff.js';
 import {
 	ISCMHistoryItem,
@@ -53,22 +53,22 @@ import {
 	ISCMHistoryOptions,
 	ISCMHistoryProvider
 } from '../../contrib/scm/common/history.js';
-import { ResourceTree } from '../../../base/common/resourceTree.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService } from '../../../platform/workspace/common/workspace.js';
-import { basename } from '../../../base/common/resources.js';
-import { ILanguageService } from '../../../editor/common/languages/language.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { ITextModelContentProvider, ITextModelService } from '../../../editor/common/services/resolverService.js';
-import { Schemas } from '../../../base/common/network.js';
-import { ITextModel } from '../../../editor/common/model.js';
-import { structuralEquals } from '../../../base/common/equals.js';
+import { ResourceTree } from '@sidex/base/common/resourceTree.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelContentProvider, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { structuralEquals } from '@sidex/base/common/equals.js';
 import {
 	historyItemBaseRefColor,
 	historyItemRefColor,
 	historyItemRemoteRefColor
 } from '../../contrib/scm/browser/scmHistory.js';
-import { ColorIdentifier } from '../../../platform/theme/common/colorUtils.js';
+import { ColorIdentifier } from '@sidex/platform/theme/common/colorUtils.js';
 import { ISCMArtifact, ISCMArtifactGroup, ISCMArtifactProvider } from '../../contrib/scm/common/artifact.js';
 
 function getIconFromIconDto(

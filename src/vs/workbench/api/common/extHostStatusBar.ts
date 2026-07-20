@@ -20,11 +20,11 @@ import {
 } from './extHost.protocol.js';
 import { localize } from '@sidex/base/nls.js';
 import { CommandsConverter } from './extHostCommands.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { MarkdownString } from './extHostTypeConverters.js';
-import { isNumber } from '../../../base/common/types.js';
-import * as htmlContent from '../../../base/common/htmlContent.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import * as htmlContent from '@sidex/base/common/htmlContent.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 export class ExtHostStatusBarEntry implements vscode.StatusBarItem {

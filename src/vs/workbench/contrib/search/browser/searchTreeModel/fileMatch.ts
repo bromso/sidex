@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { Lazy } from '../../../../../base/common/lazy.js';
-import { Disposable, DisposableStore } from '../../../../../base/common/lifecycle.js';
-import { themeColorFromId } from '../../../../../base/common/themables.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { themeColorFromId } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	TrackedRangeStickiness,
 	MinimapPosition,
 	ITextModel,
 	FindMatch,
 	IModelDeltaDecoration
-} from '../../../../../editor/common/model.js';
-import { ModelDecorationOptions } from '../../../../../editor/common/model/textModel.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { IFileStatWithPartialMetadata, IFileService } from '../../../../../platform/files/common/files.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+} from '@sidex/editor/common/model.js';
+import { ModelDecorationOptions } from '@sidex/editor/common/model/textModel.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { IFileStatWithPartialMetadata, IFileService } from '@sidex/platform/files/common/files.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	overviewRulerFindMatchForeground,
 	minimapFindMatch
-} from '../../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	IFileMatch,
 	IPatternInfo,
@@ -45,9 +45,9 @@ import {
 	ISearchTreeFolderMatchWorkspaceRoot,
 	ISearchTreeMatch
 } from './searchTreeCommon.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { textSearchResultToMatches } from './match.js';
-import { OverviewRulerLane } from '../../../../../editor/common/standalone/standaloneEnums.js';
+import { OverviewRulerLane } from '@sidex/editor/common/standalone/standaloneEnums.js';
 
 export class FileMatchImpl extends Disposable implements ISearchTreeFileMatch {
 	private static readonly _CURRENT_FIND_MATCH = ModelDecorationOptions.register({

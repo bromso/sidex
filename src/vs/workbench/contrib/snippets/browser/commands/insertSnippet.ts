@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ICodeEditor } from '../../../../../editor/browser/editorBrowser.js';
-import { ServicesAccessor } from '../../../../../editor/browser/editorExtensions.js';
-import { EditorContextKeys } from '../../../../../editor/common/editorContextKeys.js';
-import { ILanguageService } from '../../../../../editor/common/languages/language.js';
-import { SnippetController2 } from '../../../../../editor/contrib/snippet/browser/snippetController2.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
 import * as nls from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { SnippetEditorAction } from './abstractSnippetsActions.js';
 import { pickSnippet } from '../snippetPicker.js';
 import { ISnippetsService } from '../snippets.js';

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ok } from '../../../base/common/assert.js';
-import { ReadonlyError, illegalArgument } from '../../../base/common/errors.js';
-import { IdGenerator } from '../../../base/common/idGenerator.js';
-import { TextEditorCursorStyle } from '../../../editor/common/config/editorOptions.js';
-import { IRange } from '../../../editor/common/core/range.js';
-import { ISingleEditOperation } from '../../../editor/common/core/editOperation.js';
+import { ok } from '@sidex/base/common/assert.js';
+import { ReadonlyError, illegalArgument } from '@sidex/base/common/errors.js';
+import { IdGenerator } from '@sidex/base/common/idGenerator.js';
+import { TextEditorCursorStyle } from '@sidex/editor/common/config/editorOptions.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
 import {
 	IResolvedTextEditorConfiguration,
 	ITextEditorConfigurationUpdate,
@@ -25,9 +25,9 @@ import {
 	TextEditorRevealType
 } from './extHostTypes.js';
 import type * as vscode from 'vscode';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 
 export class TextEditorDecorationType {
 	private static readonly _Keys = new IdGenerator('TextEditorDecorationType');

@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../base/common/arrays.js';
-import { CancelablePromise, createCancelablePromise, ThrottledDelayer } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { parse, ParseError } from '../../../base/common/json.js';
-import { FormattingOptions } from '../../../base/common/jsonFormatter.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IExtUri } from '../../../base/common/resources.js';
-import { uppercaseFirstLetter } from '../../../base/common/strings.js';
-import { isString, isUndefined } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { IHeaders } from '../../../base/parts/request/common/request.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { CancelablePromise, createCancelablePromise, ThrottledDelayer } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { parse, ParseError } from '@sidex/base/common/json.js';
+import { FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import { uppercaseFirstLetter } from '@sidex/base/common/strings.js';
+import { isString, isUndefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IHeaders } from '@sidex/base/parts/request/common/request.js';
 import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

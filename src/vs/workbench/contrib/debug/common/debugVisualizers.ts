@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable, IReference, toDisposable } from '../../../../base/common/lifecycle.js';
-import { isDefined } from '../../../../base/common/types.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, IReference, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	CONTEXT_VARIABLE_NAME,
 	CONTEXT_VARIABLE_TYPE,

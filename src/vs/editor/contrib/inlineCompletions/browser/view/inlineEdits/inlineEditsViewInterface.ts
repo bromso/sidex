@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindow } from '../../../../../../base/browser/dom.js';
-import { IMouseEvent, StandardMouseEvent } from '../../../../../../base/browser/mouseEvent.js';
-import { Event } from '../../../../../../base/common/event.js';
-import { IObservable } from '../../../../../../base/common/observable.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
+import { IMouseEvent, StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IObservable } from '@sidex/base/common/observable.js';
 
 export enum InlineEditTabAction {
 	Jump = 'jump',

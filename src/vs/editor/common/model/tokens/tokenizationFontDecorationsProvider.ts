@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IModelDecoration, ITextModel } from '../../model.js';
 import { TokenizationTextModelPart } from './tokenizationTextModelPart.js';
 import { Range } from '../../core/range.js';
 import { DecorationProvider, LineFontChangingDecoration, LineHeightChangingDecoration } from '../decorationProvider.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { IFontTokenOption, IModelContentChangedEvent } from '../../textModelEvents.js';
 import { classNameForFontTokenDecorations } from '../../languages/supports/tokenization.js';
 import { Position } from '../../core/position.js';

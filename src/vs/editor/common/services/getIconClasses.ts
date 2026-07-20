@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../base/common/network.js';
-import { DataUri } from '../../../base/common/resources.js';
-import { URI, URI as uri } from '../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { DataUri } from '@sidex/base/common/resources.js';
+import { URI, URI as uri } from '@sidex/base/common/uri.js';
 import { PLAINTEXT_LANGUAGE_ID } from '../languages/modesRegistry.js';
 import { ILanguageService } from '../languages/language.js';
 import { IModelService } from './model.js';
-import { FileKind } from '../../../platform/files/common/files.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 const fileIconDirectoryRegex = /(?:\/|^)(?:([^\/]+)\/)?([^\/]+)$/;
 

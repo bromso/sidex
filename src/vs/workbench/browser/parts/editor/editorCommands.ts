@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Schemas, matchesScheme } from '../../../../base/common/network.js';
-import { extname, isEqual } from '../../../../base/common/resources.js';
-import { isNumber, isObject, isString, isUndefined } from '../../../../base/common/types.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Schemas, matchesScheme } from '@sidex/base/common/network.js';
+import { extname, isEqual } from '@sidex/base/common/resources.js';
+import { isNumber, isObject, isString, isUndefined } from '@sidex/base/common/types.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandHandler, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandHandler, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	EditorResolution,
 	IEditorOptions,
 	IResourceEditorInput,
 	ITextEditorOptions
-} from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight, KeybindingsRegistry } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IListService, IOpenEvent } from '../../../../platform/list/browser/listService.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight, KeybindingsRegistry } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IListService, IOpenEvent } from '@sidex/platform/list/browser/listService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { ActiveGroupEditorsByMostRecentlyUsedQuickAccess } from './editorQuickAccess.js';
 import { SideBySideEditor } from './sideBySideEditor.js';
 import { TextDiffEditor } from './textDiffEditor.js';
@@ -68,7 +68,7 @@ import {
 	IModalEditorPart,
 	preferredSideBySideGroupDirection
 } from '../../../services/editor/common/editorGroupsService.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { IEditorResolverService } from '../../../services/editor/common/editorResolverService.js';
 import { IEditorService, SIDE_GROUP } from '../../../services/editor/common/editorService.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
@@ -81,8 +81,8 @@ import {
 } from './diffEditorCommands.js';
 import { IResolvedEditorCommandsContext, resolveCommandsContext } from './editorCommandsContext.js';
 import { prepareMoveCopyEditors } from './editor.js';
-import { IRange } from '../../../../editor/common/core/range.js';
-import { IMultiDiffEditorOptions } from '../../../../editor/browser/widget/multiDiffEditor/multiDiffEditorWidgetImpl.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { IMultiDiffEditorOptions } from '@sidex/editor/browser/widget/multiDiffEditor/multiDiffEditorWidgetImpl.js';
 
 export const CLOSE_SAVED_EDITORS_COMMAND_ID = 'workbench.action.closeUnmodifiedEditors';
 export const CLOSE_EDITORS_IN_GROUP_COMMAND_ID = 'workbench.action.closeEditorsInGroup';

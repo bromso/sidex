@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { IViewZone, IViewZoneChangeAccessor } from '../../editorBrowser.js';
 import { ViewPart } from '../../view/viewPart.js';
 import { Position } from '../../../common/core/position.js';

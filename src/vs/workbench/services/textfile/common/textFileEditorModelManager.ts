@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { TextFileEditorModel } from './textFileEditorModel.js';
-import { dispose, IDisposable, Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { dispose, IDisposable, Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	ITextFileEditorModel,
 	ITextFileEditorModelManager,
@@ -17,8 +17,8 @@ import {
 	ITextFileSaveEvent,
 	ITextFileSaveParticipant
 } from './textfiles.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import {
 	IFileService,
 	FileChangesEvent,
@@ -26,23 +26,23 @@ import {
 	FileChangeType,
 	IFileSystemProviderRegistrationEvent,
 	IFileSystemProviderCapabilitiesChangeEvent
-} from '../../../../platform/files/common/files.js';
-import { Promises, ResourceQueue } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+} from '@sidex/platform/files/common/files.js';
+import { Promises, ResourceQueue } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { TextFileSaveParticipant } from './textFileSaveParticipant.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	IStoredFileWorkingCopySaveParticipantContext,
 	IWorkingCopyFileService,
 	WorkingCopyFileEvent
 } from '../../workingCopy/common/workingCopyFileService.js';
-import { ITextSnapshot } from '../../../../editor/common/model.js';
-import { extname, joinPath } from '../../../../base/common/resources.js';
-import { createTextBufferFactoryFromSnapshot } from '../../../../editor/common/model/textModel.js';
-import { PLAINTEXT_EXTENSION, PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IProgress, IProgressStep } from '../../../../platform/progress/common/progress.js';
+import { ITextSnapshot } from '@sidex/editor/common/model.js';
+import { extname, joinPath } from '@sidex/base/common/resources.js';
+import { createTextBufferFactoryFromSnapshot } from '@sidex/editor/common/model/textModel.js';
+import { PLAINTEXT_EXTENSION, PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
 
 interface ITextFileEditorModelToRestore {
 	readonly source: URI;

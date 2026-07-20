@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { pushMany } from '../../../base/common/arrays.js';
-import { VSBuffer, VSBufferReadableStream } from '../../../base/common/buffer.js';
-import { CharCode } from '../../../base/common/charCode.js';
-import { SetWithKey } from '../../../base/common/collections.js';
-import { Color } from '../../../base/common/color.js';
-import { BugIndicatingError, illegalArgument, onUnexpectedError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { listenStream } from '../../../base/common/stream.js';
-import * as strings from '../../../base/common/strings.js';
-import { ThemeColor } from '../../../base/common/themables.js';
-import { Constants } from '../../../base/common/uint.js';
-import { URI } from '../../../base/common/uri.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { isDark } from '../../../platform/theme/common/theme.js';
-import { IColorTheme } from '../../../platform/theme/common/themeService.js';
+import { pushMany } from '@sidex/base/common/arrays.js';
+import { VSBuffer, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { SetWithKey } from '@sidex/base/common/collections.js';
+import { Color } from '@sidex/base/common/color.js';
+import { BugIndicatingError, illegalArgument, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { listenStream } from '@sidex/base/common/stream.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IUndoRedoService,
 	ResourceEditStackSnapshot,
 	UndoRedoGroup
-} from '../../../platform/undoRedo/common/undoRedo.js';
+} from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { ISingleEditOperation } from '../core/editOperation.js';
 import { TextEdit } from '../core/edits/textEdit.js';
 import { countEOL } from '../core/misc/eolCounter.js';

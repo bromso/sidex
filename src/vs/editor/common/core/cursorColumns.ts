@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import * as strings from '../../../base/common/strings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import * as strings from '@sidex/base/common/strings.js';
 
 /**
  * A column in a position is the gap between two adjacent characters. The methods here

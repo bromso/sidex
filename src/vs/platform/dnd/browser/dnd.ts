@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DataTransfers } from '../../../base/browser/dnd.js';
-import { DragMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { coalesce } from '../../../base/common/arrays.js';
-import { DeferredPromise } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { parse } from '../../../base/common/marshalling.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isNative, isWeb } from '../../../base/common/platform.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { DataTransfers } from '@sidex/base/browser/dnd.js';
+import { DragMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { parse } from '@sidex/base/common/marshalling.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isNative, isWeb } from '@sidex/base/common/platform.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IDialogService } from '../../dialogs/common/dialogs.js';
 import { IBaseTextResourceEditorInput, ITextEditorSelection } from '../../editor/common/editor.js';

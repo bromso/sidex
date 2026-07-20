@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { MainThreadCustomEditors } from './mainThreadCustomEditors.js';
 import { MainThreadWebviewPanels } from './mainThreadWebviewPanels.js';
 import { MainThreadWebviews } from './mainThreadWebviews.js';

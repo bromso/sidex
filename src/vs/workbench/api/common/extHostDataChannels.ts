@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ExtHostDataChannelsShape } from './extHost.protocol.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export interface IExtHostDataChannels extends ExtHostDataChannelsShape {
 	readonly _serviceBrand: undefined;

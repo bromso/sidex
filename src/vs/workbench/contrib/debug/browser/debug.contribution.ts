@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { FileAccess } from '../../../../base/common/network.js';
-import { isMacintosh, isWeb } from '../../../../base/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import { isMacintosh, isWeb } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	EditorContributionInstantiation,
 	registerEditorContribution
-} from '../../../../editor/browser/editorExtensions.js';
+} from '@sidex/editor/browser/editorExtensions.js';
 import * as nls from '@sidex/base/nls.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { ICommandActionTitle, Icon } from '../../../../platform/action/common/action.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { ICommandActionTitle, Icon } from '@sidex/platform/action/common/action.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import {
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { ContextKeyExpr, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { KeybindingWeight, KeybindingsRegistry } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { ContextKeyExpr, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { KeybindingWeight, KeybindingsRegistry } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	IQuickAccessRegistry,
 	Extensions as QuickAccessExtensions
-} from '../../../../platform/quickinput/common/quickAccess.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { FocusedViewContext } from '../../../common/contextkeys.js';

@@ -4,35 +4,35 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import * as domStylesheets from '../../../../base/browser/domStylesheets.js';
-import { equals as equalArray } from '../../../../base/common/arrays.js';
-import { Color } from '../../../../base/common/color.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, observableFromEvent } from '../../../../base/common/observable.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import * as resources from '../../../../base/common/resources.js';
-import * as types from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { StandardTokenType } from '../../../../editor/common/encodedTokenAttributes.js';
+import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
+import { equals as equalArray } from '@sidex/base/common/arrays.js';
+import { Color } from '@sidex/base/common/color.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import * as resources from '@sidex/base/common/resources.js';
+import * as types from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { StandardTokenType } from '@sidex/editor/common/encodedTokenAttributes.js';
 import {
 	ITokenizationSupport,
 	LazyTokenizationSupport,
 	TokenizationRegistry
-} from '../../../../editor/common/languages.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	generateTokensCSSForColorMap,
 	generateTokensCSSForFontMap
-} from '../../../../editor/common/languages/supports/tokenization.js';
+} from '@sidex/editor/common/languages/supports/tokenization.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { ExtensionMessageCollector, IExtensionPointUser } from '../../extensions/common/extensionsRegistry.js';
 import { ITextMateTokenizationService } from './textMateTokenizationFeature.js';
@@ -48,7 +48,7 @@ import {
 	IWorkbenchThemeService
 } from '../../themes/common/workbenchThemeService.js';
 import type { IGrammar, IOnigLib, IRawTheme } from 'vscode-textmate';
-import { IFontTokenOptions } from '../../../../platform/theme/common/themeService.js';
+import { IFontTokenOptions } from '@sidex/platform/theme/common/themeService.js';
 
 const isTauri = !!(globalThis as any).__SIDEX_TAURI__;
 
@@ -479,7 +479,7 @@ export class TextMateTokenizationFeature extends Disposable implements ITextMate
 		} else {
 			const { canASAR } = await import('@sidex/base/amdX.js');
 			const { FileAccess, nodeModulesAsarUnpackedPath, nodeModulesPath } = await import(
-				'../../../../base/common/network.js'
+				'@sidex/base/common/network.js'
 			);
 			const response = await fetch(
 				canASAR && this._environmentService.isBuilt

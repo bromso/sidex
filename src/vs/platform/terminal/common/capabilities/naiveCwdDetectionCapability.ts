@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { ITerminalChildProcess } from '../terminal.js';
 import { TerminalCapability, INaiveCwdDetectionCapability } from './capabilities.js';
 

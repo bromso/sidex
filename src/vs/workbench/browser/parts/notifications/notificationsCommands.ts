@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	INotificationViewItem,
 	isNotificationViewItem,
@@ -14,10 +14,10 @@ import {
 	NotificationsPosition,
 	NotificationsSettings
 } from '../../../common/notifications.js';
-import { Action2, MenuRegistry, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, MenuRegistry, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IListService, WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IListService, WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	NotificationFocusedContext,
 	NotificationsCenterVisibleContext,
@@ -27,22 +27,22 @@ import {
 	INotificationService,
 	INotificationSourceFilter,
 	NotificationsFilter
-} from '../../../../platform/notification/common/notification.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ActionRunner,
 	IAction,
 	WorkbenchActionExecutedEvent,
 	WorkbenchActionExecutedClassification
-} from '../../../../base/common/actions.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/actions.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 // Center
 export const SHOW_NOTIFICATIONS_CENTER = 'notifications.showList';

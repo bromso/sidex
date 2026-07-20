@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../base/common/arrays.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import * as semver from '../../../base/common/semver/semver.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { CancellationError, getErrorMessage, isCancellationError } from '../../../base/common/errors.js';
-import { IPager } from '../../../base/common/paging.js';
-import { isWeb, platform } from '../../../base/common/platform.js';
-import { arch } from '../../../base/common/process.js';
-import { isBoolean, isNumber, isString } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { CancellationError, getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { IPager } from '@sidex/base/common/paging.js';
+import { isWeb, platform } from '@sidex/base/common/platform.js';
+import { arch } from '@sidex/base/common/process.js';
+import { isBoolean, isNumber, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IHeaders,
 	IRequestContext,
 	IRequestOptions,
 	isOfflineError
-} from '../../../base/parts/request/common/request.js';
+} from '@sidex/base/parts/request/common/request.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import {
@@ -75,8 +75,8 @@ import {
 import { resolveMarketplaceHeaders } from '../../externalServices/common/marketplace.js';
 import { IStorageService } from '../../storage/common/storage.js';
 import { ITelemetryService } from '../../telemetry/common/telemetry.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
-import { format2 } from '../../../base/common/strings.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { format2 } from '@sidex/base/common/strings.js';
 import {
 	ExtensionGalleryResourceType,
 	Flag,

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStorageService, StorageScope } from '../../../platform/storage/common/storage.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
 import {
 	MainThreadStorageShape,
 	MainContext,
@@ -11,15 +11,15 @@ import {
 	ExtHostContext
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { isWeb } from '../../../base/common/platform.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isWeb } from '@sidex/base/common/platform.js';
 import {
 	IExtensionIdWithVersion,
 	IExtensionStorageService
-} from '../../../platform/extensionManagement/common/extensionStorage.js';
+} from '@sidex/platform/extensionManagement/common/extensionStorage.js';
 import { migrateExtensionStorage } from '../../services/extensions/common/extensionStorageMigration.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 @extHostNamedCustomer(MainContext.MainThreadStorage)
 export class MainThreadStorage implements MainThreadStorageShape {

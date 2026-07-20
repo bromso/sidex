@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { disposableTimeout } from '../../../../../base/common/async.js';
-import { Color, RGBA } from '../../../../../base/common/color.js';
-import { debounce } from '../../../../../base/common/decorators.js';
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { escapeRegExpCharacters } from '../../../../../base/common/strings.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { XtermAttributes, IXtermCore } from '../../../terminal/browser/xterm-private.js';
 import {
 	IBeforeProcessDataEvent,
@@ -22,7 +22,7 @@ import {
 	DEFAULT_LOCAL_ECHO_EXCLUDE,
 	type ITerminalTypeAheadConfiguration
 } from '../common/terminalTypeAheadConfiguration.js';
-import { isNumber, type SingleOrMany } from '../../../../../base/common/types.js';
+import { isNumber, type SingleOrMany } from '@sidex/base/common/types.js';
 
 const enum VT {
 	Esc = '\x1b',

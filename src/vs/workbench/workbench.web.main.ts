@@ -48,7 +48,7 @@ import './services/workspaces/browser/workspacesService.js';
 import './services/workspaces/browser/workspaceEditingService.js';
 import './services/dialogs/browser/fileDialogService.js';
 import './services/host/browser/browserHostService.js';
-import '../platform/meteredConnection/browser/meteredConnectionService.js';
+import '@sidex/platform/meteredConnection/browser/meteredConnectionService.js';
 import './services/lifecycle/browser/lifecycleService.js';
 import './services/clipboard/browser/clipboardService.js';
 import './services/localization/browser/localeService.js';
@@ -64,36 +64,36 @@ import './services/files/browser/elevatedFileService.js';
 import './services/workingCopy/browser/workingCopyHistoryService.js';
 import './services/userDataProfile/browser/userDataProfileStorageService.js';
 import './services/configurationResolver/browser/configurationResolverService.js';
-import '../platform/extensionResourceLoader/browser/extensionResourceLoaderService.js';
+import '@sidex/platform/extensionResourceLoader/browser/extensionResourceLoaderService.js';
 import './services/auxiliaryWindow/browser/auxiliaryWindowService.js';
 import './services/power/browser/powerService.js';
-import '../platform/sandbox/browser/sandboxHelperService.js';
+import '@sidex/platform/sandbox/browser/sandboxHelperService.js';
 
-import { InstantiationType, registerSingleton } from '../platform/instantiation/common/extensions.js';
-import { IAccessibilityService } from '../platform/accessibility/common/accessibility.js';
-import { IContextMenuService } from '../platform/contextview/browser/contextView.js';
-import { ContextMenuService } from '../platform/contextview/browser/contextMenuService.js';
-import { IExtensionTipsService } from '../platform/extensionManagement/common/extensionManagement.js';
-import { ExtensionTipsService } from '../platform/extensionManagement/common/extensionTipsService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ContextMenuService } from '@sidex/platform/contextview/browser/contextMenuService.js';
+import { IExtensionTipsService } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { ExtensionTipsService } from '@sidex/platform/extensionManagement/common/extensionTipsService.js';
 import { IWorkbenchExtensionManagementService } from './services/extensionManagement/common/extensionManagement.js';
 import { ExtensionManagementService } from './services/extensionManagement/common/extensionManagementService.js';
 // Null UserDataSync stubs (avoid importing heavy userDataSync modules)
-import '../platform/userDataSync/common/nullUserDataSync.js';
-import { AccessibilityService } from '../platform/accessibility/browser/accessibilityService.js';
-import { ICustomEndpointTelemetryService } from '../platform/telemetry/common/telemetry.js';
-import { NullEndpointTelemetryService } from '../platform/telemetry/common/telemetryUtils.js';
+import '@sidex/platform/userDataSync/common/nullUserDataSync.js';
+import { AccessibilityService } from '@sidex/platform/accessibility/browser/accessibilityService.js';
+import { ICustomEndpointTelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { NullEndpointTelemetryService } from '@sidex/platform/telemetry/common/telemetryUtils.js';
 import { ITitleService } from './services/title/browser/titleService.js';
 import { BrowserTitleService } from './browser/parts/titlebar/titlebarPart.js';
 import { ITimerService, TimerService } from './services/timer/browser/timerService.js';
-import { IDiagnosticsService, NullDiagnosticsService } from '../platform/diagnostics/common/diagnostics.js';
-import { ILanguagePackService } from '../platform/languagePacks/common/languagePacks.js';
-import { WebLanguagePacksService } from '../platform/languagePacks/browser/languagePacks.js';
+import { IDiagnosticsService, NullDiagnosticsService } from '@sidex/platform/diagnostics/common/diagnostics.js';
+import { ILanguagePackService } from '@sidex/platform/languagePacks/common/languagePacks.js';
+import { WebLanguagePacksService } from '@sidex/platform/languagePacks/browser/languagePacks.js';
 import {
 	IWebContentExtractorService,
 	NullWebContentExtractorService,
 	ISharedWebContentExtractorService,
 	NullSharedWebContentExtractorService
-} from '../platform/webContentExtractor/common/webContentExtractor.js';
+} from '@sidex/platform/webContentExtractor/common/webContentExtractor.js';
 
 registerSingleton(IWorkbenchExtensionManagementService, ExtensionManagementService, InstantiationType.Delayed);
 registerSingleton(IAccessibilityService, AccessibilityService, InstantiationType.Delayed);

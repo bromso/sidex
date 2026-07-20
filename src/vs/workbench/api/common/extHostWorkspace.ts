@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { delta as arrayDelta, mapArrayOrNot } from '../../../base/common/arrays.js';
-import { AsyncIterableProducer, Barrier } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { AsyncEmitter, Emitter, Event } from '../../../base/common/event.js';
-import { DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
-import { Schemas } from '../../../base/common/network.js';
-import { Counter } from '../../../base/common/numbers.js';
-import { basename, basenameOrAuthority, dirname, ExtUri, relativePath } from '../../../base/common/resources.js';
-import { compare } from '../../../base/common/strings.js';
-import { isUriComponents, URI, UriComponents } from '../../../base/common/uri.js';
+import { delta as arrayDelta, mapArrayOrNot } from '@sidex/base/common/arrays.js';
+import { AsyncIterableProducer, Barrier } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { AsyncEmitter, Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { Counter } from '@sidex/base/common/numbers.js';
+import { basename, basenameOrAuthority, dirname, ExtUri, relativePath } from '@sidex/base/common/resources.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { isUriComponents, URI, UriComponents } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { FileSystemProviderCapabilities } from '../../../platform/files/common/files.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { Severity } from '../../../platform/notification/common/notification.js';
-import { EditSessionIdentityMatch } from '../../../platform/workspace/common/editSessions.js';
-import { Workspace, WorkspaceFolder } from '../../../platform/workspace/common/workspace.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { FileSystemProviderCapabilities } from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Severity } from '@sidex/platform/notification/common/notification.js';
+import { EditSessionIdentityMatch } from '@sidex/platform/workspace/common/editSessions.js';
+import { Workspace, WorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IExtHostFileSystemInfo } from './extHostFileSystemInfo.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
@@ -44,16 +44,16 @@ import {
 	MainThreadMessageServiceShape,
 	MainThreadWorkspaceShape
 } from './extHost.protocol.js';
-import { revive } from '../../../base/common/marshalling.js';
-import { AuthInfo, Credentials } from '../../../platform/request/common/request.js';
+import { revive } from '@sidex/base/common/marshalling.js';
+import { AuthInfo, Credentials } from '@sidex/platform/request/common/request.js';
 import {
 	ExcludeSettingOptions,
 	TextSearchContext2,
 	TextSearchMatch2
 } from '../../services/search/common/searchExtTypes.js';
-import { bufferToStream, readableToBuffer, VSBuffer } from '../../../base/common/buffer.js';
+import { bufferToStream, readableToBuffer, VSBuffer } from '@sidex/base/common/buffer.js';
 import { toDecodeStream, toEncodeReadable, UTF8 } from '../../services/textfile/common/encoding.js';
-import { consumeStream } from '../../../base/common/stream.js';
+import { consumeStream } from '@sidex/base/common/stream.js';
 import { stringToSnapshot } from '../../services/textfile/common/textfiles.js';
 
 export interface IExtHostWorkspaceProvider {

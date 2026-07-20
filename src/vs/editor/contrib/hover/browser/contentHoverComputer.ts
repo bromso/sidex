@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IActiveCodeEditor, ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IModelDecoration } from '../../../common/model.js';
 import { HoverStartSource, IHoverComputer } from './hoverOperation.js';
 import { HoverAnchor, HoverAnchorType, IEditorHoverParticipant, IHoverPart } from './hoverTypes.js';
-import { AsyncIterableProducer } from '../../../../base/common/async.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
 
 export interface ContentHoverComputerOptions {
 	shouldFocus: boolean;

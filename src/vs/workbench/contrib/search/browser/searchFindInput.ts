@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextViewProvider } from '../../../../base/browser/ui/contextview/contextview.js';
-import { IFindInputOptions } from '../../../../base/browser/ui/findinput/findInput.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ContextScopedFindInput } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IContextViewProvider } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { IFindInputOptions } from '@sidex/base/browser/ui/findinput/findInput.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ContextScopedFindInput } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { NotebookFindFilters } from '../../notebook/browser/contrib/find/findFilters.js';
 import { NotebookFindInputFilterButton } from '../../notebook/browser/contrib/find/notebookFindReplaceWidget.js';
 import * as nls from '@sidex/base/nls.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 
 export class SearchFindInput extends ContextScopedFindInput {
 	private _findFilter: NotebookFindInputFilterButton;

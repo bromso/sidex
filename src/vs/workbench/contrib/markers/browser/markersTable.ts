@@ -4,38 +4,38 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { Event } from '../../../../base/common/event.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	ITableContextMenuEvent,
 	ITableEvent,
 	ITableRenderer,
 	ITableVirtualDelegate
-} from '../../../../base/browser/ui/table/table.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IOpenEvent, IWorkbenchTableOptions, WorkbenchTable } from '../../../../platform/list/browser/listService.js';
-import { HighlightedLabel } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
+} from '@sidex/base/browser/ui/table/table.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IOpenEvent, IWorkbenchTableOptions, WorkbenchTable } from '@sidex/platform/list/browser/listService.js';
+import { HighlightedLabel } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
 import { compareMarkersByUri, Marker, MarkerTableItem, ResourceMarkers } from './markersModel.js';
-import { MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { FilterOptions } from './markersFilterOptions.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { MarkersViewModel } from './markersTreeViewer.js';
-import { IAction } from '../../../../base/common/actions.js';
+import { IAction } from '@sidex/base/common/actions.js';
 import { QuickFixAction, QuickFixActionViewItem } from './markersViewActions.js';
-import { DomEmitter } from '../../../../base/browser/event.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
 import Messages from './messages.js';
-import { isUndefinedOrNull } from '../../../../base/common/types.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
 import { IProblemsWidget } from './markersView.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { unsupportedSchemas } from '../../../../platform/markers/common/markerService.js';
-import Severity from '../../../../base/common/severity.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { unsupportedSchemas } from '@sidex/platform/markers/common/markerService.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 const $ = DOM.$;
 

@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getFontSnippets } from '../../../../base/browser/fonts.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { getFontSnippets } from '@sidex/base/browser/fonts.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	Extensions as DragAndDropExtensions,
 	IDragAndDropContributionRegistry,
 	IDraggedResourceEditorInput
-} from '../../../../platform/dnd/browser/dnd.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ITerminalLogService } from '../../../../platform/terminal/common/terminal.js';
-import { TerminalLogService } from '../../../../platform/terminal/common/terminalLogService.js';
-import { registerTerminalPlatformConfiguration } from '../../../../platform/terminal/common/terminalPlatformConfiguration.js';
+} from '@sidex/platform/dnd/browser/dnd.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ITerminalLogService } from '@sidex/platform/terminal/common/terminal.js';
+import { TerminalLogService } from '@sidex/platform/terminal/common/terminalLogService.js';
+import { registerTerminalPlatformConfiguration } from '@sidex/platform/terminal/common/terminalPlatformConfiguration.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { WorkbenchPhase, registerWorkbenchContribution2 } from '../../../common/contributions.js';

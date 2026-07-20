@@ -5,9 +5,9 @@
 
 import { ITimeout, SequenceDiff } from './algorithms/diffAlgorithm.js';
 import { DetailedLineRangeMapping, LineRangeMapping } from '../rangeMapping.js';
-import { pushMany, compareBy, numberComparator, reverseOrder } from '../../../../base/common/arrays.js';
-import { MonotonousArray, findLastMonotonous } from '../../../../base/common/arraysFind.js';
-import { SetMap } from '../../../../base/common/map.js';
+import { pushMany, compareBy, numberComparator, reverseOrder } from '@sidex/base/common/arrays.js';
+import { MonotonousArray, findLastMonotonous } from '@sidex/base/common/arraysFind.js';
+import { SetMap } from '@sidex/base/common/map.js';
 import { LineRange, LineRangeSet } from '../../core/ranges/lineRange.js';
 import { LinesSliceCharSequence } from './linesSliceCharSequence.js';
 import { LineRangeFragment, isSpace } from './utils.js';

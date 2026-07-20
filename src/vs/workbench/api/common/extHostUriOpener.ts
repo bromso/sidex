@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { toDisposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import * as languages from '../../../editor/common/languages.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import type * as vscode from 'vscode';
 import { ExtHostUriOpenersShape, IMainContext, MainContext, MainThreadUriOpenersShape } from './extHost.protocol.js';
 

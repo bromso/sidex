@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertNever } from '../../../../base/common/assert.js';
-import { clamp } from '../../../../base/common/numbers.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { clamp } from '@sidex/base/common/numbers.js';
 import { localize } from '@sidex/base/nls.js';
-import { chartsGreen, chartsRed, chartsYellow } from '../../../../platform/theme/common/colorRegistry.js';
-import { asCssVariableName } from '../../../../platform/theme/common/colorUtils.js';
+import { chartsGreen, chartsRed, chartsYellow } from '@sidex/platform/theme/common/colorRegistry.js';
+import { asCssVariableName } from '@sidex/platform/theme/common/colorUtils.js';
 import { CoverageBarSource } from './testCoverageBars.js';
 import { ITestingCoverageBarThresholds, TestingDisplayedCoveragePercent } from '../common/configuration.js';
 import { getTotalCoveragePercent } from '../common/testCoverage.js';

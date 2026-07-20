@@ -6,9 +6,9 @@
 import { ViewEventHandler } from './viewEventHandler.js';
 import { ViewEvent } from './viewEvents.js';
 import { IContentSizeChangedEvent } from './editorCommon.js';
-import { Emitter } from '../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { Selection } from './core/selection.js';
-import { Disposable } from '../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { CursorChangeReason } from './cursorEvents.js';
 import {
 	ModelLineHeightChangedEvent as OriginalModelLineHeightChangedEvent,

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { TimeoutTimer, disposableTimeout } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { getLeadingWhitespace, isHighSurrogate, isLowSurrogate } from '../../../../base/common/strings.js';
+import { TimeoutTimer, disposableTimeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { getLeadingWhitespace, isHighSurrogate, isLowSurrogate } from '@sidex/base/common/strings.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { CursorChangeReason, ICursorSelectionChangedEvent } from '../../../common/cursorEvents.js';
@@ -23,11 +23,11 @@ import {
 } from '../../../common/languages.js';
 import { IEditorWorkerService } from '../../../common/services/editorWorker.js';
 import { WordDistance } from './wordDistance.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { CompletionModel } from './completionModel.js';
 import {
 	CompletionDurations,
@@ -40,13 +40,13 @@ import {
 } from './suggest.js';
 import { IWordAtPosition } from '../../../common/core/wordHelper.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { FuzzyScoreOptions } from '../../../../base/common/filters.js';
-import { assertType } from '../../../../base/common/types.js';
+import { FuzzyScoreOptions } from '@sidex/base/common/filters.js';
+import { assertType } from '@sidex/base/common/types.js';
 import { InlineCompletionContextKeys } from '../../inlineCompletions/browser/controller/inlineCompletionContextKeys.js';
 import { getInlineCompletionsController } from '../../inlineCompletions/browser/controller/common.js';
 import { SnippetController2 } from '../../snippet/browser/snippetController2.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { autorun } from '../../../../base/common/observable.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { autorun } from '@sidex/base/common/observable.js';
 
 export interface ICancelEvent {
 	readonly retrigger: boolean;

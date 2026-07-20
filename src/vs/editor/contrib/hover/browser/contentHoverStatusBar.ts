@@ -2,13 +2,13 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as dom from '../../../../base/browser/dom.js';
-import { HoverAction } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { HoverAction } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IEditorHoverAction, IEditorHoverStatusBar } from './hoverTypes.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
 
 const $ = dom.$;
 

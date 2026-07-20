@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { CommandsRegistry } from '../../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IQuickAccessRegistry,
 	Extensions as QuickAccessExtensions
-} from '../../../../../platform/quickinput/common/quickAccess.js';
-import { IQuickInputService } from '../../../../../platform/quickinput/common/quickInput.js';
-import { Registry } from '../../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { getQuickNavigateHandler } from '../../../../browser/quickaccess.js';
 import { registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
 import { TerminalContextKeys } from '../../../terminal/common/terminalContextKey.js';

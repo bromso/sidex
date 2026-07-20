@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import '../../services/contribution.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseWheelEvent } from '../../../../base/browser/mouseEvent.js';
-import { Color } from '../../../../base/common/color.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Color } from '@sidex/base/common/color.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import {
 	Emitter,
 	EmitterOptions,
 	Event,
 	EventDeliveryQueue,
 	createEventDeliveryQueue
-} from '../../../../base/common/event.js';
-import { hash } from '../../../../base/common/hash.js';
-import { Disposable, DisposableStore, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
+} from '@sidex/base/common/event.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Disposable, DisposableStore, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import './editor.css';
 import { applyFontInfo } from '../../config/domFontInfo.js';
 import { EditorConfiguration, IEditorConstructionOptions } from '../../config/editorConfiguration.js';
@@ -90,24 +90,24 @@ import { MonospaceLineBreaksComputerFactory } from '../../../common/viewModel/mo
 import { ViewModel } from '../../../common/viewModel/viewModelImpl.js';
 import { OutgoingViewModelEventKind } from '../../../common/viewModelEventDispatcher.js';
 import * as nls from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyValue, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyValue, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import {
 	editorErrorForeground,
 	editorHintForeground,
 	editorInfoForeground,
 	editorWarningForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService, registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService, registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { TextModelEditSource, EditSources } from '../../../common/textModelEditSource.js';
 import { TextEdit } from '../../../common/core/edits/textEdit.js';
-import { isObject } from '../../../../base/common/types.js';
-import { IUserInteractionService } from '../../../../platform/userInteraction/browser/userInteractionService.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
 
 export class CodeEditorWidget extends Disposable implements editorBrowser.ICodeEditor {
 	private static readonly dropIntoEditorDecorationOptions = ModelDecorationOptions.register({

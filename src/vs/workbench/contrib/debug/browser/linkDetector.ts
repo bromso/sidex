@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, getWindow, isHTMLElement, reset } from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as osPath from '../../../../base/common/path.js';
-import * as platform from '../../../../base/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
+import { addDisposableListener, getWindow, isHTMLElement, reset } from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as osPath from '@sidex/base/common/path.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { ITunnelService } from '../../../../platform/tunnel/common/tunnel.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { ITunnelService } from '@sidex/platform/tunnel/common/tunnel.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IDebugSession } from '../common/debug.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
-import { IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { Iterable } from '../../../../base/common/iterator.js';
+import { IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 
 const CONTROL_CODES = '\\u0000-\\u0020\\u007f-\\u009f';
 const WEB_LINK_REGEX = new RegExp(

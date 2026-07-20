@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IResourceEditorInput } from '../../../../platform/editor/common/editor.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
 import { GroupIdentifier } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export const IHistoryService = createDecorator<IHistoryService>('historyService');
 

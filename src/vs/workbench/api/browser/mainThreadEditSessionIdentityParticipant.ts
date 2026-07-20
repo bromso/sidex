@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { raceCancellationError } from '../../../base/common/async.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { raceCancellationError } from '@sidex/base/common/async.js';
 import {
 	IEditSessionIdentityCreateParticipant,
 	IEditSessionIdentityService
-} from '../../../platform/workspace/common/editSessions.js';
+} from '@sidex/platform/workspace/common/editSessions.js';
 import { ExtHostContext, ExtHostWorkspaceShape } from '../common/extHost.protocol.js';
-import { WorkspaceFolder } from '../../../platform/workspace/common/workspace.js';
+import { WorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 
 class ExtHostEditSessionIdentityCreateParticipant implements IEditSessionIdentityCreateParticipant {
 	private readonly _proxy: ExtHostWorkspaceShape;

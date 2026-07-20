@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { MutableObservableValue } from './observableValue.js';
 import { StoredValue } from './storedValue.js';
 import { InternalTestItem } from './testTypes.js';

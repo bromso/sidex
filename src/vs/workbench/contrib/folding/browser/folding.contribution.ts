@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { FoldingController } from '../../../../editor/contrib/folding/browser/folding.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { FoldingController } from '@sidex/editor/contrib/folding/browser/folding.js';
 import * as nls from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
@@ -15,14 +15,14 @@ import {
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { editorConfigurationBaseNode } from '../../../../editor/common/config/editorConfigurationSchema.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { editorConfigurationBaseNode } from '@sidex/editor/common/config/editorConfigurationSchema.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { FoldingRangeProvider } from '../../../../editor/common/languages.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
+import { FoldingRangeProvider } from '@sidex/editor/common/languages.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 
 class DefaultFoldingRangeProvider extends Disposable implements IWorkbenchContribution {
 	static readonly configName = 'editor.defaultFoldingRangeProvider';

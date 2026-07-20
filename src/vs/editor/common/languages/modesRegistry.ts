@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { ILanguageExtensionPoint } from './language.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { Mimes } from '../../../base/common/mime.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Mimes } from '@sidex/base/common/mime.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 
 // Define extension point ids
 export const Extensions = {

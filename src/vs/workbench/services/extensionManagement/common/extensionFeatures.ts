@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { Event } from '../../../../base/common/event.js';
-import { ExtensionIdentifier, IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import Severity from '../../../../base/common/severity.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { Color } from '../../../../base/common/color.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ExtensionIdentifier, IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { Color } from '@sidex/base/common/color.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export namespace Extensions {
 	export const ExtensionFeaturesRegistry = 'workbench.registry.extensionFeatures';

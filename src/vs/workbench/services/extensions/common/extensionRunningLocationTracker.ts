@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ExtensionKind } from '../../../../platform/environment/common/environment.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ExtensionKind } from '@sidex/platform/environment/common/environment.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
 	IExtensionDescription
-} from '../../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IReadOnlyExtensionDescriptionRegistry } from './extensionDescriptionRegistry.js';
 import {

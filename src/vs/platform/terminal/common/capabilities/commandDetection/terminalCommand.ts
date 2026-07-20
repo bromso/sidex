@@ -6,8 +6,8 @@
 import { IMarkProperties, ISerializedTerminalCommand, ITerminalCommand } from '../capabilities.js';
 import { ITerminalOutputMatcher, ITerminalOutputMatch } from '../../terminal.js';
 import type { IBuffer, IBufferLine, IMarker, Terminal } from '@xterm/headless';
-import { generateUuid } from '../../../../../base/common/uuid.js';
-import { isString } from '../../../../../base/common/types.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export interface ITerminalCommandProperties {
 	command: string;

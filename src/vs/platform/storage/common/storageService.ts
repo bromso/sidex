@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Promises } from '../../../base/common/async.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { IStorage, Storage } from '../../../base/parts/storage/common/storage.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { IStorage, Storage } from '@sidex/base/parts/storage/common/storage.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IRemoteService } from '../../ipc/common/services.js';
 import { AbstractStorageService, isProfileUsingDefaultStorage, StorageScope, WillSaveStateReason } from './storage.js';

@@ -8,11 +8,11 @@ import {
 	IStorageValueChangeEvent,
 	StorageScope,
 	StorageTarget
-} from '../../platform/storage/common/storage.js';
-import { isEmptyObject } from '../../base/common/types.js';
-import { onUnexpectedError } from '../../base/common/errors.js';
-import { DisposableStore } from '../../base/common/lifecycle.js';
-import { Event } from '../../base/common/event.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { isEmptyObject } from '@sidex/base/common/types.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export class Memento<T extends object> {
 	private static readonly applicationMementos = new Map<string, ScopedMemento<unknown>>();

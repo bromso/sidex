@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { coalesce } from '../../../base/common/arrays.js';
-import { asPromise } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable as DisposableCls, toDisposable } from '../../../base/common/lifecycle.js';
-import { ThemeIcon as ThemeIconUtils } from '../../../base/common/themables.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { ISignService } from '../../../platform/sign/common/sign.js';
-import { IWorkspaceFolderData } from '../../../platform/workspace/common/workspace.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { asPromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable as DisposableCls, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon as ThemeIconUtils } from '@sidex/base/common/themables.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ISignService } from '@sidex/platform/sign/common/sign.js';
+import { IWorkspaceFolderData } from '@sidex/platform/workspace/common/workspace.js';
 import { AbstractDebugAdapter } from '../../contrib/debug/common/abstractDebugAdapter.js';
 import {
 	DebugVisualizationType,

@@ -9,17 +9,17 @@ import {
 	VSBuffer,
 	VSBufferReadableStream,
 	VSBufferWriteableStream
-} from '../../../../base/common/buffer.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/base/common/buffer.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { StoredValue } from './storedValue.js';
 import { HydratedTestResult, ITestResult } from './testResult.js';
 import { ISerializedTestResults } from './testTypes.js';

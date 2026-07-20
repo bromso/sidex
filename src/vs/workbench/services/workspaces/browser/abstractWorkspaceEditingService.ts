@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IDidEnterWorkspaceEvent, IWorkspaceEditingService } from '../common/workspaceEditing.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	hasWorkspaceFileExtension,
@@ -18,7 +18,7 @@ import {
 	WorkbenchState,
 	WORKSPACE_EXTENSION,
 	WORKSPACE_FILTER
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IJSONEditingService, JSONEditingError, JSONEditingErrorCode } from '../../configuration/common/jsonEditing.js';
 import {
 	IWorkspaceFolderCreationData,
@@ -26,41 +26,41 @@ import {
 	rewriteWorkspaceFileForNewLocation,
 	IEnterWorkspaceResult,
 	IStoredWorkspace
-} from '../../../../platform/workspaces/common/workspaces.js';
+} from '@sidex/platform/workspaces/common/workspaces.js';
 import { WorkspaceService } from '../../configuration/browser/configurationService.js';
 import {
 	ConfigurationScope,
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	IConfigurationPropertySchema
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { distinct } from '../../../../base/common/arrays.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import {
 	basename,
 	isEqual,
 	isEqualAuthority,
 	joinPath,
 	removeTrailingPathSeparator
-} from '../../../../base/common/resources.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+} from '@sidex/base/common/resources.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { IFileDialogService, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { IFileDialogService, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
 import { IHostService } from '../../host/browser/host.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { SaveReason } from '../../../common/editor.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IWorkbenchConfigurationService } from '../../configuration/common/configuration.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { Promises } from '../../../../base/common/async.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Promises } from '@sidex/base/common/async.js';
 
 export class DidEnterWorkspaceEvent implements IDidEnterWorkspaceEvent {
 	private readonly promises: Promise<void>[] = [];

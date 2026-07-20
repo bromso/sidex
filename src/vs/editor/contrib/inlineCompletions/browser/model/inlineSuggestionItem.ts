@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BugIndicatingError } from '../../../../../base/common/errors.js';
-import { IObservable, ITransaction, observableSignal, observableValue } from '../../../../../base/common/observable.js';
-import { commonPrefixLength, commonSuffixLength, splitLines } from '../../../../../base/common/strings.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { IObservable, ITransaction, observableSignal, observableValue } from '@sidex/base/common/observable.js';
+import { commonPrefixLength, commonSuffixLength, splitLines } from '@sidex/base/common/strings.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { ISingleEditOperation } from '../../../../common/core/editOperation.js';
 import { applyEditsToRanges, StringEdit, StringReplacement } from '../../../../common/core/edits/stringEdit.js';
 import { TextEdit, TextReplacement } from '../../../../common/core/edits/textEdit.js';

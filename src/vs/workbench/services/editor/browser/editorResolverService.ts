@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as glob from '../../../../base/common/glob.js';
-import { distinct, insert } from '../../../../base/common/arrays.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { basename, extname, isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { EditorActivation, EditorResolution, IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { distinct, insert } from '@sidex/base/common/arrays.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename, extname, isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { EditorActivation, EditorResolution, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	DEFAULT_EDITOR_ASSOCIATION,
 	EditorResourceAccessor,
@@ -27,7 +27,7 @@ import {
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IEditorGroup, IEditorGroupsService } from '../common/editorGroupsService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	RegisteredEditorInfo,
 	RegisteredEditorPriority,
@@ -48,18 +48,18 @@ import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { localize } from '@sidex/base/nls.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { findGroup } from '../common/editorGroupFinder.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { PreferredGroup } from '../common/editorService.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
-import { PauseableEmitter } from '../../../../base/common/event.js';
+import { PauseableEmitter } from '@sidex/base/common/event.js';
 
 interface RegisteredEditor {
 	globPattern: string | glob.IRelativePattern;

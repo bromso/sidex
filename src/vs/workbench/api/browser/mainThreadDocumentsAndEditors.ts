@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { combinedDisposable, DisposableStore, DisposableMap } from '../../../base/common/lifecycle.js';
-import { ICodeEditor, isCodeEditor, isDiffEditor, IActiveCodeEditor } from '../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../editor/browser/services/codeEditorService.js';
-import { IEditor } from '../../../editor/common/editorCommon.js';
-import { ITextModel, shouldSynchronizeModel } from '../../../editor/common/model.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { ITextModelService } from '../../../editor/common/services/resolverService.js';
-import { IFileService } from '../../../platform/files/common/files.js';
+import { Event } from '@sidex/base/common/event.js';
+import { combinedDisposable, DisposableStore, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { ICodeEditor, isCodeEditor, isDiffEditor, IActiveCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { IEditor } from '@sidex/editor/common/editorCommon.js';
+import { ITextModel, shouldSynchronizeModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { MainThreadDocuments } from './mainThreadDocuments.js';
 import { MainThreadTextEditor } from './mainThreadEditor.js';
@@ -32,13 +32,13 @@ import { IEditorGroupsService } from '../../services/editor/common/editorGroupsS
 import { ITextFileService } from '../../services/textfile/common/textfiles.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
 import { IWorkingCopyFileService } from '../../services/workingCopy/common/workingCopyFileService.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
-import { IClipboardService } from '../../../platform/clipboard/common/clipboardService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { IPathService } from '../../services/path/common/pathService.js';
-import { diffSets, diffMaps } from '../../../base/common/collections.js';
+import { diffSets, diffMaps } from '@sidex/base/common/collections.js';
 import { IPaneCompositePartService } from '../../services/panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../common/views.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IQuickDiffModelService } from '../../contrib/scm/browser/quickDiffModel.js';
 
 class TextEditorSnapshot {

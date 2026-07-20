@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { ITaskSystem } from '../common/taskSystem.js';
 import { ExecutionEngine } from '../common/tasks.js';
 import { AbstractTaskService, IWorkspaceFolderConfigurationResult } from './abstractTaskService.js';
 import { ITaskFilter, ITaskService } from '../common/taskService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 
 export class TaskService extends AbstractTaskService {
 	private static readonly ProcessTaskSystemSupportMessage = nls.localize(

@@ -3,46 +3,46 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { Queue, RunOnceScheduler, raceTimeout } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { canceled } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { normalizeDriveLetter } from '../../../../base/common/labels.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { Queue, RunOnceScheduler, raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { canceled } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import {
 	Disposable,
 	DisposableMap,
 	DisposableStore,
 	MutableDisposable,
 	dispose
-} from '../../../../base/common/lifecycle.js';
-import { mixin } from '../../../../base/common/objects.js';
-import * as platform from '../../../../base/common/platform.js';
-import * as resources from '../../../../base/common/resources.js';
-import Severity from '../../../../base/common/severity.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IPosition, Position } from '../../../../editor/common/core/position.js';
+} from '@sidex/base/common/lifecycle.js';
+import { mixin } from '@sidex/base/common/objects.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as resources from '@sidex/base/common/resources.js';
+import Severity from '@sidex/base/common/severity.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IPosition, Position } from '@sidex/editor/common/core/position.js';
 import { localize } from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { FocusMode } from '../../../../platform/native/common/native.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { FocusMode } from '@sidex/platform/native/common/native.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	ICustomEndpointTelemetryService,
 	ITelemetryService,
 	TelemetryLevel
-} from '../../../../platform/telemetry/common/telemetry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { IHostService } from '../../../services/host/browser/host.js';

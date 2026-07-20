@@ -2,20 +2,20 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { h } from '../../../../base/browser/dom.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { autorun, derived, globalTransaction, observableValue } from '../../../../base/common/observable.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
+import { h } from '@sidex/base/browser/dom.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { autorun, derived, globalTransaction, observableValue } from '@sidex/base/common/observable.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import {
 	IContextKeyService,
 	type IScopedContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IDiffEditorOptions } from '../../../common/config/editorOptions.js';
 import { OffsetRange } from '../../../common/core/ranges/offsetRange.js';
 import { observableCodeEditor } from '../../observableCodeEditor.js';

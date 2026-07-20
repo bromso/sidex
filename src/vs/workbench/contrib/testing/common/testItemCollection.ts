@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Barrier, isThenable, RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { assertNever } from '../../../../base/common/assert.js';
+import { Barrier, isThenable, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { assertNever } from '@sidex/base/common/assert.js';
 import {
 	applyTestItemUpdate,
 	ITestItem,
@@ -18,7 +18,7 @@ import {
 	TestsDiffOp
 } from './testTypes.js';
 import { TestId } from './testId.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 /**
  * @private

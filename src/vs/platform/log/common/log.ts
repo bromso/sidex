@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { hash } from '../../../base/common/hash.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { isWindows } from '../../../base/common/platform.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { Mutable, isNumber, isString } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { Mutable, isNumber, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { RawContextKey } from '../../contextkey/common/contextkey.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

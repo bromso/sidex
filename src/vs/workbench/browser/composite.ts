@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction, IActionRunner, ActionRunner } from '../../base/common/actions.js';
+import { IAction, IActionRunner, ActionRunner } from '@sidex/base/common/actions.js';
 import { Component } from '../common/component.js';
-import { ITelemetryService } from '../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IComposite, ICompositeControl } from '../common/composite.js';
-import { Event, Emitter } from '../../base/common/event.js';
-import { IThemeService } from '../../platform/theme/common/themeService.js';
-import { IConstructorSignature, IInstantiationService } from '../../platform/instantiation/common/instantiation.js';
-import { trackFocus, Dimension, IDomPosition } from '../../base/browser/dom.js';
-import { IStorageService } from '../../platform/storage/common/storage.js';
-import { Disposable } from '../../base/common/lifecycle.js';
-import { assertReturnsDefined } from '../../base/common/types.js';
-import { IActionViewItem } from '../../base/browser/ui/actionbar/actionbar.js';
-import { MenuId } from '../../platform/actions/common/actions.js';
-import { IBoundarySashes } from '../../base/browser/ui/sash/sash.js';
-import { IBaseActionViewItemOptions } from '../../base/browser/ui/actionbar/actionViewItems.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IConstructorSignature, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { trackFocus, Dimension, IDomPosition } from '@sidex/base/browser/dom.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 
 /**
  * Composites are layed out in the sidebar and panel part of the workbench. At a time only one composite

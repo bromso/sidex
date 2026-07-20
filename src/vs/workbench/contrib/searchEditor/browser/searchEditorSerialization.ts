@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './media/searchEditor.css';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import type { ITextModel } from '../../../../editor/common/model.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import type { ITextModel } from '@sidex/editor/common/model.js';
 import { localize } from '@sidex/base/nls.js';
 import type { SearchConfiguration } from './constants.js';
 import { ITextQuery, SearchSortOrder } from '../../../services/search/common/search.js';

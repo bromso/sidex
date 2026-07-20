@@ -6,10 +6,10 @@
 import {
 	IExtensionGalleryService,
 	IGlobalExtensionEnablementService
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IExtensionStorageService } from '../../../../platform/extensionManagement/common/extensionStorage.js';
-import { migrateUnsupportedExtensions } from '../../../../platform/extensionManagement/common/unsupportedExtensionsMigration.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { IExtensionStorageService } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
+import { migrateUnsupportedExtensions } from '@sidex/platform/extensionManagement/common/unsupportedExtensionsMigration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IExtensionManagementServerService } from '../../../services/extensionManagement/common/extensionManagement.js';
 

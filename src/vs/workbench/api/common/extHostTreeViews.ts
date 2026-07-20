@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { basename } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, dispose, IDisposable } from '../../../base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	CheckboxUpdate,
 	DataTransferDTO,
@@ -25,17 +25,17 @@ import {
 	NoTreeViewError
 } from '../../common/views.js';
 import { ExtHostCommands, CommandsConverter } from './extHostCommands.js';
-import { asPromise } from '../../../base/common/async.js';
+import { asPromise } from '@sidex/base/common/async.js';
 import * as extHostTypes from './extHostTypes.js';
-import { isUndefinedOrNull, isString } from '../../../base/common/types.js';
-import { equals, coalesce, distinct } from '../../../base/common/arrays.js';
-import { ILogService, LogLevel } from '../../../platform/log/common/log.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { isUndefinedOrNull, isString } from '@sidex/base/common/types.js';
+import { equals, coalesce, distinct } from '@sidex/base/common/arrays.js';
+import { ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { MarkdownString, ViewBadge, DataTransfer } from './extHostTypeConverters.js';
-import { IMarkdownString, isMarkdownString } from '../../../base/common/htmlContent.js';
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { ITreeViewsDnDService, TreeViewsDnDService } from '../../../editor/common/services/treeViewsDnd.js';
-import { IAccessibilityInformation } from '../../../platform/accessibility/common/accessibility.js';
+import { IMarkdownString, isMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { ITreeViewsDnDService, TreeViewsDnDService } from '@sidex/editor/common/services/treeViewsDnd.js';
+import { IAccessibilityInformation } from '@sidex/platform/accessibility/common/accessibility.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 type TreeItemHandle = string;

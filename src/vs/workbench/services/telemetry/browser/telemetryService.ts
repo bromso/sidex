@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	ClassifiedEvent,
 	IGDPRProperty,
 	OmitMetadata,
 	StrictPropertyCheck
-} from '../../../../platform/telemetry/common/gdprTypings.js';
-import { ITelemetryData, ITelemetryService, TelemetryLevel } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/telemetry/common/gdprTypings.js';
+import { ITelemetryData, ITelemetryService, TelemetryLevel } from '@sidex/platform/telemetry/common/telemetry.js';
 
 // Stub: telemetry is now handled by our Rust telemetry crate
 export class TelemetryService implements ITelemetryService {

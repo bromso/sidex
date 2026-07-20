@@ -4,52 +4,52 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	getFileNamesMessage,
 	IConfirmation,
 	IDialogService,
 	IFileDialogService,
 	IPromptButton
-} from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	ByteSize,
 	FileSystemProviderCapabilities,
 	IFileService,
 	IFileStatWithMetadata
-} from '../../../../platform/files/common/files.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/files/common/files.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import {
 	IProgress,
 	IProgressService,
 	IProgressStep,
 	ProgressLocation
-} from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/progress/common/progress.js';
 import { IExplorerService } from './files.js';
 import { IFilesConfiguration, UndoConfirmLevel, VIEW_ID } from '../common/files.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { Limiter, Promises, RunOnceWorker } from '../../../../base/common/async.js';
-import { newWriteableBufferStream, VSBuffer } from '../../../../base/common/buffer.js';
-import { basename, dirname, joinPath } from '../../../../base/common/resources.js';
-import { ResourceFileEdit } from '../../../../editor/browser/services/bulkEditService.js';
+import { Limiter, Promises, RunOnceWorker } from '@sidex/base/common/async.js';
+import { newWriteableBufferStream, VSBuffer } from '@sidex/base/common/buffer.js';
+import { basename, dirname, joinPath } from '@sidex/base/common/resources.js';
+import { ResourceFileEdit } from '@sidex/editor/browser/services/bulkEditService.js';
 import { ExplorerItem } from '../common/explorerModel.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { extractEditorsAndFilesDropData } from '../../../../platform/dnd/browser/dnd.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { extractEditorsAndFilesDropData } from '@sidex/platform/dnd/browser/dnd.js';
 import { IWorkspaceEditingService } from '../../../services/workspaces/common/workspaceEditing.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { getActiveWindow as _getActiveWindow, isDragEvent, triggerDownload } from '../../../../base/browser/dom.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { FileAccess, Schemas } from '../../../../base/common/network.js';
-import { listenStream } from '../../../../base/common/stream.js';
-import { DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { canceled } from '../../../../base/common/errors.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { getActiveWindow as _getActiveWindow, isDragEvent, triggerDownload } from '@sidex/base/browser/dom.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { FileAccess, Schemas } from '@sidex/base/common/network.js';
+import { listenStream } from '@sidex/base/common/stream.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { canceled } from '@sidex/base/common/errors.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 
 //#region Browser File Upload (drag and drop, input element)
 

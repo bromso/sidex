@@ -10,18 +10,18 @@ import {
 	LogLevelToString,
 	getLogLevel,
 	parseLogLevel
-} from '../../../../platform/log/common/log.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/log/common/log.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { FileOperationResult, IFileService, toFileOperationResult } from '../../../../platform/files/common/files.js';
+import { FileOperationResult, IFileService, toFileOperationResult } from '@sidex/platform/files/common/files.js';
 import { IJSONEditingService } from '../../../services/configuration/common/jsonEditing.js';
-import { isString, isUndefined } from '../../../../base/common/types.js';
-import { EXTENSION_IDENTIFIER_WITH_LOG_REGEX } from '../../../../platform/environment/common/environmentService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { parse } from '../../../../base/common/json.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { equals } from '../../../../base/common/objects.js';
+import { isString, isUndefined } from '@sidex/base/common/types.js';
+import { EXTENSION_IDENTIFIER_WITH_LOG_REGEX } from '@sidex/platform/environment/common/environmentService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { parse } from '@sidex/base/common/json.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { equals } from '@sidex/base/common/objects.js';
 
 interface ParsedArgvLogLevels {
 	default?: LogLevel;

@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Separator } from '../../../../base/common/actions.js';
-import { h } from '../../../../base/browser/dom.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Separator } from '@sidex/base/common/actions.js';
+import { h } from '@sidex/base/browser/dom.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	constObservable,
 	derived,
 	IObservable,
 	observableFromEvent
-} from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	getActionBarActions,
 	MenuEntryActionViewItem
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { HiddenItemStrategy, MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { ICodeEditor, OverlayWidgetPositionPreference } from '../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../browser/observableCodeEditor.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';

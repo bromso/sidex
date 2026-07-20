@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ProxyChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { ProxyChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import { IMainProcessService } from '../../ipc/common/mainProcessService.js';
 import { INativeBrowserElementsService } from './browserElements.js';
 

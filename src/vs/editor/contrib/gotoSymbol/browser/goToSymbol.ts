@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { matchesSomeScheme, Schemas } from '../../../../base/common/network.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { matchesSomeScheme, Schemas } from '@sidex/base/common/network.js';
 import { registerModelAndPositionCommand } from '../../../browser/editorExtensions.js';
 import { Position } from '../../../common/core/position.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import * as strings from '../../../base/common/strings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import * as strings from '@sidex/base/common/strings.js';
 import {
 	ReplaceCommand,
 	ReplaceCommandWithOffsetCursorState,

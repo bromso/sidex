@@ -6,7 +6,7 @@
 import './media/notificationsActions.css';
 import { INotificationViewItem, NotificationsPosition } from '../../../common/notifications.js';
 import { localize } from '@sidex/base/nls.js';
-import { Action } from '../../../../base/common/actions.js';
+import { Action } from '@sidex/base/common/actions.js';
 import {
 	CLEAR_NOTIFICATION,
 	EXPAND_NOTIFICATION,
@@ -16,11 +16,11 @@ import {
 	TOGGLE_DO_NOT_DISTURB_MODE,
 	TOGGLE_DO_NOT_DISTURB_MODE_BY_SOURCE
 } from './notificationsCommands.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 const clearIcon = registerIcon(
 	'notifications-clear',

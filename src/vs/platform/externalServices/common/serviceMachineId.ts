@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { generateUuid, isUUID } from '../../../base/common/uuid.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { generateUuid, isUUID } from '@sidex/base/common/uuid.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';

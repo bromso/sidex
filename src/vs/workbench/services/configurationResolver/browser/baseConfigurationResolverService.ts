@@ -2,31 +2,31 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Queue } from '../../../../base/common/async.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { LRUCache } from '../../../../base/common/map.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IProcessEnvironment } from '../../../../base/common/platform.js';
-import * as Types from '../../../../base/common/types.js';
-import { URI as uri } from '../../../../base/common/uri.js';
-import { ICodeEditor, isCodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
+import { Queue } from '@sidex/base/common/async.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IProcessEnvironment } from '@sidex/base/common/platform.js';
+import * as Types from '@sidex/base/common/types.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
+import { ICodeEditor, isCodeEditor, isDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	ConfigurationTarget,
 	IConfigurationOverrides,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	IInputOptions,
 	IPickOptions,
 	IQuickInputService,
 	IQuickPickItem
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IWorkspaceContextService, IWorkspaceFolderData } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IWorkspaceContextService, IWorkspaceFolderData } from '@sidex/platform/workspace/common/workspace.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';

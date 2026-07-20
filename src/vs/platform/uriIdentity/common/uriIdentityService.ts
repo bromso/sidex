@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IUriIdentityService } from './uriIdentity.js';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import {
 	IFileService,
@@ -12,10 +12,10 @@ import {
 	IFileSystemProviderCapabilitiesChangeEvent,
 	IFileSystemProviderRegistrationEvent
 } from '../../files/common/files.js';
-import { ExtUri, IExtUri, normalizePath } from '../../../base/common/resources.js';
-import { Event } from '../../../base/common/event.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { quickSelect } from '../../../base/common/arrays.js';
+import { ExtUri, IExtUri, normalizePath } from '@sidex/base/common/resources.js';
+import { Event } from '@sidex/base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { quickSelect } from '@sidex/base/common/arrays.js';
 
 class Entry {
 	static _clock = 0;

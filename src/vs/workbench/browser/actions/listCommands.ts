@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyMod, KeyCode, KeyChord } from '../../../base/common/keyCodes.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
-import { List } from '../../../base/browser/ui/list/listWidget.js';
+import { KeyMod, KeyCode, KeyChord } from '@sidex/base/common/keyCodes.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { List } from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	WorkbenchListFocusContextKey,
 	IListService,
@@ -26,22 +26,22 @@ import {
 	WorkbenchListScrollAtBottomContextKey,
 	WorkbenchListScrollAtTopContextKey,
 	WorkbenchTreeStickyScrollFocused
-} from '../../../platform/list/browser/listService.js';
-import { PagedList } from '../../../base/browser/ui/list/listPaging.js';
-import { equals, range } from '../../../base/common/arrays.js';
-import { ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
-import { ObjectTree } from '../../../base/browser/ui/tree/objectTree.js';
-import { AsyncDataTree } from '../../../base/browser/ui/tree/asyncDataTree.js';
-import { DataTree } from '../../../base/browser/ui/tree/dataTree.js';
-import { ITreeNode } from '../../../base/browser/ui/tree/tree.js';
-import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
-import { Table } from '../../../base/browser/ui/table/tableWidget.js';
-import { AbstractTree, TreeFindMatchType, TreeFindMode } from '../../../base/browser/ui/tree/abstractTree.js';
-import { isActiveElement } from '../../../base/browser/dom.js';
-import { Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { PagedList } from '@sidex/base/browser/ui/list/listPaging.js';
+import { equals, range } from '@sidex/base/common/arrays.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ObjectTree } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { AsyncDataTree } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { DataTree } from '@sidex/base/browser/ui/tree/dataTree.js';
+import { ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { Table } from '@sidex/base/browser/ui/table/tableWidget.js';
+import { AbstractTree, TreeFindMatchType, TreeFindMode } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { isActiveElement } from '@sidex/base/browser/dom.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IHoverService } from '../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 function ensureDOMFocus(widget: ListWidget | undefined): void {
 	// it can happen that one of the commands is executed while

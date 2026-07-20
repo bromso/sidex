@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { RemoteTunnel, TunnelProtocol } from '../../../../platform/tunnel/common/tunnel.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { RemoteTunnel, TunnelProtocol } from '@sidex/platform/tunnel/common/tunnel.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IEditableData } from '../../../common/views.js';
-import { TunnelPrivacy } from '../../../../platform/remote/common/remoteAuthorityResolver.js';
-import { URI } from '../../../../base/common/uri.js';
+import { TunnelPrivacy } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	Attributes,
 	CandidatePort,
@@ -20,7 +20,7 @@ import {
 	TunnelSource
 } from './tunnelModel.js';
 import { IExtensionPointUser } from '../../extensions/common/extensionsRegistry.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 
 export const IRemoteExplorerService = createDecorator<IRemoteExplorerService>('remoteExplorerService');
 export const REMOTE_EXPLORER_TYPE_KEY: string = 'remote.explorerType';

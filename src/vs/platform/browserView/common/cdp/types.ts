@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { Event } from '../../../../base/common/event.js';
-import type { IDisposable } from '../../../../base/common/lifecycle.js';
+import type { Event } from '@sidex/base/common/event.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 /**
  * CDP error codes following JSON-RPC 2.0 conventions

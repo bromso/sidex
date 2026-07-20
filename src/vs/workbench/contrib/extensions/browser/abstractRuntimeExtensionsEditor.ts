@@ -3,40 +3,40 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, Dimension, append, clearNode } from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { IListRenderer, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { Action, IAction, Separator } from '../../../../base/common/actions.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { fromNow } from '../../../../base/common/date.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { $, Dimension, append, clearNode } from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { fromNow } from '@sidex/base/common/date.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import * as nls from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { getContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
 	IExtensionDescription
-} from '../../../../platform/extensions/common/extensions.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';

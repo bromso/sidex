@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { type IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { EDITOR_FONT_DEFAULTS } from '../../../../editor/common/config/fontInfo.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { type IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { EDITOR_FONT_DEFAULTS } from '@sidex/editor/common/config/fontInfo.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ITerminalConfigurationService, LinuxDistro } from './terminal.js';
 import type { IXtermCore } from './xterm-private.js';
 import {
@@ -23,10 +23,10 @@ import {
 	TERMINAL_CONFIG_SECTION,
 	type ITerminalFont
 } from '../common/terminal.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
-import { TerminalLocation, TerminalLocationConfigValue } from '../../../../platform/terminal/common/terminal.js';
-import { isString } from '../../../../base/common/types.js';
-import { clamp } from '../../../../base/common/numbers.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { TerminalLocation, TerminalLocationConfigValue } from '@sidex/platform/terminal/common/terminal.js';
+import { isString } from '@sidex/base/common/types.js';
+import { clamp } from '@sidex/base/common/numbers.js';
 
 // #region TerminalConfigurationService
 

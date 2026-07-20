@@ -8,10 +8,10 @@ import { ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.j
 import {
 	IColorRegistry,
 	Extensions as ColorRegistryExtensions
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { Color } from '../../../../base/common/color.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	Extensions,
 	IExtensionFeatureTableRenderer,
@@ -20,9 +20,9 @@ import {
 	IRowData,
 	ITableData
 } from '../../extensionManagement/common/extensionFeatures.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
 
 interface IColorExtensionPoint {
 	id: string;

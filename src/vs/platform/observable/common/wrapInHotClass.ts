@@ -2,9 +2,9 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { isHotReloadEnabled } from '../../../base/common/hotReload.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { autorunWithStore, IObservable } from '../../../base/common/observable.js';
+import { isHotReloadEnabled } from '@sidex/base/common/hotReload.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorunWithStore, IObservable } from '@sidex/base/common/observable.js';
 import { BrandedService, IInstantiationService } from '../../instantiation/common/instantiation.js';
 
 export function hotClassGetOriginalInstance<T>(value: T): T {

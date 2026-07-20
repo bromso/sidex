@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { Delayer } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { OperatingSystem } from '../../../../base/common/platform.js';
-import { MicrotaskDelay } from '../../../../base/common/symbols.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITerminalCapabilityStore } from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalCapabilityStore } from '../../../../platform/terminal/common/capabilities/terminalCapabilityStore.js';
-import { IMergedEnvironmentVariableCollection } from '../../../../platform/terminal/common/environmentVariable.js';
-import { ITerminalBackend } from '../../../../platform/terminal/common/terminal.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
+import { MicrotaskDelay } from '@sidex/base/common/symbols.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/terminalCapabilityStore.js';
+import { IMergedEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariable.js';
+import { ITerminalBackend } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	IDetachedTerminalInstance,
 	IDetachedXTermOptions,
@@ -26,7 +26,7 @@ import { TerminalWidgetManager } from './widgets/widgetManager.js';
 import { XtermTerminal } from './xterm/xtermTerminal.js';
 import { IEnvironmentVariableInfo } from '../common/environmentVariable.js';
 import { ITerminalProcessInfo, ProcessState } from '../common/terminal.js';
-import { Event } from '../../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export class DetachedTerminal extends Disposable implements IDetachedTerminalInstance {
 	private readonly _widgets = this._register(new TerminalWidgetManager());

@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { toErrorMessage } from '../../../../../base/common/errorMessage.js';
-import { basename, isEqual } from '../../../../../base/common/resources.js';
-import { Action } from '../../../../../base/common/actions.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { basename, isEqual } from '@sidex/base/common/resources.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	FileOperationError,
 	FileOperationResult,
 	IWriteFileOptions
-} from '../../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import {
 	ITextFileService,
 	ISaveErrorHandler,
@@ -20,17 +20,17 @@ import {
 	ITextFileSaveAsOptions,
 	ITextFileSaveOptions
 } from '../../../../services/textfile/common/textfiles.js';
-import { ServicesAccessor, IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IDisposable, dispose, Disposable } from '../../../../../base/common/lifecycle.js';
+import { ServicesAccessor, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable, dispose, Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchContribution } from '../../../../common/contributions.js';
-import { ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { ResourceMap } from '../../../../../base/common/map.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import { DiffEditorInput } from '../../../../common/editor/diffEditorInput.js';
 import {
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import { TextFileContentProvider } from '../../common/files.js';
 import { FileEditorInput } from './fileEditorInput.js';
 import { SAVE_FILE_AS_LABEL } from '../fileConstants.js';
@@ -39,17 +39,17 @@ import {
 	INotificationHandle,
 	INotificationActions,
 	Severity
-} from '../../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
-import { IProductService } from '../../../../../platform/product/common/productService.js';
-import { Event } from '../../../../../base/common/event.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { isWindows } from '../../../../../base/common/platform.js';
-import { Schemas } from '../../../../../base/common/network.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IPreferencesService } from '../../../../services/preferences/common/preferences.js';
 import { IEditorIdentifier, SaveReason, SideBySideEditor } from '../../../../common/editor.js';
-import { hash } from '../../../../../base/common/hash.js';
+import { hash } from '@sidex/base/common/hash.js';
 
 export const CONFLICT_RESOLUTION_CONTEXT = 'saveConflictResolutionContext';
 export const CONFLICT_RESOLUTION_SCHEME = 'conflictResolution';

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import * as strings from '../../../../base/common/strings.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
 import * as nls from '@sidex/base/nls.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,

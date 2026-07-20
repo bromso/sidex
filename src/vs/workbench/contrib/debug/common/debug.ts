@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Color } from '../../../../base/common/color.js';
-import { Event } from '../../../../base/common/event.js';
-import { IJSONSchema, IJSONSchemaSnippet } from '../../../../base/common/jsonSchema.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import severity from '../../../../base/common/severity.js';
-import { URI, UriComponents, URI as uri } from '../../../../base/common/uri.js';
-import { IPosition, Position } from '../../../../editor/common/core/position.js';
-import { IRange } from '../../../../editor/common/core/range.js';
-import * as editorCommon from '../../../../editor/common/editorCommon.js';
-import { ITextModel as EditorIModel } from '../../../../editor/common/model.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IJSONSchema, IJSONSchemaSnippet } from '@sidex/base/common/jsonSchema.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import severity from '@sidex/base/common/severity.js';
+import { URI, UriComponents, URI as uri } from '@sidex/base/common/uri.js';
+import { IPosition, Position } from '@sidex/editor/common/core/position.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import * as editorCommon from '@sidex/editor/common/editorCommon.js';
+import { ITextModel as EditorIModel } from '@sidex/editor/common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryEndpoint } from '../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryEndpoint } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IEditorPane } from '../../../common/editor.js';
 import { DebugCompoundRoot } from './debugCompoundRoot.js';
 import { IDataBreakpointOptions, IFunctionBreakpointOptions, IInstructionBreakpointOptions } from './debugModel.js';

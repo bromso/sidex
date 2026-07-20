@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Color } from '../../../../base/common/color.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { Range } from '../../core/range.js';
 import { BracketPairColorizationOptions, IModelDecoration } from '../../model.js';
 import { BracketInfo } from '../../textModelBracketPairs.js';
@@ -20,7 +20,7 @@ import {
 	editorBracketHighlightingForeground6,
 	editorBracketHighlightingUnexpectedBracketForeground
 } from '../../core/editorColorRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { IModelOptionsChangedEvent } from '../../textModelEvents.js';
 
 export class ColorizedBracketPairsDecorationProvider extends Disposable implements DecorationProvider {

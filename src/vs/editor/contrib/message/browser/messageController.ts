@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { renderMarkdown } from '../../../../base/browser/markdownRenderer.js';
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { Event } from '../../../../base/common/event.js';
-import { IMarkdownString, isMarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { renderMarkdown } from '@sidex/base/browser/markdownRenderer.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString, isMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import './messageController.css';
 import {
 	ContentWidgetPositionPreference,
@@ -26,12 +26,12 @@ import { IPosition } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { IEditorContribution, ScrollType } from '../../../common/editorCommon.js';
 import { PositionAffinity } from '../../../common/model.js';
-import { openLinkFromMarkdown } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import { openLinkFromMarkdown } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import * as nls from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import * as dom from '../../../../base/browser/dom.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import * as dom from '@sidex/base/browser/dom.js';
 
 export class MessageController implements IEditorContribution {
 	public static readonly ID = 'editor.contrib.messageController';

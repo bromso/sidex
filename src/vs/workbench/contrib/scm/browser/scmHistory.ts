@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { deepClone } from '../../../../base/common/objects.js';
+import { deepClone } from '@sidex/base/common/objects.js';
 import {
 	badgeBackground,
 	chartsBlue,
 	chartsPurple,
 	foreground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { asCssVariable, ColorIdentifier, registerColor } from '../../../../platform/theme/common/colorUtils.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { asCssVariable, ColorIdentifier, registerColor } from '@sidex/platform/theme/common/colorUtils.js';
 import {
 	ISCMHistoryItem,
 	ISCMHistoryItemGraphNode,
@@ -20,19 +20,19 @@ import {
 	SCMIncomingHistoryItemId,
 	SCMOutgoingHistoryItemId
 } from '../common/history.js';
-import { rot } from '../../../../base/common/numbers.js';
-import { $, svgElem } from '../../../../base/browser/dom.js';
+import { rot } from '@sidex/base/common/numbers.js';
+import { $, svgElem } from '@sidex/base/browser/dom.js';
 import { PANEL_BACKGROUND } from '../../../common/theme.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IMarkdownString,
 	isEmptyMarkdownString,
 	isMarkdownString,
 	MarkdownString
-} from '../../../../base/common/htmlContent.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { findLastIdx } from '../../../../base/common/arraysFind.js';
+} from '@sidex/base/common/htmlContent.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { findLastIdx } from '@sidex/base/common/arraysFind.js';
 
 export const SWIMLANE_HEIGHT = 22;
 export const SWIMLANE_WIDTH = 11;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../../base/common/charCode.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
 import {
 	KeyCode,
 	KeyCodeUtils,
@@ -12,7 +12,7 @@ import {
 	ScanCode,
 	ScanCodeUtils,
 	isModifierKey
-} from '../../../../base/common/keyCodes.js';
+} from '@sidex/base/common/keyCodes.js';
 import {
 	ResolvedKeybinding,
 	KeyCodeChord,
@@ -20,15 +20,15 @@ import {
 	ScanCodeChord,
 	Keybinding,
 	Chord
-} from '../../../../base/common/keybindings.js';
-import { OperatingSystem } from '../../../../base/common/platform.js';
-import { IKeyboardEvent } from '../../../../platform/keybinding/common/keybinding.js';
-import { IKeyboardMapper } from '../../../../platform/keyboardLayout/common/keyboardMapper.js';
-import { BaseResolvedKeybinding } from '../../../../platform/keybinding/common/baseResolvedKeybinding.js';
+} from '@sidex/base/common/keybindings.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
+import { IKeyboardEvent } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IKeyboardMapper } from '@sidex/platform/keyboardLayout/common/keyboardMapper.js';
+import { BaseResolvedKeybinding } from '@sidex/platform/keybinding/common/baseResolvedKeybinding.js';
 import {
 	IMacLinuxKeyboardMapping,
 	IMacLinuxKeyMapping
-} from '../../../../platform/keyboardLayout/common/keyboardLayout.js';
+} from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
 
 /**
  * A map from character to key codes.

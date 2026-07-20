@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { basename } from '../../../../base/common/resources.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { VIEW_PANE_ID, ISCMService, ISCMRepository, ISCMViewService, ISCMProvider } from '../common/scm.js';
 import { IActivityService, NumberBadge } from '../../../services/activity/common/activity.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IStatusbarEntry,
 	IStatusbarService,
 	StatusbarAlignment as MainThreadStatusBarAlignment
 } from '../../../services/statusbar/browser/statusbar.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { EditorResourceAccessor } from '../../../common/editor.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { ITitleService } from '../../../services/title/browser/titleService.js';
 import {
 	IEditorGroupContextKeyProvider,
@@ -26,9 +26,9 @@ import {
 } from '../../../services/editor/common/editorGroupsService.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { getRepositoryResourceCount, getSCMRepositoryIcon, getStatusBarCommandGenericName } from './util.js';
-import { autorun, derived, IObservable, observableFromEvent } from '../../../../base/common/observable.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
-import { Command } from '../../../../editor/common/languages.js';
+import { autorun, derived, IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { Command } from '@sidex/editor/common/languages.js';
 
 const ActiveRepositoryContextKeys = {
 	ActiveRepositoryName: new RawContextKey<string>('scmActiveRepositoryName', ''),

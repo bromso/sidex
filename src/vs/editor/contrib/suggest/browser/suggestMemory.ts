@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { LRUCache } from '../../../../base/common/map.js';
-import { TernarySearchTree } from '../../../../base/common/ternarySearchTree.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
 import { IPosition } from '../../../common/core/position.js';
 import { ITextModel } from '../../../common/model.js';
 import { CompletionItemKind, CompletionItemKinds } from '../../../common/languages.js';
 import { CompletionItem } from './suggest.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IStorageService,
 	StorageScope,
 	StorageTarget,
 	WillSaveStateReason
-} from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/storage/common/storage.js';
 
 export abstract class Memory {
 	constructor(readonly name: MemMode) {}

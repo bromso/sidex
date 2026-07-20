@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { EditorInputCapabilities, IUntypedEditorInput } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 
 const RuntimeExtensionsEditorIcon = registerIcon(
 	'runtime-extensions-editor-label-icon',

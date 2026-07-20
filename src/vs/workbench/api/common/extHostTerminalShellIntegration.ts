@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { Emitter, type Event } from '../../../base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Emitter, type Event } from '@sidex/base/common/event.js';
 import type { ExtHostTerminalShellIntegrationShape } from './extHost.protocol.js';
 import { TerminalShellExecutionCommandLineConfidence } from './extHostTypes.js';
 import { IExtHostRpcService } from './extHostRpcService.js';

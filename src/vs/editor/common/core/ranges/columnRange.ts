@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BugIndicatingError } from '../../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { OffsetRange } from './offsetRange.js';
 import { Range } from '../range.js';
 

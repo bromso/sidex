@@ -5,11 +5,11 @@
 
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { EditorAction, EditorAction2, ServicesAccessor } from '../../../../browser/editorExtensions.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { EditorContextKeys } from '../../../../common/editorContextKeys.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { StandaloneColorPickerController } from './standaloneColorPickerController.js';
 
 export class ShowOrFocusStandaloneColorPicker extends EditorAction2 {

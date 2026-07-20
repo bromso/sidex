@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ExtHostManagedSocketsShape } from './extHost.protocol.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import type * as vscode from 'vscode';
-import { VSBuffer } from '../../../base/common/buffer.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 
 export interface IExtHostManagedSockets extends ExtHostManagedSocketsShape {
 	setFactory(socketFactoryId: number, makeConnection: () => Thenable<vscode.ManagedMessagePassing>): void;

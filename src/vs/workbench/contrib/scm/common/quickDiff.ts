@@ -5,15 +5,15 @@
 
 import * as nls from '@sidex/base/nls.js';
 
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { LanguageSelector } from '../../../../editor/common/languageSelector.js';
-import { Event } from '../../../../base/common/event.js';
-import { LineRangeMapping } from '../../../../editor/common/diff/rangeMapping.js';
-import { IChange } from '../../../../editor/common/diff/legacyLinesDiffComputer.js';
-import { IColorTheme } from '../../../../platform/theme/common/themeService.js';
-import { Color } from '../../../../base/common/color.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { LanguageSelector } from '@sidex/editor/common/languageSelector.js';
+import { Event } from '@sidex/base/common/event.js';
+import { LineRangeMapping } from '@sidex/editor/common/diff/rangeMapping.js';
+import { IChange } from '@sidex/editor/common/diff/legacyLinesDiffComputer.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { Color } from '@sidex/base/common/color.js';
 import {
 	darken,
 	editorBackground,
@@ -24,7 +24,7 @@ import {
 	registerColor,
 	transparent,
 	lighten
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 
 export const IQuickDiffService = createDecorator<IQuickDiffService>('quickDiff');
 

@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { StoredValue } from './storedValue.js';
 import { TestId } from './testId.js';
 import { IMainThreadTestController } from './testService.js';

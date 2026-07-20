@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Event } from '../../base/common/event.js';
-import { DeepRequiredNonNullable, assertReturnsDefined } from '../../base/common/types.js';
-import { URI } from '../../base/common/uri.js';
-import { Disposable, IDisposable, toDisposable } from '../../base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { DeepRequiredNonNullable, assertReturnsDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ICodeEditorViewState,
 	IDiffEditor,
 	IDiffEditorViewState,
 	IEditor,
 	IEditorViewState
-} from '../../editor/common/editorCommon.js';
+} from '@sidex/editor/common/editorCommon.js';
 import {
 	IEditorOptions,
 	IResourceEditorInput,
@@ -22,28 +22,28 @@ import {
 	IBaseTextResourceEditorInput,
 	IBaseUntypedEditorInput,
 	ITextEditorOptions
-} from '../../platform/editor/common/editor.js';
+} from '@sidex/platform/editor/common/editor.js';
 import type { EditorInput } from './editor/editorInput.js';
 import {
 	IInstantiationService,
 	IConstructorSignature,
 	ServicesAccessor,
 	BrandedService
-} from '../../platform/instantiation/common/instantiation.js';
-import { IContextKeyService } from '../../platform/contextkey/common/contextkey.js';
-import { Registry } from '../../platform/registry/common/platform.js';
+} from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IEncodingSupport, ILanguageSupport } from '../services/textfile/common/textfiles.js';
 import { IEditorGroup } from '../services/editor/common/editorGroupsService.js';
 import { ICompositeControl, IComposite } from './composite.js';
-import { FileType, IFileReadLimits, IFileService } from '../../platform/files/common/files.js';
-import { IPathData } from '../../platform/window/common/window.js';
-import { IExtUri } from '../../base/common/resources.js';
-import { Schemas } from '../../base/common/network.js';
+import { FileType, IFileReadLimits, IFileService } from '@sidex/platform/files/common/files.js';
+import { IPathData } from '@sidex/platform/window/common/window.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IEditorService } from '../services/editor/common/editorService.js';
-import { ILogService } from '../../platform/log/common/log.js';
-import { IErrorWithActions, createErrorWithActions, isErrorWithActions } from '../../base/common/errorMessage.js';
-import { IAction, toAction } from '../../base/common/actions.js';
-import Severity from '../../base/common/severity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IErrorWithActions, createErrorWithActions, isErrorWithActions } from '@sidex/base/common/errorMessage.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import Severity from '@sidex/base/common/severity.js';
 import { IPreferencesService } from '../services/preferences/common/preferences.js';
 import { IReadonlyEditorGroupModel } from './editor/editorGroupModel.js';
 

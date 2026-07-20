@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import Severity from '../../../base/common/severity.js';
+import Severity from '@sidex/base/common/severity.js';
 import type * as vscode from 'vscode';
 import {
 	MainContext,
@@ -11,8 +11,8 @@ import {
 	MainThreadMessageOptions,
 	IMainContext
 } from './extHost.protocol.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 function isMessageItem(item: any): item is vscode.MessageItem {

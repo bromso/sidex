@@ -3,30 +3,30 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { Disposable, DisposableMap, IDisposable } from '../../../base/common/lifecycle.js';
-import { isNative } from '../../../base/common/platform.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableMap, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { isNative } from '@sidex/base/common/platform.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { IFileService } from '../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { INotificationService } from '../../../platform/notification/common/notification.js';
-import { AuthInfo, Credentials, IRequestService } from '../../../platform/request/common/request.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { AuthInfo, Credentials, IRequestService } from '@sidex/platform/request/common/request.js';
 import {
 	WorkspaceTrustRequestOptions,
 	IWorkspaceTrustManagementService,
 	IWorkspaceTrustRequestService,
 	ResourceTrustRequestOptions
-} from '../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import {
 	IWorkspace,
 	IWorkspaceContextService,
 	isUntitledWorkspace,
 	WorkspaceFolder
-} from '../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { checkGlobFileExists } from '../../services/extensions/common/workspaceContains.js';
 import {
@@ -46,11 +46,11 @@ import {
 	MainThreadWorkspaceShape,
 	ResourceTrustRequestOptionsDto
 } from '../common/extHost.protocol.js';
-import { IEditSessionIdentityService } from '../../../platform/workspace/common/editSessions.js';
+import { IEditSessionIdentityService } from '@sidex/platform/workspace/common/editSessions.js';
 import { EditorResourceAccessor, SaveReason, SideBySideEditor } from '../../common/editor.js';
-import { coalesce } from '../../../base/common/arrays.js';
-import { ICanonicalUriService } from '../../../platform/workspace/common/canonicalUri.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { ICanonicalUriService } from '@sidex/platform/workspace/common/canonicalUri.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 import { ITextFileService } from '../../services/textfile/common/textfiles.js';
 
 @extHostNamedCustomer(MainContext.MainThreadWorkspace)

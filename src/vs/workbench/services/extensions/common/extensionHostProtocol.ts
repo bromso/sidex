@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { URI, UriComponents, UriDto } from '../../../../base/common/uri.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { ILoggerResource, LogLevel } from '../../../../platform/log/common/log.js';
-import { IRemoteConnectionData } from '../../../../platform/remote/common/remoteAuthorityResolver.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { URI, UriComponents, UriDto } from '@sidex/base/common/uri.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { ILoggerResource, LogLevel } from '@sidex/platform/log/common/log.js';
+import { IRemoteConnectionData } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 
 export interface IExtensionDescriptionSnapshot {
 	readonly versionId: number;

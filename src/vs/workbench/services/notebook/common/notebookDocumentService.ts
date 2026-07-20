@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer, decodeBase64, encodeBase64 } from '../../../../base/common/buffer.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { VSBuffer, decodeBase64, encodeBase64 } from '@sidex/base/common/buffer.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export const INotebookDocumentService = createDecorator<INotebookDocumentService>('notebookDocumentService');
 

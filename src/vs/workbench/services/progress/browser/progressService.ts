@@ -5,7 +5,7 @@
 
 import './media/progressService.css';
 import { localize } from '@sidex/base/nls.js';
-import { IDisposable, dispose, DisposableStore, Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { IDisposable, dispose, DisposableStore, Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IProgressService,
 	IProgressOptions,
@@ -19,14 +19,14 @@ import {
 	IProgressIndicator,
 	IProgressWindowOptions,
 	IProgressDialogOptions
-} from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/progress/common/progress.js';
 import {
 	StatusbarAlignment,
 	IStatusbarService,
 	IStatusbarEntryAccessor,
 	IStatusbarEntry
 } from '../../statusbar/browser/statusbar.js';
-import { DeferredPromise, RunOnceScheduler, timeout } from '../../../../base/common/async.js';
+import { DeferredPromise, RunOnceScheduler, timeout } from '@sidex/base/common/async.js';
 import { ProgressBadge, IActivityService } from '../../activity/common/activity.js';
 import {
 	INotificationService,
@@ -35,18 +35,18 @@ import {
 	NotificationPriority,
 	isNotificationSource,
 	NotificationsFilter
-} from '../../../../platform/notification/common/notification.js';
-import { Action } from '../../../../base/common/actions.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { Dialog } from '../../../../base/browser/ui/dialog/dialog.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { Dialog } from '@sidex/base/browser/ui/dialog/dialog.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../views/common/viewsService.js';
 import { IPaneCompositePartService } from '../../panecomposite/browser/panecomposite.js';
-import { stripIcons } from '../../../../base/common/iconLabels.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
 import { IUserActivityService } from '../../userActivity/common/userActivityService.js';
 import { createWorkbenchDialogOptions } from '../../../browser/parts/dialogs/dialog.js';
 import { IHostService } from '../../host/browser/host.js';

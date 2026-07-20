@@ -69,4 +69,4 @@ import './contrib/floatingMenu/browser/floatingMenu.contribution.js';
 // in order to get them translated
 import './common/standaloneStrings.js';
 
-import '../base/browser/ui/codicons/codiconStyles.js'; // The codicons are defined here and must be loaded
+import '@sidex/base/browser/ui/codicons/codiconStyles.js'; // The codicons are defined here and must be loaded

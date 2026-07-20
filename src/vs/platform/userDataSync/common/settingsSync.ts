@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../base/common/arrays.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
-import { URI } from '../../../base/common/uri.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { ConfigurationTarget, IConfigurationService } from '../../configuration/common/configuration.js';
 import { ConfigurationModelParser } from '../../configuration/common/configurationModels.js';

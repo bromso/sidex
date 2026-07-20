@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	getActionBarActions,
 	PrimaryAndSecondaryActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { MenuId, IMenuActionOptions, IMenuService, IMenu } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { MenuId, IMenuActionOptions, IMenuService, IMenu } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IViewDescriptorService, ViewContainer, ViewContainerLocationToString } from '../../../common/views.js';
 
 export class ViewMenuActions extends Disposable {

@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IAction } from '../../../../base/common/actions.js';
-import type { Tokens } from '../../../../base/common/marked/marked.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import type { Tokens } from '@sidex/base/common/marked/marked.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IPreferencesService, ISetting } from '../../../services/preferences/common/preferences.js';
 import { settingKeyToDisplayFormat } from '../../preferences/browser/settingsTreeModels.js';
 

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { autorun, runOnChange } from '../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { autorun, runOnChange } from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
@@ -36,7 +36,7 @@ import { TextureAtlas } from '../../gpu/atlas/textureAtlas.js';
 import { createContentSegmenter, type IContentSegmenter } from '../../gpu/contentSegmenter.js';
 import { ViewportRenderStrategy } from '../../gpu/renderStrategy/viewportRenderStrategy.js';
 import { FullFileRenderStrategy } from '../../gpu/renderStrategy/fullFileRenderStrategy.js';
-import { MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import type { ViewLineRenderingData } from '../../../common/viewModel.js';
 import { GlyphRasterizer } from '../../gpu/raster/glyphRasterizer.js';
 

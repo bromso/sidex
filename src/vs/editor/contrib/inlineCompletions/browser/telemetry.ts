@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DataChannelForwardingTelemetryService } from '../../../../platform/dataChannel/browser/forwardingTelemetryService.js';
+import { DataChannelForwardingTelemetryService } from '@sidex/platform/dataChannel/browser/forwardingTelemetryService.js';
 
 export function sendInlineCompletionsEndOfLifeTelemetry(
 	dataChannel: DataChannelForwardingTelemetryService,

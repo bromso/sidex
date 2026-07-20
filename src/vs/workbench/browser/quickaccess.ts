@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../base/common/lifecycle.js';
-import { getIEditor } from '../../editor/browser/editorBrowser.js';
-import { ICodeEditorViewState, IDiffEditorViewState } from '../../editor/common/editorCommon.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { getIEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorViewState, IDiffEditorViewState } from '@sidex/editor/common/editorCommon.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandHandler } from '../../platform/commands/common/commands.js';
-import { ContextKeyExpr, RawContextKey } from '../../platform/contextkey/common/contextkey.js';
-import { IResourceEditorInput, ITextResourceEditorInput } from '../../platform/editor/common/editor.js';
-import { IKeybindingService } from '../../platform/keybinding/common/keybinding.js';
-import { IQuickInputService } from '../../platform/quickinput/common/quickInput.js';
+import { ICommandHandler } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IResourceEditorInput, ITextResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IEditorPane, IUntitledTextResourceEditorInput, IUntypedEditorInput } from '../common/editor.js';
 import { EditorInput } from '../common/editor/editorInput.js';
 import { IEditorGroup, IEditorGroupsService } from '../services/editor/common/editorGroupsService.js';

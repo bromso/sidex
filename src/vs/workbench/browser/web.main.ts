@@ -3,60 +3,60 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mark } from '../../base/common/performance.js';
-import { domContentLoaded, detectFullscreen, getCookieValue, getWindow } from '../../base/browser/dom.js';
-import { assertReturnsDefined } from '../../base/common/types.js';
-import { ServiceCollection } from '../../platform/instantiation/common/serviceCollection.js';
-import { ILogService, ConsoleLogger, getLogLevel, ILoggerService, ILogger } from '../../platform/log/common/log.js';
-import { ConsoleLogInAutomationLogger } from '../../platform/log/browser/log.js';
-import { Disposable, DisposableStore, toDisposable } from '../../base/common/lifecycle.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { domContentLoaded, detectFullscreen, getCookieValue, getWindow } from '@sidex/base/browser/dom.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { ILogService, ConsoleLogger, getLogLevel, ILoggerService, ILogger } from '@sidex/platform/log/common/log.js';
+import { ConsoleLogInAutomationLogger } from '@sidex/platform/log/browser/log.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	BrowserWorkbenchEnvironmentService,
 	IBrowserWorkbenchEnvironmentService
 } from '../services/environment/browser/environmentService.js';
 import { Workbench } from './workbench.js';
 import { IWorkbenchEnvironmentService } from '../services/environment/common/environmentService.js';
-import { IProductService } from '../../platform/product/common/productService.js';
-import product from '../../platform/product/common/product.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import product from '@sidex/platform/product/common/product.js';
 import { NullRemoteAgentService } from '../services/remote/browser/nullRemoteAgentService.js';
-import { RemoteAuthorityResolverService } from '../../platform/remote/browser/remoteAuthorityResolverService.js';
+import { RemoteAuthorityResolverService } from '@sidex/platform/remote/browser/remoteAuthorityResolverService.js';
 import {
 	IRemoteAuthorityResolverService,
 	RemoteConnectionType
-} from '../../platform/remote/common/remoteAuthorityResolver.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 import { IRemoteAgentService } from '../services/remote/common/remoteAgentService.js';
-import { IFileService } from '../../platform/files/common/files.js';
-import { FileService } from '../../platform/files/common/fileService.js';
-import { Schemas, connectionTokenCookieName } from '../../base/common/network.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { FileService } from '@sidex/platform/files/common/fileService.js';
+import { Schemas, connectionTokenCookieName } from '@sidex/base/common/network.js';
 import {
 	IAnyWorkspaceIdentifier,
 	IWorkspaceContextService,
 	UNKNOWN_EMPTY_WINDOW_WORKSPACE,
 	isTemporaryWorkspace,
 	isWorkspaceIdentifier
-} from '../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchConfigurationService } from '../services/configuration/common/configuration.js';
-import { onUnexpectedError } from '../../base/common/errors.js';
-import { setFullscreen } from '../../base/browser/browser.js';
-import { URI, UriComponents } from '../../base/common/uri.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { setFullscreen } from '@sidex/base/browser/browser.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { WorkspaceService } from '../services/configuration/browser/configurationService.js';
 import { ConfigurationCache } from '../services/configuration/common/configurationCache.js';
-import { ISignService } from '../../platform/sign/common/sign.js';
-import { SignService } from '../../platform/sign/browser/signService.js';
+import { ISignService } from '@sidex/platform/sign/common/sign.js';
+import { SignService } from '@sidex/platform/sign/browser/signService.js';
 import { IWorkbenchConstructionOptions, IWorkbench, IWorkspace, ITunnel } from './web.api.js';
 import { BrowserStorageService } from '../services/storage/browser/storageService.js';
-import { IStorageService } from '../../platform/storage/common/storage.js';
-import { toLocalISOString } from '../../base/common/date.js';
-import { isWorkspaceToOpen, isFolderToOpen } from '../../platform/window/common/window.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
+import { isWorkspaceToOpen, isFolderToOpen } from '@sidex/platform/window/common/window.js';
 import {
 	getSingleFolderWorkspaceIdentifier,
 	getWorkspaceIdentifier
 } from '../services/workspaces/browser/workspaces.js';
-import { InMemoryFileSystemProvider } from '../../platform/files/common/inMemoryFilesystemProvider.js';
-import { ICommandService } from '../../platform/commands/common/commands.js';
+import { InMemoryFileSystemProvider } from '@sidex/platform/files/common/inMemoryFilesystemProvider.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IEditorService } from '../services/editor/common/editorService.js';
 import { BrowserRequestService } from '../services/request/browser/requestService.js';
-import { IRequestService } from '../../platform/request/common/request.js';
+import { IRequestService } from '@sidex/platform/request/common/request.js';
 import {
 	IUserDataInitializationService,
 	IUserDataInitializer,
@@ -65,17 +65,17 @@ import {
 import {
 	IUserDataSyncStoreManagementService,
 	NullUserDataSyncStoreManagementService
-} from '../../platform/userDataSync/common/nullUserDataSync.js';
+} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { ILifecycleService, WillShutdownEvent } from '../services/lifecycle/common/lifecycle.js';
-import { Event } from '../../base/common/event.js';
-import { Action2, MenuId, registerAction2 } from '../../platform/actions/common/actions.js';
-import { IInstantiationService, ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../platform/action/common/actionCommonCategories.js';
-import { IDialogService } from '../../platform/dialogs/common/dialogs.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { IHostService } from '../services/host/browser/host.js';
-import { IUriIdentityService } from '../../platform/uriIdentity/common/uriIdentity.js';
-import { UriIdentityService } from '../../platform/uriIdentity/common/uriIdentityService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { UriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentityService.js';
 import { BrowserWindow } from './window.js';
 import { ITimerService } from '../services/timer/browser/timerService.js';
 import {
@@ -85,45 +85,45 @@ import {
 import {
 	IWorkspaceTrustEnablementService,
 	IWorkspaceTrustManagementService
-} from '../../platform/workspace/common/workspaceTrust.js';
-import { TauriFileSystemProvider } from '../../platform/files/browser/tauriFileSystemProvider.js';
-import { TauriUserDataProvider } from '../../platform/files/browser/tauriUserDataProvider.js';
-import { IOpenerService } from '../../platform/opener/common/opener.js';
-import { mixin, safeStringify } from '../../base/common/objects.js';
-import { IProgressService } from '../../platform/progress/common/progress.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { TauriFileSystemProvider } from '@sidex/platform/files/browser/tauriFileSystemProvider.js';
+import { TauriUserDataProvider } from '@sidex/platform/files/browser/tauriUserDataProvider.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { mixin, safeStringify } from '@sidex/base/common/objects.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
 import { DelayedLogChannel } from '../services/output/common/delayedLogChannel.js';
-import { dirname, joinPath } from '../../base/common/resources.js';
-import { IUserDataProfile, IUserDataProfilesService } from '../../platform/userDataProfile/common/userDataProfile.js';
-import { IPolicyService, NullPolicyService } from '../../platform/policy/common/policy.js';
+import { dirname, joinPath } from '@sidex/base/common/resources.js';
+import { IUserDataProfile, IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IPolicyService, NullPolicyService } from '@sidex/platform/policy/common/policy.js';
 import { IRemoteExplorerService } from '../services/remote/common/remoteExplorerService.js';
-import { DisposableTunnel, TunnelProtocol } from '../../platform/tunnel/common/tunnel.js';
-import { ILabelService } from '../../platform/label/common/label.js';
+import { DisposableTunnel, TunnelProtocol } from '@sidex/platform/tunnel/common/tunnel.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { UserDataProfileService } from '../services/userDataProfile/common/userDataProfileService.js';
 import { IUserDataProfileService } from '../services/userDataProfile/common/userDataProfile.js';
-import { BrowserUserDataProfilesService } from '../../platform/userDataProfile/browser/userDataProfile.js';
-import { DeferredPromise, timeout } from '../../base/common/async.js';
+import { BrowserUserDataProfilesService } from '@sidex/platform/userDataProfile/browser/userDataProfile.js';
+import { DeferredPromise, timeout } from '@sidex/base/common/async.js';
 import { windowLogGroup, windowLogId } from '../services/log/common/logConstants.js';
-import { LogService } from '../../platform/log/common/logService.js';
+import { LogService } from '@sidex/platform/log/common/logService.js';
 import {
 	IRemoteSocketFactoryService,
 	RemoteSocketFactoryService
-} from '../../platform/remote/common/remoteSocketFactoryService.js';
-import { BrowserSocketFactory } from '../../platform/remote/browser/browserSocketFactory.js';
-import { VSBuffer } from '../../base/common/buffer.js';
-import { IStoredWorkspace } from '../../platform/workspaces/common/workspaces.js';
+} from '@sidex/platform/remote/common/remoteSocketFactoryService.js';
+import { BrowserSocketFactory } from '@sidex/platform/remote/browser/browserSocketFactory.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IStoredWorkspace } from '@sidex/platform/workspaces/common/workspaces.js';
 import { UserDataProfileInitializer } from '../services/userDataProfile/browser/userDataProfileInit.js';
 import { BrowserRemoteResourceLoader } from '../services/remote/browser/browserRemoteResourceHandler.js';
-import { BufferLogger } from '../../platform/log/common/bufferLog.js';
-import { FileLoggerService } from '../../platform/log/common/fileLog.js';
+import { BufferLogger } from '@sidex/platform/log/common/bufferLog.js';
+import { FileLoggerService } from '@sidex/platform/log/common/fileLog.js';
 import { IEmbedderTerminalService } from '../services/terminal/common/embedderTerminalService.js';
 import { BrowserSecretStorageService } from '../services/secrets/browser/secretStorageService.js';
 import { EncryptionService } from '../services/encryption/browser/encryptionService.js';
-import { IEncryptionService } from '../../platform/encryption/common/encryptionService.js';
-import { ISecretStorageService } from '../../platform/secrets/common/secrets.js';
+import { IEncryptionService } from '@sidex/platform/encryption/common/encryptionService.js';
+import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
 import { TunnelSource } from '../services/remote/common/tunnelModel.js';
-import { mainWindow } from '../../base/browser/window.js';
-import { INotificationService, Severity } from '../../platform/notification/common/notification.js';
-import { IDefaultAccountService, NullDefaultAccountService } from '../services/accounts/browser/nullDefaultAccount.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IDefaultAccountService, NullDefaultAccountService } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
 
 export interface IBrowserMainWorkbench {
 	startup(): IInstantiationService;

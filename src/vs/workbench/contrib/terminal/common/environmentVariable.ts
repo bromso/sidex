@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	EnvironmentVariableScope,
 	IEnvironmentVariableCollection,
 	IMergedEnvironmentVariableCollection
-} from '../../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
 import { ITerminalStatus } from './terminal.js';
 
 export const IEnvironmentVariableService = createDecorator<IEnvironmentVariableService>('environmentVariableService');

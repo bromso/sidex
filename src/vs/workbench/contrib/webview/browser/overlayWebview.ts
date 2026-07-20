@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension, getWindowById, isHTMLElement } from '../../../../base/browser/dom.js';
-import { FastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { IMouseWheelEvent } from '../../../../base/browser/mouseEvent.js';
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { autorun, observableValue } from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { Dimension, getWindowById, isHTMLElement } from '@sidex/base/browser/dom.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, observableValue } from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import {
 	IContextKey,
 	IContextKeyService,
 	IScopedContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import {

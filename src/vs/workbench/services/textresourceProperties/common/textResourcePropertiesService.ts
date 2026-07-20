@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ITextResourcePropertiesService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { OperatingSystem, OS } from '../../../../base/common/platform.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextResourcePropertiesService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IRemoteAgentEnvironment } from '../../../../platform/remote/common/remoteAgentEnvironment.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IRemoteAgentEnvironment } from '@sidex/platform/remote/common/remoteAgentEnvironment.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 
 export class TextResourcePropertiesService implements ITextResourcePropertiesService {

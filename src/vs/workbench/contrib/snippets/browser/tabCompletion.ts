@@ -3,36 +3,36 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	RawContextKey,
 	IContextKeyService,
 	ContextKeyExpr,
 	IContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ISnippetsService } from './snippets.js';
 import { getNonWhitespacePrefix } from './snippetsService.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IEditorContribution } from '../../../../editor/common/editorCommon.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IEditorContribution } from '@sidex/editor/common/editorCommon.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	registerEditorContribution,
 	EditorCommand,
 	registerEditorCommand,
 	EditorContributionInstantiation
-} from '../../../../editor/browser/editorExtensions.js';
-import { SnippetController2 } from '../../../../editor/contrib/snippet/browser/snippetController2.js';
-import { showSimpleSuggestions } from '../../../../editor/contrib/suggest/browser/suggest.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
+import { showSimpleSuggestions } from '@sidex/editor/contrib/suggest/browser/suggest.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { Snippet } from './snippetsFile.js';
 import { SnippetCompletion } from './snippetCompletionProvider.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { EditorState, CodeEditorStateFlag } from '../../../../editor/contrib/editorState/browser/editorState.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { CompletionItemProvider } from '../../../../editor/common/languages.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { EditorState, CodeEditorStateFlag } from '@sidex/editor/contrib/editorState/browser/editorState.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { CompletionItemProvider } from '@sidex/editor/common/languages.js';
 
 export class TabCompletionController implements IEditorContribution {
 	static readonly ID = 'editor.tabCompletionController';

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AsyncIterableProducer } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
 import { registerModelAndPositionCommand } from '../../../browser/editorExtensions.js';
 import { Position } from '../../../common/core/position.js';
 import { ITextModel } from '../../../common/model.js';

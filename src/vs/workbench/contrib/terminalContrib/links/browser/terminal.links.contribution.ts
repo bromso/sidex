@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { Event } from '../../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { AccessibleViewProviderId } from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
-import { InstantiationType, registerSingleton } from '../../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { AccessibleViewProviderId } from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	accessibleViewCurrentProviderId,
 	accessibleViewIsShown

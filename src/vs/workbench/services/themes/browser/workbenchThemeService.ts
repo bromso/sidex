@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as types from '../../../../base/common/types.js';
+import * as types from '@sidex/base/common/types.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import {
 	IWorkbenchThemeService,
@@ -19,31 +19,31 @@ import {
 	COLOR_THEME_LIGHT_INITIAL_COLORS,
 	migrateThemeSettingsId
 } from '../common/workbenchThemeService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import * as errors from '../../../../base/common/errors.js';
-import { IConfigurationService, ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { IConfigurationService, ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
 import { ColorThemeData } from '../common/colorThemeData.js';
 import {
 	IColorTheme,
 	Extensions as ThemingExtensions,
 	IThemingRegistry
-} from '../../../../platform/theme/common/themeService.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { registerFileIconThemeSchemas } from '../common/fileIconThemeSchema.js';
-import { IDisposable, Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IDisposable, Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { FileIconThemeData, FileIconThemeLoader } from './fileIconThemeData.js';
-import { createStyleSheet } from '../../../../base/browser/domStylesheets.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
-import { IFileService, FileChangeType } from '../../../../platform/files/common/files.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as resources from '../../../../base/common/resources.js';
+import { IFileService, FileChangeType } from '@sidex/platform/files/common/files.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as resources from '@sidex/base/common/resources.js';
 import { registerColorThemeSchemas } from '../common/colorThemeSchema.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { getRemoteAuthority } from '../../../../platform/remote/common/remoteHosts.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { getRemoteAuthority } from '@sidex/platform/remote/common/remoteHosts.js';
 import { IWorkbenchLayoutService } from '../../layout/browser/layoutService.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
 import {
 	ThemeRegistry,
 	registerColorThemeExtensionPoint,
@@ -58,19 +58,19 @@ import {
 } from '../common/themeConfiguration.js';
 import { ProductIconThemeData, DEFAULT_PRODUCT_ICON_THEME_ID } from './productIconThemeData.js';
 import { registerProductIconThemeSchemas } from '../common/productIconThemeSchema.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { ColorScheme, ThemeTypeSelector } from '../../../../platform/theme/common/theme.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { ColorScheme, ThemeTypeSelector } from '@sidex/platform/theme/common/theme.js';
 import { IHostColorSchemeService } from '../common/hostColorSchemeService.js';
-import { RunOnceScheduler, Sequencer } from '../../../../base/common/async.js';
+import { RunOnceScheduler, Sequencer } from '@sidex/base/common/async.js';
 import { IUserDataInitializationService } from '../../userData/browser/userDataInit.js';
-import { getIconsStyleSheet } from '../../../../platform/theme/browser/iconsStyleSheet.js';
-import { getColorRegistry } from '../../../../platform/theme/common/colorRegistry.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { getIconsStyleSheet } from '@sidex/platform/theme/browser/iconsStyleSheet.js';
+import { getColorRegistry } from '@sidex/platform/theme/common/colorRegistry.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { generateColorThemeCSS } from './colorThemeCss.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 
 // implementation
 

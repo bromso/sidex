@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { compareIgnoreCase, regExpLeadsToEndlessLoop } from '../../../base/common/strings.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { compareIgnoreCase, regExpLeadsToEndlessLoop } from '@sidex/base/common/strings.js';
 import {
 	clearPlatformLanguageAssociations,
 	getLanguageIds,
 	registerPlatformLanguageAssociation
 } from './languagesAssociations.js';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ILanguageIdCodec } from '../languages.js';
 import { LanguageId } from '../encodedTokenAttributes.js';
 import { ModesRegistry, PLAINTEXT_LANGUAGE_ID } from '../languages/modesRegistry.js';
 import { ILanguageExtensionPoint, ILanguageNameIdPair, ILanguageIcon } from '../languages/language.js';
-import { Extensions, IConfigurationRegistry } from '../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+import { Extensions, IConfigurationRegistry } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const NULL_LANGUAGE_ID = 'vs.editor.nullLanguage';

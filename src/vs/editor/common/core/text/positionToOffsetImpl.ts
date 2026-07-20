@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { findLastIdxMonotonous } from '../../../../base/common/arraysFind.js';
+import { findLastIdxMonotonous } from '@sidex/base/common/arraysFind.js';
 import { StringEdit, StringReplacement } from '../edits/stringEdit.js';
 import { OffsetRange } from '../ranges/offsetRange.js';
 import { Position } from '../position.js';

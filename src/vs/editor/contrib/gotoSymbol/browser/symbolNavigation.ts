@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { combinedDisposable, DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { isEqual } from '../../../../base/common/resources.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { combinedDisposable, DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { isEqual } from '@sidex/base/common/resources.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorCommand, registerEditorCommand } from '../../../browser/editorExtensions.js';
 import { ICodeEditorService } from '../../../browser/services/codeEditorService.js';
 import { Range } from '../../../common/core/range.js';
 import { OneReference, ReferencesModel } from './referencesModel.js';
 import { localize } from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService, IStatusHandle } from '../../../../platform/notification/common/notification.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService, IStatusHandle } from '@sidex/platform/notification/common/notification.js';
 
 export const ctxHasSymbols = new RawContextKey(
 	'hasSymbols',

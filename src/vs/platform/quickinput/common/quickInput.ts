@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IQuickAccessController } from './quickAccess.js';
-import { IMatch } from '../../../base/common/filters.js';
-import { IItemAccessor } from '../../../base/common/fuzzyScorer.js';
-import { ResolvedKeybinding } from '../../../base/common/keybindings.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { IObservable } from '../../../base/common/observable.js';
-import Severity from '../../../base/common/severity.js';
-import { URI } from '../../../base/common/uri.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { IItemAccessor } from '@sidex/base/common/fuzzyScorer.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 
 export interface IQuickItemHighlights {
 	label?: IMatch[];

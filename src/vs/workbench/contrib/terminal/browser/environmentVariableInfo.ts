@@ -7,16 +7,16 @@ import { IEnvironmentVariableInfo } from '../common/environmentVariable.js';
 import { ITerminalStatus, ITerminalStatusHoverAction, TerminalCommandId } from '../common/terminal.js';
 import { ITerminalService } from './terminal.js';
 import { localize } from '@sidex/base/nls.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import {
 	EnvironmentVariableScope,
 	IExtensionOwnedEnvironmentVariableMutator,
 	IMergedEnvironmentVariableCollection,
 	IMergedEnvironmentVariableCollectionDiff
-} from '../../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
 import { TerminalStatus } from './terminalStatusList.js';
-import Severity from '../../../../base/common/severity.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import Severity from '@sidex/base/common/severity.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 
 export class EnvironmentVariableInfoStale implements IEnvironmentVariableInfo {

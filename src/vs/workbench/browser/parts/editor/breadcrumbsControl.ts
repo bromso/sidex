@@ -3,60 +3,60 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { PixelRatio } from '../../../../base/browser/pixelRatio.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
 import {
 	BreadcrumbsItem,
 	BreadcrumbsWidget,
 	IBreadcrumbsItemEvent,
 	IBreadcrumbsWidgetStyles
-} from '../../../../base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
-import { applyDragImage } from '../../../../base/browser/ui/dnd/dnd.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { timeout } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+} from '@sidex/base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
+import { applyDragImage } from '@sidex/base/browser/ui/dnd/dnd.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	combinedDisposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { basename, extUri } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { DocumentSymbol } from '../../../../editor/common/languages.js';
-import { OutlineElement } from '../../../../editor/contrib/documentSymbols/browser/outlineModel.js';
+} from '@sidex/base/common/lifecycle.js';
+import { basename, extUri } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { DocumentSymbol } from '@sidex/editor/common/languages.js';
+import { OutlineElement } from '@sidex/editor/contrib/documentSymbols/browser/outlineModel.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { fillInSymbolsDragData, LocalSelectionTransfer } from '../../../../platform/dnd/browser/dnd.js';
-import { FileKind, IFileService, IFileStat } from '../../../../platform/files/common/files.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationService } from '../../../../platform/instantiation/common/instantiationService.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { fillInSymbolsDragData, LocalSelectionTransfer } from '@sidex/platform/dnd/browser/dnd.js';
+import { FileKind, IFileService, IFileStat } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationService } from '@sidex/platform/instantiation/common/instantiationService.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	IListService,
 	WorkbenchAsyncDataTree,
 	WorkbenchDataTree,
 	WorkbenchListFocusContextKey
-} from '../../../../platform/list/browser/listService.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { defaultBreadcrumbsWidgetStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { defaultBreadcrumbsWidgetStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { EditorResourceAccessor, IEditorPartOptions, SideBySideEditor } from '../../../common/editor.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import {
@@ -74,8 +74,8 @@ import { BreadcrumbsModel, FileElement, OutlineElement2 } from './breadcrumbsMod
 import { BreadcrumbsFilePicker, BreadcrumbsOutlinePicker } from './breadcrumbsPicker.js';
 import { IEditorGroupView } from './editor.js';
 import './media/breadcrumbscontrol.css';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 
 class OutlineItem extends BreadcrumbsItem {
 	private readonly _disposables = new DisposableStore();

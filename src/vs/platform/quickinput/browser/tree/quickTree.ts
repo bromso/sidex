@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { autorun, IReader, observableValue } from '../../../../base/common/observable.js';
-import { setTimeout0 } from '../../../../base/common/platform.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { autorun, IReader, observableValue } from '@sidex/base/common/observable.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IQuickTree,

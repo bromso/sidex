@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../base/common/arrays.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ContextKeyExpression, IContextKeyService } from '../../contextkey/common/contextkey.js';
 import {
 	ItemActivation,

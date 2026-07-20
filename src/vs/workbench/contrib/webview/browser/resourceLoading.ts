@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { isUNC } from '../../../../base/common/extpath.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { isUNC } from '@sidex/base/common/extpath.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	FileOperationError,
 	FileOperationResult,
 	IFileService,
 	IWriteFileOptions
-} from '../../../../platform/files/common/files.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { getWebviewContentMimeType } from '../../../../platform/webview/common/mimeTypes.js';
+} from '@sidex/platform/files/common/files.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { getWebviewContentMimeType } from '@sidex/platform/webview/common/mimeTypes.js';
 
 export namespace WebviewResourceResponse {
 	export enum Type {

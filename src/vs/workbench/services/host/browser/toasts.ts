@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener } from '../../../../base/browser/dom.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { addDisposableListener } from '@sidex/base/browser/dom.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { IToastOptions, IToastResult } from './host.js';
 
 export interface IShowToastController {

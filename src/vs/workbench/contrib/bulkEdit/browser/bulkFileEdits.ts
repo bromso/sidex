@@ -3,15 +3,15 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { WorkspaceFileEditOptions } from '../../../../editor/common/languages.js';
+import { WorkspaceFileEditOptions } from '@sidex/editor/common/languages.js';
 import {
 	IFileService,
 	FileSystemProviderCapabilities,
 	IFileContent,
 	IFileStatWithMetadata
-} from '../../../../platform/files/common/files.js';
-import { IProgress } from '../../../../platform/progress/common/progress.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/files/common/files.js';
+import { IProgress } from '@sidex/platform/progress/common/progress.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IWorkingCopyFileService,
 	IFileOperationUndoRedoInfo,
@@ -27,15 +27,15 @@ import {
 	IUndoRedoService,
 	UndoRedoGroup,
 	UndoRedoSource
-} from '../../../../platform/undoRedo/common/undoRedo.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { ResourceFileEdit } from '../../../../editor/browser/services/bulkEditService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+} from '@sidex/platform/undoRedo/common/undoRedo.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { ResourceFileEdit } from '@sidex/editor/browser/services/bulkEditService.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 interface IFileOperation {
 	uris: URI[];

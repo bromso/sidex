@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Readable, ReadableStream, newWriteableStream, listenStream } from '../../../../base/common/stream.js';
-import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
+import { Readable, ReadableStream, newWriteableStream, listenStream } from '@sidex/base/common/stream.js';
+import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { coalesce } from '../../../../base/common/arrays.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
 
 export const UTF8 = 'utf8';
 export const UTF8_with_bom = 'utf8bom';

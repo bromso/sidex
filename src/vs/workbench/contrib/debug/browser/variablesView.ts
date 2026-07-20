@@ -3,43 +3,43 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { HighlightedLabel, IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { AsyncDataTree, IAsyncDataTreeViewState } from '../../../../base/browser/ui/tree/asyncDataTree.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { HighlightedLabel, IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { AsyncDataTree, IAsyncDataTreeViewState } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
 import {
 	ITreeContextMenuEvent,
 	ITreeMouseEvent,
 	ITreeNode,
 	ITreeRenderer
-} from '../../../../base/browser/ui/tree/tree.js';
-import { IAction, toAction } from '../../../../base/common/actions.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { FuzzyScore, createMatches } from '../../../../base/common/filters.js';
-import { IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { FuzzyScore, createMatches } from '@sidex/base/common/filters.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { getContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
 import { IViewDescriptorService } from '../../../common/views.js';

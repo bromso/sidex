@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	CONTEXT_DEBUG_PROTOCOL_VARIABLE_MENU_CONTEXT,
 	CONTEXT_VARIABLE_EVALUATE_NAME_PRESENT,

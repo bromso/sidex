@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { binarySearch2 } from '../../../base/common/arrays.js';
-import { intersection } from '../../../base/common/collections.js';
+import { binarySearch2 } from '@sidex/base/common/arrays.js';
+import { intersection } from '@sidex/base/common/collections.js';
 import { IEditorConfiguration } from '../config/editorConfiguration.js';
 import { EditorOption } from '../config/editorOptions.js';
 import { ICoordinatesConverter } from '../coordinatesConverter.js';

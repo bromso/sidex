@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { safeStringify } from '../../../../base/common/objects.js';
+import { safeStringify } from '@sidex/base/common/objects.js';
 import * as nls from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 
 type RunnableCommand = string | { command: string; args: any[] };
 

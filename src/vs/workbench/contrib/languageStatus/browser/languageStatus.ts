@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/languageStatus.css';
-import * as dom from '../../../../base/browser/dom.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Disposable, DisposableStore, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
-import { getCodeEditor, ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Disposable, DisposableStore, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
+import { getCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
@@ -25,24 +25,24 @@ import {
 	StatusbarAlignment,
 	StatusbarEntryKind
 } from '../../../services/statusbar/browser/statusbar.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Action } from '../../../../base/common/actions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Action2 } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { IAccessibilityInformation } from '../../../../platform/accessibility/common/accessibility.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Action2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { IAccessibilityInformation } from '@sidex/platform/accessibility/common/accessibility.js';
 import { IEditorGroupsService, IEditorPart } from '../../../services/editor/common/editorGroupsService.js';
-import { IHoverService, nativeHoverDelegate } from '../../../../platform/hover/browser/hover.js';
-import { Event } from '../../../../base/common/event.js';
-import { joinStrings } from '../../../../base/common/strings.js';
+import { IHoverService, nativeHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { Event } from '@sidex/base/common/event.js';
+import { joinStrings } from '@sidex/base/common/strings.js';
 
 class LanguageStatusViewModel {
 	constructor(

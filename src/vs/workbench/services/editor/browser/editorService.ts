@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IResourceEditorInput,
 	IEditorOptions,
 	EditorActivation,
 	IResourceEditorInputIdentifier,
 	ITextResourceEditorInput
-} from '../../../../platform/editor/common/editor.js';
+} from '@sidex/platform/editor/common/editor.js';
 import {
 	SideBySideEditor,
 	IEditorPane,
@@ -42,17 +42,17 @@ import {
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
-import { ResourceMap, ResourceSet } from '../../../../base/common/map.js';
+import { ResourceMap, ResourceSet } from '@sidex/base/common/map.js';
 import {
 	IFileService,
 	FileOperationEvent,
 	FileOperation,
 	FileChangesEvent,
 	FileChangeType
-} from '../../../../platform/files/common/files.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { joinPath } from '../../../../base/common/resources.js';
+} from '@sidex/platform/files/common/files.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { joinPath } from '@sidex/base/common/resources.js';
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
 import { SideBySideEditor as SideBySideEditorPane } from '../../../browser/parts/editor/sideBySideEditor.js';
 import {
@@ -80,33 +80,33 @@ import {
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
-import { Disposable, IDisposable, dispose, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { coalesce, distinct } from '../../../../base/common/arrays.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { Disposable, IDisposable, dispose, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { coalesce, distinct } from '@sidex/base/common/arrays.js';
 import {
 	isCodeEditor,
 	isDiffEditor,
 	ICodeEditor,
 	IDiffEditor,
 	isCompositeEditor
-} from '../../../../editor/browser/editorBrowser.js';
+} from '@sidex/editor/browser/editorBrowser.js';
 import { IEditorGroupView, EditorServiceImpl } from '../../../browser/parts/editor/editor.js';
-import { registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { isUndefined } from '../../../../base/common/types.js';
+import { registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { isUndefined } from '@sidex/base/common/types.js';
 import { EditorsObserver } from '../../../browser/parts/editor/editorsObserver.js';
-import { Promises, timeout } from '../../../../base/common/async.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { indexOfPath } from '../../../../base/common/extpath.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { Promises, timeout } from '@sidex/base/common/async.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { indexOfPath } from '@sidex/base/common/extpath.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IEditorResolverService, ResolvedStatus } from '../common/editorResolverService.js';
 import {
 	IWorkspaceTrustRequestService,
 	WorkspaceTrustUriResponse
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IHostService } from '../../host/browser/host.js';
 import { findGroup } from '../common/editorGroupFinder.js';
 import { ITextEditorService } from '../../textfile/common/textEditorService.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 
 export class EditorService extends Disposable implements EditorServiceImpl {
 	declare readonly _serviceBrand: undefined;

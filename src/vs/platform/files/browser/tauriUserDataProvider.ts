@@ -6,7 +6,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { invoke } from '@tauri-apps/api/core';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { TauriFileSystemProvider } from './tauriFileSystemProvider.js';
 
 export class TauriUserDataProvider extends TauriFileSystemProvider {

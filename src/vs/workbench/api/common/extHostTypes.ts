@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { asArray } from '../../../base/common/arrays.js';
-import { illegalArgument } from '../../../base/common/errors.js';
-import { IRelativePattern } from '../../../base/common/glob.js';
-import { nextCharLength } from '../../../base/common/strings.js';
-import { isNumber, isObject, isString, isStringArray } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { TextEditorSelectionSource } from '../../../platform/editor/common/editor.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { FileSystemProviderErrorCode, markAsFileSystemProviderError } from '../../../platform/files/common/files.js';
-import { RemoteAuthorityResolverErrorCode } from '../../../platform/remote/common/remoteAuthorityResolver.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
+import { IRelativePattern } from '@sidex/base/common/glob.js';
+import { nextCharLength } from '@sidex/base/common/strings.js';
+import { isNumber, isObject, isString, isStringArray } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { FileSystemProviderErrorCode, markAsFileSystemProviderError } from '@sidex/platform/files/common/files.js';
+import { RemoteAuthorityResolverErrorCode } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 import { IRelativePatternDto } from './extHost.protocol.js';
 import { CodeActionKind } from './extHostTypes/codeActionKind.js';
 import { Diagnostic } from './extHostTypes/diagnostic.js';

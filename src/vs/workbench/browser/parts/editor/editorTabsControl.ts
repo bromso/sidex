@@ -5,26 +5,26 @@
 
 import './media/editortabscontrol.css';
 import { localize } from '@sidex/base/nls.js';
-import { DataTransfers } from '../../../../base/browser/dnd.js';
-import { $, Dimension, getActiveWindow, getWindow, isMouseEvent } from '../../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
+import { DataTransfers } from '@sidex/base/browser/dnd.js';
+import { $, Dimension, getActiveWindow, getWindow, isMouseEvent } from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import {
 	ActionsOrientation,
 	IActionViewItem,
 	prepareActions
-} from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IAction, ActionRunner } from '../../../../base/common/actions.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService, IContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IAction, ActionRunner } from '@sidex/base/common/actions.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService, IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
 import {
 	DraggedEditorGroupIdentifier,
 	DraggedEditorIdentifier,
@@ -57,26 +57,26 @@ import {
 	applyAvailableEditorIds,
 	ActiveEditorLastInGroupContext
 } from '../../../common/contextkeys.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { isFirefox } from '../../../../base/browser/browser.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { isFirefox } from '@sidex/base/browser/browser.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { LocalSelectionTransfer } from '../../../../platform/dnd/browser/dnd.js';
-import { DraggedTreeItemsIdentifier } from '../../../../editor/common/services/treeViewsDnd.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { LocalSelectionTransfer } from '@sidex/platform/dnd/browser/dnd.js';
+import { DraggedTreeItemsIdentifier } from '@sidex/editor/common/services/treeViewsDnd.js';
 import { IEditorResolverService } from '../../../services/editor/common/editorResolverService.js';
 import { IEditorTitleControlDimensions } from './editorTitleControl.js';
 import { IReadonlyEditorGroupModel } from '../../../common/editor/editorGroupModel.js';
 import { EDITOR_CORE_NAVIGATION_COMMANDS } from './editorCommands.js';
 import { IAuxiliaryEditorPart, MergeGroupMode } from '../../../services/editor/common/editorGroupsService.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { IManagedHoverTooltipMarkdownString } from '../../../../base/browser/ui/hover/hover.js';
-import { applyDragImage } from '../../../../base/browser/ui/dnd/dnd.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { applyDragImage } from '@sidex/base/browser/ui/dnd/dnd.js';
 
 export class EditorCommandsContextActionRunner extends ActionRunner {
 	constructor(private context: IEditorCommandsContext) {

@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { EditorInputCapabilities, IUntypedEditorInput } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { ExtensionEditorTab, IExtension } from './extensions.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { join } from '../../../../base/common/path.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { join } from '@sidex/base/common/path.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 
 const ExtensionEditorIcon = registerIcon(
 	'extensions-editor-label-icon',

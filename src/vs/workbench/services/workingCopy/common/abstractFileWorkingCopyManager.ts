@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { Promises } from '../../../../base/common/async.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
 import { IFileWorkingCopy, IFileWorkingCopyModel } from './fileWorkingCopy.js';
 

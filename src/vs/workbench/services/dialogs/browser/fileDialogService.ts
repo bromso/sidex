@@ -8,11 +8,11 @@ import {
 	ISaveDialogOptions,
 	IOpenDialogOptions,
 	IFileDialogService
-} from '../../../../platform/dialogs/common/dialogs.js';
-import { URI } from '../../../../base/common/uri.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { AbstractFileDialogService } from './abstractFileDialogService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 /**
  * SideX file dialog service — always routes through the Tauri native dialog

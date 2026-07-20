@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { LoggerGroup } from '../../../../platform/log/common/log.js';
+import { LoggerGroup } from '@sidex/platform/log/common/log.js';
 
 export const windowLogId = 'rendererLog';
 export const windowLogGroup: LoggerGroup = { id: windowLogId, name: localize('window', 'Window') };

@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/suggest.css';
-import * as dom from '../../../../base/browser/dom.js';
-import { IListEvent, IListGestureEvent, IListMouseEvent } from '../../../../base/browser/ui/list/list.js';
-import { IListStyles, List } from '../../../../base/browser/ui/list/listWidget.js';
-import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IListEvent, IListGestureEvent, IListMouseEvent } from '@sidex/base/browser/ui/list/list.js';
+import { IListStyles, List } from '@sidex/base/browser/ui/list/listWidget.js';
+import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
 import { SimpleCompletionItem } from './simpleCompletionItem.js';
 import { LineContext, SimpleCompletionModel } from './simpleCompletionModel.js';
 import {
@@ -20,32 +20,32 @@ import {
 	createCancelablePromise,
 	disposableTimeout,
 	TimeoutTimer
-} from '../../../../base/common/async.js';
-import { Emitter, Event, PauseableEmitter } from '../../../../base/common/event.js';
-import { MutableDisposable, Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../base/common/numbers.js';
+} from '@sidex/base/common/async.js';
+import { Emitter, Event, PauseableEmitter } from '@sidex/base/common/event.js';
+import { MutableDisposable, Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { SuggestWidgetStatus } from '../../../../editor/contrib/suggest/browser/suggestWidgetStatus.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { SuggestWidgetStatus } from '@sidex/editor/contrib/suggest/browser/suggestWidgetStatus.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	canExpandCompletionItem,
 	SimpleSuggestDetailsOverlay,
 	SimpleSuggestDetailsWidget,
 	type SimpleSuggestDetailsPlacement
 } from './simpleSuggestWidgetDetails.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import * as strings from '../../../../base/common/strings.js';
-import { status } from '../../../../base/browser/ui/aria/aria.js';
-import { isWindows } from '../../../../base/common/platform.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
+import { isWindows } from '@sidex/base/common/platform.js';
 import {
 	editorSuggestWidgetForeground,
 	editorSuggestWidgetSelectedBackground
-} from '../../../../editor/contrib/suggest/browser/suggestWidget.js';
-import { getListStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { activeContrastBorder, focusBorder } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/editor/contrib/suggest/browser/suggestWidget.js';
+import { getListStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { activeContrastBorder, focusBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 
 const $ = dom.$;
 

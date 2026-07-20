@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { initialize } from '../base/common/worker/webWorkerBootstrap.js';
+import { initialize } from '@sidex/base/common/worker/webWorkerBootstrap.js';
 import { EditorWorker, IWorkerContext } from './common/services/editorWebWorker.js';
 import { EditorWorkerHost } from './common/services/editorWorkerHost.js';
 

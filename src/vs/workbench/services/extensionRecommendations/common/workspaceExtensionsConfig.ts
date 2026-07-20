@@ -3,31 +3,31 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { JSONPath, parse } from '../../../../base/common/json.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { FileKind, IFileService } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { JSONPath, parse } from '@sidex/base/common/json.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { FileKind, IFileService } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	isWorkspace,
 	IWorkspace,
 	IWorkspaceContextService,
 	IWorkspaceFolder
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IJSONEditingService, IJSONValue } from '../../configuration/common/jsonEditing.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 
 export const EXTENSIONS_CONFIG = '.vscode/extensions.json';
 

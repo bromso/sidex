@@ -9,21 +9,21 @@ import {
 	EventType,
 	findParentWithClass,
 	getWindow
-} from '../../../../base/browser/dom.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/browser/dom.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ViewPane, ViewPaneShowActions } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
 import { Memento } from '../../../common/memento.js';
@@ -39,7 +39,7 @@ import { WebviewWindowDragMonitor } from '../../webview/browser/webviewWindowDra
 import { IWebviewViewService, WebviewView } from './webviewViewService.js';
 import { IActivityService, NumberBadge } from '../../../services/activity/common/activity.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 const storageKeys = {
 	webviewState: 'webviewState'

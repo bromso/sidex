@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as vscode from 'vscode';
-import { UriComponents, URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ExtHostTimelineShape, MainThreadTimelineShape, IMainContext, MainContext } from './extHost.protocol.js';
 import { Timeline, TimelineItem, TimelineOptions, TimelineProvider } from '../../contrib/timeline/common/timeline.js';
-import { IDisposable, toDisposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { IDisposable, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { CommandsConverter, ExtHostCommands } from './extHostCommands.js';
 import { ThemeIcon, MarkdownString as MarkdownStringType } from './extHostTypes.js';
 import { MarkdownString } from './extHostTypeConverters.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
-import { isString } from '../../../base/common/types.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { isString } from '@sidex/base/common/types.js';
 import { isProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 export interface IExtHostTimeline extends ExtHostTimelineShape {

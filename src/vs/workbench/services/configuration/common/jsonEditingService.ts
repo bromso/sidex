@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as json from '../../../../base/common/json.js';
-import { setProperty } from '../../../../base/common/jsonEdit.js';
-import { Queue } from '../../../../base/common/async.js';
-import { Edit } from '../../../../base/common/jsonFormatter.js';
-import { IDisposable, IReference } from '../../../../base/common/lifecycle.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as json from '@sidex/base/common/json.js';
+import { setProperty } from '@sidex/base/common/jsonEdit.js';
+import { Queue } from '@sidex/base/common/async.js';
+import { Edit } from '@sidex/base/common/jsonFormatter.js';
+import { IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { ITextModelService, IResolvedTextEditorModel } from '../../../../editor/common/services/resolverService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ITextModelService, IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { IJSONEditingService, IJSONValue, JSONEditingError, JSONEditingErrorCode } from './jsonEditing.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 
 export class JSONEditingService implements IJSONEditingService {

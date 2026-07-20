@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { ActionBar, ActionsOrientation, IActionBarOptions } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Action } from '../../../../base/common/actions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Color } from '../../../../base/common/color.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import * as objects from '../../../../base/common/objects.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ActionBar, ActionsOrientation, IActionBarOptions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as objects from '@sidex/base/common/objects.js';
 import './media/peekViewWidget.css';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorContributionInstantiation, registerEditorContribution } from '../../../browser/editorExtensions.js';
@@ -21,17 +21,17 @@ import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { IOptions, IStyles, ZoneWidget } from '../../zoneWidget/browser/zoneWidget.js';
 import * as nls from '@sidex/base/nls.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	activeContrastBorder,
 	contrastBorder,
 	editorForeground,
 	editorInfoForeground,
 	registerColor
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { observableCodeEditor } from '../../../browser/observableCodeEditor.js';
 
 export const IPeekViewService = createDecorator<IPeekViewService>('IPeekViewService');

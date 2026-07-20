@@ -9,34 +9,34 @@ import {
 	IStatusbarService,
 	IStatusbarEntryAccessor
 } from '../../../services/statusbar/browser/statusbar.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	parseKeyboardLayoutDescription,
 	areKeyboardLayoutsEqual,
 	getKeyboardLayoutId,
 	IKeyboardLayoutService,
 	IKeyboardLayoutInfo
-} from '../../../../platform/keyboardLayout/common/keyboardLayout.js';
+} from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
 import {
 	IWorkbenchContribution,
 	WorkbenchPhase,
 	registerWorkbenchContribution2
 } from '../../../common/contributions.js';
 import { KEYBOARD_LAYOUT_OPEN_PICKER } from '../common/preferences.js';
-import { isMacintosh, isWindows } from '../../../../base/common/platform.js';
+import { isMacintosh, isWindows } from '@sidex/base/common/platform.js';
 import {
 	QuickPickInput,
 	IQuickInputService,
 	IQuickPickItem
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 import { IEditorPane } from '../../../common/editor.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export class KeyboardLayoutPickerContribution extends Disposable implements IWorkbenchContribution {
 	static readonly ID = 'workbench.contrib.keyboardLayoutPicker';

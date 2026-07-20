@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ICodeEditor } from '../../../../../editor/browser/editorBrowser.js';
-import { Position } from '../../../../../editor/common/core/position.js';
-import { EditorContextKeys } from '../../../../../editor/common/editorContextKeys.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { SnippetController2 } from '../../../../../editor/contrib/snippet/browser/snippetController2.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { SnippetEditorAction } from './abstractSnippetsActions.js';
 import { pickSnippet } from '../snippetPicker.js';
 import { Snippet } from '../snippetsFile.js';

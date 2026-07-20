@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	IModelDecorationOptions,
@@ -19,10 +19,10 @@ import {
 	iconForeground,
 	registerColor,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 const foldBackground = registerColor(
 	'editor.foldBackground',

@@ -3,57 +3,57 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { AriaRole } from '../../../../base/browser/ui/aria/aria.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IconLabel } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
-import { InputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { Checkbox, TriStateCheckbox } from '../../../../base/browser/ui/toggle/toggle.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { Orientation } from '../../../../base/browser/ui/splitview/splitview.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { AriaRole } from '@sidex/base/browser/ui/aria/aria.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { InputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { Checkbox, TriStateCheckbox } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
 import {
 	ICompressedTreeElement,
 	ICompressedTreeNode
-} from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
-import { ITreeContextMenuEvent, ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
-import { Action } from '../../../../base/common/actions.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import * as resources from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ITreeContextMenuEvent, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	getActionBarActions,
 	getContextMenuActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchCompressibleObjectTree } from '../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { defaultCheckboxStyles, defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchCompressibleObjectTree } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { defaultCheckboxStyles, defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
 import { IEditorPane } from '../../../common/editor.js';
@@ -101,8 +101,8 @@ import {
 import { DisassemblyViewInput } from '../common/disassemblyViewInput.js';
 import * as icons from './debugIcons.js';
 import { DisassemblyView } from './disassemblyView.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { hasKey } from '../../../../base/common/types.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 const $ = dom.$;
 

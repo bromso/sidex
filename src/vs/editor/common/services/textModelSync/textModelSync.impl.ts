@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IntervalTimer } from '../../../../base/common/async.js';
-import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IWebWorkerClient, IWebWorkerServer } from '../../../../base/common/worker/webWorker.js';
+import { IntervalTimer } from '@sidex/base/common/async.js';
+import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IWebWorkerClient, IWebWorkerServer } from '@sidex/base/common/worker/webWorker.js';
 import { IPosition, Position } from '../../core/position.js';
 import { IRange, Range } from '../../core/range.js';
 import { ensureValidWordDefinition, getWordAtText, IWordAtPosition } from '../../core/wordHelper.js';

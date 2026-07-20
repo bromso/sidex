@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { debounce } from '../../../../base/common/decorators.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, MandatoryMutableDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, MandatoryMutableDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { ILogService } from '../../../log/common/log.js';
-import { isString } from '../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 import {
 	CommandInvalidationReason,
 	ICommandDetectionCapability,

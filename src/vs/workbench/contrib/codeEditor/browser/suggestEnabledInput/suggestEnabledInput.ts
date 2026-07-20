@@ -3,8 +3,8 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { Widget } from '../../../../../base/browser/ui/widget.js';
-import { Event, Emitter } from '../../../../../base/common/event.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 
 export interface ISuggestResultsProvider {
 	provideResults(value: string): string[];

@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as glob from '../../../../base/common/glob.js';
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { posix } from '../../../../base/common/path.js';
-import { basename } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { posix } from '@sidex/base/common/path.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
 import {
 	Extensions as ConfigurationExtensions,
 	IConfigurationNode,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IResourceEditorInput, ITextResourceEditorInput } from '../../../../platform/editor/common/editor.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IResourceEditorInput, ITextResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	EditorInputWithOptions,
 	EditorInputWithOptionsAndGroup,
@@ -31,7 +31,7 @@ import {
 } from '../../../common/editor.js';
 import { IEditorGroup } from './editorGroupsService.js';
 import { PreferredGroup } from './editorService.js';
-import { AtLeastOne } from '../../../../base/common/types.js';
+import { AtLeastOne } from '@sidex/base/common/types.js';
 
 export const IEditorResolverService = createDecorator<IEditorResolverService>('editorResolverService');
 

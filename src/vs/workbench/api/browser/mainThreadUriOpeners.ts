@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action } from '../../../base/common/actions.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { URI } from '../../../base/common/uri.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { INotificationService, Severity } from '../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../platform/opener/common/opener.js';
-import { IStorageService } from '../../../platform/storage/common/storage.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import {
 	ExtHostContext,
 	ExtHostUriOpenersShape,

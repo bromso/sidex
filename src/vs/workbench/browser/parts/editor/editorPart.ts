@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { Part } from '../../part.js';
 import {
 	Dimension,
@@ -14,9 +14,9 @@ import {
 	isAncestorOfActiveElement,
 	getActiveElement,
 	isHTMLElement
-} from '../../../../base/browser/dom.js';
-import { Event, Emitter, Relay, PauseableEmitter } from '../../../../base/common/event.js';
-import { contrastBorder, editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/base/browser/dom.js';
+import { Event, Emitter, Relay, PauseableEmitter } from '@sidex/base/common/event.js';
+import { contrastBorder, editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	GroupDirection,
 	GroupsArrangement,
@@ -34,7 +34,7 @@ import {
 	GroupActivationReason,
 	IEditorGroupActivationEvent
 } from '../../../services/editor/common/editorGroupsService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IView,
 	orthogonal,
@@ -51,7 +51,7 @@ import {
 	GridNode,
 	createSerializedGrid,
 	Grid
-} from '../../../../base/browser/ui/grid/grid.js';
+} from '@sidex/base/browser/ui/grid/grid.js';
 import {
 	GroupIdentifier,
 	EditorInputWithOptions,
@@ -60,7 +60,7 @@ import {
 	GroupModelChangeKind
 } from '../../../common/editor.js';
 import { EDITOR_GROUP_BORDER, EDITOR_PANE_BACKGROUND } from '../../../common/theme.js';
-import { distinct, coalesce } from '../../../../base/common/arrays.js';
+import { distinct, coalesce } from '@sidex/base/common/arrays.js';
 import {
 	IEditorGroupView,
 	getEditorPartOptions,
@@ -74,35 +74,35 @@ import { EditorGroupView } from './editorGroupView.js';
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../platform/configuration/common/configuration.js';
-import { IDisposable, dispose, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IDisposable, dispose, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	IStorageService,
 	IStorageValueChangeEvent,
 	StorageScope,
 	StorageTarget
-} from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/storage/common/storage.js';
 import { ISerializedEditorGroupModel, isSerializedEditorGroupModel } from '../../../common/editor/editorGroupModel.js';
 import { EditorDropTarget } from './editorDropTarget.js';
-import { Color } from '../../../../base/common/color.js';
-import { CenteredViewLayout, CenteredViewState } from '../../../../base/browser/ui/centered/centeredViewLayout.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { Color } from '@sidex/base/common/color.js';
+import { CenteredViewLayout, CenteredViewState } from '@sidex/base/browser/ui/centered/centeredViewLayout.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { Parts, IWorkbenchLayoutService, Position } from '../../../services/layout/browser/layoutService.js';
-import { DeepPartial, assertType } from '../../../../base/common/types.js';
+import { DeepPartial, assertType } from '@sidex/base/common/types.js';
 import { CompositeDragAndDropObserver } from '../../dnd.js';
-import { DeferredPromise, Promises } from '../../../../base/common/async.js';
+import { DeferredPromise, Promises } from '@sidex/base/common/async.js';
 import { findGroup } from '../../../services/editor/common/editorGroupFinder.js';
 import { SIDE_GROUP } from '../../../services/editor/common/editorService.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import {
 	EditorPartMaximizedEditorGroupContext,
 	EditorPartMultipleEditorGroupsContext,
 	EditorTabsVisibleContext
 } from '../../../common/contextkeys.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 export interface IEditorPartUIState {
 	readonly serializedGrid: ISerializedGrid;

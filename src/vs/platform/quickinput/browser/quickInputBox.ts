@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import { FindInput } from '../../../base/browser/ui/findinput/findInput.js';
-import { IInputBoxStyles, IRange, MessageType } from '../../../base/browser/ui/inputbox/inputBox.js';
-import { createToggleActionViewItemProvider, IToggleStyles, Toggle } from '../../../base/browser/ui/toggle/toggle.js';
-import { IAction } from '../../../base/common/actions.js';
-import { IActionViewItemProvider } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import Severity from '../../../base/common/severity.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FindInput } from '@sidex/base/browser/ui/findinput/findInput.js';
+import { IInputBoxStyles, IRange, MessageType } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { createToggleActionViewItemProvider, IToggleStyles, Toggle } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
 import './media/quickInput.css';
 
 const $ = dom.$;

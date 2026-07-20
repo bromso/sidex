@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import {
 	ICDPTarget,
 	CDPRequest,

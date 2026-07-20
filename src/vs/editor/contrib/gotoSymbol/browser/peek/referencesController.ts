@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise } from '../../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../../base/common/errors.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { CancelablePromise, createCancelablePromise } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { ICodeEditorService } from '../../../../browser/services/codeEditorService.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
@@ -17,32 +17,32 @@ import { Location } from '../../../../common/languages.js';
 import { PeekContext } from '../../../peekView/browser/peekView.js';
 import { getOuterEditor } from '../../../../browser/widget/codeEditor/embeddedCodeEditorWidget.js';
 import * as nls from '@sidex/base/nls.js';
-import { CommandsRegistry } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../../platform/contextkey/common/contextkey.js';
-import { TextEditorSelectionSource } from '../../../../../platform/editor/common/editor.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	KeybindingsRegistry,
 	KeybindingWeight
-} from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	IListService,
 	WorkbenchListFocusContextKey,
 	WorkbenchTreeElementCanCollapse,
 	WorkbenchTreeElementCanExpand
-} from '../../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../../platform/notification/common/notification.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { OneReference, ReferencesModel } from '../referencesModel.js';
 import { LayoutData, ReferenceWidget } from './referencesWidget.js';
 import { EditorContextKeys } from '../../../../common/editorContextKeys.js';
-import { InputFocusedContext } from '../../../../../platform/contextkey/common/contextkeys.js';
+import { InputFocusedContext } from '@sidex/platform/contextkey/common/contextkeys.js';
 
 export const ctxReferenceSearchVisible = new RawContextKey<boolean>(
 	'referenceSearchVisible',

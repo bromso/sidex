@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equalsIfDefinedC, arrayEqualsC } from '../../base/common/equals.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../base/common/lifecycle.js';
+import { equalsIfDefinedC, arrayEqualsC } from '@sidex/base/common/equals.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	DebugLocation,
 	IObservable,
@@ -23,7 +23,7 @@ import {
 	observableSignalFromEvent,
 	observableValue,
 	observableValueOpts
-} from '../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { EditorOption, FindComputedEditorOptionValueById } from '../common/config/editorOptions.js';
 import { LineRange } from '../common/core/ranges/lineRange.js';
 import { OffsetRange } from '../common/core/ranges/offsetRange.js';

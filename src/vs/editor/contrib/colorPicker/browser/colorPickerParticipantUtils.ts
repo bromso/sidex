@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Color, RGBA } from '../../../../base/common/color.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
 import { IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { ISingleEditOperation } from '../../../common/core/editOperation.js';
 import { DocumentColorProvider, IColorInformation } from '../../../common/languages.js';

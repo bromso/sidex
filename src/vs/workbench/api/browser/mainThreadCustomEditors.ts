@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { multibyteAwareBtoa } from '../../../base/common/strings.js';
-import { CancelablePromise, createCancelablePromise } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { isCancellationError, onUnexpectedError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableMap, DisposableStore, IReference } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { basename } from '../../../base/common/path.js';
-import { isEqual, isEqualOrParent, toLocalResource } from '../../../base/common/resources.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
+import { multibyteAwareBtoa } from '@sidex/base/common/strings.js';
+import { CancelablePromise, createCancelablePromise } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { isCancellationError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableMap, DisposableStore, IReference } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basename } from '@sidex/base/common/path.js';
+import { isEqual, isEqualOrParent, toLocalResource } from '@sidex/base/common/resources.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { localize } from '@sidex/base/nls.js';
-import { IFileDialogService } from '../../../platform/dialogs/common/dialogs.js';
-import { FileOperation, IFileService } from '../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { IStorageService } from '../../../platform/storage/common/storage.js';
-import { IUndoRedoService, UndoRedoElementType } from '../../../platform/undoRedo/common/undoRedo.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { FileOperation, IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IUndoRedoService, UndoRedoElementType } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { MainThreadWebviewPanels } from './mainThreadWebviewPanels.js';
 import { MainThreadWebviews, reviveWebviewExtension } from './mainThreadWebviews.js';
 import * as extHostProtocol from '../common/extHost.protocol.js';
@@ -56,7 +56,7 @@ import {
 	WorkingCopyFileEvent
 } from '../../services/workingCopy/common/workingCopyFileService.js';
 import { IWorkingCopyService } from '../../services/workingCopy/common/workingCopyService.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 
 const enum CustomEditorModelType {
 	Custom,

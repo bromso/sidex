@@ -2,7 +2,7 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { escapeRegExpCharacters } from '../../../../../base/common/strings.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 import { ResolvedLanguageConfiguration } from '../../../languages/languageConfigurationRegistry.js';
 import { BracketKind } from '../../../languages/supports/languageBracketsConfiguration.js';
 import { BracketAstNode } from './ast.js';

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	DebugLocation,
 	derivedOpts,
@@ -11,7 +11,7 @@ import {
 	IReader,
 	observableFromEvent,
 	observableFromEventOpts
-} from '../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { ContextKeyValue, IContextKeyService, RawContextKey } from '../../contextkey/common/contextkey.js';
 

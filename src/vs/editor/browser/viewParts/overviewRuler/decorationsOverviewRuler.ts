@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { Color } from '../../../../base/common/color.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ViewPart } from '../../view/viewPart.js';
 import { Position } from '../../../common/core/position.js';
 import { IEditorConfiguration } from '../../../common/config/editorConfiguration.js';
@@ -23,7 +23,7 @@ import { EditorTheme } from '../../../common/editorTheme.js';
 import * as viewEvents from '../../../common/viewEvents.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { OverviewRulerDecorationsGroup } from '../../../common/viewModel.js';
-import { equals } from '../../../../base/common/arrays.js';
+import { equals } from '@sidex/base/common/arrays.js';
 
 class Settings {
 	public readonly lineHeight: number;

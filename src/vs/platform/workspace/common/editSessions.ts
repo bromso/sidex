@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IWorkspaceFolder } from './workspace.js';
 

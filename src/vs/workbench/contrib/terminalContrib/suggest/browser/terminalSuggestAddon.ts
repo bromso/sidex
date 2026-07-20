@@ -4,22 +4,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { ITerminalAddon, Terminal } from '@xterm/xterm';
-import * as dom from '../../../../../base/browser/dom.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { combinedDisposable, Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { commonPrefixLength } from '../../../../../base/common/strings.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { combinedDisposable, Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { commonPrefixLength } from '@sidex/base/common/strings.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	TerminalCapability,
 	type ITerminalCapabilityStore
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import type {
 	IPromptInputModel,
 	IPromptInputModelState
-} from '../../../../../platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
+} from '@sidex/platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
 import type { IXtermCore } from '../../../terminal/browser/xterm-private.js';
 import { TerminalStorageKeys } from '../../../terminal/common/terminalStorageKeys.js';
 import {
@@ -41,19 +41,19 @@ import {
 	WindowsShellType,
 	GeneralShellType,
 	ITerminalLogService
-} from '../../../../../platform/terminal/common/terminal.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../../base/common/cancellation.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	createCancelablePromise,
 	CancelablePromise,
 	IntervalTimer,
 	TimeoutTimer
-} from '../../../../../base/common/async.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
+} from '@sidex/base/common/async.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { ISimpleSuggestWidgetFontInfo } from '../../../../services/suggest/browser/simpleSuggestWidgetRenderer.js';
 import { ITerminalConfigurationService } from '../../../terminal/browser/terminal.js';
-import { GOLDEN_LINE_HEIGHT_RATIO } from '../../../../../editor/common/config/fontInfo.js';
+import { GOLDEN_LINE_HEIGHT_RATIO } from '@sidex/editor/common/config/fontInfo.js';
 import { TerminalCompletionModel } from './terminalCompletionModel.js';
 import {
 	TerminalCompletionItem,
@@ -85,7 +85,7 @@ import {
 } from './terminalSymbolIcons.js';
 import { TerminalSuggestShownTracker } from './terminalSuggestShownTracker.js';
 import { SimpleSuggestDetailsPlacement } from '../../../../services/suggest/browser/simpleSuggestWidgetDetails.js';
-import { isString } from '../../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export interface ISuggestController {
 	isPasting: boolean;

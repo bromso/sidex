@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { GLOBSTAR, IRelativePattern, parse, ParsedPattern } from '../../../base/common/glob.js';
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { isAbsolute } from '../../../base/common/path.js';
-import { isLinux } from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { GLOBSTAR, IRelativePattern, parse, ParsedPattern } from '@sidex/base/common/glob.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isAbsolute } from '@sidex/base/common/path.js';
+import { isLinux } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { FileChangeFilter, FileChangeType, IFileChange, isParent } from './files.js';
 
 interface IWatchRequest {

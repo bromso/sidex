@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, n } from '../../../../../../../base/browser/dom.js';
-import { Emitter } from '../../../../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../../../../base/common/lifecycle.js';
-import { autorunDelta, constObservable, derived, IObservable } from '../../../../../../../base/common/observable.js';
-import { scrollbarShadow } from '../../../../../../../platform/theme/common/colorRegistry.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
+import { $, n } from '@sidex/base/browser/dom.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorunDelta, constObservable, derived, IObservable } from '@sidex/base/common/observable.js';
+import { scrollbarShadow } from '@sidex/platform/theme/common/colorRegistry.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IEditorMouseEvent, IViewZoneChangeAccessor } from '../../../../../../browser/editorBrowser.js';
 import { EditorMouseEvent } from '../../../../../../browser/editorDom.js';
 import { ObservableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';

@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action, IAction } from '../../../../../base/common/actions.js';
-import { disposableTimeout } from '../../../../../base/common/async.js';
-import { decodeBase64 } from '../../../../../base/common/buffer.js';
-import { Disposable, DisposableStore, type IDisposable } from '../../../../../base/common/lifecycle.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { decodeBase64 } from '@sidex/base/common/buffer.js';
+import { Disposable, DisposableStore, type IDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	NotificationPriority,
 	Severity,
 	type INotification,
 	type INotificationHandle
-} from '../../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/notification/common/notification.js';
 
 const enum Osc99PayloadType {
 	Title = 'title',

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILinkDescriptor } from '../../../../platform/opener/browser/link.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILinkDescriptor } from '@sidex/platform/opener/browser/link.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export interface IBannerItem {
 	readonly id: string;

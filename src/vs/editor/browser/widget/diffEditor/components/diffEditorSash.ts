@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IBoundarySashes, ISashEvent, Orientation, Sash, SashState } from '../../../../../base/browser/ui/sash/sash.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { IBoundarySashes, ISashEvent, Orientation, Sash, SashState } from '@sidex/base/browser/ui/sash/sash.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -12,7 +12,7 @@ import {
 	autorun,
 	derivedWithSetter,
 	observableValue
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { DiffEditorOptions } from '../diffEditorOptions.js';
 
 export class SashLayout {

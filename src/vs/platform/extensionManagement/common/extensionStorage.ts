@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { createDecorator } from '../../instantiation/common/instantiation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IProfileStorageValueChangeEvent,
 	IStorageService,
@@ -14,11 +14,11 @@ import {
 } from '../../storage/common/storage.js';
 import { adoptToGalleryExtensionId, areSameExtensions, getExtensionId } from './extensionManagementUtil.js';
 import { IProductService } from '../../product/common/productService.js';
-import { distinct } from '../../../base/common/arrays.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import { ILogService } from '../../log/common/log.js';
 import { IExtension } from '../../extensions/common/extensions.js';
-import { isString } from '../../../base/common/types.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
+import { isString } from '@sidex/base/common/types.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import { IExtensionManagementService, IGalleryExtension } from './extensionManagement.js';
 
 export interface IExtensionIdWithVersion {

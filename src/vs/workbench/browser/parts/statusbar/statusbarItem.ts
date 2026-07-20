@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { SimpleIconLabel } from '../../../../base/browser/ui/iconLabel/simpleIconLabel.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { SimpleIconLabel } from '@sidex/base/browser/ui/iconLabel/simpleIconLabel.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	IStatusbarEntry,
 	isTooltipWithCommands,
@@ -18,23 +18,23 @@ import {
 import {
 	WorkbenchActionExecutedEvent,
 	WorkbenchActionExecutedClassification
-} from '../../../../base/common/actions.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeColor } from '../../../../base/common/themables.js';
-import { isThemeColor } from '../../../../editor/common/editorCommon.js';
-import { addDisposableListener, EventType, hide, show, append, EventHelper, $ } from '../../../../base/browser/dom.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { Command } from '../../../../editor/common/languages.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { renderIcon, renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { spinningLoading, syncing } from '../../../../platform/theme/common/iconRegistry.js';
-import { isMarkdownString, markdownStringEqual } from '../../../../base/common/htmlContent.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { Gesture, EventType as TouchEventType } from '../../../../base/browser/touch.js';
-import { IManagedHover, IManagedHoverOptions } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+} from '@sidex/base/common/actions.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { isThemeColor } from '@sidex/editor/common/editorCommon.js';
+import { addDisposableListener, EventType, hide, show, append, EventHelper, $ } from '@sidex/base/browser/dom.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { Command } from '@sidex/editor/common/languages.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { renderIcon, renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { spinningLoading, syncing } from '@sidex/platform/theme/common/iconRegistry.js';
+import { isMarkdownString, markdownStringEqual } from '@sidex/base/common/htmlContent.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { Gesture, EventType as TouchEventType } from '@sidex/base/browser/touch.js';
+import { IManagedHover, IManagedHoverOptions } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 export class StatusbarEntryItem extends Disposable {
 	private readonly label: StatusBarCodiconLabel;

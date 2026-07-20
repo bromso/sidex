@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import { StandardWheelEvent, IMouseWheelEvent } from '../../../base/browser/mouseEvent.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import * as platform from '../../../base/common/platform.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardWheelEvent, IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { HitTestContext, MouseTarget, MouseTargetFactory, PointerHandlerLastRenderData } from './mouseTarget.js';
 import { IMouseTarget, IMouseTargetViewZoneData, MouseTargetType } from '../editorBrowser.js';
 import {
@@ -27,7 +27,7 @@ import * as viewEvents from '../../common/viewEvents.js';
 import { ViewEventHandler } from '../../common/viewEventHandler.js';
 import { EditorOption } from '../../common/config/editorOptions.js';
 import { NavigationCommandRevealType } from '../coreCommands.js';
-import { MouseWheelClassifier } from '../../../base/browser/ui/scrollbar/scrollableElement.js';
+import { MouseWheelClassifier } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
 import type { ViewLinesGpu } from '../viewParts/viewLinesGpu/viewLinesGpu.js';
 import { TopBottomDragScrolling, LeftRightDragScrolling } from './dragScrolling.js';
 import { TextDirection } from '../../common/model.js';

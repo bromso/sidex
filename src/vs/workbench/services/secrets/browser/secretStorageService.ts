@@ -8,12 +8,12 @@
  *  are protected by the OS.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { IEncryptionService } from '../../../../platform/encryption/common/encryptionService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { BaseSecretStorageService, ISecretStorageService } from '../../../../platform/secrets/common/secrets.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IEncryptionService } from '@sidex/platform/encryption/common/encryptionService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { BaseSecretStorageService, ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 
 interface TauriCore {
 	invoke<T = unknown>(cmd: string, args?: Record<string, unknown>): Promise<T>;

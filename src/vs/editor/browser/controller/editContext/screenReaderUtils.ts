@@ -8,8 +8,8 @@ import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { Selection, SelectionDirection } from '../../../common/core/selection.js';
 import { EditorOption, IComputedEditorOptions } from '../../../common/config/editorOptions.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { AccessibilitySupport } from '../../../../platform/accessibility/common/accessibility.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { AccessibilitySupport } from '@sidex/platform/accessibility/common/accessibility.js';
 import * as nls from '@sidex/base/nls.js';
 import { ISimpleModel } from '../../../common/viewModel/screenReaderSimpleModel.js';
 

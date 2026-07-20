@@ -5,9 +5,9 @@
 
 import { IUntypedEditorInput, IMatchEditorOptions, EditorsOrder, GroupIdentifier } from '../editor.js';
 import { EditorInput } from './editorInput.js';
-import { Emitter } from '../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { IGroupModelChangeEvent, IReadonlyEditorGroupModel } from './editorGroupModel.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 abstract class FilteredEditorGroupModel extends Disposable implements IReadonlyEditorGroupModel {
 	private readonly _onDidModelChange = this._register(new Emitter<IGroupModelChangeEvent>());

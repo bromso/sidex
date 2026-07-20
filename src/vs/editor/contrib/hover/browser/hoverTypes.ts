@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension } from '../../../../base/browser/dom.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { ScrollEvent } from '../../../../base/common/scrollable.js';
-import { BrandedService, IConstructorSignature } from '../../../../platform/instantiation/common/instantiation.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ScrollEvent } from '@sidex/base/common/scrollable.js';
+import { BrandedService, IConstructorSignature } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor, IEditorMouseEvent } from '../../../browser/editorBrowser.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';

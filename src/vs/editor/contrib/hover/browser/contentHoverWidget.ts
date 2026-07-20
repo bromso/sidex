@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import {
 	ContentWidgetPositionPreference,
 	ICodeEditor,
@@ -11,17 +11,17 @@ import {
 } from '../../../browser/editorBrowser.js';
 import { ConfigurationChangedEvent, EditorOption } from '../../../common/config/editorOptions.js';
 import { HoverStartSource } from './hoverOperation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { ResizableContentWidget } from './resizableContentWidget.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
-import { getHoverAccessibleViewHint, HoverWidget } from '../../../../base/browser/ui/hover/hoverWidget.js';
+import { getHoverAccessibleViewHint, HoverWidget } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import { PositionAffinity } from '../../../common/model.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { RenderedContentHover } from './contentHoverRendered.js';
-import { ScrollEvent } from '../../../../base/common/scrollable.js';
+import { ScrollEvent } from '@sidex/base/common/scrollable.js';
 
 const HORIZONTAL_SCROLLING_BY = 30;
 

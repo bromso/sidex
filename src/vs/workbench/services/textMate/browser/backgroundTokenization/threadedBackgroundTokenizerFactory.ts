@@ -4,34 +4,34 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { canASAR } from '@sidex/base/amdX.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	AppResourcePath,
 	FileAccess,
 	nodeModulesAsarPath,
 	nodeModulesPath
-} from '../../../../../base/common/network.js';
-import { IObservable } from '../../../../../base/common/observable.js';
-import { isWeb } from '../../../../../base/common/platform.js';
-import { URI, UriComponents } from '../../../../../base/common/uri.js';
-import { IBackgroundTokenizationStore, IBackgroundTokenizer } from '../../../../../editor/common/languages.js';
-import { ILanguageService } from '../../../../../editor/common/languages/language.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IEnvironmentService } from '../../../../../platform/environment/common/environment.js';
-import { IExtensionResourceLoaderService } from '../../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { INotificationService } from '../../../../../platform/notification/common/notification.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/base/common/network.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IBackgroundTokenizationStore, IBackgroundTokenizer } from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { ICreateData, StateDeltas, TextMateTokenizationWorker } from './worker/textMateTokenizationWorker.worker.js';
 import { TextMateWorkerHost } from './worker/textMateWorkerHost.js';
 import { TextMateWorkerTokenizerController } from './textMateWorkerTokenizerController.js';
 import { IValidGrammarDefinition } from '../../common/TMScopeRegistry.js';
 import type { IRawTheme } from 'vscode-textmate';
-import { WebWorkerDescriptor } from '../../../../../platform/webWorker/browser/webWorkerDescriptor.js';
-import { IWebWorkerService } from '../../../../../platform/webWorker/browser/webWorkerService.js';
-import { IWebWorkerClient, Proxied } from '../../../../../base/common/worker/webWorker.js';
-import { ISerializedAnnotation } from '../../../../../editor/common/model/tokens/annotations.js';
-import { IFontTokenOption } from '../../../../../editor/common/textModelEvents.js';
+import { WebWorkerDescriptor } from '@sidex/platform/webWorker/browser/webWorkerDescriptor.js';
+import { IWebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerService.js';
+import { IWebWorkerClient, Proxied } from '@sidex/base/common/worker/webWorker.js';
+import { ISerializedAnnotation } from '@sidex/editor/common/model/tokens/annotations.js';
+import { IFontTokenOption } from '@sidex/editor/common/textModelEvents.js';
 
 export class ThreadedBackgroundTokenizerFactory implements IDisposable {
 	private static _reportedMismatchingTokens = false;

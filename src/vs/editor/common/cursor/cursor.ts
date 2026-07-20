@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import * as strings from '../../../base/common/strings.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { CursorCollection } from './cursorCollection.js';
 import {
 	CursorConfiguration,
@@ -38,7 +38,7 @@ import {
 	InternalModelContentChangeEvent
 } from '../textModelEvents.js';
 import { VerticalRevealType, ViewCursorStateChangedEvent, ViewRevealRangeRequestEvent } from '../viewEvents.js';
-import { dispose, Disposable } from '../../../base/common/lifecycle.js';
+import { dispose, Disposable } from '@sidex/base/common/lifecycle.js';
 import { CursorStateChangedEvent, ViewModelEventsCollector } from '../viewModelEventDispatcher.js';
 import { TextModelEditSource, EditSources } from '../textModelEditSource.js';
 import { ICoordinatesConverter } from '../coordinatesConverter.js';

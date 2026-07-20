@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { env } from '../../../base/common/process.js';
-import { IProductConfiguration } from '../../../base/common/product.js';
-import { ISandboxConfiguration } from '../../../base/parts/sandbox/common/sandboxTypes.js';
+import { env } from '@sidex/base/common/process.js';
+import { IProductConfiguration } from '@sidex/base/common/product.js';
+import { ISandboxConfiguration } from '@sidex/base/parts/sandbox/common/sandboxTypes.js';
 
 /**
  * @deprecated It is preferred that you use `IProductService` if you can. This

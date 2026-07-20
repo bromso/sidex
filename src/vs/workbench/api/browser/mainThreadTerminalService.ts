@@ -10,7 +10,7 @@ import {
 	MutableDisposable,
 	combinedDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	ExtHostContext,
 	ExtHostTerminalServiceShape,
@@ -23,9 +23,9 @@ import {
 	ITerminalCommandDto
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { URI } from '../../../base/common/uri.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	IProcessProperty,
 	IProcessReadyWindowsPty,
@@ -37,8 +37,8 @@ import {
 	TerminalExitReason,
 	TerminalLocation,
 	type IProcessPropertyMap
-} from '../../../platform/terminal/common/terminal.js';
-import { TerminalDataBufferer } from '../../../platform/terminal/common/terminalDataBuffering.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { TerminalDataBufferer } from '@sidex/platform/terminal/common/terminalDataBuffering.js';
 import {
 	ITerminalEditorService,
 	ITerminalExternalLinkProvider,
@@ -52,7 +52,7 @@ import {
 	deserializeEnvironmentDescriptionMap,
 	deserializeEnvironmentVariableCollection,
 	serializeEnvironmentVariableCollection
-} from '../../../platform/terminal/common/environmentVariableShared.js';
+} from '@sidex/platform/terminal/common/environmentVariableShared.js';
 import {
 	IStartExtensionTerminalRequest,
 	ITerminalProcessExtHostProxy,
@@ -60,23 +60,23 @@ import {
 	ITerminalProfileService
 } from '../../contrib/terminal/common/terminal.js';
 import { IRemoteAgentService } from '../../services/remote/common/remoteAgentService.js';
-import { OperatingSystem, OS } from '../../../base/common/platform.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
 import { TerminalEditorLocationOptions } from 'vscode';
-import { Promises } from '../../../base/common/async.js';
+import { Promises } from '@sidex/base/common/async.js';
 import {
 	ISerializableEnvironmentDescriptionMap,
 	ISerializableEnvironmentVariableCollection
-} from '../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
 import { ITerminalLinkProviderService } from '../../contrib/terminalContrib/links/browser/links.js';
 import {
 	ITerminalQuickFixService,
 	ITerminalQuickFix,
 	TerminalQuickFixType
 } from '../../contrib/terminalContrib/quickFix/browser/quickFix.js';
-import { TerminalCapability } from '../../../platform/terminal/common/capabilities/capabilities.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { ITerminalCompletionService } from '../../contrib/terminalContrib/suggest/browser/terminalCompletionService.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
-import { hasKey } from '../../../base/common/types.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 @extHostNamedCustomer(MainContext.MainThreadTerminalService)
 export class MainThreadTerminalService extends Disposable implements MainThreadTerminalServiceShape {

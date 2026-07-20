@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriComponents } from '../../../../../../base/common/uri.js';
-import { LanguageId } from '../../../../../../editor/common/encodedTokenAttributes.js';
-import { IModelChangedEvent } from '../../../../../../editor/common/model/mirrorTextModel.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { LanguageId } from '@sidex/editor/common/encodedTokenAttributes.js';
+import { IModelChangedEvent } from '@sidex/editor/common/model/mirrorTextModel.js';
 import { ICreateGrammarResult, TMGrammarFactory } from '../../../common/TMGrammarFactory.js';
 import {
 	IValidEmbeddedLanguagesMap,
@@ -15,10 +15,10 @@ import {
 import type { IOnigLib, IRawTheme, StackDiff } from 'vscode-textmate';
 import { TextMateWorkerTokenizer } from './textMateWorkerTokenizer.js';
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import { IWebWorkerServerRequestHandler, IWebWorkerServer } from '../../../../../../base/common/worker/webWorker.js';
+import { IWebWorkerServerRequestHandler, IWebWorkerServer } from '@sidex/base/common/worker/webWorker.js';
 import { TextMateWorkerHost } from './textMateWorkerHost.js';
-import { ISerializedAnnotation } from '../../../../../../editor/common/model/tokens/annotations.js';
-import { IFontTokenOption } from '../../../../../../editor/common/textModelEvents.js';
+import { ISerializedAnnotation } from '@sidex/editor/common/model/tokens/annotations.js';
+import { IFontTokenOption } from '@sidex/editor/common/textModelEvents.js';
 
 export function create(workerServer: IWebWorkerServer): TextMateTokenizationWorker {
 	return new TextMateTokenizationWorker(workerServer);

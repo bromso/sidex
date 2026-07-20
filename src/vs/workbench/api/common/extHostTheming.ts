@@ -6,7 +6,7 @@
 import { ColorTheme, ColorThemeKind } from './extHostTypes.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { ExtHostThemingShape } from './extHost.protocol.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 
 export class ExtHostTheming implements ExtHostThemingShape {
 	readonly _serviceBrand: undefined;

@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as domStylesheets from '../../../../base/browser/domStylesheets.js';
-import * as cssValue from '../../../../base/browser/cssValue.js';
-import { DeferredPromise, timeout, type MaybePromise } from '../../../../base/common/async.js';
-import { debounce, memoize } from '../../../../base/common/decorators.js';
+import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
+import * as cssValue from '@sidex/base/browser/cssValue.js';
+import { DeferredPromise, timeout, type MaybePromise } from '@sidex/base/common/async.js';
+import { debounce, memoize } from '@sidex/base/common/decorators.js';
 import {
 	DynamicListEventMultiplexer,
 	Emitter,
 	Event,
 	IDynamicListEventMultiplexer
-} from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { isMacintosh, isWeb } from '../../../../base/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IKeyMods } from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isMacintosh, isWeb } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IKeyMods } from '@sidex/platform/quickinput/common/quickInput.js';
 import * as nls from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	ICreateContributedTerminalProfileOptions,
 	IExtensionTerminalProfile,
@@ -40,14 +40,14 @@ import {
 	TerminalExitReason,
 	TerminalLocation,
 	TitleEventSource
-} from '../../../../platform/terminal/common/terminal.js';
-import { formatMessageForTerminal } from '../../../../platform/terminal/common/terminalStrings.js';
-import { iconForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { getIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
-import { isDark } from '../../../../platform/theme/common/theme.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { formatMessageForTerminal } from '@sidex/platform/terminal/common/terminalStrings.js';
+import { iconForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { getIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { VirtualWorkspaceContext } from '../../../common/contextkeys.js';
 import {
 	ICreateTerminalOptions,
@@ -101,20 +101,20 @@ import {
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
 import { XtermTerminal } from './xterm/xtermTerminal.js';
 import { TerminalInstance } from './terminalInstance.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { TerminalCapabilityStore } from '../../../../platform/terminal/common/capabilities/terminalCapabilityStore.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { TerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/terminalCapabilityStore.js';
 import { ITimerService } from '../../../services/timer/browser/timerService.js';
-import { mark } from '../../../../base/common/performance.js';
+import { mark } from '@sidex/base/common/performance.js';
 import { DetachedTerminal } from './detachedTerminal.js';
 import {
 	ITerminalCapabilityImplMap,
 	TerminalCapability
-} from '../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { createInstanceCapabilityEventMultiplexer } from './terminalEvents.js';
-import { isAuxiliaryWindow, mainWindow } from '../../../../base/browser/window.js';
+import { isAuxiliaryWindow, mainWindow } from '@sidex/base/browser/window.js';
 import { GroupIdentifier } from '../../../common/editor.js';
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { hasKey, isString } from '../../../../base/common/types.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { hasKey, isString } from '@sidex/base/common/types.js';
 
 interface IBackgroundTerminal {
 	instance: ITerminalInstance;

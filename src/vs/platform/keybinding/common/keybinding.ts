@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
-import { ResolvedKeybinding, Keybinding } from '../../../base/common/keybindings.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ResolvedKeybinding, Keybinding } from '@sidex/base/common/keybindings.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IContextKeyService, IContextKeyServiceTarget } from '../../contextkey/common/contextkey.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { ResolutionResult } from './keybindingResolver.js';

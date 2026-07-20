@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../../base/common/network.js';
-import { OperatingSystem } from '../../../../../base/common/platform.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { ITextEditorSelection } from '../../../../../platform/editor/common/editor.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { IQuickInputService } from '../../../../../platform/quickinput/common/quickInput.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ITextEditorSelection } from '@sidex/platform/editor/common/editor.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { ITerminalLinkOpener, ITerminalSimpleLink, TerminalBuiltinLinkType } from './links.js';
 import { osPathModule, updateLinkWithRelativeCwd } from './terminalLinkHelpers.js';
 import { getTerminalLinkType } from './terminalLocalLinkDetector.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	ITerminalCapabilityStore,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
 import { IWorkbenchEnvironmentService } from '../../../../services/environment/common/environmentService.js';
 import { IHostService } from '../../../../services/host/browser/host.js';
 import { QueryBuilder } from '../../../../services/search/common/queryBuilder.js';
 import { ISearchService } from '../../../../services/search/common/search.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { detectLinks, getLinkSuffix } from './terminalLinkParsing.js';
-import { ITerminalLogService } from '../../../../../platform/terminal/common/terminal.js';
+import { ITerminalLogService } from '@sidex/platform/terminal/common/terminal.js';
 
 export class TerminalLocalFileLinkOpener implements ITerminalLinkOpener {
 	constructor(@IEditorService private readonly _editorService: IEditorService) {}

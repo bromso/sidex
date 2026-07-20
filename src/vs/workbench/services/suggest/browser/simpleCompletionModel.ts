@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { SimpleCompletionItem } from './simpleCompletionItem.js';
-import { quickSelect } from '../../../../base/common/arrays.js';
-import { CharCode } from '../../../../base/common/charCode.js';
+import { quickSelect } from '@sidex/base/common/arrays.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
 import {
 	FuzzyScore,
 	fuzzyScore,
 	fuzzyScoreGracefulAggressive,
 	FuzzyScoreOptions,
 	FuzzyScorer
-} from '../../../../base/common/filters.js';
+} from '@sidex/base/common/filters.js';
 
 export interface ISimpleCompletionStats {
 	pLabelLen: number;

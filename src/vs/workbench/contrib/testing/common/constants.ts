@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { stripIcons } from '../../../../base/common/iconLabels.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
 import { localize } from '@sidex/base/nls.js';
 import { TestResultState, TestRunProfileBitset } from './testTypes.js';
 

@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	IContextKeyService,
 	IScopedContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
@@ -29,7 +29,7 @@ import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/com
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
-import { isHTMLElement } from '../../../../base/browser/dom.js';
+import { isHTMLElement } from '@sidex/base/browser/dom.js';
 
 /**
  * Tracks the id of the actively focused webview.

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { canceled } from '../../../base/common/errors.js';
-import { IDataTransformer, IErrorTransformer, WriteableStream } from '../../../base/common/stream.js';
-import { URI } from '../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { canceled } from '@sidex/base/common/errors.js';
+import { IDataTransformer, IErrorTransformer, WriteableStream } from '@sidex/base/common/stream.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	createFileSystemProviderError,

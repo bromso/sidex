@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IPath } from '../../../../platform/window/common/window.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IPath } from '@sidex/platform/window/common/window.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	IRemoteAuthorityResolverService,
 	ResolverResult
-} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
-import { getRemoteAuthority } from '../../../../platform/remote/common/remoteHosts.js';
-import { isVirtualResource } from '../../../../platform/workspace/common/virtualWorkspace.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { getRemoteAuthority } from '@sidex/platform/remote/common/remoteHosts.js';
+import { isVirtualResource } from '@sidex/platform/workspace/common/virtualWorkspace.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	ISingleFolderWorkspaceIdentifier,
 	isSavedWorkspace,
@@ -28,7 +28,7 @@ import {
 	IWorkspaceFolder,
 	toWorkspaceIdentifier,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import {
 	WorkspaceTrustRequestOptions,
 	IWorkspaceTrustManagementService,
@@ -39,15 +39,15 @@ import {
 	WorkspaceTrustUriResponse,
 	IWorkspaceTrustEnablementService,
 	ResourceTrustRequestOptions
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { Memento } from '../../../common/memento.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { isEqualAuthority } from '../../../../base/common/resources.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { promiseWithResolvers } from '../../../../base/common/async.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { isEqualAuthority } from '@sidex/base/common/resources.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { promiseWithResolvers } from '@sidex/base/common/async.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 
 export const WORKSPACE_TRUST_ENABLED = 'security.workspace.trust.enabled';
 export const WORKSPACE_TRUST_STARTUP_PROMPT = 'security.workspace.trust.startupPrompt';

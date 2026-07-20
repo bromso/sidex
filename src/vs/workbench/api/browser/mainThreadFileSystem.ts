@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IDisposable, toDisposable, DisposableStore, DisposableMap } from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IDisposable, toDisposable, DisposableStore, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	IFileWriteOptions,
 	FileSystemProviderCapabilities,
@@ -27,7 +27,7 @@ import {
 	toFileSystemProviderErrorCode,
 	IFileStatWithPartialMetadata,
 	IFileStat
-} from '../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,
@@ -36,8 +36,8 @@ import {
 	MainContext,
 	MainThreadFileSystemShape
 } from '../common/extHost.protocol.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 
 @extHostNamedCustomer(MainContext.MainThreadFileSystem)
 export class MainThreadFileSystem implements MainThreadFileSystemShape {

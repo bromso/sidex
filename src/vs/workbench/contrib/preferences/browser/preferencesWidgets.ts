@@ -3,49 +3,49 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar, ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { BaseActionViewItem, IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { HistoryInputBox, IHistoryInputOptions } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../../editor/browser/editorBrowser.js';
-import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IModelDeltaDecoration, TrackedRangeStickiness } from '../../../../editor/common/model.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar, ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { BaseActionViewItem, IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { HistoryInputBox, IHistoryInputOptions } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '@sidex/editor/browser/editorBrowser.js';
+import { IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelDeltaDecoration, TrackedRangeStickiness } from '@sidex/editor/common/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { ContextScopedHistoryInputBox } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ContextScopedHistoryInputBox } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { showHistoryKeybindingHint } from '@sidex/platform/history/browser/historyWidgetKeybindingHint.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	asCssVariable,
 	badgeBackground,
 	badgeForeground,
 	contrastBorder
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	isWorkspaceFolder,
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { settingsEditIcon, settingsScopeDropDownIcon } from './preferencesIcons.js';
 

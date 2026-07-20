@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { binarySearch2 } from '../../../../base/common/arrays.js';
+import { binarySearch2 } from '@sidex/base/common/arrays.js';
 import { StringEdit } from '../../core/edits/stringEdit.js';
 import { OffsetRange } from '../../core/ranges/offsetRange.js';
 

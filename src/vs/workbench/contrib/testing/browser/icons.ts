@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { localize } from '@sidex/base/nls.js';
-import { registerIcon, spinningLoading } from '../../../../platform/theme/common/iconRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { registerIcon, spinningLoading } from '@sidex/platform/theme/common/iconRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { testingColorRunAction, testStatesToIconColors, testStatesToRetiredIconColors } from './theme.js';
 import { TestResultState } from '../common/testTypes.js';
 

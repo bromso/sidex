@@ -4,25 +4,25 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ILocalizedString, localize, localize2 } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { LayoutSettings } from '../../../services/layout/browser/layoutService.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import { ACCOUNTS_ACTIVITY_ID, GLOBAL_ACTIVITY_ID } from '../../../common/activity.js';
-import { IAction } from '../../../../base/common/actions.js';
+import { IAction } from '@sidex/base/common/actions.js';
 import {
 	IsMainWindowFullscreenContext,
 	IsCompactTitleBarContext,
 	TitleBarStyleContext,
 	TitleBarVisibleContext
 } from '../../../common/contextkeys.js';
-import { CustomTitleBarVisibility, TitleBarSetting, TitlebarStyle } from '../../../../platform/window/common/window.js';
+import { CustomTitleBarVisibility, TitleBarSetting, TitlebarStyle } from '@sidex/platform/window/common/window.js';
 import { NotificationsPosition, NotificationsSettings } from '../../../common/notifications.js';
 
 // --- Context Menu Actions --- //

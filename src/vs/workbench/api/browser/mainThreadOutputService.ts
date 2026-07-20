@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Registry } from '../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions,
 	IOutputChannelRegistry,
@@ -19,12 +19,12 @@ import {
 	ExtHostContext
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { UriComponents, URI } from '../../../base/common/uri.js';
-import { Disposable, MutableDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { Event } from '../../../base/common/event.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
+import { Disposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IViewsService } from '../../services/views/common/viewsService.js';
-import { isNumber } from '../../../base/common/types.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IStatusbarEntry,
 	IStatusbarEntryAccessor,

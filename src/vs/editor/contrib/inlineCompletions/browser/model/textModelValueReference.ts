@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../../../base/common/errors.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { Position } from '../../../../common/core/position.js';
 import { Range } from '../../../../common/core/range.js';
 import { AbstractText } from '../../../../common/core/text/abstractText.js';

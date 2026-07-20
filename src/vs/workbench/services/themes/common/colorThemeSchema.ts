@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
 
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 
-import { workbenchColorsSchemaId } from '../../../../platform/theme/common/colorRegistry.js';
-import { tokenStylingSchemaId } from '../../../../platform/theme/common/tokenClassificationRegistry.js';
+import { workbenchColorsSchemaId } from '@sidex/platform/theme/common/colorRegistry.js';
+import { tokenStylingSchemaId } from '@sidex/platform/theme/common/tokenClassificationRegistry.js';
 
 const textMateScopes = [
 	'comment',

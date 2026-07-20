@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isMacintosh, OperatingSystem } from '../../../../../base/common/platform.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { ITextModelContentProvider, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
+import { isMacintosh, OperatingSystem } from '@sidex/base/common/platform.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelContentProvider, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IQuickInputButton,
 	IQuickInputButtonWithToggle,
@@ -16,13 +16,13 @@ import {
 	IQuickPickItem,
 	IQuickPickSeparator,
 	QuickInputButtonLocation
-} from '../../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { collapseTildePath } from '../../../../../platform/terminal/common/terminalEnvironment.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { collapseTildePath } from '@sidex/platform/terminal/common/terminalEnvironment.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ITerminalInstance } from '../../../terminal/browser/terminal.js';
 import {
 	commandHistoryFuzzySearchIcon,
@@ -32,22 +32,22 @@ import {
 } from '../../../terminal/browser/terminalIcons.js';
 import { TerminalStorageKeys } from '../../../terminal/common/terminalStorageKeys.js';
 import { terminalStrings } from '../../../terminal/common/terminalStrings.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { fromNow } from '../../../../../base/common/date.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { fromNow } from '@sidex/base/common/date.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { showWithPinnedItems } from '../../../../../platform/quickinput/browser/quickPickPin.js';
-import { IStorageService } from '../../../../../platform/storage/common/storage.js';
-import { IContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
+import { showWithPinnedItems } from '@sidex/platform/quickinput/browser/quickPickPin.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	AccessibleViewProviderId,
 	IAccessibleViewService
-} from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { Disposable, DisposableStore } from '../../../../../base/common/lifecycle.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { getCommandHistory, getDirectoryHistory, getShellFileHistory } from '../common/history.js';
-import { ResourceSet } from '../../../../../base/common/map.js';
-import { extUri, extUriIgnorePathCase } from '../../../../../base/common/resources.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
+import { extUri, extUriIgnorePathCase } from '@sidex/base/common/resources.js';
 import { IPathService } from '../../../../services/path/common/pathService.js';
-import { isObject } from '../../../../../base/common/types.js';
+import { isObject } from '@sidex/base/common/types.js';
 
 export async function showRunRecentQuickPick(
 	accessor: ServicesAccessor,

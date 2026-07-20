@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isValidBasename } from '../../../../../base/common/extpath.js';
-import { extname } from '../../../../../base/common/path.js';
-import { basename, joinPath } from '../../../../../base/common/resources.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ILanguageService } from '../../../../../editor/common/languages/language.js';
-import { getIconClassesForLanguageId } from '../../../../../editor/common/services/getIconClasses.js';
+import { isValidBasename } from '@sidex/base/common/extpath.js';
+import { extname } from '@sidex/base/common/path.js';
+import { basename, joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { getIconClassesForLanguageId } from '@sidex/editor/common/services/getIconClasses.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
-import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	QuickPickInput
-} from '../../../../../platform/quickinput/common/quickInput.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { SnippetsAction } from './abstractSnippetsActions.js';
 import { ISnippetsService } from '../snippets.js';
 import { SnippetSource } from '../snippetsFile.js';

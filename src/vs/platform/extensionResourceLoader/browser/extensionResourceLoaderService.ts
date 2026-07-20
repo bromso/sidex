@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { IFileService } from '../../files/common/files.js';
-import { FileAccess, Schemas } from '../../../base/common/network.js';
+import { FileAccess, Schemas } from '@sidex/base/common/network.js';
 import { IProductService } from '../../product/common/productService.js';
 import { IStorageService } from '../../storage/common/storage.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

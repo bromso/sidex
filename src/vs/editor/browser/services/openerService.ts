@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../base/common/linkedList.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { parse } from '../../../base/common/marshalling.js';
-import { matchesScheme, matchesSomeScheme, Schemas } from '../../../base/common/network.js';
-import { normalizePath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { parse } from '@sidex/base/common/marshalling.js';
+import { matchesScheme, matchesSomeScheme, Schemas } from '@sidex/base/common/network.js';
+import { normalizePath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditorService } from './codeEditorService.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
-import { EditorOpenSource } from '../../../platform/editor/common/editor.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { EditorOpenSource } from '@sidex/platform/editor/common/editor.js';
 import {
 	extractSelection,
 	IExternalOpener,
@@ -26,7 +26,7 @@ import {
 	IValidator,
 	OpenOptions,
 	ResolveExternalUriOptions
-} from '../../../platform/opener/common/opener.js';
+} from '@sidex/platform/opener/common/opener.js';
 
 class CommandOpener implements IOpener {
 	constructor(@ICommandService private readonly _commandService: ICommandService) {}

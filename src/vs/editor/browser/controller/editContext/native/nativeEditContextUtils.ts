@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, getActiveElement, getShadowRoot } from '../../../../../base/browser/dom.js';
-import { IDisposable, Disposable } from '../../../../../base/common/lifecycle.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
+import { addDisposableListener, getActiveElement, getShadowRoot } from '@sidex/base/browser/dom.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export interface ITypeData {
 	text: string;

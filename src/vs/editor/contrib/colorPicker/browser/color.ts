@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { illegalArgument, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { URI } from '../../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { illegalArgument, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IRange } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';
 import { DocumentColorProvider, IColorInformation, IColorPresentation } from '../../../common/languages.js';
@@ -13,7 +13,7 @@ import { IModelService } from '../../../common/services/model.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { DefaultDocumentColorProvider } from './defaultDocumentColorProvider.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ServicesAccessor } from '../../../browser/editorExtensions.js';
 
 export async function getColors(

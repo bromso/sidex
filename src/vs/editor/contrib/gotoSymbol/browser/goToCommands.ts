@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { createCancelablePromise, raceCancellation } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { assertType } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { createCancelablePromise, raceCancellation } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { CodeEditorStateFlag, EditorStateCancellationTokenSource } from '../../editorState/browser/editorState.js';
 import { IActiveCodeEditor, ICodeEditor, isCodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorAction2, ServicesAccessor } from '../../../browser/editorExtensions.js';
@@ -34,14 +34,14 @@ import {
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { TextEditorSelectionRevealType, TextEditorSelectionSource } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { TextEditorSelectionRevealType, TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
 import {
 	getDeclarationsAtPosition,
 	getDefinitionsAtPosition,
@@ -51,8 +51,8 @@ import {
 } from './goToSymbol.js';
 import { IWordAtPosition } from '../../../common/core/wordHelper.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IsWebContext } from '../../../../platform/contextkey/common/contextkeys.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IsWebContext } from '@sidex/platform/contextkey/common/contextkeys.js';
 
 MenuRegistry.appendMenuItem(MenuId.EditorContext, {
 	submenu: MenuId.EditorContextPeek,

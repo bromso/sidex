@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { binarySearch2, equals } from '../../../../base/common/arrays.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { compare } from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
+import { binarySearch2, equals } from '@sidex/base/common/arrays.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IMarker, IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { isEqual } from '../../../../base/common/resources.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IMarker, IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { isEqual } from '@sidex/base/common/resources.js';
 
 export class MarkerCoordinate {
 	constructor(

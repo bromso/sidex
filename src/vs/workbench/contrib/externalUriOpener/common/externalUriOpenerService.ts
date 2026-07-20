@@ -2,9 +2,9 @@
  *  SideX: Stub for removed external URI opener service.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export interface IExternalUriOpener {
 	canOpen(uri: URI, token: CancellationToken): Promise<unknown>;

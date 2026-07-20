@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isActiveElement, isKeyboardEvent } from '../../../base/browser/dom.js';
-import { IContextViewProvider } from '../../../base/browser/ui/contextview/contextview.js';
+import { isActiveElement, isKeyboardEvent } from '@sidex/base/browser/dom.js';
+import { IContextViewProvider } from '@sidex/base/browser/ui/contextview/contextview.js';
 import {
 	IListMouseEvent,
 	IListRenderer,
 	IListTouchEvent,
 	IListVirtualDelegate
-} from '../../../base/browser/ui/list/list.js';
-import { IPagedListOptions, IPagedRenderer, PagedList } from '../../../base/browser/ui/list/listPaging.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { IPagedListOptions, IPagedRenderer, PagedList } from '@sidex/base/browser/ui/list/listPaging.js';
 import {
 	IKeyboardNavigationEventFilter,
 	IListAccessibilityProvider,
@@ -23,16 +23,16 @@ import {
 	isSelectionSingleChangeEvent,
 	List,
 	TypeNavigationMode
-} from '../../../base/browser/ui/list/listWidget.js';
-import { ITableColumn, ITableRenderer, ITableVirtualDelegate } from '../../../base/browser/ui/table/table.js';
-import { ITableOptions, ITableOptionsUpdate, ITableStyles, Table } from '../../../base/browser/ui/table/tableWidget.js';
+} from '@sidex/base/browser/ui/list/listWidget.js';
+import { ITableColumn, ITableRenderer, ITableVirtualDelegate } from '@sidex/base/browser/ui/table/table.js';
+import { ITableOptions, ITableOptionsUpdate, ITableStyles, Table } from '@sidex/base/browser/ui/table/tableWidget.js';
 import {
 	IAbstractTreeOptions,
 	IAbstractTreeOptionsUpdate,
 	RenderIndentGuides,
 	TreeFindMatchType,
 	TreeFindMode
-} from '../../../base/browser/ui/tree/abstractTree.js';
+} from '@sidex/base/browser/ui/tree/abstractTree.js';
 import {
 	AsyncDataTree,
 	CompressibleAsyncDataTree,
@@ -42,8 +42,8 @@ import {
 	ICompressibleAsyncDataTreeOptions,
 	ICompressibleAsyncDataTreeOptionsUpdate,
 	ITreeCompressionDelegate
-} from '../../../base/browser/ui/tree/asyncDataTree.js';
-import { DataTree, IDataTreeOptions } from '../../../base/browser/ui/tree/dataTree.js';
+} from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { DataTree, IDataTreeOptions } from '@sidex/base/browser/ui/tree/dataTree.js';
 import {
 	CompressibleObjectTree,
 	ICompressibleObjectTreeOptions,
@@ -51,9 +51,9 @@ import {
 	ICompressibleTreeRenderer,
 	IObjectTreeOptions,
 	ObjectTree
-} from '../../../base/browser/ui/tree/objectTree.js';
-import { IAsyncDataSource, IDataSource, ITreeEvent, ITreeRenderer } from '../../../base/browser/ui/tree/tree.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+} from '@sidex/base/browser/ui/tree/objectTree.js';
+import { IAsyncDataSource, IDataSource, ITreeEvent, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	combinedDisposable,
 	Disposable,
@@ -61,7 +61,7 @@ import {
 	dispose,
 	IDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import {

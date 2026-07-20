@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMatch } from '../../../../base/common/filters.js';
+import { IMatch } from '@sidex/base/common/filters.js';
 import { IQuickTreeItem } from '../../common/quickInput.js';
-import { IObjectTreeElement, ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
+import { IObjectTreeElement, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
 
 export interface IQuickTreeFilterData {
 	readonly labelHighlights?: IMatch[];

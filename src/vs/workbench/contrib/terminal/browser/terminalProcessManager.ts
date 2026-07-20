@@ -3,30 +3,30 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	dispose,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IProcessEnvironment, isMacintosh, isWindows, OperatingSystem, OS } from '../../../../base/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IProcessEnvironment, isMacintosh, isWindows, OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { formatMessageForTerminal } from '../../../../platform/terminal/common/terminalStrings.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { getRemoteAuthority } from '../../../../platform/remote/common/remoteHosts.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { formatMessageForTerminal } from '@sidex/platform/terminal/common/terminalStrings.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { getRemoteAuthority } from '@sidex/platform/remote/common/remoteHosts.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	ISerializedCommandDetectionCapability,
 	TerminalCapability
-} from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { NaiveCwdDetectionCapability } from '../../../../platform/terminal/common/capabilities/naiveCwdDetectionCapability.js';
-import { TerminalCapabilityStore } from '../../../../platform/terminal/common/capabilities/terminalCapabilityStore.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { NaiveCwdDetectionCapability } from '@sidex/platform/terminal/common/capabilities/naiveCwdDetectionCapability.js';
+import { TerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/terminalCapabilityStore.js';
 import {
 	FlowControlConstants,
 	ITerminalLaunchResult,
@@ -45,14 +45,14 @@ import {
 	ITerminalProcessOptions,
 	ProcessPropertyType,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
-import { TerminalRecorder } from '../../../../platform/terminal/common/terminalRecorder.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { TerminalRecorder } from '@sidex/platform/terminal/common/terminalRecorder.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { EnvironmentVariableInfoChangesActive, EnvironmentVariableInfoStale } from './environmentVariableInfo.js';
 import { ITerminalConfigurationService, ITerminalInstanceService, ITerminalService } from './terminal.js';
 import { IEnvironmentVariableInfo, IEnvironmentVariableService } from '../common/environmentVariable.js';
-import { MergedEnvironmentVariableCollection } from '../../../../platform/terminal/common/environmentVariableCollection.js';
-import { serializeEnvironmentVariableCollections } from '../../../../platform/terminal/common/environmentVariableShared.js';
+import { MergedEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariableCollection.js';
+import { serializeEnvironmentVariableCollections } from '@sidex/platform/terminal/common/environmentVariableShared.js';
 import {
 	IBeforeProcessDataEvent,
 	ITerminalProcessManager,
@@ -66,21 +66,21 @@ import { IHistoryService } from '../../../services/history/common/history.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
 import { TaskSettingId } from '../../tasks/common/tasks.js';
-import Severity from '../../../../base/common/severity.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import Severity from '@sidex/base/common/severity.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	IEnvironmentVariableCollection,
 	IMergedEnvironmentVariableCollection
-} from '../../../../platform/terminal/common/environmentVariable.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { getActiveWindow, runWhenWindowIdle } from '../../../../base/browser/dom.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { shouldUseEnvironmentVariableCollection } from '../../../../platform/terminal/common/terminalEnvironment.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { getActiveWindow, runWhenWindowIdle } from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { shouldUseEnvironmentVariableCollection } from '@sidex/platform/terminal/common/terminalEnvironment.js';
 import { TerminalContribSettingId } from '../terminalContribExports.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import type { MaybePromise } from '../../../../base/common/async.js';
-import { isString } from '../../../../base/common/types.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import type { MaybePromise } from '@sidex/base/common/async.js';
+import { isString } from '@sidex/base/common/types.js';
 
 const enum ProcessConstants {
 	/**

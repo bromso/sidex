@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../base/common/network.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { isString } from '../../../base/common/types.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { isString } from '@sidex/base/common/types.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { CommandsRegistry, ICommandService } from '../../../platform/commands/common/commands.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	IExtensionGalleryService,
 	IExtensionManagementService
-} from '../../../platform/extensionManagement/common/extensionManagement.js';
-import { ExtensionManagementCLI } from '../../../platform/extensionManagement/common/extensionManagementCLI.js';
-import { getExtensionId } from '../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IExtensionManifest } from '../../../platform/extensions/common/extensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../platform/instantiation/common/serviceCollection.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { AbstractMessageLogger, ILogger, LogLevel } from '../../../platform/log/common/log.js';
-import { IOpenerService } from '../../../platform/opener/common/opener.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
-import { IOpenWindowOptions, IWindowOpenable } from '../../../platform/window/common/window.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { ExtensionManagementCLI } from '@sidex/platform/extensionManagement/common/extensionManagementCLI.js';
+import { getExtensionId } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { AbstractMessageLogger, ILogger, LogLevel } from '@sidex/platform/log/common/log.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IOpenWindowOptions, IWindowOpenable } from '@sidex/platform/window/common/window.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
 import { IExtensionManagementServerService } from '../../services/extensionManagement/common/extensionManagement.js';
 import { IExtensionManifestPropertiesService } from '../../services/extensions/common/extensionManifestPropertiesService.js';

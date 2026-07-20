@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { sum } from '../../../../../base/common/arrays.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { sum } from '@sidex/base/common/arrays.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ITextModel } from '../../../../common/model.js';
 import { IModelContentChangedEvent } from '../../../../common/textModelEvents.js';
 

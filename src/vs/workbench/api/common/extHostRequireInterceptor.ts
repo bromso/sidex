@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as performance from '../../../base/common/performance.js';
-import { URI } from '../../../base/common/uri.js';
+import * as performance from '@sidex/base/common/performance.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { MainThreadTelemetryShape, MainContext } from './extHost.protocol.js';
 import { ExtHostConfigProvider, IExtHostConfiguration } from './extHostConfiguration.js';
 import { nullExtensionDescription } from '../../services/extensions/common/extensions.js';
 import * as vscode from 'vscode';
-import { ExtensionIdentifierMap } from '../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifierMap } from '@sidex/platform/extensions/common/extensions.js';
 import { IExtensionApiFactory, IExtensionRegistries } from './extHost.api.impl.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ExtensionPaths, IExtHostExtensionService } from './extHostExtensionService.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { escapeRegExpCharacters } from '../../../base/common/strings.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 
 interface LoadFunction {
 	(request: string): any;

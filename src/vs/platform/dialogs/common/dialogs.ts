@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { basename } from '../../../base/common/resources.js';
-import Severity from '../../../base/common/severity.js';
-import { URI } from '../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { basename } from '@sidex/base/common/resources.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { ITelemetryData } from '../../telemetry/common/telemetry.js';
-import { MessageBoxOptions } from '../../../base/parts/sandbox/common/electronTypes.js';
-import { mnemonicButtonLabel } from '../../../base/common/labels.js';
-import { isLinux, isMacintosh, isWindows } from '../../../base/common/platform.js';
+import { MessageBoxOptions } from '@sidex/base/parts/sandbox/common/electronTypes.js';
+import { mnemonicButtonLabel } from '@sidex/base/common/labels.js';
+import { isLinux, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
 import { IProductService } from '../../product/common/productService.js';
-import { deepClone } from '../../../base/common/objects.js';
+import { deepClone } from '@sidex/base/common/objects.js';
 
 export interface IDialogArgs {
 	readonly confirmArgs?: IConfirmDialogArgs;

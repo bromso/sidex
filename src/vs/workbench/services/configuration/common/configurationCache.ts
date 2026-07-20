@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IConfigurationCache, ConfigurationKey } from './configuration.js';
-import { URI } from '../../../../base/common/uri.js';
-import { FileOperationError, FileOperationResult, IFileService } from '../../../../platform/files/common/files.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { Queue } from '../../../../base/common/async.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { FileOperationError, FileOperationResult, IFileService } from '@sidex/platform/files/common/files.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Queue } from '@sidex/base/common/async.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 
 export class ConfigurationCache implements IConfigurationCache {
 	private readonly cacheHome: URI;

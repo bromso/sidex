@@ -11,21 +11,21 @@ import {
 	EventType,
 	getWindow,
 	isAncestor
-} from '../../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { EventType as TouchEventType, Gesture } from '../../../../base/browser/touch.js';
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IBoundarySashes, Orientation } from '../../../../base/browser/ui/sash/sash.js';
-import { IPaneViewOptions, PaneView } from '../../../../base/browser/ui/splitview/paneview.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { combinedDisposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+} from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { EventType as TouchEventType, Gesture } from '@sidex/base/browser/touch.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IBoundarySashes, Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { IPaneViewOptions, PaneView } from '@sidex/base/browser/ui/splitview/paneview.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { combinedDisposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import './media/paneviewlet.css';
 import * as nls from '@sidex/base/nls.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	Action2,
 	IAction2Options,
@@ -33,17 +33,17 @@ import {
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { activeContrastBorder, asCssVariable } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { activeContrastBorder, asCssVariable } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { CompositeDragAndDropObserver, toggleDropEffect } from '../../dnd.js';
 import { ViewPane } from './viewPane.js';
 import { IViewletViewOptions } from './viewsViewlet.js';
@@ -80,8 +80,8 @@ import {
 	IWorkbenchLayoutService,
 	LayoutSettings
 } from '../../../services/layout/browser/layoutService.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ViewContainerMenuActions } from './viewMenuActions.js';
 
 export const ViewsSubMenu = new MenuId('Views');

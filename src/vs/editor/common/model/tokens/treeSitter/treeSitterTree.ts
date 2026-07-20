@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import type * as TreeSitter from '@vscode/tree-sitter-wasm';
-import { TaskQueue } from '../../../../../base/common/async.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { TaskQueue } from '@sidex/base/common/async.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	observableValue,
 	transaction,
 	IObservableWithChange
-} from '../../../../../base/common/observable.js';
-import { setTimeout0 } from '../../../../../base/common/platform.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/base/common/observable.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { TextLength } from '../../../core/text/textLength.js';
 import { IModelContentChangedEvent } from '../../../textModelEvents.js';
 import { IModelContentChange } from '../../mirrorTextModel.js';

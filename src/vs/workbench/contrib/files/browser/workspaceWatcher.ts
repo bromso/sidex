@@ -4,30 +4,30 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IDisposable, Disposable, dispose, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { IDisposable, Disposable, dispose, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../platform/configuration/common/configuration.js';
-import { IFileService, IFilesConfiguration } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IFileService, IFilesConfiguration } from '@sidex/platform/files/common/files.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	IWorkspaceFoldersChangeEvent
-} from '../../../../platform/workspace/common/workspace.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import {
 	INotificationService,
 	Severity,
 	NeverShowAgainScope,
 	NotificationPriority
-} from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { isAbsolute } from '../../../../base/common/path.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { isAbsolute } from '@sidex/base/common/path.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 
 export class WorkspaceWatcher extends Disposable {
 	static readonly ID = 'workbench.contrib.workspaceWatcher';

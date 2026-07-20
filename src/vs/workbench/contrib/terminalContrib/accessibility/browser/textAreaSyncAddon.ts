@@ -4,16 +4,16 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { ITerminalAddon, Terminal } from '@xterm/xterm';
-import { debounce } from '../../../../../base/common/decorators.js';
-import { Event } from '../../../../../base/common/event.js';
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ITerminalCapabilityStore,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { ITerminalLogService, TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalLogService, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 
 export class TextAreaSyncAddon extends Disposable implements ITerminalAddon {
 	private _terminal: Terminal | undefined;

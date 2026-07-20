@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
-import { matchesFuzzy } from '../../../../base/common/filters.js';
+import { matchesFuzzy } from '@sidex/base/common/filters.js';
 import { Source } from './debugSource.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { IDebugService, IDebugSession } from './debug.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 
-import { dirname } from '../../../../base/common/resources.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { dirname } from '@sidex/base/common/resources.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 
 export interface IPickerDebugItem extends IQuickPickItem {
 	accept(): void;

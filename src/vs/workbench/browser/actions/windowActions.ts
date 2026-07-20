@@ -4,58 +4,58 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IWindowOpenable } from '../../../platform/window/common/window.js';
-import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
-import { MenuRegistry, MenuId, Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
+import { IWindowOpenable } from '@sidex/platform/window/common/window.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { MenuRegistry, MenuId, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { IsMainWindowFullscreenContext } from '../../common/contextkeys.js';
 import {
 	IsMacNativeContext,
 	IsDevelopmentContext,
 	IsWebContext,
 	IsIOSContext
-} from '../../../platform/contextkey/common/contextkeys.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/contextkey/common/contextkeys.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	IQuickInputButton,
 	IQuickInputService,
 	IQuickPickSeparator,
 	IKeyMods,
 	IQuickPickItem
-} from '../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceIdentifier,
 	isWorkspaceIdentifier,
 	isSingleFolderWorkspaceIdentifier
-} from '../../../platform/workspace/common/workspace.js';
-import { ILabelService, Verbosity } from '../../../platform/label/common/label.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../editor/common/languages/language.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { ILabelService, Verbosity } from '@sidex/platform/label/common/label.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	IRecent,
 	isRecentFolder,
 	isRecentWorkspace,
 	IWorkspacesService
-} from '../../../platform/workspaces/common/workspaces.js';
-import { URI } from '../../../base/common/uri.js';
-import { getIconClasses } from '../../../editor/common/services/getIconClasses.js';
-import { FileKind } from '../../../platform/files/common/files.js';
-import { splitRecentLabel } from '../../../base/common/labels.js';
-import { isMacintosh, isWeb, isWindows } from '../../../base/common/platform.js';
-import { ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/workspaces/common/workspaces.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { splitRecentLabel } from '@sidex/base/common/labels.js';
+import { isMacintosh, isWeb, isWindows } from '@sidex/base/common/platform.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { inQuickPickContext, getQuickNavigateHandler } from '../quickaccess.js';
 import { IHostService } from '../../services/host/browser/host.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { isFolderBackupInfo, isWorkspaceBackupInfo } from '../../../platform/backup/common/backup.js';
-import { getActiveElement, getActiveWindow, isHTMLElement } from '../../../base/browser/dom.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { isFolderBackupInfo, isWorkspaceBackupInfo } from '@sidex/platform/backup/common/backup.js';
+import { getActiveElement, getActiveWindow, isHTMLElement } from '@sidex/base/browser/dom.js';
 
 export const inRecentFilesPickerContextKey = 'inRecentFilesPicker';
 

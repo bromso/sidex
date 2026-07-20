@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriDto } from '../../../base/common/uri.js';
+import { URI, UriDto } from '@sidex/base/common/uri.js';
 import { ContextKeyExpression } from '../../contextkey/common/contextkey.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { Categories } from './actionCommonCategories.js';
 import { ICommandMetadata } from '../../commands/common/commands.js';
 

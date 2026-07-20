@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { JSONPath } from '../../../../base/common/json.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { JSONPath } from '@sidex/base/common/json.js';
 
 export const IJSONEditingService = createDecorator<IJSONEditingService>('jsonEditingService');
 

@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { importAMDNodeModule, resolveAmdNodeModulePath } from '@sidex/base/amdX.js';
-import { WindowIntervalTimer } from '../../../base/browser/dom.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { memoize } from '../../../base/common/decorators.js';
+import { WindowIntervalTimer } from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { memoize } from '@sidex/base/common/decorators.js';
 import { IProductService } from '../../product/common/productService.js';
 import { IMessage, ISignService } from '../common/sign.js';
 

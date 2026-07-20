@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { SocketDiagnosticsEventType } from '../../../base/parts/ipc/common/ipc.net.js';
+import { Event } from '@sidex/base/common/event.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { SocketDiagnosticsEventType } from '@sidex/base/parts/ipc/common/ipc.net.js';
 import { ISocketFactory } from '../common/remoteSocketFactoryService.js';
 import { RemoteConnectionType, WebSocketRemoteConnection } from '../common/remoteAuthorityResolver.js';
 

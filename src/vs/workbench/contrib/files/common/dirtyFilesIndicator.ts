@@ -6,7 +6,7 @@
 import * as nls from '@sidex/base/nls.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { VIEWLET_ID } from './files.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IActivityService, NumberBadge } from '../../../services/activity/common/activity.js';
 import { IWorkingCopyService } from '../../../services/workingCopy/common/workingCopyService.js';
 import { IWorkingCopy, WorkingCopyCapabilities } from '../../../services/workingCopy/common/workingCopy.js';

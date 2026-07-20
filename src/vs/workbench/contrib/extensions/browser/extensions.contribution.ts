@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { mnemonicButtonLabel } from '../../../../base/common/labels.js';
-import { Disposable, DisposableStore, IDisposable, isDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { isNative, isWeb } from '../../../../base/common/platform.js';
-import { PolicyCategory } from '../../../../base/common/policy.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { MultiCommand } from '../../../../editor/browser/editorExtensions.js';
-import { CopyAction, CutAction, PasteAction } from '../../../../editor/contrib/clipboard/browser/clipboard.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { mnemonicButtonLabel } from '@sidex/base/common/labels.js';
+import { Disposable, DisposableStore, IDisposable, isDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isNative, isWeb } from '@sidex/base/common/platform.js';
+import { PolicyCategory } from '@sidex/base/common/policy.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { MultiCommand } from '@sidex/editor/browser/editorExtensions.js';
+import { CopyAction, CutAction, PasteAction } from '@sidex/editor/contrib/clipboard/browser/clipboard.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	Action2,
 	IAction2Options,
@@ -26,20 +26,20 @@ import {
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	ContextKeyExpr,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IDialogService, IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IDialogService, IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	ExtensionGalleryManifestStatus,
 	ExtensionGalleryResourceType,
@@ -47,7 +47,7 @@ import {
 	getExtensionGalleryManifestResourceUri,
 	IExtensionGalleryManifest,
 	IExtensionGalleryManifestService
-} from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
+} from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
 import {
 	EXTENSION_INSTALL_SOURCE_CONTEXT,
 	ExtensionInstallSource,
@@ -59,28 +59,28 @@ import {
 	PreferencesLocalizedLabel,
 	SortBy,
 	VerifyExtensionSignatureConfigKey
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	areSameExtensions,
 	getIdAndVersion
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { ExtensionStorageService } from '../../../../platform/extensionManagement/common/extensionStorage.js';
-import { IExtensionRecommendationNotificationService } from '../../../../platform/extensionRecommendations/common/extensionRecommendations.js';
-import { EXTENSION_CATEGORIES, ExtensionType } from '../../../../platform/extensions/common/extensions.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import * as jsonContributionRegistry from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import product from '../../../../platform/product/common/product.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { Extensions, IQuickAccessRegistry } from '../../../../platform/quickinput/common/quickAccess.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { ExtensionStorageService } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
+import { IExtensionRecommendationNotificationService } from '@sidex/platform/extensionRecommendations/common/extensionRecommendations.js';
+import { EXTENSION_CATEGORIES, ExtensionType } from '@sidex/platform/extensions/common/extensions.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import * as jsonContributionRegistry from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import product from '@sidex/platform/product/common/product.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { Extensions, IQuickAccessRegistry } from '@sidex/platform/quickinput/common/quickAccess.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import {
 	Extensions as ConfigurationMigrationExtensions,
@@ -98,7 +98,7 @@ import {
 	Extensions as ViewContainerExtensions,
 	ViewContainerLocation
 } from '../../../common/views.js';
-import { DEFAULT_ACCOUNT_SIGN_IN_COMMAND } from '../../../services/accounts/browser/nullDefaultAccount.js';
+import { DEFAULT_ACCOUNT_SIGN_IN_COMMAND } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	EnablementState,

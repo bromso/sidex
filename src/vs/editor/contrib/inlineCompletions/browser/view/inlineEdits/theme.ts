@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertNever } from '../../../../../../base/common/assert.js';
-import { Color } from '../../../../../../base/common/color.js';
-import { BugIndicatingError } from '../../../../../../base/common/errors.js';
-import { IObservable, observableFromEventOpts } from '../../../../../../base/common/observable.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { Color } from '@sidex/base/common/color.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { IObservable, observableFromEventOpts } from '@sidex/base/common/observable.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	buttonBackground,
@@ -18,15 +18,15 @@ import {
 	editorHoverBackground,
 	editorHoverBorder,
 	editorHoverForeground
-} from '../../../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	asCssVariable,
 	ColorIdentifier,
 	darken,
 	registerColor,
 	transparent
-} from '../../../../../../platform/theme/common/colorUtils.js';
-import { IThemeService } from '../../../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorUtils.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { InlineCompletionEditorType } from '../../model/provideInlineCompletions.js';
 import { InlineEditTabAction } from './inlineEditsViewInterface.js';
 

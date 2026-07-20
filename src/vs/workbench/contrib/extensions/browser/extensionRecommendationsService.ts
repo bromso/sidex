@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IExtensionManagementService,
 	IExtensionGalleryService,
 	InstallOperation,
 	InstallExtensionResult
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IExtensionRecommendationsService,
 	ExtensionRecommendationReason,
 	IExtensionIgnoredRecommendationsService
 } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { shuffle } from '../../../../base/common/arrays.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { shuffle } from '@sidex/base/common/arrays.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 import { LifecyclePhase, ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
 import { ExeBasedRecommendations } from './exeBasedRecommendations.js';
 import { WorkspaceRecommendations } from './workspaceRecommendations.js';
@@ -28,16 +28,16 @@ import { KeymapRecommendations } from './keymapRecommendations.js';
 import { LanguageRecommendations } from './languageRecommendations.js';
 import { ExtensionRecommendation } from './extensionRecommendations.js';
 import { ConfigBasedRecommendations } from './configBasedRecommendations.js';
-import { IExtensionRecommendationNotificationService } from '../../../../platform/extensionRecommendations/common/extensionRecommendations.js';
-import { CancelablePromise, timeout } from '../../../../base/common/async.js';
-import { URI } from '../../../../base/common/uri.js';
+import { IExtensionRecommendationNotificationService } from '@sidex/platform/extensionRecommendations/common/extensionRecommendations.js';
+import { CancelablePromise, timeout } from '@sidex/base/common/async.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { WebRecommendations } from './webRecommendations.js';
 import { IExtensionsWorkbenchService } from '../common/extensions.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import { RemoteRecommendations } from './remoteRecommendations.js';
-import { IRemoteExtensionsScannerService } from '../../../../platform/remote/common/remoteExtensionsScanner.js';
+import { IRemoteExtensionsScannerService } from '@sidex/platform/remote/common/remoteExtensionsScanner.js';
 import { IUserDataInitializationService } from '../../../services/userData/browser/userDataInit.js';
-import { isString } from '../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export class ExtensionRecommendationsService extends Disposable implements IExtensionRecommendationsService {
 	declare readonly _serviceBrand: undefined;

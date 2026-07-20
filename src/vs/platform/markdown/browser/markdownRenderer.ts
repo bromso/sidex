@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IRenderedMarkdown, MarkdownRenderOptions, renderMarkdown } from '../../../base/browser/markdownRenderer.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { IMarkdownString, MarkdownStringTrustedOptions } from '../../../base/common/htmlContent.js';
+import { IRenderedMarkdown, MarkdownRenderOptions, renderMarkdown } from '@sidex/base/browser/markdownRenderer.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { IMarkdownString, MarkdownStringTrustedOptions } from '@sidex/base/common/htmlContent.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IOpenerService } from '../../opener/common/opener.js';

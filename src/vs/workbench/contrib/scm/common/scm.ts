@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Command } from '../../../../editor/common/languages.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { IMenu } from '../../../../platform/actions/common/actions.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { ResourceTree } from '../../../../base/common/resourceTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Command } from '@sidex/editor/common/languages.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { IMenu } from '@sidex/platform/actions/common/actions.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { ResourceTree } from '@sidex/base/common/resourceTree.js';
 import { ISCMHistoryProvider } from './history.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IObservable } from '../../../../base/common/observable.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IObservable } from '@sidex/base/common/observable.js';
 import { ISCMArtifact, ISCMArtifactGroup, ISCMArtifactProvider } from './artifact.js';
 
 export const VIEWLET_ID = 'workbench.view.scm';

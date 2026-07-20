@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { IDisposable } from '../../../../../base/common/lifecycle.js';
-import { FindMatch } from '../../../../../editor/common/model.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { FindMatch } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	ISearchRange,
 	ITextSearchMatch,

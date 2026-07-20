@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { $, append, clearNode, addDisposableListener, EventType } from '../../../../base/browser/dom.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { ExtensionIdentifier, IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { Orientation, Sizing, SplitView } from '../../../../base/browser/ui/splitview/splitview.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { $, append, clearNode, addDisposableListener, EventType } from '@sidex/base/browser/dom.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { ExtensionIdentifier, IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { Orientation, Sizing, SplitView } from '@sidex/base/browser/ui/splitview/splitview.js';
 import {
 	IExtensionFeatureDescriptor,
 	Extensions,
@@ -20,35 +20,35 @@ import {
 	IRenderedData,
 	IExtensionFeatureMarkdownAndTableRenderer
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { localize } from '@sidex/base/nls.js';
-import { WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { getExtensionId } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IListRenderer, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { defaultButtonStyles, defaultKeybindingLabelStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { getErrorMessage } from '../../../../base/common/errors.js';
+import { WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { getExtensionId } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { defaultButtonStyles, defaultKeybindingLabelStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
 import { PANEL_SECTION_BORDER } from '../../../common/theme.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import Severity from '../../../../base/common/severity.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import Severity from '@sidex/base/common/severity.js';
 import { errorIcon, infoIcon, warningIcon } from './extensionsIcons.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
-import { KeybindingLabel } from '../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { OS } from '../../../../base/common/platform.js';
-import { IMarkdownString, MarkdownString, isMarkdownString } from '../../../../base/common/htmlContent.js';
-import { Color } from '../../../../base/common/color.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { IMarkdownString, MarkdownString, isMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Color } from '@sidex/base/common/color.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { asCssVariable } from '../../../../platform/theme/common/colorUtils.js';
-import { foreground, chartAxis, chartGuide, chartLine } from '../../../../platform/theme/common/colorRegistry.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { foreground, chartAxis, chartGuide, chartLine } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 
 interface IExtensionFeatureElementRenderer extends IExtensionFeatureRenderer {
 	type: 'element';

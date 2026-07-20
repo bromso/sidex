@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/terminalResizeDimensionsOverlay.css';
-import { $ } from '../../../../../base/browser/dom.js';
-import { disposableTimeout } from '../../../../../base/common/async.js';
-import { Disposable, MutableDisposable, toDisposable, type IDisposable } from '../../../../../base/common/lifecycle.js';
+import { $ } from '@sidex/base/browser/dom.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { Disposable, MutableDisposable, toDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
 import type { IXtermTerminal } from '../../../terminal/browser/terminal.js';
 import type { XtermTerminal } from '../../../terminal/browser/xterm/xtermTerminal.js';
 

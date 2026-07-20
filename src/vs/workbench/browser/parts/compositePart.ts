@@ -5,40 +5,40 @@
 
 import './media/compositepart.css';
 import { localize } from '@sidex/base/nls.js';
-import { defaultGenerator } from '../../../base/common/idGenerator.js';
-import { IDisposable, dispose, DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { Emitter } from '../../../base/common/event.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { ActionsOrientation, IActionViewItem, prepareActions } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { ProgressBar } from '../../../base/browser/ui/progressbar/progressbar.js';
-import { IAction } from '../../../base/common/actions.js';
+import { defaultGenerator } from '@sidex/base/common/idGenerator.js';
+import { IDisposable, dispose, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { ActionsOrientation, IActionViewItem, prepareActions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
+import { IAction } from '@sidex/base/common/actions.js';
 import { Part, IPartOptions } from '../part.js';
 import { Composite, CompositeRegistry } from '../composite.js';
 import { IComposite } from '../../common/composite.js';
 import { IWorkbenchLayoutService } from '../../services/layout/browser/layoutService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../platform/instantiation/common/serviceCollection.js';
-import { IProgressIndicator, IEditorProgressService } from '../../../platform/progress/common/progress.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { IThemeService } from '../../../platform/theme/common/themeService.js';
-import { INotificationService } from '../../../platform/notification/common/notification.js';
-import { Dimension, append, $, hide, show } from '../../../base/browser/dom.js';
-import { AnchorAlignment } from '../../../base/browser/ui/contextview/contextview.js';
-import { assertReturnsDefined } from '../../../base/common/types.js';
-import { createActionViewItem } from '../../../platform/actions/browser/menuEntryActionViewItem.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IProgressIndicator, IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { Dimension, append, $, hide, show } from '@sidex/base/browser/dom.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { AbstractProgressScope, ScopedProgressIndicator } from '../../services/progress/browser/progressIndicator.js';
-import { WorkbenchToolBar } from '../../../platform/actions/browser/toolbar.js';
-import { defaultProgressBarStyles } from '../../../platform/theme/browser/defaultStyles.js';
-import { IBoundarySashes } from '../../../base/browser/ui/sash/sash.js';
-import { IBaseActionViewItemOptions } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { defaultProgressBarStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
 import {
 	createInstantHoverDelegate,
 	getDefaultHoverDelegate
-} from '../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import type { IHoverService } from '../../../platform/hover/browser/hover.js';
+} from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import type { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 export interface ICompositeTitleLabel {
 	/**

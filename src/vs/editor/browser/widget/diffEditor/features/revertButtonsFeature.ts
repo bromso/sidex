@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, h, EventType } from '../../../../../base/browser/dom.js';
-import { renderIcon } from '../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { IObservable, autorunWithStore, derived } from '../../../../../base/common/observable.js';
+import { addDisposableListener, h, EventType } from '@sidex/base/browser/dom.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, autorunWithStore, derived } from '@sidex/base/common/observable.js';
 import { IGlyphMarginWidget, IGlyphMarginWidgetPosition } from '../../../editorBrowser.js';
 import { DiffEditorEditors } from '../components/diffEditorEditors.js';
 import { DiffEditorOptions } from '../diffEditorOptions.js';

@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { MainContext, MainThreadDiaglogsShape, IMainContext } from './extHost.protocol.js';
 
 export class ExtHostDialogs {

@@ -4,25 +4,25 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { addDisposableListener, getActiveWindow } from '../../../base/browser/dom.js';
-import { createFastDomNode, type FastDomNode } from '../../../base/browser/fastDomNode.js';
-import { Color } from '../../../base/common/color.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { addDisposableListener, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { createFastDomNode, type FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { Color } from '@sidex/base/common/color.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import type { ViewportData } from '../../common/viewLayout/viewLinesViewportData.js';
 import type { ViewLineOptions } from '../viewParts/viewLines/viewLineOptions.js';
-import { observableValue, runOnChange, type IObservable } from '../../../base/common/observable.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { observableValue, runOnChange, type IObservable } from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { TextureAtlas } from './atlas/textureAtlas.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { INotificationService, IPromptChoice, Severity } from '../../../platform/notification/common/notification.js';
-import { IThemeService } from '../../../platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { INotificationService, IPromptChoice, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { GPULifecycle } from './gpuDisposable.js';
 import { ensureNonNullable, observeDevicePixelDimensions } from './gpuUtils.js';
 import { RectangleRenderer } from './rectangleRenderer.js';
 import type { ViewContext } from '../../common/viewModel/viewContext.js';
 import { DecorationCssRuleExtractor } from './css/decorationCssRuleExtractor.js';
-import { Event } from '../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 import { EditorOption, type IEditorOptions } from '../../common/config/editorOptions.js';
 import { DecorationStyleCache } from './css/decorationStyleCache.js';
 import { InlineDecorationType } from '../../common/viewModel/inlineDecorations.js';

@@ -7,7 +7,7 @@ import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import { IBreakpointContribution } from './debug.js';
 
 export class Breakpoints {

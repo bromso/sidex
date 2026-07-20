@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { IBufferLine, IBufferRange, Terminal } from '@xterm/xterm';
-import { URI } from '../../../../../base/common/uri.js';
-import { createDecorator } from '../../../../../platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ITerminalProcessManager } from '../../../terminal/common/terminal.js';
 import { IParsedLink } from './terminalLinkParsing.js';
-import { IDisposable } from '../../../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ITerminalExternalLinkProvider } from '../../../terminal/browser/terminal.js';
-import { Event } from '../../../../../base/common/event.js';
-import { ITerminalBackend } from '../../../../../platform/terminal/common/terminal.js';
-import { ITextEditorSelection } from '../../../../../platform/editor/common/editor.js';
-import type { IHoverAction } from '../../../../../base/browser/ui/hover/hover.js';
-import type { MaybePromise } from '../../../../../base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ITerminalBackend } from '@sidex/platform/terminal/common/terminal.js';
+import { ITextEditorSelection } from '@sidex/platform/editor/common/editor.js';
+import type { IHoverAction } from '@sidex/base/browser/ui/hover/hover.js';
+import type { MaybePromise } from '@sidex/base/common/async.js';
 
 export const ITerminalLinkProviderService =
 	createDecorator<ITerminalLinkProviderService>('terminalLinkProviderService');

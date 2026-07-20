@@ -3,42 +3,42 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDragAndDropData } from '../../../../base/browser/dnd.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
 import {
 	IListVirtualDelegate,
 	ListDragOverEffectPosition,
 	ListDragOverEffectType
-} from '../../../../base/browser/ui/list/list.js';
-import { ElementsDragAndDropData, ListViewTargetSector } from '../../../../base/browser/ui/list/listView.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { ElementsDragAndDropData, ListViewTargetSector } from '@sidex/base/browser/ui/list/listView.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	ITreeContextMenuEvent,
 	ITreeDragAndDrop,
 	ITreeDragOverReaction,
 	ITreeMouseEvent,
 	ITreeNode
-} from '../../../../base/browser/ui/tree/tree.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { localize } from '@sidex/base/nls.js';
-import { getContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
 import { FocusedViewContext } from '../../../common/contextkeys.js';

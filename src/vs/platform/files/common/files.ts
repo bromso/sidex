@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
-import { IExpression, IRelativePattern } from '../../../base/common/glob.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
-import { sep } from '../../../base/common/path.js';
-import { ReadableStreamEvents } from '../../../base/common/stream.js';
-import { startsWithIgnoreCase } from '../../../base/common/strings.js';
-import { isNumber } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IExpression, IRelativePattern } from '@sidex/base/common/glob.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { sep } from '@sidex/base/common/path.js';
+import { ReadableStreamEvents } from '@sidex/base/common/stream.js';
+import { startsWithIgnoreCase } from '@sidex/base/common/strings.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { Schemas } from '../../../base/common/network.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { Lazy } from '../../../base/common/lazy.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 
 //#region file service & providers
 

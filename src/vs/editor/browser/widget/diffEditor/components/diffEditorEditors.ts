@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IReader,
 	autorunHandleChanges,
 	derived,
 	derivedOpts,
 	observableFromEvent
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { IEditorConstructionOptions } from '../../../config/editorConfiguration.js';
 import { IDiffEditorConstructionOptions } from '../../../editorBrowser.js';
 import { observableCodeEditor } from '../../../observableCodeEditor.js';
@@ -22,10 +22,10 @@ import { EditorOptions, IEditorOptions } from '../../../../common/config/editorO
 import { Position } from '../../../../common/core/position.js';
 import { IContentSizeChangedEvent } from '../../../../common/editorCommon.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { DiffEditorOptions } from '../diffEditorOptions.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export class DiffEditorEditors extends Disposable {
 	public readonly original;

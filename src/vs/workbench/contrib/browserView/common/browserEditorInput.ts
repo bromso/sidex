@@ -2,7 +2,7 @@
  *  SideX: Stub for removed browser editor input.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export class BrowserEditorInput {
 	static readonly ID: string = 'workbench.input.browser';

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as css from '../../../base/browser/cssValue.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import * as css from '@sidex/base/browser/cssValue.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { getIconRegistry, IconContribution, IconFontDefinition } from '../common/iconRegistry.js';
 import { IProductIconTheme, IThemeService } from '../common/themeService.js';
 

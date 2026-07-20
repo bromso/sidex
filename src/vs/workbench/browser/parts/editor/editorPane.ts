@@ -12,27 +12,27 @@ import {
 	isEditorInput
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { LRUCache, Touch } from '../../../../base/common/map.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { isEmptyObject } from '../../../../base/common/types.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { LRUCache, Touch } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { isEmptyObject } from '@sidex/base/common/types.js';
 import { DEFAULT_EDITOR_MIN_DIMENSIONS, DEFAULT_EDITOR_MAX_DIMENSIONS } from './editor.js';
-import { joinPath, IExtUri, isEqual } from '../../../../base/common/resources.js';
-import { indexOfPath } from '../../../../base/common/extpath.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { joinPath, IExtUri, isEqual } from '@sidex/base/common/resources.js';
+import { indexOfPath } from '@sidex/base/common/extpath.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	ITextResourceConfigurationChangeEvent,
 	ITextResourceConfigurationService
-} from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
-import { getWindowById } from '../../../../base/browser/dom.js';
+} from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { getWindowById } from '@sidex/base/browser/dom.js';
 
 /**
  * The base class of editors in the workbench. Editors register themselves for specific editor inputs.

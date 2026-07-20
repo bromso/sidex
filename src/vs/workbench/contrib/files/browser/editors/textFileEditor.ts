@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { mark } from '../../../../../base/common/performance.js';
-import { assertReturnsDefined } from '../../../../../base/common/types.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IPathService } from '../../../../services/path/common/pathService.js';
-import { IAction, toAction } from '../../../../../base/common/actions.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
 import { VIEWLET_ID, TEXT_FILE_EDITOR_ID, BINARY_TEXT_FILE_MODE } from '../../common/files.js';
 import {
 	ITextFileService,
@@ -36,26 +36,26 @@ import {
 	FileOperation,
 	ByteSize,
 	TooLargeFileOperationError
-} from '../../../../../platform/files/common/files.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
-import { IStorageService } from '../../../../../platform/storage/common/storage.js';
-import { ITextResourceConfigurationService } from '../../../../../editor/common/services/textResourceConfiguration.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
-import { ICodeEditorViewState, ScrollType } from '../../../../../editor/common/editorCommon.js';
+} from '@sidex/platform/files/common/files.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ICodeEditorViewState, ScrollType } from '@sidex/editor/common/editorCommon.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../../services/editor/common/editorGroupsService.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { EditorActivation, ITextEditorOptions } from '../../../../../platform/editor/common/editor.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { EditorActivation, ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IExplorerService } from '../files.js';
 import { IPaneCompositePartService } from '../../../../services/panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../../../common/views.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IPreferencesService } from '../../../../services/preferences/common/preferences.js';
 import { IHostService } from '../../../../services/host/browser/host.js';
-import { IEditorOptions as ICodeEditorOptions } from '../../../../../editor/common/config/editorOptions.js';
+import { IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import { IFilesConfigurationService } from '../../../../services/filesConfiguration/common/filesConfigurationService.js';
 
 /**

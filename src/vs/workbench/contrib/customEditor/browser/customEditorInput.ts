@@ -2,9 +2,9 @@
  *  SideX: Stub for removed custom editor input.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 
 export class CustomEditorInput {
 	static readonly typeId: string = 'workbench.editors.customEditor';

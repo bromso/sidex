@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { basename, isAbsolute, join } from '../../../base/common/path.js';
+import { basename, isAbsolute, join } from '@sidex/base/common/path.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 
 export interface IV8Profile {

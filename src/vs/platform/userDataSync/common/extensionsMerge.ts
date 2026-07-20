@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { deepClone, equals } from '../../../base/common/objects.js';
-import * as semver from '../../../base/common/semver/semver.js';
-import { assertReturnsDefined } from '../../../base/common/types.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { deepClone, equals } from '@sidex/base/common/objects.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IExtensionIdentifier } from '../../extensions/common/extensions.js';
 import { ILocalSyncExtension, IRemoteSyncExtension, ISyncExtension } from './userDataSync.js';
 

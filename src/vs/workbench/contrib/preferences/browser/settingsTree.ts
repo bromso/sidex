@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BrowserFeatures } from '../../../../base/browser/canIUse.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { renderAsPlaintext } from '../../../../base/browser/markdownRenderer.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { SimpleIconLabel } from '../../../../base/browser/ui/iconLabel/simpleIconLabel.js';
-import { IInputOptions, InputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { CachedListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { DefaultStyleController, IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { ISelectOptionItem, SelectBox } from '../../../../base/browser/ui/selectBox/selectBox.js';
-import { Toggle, unthemedToggleStyles } from '../../../../base/browser/ui/toggle/toggle.js';
-import { ToolBar } from '../../../../base/browser/ui/toolbar/toolbar.js';
-import { RenderIndentGuides } from '../../../../base/browser/ui/tree/abstractTree.js';
-import { IObjectTreeOptions } from '../../../../base/browser/ui/tree/objectTree.js';
-import { ObjectTreeModel } from '../../../../base/browser/ui/tree/objectTreeModel.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { renderAsPlaintext } from '@sidex/base/browser/markdownRenderer.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { SimpleIconLabel } from '@sidex/base/browser/ui/iconLabel/simpleIconLabel.js';
+import { IInputOptions, InputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { CachedListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { DefaultStyleController, IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { ISelectOptionItem, SelectBox } from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { Toggle, unthemedToggleStyles } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
+import { RenderIndentGuides } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { IObjectTreeOptions } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ObjectTreeModel } from '@sidex/base/browser/ui/tree/objectTreeModel.js';
 import {
 	ITreeFilter,
 	ITreeModel,
@@ -28,54 +28,54 @@ import {
 	ITreeRenderer,
 	TreeFilterResult,
 	TreeVisibility
-} from '../../../../base/browser/ui/tree/tree.js';
-import { Action, IAction, Separator } from '../../../../base/common/actions.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, isDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { isIOS } from '../../../../base/common/platform.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
-import { isDefined, isUndefinedOrNull } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, isDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isIOS } from '@sidex/base/common/platform.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
+import { isDefined, isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { localize } from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	ConfigurationTarget,
 	IConfigurationService,
 	getLanguageTagSettingPlainKey
-} from '../../../../platform/configuration/common/configuration.js';
-import { ConfigurationScope } from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IListService, WorkbenchObjectTree } from '../../../../platform/list/browser/listService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { ConfigurationScope } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IListService, WorkbenchObjectTree } from '@sidex/platform/list/browser/listService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	defaultButtonStyles,
 	getInputBoxStyle,
 	getListStyles,
 	getSelectBoxStyles
-} from '../../../../platform/theme/browser/defaultStyles.js';
-import { editorBackground, foreground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IUserDataSyncEnablementService } from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+} from '@sidex/platform/theme/browser/defaultStyles.js';
+import { editorBackground, foreground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataSyncEnablementService } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 // Stub functions to avoid importing heavy userDataSync modules
 const getIgnoredSettings = (..._args: any[]): string[] => [];
 const getDefaultIgnoredSettings = (): string[] => [];
-import { hasNativeContextMenu } from '../../../../platform/window/common/window.js';
+import { hasNativeContextMenu } from '@sidex/platform/window/common/window.js';
 import {
 	APPLICATION_SCOPES,
 	APPLY_ALL_PROFILES_SETTING,

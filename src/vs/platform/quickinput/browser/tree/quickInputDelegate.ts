@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import { IQuickTreeItem } from '../../common/quickInput.js';
 import { QuickInputTreeRenderer } from './quickInputTreeRenderer.js';
 

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, markAsSingleton } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, markAsSingleton } from '@sidex/base/common/lifecycle.js';
 import { RGBA8 } from '../core/misc/rgba.js';
 import { TokenizationRegistry } from '../languages.js';
 import { ColorId } from '../encodedTokenAttributes.js';
-import { BugIndicatingError, onUnexpectedError } from '../../../base/common/errors.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
 
 export class MinimapTokensColorTracker extends Disposable {
 	private static _INSTANCE: MinimapTokensColorTracker | null = null;

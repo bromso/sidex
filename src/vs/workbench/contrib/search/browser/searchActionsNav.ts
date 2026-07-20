@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import * as nls from '@sidex/base/nls.js';
-import { ICommandHandler } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { WorkbenchCompressibleAsyncDataTree } from '../../../../platform/list/browser/listService.js';
+import { ICommandHandler } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import * as Constants from '../common/constants.js';
 import * as SearchEditorConstants from '../../searchEditor/browser/constants.js';
 import { SearchEditor } from '../../searchEditor/browser/searchEditor.js';
 import { SearchEditorInput } from '../../searchEditor/browser/searchEditorInput.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	ToggleCaseSensitiveKeybinding,
 	TogglePreserveCaseKeybinding,
 	ToggleRegexKeybinding,
 	ToggleWholeWordKeybinding
-} from '../../../../editor/contrib/find/browser/findModel.js';
+} from '@sidex/editor/contrib/find/browser/findModel.js';
 import { category, getSearchView, openSearchView } from './searchActionsBase.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../platform/accessibility/common/accessibility.js';
-import { getActiveElement } from '../../../../base/browser/dom.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
 import {
 	FileMatchOrMatch,
 	RenderableMatch,

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import './anchorSelect.css';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
@@ -21,8 +21,8 @@ import { IEditorContribution } from '../../../common/editorCommon.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { TrackedRangeStickiness } from '../../../common/model.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 
 export const SelectionAnchorSet = new RawContextKey('selectionAnchorSet', false);
 

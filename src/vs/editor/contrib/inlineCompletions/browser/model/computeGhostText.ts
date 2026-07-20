@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDiffChange, LcsDiff } from '../../../../../base/common/diff/diff.js';
-import { getLeadingWhitespace } from '../../../../../base/common/strings.js';
+import { IDiffChange, LcsDiff } from '@sidex/base/common/diff/diff.js';
+import { getLeadingWhitespace } from '@sidex/base/common/strings.js';
 import { Position } from '../../../../common/core/position.js';
 import { Range } from '../../../../common/core/range.js';
 import { TextReplacement } from '../../../../common/core/edits/textEdit.js';

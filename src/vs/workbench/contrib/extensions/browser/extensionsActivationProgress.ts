@@ -5,12 +5,12 @@
 
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { localize } from '@sidex/base/nls.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { DeferredPromise, timeout } from '../../../../base/common/async.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { DeferredPromise, timeout } from '@sidex/base/common/async.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 
 export class ExtensionActivationProgress implements IWorkbenchContribution {
 	private readonly _listener: IDisposable;

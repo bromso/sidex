@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import * as objects from '../../../base/common/objects.js';
-import { URI } from '../../../base/common/uri.js';
-import { normalizeVersion, parseVersion } from '../../../platform/extensions/common/extensionValidator.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { normalizeVersion, parseVersion } from '@sidex/platform/extensions/common/extensionValidator.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IExtHostApiDeprecationService } from './extHostApiDeprecationService.js';
 import { deserializeWebviewMessage, serializeWebviewMessage } from './extHostWebviewMessaging.js';
 import { IExtHostWorkspace } from './extHostWorkspace.js';

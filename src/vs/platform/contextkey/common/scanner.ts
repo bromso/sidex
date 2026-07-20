@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { illegalState } from '../../../base/common/errors.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { illegalState } from '@sidex/base/common/errors.js';
 import { localize } from '@sidex/base/nls.js';
 
 export const enum TokenType {

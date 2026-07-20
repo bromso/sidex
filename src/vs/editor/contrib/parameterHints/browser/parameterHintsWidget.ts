@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Event } from '../../../../base/common/event.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import './parameterHints.css';
 import {
 	ContentWidgetPositionPreference,
@@ -22,15 +22,15 @@ import {
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { EDITOR_FONT_DEFAULTS } from '../../../common/config/fontInfo.js';
 import * as languages from '../../../common/languages.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { IRenderedMarkdown } from '../../../../base/browser/markdownRenderer.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IRenderedMarkdown } from '@sidex/base/browser/markdownRenderer.js';
 import { ParameterHintsModel } from './parameterHintsModel.js';
 import { Context } from './provideSignatureHelp.js';
 import * as nls from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { listHighlightForeground, registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { listHighlightForeground, registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 const $ = dom.$;
 

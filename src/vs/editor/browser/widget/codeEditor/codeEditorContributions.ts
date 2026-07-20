@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindow, runWhenWindowIdle } from '../../../../base/browser/dom.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Disposable, DisposableMap, IDisposable } from '../../../../base/common/lifecycle.js';
+import { getWindow, runWhenWindowIdle } from '@sidex/base/browser/dom.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableMap, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../editorBrowser.js';
 import { EditorContributionInstantiation, IEditorContributionDescription } from '../../editorExtensions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export class CodeEditorContributions extends Disposable {
 	private _editor: ICodeEditor | null = null;

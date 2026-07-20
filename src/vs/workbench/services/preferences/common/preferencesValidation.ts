@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { JSONSchemaType } from '../../../../base/common/jsonSchema.js';
-import { Color } from '../../../../base/common/color.js';
-import { isObject, isUndefinedOrNull, isString, isStringArray } from '../../../../base/common/types.js';
-import { IConfigurationPropertySchema } from '../../../../platform/configuration/common/configurationRegistry.js';
+import { JSONSchemaType } from '@sidex/base/common/jsonSchema.js';
+import { Color } from '@sidex/base/common/color.js';
+import { isObject, isUndefinedOrNull, isString, isStringArray } from '@sidex/base/common/types.js';
+import { IConfigurationPropertySchema } from '@sidex/platform/configuration/common/configurationRegistry.js';
 
 type Validator<T> = { enabled: boolean; isValid: (value: T) => boolean; message: string };
 

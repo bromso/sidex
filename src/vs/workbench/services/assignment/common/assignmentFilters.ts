@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { IExperimentationFilterProvider } from 'tas-client';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IDefaultAccountService } from '../../accounts/browser/nullDefaultAccount.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IDefaultAccountService } from '@sidex/platform/accounts/common/nullDefaultAccount.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 
 export enum ExtensionsFilter {

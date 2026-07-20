@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, observableFromEvent } from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IDataChannelService } from '../../../../platform/dataChannel/common/dataChannel.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IDataChannelService } from '@sidex/platform/dataChannel/common/dataChannel.js';
 
 export interface IRecordableLogEntry {
 	sourceId: string;

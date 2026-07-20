@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
 import * as nls from '@sidex/base/nls.js';
 import { SimpleCompletionItem } from './simpleCompletionItem.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ISimpleSuggestWidgetFontInfo } from './simpleSuggestWidgetRenderer.js';
 
 export function canExpandCompletionItem(item: SimpleCompletionItem | undefined): boolean {

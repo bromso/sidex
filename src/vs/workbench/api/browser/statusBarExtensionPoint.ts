@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IJSONSchema, TypeFromJsonSchema } from '../../../base/common/jsonSchema.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { IJSONSchema, TypeFromJsonSchema } from '@sidex/base/common/jsonSchema.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { isProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 import { ExtensionsRegistry } from '../../services/extensions/common/extensionsRegistry.js';
 import {
@@ -18,22 +18,22 @@ import {
 	IStatusbarEntryPriority,
 	StatusbarEntryKind
 } from '../../services/statusbar/browser/statusbar.js';
-import { ThemeColor } from '../../../base/common/themables.js';
-import { Command } from '../../../editor/common/languages.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { Command } from '@sidex/editor/common/languages.js';
 import {
 	IAccessibilityInformation,
 	isAccessibilityInformation
-} from '../../../platform/accessibility/common/accessibility.js';
-import { IMarkdownString, isMarkdownString } from '../../../base/common/htmlContent.js';
-import { getCodiconAriaLabel } from '../../../base/common/iconLabels.js';
-import { hash } from '../../../base/common/hash.js';
-import { Event, Emitter } from '../../../base/common/event.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
+} from '@sidex/platform/accessibility/common/accessibility.js';
+import { IMarkdownString, isMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { getCodiconAriaLabel } from '@sidex/base/common/iconLabels.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { asStatusBarItemIdentifier } from '../common/extHostTypes.js';
 import { STATUS_BAR_ERROR_ITEM_BACKGROUND, STATUS_BAR_WARNING_ITEM_BACKGROUND } from '../../common/theme.js';
-import { IManagedHoverTooltipMarkdownString } from '../../../base/browser/ui/hover/hover.js';
+import { IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
 
 // --- service
 

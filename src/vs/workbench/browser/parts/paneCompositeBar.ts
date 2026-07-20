@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { ActionsOrientation } from '../../../base/browser/ui/actionbar/actionbar.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { IActivityService } from '../../services/activity/common/activity.js';
 import { IWorkbenchLayoutService, Parts } from '../../services/layout/browser/layoutService.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { IDisposable, DisposableStore, Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
-import { IColorTheme } from '../../../platform/theme/common/themeService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable, DisposableStore, Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
 import { CompositeBar, ICompositeBarItem, CompositeDragAndDrop } from './compositeBar.js';
-import { Dimension, isMouseEvent } from '../../../base/browser/dom.js';
-import { createCSSRule } from '../../../base/browser/domStylesheets.js';
-import { asCSSUrl } from '../../../base/browser/cssValue.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
+import { Dimension, isMouseEvent } from '@sidex/base/browser/dom.js';
+import { createCSSRule } from '@sidex/base/browser/domStylesheets.js';
+import { asCSSUrl } from '@sidex/base/browser/cssValue.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	ToggleCompositePinnedAction,
 	ICompositeBarColors,
@@ -32,17 +32,17 @@ import {
 	IViewContainerModel,
 	ViewContainerLocation
 } from '../../common/views.js';
-import { IContextKeyService, ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
-import { isString } from '../../../base/common/types.js';
+import { IContextKeyService, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isString } from '@sidex/base/common/types.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
-import { isNative } from '../../../base/common/platform.js';
+import { isNative } from '@sidex/base/common/platform.js';
 import { Before2D, ICompositeDragAndDrop } from '../dnd.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { IAction, Separator, SubmenuAction, toAction } from '../../../base/common/actions.js';
-import { StringSHA1 } from '../../../base/common/hash.js';
-import { GestureEvent } from '../../../base/browser/touch.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IAction, Separator, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { StringSHA1 } from '@sidex/base/common/hash.js';
+import { GestureEvent } from '@sidex/base/browser/touch.js';
 import { IPaneCompositePart } from './paneCompositePart.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IViewsService } from '../../services/views/common/viewsService.js';
 
 interface IPlaceholderViewContainer {

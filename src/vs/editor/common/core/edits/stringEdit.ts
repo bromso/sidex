@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { commonPrefixLength, commonSuffixLength } from '../../../../base/common/strings.js';
+import { commonPrefixLength, commonSuffixLength } from '@sidex/base/common/strings.js';
 import { OffsetRange } from '../ranges/offsetRange.js';
 import { StringText } from '../text/abstractText.js';
 import { BaseEdit, BaseReplacement } from './edit.js';

@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { IListRenderer, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { assertNever } from '../../../../base/common/assert.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	autorunWithStore,
@@ -20,40 +20,40 @@ import {
 	ISettableObservable,
 	observableValue,
 	transaction
-} from '../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	EditorContributionCtor,
 	EditorContributionInstantiation,
 	IEditorContributionDescription
-} from '../../../../editor/browser/editorExtensions.js';
-import { CodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { EmbeddedCodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
-import { IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { IWordAtPosition } from '../../../../editor/common/core/wordHelper.js';
-import { IEditorContribution, IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
-import { Location } from '../../../../editor/common/languages.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { CodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { EmbeddedCodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+import { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IWordAtPosition } from '@sidex/editor/common/core/wordHelper.js';
+import { IEditorContribution, IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
+import { Location } from '@sidex/editor/common/languages.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import {
 	ClickLinkGesture,
 	ClickLinkMouseEvent
-} from '../../../../editor/contrib/gotoSymbol/browser/link/clickLinkGesture.js';
+} from '@sidex/editor/contrib/gotoSymbol/browser/link/clickLinkGesture.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { defaultButtonStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { defaultButtonStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { ResourceLabel } from '../../../browser/labels.js';
 import { IEditorService, SIDE_GROUP } from '../../../services/editor/common/editorService.js';
 import { makeStackFrameColumnDecoration, TOP_STACK_FRAME_DECORATION } from './callStackEditorContribution.js';

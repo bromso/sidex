@@ -20,7 +20,7 @@ import {
 	SHOW_DEFINITION_PREVIEW_HOVER_ACTION_ID,
 	SHOW_OR_FOCUS_HOVER_ACTION_ID
 } from './hoverActionIds.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorAction, ServicesAccessor } from '../../../browser/editorExtensions.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -28,8 +28,8 @@ import { Range } from '../../../common/core/range.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { GotoDefinitionAtPositionEditorContribution } from '../../gotoSymbol/browser/link/goToDefinitionAtPosition.js';
 import { HoverStartMode, HoverStartSource } from './hoverOperation.js';
-import { AccessibilitySupport } from '../../../../platform/accessibility/common/accessibility.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { AccessibilitySupport } from '@sidex/platform/accessibility/common/accessibility.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ContentHoverController } from './contentHoverController.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
 import * as nls from '@sidex/base/nls.js';

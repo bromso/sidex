@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
 import { CoreNavigationCommands, NavigationCommandRevealType } from '../coreCommands.js';
 import { IEditorMouseEvent, IPartialEditorMouseEvent } from '../editorBrowser.js';
 import { ViewUserInputEvents } from './viewUserInputEvents.js';
@@ -11,12 +11,12 @@ import { Position } from '../../common/core/position.js';
 import { Selection } from '../../common/core/selection.js';
 import { IEditorConfiguration } from '../../common/config/editorConfiguration.js';
 import { IViewModel } from '../../common/viewModel.js';
-import { IMouseWheelEvent } from '../../../base/browser/mouseEvent.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
 import { EditorOption } from '../../common/config/editorOptions.js';
-import * as platform from '../../../base/common/platform.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { StandardTokenType } from '../../common/encodedTokenAttributes.js';
 import { ITextModel } from '../../common/model.js';
-import { containsRTL } from '../../../base/common/strings.js';
+import { containsRTL } from '@sidex/base/common/strings.js';
 
 export interface IMouseDispatchData {
 	position: Position;

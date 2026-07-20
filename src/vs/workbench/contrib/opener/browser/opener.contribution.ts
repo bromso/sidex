@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import {
 	IOpener,
 	IOpenerService,
 	OpenExternalOptions,
 	OpenInternalOptions
-} from '../../../../platform/opener/common/opener.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/opener/common/opener.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
 import { REVEAL_IN_EXPLORER_COMMAND_ID } from '../../files/browser/fileConstants.js';
 

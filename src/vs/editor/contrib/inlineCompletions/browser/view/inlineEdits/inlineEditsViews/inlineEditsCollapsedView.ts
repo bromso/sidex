@@ -2,12 +2,12 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { n } from '../../../../../../../base/browser/dom.js';
-import { Event } from '../../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../../base/common/lifecycle.js';
-import { constObservable, derived, IObservable } from '../../../../../../../base/common/observable.js';
-import { IAccessibilityService } from '../../../../../../../platform/accessibility/common/accessibility.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
+import { n } from '@sidex/base/browser/dom.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { constObservable, derived, IObservable } from '@sidex/base/common/observable.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
 import { ICodeEditor } from '../../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor, observableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import { Point } from '../../../../../../common/core/2d/point.js';

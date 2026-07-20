@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { quickSelect } from '../../../../base/common/arrays.js';
-import { CharCode } from '../../../../base/common/charCode.js';
+import { quickSelect } from '@sidex/base/common/arrays.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
 import {
 	anyScore,
 	fuzzyScore,
@@ -12,8 +12,8 @@ import {
 	fuzzyScoreGracefulAggressive,
 	FuzzyScoreOptions,
 	FuzzyScorer
-} from '../../../../base/common/filters.js';
-import { compareIgnoreCase } from '../../../../base/common/strings.js';
+} from '@sidex/base/common/filters.js';
+import { compareIgnoreCase } from '@sidex/base/common/strings.js';
 import { InternalSuggestOptions } from '../../../common/config/editorOptions.js';
 import { CompletionItemKind, CompletionItemProvider } from '../../../common/languages.js';
 import { WordDistance } from './wordDistance.js';

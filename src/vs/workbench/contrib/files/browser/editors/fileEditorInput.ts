@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IFileEditorInput,
 	Verbosity,
@@ -21,9 +21,9 @@ import {
 } from '../../../../common/editor.js';
 import { EditorInput, IUntypedEditorOptions } from '../../../../common/editor/editorInput.js';
 import { AbstractTextResourceEditorInput } from '../../../../common/editor/textResourceEditorInput.js';
-import { ITextResourceEditorInput } from '../../../../../platform/editor/common/editor.js';
+import { ITextResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
 import { BinaryEditorModel } from '../../../../common/editor/binaryEditorModel.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import {
 	ITextFileService,
 	TextFileEditorModelState,
@@ -33,20 +33,20 @@ import {
 	ITextFileEditorModel,
 	EncodingMode
 } from '../../../../services/textfile/common/textfiles.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IReference, dispose, DisposableStore } from '../../../../../base/common/lifecycle.js';
-import { ITextModelService } from '../../../../../editor/common/services/resolverService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IReference, dispose, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { FILE_EDITOR_INPUT_ID, TEXT_FILE_EDITOR_ID, BINARY_FILE_EDITOR_ID } from '../../common/files.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { IFilesConfigurationService } from '../../../../services/filesConfiguration/common/filesConfigurationService.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { isEqual } from '../../../../../base/common/resources.js';
-import { Event } from '../../../../../base/common/event.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { createTextBufferFactory } from '../../../../../editor/common/model/textModel.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { createTextBufferFactory } from '@sidex/editor/common/model/textModel.js';
 import { IPathService } from '../../../../services/path/common/pathService.js';
-import { ITextResourceConfigurationService } from '../../../../../editor/common/services/textResourceConfiguration.js';
-import { IMarkdownString } from '../../../../../base/common/htmlContent.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { ICustomEditorLabelService } from '../../../../services/editor/common/customEditorLabelService.js';
 
 const enum ForceOpenAs {

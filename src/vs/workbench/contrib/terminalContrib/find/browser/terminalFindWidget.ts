@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { SimpleFindWidget } from '../../../codeEditor/browser/find/simpleFindWidget.js';
-import { IContextMenuService, IContextViewService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IContextKeyService, IContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IContextKeyService, IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IDetachedTerminalInstance,
 	ITerminalInstance,
@@ -14,20 +14,20 @@ import {
 	XtermTerminalConstants
 } from '../../../terminal/browser/terminal.js';
 import { TerminalContextKeys } from '../../../terminal/common/terminalContextKey.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { Event } from '../../../../../base/common/event.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { Event } from '@sidex/base/common/event.js';
 import type { ISearchOptions } from '@xterm/addon-search';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { TerminalFindCommandId } from '../common/terminal.find.js';
 import { TerminalClipboardContribution } from '../../clipboard/browser/terminal.clipboard.contribution.js';
-import { StandardMouseEvent } from '../../../../../base/browser/mouseEvent.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import { createTextInputActions } from '../../../../browser/actions/textInputActions.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 const TERMINAL_FIND_WIDGET_INITIAL_WIDTH = 419;
 

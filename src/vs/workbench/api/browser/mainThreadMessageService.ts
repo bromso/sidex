@@ -4,20 +4,20 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import Severity from '../../../base/common/severity.js';
-import { IAction, toAction } from '../../../base/common/actions.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
 import { MainThreadMessageServiceShape, MainContext, MainThreadMessageOptions } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { IDialogService, IPromptButton } from '../../../platform/dialogs/common/dialogs.js';
+import { IDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	INotificationService,
 	INotificationSource,
 	NotificationPriority
-} from '../../../platform/notification/common/notification.js';
-import { Event } from '../../../base/common/event.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 @extHostNamedCustomer(MainContext.MainThreadMessageService)
 export class MainThreadMessageService implements MainThreadMessageServiceShape {

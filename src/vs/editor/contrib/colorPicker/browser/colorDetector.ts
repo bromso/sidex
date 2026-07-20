@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, TimeoutTimer } from '../../../../base/common/async.js';
-import { RGBA } from '../../../../base/common/color.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { noBreakWhitespace } from '../../../../base/common/strings.js';
+import { CancelablePromise, createCancelablePromise, TimeoutTimer } from '@sidex/base/common/async.js';
+import { RGBA } from '@sidex/base/common/color.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { noBreakWhitespace } from '@sidex/base/common/strings.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { DynamicCssRules } from '../../../browser/editorDom.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -24,7 +24,7 @@ import {
 } from '../../../common/services/languageFeatureDebounce.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { getColors, IColorData } from './color.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 export const ColorDecorationInjectedTextMarker = Object.create({});
 

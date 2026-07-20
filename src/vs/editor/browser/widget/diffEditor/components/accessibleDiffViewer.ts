@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, addStandardDisposableListener, reset } from '../../../../../base/browser/dom.js';
-import { createTrustedTypesPolicy } from '../../../../../base/browser/trustedTypes.js';
-import { ActionBar } from '../../../../../base/browser/ui/actionbar/actionbar.js';
-import { DomScrollableElement } from '../../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { forEachAdjacent, groupAdjacentBy } from '../../../../../base/common/arrays.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { addDisposableListener, addStandardDisposableListener, reset } from '@sidex/base/browser/dom.js';
+import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { forEachAdjacent, groupAdjacentBy } from '@sidex/base/common/arrays.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	ITransaction,
@@ -20,8 +20,8 @@ import {
 	observableValue,
 	subtransaction,
 	transaction
-} from '../../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { applyFontInfo } from '../../../config/domFontInfo.js';
 import { applyStyle } from '../utils.js';
 import { EditorFontLigatures, EditorOption, IComputedEditorOptions } from '../../../../common/config/editorOptions.js';
@@ -40,12 +40,12 @@ import { localize } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { registerIcon } from '../../../../../platform/theme/common/iconRegistry.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import './accessibleDiffViewer.css';
 import { DiffEditorEditors } from './diffEditorEditors.js';
-import { toAction } from '../../../../../base/common/actions.js';
+import { toAction } from '@sidex/base/common/actions.js';
 
 const accessibleDiffViewerInsertIcon = registerIcon(
 	'diff-review-insert',

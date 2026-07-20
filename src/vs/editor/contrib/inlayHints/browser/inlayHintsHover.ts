@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AsyncIterableProducer } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IMarkdownString, isEmptyMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IMarkdownString, isEmptyMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../browser/editorBrowser.js';
 import { Position } from '../../../common/core/position.js';
 import { IModelDecoration } from '../../../common/model.js';
@@ -15,18 +15,18 @@ import { ITextModelService } from '../../../common/services/resolverService.js';
 import { getHoverProviderResultsAsAsyncIterable } from '../../hover/browser/getHover.js';
 import { MarkdownHover, MarkdownHoverParticipant } from '../../hover/browser/markdownHoverParticipant.js';
 import { RenderedInlayHintLabelPart, InlayHintsController } from './inlayHintsController.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { localize } from '@sidex/base/nls.js';
-import * as platform from '../../../../base/common/platform.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { asCommandLink } from './inlayHints.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { HoverStartSource } from '../../hover/browser/hoverOperation.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 
 class InlayHintsHoverAnchor extends HoverForeignElementAnchor {
 	constructor(

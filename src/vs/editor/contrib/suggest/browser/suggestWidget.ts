@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import '../../../../base/browser/ui/codicons/codiconStyles.js'; // The codicon symbol styles are defined here and must be loaded
-import { IListEvent, IListGestureEvent, IListMouseEvent } from '../../../../base/browser/ui/list/list.js';
-import { List } from '../../../../base/browser/ui/list/listWidget.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import '@sidex/base/browser/ui/codicons/codiconStyles.js'; // The codicon symbol styles are defined here and must be loaded
+import { IListEvent, IListGestureEvent, IListMouseEvent } from '@sidex/base/browser/ui/list/list.js';
+import { List } from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	CancelablePromise,
 	createCancelablePromise,
 	disposableTimeout,
 	TimeoutTimer
-} from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event, PauseableEmitter } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import * as strings from '../../../../base/common/strings.js';
+} from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event, PauseableEmitter } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import * as strings from '@sidex/base/common/strings.js';
 import './media/suggest.css';
 import {
 	ContentWidgetPositionPreference,
@@ -33,9 +33,9 @@ import { IPosition } from '../../../common/core/position.js';
 import { SuggestWidgetStatus } from './suggestWidgetStatus.js';
 import '../../symbolIcons/browser/symbolIcons.js'; // The codicon symbol colors are defined here and must be loaded to get colors
 import * as nls from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	activeContrastBorder,
 	editorForeground,
@@ -48,17 +48,17 @@ import {
 	quickInputListFocusIconForeground,
 	registerColor,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { CompletionModel } from './completionModel.js';
-import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
+import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
 import { CompletionItem, Context as SuggestContext, suggestWidgetStatusbarMenu } from './suggest.js';
 import { canExpandCompletionItem, SuggestDetailsOverlay, SuggestDetailsWidget } from './suggestWidgetDetails.js';
 import { ItemRenderer } from './suggestWidgetRenderer.js';
-import { getListStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { status } from '../../../../base/browser/ui/aria/aria.js';
+import { getListStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
 import { CompletionItemKinds } from '../../../common/languages.js';
-import { isWindows } from '../../../../base/common/platform.js';
+import { isWindows } from '@sidex/base/common/platform.js';
 
 /**
  * Suggest widget colors

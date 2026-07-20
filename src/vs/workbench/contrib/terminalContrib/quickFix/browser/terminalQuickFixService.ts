@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { ITerminalCommandSelector } from '../../../../../platform/terminal/common/terminal.js';
+import { ITerminalCommandSelector } from '@sidex/platform/terminal/common/terminal.js';
 import { ITerminalQuickFixService, ITerminalQuickFixProvider, ITerminalQuickFixProviderSelector } from './quickFix.js';
 import { isProposedApiEnabled } from '../../../../services/extensions/common/extensions.js';
 import { ExtensionsRegistry } from '../../../../services/extensions/common/extensionsRegistry.js';

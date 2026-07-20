@@ -4,27 +4,27 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	IConfigurationNode,
 	ConfigurationScope
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
 import {
 	IEditorResolverService,
 	RegisteredEditorInfo,
 	RegisteredEditorPriority
 } from '../../../services/editor/common/editorResolverService.js';
-import { IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { Event } from '../../../../base/common/event.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { ByteSize, getLargeFileConfirmationLimit } from '../../../../platform/files/common/files.js';
+import { ByteSize, getLargeFileConfirmationLimit } from '@sidex/platform/files/common/files.js';
 
 export class DynamicEditorConfigurations extends Disposable implements IWorkbenchContribution {
 	static readonly ID = 'workbench.contrib.dynamicEditorConfigurations';

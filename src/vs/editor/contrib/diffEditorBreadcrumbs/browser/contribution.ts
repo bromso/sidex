@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { reverseOrder, compareBy, numberComparator } from '../../../../base/common/arrays.js';
+import { reverseOrder, compareBy, numberComparator } from '@sidex/base/common/arrays.js';
 import {
 	observableValue,
 	observableSignalFromEvent,
 	autorunWithStore,
 	IReader
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import {
 	HideUnchangedRegionsFeature,
 	IDiffEditorBreadcrumbsSource
@@ -19,8 +19,8 @@ import { LineRange } from '../../../common/core/ranges/lineRange.js';
 import { ITextModel } from '../../../common/model.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { IOutlineModelService, OutlineModel } from '../../documentSymbols/browser/outlineModel.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Event } from '../../../../base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 import { SymbolKind } from '../../../common/languages.js';
 
 class DiffEditorBreadcrumbsSource extends Disposable implements IDiffEditorBreadcrumbsSource {

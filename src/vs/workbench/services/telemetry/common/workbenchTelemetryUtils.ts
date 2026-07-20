@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 
 // Stub: telemetry experiments now handled by Rust telemetry crate

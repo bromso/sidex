@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../base/common/arrays.js';
-import { readUInt32BE, writeUInt32BE } from '../../../base/common/buffer.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { readUInt32BE, writeUInt32BE } from '@sidex/base/common/buffer.js';
 import { Position } from '../core/position.js';
 import { IRange } from '../core/range.js';
 import { countEOL } from '../core/misc/eolCounter.js';

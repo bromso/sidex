@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import * as platform from '../../../../../base/common/platform.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { ICodeEditor, IEditorMouseEvent, IMouseTarget } from '../../../../browser/editorBrowser.js';
 import { EditorOption, MouseMiddleClickAction } from '../../../../common/config/editorOptions.js';
 import { ICursorSelectionChangedEvent } from '../../../../common/cursorEvents.js';

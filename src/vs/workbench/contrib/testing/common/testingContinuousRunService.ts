@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableMap, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { autorunIterableDelta, ISettableObservable, observableValue } from '../../../../base/common/observable.js';
-import { WellDefinedPrefixTree } from '../../../../base/common/prefixTree.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableMap, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorunIterableDelta, ISettableObservable, observableValue } from '@sidex/base/common/observable.js';
+import { WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { StoredValue } from './storedValue.js';
 import { TestId } from './testId.js';
 import { TestingContextKeys } from './testingContextKeys.js';

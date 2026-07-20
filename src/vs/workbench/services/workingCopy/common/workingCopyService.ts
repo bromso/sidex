@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	Disposable,
 	IDisposable,
 	toDisposable,
 	DisposableStore,
 	DisposableMap
-} from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import {
 	IWorkingCopy,
 	IWorkingCopyIdentifier,
 	IWorkingCopySaveEvent as IBaseWorkingCopySaveEvent
 } from './workingCopy.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 
 export const IWorkingCopyService = createDecorator<IWorkingCopyService>('workingCopyService');
 

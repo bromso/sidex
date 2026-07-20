@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableMap, DisposableStore } from '../../../base/common/lifecycle.js';
-import { FileOperation, IFileService, IWatchOptions } from '../../../platform/files/common/files.js';
+import { DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { FileOperation, IFileService, IWatchOptions } from '@sidex/platform/files/common/files.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,
@@ -19,20 +19,20 @@ import {
 	SourceTargetPair,
 	IFileOperationUndoRedoInfo
 } from '../../services/workingCopy/common/workingCopyFileService.js';
-import { IBulkEditService } from '../../../editor/browser/services/bulkEditService.js';
-import { IProgressService, ProgressLocation } from '../../../platform/progress/common/progress.js';
-import { raceCancellation } from '../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
-import Severity from '../../../base/common/severity.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
-import { Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+import { IBulkEditService } from '@sidex/editor/browser/services/bulkEditService.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { raceCancellation } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { reviveWorkspaceEditDto } from './mainThreadBulkEdits.js';
-import { UriComponents, URI } from '../../../base/common/uri.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
 
 @extHostNamedCustomer(MainContext.MainThreadFileSystemEventService)
 export class MainThreadFileSystemEventService implements MainThreadFileSystemEventServiceShape {

@@ -8,15 +8,15 @@ import {
 	IConstructorSignature,
 	ServicesAccessor,
 	BrandedService
-} from '../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/instantiation/common/instantiation.js';
 import { ILifecycleService, LifecyclePhase } from '../services/lifecycle/common/lifecycle.js';
-import { Registry } from '../../platform/registry/common/platform.js';
-import { IdleDeadline, DeferredPromise, runWhenGlobalIdle } from '../../base/common/async.js';
-import { mark } from '../../base/common/performance.js';
-import { ILogService } from '../../platform/log/common/log.js';
-import { IEnvironmentService } from '../../platform/environment/common/environment.js';
-import { getOrSet } from '../../base/common/map.js';
-import { Disposable, DisposableStore, isDisposable } from '../../base/common/lifecycle.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IdleDeadline, DeferredPromise, runWhenGlobalIdle } from '@sidex/base/common/async.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { getOrSet } from '@sidex/base/common/map.js';
+import { Disposable, DisposableStore, isDisposable } from '@sidex/base/common/lifecycle.js';
 import { IEditorPaneService } from '../services/editor/common/editorPaneService.js';
 
 /**

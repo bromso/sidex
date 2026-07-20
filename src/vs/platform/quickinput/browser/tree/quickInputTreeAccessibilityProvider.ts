@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AriaRole } from '../../../../base/browser/ui/aria/aria.js';
-import { CheckBoxAccessibleState } from '../../../../base/browser/ui/list/listView.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { Event, IValueWithChangeEvent } from '../../../../base/common/event.js';
-import { getCodiconAriaLabel } from '../../../../base/common/iconLabels.js';
+import { AriaRole } from '@sidex/base/browser/ui/aria/aria.js';
+import { CheckBoxAccessibleState } from '@sidex/base/browser/ui/list/listView.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { Event, IValueWithChangeEvent } from '@sidex/base/common/event.js';
+import { getCodiconAriaLabel } from '@sidex/base/common/iconLabels.js';
 import { localize } from '@sidex/base/nls.js';
 import { IQuickTreeCheckboxEvent, IQuickTreeItem } from '../../common/quickInput.js';
 /**

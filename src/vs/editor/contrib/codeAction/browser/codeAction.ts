@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce, equals, isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { illegalArgument, isCancellationError, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesce, equals, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { illegalArgument, isCancellationError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IProgress, Progress } from '../../../../platform/progress/common/progress.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IProgress, Progress } from '@sidex/platform/progress/common/progress.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IBulkEditService } from '../../../browser/services/bulkEditService.js';
 import { Range } from '../../../common/core/range.js';

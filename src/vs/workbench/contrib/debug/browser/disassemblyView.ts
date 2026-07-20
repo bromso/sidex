@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { PixelRatio } from '../../../../base/browser/pixelRatio.js';
-import { $, Dimension, addStandardDisposableListener, append } from '../../../../base/browser/dom.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
+import { $, Dimension, addStandardDisposableListener, append } from '@sidex/base/browser/dom.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	ITableContextMenuEvent,
 	ITableRenderer,
 	ITableVirtualDelegate
-} from '../../../../base/browser/ui/table/table.js';
-import { binarySearch2 } from '../../../../base/common/arrays.js';
-import { Color } from '../../../../base/common/color.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { isAbsolute } from '../../../../base/common/path.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { URI } from '../../../../base/common/uri.js';
-import { applyFontInfo } from '../../../../editor/browser/config/domFontInfo.js';
-import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { BareFontInfo } from '../../../../editor/common/config/fontInfo.js';
-import { createBareFontInfoFromRawSettings } from '../../../../editor/common/config/fontInfoFromSettings.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { StringBuilder } from '../../../../editor/common/core/stringBuilder.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+} from '@sidex/base/browser/ui/table/table.js';
+import { binarySearch2 } from '@sidex/base/common/arrays.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { isAbsolute } from '@sidex/base/common/path.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { applyFontInfo } from '@sidex/editor/browser/config/domFontInfo.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { BareFontInfo } from '@sidex/editor/common/config/fontInfo.js';
+import { createBareFontInfoFromRawSettings } from '@sidex/editor/common/config/fontInfoFromSettings.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { StringBuilder } from '@sidex/editor/common/core/stringBuilder.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { WorkbenchTable } from '../../../../platform/list/browser/listService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { WorkbenchTable } from '@sidex/platform/list/browser/listService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { focusedStackFrameColor, topStackFrameColor } from './callStackEditorContribution.js';
@@ -56,12 +56,12 @@ import { getUriFromSource } from '../common/debugSource.js';
 import { isUriString, sourcesEqual } from '../common/debugUtils.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IMenu, IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IMenu, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { COPY_ADDRESS_ID, COPY_ADDRESS_LABEL } from '../../../../workbench/contrib/debug/browser/debugCommands.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 
 export interface IDisassembledInstructionEntry {
 	allowBreakpoint: boolean;

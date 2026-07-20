@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveElement } from '../../../../base/browser/dom.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
 import {
 	MultiCommand,
 	RedoCommand,
 	SelectAllCommand,
 	UndoCommand
-} from '../../../../editor/browser/editorExtensions.js';
-import { CopyAction, CutAction, PasteAction } from '../../../../editor/contrib/clipboard/browser/clipboard.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { CopyAction, CutAction, PasteAction } from '@sidex/editor/contrib/clipboard/browser/clipboard.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { IWebviewService, IWebview } from './webview.js';
 import { WebviewInput } from '../../webviewPanel/browser/webviewEditorInput.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';

@@ -5,52 +5,52 @@
 
 import './media/markers.css';
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent, StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IIdentityProvider, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { ITableContextMenuEvent, ITableEvent } from '../../../../base/browser/ui/table/table.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent, StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IIdentityProvider, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { ITableContextMenuEvent, ITableEvent } from '@sidex/base/browser/ui/table/table.js';
 import {
 	ITreeContextMenuEvent,
 	ITreeElement,
 	ITreeEvent,
 	ITreeNode,
 	ITreeRenderer
-} from '../../../../base/browser/ui/tree/tree.js';
-import { IAction, Separator } from '../../../../base/common/actions.js';
-import { groupBy } from '../../../../base/common/arrays.js';
-import { Event, Relay } from '../../../../base/common/event.js';
-import { IExpression } from '../../../../base/common/glob.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { IAction, Separator } from '@sidex/base/common/actions.js';
+import { groupBy } from '@sidex/base/common/arrays.js';
+import { Event, Relay } from '@sidex/base/common/event.js';
+import { IExpression } from '@sidex/base/common/glob.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { localize } from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { fillInMarkersDragData, MarkerTransferData } from '../../../../platform/dnd/browser/dnd.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResultKind } from '../../../../platform/keybinding/common/keybindingResolver.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { fillInMarkersDragData, MarkerTransferData } from '@sidex/platform/dnd/browser/dnd.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver.js';
 import {
 	IListService,
 	IOpenEvent,
 	IWorkbenchObjectTreeOptions,
 	WorkbenchObjectTree
-} from '../../../../platform/list/browser/listService.js';
-import { IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { IOpenerService, withSelection } from '../../../../platform/opener/common/opener.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { IOpenerService, withSelection } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { registerNavigableContainer } from '../../../browser/actions/widgetNavigationCommands.js';
 import { RangeHighlightDecorations } from '../../../browser/codeeditor.js';
 import { ResourceListDnDHandler } from '../../../browser/dnd.js';

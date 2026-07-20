@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../base/common/event.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { URI } from '../../../base/common/uri.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	MainContext,
 	MainThreadTimelineShape,
@@ -21,7 +21,7 @@ import {
 	ITimelineService,
 	Timeline
 } from '../../contrib/timeline/common/timeline.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 
 @extHostNamedCustomer(MainContext.MainThreadTimeline)
 export class MainThreadTimeline implements MainThreadTimelineShape {

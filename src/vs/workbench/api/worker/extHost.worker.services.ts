@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { SyncDescriptor } from '../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ExtHostAuthentication, IExtHostAuthentication } from '../common/extHostAuthentication.js';
 import { IExtHostExtensionService } from '../common/extHostExtensionService.js';
 import { ExtHostLogService } from '../common/extHostLogService.js';

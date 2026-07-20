@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as errors from '../../../base/common/errors.js';
-import * as performance from '../../../base/common/performance.js';
-import { URI } from '../../../base/common/uri.js';
-import { IURITransformer } from '../../../base/common/uriIpc.js';
-import { IMessagePassingProtocol } from '../../../base/parts/ipc/common/ipc.js';
+import * as errors from '@sidex/base/common/errors.js';
+import * as performance from '@sidex/base/common/performance.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IURITransformer } from '@sidex/base/common/uriIpc.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
 import { MainContext, MainThreadConsoleShape } from './extHost.protocol.js';
 import { IExtensionHostInitData } from '../../services/extensions/common/extensionHostProtocol.js';
 import { RPCProtocol } from '../../services/extensions/common/rpcProtocol.js';
@@ -15,18 +15,18 @@ import {
 	ExtensionError,
 	ExtensionIdentifier,
 	IExtensionDescription
-} from '../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { getSingletonServiceDescriptors } from '../../../platform/instantiation/common/extensions.js';
-import { ServiceCollection } from '../../../platform/instantiation/common/serviceCollection.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { getSingletonServiceDescriptors } from '@sidex/platform/instantiation/common/extensions.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
-import { InstantiationService } from '../../../platform/instantiation/common/instantiationService.js';
-import { IInstantiationService, ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
+import { InstantiationService } from '@sidex/platform/instantiation/common/instantiationService.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService, ExtHostRpcService } from './extHostRpcService.js';
 import { IURITransformerService, URITransformerService } from './extHostUriTransformerService.js';
 import { IExtHostExtensionService, IHostUtils } from './extHostExtensionService.js';
 import { IExtHostTelemetry } from './extHostTelemetry.js';
-import { Mutable } from '../../../base/common/types.js';
+import { Mutable } from '@sidex/base/common/types.js';
 import { IExtHostApiDeprecationService } from './extHostApiDeprecationService.js';
 
 export interface IExitFn {

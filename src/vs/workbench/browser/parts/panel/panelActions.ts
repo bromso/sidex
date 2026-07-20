@@ -5,15 +5,15 @@
 
 import './media/panelpart.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	MenuId,
 	MenuRegistry,
 	registerAction2,
 	Action2,
 	IAction2Options
-} from '../../../../platform/actions/common/actions.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	isHorizontal,
 	IWorkbenchLayoutService,
@@ -29,16 +29,16 @@ import {
 	PanelPositionContext,
 	PanelVisibleContext
 } from '../../../common/contextkeys.js';
-import { ContextKeyExpr, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
+import { ContextKeyExpr, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import { ViewContainerLocation, IViewDescriptorService } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { ICommandActionTitle } from '../../../../platform/action/common/action.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ICommandActionTitle } from '@sidex/platform/action/common/action.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { SwitchCompositeViewAction } from '../compositeBarActions.js';
 
 const maximizeIcon = registerIcon(

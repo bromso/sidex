@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { ActionRunner, IAction } from '../../../../base/common/actions.js';
-import { asArray } from '../../../../base/common/arrays.js';
-import { MarshalledId } from '../../../../base/common/marshallingIds.js';
-import { SingleOrMany } from '../../../../base/common/types.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenu } from '../../../../platform/actions/common/actions.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ActionRunner, IAction } from '@sidex/base/common/actions.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { SingleOrMany } from '@sidex/base/common/types.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenu } from '@sidex/platform/actions/common/actions.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { ITerminalInstance } from './terminal.js';
 import { ISerializedTerminalInstanceContext } from '../common/terminal.js';
 

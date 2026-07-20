@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import './dnd.css';
 import {
 	ICodeEditor,

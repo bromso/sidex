@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IChannel } from '../../../base/parts/ipc/common/ipc.js';
-import { URI, UriDto } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IChannel } from '@sidex/base/parts/ipc/common/ipc.js';
+import { URI, UriDto } from '@sidex/base/common/uri.js';
 import {
 	DidChangeProfilesEvent,
 	IUserDataProfile,
@@ -15,7 +15,7 @@ import {
 	reviveProfile
 } from './userDataProfile.js';
 import { IAnyWorkspaceIdentifier } from '../../workspace/common/workspace.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export class UserDataProfilesService extends Disposable implements IUserDataProfilesService {
 	readonly _serviceBrand: undefined;

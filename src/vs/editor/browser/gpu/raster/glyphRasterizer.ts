@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { memoize } from '../../../../base/common/decorators.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import { StringBuilder } from '../../../common/core/stringBuilder.js';
 import { ColorId, FontStyle, TokenMetadata } from '../../../common/encodedTokenAttributes.js';
 import type { DecorationStyleCache } from '../css/decorationStyleCache.js';

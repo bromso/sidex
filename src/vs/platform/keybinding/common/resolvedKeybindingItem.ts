@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { ResolvedKeybinding } from '../../../base/common/keybindings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { ContextKeyExpression } from '../../contextkey/common/contextkey.js';
 
 export class ResolvedKeybindingItem {

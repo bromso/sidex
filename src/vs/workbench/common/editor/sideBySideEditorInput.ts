@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { URI } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	EditorInputCapabilities,
 	GroupIdentifier,

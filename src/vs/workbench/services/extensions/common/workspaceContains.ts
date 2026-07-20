@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as resources from '../../../../base/common/resources.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { CancellationTokenSource, CancellationToken } from '../../../../base/common/cancellation.js';
-import * as errors from '../../../../base/common/errors.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { CancellationTokenSource, CancellationToken } from '@sidex/base/common/cancellation.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { QueryBuilder } from '../../search/common/queryBuilder.js';
 import { ISearchService } from '../../search/common/search.js';
-import { toWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { promiseWithResolvers } from '../../../../base/common/async.js';
+import { toWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { promiseWithResolvers } from '@sidex/base/common/async.js';
 
 const WORKSPACE_CONTAINS_TIMEOUT = 7000;
 

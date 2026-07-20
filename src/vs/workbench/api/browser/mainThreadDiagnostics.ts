@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMarkerService, IMarkerData, type IMarker } from '../../../platform/markers/common/markers.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { IMarkerService, IMarkerData, type IMarker } from '@sidex/platform/markers/common/markers.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	MainThreadDiagnosticsShape,
 	MainContext,
@@ -12,9 +12,9 @@ import {
 	ExtHostContext
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
-import { ResourceMap } from '../../../base/common/map.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 
 @extHostNamedCustomer(MainContext.MainThreadDiagnostics)
 export class MainThreadDiagnostics implements MainThreadDiagnosticsShape {

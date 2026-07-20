@@ -3,27 +3,27 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
 import {
 	Extensions,
 	IExtensionFeatureAccessData,
 	IExtensionFeaturesManagementService,
 	IExtensionFeaturesRegistry
 } from './extensionFeatures.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Mutable, isBoolean } from '../../../../base/common/types.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Mutable, isBoolean } from '@sidex/base/common/types.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { localize } from '@sidex/base/nls.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { IStorageChangeEvent } from '../../../../base/parts/storage/common/storage.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { equals } from '../../../../base/common/objects.js';
+import { IStorageChangeEvent } from '@sidex/base/parts/storage/common/storage.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { equals } from '@sidex/base/common/objects.js';
 
 interface IExtensionFeatureState {
 	disabled?: boolean;

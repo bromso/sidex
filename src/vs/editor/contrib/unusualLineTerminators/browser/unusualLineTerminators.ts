@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { basename } from '../../../../base/common/resources.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/resources.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorContributionInstantiation, registerEditorContribution } from '../../../browser/editorExtensions.js';
 import { ICodeEditorService } from '../../../browser/services/codeEditorService.js';
@@ -12,7 +12,7 @@ import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution } from '../../../common/editorCommon.js';
 import { ITextModel } from '../../../common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfirmationResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { IConfirmationResult, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 
 const ignoreUnusualLineTerminators = 'ignoreUnusualLineTerminators';
 

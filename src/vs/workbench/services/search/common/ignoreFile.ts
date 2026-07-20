@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as glob from '../../../../base/common/glob.js';
-import { startsWithIgnoreCase } from '../../../../base/common/strings.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { startsWithIgnoreCase } from '@sidex/base/common/strings.js';
 
 export class IgnoreFile {
 	private isPathIgnored: (path: string, isDir: boolean, parent?: IgnoreFile) => boolean;

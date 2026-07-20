@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import * as errors from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { MarshalledObject } from '../../../../base/common/marshalling.js';
-import { MarshalledId } from '../../../../base/common/marshallingIds.js';
-import { IURITransformer, transformIncomingURIs } from '../../../../base/common/uriIpc.js';
-import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { MarshalledObject } from '@sidex/base/common/marshalling.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { IURITransformer, transformIncomingURIs } from '@sidex/base/common/uriIpc.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
 import { CanceledLazyPromise, LazyPromise } from './lazyPromise.js';
 import {
 	getStringIdentifierForProxy,

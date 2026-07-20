@@ -9,7 +9,7 @@ import {
 	toDisposable,
 	DisposableStore,
 	DisposableMap
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	IViewDescriptorService,
 	ViewContainer,
@@ -19,37 +19,37 @@ import {
 	IViewPaneContainer
 } from '../../../common/views.js';
 import { FocusedViewContext, getVisbileViewContextKey } from '../../../common/contextkeys.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { isString } from '../../../../base/common/types.js';
-import { MenuId, registerAction2, Action2, MenuRegistry } from '../../../../platform/actions/common/actions.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { isString } from '@sidex/base/common/types.js';
+import { MenuId, registerAction2, Action2, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IPaneComposite } from '../../../common/panecomposite.js';
-import { ServicesAccessor, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { PaneCompositeDescriptor, PaneCompositeRegistry, PaneComposite } from '../../../browser/panecomposite.js';
 import { IWorkbenchLayoutService, Parts } from '../../layout/browser/layoutService.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IProgressIndicator } from '../../../../platform/progress/common/progress.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IProgressIndicator } from '@sidex/platform/progress/common/progress.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { IEditorGroupsService } from '../../editor/common/editorGroupsService.js';
 import { FilterViewPaneContainer } from '../../../browser/parts/views/viewsViewlet.js';
 import { IPaneCompositePartService } from '../../panecomposite/browser/panecomposite.js';
-import { ICommandActionTitle, ILocalizedString } from '../../../../platform/action/common/action.js';
+import { ICommandActionTitle, ILocalizedString } from '@sidex/platform/action/common/action.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IViewsService } from '../common/viewsService.js';
 

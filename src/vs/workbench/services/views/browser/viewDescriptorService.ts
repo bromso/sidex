@@ -23,34 +23,34 @@ import {
 	RawContextKey,
 	IContextKeyService,
 	ContextKeyExpr
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	toDisposable,
 	DisposableStore,
 	Disposable,
 	IDisposable,
 	DisposableMap
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	ViewPaneContainer,
 	ViewPaneContainerAction,
 	ViewsSubMenu
 } from '../../../browser/parts/views/viewPaneContainer.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { getViewsStateStorageId, ViewContainerModel } from '../common/viewContainerModel.js';
-import { registerAction2, Action2, MenuId } from '../../../../platform/actions/common/actions.js';
+import { registerAction2, Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ILogger, ILoggerService } from '../../../../platform/log/common/log.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ILogger, ILoggerService } from '@sidex/platform/log/common/log.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import { IViewsService } from '../common/viewsService.js';
 import { windowLogGroup } from '../../log/common/logConstants.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';

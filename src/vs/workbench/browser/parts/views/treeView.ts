@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DataTransfers, IDragAndDropData } from '../../../../base/browser/dnd.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import * as cssJs from '../../../../base/browser/cssValue.js';
-import { IRenderedMarkdown, renderAsPlaintext } from '../../../../base/browser/markdownRenderer.js';
-import { ActionBar, IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { IIdentityProvider, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { ElementsDragAndDropData, ListViewTargetSector } from '../../../../base/browser/ui/list/listView.js';
+import { DataTransfers, IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import { IRenderedMarkdown, renderAsPlaintext } from '@sidex/base/browser/markdownRenderer.js';
+import { ActionBar, IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { IIdentityProvider, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { ElementsDragAndDropData, ListViewTargetSector } from '@sidex/base/browser/ui/list/listView.js';
 import {
 	IAsyncDataSource,
 	ITreeContextMenuEvent,
@@ -20,46 +20,46 @@ import {
 	ITreeNode,
 	ITreeRenderer,
 	TreeDragOverBubble
-} from '../../../../base/browser/ui/tree/tree.js';
-import { CollapseAllAction } from '../../../../base/browser/ui/tree/treeDefaults.js';
-import { ActionRunner, IAction, Separator } from '../../../../base/common/actions.js';
-import { timeout } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { createMatches, FuzzyScore } from '../../../../base/common/filters.js';
-import { IMarkdownString, isMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { CollapseAllAction } from '@sidex/base/browser/ui/tree/treeDefaults.js';
+import { ActionRunner, IAction, Separator } from '@sidex/base/common/actions.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { createMatches, FuzzyScore } from '@sidex/base/common/filters.js';
+import { IMarkdownString, isMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { Mimes } from '../../../../base/common/mime.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { basename, dirname } from '../../../../base/common/resources.js';
-import { isFalsyOrWhitespace } from '../../../../base/common/strings.js';
-import { isString } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basename, dirname } from '@sidex/base/common/resources.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import { isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import './media/views.css';
-import { VSDataTransfer } from '../../../../base/common/dataTransfer.js';
+import { VSDataTransfer } from '@sidex/base/common/dataTransfer.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	createActionViewItem,
 	getContextMenuActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	Action2,
 	IMenuService,
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
@@ -67,22 +67,22 @@ import {
 	IContextKeyChangeEvent,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { isDark } from '../../../../platform/theme/common/theme.js';
-import { FileThemeIcon, FolderThemeIcon, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
+import { FileThemeIcon, FolderThemeIcon, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { fillEditorsDragData } from '../../dnd.js';
 import { IResourceLabel, ResourceLabels } from '../../labels.js';
 import { API_OPEN_DIFF_EDITOR_COMMAND_ID, API_OPEN_EDITOR_COMMAND_ID } from '../editor/editorCommands.js';
@@ -109,22 +109,22 @@ import {
 } from '../../../common/views.js';
 import { IActivityService, NumberBadge } from '../../../services/activity/common/activity.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IHoverService, WorkbenchHoverDelegate } from '../../../../platform/hover/browser/hover.js';
-import { CodeDataTransfers, LocalSelectionTransfer } from '../../../../platform/dnd/browser/dnd.js';
-import { toExternalVSDataTransfer } from '../../../../editor/browser/dataTransfer.js';
+import { IHoverService, WorkbenchHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { CodeDataTransfers, LocalSelectionTransfer } from '@sidex/platform/dnd/browser/dnd.js';
+import { toExternalVSDataTransfer } from '@sidex/editor/browser/dataTransfer.js';
 import { CheckboxStateHandler, TreeItemCheckbox } from './checkbox.js';
-import { setTimeout0 } from '../../../../base/common/platform.js';
-import { AriaRole } from '../../../../base/browser/ui/aria/aria.js';
-import { TelemetryTrustedValue } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { ITreeViewsDnDService } from '../../../../editor/common/services/treeViewsDndService.js';
-import { DraggedTreeItemsIdentifier } from '../../../../editor/common/services/treeViewsDnd.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import type { IManagedHoverTooltipMarkdownString } from '../../../../base/browser/ui/hover/hover.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { defaultButtonStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
+import { AriaRole } from '@sidex/base/browser/ui/aria/aria.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { ITreeViewsDnDService } from '@sidex/editor/common/services/treeViewsDndService.js';
+import { DraggedTreeItemsIdentifier } from '@sidex/editor/common/services/treeViewsDnd.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import type { IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { defaultButtonStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IAccessibleViewInformationService } from '../../../services/accessibility/common/accessibleViewInformationService.js';
-import { Command } from '../../../../editor/common/languages.js';
+import { Command } from '@sidex/editor/common/languages.js';
 
 export class TreeViewPane extends ViewPane {
 	protected readonly treeView: ITreeView;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isWeb, isWindows } from '../../../../base/common/platform.js';
+import { isWeb, isWindows } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import { ISetting, ISettingsGroup } from '../../../services/preferences/common/preferences.js';
 

@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, dispose, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { NKeyMap } from '../../../../base/common/map.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, dispose, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { NKeyMap } from '@sidex/base/common/map.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { MetadataConsts } from '../../../common/encodedTokenAttributes.js';
 import type { DecorationStyleCache } from '../css/decorationStyleCache.js';
 import { GlyphRasterizer } from '../raster/glyphRasterizer.js';

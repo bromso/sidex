@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { WindowIdleValue } from '../../../../base/browser/dom.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope } from '../../../../platform/storage/common/storage.js';
+import { WindowIdleValue } from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
 import { TRUSTED_DOMAINS_STORAGE_KEY, readStaticTrustedDomains } from './trustedDomains.js';
-import { isURLDomainTrusted } from '../../../../platform/url/common/trustedDomains.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { isURLDomainTrusted } from '@sidex/platform/url/common/trustedDomains.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { ITrustedDomainService } from '../common/trustedDomainService.js';
 
 export { ITrustedDomainService };

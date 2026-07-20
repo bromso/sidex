@@ -39,12 +39,12 @@ import { HorizontalPosition } from '../view/renderingContext.js';
 import { ViewContext } from '../../common/viewModel/viewContext.js';
 import { IViewModel } from '../../common/viewModel.js';
 import { CursorColumns } from '../../common/core/cursorColumns.js';
-import * as dom from '../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { AtomicTabMoveOperations, Direction } from '../../common/cursor/cursorAtomicMoveOperations.js';
 import { PositionAffinity, TextDirection } from '../../common/model.js';
 import { InjectedText } from '../../common/modelLineProjectionData.js';
-import { Mutable } from '../../../base/common/types.js';
-import { Lazy } from '../../../base/common/lazy.js';
+import { Mutable } from '@sidex/base/common/types.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import type { ViewLinesGpu } from '../viewParts/viewLinesGpu/viewLinesGpu.js';
 
 const enum HitTestResultType {

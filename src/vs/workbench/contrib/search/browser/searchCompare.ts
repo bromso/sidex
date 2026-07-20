@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IMatchInNotebook, isIMatchInNotebook } from './notebookSearch/notebookSearchModelBase.js';
-import { compareFileExtensions, compareFileNames, comparePaths } from '../../../../base/common/comparers.js';
+import { compareFileExtensions, compareFileNames, comparePaths } from '@sidex/base/common/comparers.js';
 import { SearchSortOrder } from '../../../services/search/common/search.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	createParentList,
 	isSearchTreeFileMatch,

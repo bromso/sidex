@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { toLocalISOString } from '../../../base/common/date.js';
-import { memoize } from '../../../base/common/decorators.js';
-import { FileAccess, Schemas } from '../../../base/common/network.js';
-import { dirname, join, normalize, resolve } from '../../../base/common/path.js';
-import { env } from '../../../base/common/process.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { FileAccess, Schemas } from '@sidex/base/common/network.js';
+import { dirname, join, normalize, resolve } from '@sidex/base/common/path.js';
+import { env } from '@sidex/base/common/process.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { NativeParsedArgs } from './argv.js';
 import { ExtensionKind, IExtensionHostDebugParams, INativeEnvironmentService } from './environment.js';
 import { IProductService } from '../../product/common/productService.js';

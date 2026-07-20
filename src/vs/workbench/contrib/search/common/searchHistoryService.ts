@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { isEmptyObject } from '../../../../base/common/types.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { isEmptyObject } from '@sidex/base/common/types.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export interface ISearchHistoryService {
 	readonly _serviceBrand: undefined;

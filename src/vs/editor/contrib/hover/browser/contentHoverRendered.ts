@@ -11,27 +11,27 @@ import {
 	IRenderedHoverParts,
 	RenderedHoverParts
 } from './hoverTypes.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { EditorHoverStatusBar } from './contentHoverStatusBar.js';
 import { HoverStartSource } from './hoverOperation.js';
 import { HoverCopyButton } from './hoverCopyButton.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { ContentHoverResult } from './contentHoverTypes.js';
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
 import { MarkdownHoverParticipant } from './markdownHoverParticipant.js';
 import { HoverColorPickerParticipant } from '../../colorPicker/browser/hoverColorPicker/hoverColorPickerParticipant.js';
 import { localize } from '@sidex/base/nls.js';
 import { InlayHintsHover } from '../../inlayHints/browser/inlayHintsHover.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { HoverAction } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { HoverAction } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { IOffsetRange } from '../../../common/core/ranges/offsetRange.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { MarkerHover } from './markerHoverParticipant.js';
 
 export class RenderedContentHover extends Disposable {

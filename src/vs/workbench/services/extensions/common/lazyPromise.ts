@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationError, onUnexpectedError } from '../../../../base/common/errors.js';
+import { CancellationError, onUnexpectedError } from '@sidex/base/common/errors.js';
 
 export class LazyPromise implements Promise<any> {
 	private _actual: Promise<any> | null;

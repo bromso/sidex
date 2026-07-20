@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { asArray, compareBy, numberComparator } from '../../../../base/common/arrays.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { IMarkdownString, isEmptyMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { asArray, compareBy, numberComparator } from '@sidex/base/common/arrays.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { IMarkdownString, isEmptyMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import {
 	DECREASE_HOVER_VERBOSITY_ACTION_ID,
 	INCREASE_HOVER_VERBOSITY_ACTION_ID,
@@ -30,24 +30,24 @@ import {
 	RenderedHoverParts
 } from './hoverTypes.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { Hover, HoverContext, HoverProvider, HoverVerbosityAction } from '../../../common/languages.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ClickAction, HoverPosition, KeyDownAction } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { IHoverService, WorkbenchHoverDelegate } from '../../../../platform/hover/browser/hover.js';
-import { AsyncIterableProducer } from '../../../../base/common/async.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ClickAction, HoverPosition, KeyDownAction } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { IHoverService, WorkbenchHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { getHoverProviderResultsAsAsyncIterable } from './getHover.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { HoverStartSource } from './hoverOperation.js';
-import { ScrollEvent } from '../../../../base/common/scrollable.js';
+import { ScrollEvent } from '@sidex/base/common/scrollable.js';
 
 const $ = dom.$;
 const increaseHoverVerbosityIcon = registerIcon(

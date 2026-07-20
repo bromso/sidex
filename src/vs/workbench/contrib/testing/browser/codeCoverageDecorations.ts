@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ActionBar, ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { renderIcon } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Action } from '../../../../base/common/actions.js';
-import { mapFindFirst } from '../../../../base/common/arraysFind.js';
-import { assert, assertNever } from '../../../../base/common/assert.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { autorun, derived, observableFromEvent, observableValue } from '../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isUriComponents, URI } from '../../../../base/common/uri.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ActionBar, ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { mapFindFirst } from '@sidex/base/common/arraysFind.js';
+import { assert, assertNever } from '@sidex/base/common/assert.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, derived, observableFromEvent, observableValue } from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isUriComponents, URI } from '@sidex/base/common/uri.js';
 import {
 	ICodeEditor,
 	IOverlayWidget,
@@ -26,38 +26,38 @@ import {
 	isCodeEditor,
 	MouseTargetType,
 	OverlayWidgetPositionPreference
-} from '../../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { IEditorContribution } from '../../../../editor/common/editorCommon.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IEditorContribution } from '@sidex/editor/common/editorCommon.js';
 import {
 	IModelDecorationOptions,
 	InjectedTextCursorStops,
 	InjectedTextOptions,
 	ITextModel
-} from '../../../../editor/common/model.js';
+} from '@sidex/editor/common/model.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	bindContextKey,
 	observableConfigValue
-} from '../../../../platform/observable/common/platformObservableUtils.js';
+} from '@sidex/platform/observable/common/platformObservableUtils.js';
 import {
 	IQuickInputButton,
 	IQuickInputService,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { ActiveEditorContext } from '../../../common/contextkeys.js';
 import { TEXT_FILE_EDITOR_ID } from '../../files/common/files.js';
 import { getTestingConfiguration, TestingConfigKeys } from '../common/configuration.js';

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	ITransaction,
@@ -14,10 +14,10 @@ import {
 	observableFromValueWithChangeEvent,
 	observableValue,
 	transaction
-} from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ContextKeyValue } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ContextKeyValue } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IDiffEditorOptions } from '../../../common/config/editorOptions.js';
 import { Selection } from '../../../common/core/selection.js';
 import { IDiffEditorViewModel } from '../../../common/editorCommon.js';

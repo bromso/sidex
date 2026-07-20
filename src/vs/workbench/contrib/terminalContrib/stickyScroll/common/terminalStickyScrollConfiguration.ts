@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IStringDictionary } from '../../../../../base/common/collections.js';
+import type { IStringDictionary } from '@sidex/base/common/collections.js';
 import { localize } from '@sidex/base/nls.js';
-import type { IConfigurationPropertySchema } from '../../../../../platform/configuration/common/configurationRegistry.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+import type { IConfigurationPropertySchema } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 
 export const enum TerminalStickyScrollSettingId {
 	Enabled = 'terminal.integrated.stickyScroll.enabled',

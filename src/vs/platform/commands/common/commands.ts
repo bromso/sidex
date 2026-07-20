@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import { IDisposable, markAsSingleton, toDisposable } from '../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../base/common/linkedList.js';
-import { TypeConstraint, validateConstraints } from '../../../base/common/types.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { IDisposable, markAsSingleton, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { TypeConstraint, validateConstraints } from '@sidex/base/common/types.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { createDecorator, ServicesAccessor } from '../../instantiation/common/instantiation.js';
 

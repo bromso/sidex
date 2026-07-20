@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { arrayInsert } from '../../../base/common/arrays.js';
-import { toUint32 } from '../../../base/common/uint.js';
+import { arrayInsert } from '@sidex/base/common/arrays.js';
+import { toUint32 } from '@sidex/base/common/uint.js';
 
 export class PrefixSumComputer {
 	/**

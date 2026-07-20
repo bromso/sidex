@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	AccessibleViewType,
 	AccessibleContentProvider,
 	IAccessibleViewContentProvider,
 	AccessibleViewProviderId
-} from '../../../../platform/accessibility/browser/accessibleView.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import * as nls from '@sidex/base/nls.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 import { OUTPUT_FILTER_FOCUS_CONTEXT } from '../../../services/output/common/output.js';

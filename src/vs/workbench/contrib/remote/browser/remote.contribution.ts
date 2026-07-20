@@ -3,22 +3,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IViewContainersRegistry,
 	IViewsRegistry,
 	ViewContainerLocation,
 	Extensions as ViewContainerExtensions
 } from '../../../common/views.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { RemoteExplorerViewPane, getCachedGitHubToken, clearCachedGitHubToken } from './remoteExplorer.js';
-import { registerAction2, Action2, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { registerAction2, Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IStatusbarService,
 	StatusbarAlignment,
@@ -31,21 +31,21 @@ import {
 	IWorkbenchContribution
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ISideXRemoteService,
 	SshHost,
 	WslDistro,
 	ContainerEntry,
 	RemoteKind
-} from '../../../../platform/sidex/browser/sidexRemoteService.js';
+} from '@sidex/platform/sidex/browser/sidexRemoteService.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { URI } from '../../../../base/common/uri.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 

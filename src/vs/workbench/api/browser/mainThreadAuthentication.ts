@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
 import * as nls from '@sidex/base/nls.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
@@ -26,27 +26,27 @@ import {
 	MainContext,
 	MainThreadAuthenticationShape
 } from '../common/extHost.protocol.js';
-import { IDialogService, IPromptButton } from '../../../platform/dialogs/common/dialogs.js';
-import Severity from '../../../base/common/severity.js';
-import { INotificationService } from '../../../platform/notification/common/notification.js';
+import { IDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import Severity from '@sidex/base/common/severity.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { ActivationKind, IExtensionService } from '../../services/extensions/common/extensions.js';
-import { ITelemetryService } from '../../../platform/telemetry/common/telemetry.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IAuthenticationAccessService } from '../../services/authentication/browser/authenticationAccessService.js';
 import { IAuthenticationUsageService } from '../../services/authentication/browser/authenticationUsageService.js';
 import { getAuthenticationProviderActivationEvent } from '../../services/authentication/browser/authenticationService.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IOpenerService } from '../../../platform/opener/common/opener.js';
-import { CancellationError } from '../../../base/common/errors.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { CancellationError } from '@sidex/base/common/errors.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ExtensionHostKind } from '../../services/extensions/common/extensionHostKind.js';
-import { IURLService } from '../../../platform/url/common/url.js';
-import { DeferredPromise, raceTimeout } from '../../../base/common/async.js';
-import { IAuthorizationTokenResponse } from '../../../base/common/oauth.js';
+import { IURLService } from '@sidex/platform/url/common/url.js';
+import { DeferredPromise, raceTimeout } from '@sidex/base/common/async.js';
+import { IAuthorizationTokenResponse } from '@sidex/base/common/oauth.js';
 import { IDynamicAuthenticationProviderStorageService } from '../../services/authentication/common/dynamicAuthenticationProviderStorage.js';
-import { IClipboardService } from '../../../platform/clipboard/common/clipboardService.js';
-import { IQuickInputService } from '../../../platform/quickinput/common/quickInput.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 
 export interface AuthenticationInteractiveOptions {
 	detail?: string;

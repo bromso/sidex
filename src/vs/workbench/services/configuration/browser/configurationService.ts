@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { equals } from '../../../../base/common/objects.js';
-import { Disposable, DisposableMap, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Queue, Barrier, Promises, Delayer, Throttler } from '../../../../base/common/async.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Queue, Barrier, Promises, Delayer, Throttler } from '@sidex/base/common/async.js';
 import {
 	IJSONContributionRegistry,
 	Extensions as JSONExtensions
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
 import {
 	IWorkspaceContextService,
 	Workspace as BaseWorkspace,
@@ -29,12 +29,12 @@ import {
 	isWorkspaceIdentifier,
 	IWorkspaceIdentifier,
 	IAnyWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import {
 	ConfigurationModel,
 	ConfigurationChangeEvent,
 	mergeChanges
-} from '../../../../platform/configuration/common/configurationModels.js';
+} from '@sidex/platform/configuration/common/configurationModels.js';
 import {
 	IConfigurationChangeEvent,
 	ConfigurationTarget,
@@ -48,12 +48,12 @@ import {
 	isConfigurationUpdateOverrides,
 	IConfigurationService,
 	IConfigurationUpdateOptions
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IPolicyConfiguration,
 	NullPolicyConfiguration,
 	PolicyConfiguration
-} from '../../../../platform/configuration/common/configurations.js';
+} from '@sidex/platform/configuration/common/configurations.js';
 import { Configuration } from '../common/configurationModels.js';
 import {
 	FOLDER_CONFIG_FOLDER_NAME,
@@ -72,7 +72,7 @@ import {
 	APPLY_ALL_PROFILES_SETTING,
 	APPLICATION_SCOPES
 } from '../common/configuration.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions,
@@ -91,15 +91,15 @@ import {
 	applicationMachineSettings,
 	isConfigurationDefaultSourceEquals,
 	ConfigurationDefaultSource
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	IStoredWorkspaceFolder,
 	isStoredWorkspaceFolder,
 	IWorkspaceFolderCreationData,
 	getStoredWorkspaceFolder,
 	toWorkspaceFolders
-} from '../../../../platform/workspaces/common/workspaces.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/workspaces/common/workspaces.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ConfigurationEditing, EditableConfigurationTarget } from '../common/configurationEditing.js';
 import {
 	WorkspaceConfiguration,
@@ -109,10 +109,10 @@ import {
 	DefaultConfiguration,
 	ApplicationConfiguration
 } from './configuration.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import { mark } from '../../../../base/common/performance.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { mark } from '@sidex/base/common/performance.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	IWorkbenchContribution,
@@ -122,31 +122,31 @@ import {
 	registerWorkbenchContribution2
 } from '../../../common/contributions.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
-import { delta, distinct, equals as arrayEquals } from '../../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { delta, distinct, equals as arrayEquals } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import { IWorkbenchAssignmentService } from '../../assignment/common/assignmentService.js';
-import { isUndefined } from '../../../../base/common/types.js';
+import { isUndefined } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	DidChangeUserDataProfileEvent,
 	IUserDataProfileService
 } from '../../userDataProfile/common/userDataProfile.js';
-import { IPolicyService, NullPolicyService } from '../../../../platform/policy/common/policy.js';
+import { IPolicyService, NullPolicyService } from '@sidex/platform/policy/common/policy.js';
 import {
 	IUserDataProfile,
 	IUserDataProfilesService
-} from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IJSONEditingService } from '../common/jsonEditing.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { runWhenWindowIdle } from '../../../../base/browser/dom.js';
-import { renderAsPlaintext } from '../../../../base/browser/markdownRenderer.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { runWhenWindowIdle } from '@sidex/base/browser/dom.js';
+import { renderAsPlaintext } from '@sidex/base/browser/markdownRenderer.js';
 import { fixSettingLinks } from '../../preferences/common/preferencesModels.js';
 import { invoke } from '@tauri-apps/api/core';
 

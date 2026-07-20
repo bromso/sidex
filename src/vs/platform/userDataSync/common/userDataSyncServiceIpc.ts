@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { IChannel, IServerChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import { ILogService } from '../../log/common/log.js';
 import { IUserDataProfilesService, reviveProfile } from '../../userDataProfile/common/userDataProfile.js';
 import {

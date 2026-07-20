@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/extension.css';
-import { append, $ } from '../../../../base/browser/dom.js';
-import { IDisposable, dispose, combinedDisposable } from '../../../../base/common/lifecycle.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IPagedRenderer } from '../../../../base/browser/ui/list/listPaging.js';
+import { append, $ } from '@sidex/base/browser/dom.js';
+import { IDisposable, dispose, combinedDisposable } from '@sidex/base/common/lifecycle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IPagedRenderer } from '@sidex/base/browser/ui/list/listPaging.js';
 import {
 	IExtension,
 	ExtensionContainers,
@@ -35,7 +35,7 @@ import {
 	ClearLanguageAction,
 	UpdateAction
 } from './extensionsActions.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import {
 	RatingsWidget,
 	InstallCountWidget,
@@ -53,17 +53,17 @@ import {
 } from './extensionsWidgets.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { IWorkbenchExtensionEnablementService } from '../../../services/extensionManagement/common/extensionManagement.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	registerThemingParticipant,
 	IColorTheme,
 	ICssStyleCollector
-} from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { WORKBENCH_BACKGROUND } from '../../../common/theme.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import {
 	extensionVerifiedPublisherIconColor,
 	verifiedPublisherIcon

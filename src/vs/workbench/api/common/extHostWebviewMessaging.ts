@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 import * as extHostProtocol from './extHost.protocol.js';
 
 class ArrayBufferSet {

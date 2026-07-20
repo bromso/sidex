@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IChannel, IServerChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { Event } from '@sidex/base/common/event.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import { ISandboxDependencyStatus, ISandboxHelperService } from './sandboxHelperService.js';
 
 export const SANDBOX_HELPER_CHANNEL_NAME = 'sandboxHelper';

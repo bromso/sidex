@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { validateConstraint } from '../../../base/common/types.js';
-import { ICommandMetadata } from '../../../platform/commands/common/commands.js';
+import { validateConstraint } from '@sidex/base/common/types.js';
+import { ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
 import * as extHostTypes from './extHostTypes.js';
 import * as extHostTypeConverter from './extHostTypeConverters.js';
-import { cloneAndChange } from '../../../base/common/objects.js';
+import { cloneAndChange } from '@sidex/base/common/objects.js';
 import {
 	MainContext,
 	MainThreadCommandsShape,
@@ -16,28 +16,28 @@ import {
 	ICommandMetadataDto,
 	MainThreadTelemetryShape
 } from './extHost.protocol.js';
-import { isNonEmptyArray } from '../../../base/common/arrays.js';
-import * as languages from '../../../editor/common/languages.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import * as languages from '@sidex/editor/common/languages.js';
 import type * as vscode from 'vscode';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { revive } from '../../../base/common/marshalling.js';
-import { IRange, Range } from '../../../editor/common/core/range.js';
-import { IPosition, Position } from '../../../editor/common/core/position.js';
-import { URI } from '../../../base/common/uri.js';
-import { DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { revive } from '@sidex/base/common/marshalling.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { IPosition, Position } from '@sidex/editor/common/core/position.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { ISelection } from '../../../editor/common/core/selection.js';
+import { ISelection } from '@sidex/editor/common/core/selection.js';
 import { TestItemImpl } from './extHostTestItem.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 import { SerializableObjectWithBuffers } from '../../services/extensions/common/proxyIdentifier.js';
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { TelemetryTrustedValue } from '../../../platform/telemetry/common/telemetryUtils.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
 import { IExtHostTelemetry } from './extHostTelemetry.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { isCancellationError } from '../../../base/common/errors.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
 
 interface CommandHandler {
 	callback: (...args: any[]) => any;

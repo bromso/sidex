@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	DEFAULT_EDITOR_ASSOCIATION,
 	findViewStateForEditor,
@@ -16,17 +16,17 @@ import { EditorInput, IUntypedEditorOptions } from '../../../common/editor/edito
 import { AbstractTextResourceEditorInput } from '../../../common/editor/textResourceEditorInput.js';
 import { IUntitledTextEditorModel } from './untitledTextEditorModel.js';
 import { EncodingMode, IEncodingSupport, ILanguageSupport, ITextFileService } from '../../textfile/common/textfiles.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { isEqual, toLocalResource } from '../../../../base/common/resources.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { isEqual, toLocalResource } from '@sidex/base/common/resources.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { DisposableStore, dispose, IReference } from '../../../../base/common/lifecycle.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { DisposableStore, dispose, IReference } from '@sidex/base/common/lifecycle.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { ICustomEditorLabelService } from '../../editor/common/customEditorLabelService.js';
 
 /**

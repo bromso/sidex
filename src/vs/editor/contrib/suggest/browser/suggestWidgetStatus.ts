@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ActionBar, IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar, IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	MenuEntryActionViewItem,
 	TextOnlyMenuEntryActionViewItem
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export interface ISuggestWidgetStatusOptions {
 	/**

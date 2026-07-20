@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as Objects from '../../../../base/common/objects.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
 
 import commonSchema from './jsonSchemaCommon.js';
 
@@ -13,7 +13,7 @@ import { ProblemMatcherRegistry } from './problemMatcher.js';
 import { TaskDefinitionRegistry } from './taskDefinitionRegistry.js';
 import * as ConfigurationResolverUtils from '../../../services/configurationResolver/common/configurationResolverUtils.js';
 import { inputsSchema } from '../../../services/configurationResolver/common/configurationResolverSchema.js';
-import { getAllCodicons } from '../../../../base/common/codicons.js';
+import { getAllCodicons } from '@sidex/base/common/codicons.js';
 
 function fixReferences(literal: Record<string, unknown> | unknown[]) {
 	if (Array.isArray(literal)) {

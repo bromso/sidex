@@ -3,29 +3,29 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { escapeRegExpCharacters, isFalsyOrWhitespace } from '../../../../base/common/strings.js';
-import { isUndefinedOrNull } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { escapeRegExpCharacters, isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	ConfigurationTarget,
 	getLanguageTagSettingPlainKey,
 	IConfigurationValue
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ConfigurationDefaultValueSource,
 	ConfigurationScope,
 	EditPresentationTypes,
 	Extensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { USER_LOCAL_AND_REMOTE_SETTINGS } from '../../../../platform/request/common/request.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { USER_LOCAL_AND_REMOTE_SETTINGS } from '@sidex/platform/request/common/request.js';
 import {
 	APPLICATION_SCOPES,
 	FOLDER_SCOPES,

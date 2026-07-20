@@ -5,14 +5,14 @@
 
 import { localize } from '@sidex/base/nls.js';
 import { BINARY_DIFF_EDITOR_ID } from '../../../common/editor.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { SideBySideEditor } from './sideBySideEditor.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { BaseBinaryResourceEditor } from './binaryEditor.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 

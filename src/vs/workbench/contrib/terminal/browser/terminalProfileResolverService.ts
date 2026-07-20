@@ -3,36 +3,36 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { env } from '../../../../base/common/process.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { env } from '@sidex/base/common/process.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IConfigurationResolverService } from '../../../services/configurationResolver/common/configurationResolver.js';
 import { IHistoryService } from '../../../services/history/common/history.js';
-import { IProcessEnvironment, OperatingSystem, OS } from '../../../../base/common/platform.js';
+import { IProcessEnvironment, OperatingSystem, OS } from '@sidex/base/common/platform.js';
 import {
 	IShellLaunchConfig,
 	ITerminalLogService,
 	ITerminalProfile,
 	TerminalIcon,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import {
 	IShellLaunchConfigResolveOptions,
 	ITerminalProfileResolverService,
 	ITerminalProfileService
 } from '../common/terminal.js';
-import * as path from '../../../../base/common/path.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { getIconRegistry, IIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
+import * as path from '@sidex/base/common/path.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { getIconRegistry, IIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
-import { debounce } from '../../../../base/common/decorators.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isUriComponents, URI } from '../../../../base/common/uri.js';
-import { deepClone } from '../../../../base/common/objects.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isUriComponents, URI } from '@sidex/base/common/uri.js';
+import { deepClone } from '@sidex/base/common/objects.js';
 import { ITerminalInstanceService } from './terminal.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isString, type SingleOrMany } from '../../../../base/common/types.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isString, type SingleOrMany } from '@sidex/base/common/types.js';
 
 export interface IProfileContextProvider {
 	getDefaultSystemShell(remoteAuthority: string | undefined, os: OperatingSystem): Promise<string>;

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { toDisposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
 import { StandardTokenType } from '../../../encodedTokenAttributes.js';
 import { ILanguageIdCodec } from '../../../languages.js';
 import { IModelContentChangedEvent } from '../../../textModelEvents.js';
@@ -12,9 +12,9 @@ import { BackgroundTokenizationState } from '../../../tokenizationTextModelPart.
 import { LineTokens } from '../../../tokens/lineTokens.js';
 import { TextModel } from '../../textModel.js';
 import { AbstractSyntaxTokenBackend } from '../abstractSyntaxTokenBackend.js';
-import { autorun, derived, IObservable, ObservablePromise } from '../../../../../base/common/observable.js';
+import { autorun, derived, IObservable, ObservablePromise } from '@sidex/base/common/observable.js';
 import { TreeSitterTree } from './treeSitterTree.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { TreeSitterTokenizationImpl } from './treeSitterTokenizationImpl.js';
 import { ITreeSitterLibraryService } from '../../../services/treeSitter/treeSitterLibraryService.js';
 import { LineRange } from '../../../core/ranges/lineRange.js';

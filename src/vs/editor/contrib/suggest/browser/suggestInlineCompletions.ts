@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { Disposable, RefCountedDisposable } from '../../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, RefCountedDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { ICodeEditorService } from '../../../browser/services/codeEditorService.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -38,7 +38,7 @@ import {
 import { ISuggestMemoryService } from './suggestMemory.js';
 import { SuggestModel } from './suggestModel.js';
 import { WordDistance } from './wordDistance.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 
 class SuggestInlineCompletion implements InlineCompletion {
 	readonly doNotLog = true;

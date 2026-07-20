@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { Disposable, toDisposable, type IDisposable } from '../../../base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	TerminalCapability,
 	type ITerminalCommand
-} from '../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ExtHostContext,
 	MainContext,

@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../base/common/arrays.js';
-import { CancelablePromise, createCancelablePromise, RunOnceScheduler } from '../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { isEqual } from '../../../base/common/resources.js';
-import { isBoolean, isUndefined } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { CancelablePromise, createCancelablePromise, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { isBoolean, isUndefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IExtensionGalleryService } from '../../extensionManagement/common/extensionManagement.js';
 import { IFileService } from '../../files/common/files.js';

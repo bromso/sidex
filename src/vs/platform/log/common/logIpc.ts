@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
-import { Event } from '../../../base/common/event.js';
-import { IChannel, IServerChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import {
 	AbstractLoggerService,
 	AbstractMessageLogger,
@@ -18,8 +18,8 @@ import {
 	isLogLevel,
 	LogLevel
 } from './log.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IURITransformer } from '../../../base/common/uriIpc.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IURITransformer } from '@sidex/base/common/uriIpc.js';
 
 export class LoggerChannelClient extends AbstractLoggerService implements ILoggerService {
 	constructor(

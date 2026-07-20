@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, DeferredPromise } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { combinedDisposable, Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { EditorActivation } from '../../../../platform/editor/common/editor.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { CancelablePromise, createCancelablePromise, DeferredPromise } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { combinedDisposable, Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { EditorActivation } from '@sidex/platform/editor/common/editor.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { GroupIdentifier } from '../../../common/editor.js';
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';

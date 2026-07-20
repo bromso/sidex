@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { asyncTransaction, transaction } from '../../../../../base/common/observable.js';
-import { splitLines } from '../../../../../base/common/strings.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { asyncTransaction, transaction } from '@sidex/base/common/observable.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 import {
 	vBoolean,
 	vObj,
@@ -15,18 +15,18 @@ import {
 	vUndefined,
 	vUnion,
 	vWithJsonSchemaRef
-} from '../../../../../base/common/validation.js';
+} from '@sidex/base/common/validation.js';
 import * as nls from '@sidex/base/nls.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
-import { Action2, MenuId } from '../../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	KeybindingsRegistry,
 	KeybindingWeight
-} from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService, Severity } from '../../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { EditorAction, ServicesAccessor } from '../../../../browser/editorExtensions.js';
 import { EditorContextKeys } from '../../../../common/editorContextKeys.js';

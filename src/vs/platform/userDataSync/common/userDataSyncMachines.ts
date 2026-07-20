@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	isAndroid,
 	isChrome,
@@ -15,8 +15,8 @@ import {
 	Platform,
 	platform,
 	PlatformToString
-} from '../../../base/common/platform.js';
-import { escapeRegExpCharacters } from '../../../base/common/strings.js';
+} from '@sidex/base/common/platform.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';

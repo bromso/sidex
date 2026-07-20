@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { getCompressedContent, IJSONSchema } from '../../../base/common/jsonSchema.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { getCompressedContent, IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import * as platform from '../../registry/common/platform.js';
 
 export const Extensions = {

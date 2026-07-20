@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import severity from '../../../../base/common/severity.js';
-import { isObject, isString } from '../../../../base/common/types.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import severity from '@sidex/base/common/severity.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IDebugConfiguration,
 	IDebugSession,

@@ -13,12 +13,12 @@ import {
 	Position as SideBarPosition
 } from '../../../services/layout/browser/layoutService.js';
 import { SidebarFocusContext, ActiveViewletContext } from '../../../common/contextkeys.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { contrastBorder } from '../../../../platform/theme/common/colorRegistry.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { contrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	SIDE_BAR_TITLE_FOREGROUND,
 	SIDE_BAR_TITLE_BORDER,
@@ -33,24 +33,24 @@ import {
 	ACTIVITY_BAR_TOP_INACTIVE_FOREGROUND,
 	ACTIVITY_BAR_TOP_DRAG_AND_DROP_BORDER
 } from '../../../common/theme.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { LayoutPriority } from '../../../../base/browser/ui/grid/grid.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { LayoutPriority } from '@sidex/base/browser/ui/grid/grid.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import { AbstractPaneCompositePart, CompositeBarPosition } from '../paneCompositePart.js';
 import { ActivityBarCompositeBar, ActivitybarPart } from '../activitybar/activitybarPart.js';
-import { ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import { IPaneCompositeBarOptions } from '../paneCompositeBar.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { Action2, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { Separator } from '../../../../base/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { Action2, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { Separator } from '@sidex/base/common/actions.js';
 import { ToggleActivityBarVisibilityActionId } from '../../actions/layoutActions.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { VisibleViewContainersTracker } from '../visibleViewContainersTracker.js';
 import { Extensions } from '../../panecomposite.js';
 

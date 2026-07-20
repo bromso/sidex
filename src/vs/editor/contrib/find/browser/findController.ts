@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert as alertFn } from '../../../../base/browser/ui/aria/aria.js';
-import { Delayer } from '../../../../base/common/async.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import * as strings from '../../../../base/common/strings.js';
+import { alert as alertFn } from '@sidex/base/browser/ui/aria/aria.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -42,22 +42,22 @@ import { FindOptionsWidget } from './findOptionsWidget.js';
 import { FindReplaceState, FindReplaceStateChangedEvent, INewFindReplaceState } from './findState.js';
 import { FindWidget, IFindController, NLS_NO_RESULTS } from './findWidget.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 import { Selection } from '../../../common/core/selection.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { FindWidgetSearchHistory } from './findWidgetSearchHistory.js';
 import { ReplaceWidgetHistory } from './replaceWidgetHistory.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 const SEARCH_STRING_MAX_LENGTH = 524288;
 

@@ -3,7 +3,7 @@
  *  Provides type-only exports consumed by the extension host API layer.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export const enum CellKind {
 	Markup = 1,

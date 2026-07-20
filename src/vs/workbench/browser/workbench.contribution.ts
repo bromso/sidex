@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isStandalone } from '../../base/browser/browser.js';
-import { isLinux, isMacintosh, isNative, isWeb, isWindows } from '../../base/common/platform.js';
+import { isStandalone } from '@sidex/base/browser/browser.js';
+import { isLinux, isMacintosh, isNative, isWeb, isWindows } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	IConfigurationRegistry
-} from '../../platform/configuration/common/configurationRegistry.js';
-import product from '../../platform/product/common/product.js';
-import { Registry } from '../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import product from '@sidex/platform/product/common/product.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	ConfigurationKeyValuePairs,
 	ConfigurationMigrationWorkbenchContribution,

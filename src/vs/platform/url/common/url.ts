@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 
 export const IURLService = createDecorator<IURLService>('urlService');

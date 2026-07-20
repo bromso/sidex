@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { WorkbenchActionExecutedClassification, WorkbenchActionExecutedEvent } from '../../../base/common/actions.js';
-import * as arrays from '../../../base/common/arrays.js';
-import { IntervalTimer, TimeoutTimer } from '../../../base/common/async.js';
-import { illegalState } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IME } from '../../../base/common/ime.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+import { WorkbenchActionExecutedClassification, WorkbenchActionExecutedEvent } from '@sidex/base/common/actions.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { IntervalTimer, TimeoutTimer } from '@sidex/base/common/async.js';
+import { illegalState } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IME } from '@sidex/base/common/ime.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	Keybinding,
 	ResolvedChord,
 	ResolvedKeybinding,
 	SingleModifierChord
-} from '../../../base/common/keybindings.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/keybindings.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import * as nls from '@sidex/base/nls.js';
 
 import { ICommandService } from '../../commands/common/commands.js';

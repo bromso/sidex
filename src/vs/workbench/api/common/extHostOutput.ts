@@ -5,10 +5,10 @@
 
 import { MainContext, MainThreadOutputServiceShape, ExtHostOutputServiceShape } from './extHost.protocol.js';
 import type * as vscode from 'vscode';
-import { URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	AbstractMessageLogger,
 	ILogger,
@@ -16,18 +16,18 @@ import {
 	ILogService,
 	log,
 	LogLevel
-} from '../../../platform/log/common/log.js';
+} from '@sidex/platform/log/common/log.js';
 import { OutputChannelUpdateMode } from '../../services/output/common/output.js';
 import { IExtHostConsumerFileSystem } from './extHostFileSystemConsumer.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
 import { IExtHostFileSystemInfo } from './extHostFileSystemInfo.js';
-import { toLocalISOString } from '../../../base/common/date.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { isString } from '../../../base/common/types.js';
-import { FileSystemProviderErrorCode, toFileSystemProviderErrorCode } from '../../../platform/files/common/files.js';
-import { Emitter } from '../../../base/common/event.js';
-import { DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { isString } from '@sidex/base/common/types.js';
+import { FileSystemProviderErrorCode, toFileSystemProviderErrorCode } from '@sidex/platform/files/common/files.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 
 class ExtHostOutputChannel extends AbstractMessageLogger implements vscode.LogOutputChannel {
 	private offset: number = 0;

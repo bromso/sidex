@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IResourceEditorInput, IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IResourceEditorInput, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	IEditorPane,
 	IEditorCloseEvent,
@@ -38,30 +38,30 @@ import {
 	FILES_EXCLUDE_CONFIG,
 	FileOperationEvent,
 	FileOperation
-} from '../../../../platform/files/common/files.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { Disposable, DisposableStore, IDisposable, DisposableMap } from '../../../../base/common/lifecycle.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/files/common/files.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { Disposable, DisposableStore, IDisposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IEditorGroup, IEditorGroupsService } from '../../editor/common/editorGroupsService.js';
 import { getExcludes, ISearchConfiguration, SEARCH_EXCLUDE_CONFIG } from '../../search/common/search.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorServiceImpl } from '../../../browser/parts/editor/editor.js';
 import { IWorkbenchLayoutService } from '../../layout/browser/layoutService.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { coalesce, remove } from '../../../../base/common/arrays.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { addDisposableListener, EventType, EventHelper, WindowIdleValue } from '../../../../base/browser/dom.js';
-import { IWorkspacesService } from '../../../../platform/workspaces/common/workspaces.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { coalesce, remove } from '@sidex/base/common/arrays.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { addDisposableListener, EventType, EventHelper, WindowIdleValue } from '@sidex/base/browser/dom.js';
+import { IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { ResourceGlobMatcher } from '../../../common/resources.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
-import { ILogService, LogLevel } from '../../../../platform/log/common/log.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 interface ISerializedEditorHistoryEntry {
 	readonly editor: Omit<IResourceEditorInput, 'resource'> & { resource: string };

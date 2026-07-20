@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Barrier } from '../../../../base/common/async.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as perf from '../../../../base/common/performance.js';
-import { isCI } from '../../../../base/common/platform.js';
-import { isEqualOrParent } from '../../../../base/common/resources.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as perf from '@sidex/base/common/performance.js';
+import { isCI } from '@sidex/base/common/platform.js';
+import { isEqualOrParent } from '@sidex/base/common/resources.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { InstallOperation } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { ImplicitActivationEvents } from '../../../../platform/extensionManagement/common/implicitActivationEvents.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { InstallOperation } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { ImplicitActivationEvents } from '@sidex/platform/extensionManagement/common/implicitActivationEvents.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
@@ -27,25 +27,25 @@ import {
 	IExtensionContributions,
 	IExtensionDescription,
 	IExtensionManifest
-} from '../../../../platform/extensions/common/extensions.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { handleVetos } from '../../../../platform/lifecycle/common/lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { handleVetos } from '@sidex/platform/lifecycle/common/lifecycle.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IRemoteAuthorityResolverService,
 	RemoteAuthorityResolverError,
 	RemoteAuthorityResolverErrorCode,
 	ResolverResult,
 	getRemoteAuthorityPrefix
-} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
-import { IRemoteExtensionsScannerService } from '../../../../platform/remote/common/remoteExtensionsScanner.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { IRemoteExtensionsScannerService } from '@sidex/platform/remote/common/remoteExtensionsScanner.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	IExtensionFeaturesRegistry,

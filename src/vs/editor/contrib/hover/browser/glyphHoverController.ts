@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { isModifierKey } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { isModifierKey } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor, IEditorMouseEvent, IPartialEditorMouseEvent } from '../../../browser/editorBrowser.js';
 import { ConfigurationChangedEvent, EditorOption } from '../../../common/config/editorOptions.js';
 import { IEditorContribution, IScrollEvent } from '../../../common/editorCommon.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IHoverWidget } from './hoverTypes.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { isMousePositionWithinElement, isTriggerModifierPressed, shouldShowHover } from './hoverUtils.js';
 import './hover.css';
 import { GlyphHoverWidget } from './glyphHoverWidget.js';

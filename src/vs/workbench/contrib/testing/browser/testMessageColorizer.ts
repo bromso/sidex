@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { renderAsPlaintext } from '../../../../base/browser/markdownRenderer.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { GraphemeIterator, forAnsiStringParts, removeAnsiEscapeCodes } from '../../../../base/common/strings.js';
+import { renderAsPlaintext } from '@sidex/base/browser/markdownRenderer.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { GraphemeIterator, forAnsiStringParts, removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
 import './media/testMessageColorizer.css';
-import { CodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { CodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 
 const colorAttrRe = /^\x1b\[([0-9]+)m$/;
 

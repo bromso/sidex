@@ -6,7 +6,7 @@ import { invoke } from '@sidex/base/sidex-bridge.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { CommandsRegistry } from '../../commands/common/commands.js';
-import { toDisposable } from '../../../base/common/lifecycle.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
 
 // ---------------------------------------------------------------------------
 // Public types

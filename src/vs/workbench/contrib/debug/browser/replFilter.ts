@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FuzzyScore, matchesFuzzy } from '../../../../base/common/filters.js';
-import { splitGlobAware } from '../../../../base/common/glob.js';
-import { ITreeFilter, TreeVisibility, TreeFilterResult } from '../../../../base/browser/ui/tree/tree.js';
+import { FuzzyScore, matchesFuzzy } from '@sidex/base/common/filters.js';
+import { splitGlobAware } from '@sidex/base/common/glob.js';
+import { ITreeFilter, TreeVisibility, TreeFilterResult } from '@sidex/base/browser/ui/tree/tree.js';
 import { IReplElement } from '../common/debug.js';
 import { ReplEvaluationResult, ReplEvaluationInput } from '../common/replModel.js';
 import { Variable } from '../common/debugModel.js';

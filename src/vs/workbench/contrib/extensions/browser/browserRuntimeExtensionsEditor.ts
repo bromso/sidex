@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action } from '../../../../base/common/actions.js';
+import { Action } from '@sidex/base/common/actions.js';
 import { IExtensionHostProfile } from '../../../services/extensions/common/extensions.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { AbstractRuntimeExtensionsEditor, IRuntimeExtension } from './abstractRuntimeExtensionsEditor.js';
 import { ReportExtensionIssueAction } from '../common/reportExtensionIssueAction.js';
 

@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './media/searchEditor.css';
-import { ICodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
-import { IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { ICodeEditor, isDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { EditorsOrder } from '../../../common/editor.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { getSearchView } from '../../search/browser/searchActionsBase.js';

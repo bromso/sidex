@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IExtUri } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
@@ -38,8 +38,8 @@ import { LocalExtensionsProvider, parseExtensions, stringify as stringifyExtensi
 import { LocalGlobalStateProvider, stringify as stringifyGlobalState } from './globalStateSync.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { parseUserDataProfilesManifest, stringifyLocalProfiles } from './userDataProfilesManifestSync.js';
-import { toFormattedString } from '../../../base/common/jsonFormatter.js';
-import { trim } from '../../../base/common/strings.js';
+import { toFormattedString } from '@sidex/base/common/jsonFormatter.js';
+import { trim } from '@sidex/base/common/strings.js';
 import { IMachinesData, IUserDataSyncMachine } from './userDataSyncMachines.js';
 import { parsePrompts } from './promptsSync/promptsSync.js';
 

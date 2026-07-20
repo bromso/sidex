@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { splitLines } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import { splitLines } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { Position } from '../core/position.js';
 import { IRange } from '../core/range.js';
 import { PrefixSumComputer } from './prefixSumComputer.js';

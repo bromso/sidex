@@ -10,13 +10,13 @@ import {
 	IQuickPickItem,
 	IQuickInputService,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Event } from '../../../../base/common/event.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export async function pickSnippet(
 	accessor: ServicesAccessor,

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ResourceTextEdit } from '../../../browser/services/bulkEditService.js';
 import { DocumentDropEdit, DocumentPasteEdit, DropYieldTo, WorkspaceEdit } from '../../../common/languages.js';
 import { Range } from '../../../common/core/range.js';
 import { SnippetParser } from '../../snippet/browser/snippetParser.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
 
 /**
  * Given a {@link DropOrPasteEdit} and set of ranges, creates a {@link WorkspaceEdit} that applies the insert text from

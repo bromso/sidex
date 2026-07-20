@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CallbackIterable, compareBy } from '../../../../base/common/arrays.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { CallbackIterable, compareBy } from '@sidex/base/common/arrays.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	IReference,
 	MutableDisposable
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { IPosition, Position } from '../../core/position.js';
 import { Range } from '../../core/range.js';
 import {

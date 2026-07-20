@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import {
 	AccessibleViewProviderId,
 	AccessibleViewType,
 	IAccessibleViewContentProvider
-} from '../../../../platform/accessibility/browser/accessibleView.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { AccessibilityHelpNLS } from '../../../../editor/common/standaloneStrings.js';
+import { AccessibilityHelpNLS } from '@sidex/editor/common/standaloneStrings.js';
 import { FocusedViewContext, SidebarFocusContext } from '../../../common/contextkeys.js';
 import {
 	BREAKPOINTS_VIEW_ID,

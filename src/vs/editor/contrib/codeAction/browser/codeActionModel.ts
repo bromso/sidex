@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, TimeoutTimer } from '../../../../base/common/async.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IMarkerService } from '../../../../platform/markers/common/markers.js';
-import { IEditorProgressService, Progress } from '../../../../platform/progress/common/progress.js';
+import { CancelablePromise, createCancelablePromise, TimeoutTimer } from '@sidex/base/common/async.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { IEditorProgressService, Progress } from '@sidex/platform/progress/common/progress.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption, ShowLightbulbIconMode } from '../../../common/config/editorOptions.js';
 import { Position } from '../../../common/core/position.js';

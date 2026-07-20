@@ -6,9 +6,9 @@
 
 import { invoke } from '@tauri-apps/api/core';
 import { listen, type UnlistenFn } from '@tauri-apps/api/event';
-import { URI } from '../../../base/common/uri.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	FileChangeType,
 	FileSystemProviderCapabilities,

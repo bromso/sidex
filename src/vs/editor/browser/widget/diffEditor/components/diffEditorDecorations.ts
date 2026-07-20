@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { IObservable, derived } from '../../../../../base/common/observable.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, derived } from '@sidex/base/common/observable.js';
 import { DiffEditorEditors } from './diffEditorEditors.js';
 import { allowsTrueInlineDiffRendering } from './diffEditorViewZones/diffEditorViewZones.js';
 import { DiffEditorOptions } from '../diffEditorOptions.js';

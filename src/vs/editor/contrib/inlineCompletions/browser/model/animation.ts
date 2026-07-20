@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../../base/browser/dom.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
 import {
 	ISettableObservable,
 	observableValue,
 	ITransaction,
 	IReader,
 	observableSignal
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 
 export class AnimatedValue {
 	public static const(value: number): AnimatedValue {

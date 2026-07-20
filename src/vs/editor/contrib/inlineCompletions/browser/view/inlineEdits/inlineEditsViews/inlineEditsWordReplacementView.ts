@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, n, ObserverNodeWithElement } from '../../../../../../../base/browser/dom.js';
-import { renderIcon } from '../../../../../../../base/browser/ui/iconLabel/iconLabels.js';
+import { $, n, ObserverNodeWithElement } from '@sidex/base/browser/dom.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import {
 	KeybindingLabel,
 	unthemedKeybindingLabelOptions
-} from '../../../../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { IEquatable } from '../../../../../../../base/common/equals.js';
-import { Emitter } from '../../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../../base/common/lifecycle.js';
+} from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IEquatable } from '@sidex/base/common/equals.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	constObservable,
 	derived,
@@ -19,15 +19,15 @@ import {
 	observableFromEvent,
 	observableFromPromise,
 	observableValue
-} from '../../../../../../../base/common/observable.js';
-import { OS } from '../../../../../../../base/common/platform.js';
+} from '@sidex/base/common/observable.js';
+import { OS } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
-import { IHoverService } from '../../../../../../../platform/hover/browser/hover.js';
-import { IKeybindingService } from '../../../../../../../platform/keybinding/common/keybinding.js';
-import { editorHoverForeground } from '../../../../../../../platform/theme/common/colorRegistry.js';
-import { contrastBorder } from '../../../../../../../platform/theme/common/colors/baseColors.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { editorHoverForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { contrastBorder } from '@sidex/platform/theme/common/colors/baseColors.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ObservableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import {
 	LineSource,
@@ -59,7 +59,7 @@ import {
 	originalChangedTextOverlayColor
 } from '../theme.js';
 import { getEditorValidOverlayRect, mapOutFalsy, rectToProps } from '../utils/utils.js';
-import { IUserInteractionService } from '../../../../../../../platform/userInteraction/browser/userInteractionService.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
 
 export class WordReplacementsViewData implements IEquatable<WordReplacementsViewData> {
 	constructor(

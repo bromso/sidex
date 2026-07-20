@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IAction, toAction } from '../../../base/common/actions.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
 import { IActivity } from '../../services/activity/common/activity.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ActionBar, ActionsOrientation } from '../../../base/browser/ui/actionbar/actionbar.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ActionBar, ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import {
 	CompositeActionViewItem,
 	CompositeOverflowActivityAction,
@@ -25,13 +25,13 @@ import {
 	EventHelper,
 	isAncestor,
 	getWindow
-} from '../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { Widget } from '../../../base/browser/ui/widget.js';
-import { isUndefinedOrNull } from '../../../base/common/types.js';
-import { IColorTheme } from '../../../platform/theme/common/themeService.js';
-import { Emitter } from '../../../base/common/event.js';
+} from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { ViewContainerLocation, IViewDescriptorService } from '../../common/views.js';
 import { IPaneComposite } from '../../common/panecomposite.js';
 import { IComposite } from '../../common/composite.js';
@@ -44,8 +44,8 @@ import {
 	toggleDropEffect,
 	ICompositeDragAndDropObserverCallbacks
 } from '../dnd.js';
-import { Gesture, EventType as TouchEventType, GestureEvent } from '../../../base/browser/touch.js';
-import { MutableDisposable } from '../../../base/common/lifecycle.js';
+import { Gesture, EventType as TouchEventType, GestureEvent } from '@sidex/base/browser/touch.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
 
 export interface ICompositeBarItem {
 	readonly id: string;

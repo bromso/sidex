@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { ICommandHandler } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ICommandHandler } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	WorkbenchCompressibleAsyncDataTree,
 	WorkbenchListFocusContextKey
-} from '../../../../platform/list/browser/listService.js';
+} from '@sidex/platform/list/browser/listService.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import {
 	searchClearIcon,
@@ -23,10 +23,10 @@ import {
 import * as Constants from '../common/constants.js';
 import { ISearchHistoryService } from '../common/searchHistoryService.js';
 import { VIEW_ID } from '../../../services/search/common/search.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { SearchStateKey, SearchUIState } from '../common/search.js';
 import { category, getSearchView } from './searchActionsBase.js';
 import {

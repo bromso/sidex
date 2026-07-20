@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action } from '../../../../base/common/actions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import * as nls from '@sidex/base/nls.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Extensions, IConfigurationRegistry } from '../../../../platform/configuration/common/configurationRegistry.js';
-import { EditorExtensionsRegistry } from '../../../../editor/browser/editorExtensions.js';
-import { MenuId, MenuRegistry, isIMenuItem } from '../../../../platform/actions/common/actions.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { isLocalizedString } from '../../../../platform/action/common/action.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Extensions, IConfigurationRegistry } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { EditorExtensionsRegistry } from '@sidex/editor/browser/editorExtensions.js';
+import { MenuId, MenuRegistry, isIMenuItem } from '@sidex/platform/actions/common/actions.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { isLocalizedString } from '@sidex/platform/action/common/action.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export class ConfigureLanguageBasedSettingsAction extends Action {
 	static readonly ID = 'workbench.action.configureLanguageBasedSettings';

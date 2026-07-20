@@ -6,16 +6,16 @@
 import * as nls from '@sidex/base/nls.js';
 import { ExtensionsRegistry, IExtensionPointUser } from '../../extensions/common/extensionsRegistry.js';
 import { isProposedApiEnabled } from '../../extensions/common/extensions.js';
-import * as resources from '../../../../base/common/resources.js';
-import { IFileService, FileChangeType } from '../../../../platform/files/common/files.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { IFileService, FileChangeType } from '@sidex/platform/files/common/files.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { FileAccess } from '../../../../base/common/network.js';
-import { createLinkElement } from '../../../../base/browser/dom.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import { createLinkElement } from '@sidex/base/browser/dom.js';
 import { IWorkbenchThemeService } from '../common/workbenchThemeService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 
 interface ICSSExtensionPoint {
 	path: string;

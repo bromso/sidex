@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IDisposable } from '../../../base/common/lifecycle.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
 import type {
 	ViewConfigurationChangedEvent,
 	ViewLinesChangedEvent,

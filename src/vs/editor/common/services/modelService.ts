@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { StringSHA1 } from '../../../base/common/hash.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { equals } from '../../../base/common/objects.js';
-import * as platform from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { StringSHA1 } from '@sidex/base/common/hash.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { equals } from '@sidex/base/common/objects.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { IUndoRedoService, ResourceEditStackSnapshot } from '../../../platform/undoRedo/common/undoRedo.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IUndoRedoService, ResourceEditStackSnapshot } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { clampedInt } from '../config/editorOptions.js';
 import { EditOperation, ISingleEditOperation } from '../core/editOperation.js';
 import { EDITOR_MODEL_DEFAULTS } from '../core/misc/textModelDefaults.js';

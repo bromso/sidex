@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { GlobalIdleValue, Limiter } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IUndoRedoService } from '../../../../platform/undoRedo/common/undoRedo.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { GlobalIdleValue, Limiter } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IUndoRedoService } from '@sidex/platform/undoRedo/common/undoRedo.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { SaveSource, SaveSourceRegistry } from '../../../common/editor.js';
 import { IPathService } from '../../path/common/pathService.js';
@@ -20,16 +20,16 @@ import { IStoredFileWorkingCopySaveEvent } from './storedFileWorkingCopyManager.
 import { IWorkingCopy } from './workingCopy.js';
 import { IWorkingCopyHistoryService, MAX_PARALLEL_HISTORY_IO_OPS } from './workingCopyHistory.js';
 import { IWorkingCopySaveEvent, IWorkingCopyService } from './workingCopyService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { ResourceGlobMatcher } from '../../../common/resources.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	FileOperation,
 	FileOperationEvent,
 	IFileOperationEventWithMetadata,
 	IFileService,
 	IFileStatWithMetadata
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 
 export class WorkingCopyHistoryTracker extends Disposable implements IWorkbenchContribution {
 	private static readonly SETTINGS = {

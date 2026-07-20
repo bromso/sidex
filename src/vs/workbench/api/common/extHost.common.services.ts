@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IExtHostOutputService, ExtHostOutputService } from './extHostOutput.js';
 import { IExtHostWorkspace, ExtHostWorkspace } from './extHostWorkspace.js';
 import { IExtHostDecorations, ExtHostDecorations } from './extHostDecorations.js';
@@ -24,7 +24,7 @@ import { IExtHostFileSystemInfo, ExtHostFileSystemInfo } from './extHostFileSyst
 import { IExtHostSecretState, ExtHostSecretState } from './extHostSecretState.js';
 import { ExtHostEditorTabs, IExtHostEditorTabs } from './extHostEditorTabs.js';
 import { ExtHostLoggerService } from './extHostLoggerService.js';
-import { ILoggerService } from '../../../platform/log/common/log.js';
+import { ILoggerService } from '@sidex/platform/log/common/log.js';
 import {
 	ExtHostVariableResolverProviderService,
 	IExtHostVariableResolverProvider

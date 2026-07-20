@@ -3,36 +3,36 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
-import { IHistoryNavigationWidget } from '../../../../base/browser/history.js';
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '../../../../base/browser/ui/mouseCursor/mouseCursor.js';
-import { IAsyncDataSource, ITreeContextMenuEvent, ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { RunOnceScheduler, timeout } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { HistoryNavigator } from '../../../../base/common/history.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { removeAnsiEscapeCodes } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI as uri } from '../../../../base/common/uri.js';
-import { ICodeEditor, isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, registerEditorAction } from '../../../../editor/browser/editorExtensions.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { CodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { EDITOR_FONT_DEFAULTS } from '../../../../editor/common/config/fontInfo.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { IDecorationOptions } from '../../../../editor/common/editorCommon.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { IHistoryNavigationWidget } from '@sidex/base/browser/history.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '@sidex/base/browser/ui/mouseCursor/mouseCursor.js';
+import { IAsyncDataSource, ITreeContextMenuEvent, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { RunOnceScheduler, timeout } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { HistoryNavigator } from '@sidex/base/common/history.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
+import { ICodeEditor, isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { CodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { EDITOR_FONT_DEFAULTS } from '@sidex/editor/common/config/fontInfo.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IDecorationOptions } from '@sidex/editor/common/editorCommon.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import {
 	CompletionContext,
 	CompletionItem,
@@ -40,35 +40,35 @@ import {
 	CompletionItemKind,
 	CompletionItemKinds,
 	CompletionList
-} from '../../../../editor/common/languages.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ITextResourcePropertiesService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
+} from '@sidex/editor/common/languages.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextResourcePropertiesService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { SuggestController } from '@sidex/editor/contrib/suggest/browser/suggestController.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { registerAndCreateHistoryNavigationContext } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { editorForeground, resolveColorValue } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { registerAndCreateHistoryNavigationContext } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { editorForeground, resolveColorValue } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { registerNavigableContainer } from '../../../browser/actions/widgetNavigationCommands.js';
 import { FilterViewPane, IViewPaneOptions, ViewAction } from '../../../browser/parts/views/viewPane.js';
 import { IViewDescriptorService } from '../../../common/views.js';

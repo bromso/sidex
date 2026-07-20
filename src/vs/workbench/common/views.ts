@@ -3,29 +3,29 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Command } from '../../editor/common/languages.js';
-import { UriComponents, URI } from '../../base/common/uri.js';
-import { Event, Emitter } from '../../base/common/event.js';
-import { ContextKeyExpression } from '../../platform/contextkey/common/contextkey.js';
+import { Command } from '@sidex/editor/common/languages.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
 import { localize } from '@sidex/base/nls.js';
-import { createDecorator } from '../../platform/instantiation/common/instantiation.js';
-import { IDisposable, Disposable, toDisposable } from '../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../base/common/themables.js';
-import { getOrSet, SetMap } from '../../base/common/map.js';
-import { Registry } from '../../platform/registry/common/platform.js';
-import { IKeybindings } from '../../platform/keybinding/common/keybindingsRegistry.js';
-import { ExtensionIdentifier } from '../../platform/extensions/common/extensions.js';
-import { SyncDescriptor } from '../../platform/instantiation/common/descriptors.js';
-import { IProgressIndicator } from '../../platform/progress/common/progress.js';
-import Severity from '../../base/common/severity.js';
-import { IAccessibilityInformation } from '../../platform/accessibility/common/accessibility.js';
-import { IMarkdownString, MarkdownString } from '../../base/common/htmlContent.js';
-import { mixin } from '../../base/common/objects.js';
-import { Codicon } from '../../base/common/codicons.js';
-import { registerIcon } from '../../platform/theme/common/iconRegistry.js';
-import { CancellationToken } from '../../base/common/cancellation.js';
-import { VSDataTransfer } from '../../base/common/dataTransfer.js';
-import { ILocalizedString } from '../../platform/action/common/action.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable, Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { getOrSet, SetMap } from '@sidex/base/common/map.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IKeybindings } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IProgressIndicator } from '@sidex/platform/progress/common/progress.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IAccessibilityInformation } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { mixin } from '@sidex/base/common/objects.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { VSDataTransfer } from '@sidex/base/common/dataTransfer.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 
 export const VIEWS_LOG_ID = 'views';
 export const VIEWS_LOG_NAME = localize('views log', 'Views');

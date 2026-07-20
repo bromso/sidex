@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IDimension } from '../../common/core/2d/dimension.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { getWindow, scheduleAtNextAnimationFrame } from '../../../base/browser/dom.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { getWindow, scheduleAtNextAnimationFrame } from '@sidex/base/browser/dom.js';
 
 export class ElementSizeObserver extends Disposable {
 	private _onDidChange = this._register(new Emitter<void>());

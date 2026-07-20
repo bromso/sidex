@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import * as collections from '../../../../base/common/collections.js';
-import * as glob from '../../../../base/common/glob.js';
-import { untildify } from '../../../../base/common/labels.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as path from '../../../../base/common/path.js';
-import { isEqual, basename, relativePath, isAbsolutePath } from '../../../../base/common/resources.js';
-import * as strings from '../../../../base/common/strings.js';
-import { assertReturnsDefined, isDefined } from '../../../../base/common/types.js';
-import { URI, URI as uri, UriComponents } from '../../../../base/common/uri.js';
-import { isMultilineRegexSource } from '../../../../editor/common/model/textModelSearch.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import * as collections from '@sidex/base/common/collections.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { untildify } from '@sidex/base/common/labels.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as path from '@sidex/base/common/path.js';
+import { isEqual, basename, relativePath, isAbsolutePath } from '@sidex/base/common/resources.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { assertReturnsDefined, isDefined } from '@sidex/base/common/types.js';
+import { URI, URI as uri, UriComponents } from '@sidex/base/common/uri.js';
+import { isMultilineRegexSource } from '@sidex/editor/common/model/textModelSearch.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolderData,
 	toWorkspaceFolder,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IEditorGroupsService } from '../../editor/common/editorGroupsService.js';
 import { IPathService } from '../../path/common/pathService.js';
 import {

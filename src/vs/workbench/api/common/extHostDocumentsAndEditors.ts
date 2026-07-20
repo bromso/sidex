@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as assert from '../../../base/common/assert.js';
+import * as assert from '@sidex/base/common/assert.js';
 import * as vscode from 'vscode';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { dispose } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { dispose } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ExtHostDocumentsAndEditorsShape, IDocumentsAndEditorsDelta, MainContext } from './extHost.protocol.js';
 import { ExtHostDocumentData } from './extHostDocumentData.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { ExtHostTextEditor } from './extHostTextEditor.js';
 import * as typeConverters from './extHostTypeConverters.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { Schemas } from '../../../base/common/network.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { Lazy } from '../../../base/common/lazy.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 
 class Reference<T> {
 	private _count = 0;

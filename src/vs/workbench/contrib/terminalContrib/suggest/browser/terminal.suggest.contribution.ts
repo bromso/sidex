@@ -4,28 +4,28 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import * as dom from '../../../../../base/browser/dom.js';
-import { AutoOpenBarrier } from '../../../../../base/common/async.js';
-import { Event } from '../../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { AutoOpenBarrier } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	DisposableStore,
 	MutableDisposable,
 	toDisposable,
 	Disposable,
 	DisposableMap
-} from '../../../../../base/common/lifecycle.js';
-import { isWindows } from '../../../../../base/common/platform.js';
+} from '@sidex/base/common/lifecycle.js';
+import { isWindows } from '@sidex/base/common/platform.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService
-} from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { TerminalLocation } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 import { ITerminalContribution, ITerminalInstance, IXtermTerminal } from '../../../terminal/browser/terminal.js';
 import { registerActiveInstanceAction, registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
 import {
@@ -43,13 +43,13 @@ import {
 } from '../common/terminalSuggestConfiguration.js';
 import { ITerminalCompletionService, TerminalCompletionService } from './terminalCompletionService.js';
 import { ITerminalContributionService } from '../../../terminal/common/terminalExtensionPoints.js';
-import { InstantiationType, registerSingleton } from '../../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { SuggestAddon } from './terminalSuggestAddon.js';
 import { TerminalClipboardContribution } from '../../clipboard/browser/terminal.clipboard.contribution.js';
 import { SimpleSuggestContext } from '../../../../services/suggest/browser/simpleSuggestWidget.js';
 import { SuggestDetailsClassName } from '../../../../services/suggest/browser/simpleSuggestWidgetDetails.js';
-import { EditorContextKeys } from '../../../../../editor/common/editorContextKeys.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { IPreferencesService } from '../../../../services/preferences/common/preferences.js';
 import './terminalSymbolIcons.js';
 import { LspCompletionProviderAddon } from './lspCompletionProviderAddon.js';
@@ -57,11 +57,11 @@ import {
 	createTerminalLanguageVirtualUri,
 	LspTerminalModelContentProvider
 } from './lspTerminalModelContentProvider.js';
-import { ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { ILanguageFeaturesService } from '../../../../../editor/common/services/languageFeatures.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
 import { getTerminalLspSupportedLanguageObj } from './lspTerminalUtil.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 registerSingleton(ITerminalCompletionService, TerminalCompletionService, InstantiationType.Delayed);
 

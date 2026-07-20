@@ -4,35 +4,35 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../base/common/uri.js';
-import { dirname, isEqual, basenameOrAuthority } from '../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { dirname, isEqual, basenameOrAuthority } from '@sidex/base/common/resources.js';
 import {
 	IconLabel,
 	IIconLabelValueOptions,
 	IIconLabelCreationOptions
-} from '../../base/browser/ui/iconLabel/iconLabel.js';
-import { ILanguageService } from '../../editor/common/languages/language.js';
-import { IWorkspaceContextService } from '../../platform/workspace/common/workspace.js';
-import { IConfigurationService } from '../../platform/configuration/common/configuration.js';
-import { IModelService } from '../../editor/common/services/model.js';
+} from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 import { ITextFileService } from '../services/textfile/common/textfiles.js';
 import {
 	IDecoration,
 	IDecorationsService,
 	IResourceDecorationChangeEvent
 } from '../services/decorations/common/decorations.js';
-import { Schemas } from '../../base/common/network.js';
-import { FileKind, FILES_ASSOCIATIONS_CONFIG } from '../../platform/files/common/files.js';
-import { ITextModel } from '../../editor/common/model.js';
-import { IThemeService } from '../../platform/theme/common/themeService.js';
-import { Event, Emitter } from '../../base/common/event.js';
-import { ILabelService } from '../../platform/label/common/label.js';
-import { getIconClasses } from '../../editor/common/services/getIconClasses.js';
-import { Disposable, dispose, IDisposable, MutableDisposable } from '../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../platform/instantiation/common/instantiation.js';
-import { normalizeDriveLetter } from '../../base/common/labels.js';
-import { IRange } from '../../editor/common/core/range.js';
-import { ThemeIcon } from '../../base/common/themables.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { FileKind, FILES_ASSOCIATIONS_CONFIG } from '@sidex/platform/files/common/files.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { Disposable, dispose, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	INotebookDocumentService,
 	extractCellOutputDetails

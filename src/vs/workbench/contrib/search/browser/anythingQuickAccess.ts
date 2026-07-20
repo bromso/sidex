@@ -14,7 +14,7 @@ import {
 	QuickInputHideReason,
 	IQuickInputService,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IPickerQuickAccessItem,
 	PickerQuickAccessProvider,
@@ -22,77 +22,77 @@ import {
 	FastAndSlowPicks,
 	Picks,
 	PicksWithActive
-} from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
 import {
 	prepareQuery,
 	IPreparedQuery,
 	compareItemsByFuzzyScore,
 	scoreItemFuzzy,
 	FuzzyScorerCache
-} from '../../../../base/common/fuzzyScorer.js';
+} from '@sidex/base/common/fuzzyScorer.js';
 import { IFileQueryBuilderOptions, QueryBuilder } from '../../../services/search/common/queryBuilder.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	getOutOfWorkspaceEditorResources,
 	extractRangeFromFilter,
 	IWorkbenchSearchConfiguration
 } from '../common/search.js';
 import { ISearchService, ISearchComplete } from '../../../services/search/common/search.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { untildify } from '../../../../base/common/labels.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { untildify } from '@sidex/base/common/labels.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
-import { URI } from '../../../../base/common/uri.js';
-import { toLocalResource, dirname, basenameOrAuthority } from '../../../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { toLocalResource, dirname, basenameOrAuthority } from '@sidex/base/common/resources.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	DisposableStore,
 	IDisposable,
 	toDisposable,
 	MutableDisposable,
 	Disposable
-} from '../../../../base/common/lifecycle.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { localize } from '@sidex/base/nls.js';
 import { IWorkingCopyService } from '../../../services/workingCopy/common/workingCopyService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IWorkbenchEditorConfiguration, EditorResourceAccessor, isEditorInput } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IEditorService, SIDE_GROUP, ACTIVE_GROUP } from '../../../services/editor/common/editorService.js';
-import { Range, IRange } from '../../../../editor/common/core/range.js';
-import { ThrottledDelayer } from '../../../../base/common/async.js';
-import { top } from '../../../../base/common/arrays.js';
+import { Range, IRange } from '@sidex/editor/common/core/range.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { top } from '@sidex/base/common/arrays.js';
 import { FileQueryCacheState } from '../common/cacheState.js';
 import { IHistoryService } from '../../../services/history/common/history.js';
-import { IResourceEditorInput, ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { IResourceEditorInput, ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IFilesConfigurationService } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import { SymbolsQuickAccessProvider } from './symbolsQuickAccess.js';
 import {
 	AnythingQuickAccessProviderRunOptions,
 	DefaultQuickAccessFilterValue,
 	Extensions,
 	IQuickAccessRegistry
-} from '../../../../platform/quickinput/common/quickAccess.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
 import { PickerEditorState, IWorkbenchQuickAccessConfiguration } from '../../../browser/quickaccess.js';
 import { GotoSymbolQuickAccessProvider } from '../../codeEditor/browser/quickaccess/gotoSymbolQuickAccess.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { ScrollType, IEditor } from '../../../../editor/common/editorCommon.js';
-import { Event } from '../../../../base/common/event.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { stripIcons } from '../../../../base/common/iconLabels.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { ScrollType, IEditor } from '@sidex/editor/common/editorCommon.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ICustomEditorLabelService } from '../../../services/editor/common/customEditorLabelService.js';
 
 interface IAnythingQuickPickItem extends IPickerQuickAccessItem, IQuickPickItemWithResource {}

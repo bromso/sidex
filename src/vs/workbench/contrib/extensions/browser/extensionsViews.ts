@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { isCancellationError, getErrorMessage, CancellationError } from '../../../../base/common/errors.js';
-import { PagedModel, IPagedModel, DelayedPagedModel, IPager } from '../../../../base/common/paging.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { isCancellationError, getErrorMessage, CancellationError } from '@sidex/base/common/errors.js';
+import { PagedModel, IPagedModel, DelayedPagedModel, IPager } from '@sidex/base/common/paging.js';
 import {
 	SortOrder,
 	IQueryOptions as IGalleryQueryOptions,
@@ -15,7 +15,7 @@ import {
 	InstallExtensionInfo,
 	ExtensionGalleryErrorCode,
 	ExtensionGalleryError
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IExtensionManagementServer,
 	IExtensionManagementServerService,
@@ -27,11 +27,11 @@ import { IExtensionRecommendationsService } from '../../../services/extensionRec
 import {
 	areSameExtensions,
 	getExtensionDependencies
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { append, $ } from '../../../../base/browser/dom.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { append, $ } from '@sidex/base/browser/dom.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ExtensionResultsListFocused,
 	ExtensionState,
@@ -42,19 +42,19 @@ import {
 } from '../common/extensions.js';
 import { Query } from '../common/extensionQuery.js';
 import { IExtensionService, toExtension } from '../../../services/extensions/common/extensions.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
-import { WorkbenchPagedList } from '../../../../platform/list/browser/listService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { WorkbenchPagedList } from '@sidex/platform/list/browser/listService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { ViewPane, IViewPaneOptions, ViewPaneShowActions } from '../../../browser/parts/views/viewPane.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { coalesce, distinct, range } from '../../../../base/common/arrays.js';
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { ActionRunner } from '../../../../base/common/actions.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { coalesce, distinct, range } from '@sidex/base/common/arrays.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { ActionRunner } from '@sidex/base/common/actions.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
@@ -63,31 +63,31 @@ import {
 	IExtensionDescription,
 	IExtensionIdentifier,
 	isLanguagePackExtension
-} from '../../../../platform/extensions/common/extensions.js';
-import { CancelablePromise, createCancelablePromise, ThrottledDelayer } from '../../../../base/common/async.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { CancelablePromise, createCancelablePromise, ThrottledDelayer } from '@sidex/base/common/async.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IViewDescriptorService } from '../../../common/views.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionManifestPropertiesService } from '../../../services/extensions/common/extensionManifestPropertiesService.js';
-import { isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { isOfflineError } from '../../../../base/parts/request/common/request.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { isOfflineError } from '@sidex/base/parts/request/common/request.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions,
 	IExtensionFeatureRenderer,
 	IExtensionFeaturesManagementService,
 	IExtensionFeaturesRegistry
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
-import { URI } from '../../../../base/common/uri.js';
-import { isString } from '../../../../base/common/types.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isString } from '@sidex/base/common/types.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { ExtensionsList } from './extensionsViewer.js';
 
 export const NONE_CATEGORY = 'none';

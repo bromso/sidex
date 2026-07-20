@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import * as nls from '@sidex/base/nls.js';
-import { Action2, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	IWebviewService,
 	KEYBINDING_CONTEXT_WEBVIEW_FIND_WIDGET_ENABLED,

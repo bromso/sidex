@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextMenuDelegate } from '../../../base/browser/contextmenu.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
+import { IContextMenuDelegate } from '@sidex/base/browser/contextmenu.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import {
 	AnchorAlignment,
 	AnchorAxisAlignment,
 	IAnchor,
 	IContextViewProvider
-} from '../../../base/browser/ui/contextview/contextview.js';
-import { IAction } from '../../../base/common/actions.js';
-import { Event } from '../../../base/common/event.js';
-import { AnchorPosition } from '../../../base/common/layout.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/browser/ui/contextview/contextview.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { AnchorPosition } from '@sidex/base/common/layout.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IMenuActionOptions, MenuId } from '../../actions/common/actions.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';

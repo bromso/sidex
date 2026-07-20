@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertNever } from '../../../../../base/common/assert.js';
-import { AsyncIterableProducer } from '../../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../../base/common/cancellation.js';
-import { BugIndicatingError, onUnexpectedExternalError } from '../../../../../base/common/errors.js';
-import { Disposable, IDisposable } from '../../../../../base/common/lifecycle.js';
-import { prefixedUuid } from '../../../../../base/common/uuid.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { AsyncIterableProducer } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { BugIndicatingError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { prefixedUuid } from '@sidex/base/common/uuid.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { ISingleEditOperation } from '../../../../common/core/editOperation.js';
 import { StringReplacement } from '../../../../common/core/edits/stringEdit.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';
@@ -35,14 +35,14 @@ import { ITextModel } from '../../../../common/model.js';
 import { fixBracketsInLine } from '../../../../common/model/bracketPairsTextModelPart/fixBrackets.js';
 import { SnippetParser, Text } from '../../../snippet/browser/snippetParser.js';
 import { ErrorResult, getReadonlyEmptyArray } from '../utils.js';
-import { groupByMap } from '../../../../../base/common/collections.js';
+import { groupByMap } from '@sidex/base/common/collections.js';
 import { DirectedGraph } from './graph.js';
-import { CachedFunction } from '../../../../../base/common/cache.js';
+import { CachedFunction } from '@sidex/base/common/cache.js';
 import { InlineCompletionViewData, InlineCompletionViewKind } from '../view/inlineEdits/inlineEditsViewInterface.js';
-import { isDefined } from '../../../../../base/common/types.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import { inlineCompletionIsVisible } from './inlineCompletionIsVisible.js';
 import { EditDeltaInfo } from '../../../../common/textModelEditSource.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { InlineSuggestionEditKind } from './editKind.js';
 import { InlineSuggestAlternativeAction } from './InlineSuggestAlternativeAction.js';
 

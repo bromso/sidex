@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { UriComponents } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { UriComponents } from '@sidex/base/common/uri.js';
 import { IElementData } from '../../browserElements/common/browserElements.js';
 import { localize } from '@sidex/base/nls.js';
 

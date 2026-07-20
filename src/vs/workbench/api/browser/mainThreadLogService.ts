@@ -14,13 +14,13 @@ import {
 	LogLevel,
 	LogLevelToString,
 	parseLogLevel
-} from '../../../platform/log/common/log.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
+} from '@sidex/platform/log/common/log.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ExtHostContext, MainThreadLoggerShape, MainContext } from '../common/extHost.protocol.js';
-import { UriComponents, URI, UriDto } from '../../../base/common/uri.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
+import { UriComponents, URI, UriDto } from '@sidex/base/common/uri.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 
 @extHostNamedCustomer(MainContext.MainThreadLogger)
 export class MainThreadLoggerService implements MainThreadLoggerShape {

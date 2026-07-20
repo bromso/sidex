@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { createDecorator } from '../../instantiation/common/instantiation.js';
-import { Event } from '../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
 
 export interface IRemoteTunnelSession {

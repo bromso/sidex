@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { Event } from '../../../base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
 import { ILogger, ILoggerService, LogLevel } from '../../log/common/log.js';
 import { ITerminalLogService } from './terminal.js';
 import { IWorkspaceContextService } from '../../workspace/common/workspace.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
-import { joinPath } from '../../../base/common/resources.js';
+import { joinPath } from '@sidex/base/common/resources.js';
 
 export class TerminalLogService extends Disposable implements ITerminalLogService {
 	declare _serviceBrand: undefined;

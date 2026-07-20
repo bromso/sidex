@@ -10,8 +10,8 @@ import {
 	MainThreadThemingShape
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { IThemeService } from '../../../platform/theme/common/themeService.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 
 @extHostNamedCustomer(MainContext.MainThreadTheming)
 export class MainThreadTheming implements MainThreadThemingShape {

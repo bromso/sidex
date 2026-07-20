@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createCancelablePromise, CancelablePromise, RunOnceScheduler } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as platform from '../../../../base/common/platform.js';
-import * as resources from '../../../../base/common/resources.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { URI } from '../../../../base/common/uri.js';
+import { createCancelablePromise, CancelablePromise, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './links.css';
 import { ICodeEditor, MouseTargetType } from '../../../browser/editorBrowser.js';
 import {
@@ -45,8 +45,8 @@ import {
 } from '../../gotoSymbol/browser/link/clickLinkGesture.js';
 import { getLinks, Link, LinksList } from './getLinks.js';
 import * as nls from '@sidex/base/nls.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 
 export class LinkDetector extends Disposable implements IEditorContribution {
 	public static readonly ID: string = 'editor.linkDetector';

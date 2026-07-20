@@ -5,14 +5,14 @@
 
 import * as nls from '@sidex/base/nls.js';
 
-import * as Objects from '../../../../base/common/objects.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import { Platform } from '../../../../base/common/platform.js';
-import * as Types from '../../../../base/common/types.js';
-import * as UUID from '../../../../base/common/uuid.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { Platform } from '@sidex/base/common/platform.js';
+import * as Types from '@sidex/base/common/types.js';
+import * as UUID from '@sidex/base/common/uuid.js';
 
-import { ValidationStatus, IProblemReporter as IProblemReporterBase } from '../../../../base/common/parsers.js';
+import { ValidationStatus, IProblemReporter as IProblemReporterBase } from '@sidex/base/common/parsers.js';
 import {
 	INamedProblemMatcher,
 	ProblemMatcherParser,
@@ -22,13 +22,13 @@ import {
 	ProblemMatcher
 } from './problemMatcher.js';
 
-import { IWorkspaceFolder, IWorkspace } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceFolder, IWorkspace } from '@sidex/platform/workspace/common/workspace.js';
 import * as Tasks from './tasks.js';
 import { ITaskDefinitionRegistry, TaskDefinitionRegistry } from './taskDefinitionRegistry.js';
 import { ConfiguredInput } from '../../../services/configurationResolver/common/configurationResolver.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ShellExecutionSupportedContext, ProcessExecutionSupportedContext } from './taskService.js';
-import { IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export const enum ShellQuoting {
 	/**

@@ -4,37 +4,37 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { URI } from '../../../../base/common/uri.js';
-import { MenuId, MenuRegistry, IMenuItem } from '../../../../platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { MenuId, MenuRegistry, IMenuItem } from '@sidex/platform/actions/common/actions.js';
 import {
 	ITerminalGroupService,
 	ITerminalService as IIntegratedTerminalService
 } from '../../terminal/browser/terminal.js';
 import { ResourceContextKey } from '../../../common/contextkeys.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { getMultiSelectedResources, IExplorerService } from '../../files/browser/files.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { distinct } from '../../../../base/common/arrays.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IWorkbenchContribution,
 	IWorkbenchContributionsRegistry,
 	Extensions as WorkbenchExtensions
 } from '../../../common/contributions.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { dirname, basename } from '../../../../base/common/path.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { dirname, basename } from '@sidex/base/common/path.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IExternalTerminalConfiguration,
 	IExternalTerminalService
-} from '../../../../platform/externalTerminal/common/externalTerminal.js';
-import { TerminalLocation } from '../../../../platform/terminal/common/terminal.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
+} from '@sidex/platform/externalTerminal/common/externalTerminal.js';
+import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 

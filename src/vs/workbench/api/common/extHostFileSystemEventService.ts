@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { URI } from '../../../base/common/uri.js';
-import { AsyncEmitter, Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { AsyncEmitter, Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	ExtHostFileSystemEventServiceShape,
 	FileSystemEvents,
@@ -21,7 +21,7 @@ import { IExtHostWorkspace } from './extHostWorkspace.js';
 import { ExtHostConfigProvider } from './extHostConfiguration.js';
 import { ExtHostFileSystemInfo } from './extHostFileSystemInfo.js';
 import { ExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
-import { FileOperation } from '../../../platform/files/common/files.js';
+import { FileOperation } from '@sidex/platform/files/common/files.js';
 
 export interface FileSystemWatcherCreateOptions {
 	readonly ignoreCreateEvents?: boolean;

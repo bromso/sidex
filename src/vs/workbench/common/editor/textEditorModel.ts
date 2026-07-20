@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ITextModel, ITextBufferFactory, ITextSnapshot, ModelConstants } from '../../../editor/common/model.js';
+import { ITextModel, ITextBufferFactory, ITextSnapshot, ModelConstants } from '@sidex/editor/common/model.js';
 import { EditorModel } from './editorModel.js';
 import { ILanguageSupport } from '../../services/textfile/common/textfiles.js';
-import { URI } from '../../../base/common/uri.js';
-import { ITextEditorModel, IResolvedTextEditorModel } from '../../../editor/common/services/resolverService.js';
-import { ILanguageService, ILanguageSelection } from '../../../editor/common/languages/language.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { MutableDisposable } from '../../../base/common/lifecycle.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../editor/common/languages/modesRegistry.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITextEditorModel, IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
+import { ILanguageService, ILanguageSelection } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
 import {
 	ILanguageDetectionService,
 	LanguageDetectionLanguageEventSource
 } from '../../services/languageDetection/common/languageDetectionWorkerService.js';
-import { ThrottledDelayer } from '../../../base/common/async.js';
-import { IAccessibilityService } from '../../../platform/accessibility/common/accessibility.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { localize } from '@sidex/base/nls.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { TextModelEditSource } from '../../../editor/common/textModelEditSource.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { TextModelEditSource } from '@sidex/editor/common/textModelEditSource.js';
 
 /**
  * The base text editor model leverages the code editor model. This class is only intended to be subclassed and not instantiated.

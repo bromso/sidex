@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Event } from '../../../../base/common/event.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IExtensionManagementService,
 	ILocalExtension,
 	IExtensionIdentifier,
 	InstallOperation
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IWorkbenchExtensionEnablementService,
 	EnablementState
@@ -20,9 +20,9 @@ import {
 import { IExtensionRecommendationsService } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { ServicesAccessor, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { Severity, INotificationService } from '../../../../platform/notification/common/notification.js';
+import { ServicesAccessor, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { Severity, INotificationService } from '@sidex/platform/notification/common/notification.js';
 
 export interface IExtensionStatus {
 	identifier: IExtensionIdentifier;

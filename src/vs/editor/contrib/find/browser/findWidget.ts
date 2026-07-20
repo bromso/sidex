@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { alert as alertFn } from '../../../../base/browser/ui/aria/aria.js';
-import { Toggle } from '../../../../base/browser/ui/toggle/toggle.js';
-import { IContextViewProvider } from '../../../../base/browser/ui/contextview/contextview.js';
-import { FindInput } from '../../../../base/browser/ui/findinput/findInput.js';
-import { ReplaceInput } from '../../../../base/browser/ui/findinput/replaceInput.js';
-import { IMessage as InputBoxMessage } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { ISashEvent, IVerticalSashLayoutProvider, Orientation, Sash } from '../../../../base/browser/ui/sash/sash.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { Delayer, disposableTimeout } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { toDisposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import * as platform from '../../../../base/common/platform.js';
-import * as strings from '../../../../base/common/strings.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { alert as alertFn } from '@sidex/base/browser/ui/aria/aria.js';
+import { Toggle } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IContextViewProvider } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { FindInput } from '@sidex/base/browser/ui/findinput/findInput.js';
+import { ReplaceInput } from '@sidex/base/browser/ui/findinput/replaceInput.js';
+import { IMessage as InputBoxMessage } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { ISashEvent, IVerticalSashLayoutProvider, Orientation, Sash } from '@sidex/base/browser/ui/sash/sash.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Delayer, disposableTimeout } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { toDisposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
 import './findWidget.css';
 import {
 	ICodeEditor,
@@ -43,14 +43,14 @@ import * as nls from '@sidex/base/nls.js';
 import {
 	AccessibilitySupport,
 	IAccessibilityService
-} from '../../../../platform/accessibility/common/accessibility.js';
+} from '@sidex/platform/accessibility/common/accessibility.js';
 import {
 	ContextScopedFindInput,
 	ContextScopedReplaceInput
-} from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { showHistoryKeybindingHint } from '@sidex/platform/history/browser/historyWidgetKeybindingHint.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	asCssVariable,
 	contrastBorder,
@@ -61,18 +61,18 @@ import {
 	inputActiveOptionBackground,
 	inputActiveOptionBorder,
 	inputActiveOptionForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { registerIcon, widgetClose } from '../../../../platform/theme/common/iconRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { defaultInputBoxStyles, defaultToggleStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerIcon, widgetClose } from '@sidex/platform/theme/common/iconRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { defaultInputBoxStyles, defaultToggleStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { Selection } from '../../../common/core/selection.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IHistory } from '../../../../base/common/history.js';
-import { HoverStyle, type IHoverLifecycleOptions } from '../../../../base/browser/ui/hover/hover.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IHistory } from '@sidex/base/common/history.js';
+import { HoverStyle, type IHoverLifecycleOptions } from '@sidex/base/browser/ui/hover/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 const findCollapsedIcon = registerIcon(
 	'find-collapsed',

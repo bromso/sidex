@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IActionViewItem } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { IActionViewItemOptions } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IAction } from '../../../base/common/actions.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { createDecorator, IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { MenuId } from '../common/actions.js';

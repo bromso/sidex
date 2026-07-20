@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { strictEquals } from '../../../base/common/equals.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { DebugLocation } from '../../../base/common/observable.js';
-import { DebugNameData } from '../../../base/common/observableInternal/debugName.js';
-import { ObservableValue } from '../../../base/common/observableInternal/observables/observableValue.js';
+import { strictEquals } from '@sidex/base/common/equals.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { DebugLocation } from '@sidex/base/common/observable.js';
+import { DebugNameData } from '@sidex/base/common/observableInternal/debugName.js';
+import { ObservableValue } from '@sidex/base/common/observableInternal/observables/observableValue.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
 
 interface IObservableMementoOpts<T> {

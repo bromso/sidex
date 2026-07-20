@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ResourceSet } from '../../../../base/common/map.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
 import { ITextQuery, ISearchProgressItem, ISearchComplete } from '../../../services/search/common/search.js';
 
 export const INotebookSearchService = createDecorator<INotebookSearchService>('notebookSearchService');

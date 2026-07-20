@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DataTransfers } from '../../base/browser/dnd.js';
+import { DataTransfers } from '@sidex/base/browser/dnd.js';
 import {
 	createFileDataTransferItem,
 	createStringDataTransferItem,
 	IDataTransferItem,
 	UriList,
 	VSDataTransfer
-} from '../../base/common/dataTransfer.js';
-import { Mimes } from '../../base/common/mime.js';
-import { URI } from '../../base/common/uri.js';
-import { CodeDataTransfers, getPathForFile } from '../../platform/dnd/browser/dnd.js';
+} from '@sidex/base/common/dataTransfer.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CodeDataTransfers, getPathForFile } from '@sidex/platform/dnd/browser/dnd.js';
 
 export function toVSDataTransfer(dataTransfer: DataTransfer): VSDataTransfer {
 	const vsDataTransfer = new VSDataTransfer();

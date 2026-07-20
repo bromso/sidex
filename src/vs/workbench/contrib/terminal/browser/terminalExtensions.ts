@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BrandedService, IConstructorSignature } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { BrandedService, IConstructorSignature } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IDetachedTerminalInstance, ITerminalContribution, ITerminalInstance } from './terminal.js';
 import { TerminalWidgetManager } from './widgets/widgetManager.js';
 import { ITerminalProcessInfo, ITerminalProcessManager } from '../common/terminal.js';

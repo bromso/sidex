@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { ActionViewItem, BaseActionViewItem } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { DropdownMenuActionViewItem } from '../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { IAction, IActionRunner } from '../../../base/common/actions.js';
-import { Event } from '../../../base/common/event.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
-import { ResolvedKeybinding } from '../../../base/common/keybindings.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionViewItem, BaseActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { DropdownMenuActionViewItem } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { IAction, IActionRunner } from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { MenuEntryActionViewItem } from './menuEntryActionViewItem.js';
 import { MenuItemAction } from '../common/actions.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
@@ -19,7 +19,7 @@ import { INotificationService } from '../../notification/common/notification.js'
 import { IThemeService } from '../../theme/common/themeService.js';
 import { IContextMenuService } from '../../contextview/browser/contextView.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
-import { IHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
 
 export interface IDropdownWithPrimaryActionViewItemOptions {
 	actionRunner?: IActionRunner;

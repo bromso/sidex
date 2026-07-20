@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { MainContext, MainThreadDownloadServiceShape } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { IDownloadService } from '../../../platform/download/common/download.js';
-import { UriComponents, URI } from '../../../base/common/uri.js';
+import { IDownloadService } from '@sidex/platform/download/common/download.js';
+import { UriComponents, URI } from '@sidex/base/common/uri.js';
 
 @extHostNamedCustomer(MainContext.MainThreadDownloadService)
 export class MainThreadDownloadService extends Disposable implements MainThreadDownloadServiceShape {

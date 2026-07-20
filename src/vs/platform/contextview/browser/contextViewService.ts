@@ -7,11 +7,11 @@ import {
 	ContextView,
 	ContextViewDOMPosition,
 	IContextViewProvider
-} from '../../../base/browser/ui/contextview/contextview.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/browser/ui/contextview/contextview.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
 import { IContextViewDelegate, IContextViewService, IOpenContextView } from './contextView.js';
-import { getWindow } from '../../../base/browser/dom.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
 
 export class ContextViewHandler extends Disposable implements IContextViewProvider {
 	private openContextView: IOpenContextView | undefined;

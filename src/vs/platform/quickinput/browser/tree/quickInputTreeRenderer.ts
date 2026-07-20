@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as cssJs from '../../../../base/browser/cssValue.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { ToolBar } from '../../../../base/browser/ui/toolbar/toolbar.js';
-import { IManagedHoverTooltipMarkdownString } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { IconLabel } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
+import { IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
 import {
 	createToggleActionViewItemProvider,
 	IToggleStyles,
 	TriStateCheckbox
-} from '../../../../base/browser/ui/toggle/toggle.js';
-import { ITreeElementRenderDetails, ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/browser/ui/toggle/toggle.js';
+import { ITreeElementRenderDetails, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IContextMenuService } from '../../../contextview/browser/contextView.js';
 import { defaultCheckboxStyles } from '../../../theme/browser/defaultStyles.js';
 import { isDark } from '../../../theme/common/theme.js';
-import { escape } from '../../../../base/common/strings.js';
+import { escape } from '@sidex/base/common/strings.js';
 import { IThemeService } from '../../../theme/common/themeService.js';
 import { IQuickTreeCheckboxEvent, IQuickTreeItem, IQuickTreeItemButtonEvent } from '../../common/quickInput.js';
 import { quickInputButtonsToActionArrays } from '../quickInputUtils.js';

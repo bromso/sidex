@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { h, n } from '../../../../../base/browser/dom.js';
-import { renderMarkdown } from '../../../../../base/browser/markdownRenderer.js';
-import { ActionViewItem } from '../../../../../base/browser/ui/actionbar/actionViewItems.js';
+import { h, n } from '@sidex/base/browser/dom.js';
+import { renderMarkdown } from '@sidex/base/browser/markdownRenderer.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import {
 	KeybindingLabel,
 	unthemedKeybindingLabelOptions
-} from '../../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { Action, IAction, Separator } from '../../../../../base/common/actions.js';
-import { equals } from '../../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { createHotClass } from '../../../../../base/common/hotReloadHelpers.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+} from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { createHotClass } from '@sidex/base/common/hotReloadHelpers.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
@@ -23,23 +23,23 @@ import {
 	derived,
 	derivedObservableWithCache,
 	observableFromEvent
-} from '../../../../../base/common/observable.js';
-import { OS } from '../../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+} from '@sidex/base/common/observable.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	MenuEntryActionViewItem,
 	getActionBarActions
-} from '../../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuWorkbenchToolBarOptions, WorkbenchToolBar } from '../../../../../platform/actions/browser/toolbar.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { registerIcon } from '../../../../../platform/theme/common/iconRegistry.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuWorkbenchToolBarOptions, WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import {
 	ContentWidgetPositionPreference,
 	ICodeEditor,

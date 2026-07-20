@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction, Separator, toAction } from '../../../base/common/actions.js';
+import { IAction, Separator, toAction } from '@sidex/base/common/actions.js';
 import { localize } from '@sidex/base/nls.js';
 import { IWorkbenchLayoutService } from '../../services/layout/browser/layoutService.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	EventHelper,
 	addDisposableListener,
@@ -15,13 +15,13 @@ import {
 	getWindow,
 	isHTMLInputElement,
 	isHTMLTextAreaElement
-} from '../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 import { IWorkbenchContribution, WorkbenchPhase, registerWorkbenchContribution2 } from '../../common/contributions.js';
-import { IClipboardService } from '../../../platform/clipboard/common/clipboardService.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { Event as BaseEvent } from '../../../base/common/event.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Event as BaseEvent } from '@sidex/base/common/event.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export function createTextInputActions(clipboardService: IClipboardService, logService: ILogService): IAction[] {
 	return [

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { wrapInHotClass1 } from '../../../../platform/observable/common/wrapInHotClass.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { wrapInHotClass1 } from '@sidex/platform/observable/common/wrapInHotClass.js';
 import {
 	EditorContributionInstantiation,
 	registerEditorAction,

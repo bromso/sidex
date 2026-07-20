@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { BrowserClipboardService as BaseBrowserClipboardService } from '../../../../platform/clipboard/browser/clipboardService.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Event } from '../../../../base/common/event.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { BrowserClipboardService as BaseBrowserClipboardService } from '@sidex/platform/clipboard/browser/clipboardService.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Event } from '@sidex/base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { getActiveWindow } from '../../../../base/browser/dom.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
 
 export class BrowserClipboardService extends BaseBrowserClipboardService {
 	private get isTauriDesktop(): boolean {

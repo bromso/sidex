@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode } from '../../../base/browser/fastDomNode.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import { RenderingContext, RestrictedRenderingContext } from './renderingContext.js';
 import { ViewContext } from '../../common/viewModel/viewContext.js';
 import { ViewEventHandler } from '../../common/viewEventHandler.js';

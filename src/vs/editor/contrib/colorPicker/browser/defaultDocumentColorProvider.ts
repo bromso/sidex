@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Color, RGBA } from '../../../../base/common/color.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
 import { ITextModel } from '../../../common/model.js';
 import { DocumentColorProvider, IColor, IColorInformation, IColorPresentation } from '../../../common/languages.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { IEditorWorkerService } from '../../../common/services/editorWorker.js';
 

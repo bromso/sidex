@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable, markAsSingleton, toDisposable } from '../../../base/common/lifecycle.js';
-import * as strings from '../../../base/common/strings.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, markAsSingleton, toDisposable } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { ITextModel } from '../model.js';
 import { DEFAULT_WORD_REGEXP, ensureValidWordDefinition } from '../core/wordHelper.js';
 import {
@@ -24,10 +24,10 @@ import { IndentRulesSupport } from './supports/indentRules.js';
 import { OnEnterSupport } from './supports/onEnter.js';
 import { RichEditBrackets } from './supports/richEditBrackets.js';
 import { EditorAutoIndentStrategy } from '../config/editorOptions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ILanguageService } from './language.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { PLAINTEXT_LANGUAGE_ID } from './modesRegistry.js';
 import { LanguageBracketsConfiguration } from './supports/languageBracketsConfiguration.js';
 

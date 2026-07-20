@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IWorkbenchContributionsRegistry, Extensions as WorkbenchExtensions } from '../../../common/contributions.js';
 import { ILifecycleService, LifecyclePhase, WillShutdownEvent } from '../../lifecycle/common/lifecycle.js';
 import { WorkingCopyHistoryTracker } from './workingCopyHistoryTracker.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IWorkingCopyHistoryEntry,
 	IWorkingCopyHistoryEntryDescriptor,
@@ -23,24 +23,24 @@ import {
 	FileOperationResult,
 	IFileService,
 	IFileStatWithMetadata
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { URI } from '../../../../base/common/uri.js';
-import { DeferredPromise, Limiter, RunOnceScheduler } from '../../../../base/common/async.js';
-import { dirname, extname, isEqual, joinPath } from '../../../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { DeferredPromise, Limiter, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { dirname, extname, isEqual, joinPath } from '@sidex/base/common/resources.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { hash } from '../../../../base/common/hash.js';
-import { indexOfPath, randomPath } from '../../../../base/common/extpath.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { indexOfPath, randomPath } from '@sidex/base/common/extpath.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { SaveSource, SaveSourceRegistry } from '../../../common/editor.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 
 interface ISerializedWorkingCopyHistoryModel {
 	readonly version: number;

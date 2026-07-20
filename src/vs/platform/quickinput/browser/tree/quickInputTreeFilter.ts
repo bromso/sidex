@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ITreeFilter, ITreeFilterDataResult, TreeVisibility } from '../../../../base/browser/ui/tree/tree.js';
-import { matchesFuzzyIconAware, parseLabelWithIcons } from '../../../../base/common/iconLabels.js';
+import { ITreeFilter, ITreeFilterDataResult, TreeVisibility } from '@sidex/base/browser/ui/tree/tree.js';
+import { matchesFuzzyIconAware, parseLabelWithIcons } from '@sidex/base/common/iconLabels.js';
 import { IQuickTreeItem } from '../../common/quickInput.js';
 import { IQuickTreeFilterData } from './quickInputTree.js';
 

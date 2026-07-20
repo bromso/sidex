@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IWindowOpenable, isWorkspaceToOpen, isFileToOpen } from '../../../../platform/window/common/window.js';
+import { IWindowOpenable, isWorkspaceToOpen, isFileToOpen } from '@sidex/platform/window/common/window.js';
 import {
 	IPickAndOpenOptions,
 	ISaveDialogOptions,
@@ -14,39 +14,39 @@ import {
 	IDialogService,
 	ConfirmResult,
 	getFileNamesMessage
-} from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	isSavedWorkspace,
 	isTemporaryWorkspace,
 	IWorkspaceContextService,
 	WorkbenchState,
 	WORKSPACE_EXTENSION
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IHistoryService } from '../../history/common/history.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as resources from '../../../../base/common/resources.js';
-import { isAbsolute as localPathIsAbsolute, normalize as localPathNormalize } from '../../../../base/common/path.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { isAbsolute as localPathIsAbsolute, normalize as localPathNormalize } from '@sidex/base/common/path.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ISimpleFileDialog, SimpleFileDialog } from './simpleFileDialog.js';
-import { IWorkspacesService } from '../../../../platform/workspaces/common/workspaces.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IHostService } from '../../host/browser/host.js';
-import Severity from '../../../../base/common/severity.js';
-import { coalesce, distinct } from '../../../../base/common/arrays.js';
-import { trim } from '../../../../base/common/strings.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import Severity from '@sidex/base/common/severity.js';
+import { coalesce, distinct } from '@sidex/base/common/arrays.js';
+import { trim } from '@sidex/base/common/strings.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { PLAINTEXT_EXTENSION } from '../../../../editor/common/languages/modesRegistry.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { PLAINTEXT_EXTENSION } from '@sidex/editor/common/languages/modesRegistry.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { EditorOpenSource } from '../../../../platform/editor/common/editor.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { EditorOpenSource } from '@sidex/platform/editor/common/editor.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 
 export abstract class AbstractFileDialogService implements IFileDialogService {

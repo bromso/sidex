@@ -5,13 +5,13 @@
 
 import { localize } from '@sidex/base/nls.js';
 import { BaseBinaryResourceEditor } from '../../../../browser/parts/editor/binaryEditor.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorInput } from '../../../../common/editor/editorInput.js';
 import { FileEditorInput } from './fileEditorInput.js';
 import { BINARY_FILE_EDITOR_ID, BINARY_TEXT_FILE_MODE } from '../../common/files.js';
-import { IStorageService } from '../../../../../platform/storage/common/storage.js';
-import { EditorResolution, IEditorOptions } from '../../../../../platform/editor/common/editor.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { EditorResolution, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	IEditorResolverService,
 	ResolvedStatus,

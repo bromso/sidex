@@ -4,25 +4,25 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/workspaceTrustEditor.css';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	ConfigurationScope,
 	Extensions as ConfigurationExtensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Severity } from '../../../../platform/notification/common/notification.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Severity } from '@sidex/platform/notification/common/notification.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IWorkspaceTrustEnablementService,
 	IWorkspaceTrustManagementService,
 	IWorkspaceTrustRequestService,
 	WorkspaceTrustUriResponse
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContribution,
@@ -31,10 +31,10 @@ import {
 	registerWorkbenchContribution2
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	IStatusbarEntry,
 	IStatusbarEntryAccessor,
@@ -53,7 +53,7 @@ import {
 } from '../../../services/workspaces/common/workspaceTrust.js';
 import { IEditorSerializer, IEditorFactoryRegistry, EditorExtensions } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	isEmptyWorkspaceIdentifier,
 	ISingleFolderWorkspaceIdentifier,
@@ -62,28 +62,28 @@ import {
 	IWorkspaceFoldersWillChangeEvent,
 	toWorkspaceIdentifier,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
-import { dirname, resolve } from '../../../../base/common/path.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { dirname, resolve } from '@sidex/base/common/path.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IBannerItem, IBannerService } from '../../../services/banner/browser/bannerService.js';
-import { isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
+import { isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
 import { LIST_WORKSPACE_UNSUPPORTED_EXTENSIONS_COMMAND_ID } from '../../extensions/common/extensions.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { WORKSPACE_TRUST_SETTING_TAG } from '../../preferences/common/preferences.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { ILabelService, Verbosity } from '../../../../platform/label/common/label.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { ILabelService, Verbosity } from '@sidex/platform/label/common/label.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { MANAGE_TRUST_COMMAND_ID, WorkspaceTrustContext } from '../common/workspace.js';
-import { isWeb as _isWeb } from '../../../../base/common/platform.js';
+import { isWeb as _isWeb } from '@sidex/base/common/platform.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
 import { securityConfigurationNodeBase } from '../../../common/configuration.js';
-import { basename, dirname as uriDirname } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { basename, dirname as uriDirname } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 
 const BANNER_RESTRICTED_MODE = 'workbench.banner.restrictedMode';
 const STARTUP_PROMPT_SHOWN_KEY = 'workspace.trust.startupPrompt.shown';

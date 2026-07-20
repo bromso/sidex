@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { sep } from '../../../../base/common/path.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { sep } from '@sidex/base/common/path.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	IConfigurationPropertySchema
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	IWorkbenchContribution,
 	WorkbenchPhase,
@@ -26,7 +26,7 @@ import {
 	FILES_READONLY_INCLUDE_CONFIG,
 	FILES_READONLY_EXCLUDE_CONFIG,
 	FILES_READONLY_FROM_PERMISSIONS_CONFIG
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import {
 	SortOrder,
 	LexicographicOptions,
@@ -39,25 +39,25 @@ import { TextFileEditorTracker } from './editors/textFileEditorTracker.js';
 import { TextFileSaveErrorHandler } from './editors/textFileSaveErrorHandler.js';
 import { FileEditorInput } from './editors/fileEditorInput.js';
 import { BinaryFileEditor } from './editors/binaryFileEditor.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { isNative, isWeb, isWindows } from '../../../../base/common/platform.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { isNative, isWeb, isWindows } from '@sidex/base/common/platform.js';
 import { ExplorerViewletViewsContribution } from './explorerViewlet.js';
 import { IEditorPaneRegistry, EditorPaneDescriptor } from '../../../browser/editor.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { ExplorerService, UNDO_REDO_SOURCE } from './explorerService.js';
 import { GUESSABLE_ENCODINGS, SUPPORTED_ENCODINGS } from '../../../services/textfile/common/encoding.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { WorkspaceWatcher } from './workspaceWatcher.js';
-import { editorConfigurationBaseNode } from '../../../../editor/common/config/editorConfigurationSchema.js';
+import { editorConfigurationBaseNode } from '@sidex/editor/common/config/editorConfigurationSchema.js';
 import { DirtyFilesIndicator } from '../common/dirtyFilesIndicator.js';
-import { UndoCommand, RedoCommand } from '../../../../editor/browser/editorExtensions.js';
-import { IUndoRedoService } from '../../../../platform/undoRedo/common/undoRedo.js';
+import { UndoCommand, RedoCommand } from '@sidex/editor/browser/editorExtensions.js';
+import { IUndoRedoService } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { IExplorerService } from './files.js';
 import { FileEditorInputSerializer, FileEditorWorkingCopyEditorHandler } from './editors/fileEditorHandler.js';
-import { ModesRegistry } from '../../../../editor/common/languages/modesRegistry.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ModesRegistry } from '@sidex/editor/common/languages/modesRegistry.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TextFileEditor } from './editors/textFileEditor.js';
 
 class FileUriLabelContribution implements IWorkbenchContribution {

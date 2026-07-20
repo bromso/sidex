@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { isUndefinedOrNull } from '../../../base/common/types.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
 import {
 	DISABLED_EXTENSIONS_STORAGE_PATH,
 	IExtensionIdentifier,

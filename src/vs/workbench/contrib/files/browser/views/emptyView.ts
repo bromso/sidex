@@ -5,27 +5,27 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { IViewletViewOptions } from '../../../../browser/parts/views/viewsViewlet.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	isTemporaryWorkspace,
 	IWorkspaceContextService,
 	WorkbenchState
-} from '../../../../../platform/workspace/common/workspace.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ViewPane } from '../../../../browser/parts/views/viewPane.js';
 import { ResourcesDropHandler } from '../../../../browser/dnd.js';
-import { listDropOverBackground } from '../../../../../platform/theme/common/colorRegistry.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
+import { listDropOverBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IViewDescriptorService } from '../../../../common/views.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { isWeb } from '../../../../../base/common/platform.js';
-import { DragAndDropObserver, getWindow } from '../../../../../base/browser/dom.js';
-import { ILocalizedString } from '../../../../../platform/action/common/action.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { DragAndDropObserver, getWindow } from '@sidex/base/browser/dom.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 export class EmptyView extends ViewPane {
 	static readonly ID: string = 'workbench.explorer.emptyView';

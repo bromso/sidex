@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { MarshalledId } from '../../../../../base/common/marshallingIds.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { Range } from '../../../../../editor/common/core/range.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import { TestId } from '../../common/testId.js';
 import { ITestResult } from '../../common/testResult.js';
 import {

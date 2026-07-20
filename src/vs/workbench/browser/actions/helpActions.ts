@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import product from '../../../platform/product/common/product.js';
-import { isMacintosh, isLinux, language, isWeb } from '../../../base/common/platform.js';
-import { ITelemetryService } from '../../../platform/telemetry/common/telemetry.js';
-import { IOpenerService } from '../../../platform/opener/common/opener.js';
-import { URI } from '../../../base/common/uri.js';
-import { MenuId, Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { KeyChord, KeyMod, KeyCode } from '../../../base/common/keyCodes.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+import product from '@sidex/platform/product/common/product.js';
+import { isMacintosh, isLinux, language, isWeb } from '@sidex/base/common/platform.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { MenuId, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeyChord, KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 
 class KeybindingsReferenceAction extends Action2 {
 	static readonly ID = 'workbench.action.keybindingsReference';

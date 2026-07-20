@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Lazy } from '../../../../../base/common/lazy.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { IPosition } from '../../../../../editor/common/core/position.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IAITextQuery,
 	IFileMatch,
@@ -39,10 +39,10 @@ import {
 	FILE_MATCH_PREFIX
 } from '../searchTreeModel/searchTreeCommon.js';
 import { TextSearchHeadingImpl } from '../searchTreeModel/textSearchHeading.js';
-import { Range } from '../../../../../editor/common/core/range.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import { textSearchResultToMatches } from '../searchTreeModel/match.js';
 import { ISearchTreeAIFileMatch } from './aiSearchModelBase.js';
-import { ResourceSet } from '../../../../../base/common/map.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
 
 export class AITextSearchHeadingImpl extends TextSearchHeadingImpl<IAITextQuery> {
 	public declare hidden: boolean;

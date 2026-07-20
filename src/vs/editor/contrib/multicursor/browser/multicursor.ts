@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { status } from '../../../../base/browser/ui/aria/aria.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Constants } from '../../../../base/common/uint.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -28,12 +28,12 @@ import { FindMatch, ITextModel } from '../../../common/model.js';
 import { CommonFindController } from '../../find/browser/findController.js';
 import { FindOptionOverride, INewFindReplaceState } from '../../find/browser/findState.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { getSelectionHighlightDecorationOptions } from '../../wordHighlighter/browser/highlightDecorations.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 function announceCursorChange(previousCursorState: CursorState[], cursorState: CursorState[]): void {
 	const cursorDiff = cursorState.filter(cs => !previousCursorState.find(pcs => pcs.equals(cs)));

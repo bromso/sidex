@@ -5,17 +5,17 @@
 
 import type * as vscode from 'vscode';
 import * as nls from '@sidex/base/nls.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { MainContext, MainThreadAuthenticationShape, ExtHostAuthenticationShape } from './extHost.protocol.js';
 import { Disposable, ProgressLocation } from './extHostTypes.js';
-import { IExtensionDescription, ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
+import { IExtensionDescription, ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	INTERNAL_AUTH_PROVIDER_PREFIX,
 	isAuthenticationWwwAuthenticateRequest
 } from '../../services/authentication/common/authentication.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	AuthorizationErrorType,
 	fetchDynamicRegistration,
@@ -26,26 +26,26 @@ import {
 	IAuthorizationTokenResponse,
 	isAuthorizationErrorResponse,
 	isAuthorizationTokenResponse
-} from '../../../base/common/oauth.js';
+} from '@sidex/base/common/oauth.js';
 import { IExtHostWindow } from './extHostWindow.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
-import { ILogger, ILoggerService, ILogService } from '../../../platform/log/common/log.js';
+import { ILogger, ILoggerService, ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	autorun,
 	derivedOpts,
 	IObservable,
 	ISettableObservable,
 	observableValue
-} from '../../../base/common/observable.js';
-import { stringHash } from '../../../base/common/hash.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/observable.js';
+import { stringHash } from '@sidex/base/common/hash.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IExtHostUrlsService } from './extHostUrls.js';
-import { encodeBase64, VSBuffer } from '../../../base/common/buffer.js';
-import { equals as arraysEqual } from '../../../base/common/arrays.js';
+import { encodeBase64, VSBuffer } from '@sidex/base/common/buffer.js';
+import { equals as arraysEqual } from '@sidex/base/common/arrays.js';
 import { IExtHostProgress } from './extHostProgress.js';
-import { IProgressStep } from '../../../platform/progress/common/progress.js';
-import { CancellationError, isCancellationError } from '../../../base/common/errors.js';
-import { raceCancellationError, SequencerByKey } from '../../../base/common/async.js';
+import { IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import { CancellationError, isCancellationError } from '@sidex/base/common/errors.js';
+import { raceCancellationError, SequencerByKey } from '@sidex/base/common/async.js';
 
 export interface IExtHostAuthentication extends ExtHostAuthentication {}
 export const IExtHostAuthentication = createDecorator<IExtHostAuthentication>('IExtHostAuthentication');

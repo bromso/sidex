@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../../base/common/uri.js';
-import { Event } from '../../../../../base/common/event.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { ITextModelContentProvider, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelContentProvider, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	EnvironmentVariableMutatorType,
 	EnvironmentVariableScope,
 	IEnvironmentVariableMutator,
 	IMergedEnvironmentVariableCollection
-} from '../../../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
 import { registerActiveInstanceAction } from '../../../terminal/browser/terminalActions.js';
 import { TerminalCommandId } from '../../../terminal/common/terminal.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';

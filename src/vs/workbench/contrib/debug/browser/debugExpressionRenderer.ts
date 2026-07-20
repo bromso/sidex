@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable } from '../../../../base/common/observable.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { IDebugSession, IExpressionValue } from '../common/debug.js';
 import { Expression, ExpressionContainer, Variable } from '../common/debugModel.js';
 import { ReplEvaluationResult } from '../common/replModel.js';

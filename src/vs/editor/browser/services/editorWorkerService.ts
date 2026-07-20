@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { timeout } from '../../../base/common/async.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { logOnceWebWorkerWarning, IWebWorkerClient, Proxied } from '../../../base/common/worker/webWorker.js';
-import { WebWorkerDescriptor } from '../../../platform/webWorker/browser/webWorkerDescriptor.js';
-import { IWebWorkerService } from '../../../platform/webWorker/browser/webWorkerService.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { logOnceWebWorkerWarning, IWebWorkerClient, Proxied } from '@sidex/base/common/worker/webWorker.js';
+import { WebWorkerDescriptor } from '@sidex/platform/webWorker/browser/webWorkerDescriptor.js';
+import { IWebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerService.js';
 import { Position } from '../../common/core/position.js';
 import { IRange, Range } from '../../common/core/range.js';
 import { ITextModel } from '../../common/model.js';
@@ -23,10 +23,10 @@ import {
 } from '../../common/services/editorWorker.js';
 import { IModelService } from '../../common/services/model.js';
 import { ITextResourceConfigurationService } from '../../common/services/textResourceConfiguration.js';
-import { isNonEmptyArray } from '../../../base/common/arrays.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
-import { canceled, onUnexpectedError } from '../../../base/common/errors.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { canceled, onUnexpectedError } from '@sidex/base/common/errors.js';
 import { UnicodeHighlighterOptions } from '../../common/services/unicodeTextModelHighlighter.js';
 import { ILanguageFeaturesService } from '../../common/services/languageFeatures.js';
 import { IChange } from '../../common/diff/legacyLinesDiffComputer.js';
@@ -35,13 +35,13 @@ import { ILinesDiffComputerOptions, MovedText } from '../../common/diff/linesDif
 import { DetailedLineRangeMapping, RangeMapping, LineRangeMapping } from '../../common/diff/rangeMapping.js';
 import { LineRange } from '../../common/core/ranges/lineRange.js';
 import { SectionHeader, FindSectionHeaderOptions } from '../../common/services/findSectionHeaders.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { WindowIntervalTimer } from '../../../base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { WindowIntervalTimer } from '@sidex/base/browser/dom.js';
 import { WorkerTextModelSyncClient } from '../../common/services/textModelSync/textModelSync.impl.js';
 import { EditorWorkerHost } from '../../common/services/editorWorkerHost.js';
 import { StringEdit } from '../../common/core/edits/stringEdit.js';
 import { OffsetRange } from '../../common/core/ranges/offsetRange.js';
-import { FileAccess } from '../../../base/common/network.js';
+import { FileAccess } from '@sidex/base/common/network.js';
 
 /**
  * Stop the worker if it was not needed for 5 min.

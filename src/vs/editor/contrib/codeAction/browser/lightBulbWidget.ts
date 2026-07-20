@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { Gesture } from '../../../../base/browser/touch.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { autorun, derived, IObservable, observableValue } from '../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Gesture } from '@sidex/base/browser/touch.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, derived, IObservable, observableValue } from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import './lightBulbWidget.css';
 import {
 	ContentWidgetPositionPreference,
@@ -26,8 +26,8 @@ import { computeIndentLevel } from '../../../common/model/utils.js';
 import { autoFixCommandId, quickFixCommandId } from './codeAction.js';
 import { CodeActionSet, CodeActionTrigger } from '../common/types.js';
 import * as nls from '@sidex/base/nls.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { Range } from '../../../common/core/range.js';
 
 const GUTTER_LIGHTBULB_ICON = registerIcon(

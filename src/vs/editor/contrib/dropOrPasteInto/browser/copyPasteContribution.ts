@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { IJSONSchema, TypeFromJsonSchema } from '../../../../base/common/jsonSchema.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { IJSONSchema, TypeFromJsonSchema } from '@sidex/base/common/jsonSchema.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import * as nls from '@sidex/base/nls.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,

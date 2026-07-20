@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IDebugModel, IDebugSession, AdapterEndEvent } from './debug.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { Debugger } from './debugger.js';
 
 export class DebugTelemetry {

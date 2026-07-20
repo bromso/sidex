@@ -7,11 +7,11 @@
  * This module contains utility functions related to the environment, cwd and paths.
  */
 
-import * as path from '../../../../base/common/path.js';
-import { URI, uriToFsPath } from '../../../../base/common/uri.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import * as path from '@sidex/base/common/path.js';
+import { URI, uriToFsPath } from '@sidex/base/common/uri.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IConfigurationResolverService } from '../../../services/configurationResolver/common/configurationResolver.js';
-import { sanitizeProcessEnvironment } from '../../../../base/common/processes.js';
+import { sanitizeProcessEnvironment } from '@sidex/base/common/processes.js';
 import {
 	IShellLaunchConfig,
 	ITerminalBackend,
@@ -20,19 +20,19 @@ import {
 	TerminalSettingId,
 	TerminalShellType,
 	WindowsShellType
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import {
 	IProcessEnvironment,
 	isWindows,
 	isMacintosh,
 	language,
 	OperatingSystem
-} from '../../../../base/common/platform.js';
-import { escapeNonWindowsPath, sanitizeCwd } from '../../../../platform/terminal/common/terminalEnvironment.js';
-import { isNumber, isString } from '../../../../base/common/types.js';
+} from '@sidex/base/common/platform.js';
+import { escapeNonWindowsPath, sanitizeCwd } from '@sidex/platform/terminal/common/terminalEnvironment.js';
+import { isNumber, isString } from '@sidex/base/common/types.js';
 import { IHistoryService } from '../../../services/history/common/history.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import type { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import type { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 export function mergeEnvironments(parent: IProcessEnvironment, other: ITerminalEnvironment | undefined): void {
 	if (!other) {

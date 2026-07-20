@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import { EditorPaneDescriptor, IEditorPaneRegistry } from '../../../browser/editor.js';
 import { RuntimeExtensionsEditor } from './browserRuntimeExtensionsEditor.js';
 import { RuntimeExtensionsInput } from '../common/runtimeExtensionsInput.js';

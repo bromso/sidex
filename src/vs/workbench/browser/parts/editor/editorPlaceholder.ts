@@ -5,39 +5,39 @@
 
 import './media/editorplaceholder.css';
 import { localize } from '@sidex/base/nls.js';
-import { truncate } from '../../../../base/common/strings.js';
-import Severity from '../../../../base/common/severity.js';
+import { truncate } from '@sidex/base/common/strings.js';
+import Severity from '@sidex/base/common/severity.js';
 import { IEditorOpenContext, isEditorOpenError } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { EditorPane } from './editorPane.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { Dimension, size, clearNode, $, EventHelper } from '../../../../base/browser/dom.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { assertReturnsAllDefined } from '../../../../base/common/types.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { Dimension, size, clearNode, $, EventHelper } from '@sidex/base/browser/dom.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { assertReturnsAllDefined } from '@sidex/base/common/types.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	IWorkspaceContextService,
 	isSingleFolderWorkspaceIdentifier,
 	toWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
-import { EditorOpenSource, IEditorOptions } from '../../../../platform/editor/common/editor.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { EditorOpenSource, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { computeEditorAriaLabel, EditorPaneDescriptor } from '../../editor.js';
-import { ButtonBar } from '../../../../base/browser/ui/button/button.js';
-import { defaultButtonStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { SimpleIconLabel } from '../../../../base/browser/ui/iconLabel/simpleIconLabel.js';
+import { ButtonBar } from '@sidex/base/browser/ui/button/button.js';
+import { defaultButtonStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { SimpleIconLabel } from '@sidex/base/browser/ui/iconLabel/simpleIconLabel.js';
 import {
 	FileChangeType,
 	FileOperationError,
 	FileOperationResult,
 	IFileService
-} from '../../../../platform/files/common/files.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/files/common/files.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 import { showWindowLogActionId } from '../../../services/log/common/logConstants.js';
 

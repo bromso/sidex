@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { Codicon } from '../../../base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import type * as vscode from 'vscode';
 import {
 	BrowserTabDto,
@@ -15,10 +15,10 @@ import {
 	MainContext,
 	MainThreadBrowsersShape
 } from './extHost.protocol.js';
-import { generateUuid } from '../../../base/common/uuid.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import * as extHostTypes from './extHostTypes.js';
 import * as typeConverters from './extHostTypeConverters.js';
-import { CDPEvent, CDPRequest, CDPResponse } from '../../../platform/browserView/common/cdp/types.js';
+import { CDPEvent, CDPRequest, CDPResponse } from '@sidex/platform/browserView/common/cdp/types.js';
 
 // #region Internal browser tab object
 

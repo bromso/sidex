@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Action } from '../../../../base/common/actions.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import * as glob from '../../../../base/common/glob.js';
-import * as json from '../../../../base/common/json.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as glob from '@sidex/base/common/glob.js';
+import * as json from '@sidex/base/common/json.js';
 import {
 	Disposable,
 	dispose,
@@ -15,33 +15,33 @@ import {
 	IReference,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { LRUCache, Touch } from '../../../../base/common/map.js';
-import * as Objects from '../../../../base/common/objects.js';
-import { ValidationState, ValidationStatus } from '../../../../base/common/parsers.js';
-import * as Platform from '../../../../base/common/platform.js';
-import { TerminateResponseCode } from '../../../../base/common/processes.js';
-import * as resources from '../../../../base/common/resources.js';
-import Severity from '../../../../base/common/severity.js';
-import * as Types from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as UUID from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/lifecycle.js';
+import { LRUCache, Touch } from '@sidex/base/common/map.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import { ValidationState, ValidationStatus } from '@sidex/base/common/parsers.js';
+import * as Platform from '@sidex/base/common/platform.js';
+import { TerminateResponseCode } from '@sidex/base/common/processes.js';
+import * as resources from '@sidex/base/common/resources.js';
+import Severity from '@sidex/base/common/severity.js';
+import * as Types from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as UUID from '@sidex/base/common/uuid.js';
 import * as nls from '@sidex/base/nls.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IFileService, IFileStatWithPartialMetadata } from '../../../../platform/files/common/files.js';
-import { IMarkerData, IMarkerService } from '../../../../platform/markers/common/markers.js';
-import { IProgressOptions, IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IFileService, IFileStatWithPartialMetadata } from '@sidex/platform/files/common/files.js';
+import { IMarkerData, IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { IProgressOptions, IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { INamedProblemMatcher, ProblemMatcherRegistry } from '../common/problemMatcher.js';
 
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 
-import { IModelService } from '../../../../editor/common/services/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 
 import {
 	IWorkspace,
@@ -49,7 +49,7 @@ import {
 	IWorkspaceFolder,
 	WorkbenchState,
 	WorkspaceFolder
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IConfigurationResolverService } from '../../../services/configurationResolver/common/configurationResolver.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { Markers } from '../../markers/common/markers.js';
@@ -128,28 +128,28 @@ import {
 	IQuickPickItem,
 	IQuickPickSeparator,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TaskDefinitionRegistry } from '../common/taskDefinitionRegistry.js';
 
-import { getActiveElement } from '../../../../base/browser/dom.js';
-import { raceTimeout } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { toFormattedString } from '../../../../base/common/jsonFormatter.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IResolvedTextEditorModel, ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { TerminalExitReason } from '../../../../platform/terminal/common/terminal.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
+import { raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { toFormattedString } from '@sidex/base/common/jsonFormatter.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IResolvedTextEditorModel, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { TerminalExitReason } from '@sidex/platform/terminal/common/terminal.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IWorkspaceTrustManagementService,
 	IWorkspaceTrustRequestService
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { VirtualWorkspaceContext } from '../../../common/contextkeys.js';
 import { EditorResourceAccessor, SaveReason } from '../../../common/editor.js';
 import { IViewDescriptorService } from '../../../common/views.js';
@@ -169,8 +169,8 @@ import {
 	TaskQuickPick
 } from './taskQuickPick.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { FocusMode } from '../../../../platform/native/common/native.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FocusMode } from '@sidex/platform/native/common/native.js';
 
 const QUICKOPEN_HISTORY_LIMIT_CONFIG = 'task.quickOpen.history';
 const PROBLEM_MATCHER_NEVER_CONFIG = 'task.problemMatchers.neverPrompt';

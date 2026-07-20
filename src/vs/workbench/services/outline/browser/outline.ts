@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IDataSource, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Event } from '../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkbenchDataTreeOptions } from '../../../../platform/list/browser/listService.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IDataSource, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkbenchDataTreeOptions } from '@sidex/platform/list/browser/listService.js';
 import { IEditorPane } from '../../../common/editor.js';
 
 export const IOutlineService = createDecorator<IOutlineService>('IOutlineService');

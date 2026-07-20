@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, append, clearNode } from '../../../base/browser/dom.js';
-import { Widget } from '../../../base/browser/ui/widget.js';
-import { IAction } from '../../../base/common/actions.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
+import { $, append, clearNode } from '@sidex/base/browser/dom.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { getFlatActionBarActions } from './menuEntryActionViewItem.js';
 import { IMenu, IMenuService, MenuId } from '../common/actions.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';

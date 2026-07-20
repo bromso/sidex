@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableMap, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { URI as uri, UriComponents } from '../../../base/common/uri.js';
+import { DisposableMap, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI as uri, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	IDebugService,
 	IConfig,
@@ -41,15 +41,15 @@ import {
 	IStackFrameFocusDto
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import severity from '../../../base/common/severity.js';
+import severity from '@sidex/base/common/severity.js';
 import { AbstractDebugAdapter } from '../../contrib/debug/common/abstractDebugAdapter.js';
-import { IWorkspaceFolder } from '../../../platform/workspace/common/workspace.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { convertToVSCPaths, convertToDAPaths, isSessionAttach } from '../../contrib/debug/common/debugUtils.js';
-import { ErrorNoTelemetry } from '../../../base/common/errors.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
 import { IDebugVisualizerService } from '../../contrib/debug/common/debugVisualizers.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { Event } from '../../../base/common/event.js';
-import { isDefined } from '../../../base/common/types.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { isDefined } from '@sidex/base/common/types.js';
 
 @extHostNamedCustomer(MainContext.MainThreadDebugService)
 export class MainThreadDebugService implements MainThreadDebugServiceShape, IDebugAdapterFactory {

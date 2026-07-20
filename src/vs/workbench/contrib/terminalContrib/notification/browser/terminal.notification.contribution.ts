@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import * as dom from '../../../../../base/browser/dom.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { INotificationService } from '../../../../../platform/notification/common/notification.js';
-import { ITerminalLogService } from '../../../../../platform/terminal/common/terminal.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ITerminalLogService } from '@sidex/platform/terminal/common/terminal.js';
 import type { ITerminalContribution, ITerminalInstance, IXtermTerminal } from '../../../terminal/browser/terminal.js';
 import {
 	registerTerminalContribution,

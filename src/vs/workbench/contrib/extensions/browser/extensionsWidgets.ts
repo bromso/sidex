@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/extensionsWidgets.css';
-import * as semver from '../../../../base/common/semver/semver.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
 import {
 	Disposable,
 	toDisposable,
 	DisposableStore,
 	MutableDisposable,
 	IDisposable
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	IExtension,
 	IExtensionsWorkbenchService,
@@ -20,24 +20,24 @@ import {
 	ExtensionEditorTab,
 	IExtensionsViewState
 } from '../common/extensions.js';
-import { append, $, reset, addDisposableListener, EventType, finalHandler } from '../../../../base/browser/dom.js';
-import * as platform from '../../../../base/common/platform.js';
+import { append, $, reset, addDisposableListener, EventType, finalHandler } from '@sidex/base/browser/dom.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import { IExtensionManagementServerService } from '../../../services/extensionManagement/common/extensionManagement.js';
 import {
 	IExtensionIgnoredRecommendationsService,
 	IExtensionRecommendationsService
 } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { extensionButtonProminentBackground, ExtensionStatusAction } from './extensionsActions.js';
-import { IThemeService, registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IThemeService, registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { EXTENSION_BADGE_BACKGROUND, EXTENSION_BADGE_FOREGROUND } from '../../../common/theme.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IUserDataSyncEnablementService } from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IUserDataSyncEnablementService } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import {
 	activationTimeIcon,
 	errorIcon,
@@ -55,44 +55,44 @@ import {
 	syncIgnoredIcon,
 	warningIcon
 } from './extensionsIcons.js';
-import { registerColor, textLinkForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { createCommandUri, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { URI } from '../../../../base/common/uri.js';
+import { registerColor, textLinkForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { createCommandUri, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import Severity from '../../../../base/common/severity.js';
-import { Color } from '../../../../base/common/color.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { renderIcon } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import Severity from '@sidex/base/common/severity.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions,
 	IExtensionFeaturesManagementService,
 	IExtensionFeaturesRegistry
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	extensionDefaultIcon,
 	extensionVerifiedPublisherIconColor,
 	verifiedPublisherIcon
 } from '../../../services/extensionManagement/common/extensionsIcons.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IExplorerService } from '../../files/browser/files.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { VIEW_ID as EXPLORER_VIEW_ID } from '../../files/common/files.js';
 import {
 	IExtensionGalleryManifest,
 	IExtensionGalleryManifestService
-} from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+} from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 
 export abstract class ExtensionWidget extends Disposable implements IExtensionContainer {
 	private _extension: IExtension | null = null;

@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../base/common/buffer.js';
-import { CancellationToken } from '../../base/common/cancellation.js';
-import { Codicon } from '../../base/common/codicons.js';
-import { Color } from '../../base/common/color.js';
-import { IReadonlyVSDataTransfer } from '../../base/common/dataTransfer.js';
-import { Event } from '../../base/common/event.js';
-import { HierarchicalKind } from '../../base/common/hierarchicalKind.js';
-import { IMarkdownString } from '../../base/common/htmlContent.js';
-import { IDisposable } from '../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../base/common/themables.js';
-import { URI, UriComponents } from '../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IReadonlyVSDataTransfer } from '@sidex/base/common/dataTransfer.js';
+import { Event } from '@sidex/base/common/event.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { EditOperation, ISingleEditOperation } from './core/editOperation.js';
 import { IPosition, Position } from './core/position.js';
 import { IRange, Range } from './core/range.js';
@@ -24,8 +24,8 @@ import * as model from './model.js';
 import { TokenizationRegistry as TokenizationRegistryImpl } from './tokenizationRegistry.js';
 import { ContiguousMultilineTokens } from './tokens/contiguousMultilineTokens.js';
 import { localize } from '@sidex/base/nls.js';
-import { ExtensionIdentifier } from '../../platform/extensions/common/extensions.js';
-import { IMarkerData } from '../../platform/markers/common/markers.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IMarkerData } from '@sidex/platform/markers/common/markers.js';
 import { EditDeltaInfo } from './textModelEditSource.js';
 import { FontTokensUpdate } from './textModelEvents.js';
 

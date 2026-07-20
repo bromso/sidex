@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import {
 	IMatch,
 	matchesBaseContiguousSubString,
 	matchesContiguousSubString,
 	matchesSubString,
 	matchesWords
-} from '../../../../base/common/filters.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import * as strings from '../../../../base/common/strings.js';
-import { TfIdfCalculator, TfIdfDocument } from '../../../../base/common/tfIdf.js';
-import { IRange } from '../../../../editor/common/core/range.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/filters.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { TfIdfCalculator, TfIdfDocument } from '@sidex/base/common/tfIdf.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IGroupFilter,
 	ISearchResult,

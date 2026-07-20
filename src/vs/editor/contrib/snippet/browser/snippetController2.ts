@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { assertType } from '../../../../base/common/types.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { assertType } from '@sidex/base/common/types.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorCommand,
@@ -30,12 +30,12 @@ import {
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { ISnippetEdit, SnippetSession } from './snippetSession.js';
 import { TextModelEditSource } from '../../../common/textModelEditSource.js';
-import { IObservable, observableValue } from '../../../../base/common/observable.js';
+import { IObservable, observableValue } from '@sidex/base/common/observable.js';
 
 export interface ISnippetInsertOptions {
 	overwriteBefore: number;

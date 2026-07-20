@@ -3,31 +3,31 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EventHelper, getDomNodePagePosition } from '../../../../base/browser/dom.js';
-import { IAction, SubmenuAction } from '../../../../base/common/actions.js';
-import { Delayer } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../../editor/browser/editorBrowser.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { ICursorPositionChangedEvent } from '../../../../editor/common/cursorEvents.js';
-import * as editorCommon from '../../../../editor/common/editorCommon.js';
-import * as languages from '../../../../editor/common/languages.js';
-import { IModelDeltaDecoration, ITextModel, TrackedRangeStickiness } from '../../../../editor/common/model.js';
-import { ModelDecorationOptions } from '../../../../editor/common/model/textModel.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { CodeActionKind } from '../../../../editor/contrib/codeAction/common/types.js';
+import { EventHelper, getDomNodePagePosition } from '@sidex/base/browser/dom.js';
+import { IAction, SubmenuAction } from '@sidex/base/common/actions.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { ICursorPositionChangedEvent } from '@sidex/editor/common/cursorEvents.js';
+import * as editorCommon from '@sidex/editor/common/editorCommon.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { IModelDeltaDecoration, ITextModel, TrackedRangeStickiness } from '@sidex/editor/common/model.js';
+import { ModelDecorationOptions } from '@sidex/editor/common/model/textModel.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { CodeActionKind } from '@sidex/editor/contrib/codeAction/common/types.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
@@ -36,15 +36,15 @@ import {
 	IRegisteredConfigurationPropertySchema,
 	OVERRIDE_PROPERTY_REGEX,
 	overrideIdentifiersFromKey
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IMarkerData, IMarkerService, MarkerSeverity, MarkerTag } from '../../../../platform/markers/common/markers.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IMarkerData, IMarkerService, MarkerSeverity, MarkerTag } from '@sidex/platform/markers/common/markers.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { RangeHighlightDecorations } from '../../../browser/codeeditor.js';
 import { settingsEditIcon } from './preferencesIcons.js';
 import { EditPreferenceWidget } from './preferencesWidgets.js';

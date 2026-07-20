@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMarkerData } from '../../../platform/markers/common/markers.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import type * as vscode from 'vscode';
 import { MainContext, MainThreadDiagnosticsShape, ExtHostDiagnosticsShape, IMainContext } from './extHost.protocol.js';
 
 import * as converter from './extHostTypeConverters.js';
-import { Event, Emitter, DebounceEmitter } from '../../../base/common/event.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
+import { Event, Emitter, DebounceEmitter } from '@sidex/base/common/event.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { IExtHostFileSystemInfo } from './extHostFileSystemInfo.js';
 import { ExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
 

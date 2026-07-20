@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Promises } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { toLocalISOString } from '../../../base/common/date.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { FileOperationResult, IFileService, IFileStat, toFileOperationResult } from '../../files/common/files.js';

@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { normalize, isAbsolute } from '../../../../base/common/path.js';
-import * as resources from '../../../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { normalize, isAbsolute } from '@sidex/base/common/path.js';
+import * as resources from '@sidex/base/common/resources.js';
 import { DEBUG_SCHEME } from './debug.js';
-import { IRange } from '../../../../editor/common/core/range.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
 import { IEditorService, SIDE_GROUP, ACTIVE_GROUP } from '../../../services/editor/common/editorService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { isUriString } from './debugUtils.js';
 import { IEditorPane } from '../../../common/editor.js';
-import { TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export const UNKNOWN_SOURCE_LABEL = nls.localize('unknownSource', 'Unknown Source');
 

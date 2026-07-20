@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isFalsyOrEmpty } from '../../../base/common/arrays.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Schemas, matchesSomeScheme } from '../../../base/common/network.js';
-import { URI } from '../../../base/common/uri.js';
-import { IPosition } from '../../../editor/common/core/position.js';
-import { IRange } from '../../../editor/common/core/range.js';
-import * as languages from '../../../editor/common/languages.js';
-import { decodeSemanticTokensDto } from '../../../editor/common/services/semanticTokensDto.js';
-import { validateWhenClauses } from '../../../platform/contextkey/common/contextkey.js';
-import { ITextEditorOptions } from '../../../platform/editor/common/editor.js';
+import { isFalsyOrEmpty } from '@sidex/base/common/arrays.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Schemas, matchesSomeScheme } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { decodeSemanticTokensDto } from '@sidex/editor/common/services/semanticTokensDto.js';
+import { validateWhenClauses } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	ICallHierarchyItemDto,
 	IIncomingCallDto,

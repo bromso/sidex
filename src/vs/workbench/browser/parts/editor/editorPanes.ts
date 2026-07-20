@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { Emitter } from '../../../../base/common/event.js';
-import Severity from '../../../../base/common/severity.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import Severity from '@sidex/base/common/severity.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	EditorExtensions,
 	EditorInputCapabilities,
@@ -26,32 +26,32 @@ import {
 	getWindowById,
 	isEditableElement,
 	$
-} from '../../../../base/browser/dom.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/base/browser/dom.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IEditorPaneRegistry, IEditorPaneDescriptor } from '../../editor.js';
 import { IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
 import { EditorPane } from './editorPane.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IEditorProgressService, LongRunningOperation } from '../../../../platform/progress/common/progress.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IEditorProgressService, LongRunningOperation } from '@sidex/platform/progress/common/progress.js';
 import {
 	IEditorGroupView,
 	DEFAULT_EDITOR_MIN_DIMENSIONS,
 	DEFAULT_EDITOR_MAX_DIMENSIONS,
 	IInternalEditorOpenOptions
 } from './editor.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import {
 	ErrorPlaceholderEditor,
 	IErrorEditorPlaceholderOptions,
 	WorkspaceTrustRequiredPlaceholderEditor
 } from './editorPlaceholder.js';
-import { EditorOpenSource, IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IDialogService, IPromptButton, IPromptCancelButton } from '../../../../platform/dialogs/common/dialogs.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
+import { EditorOpenSource, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IDialogService, IPromptButton, IPromptCancelButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 
 export interface IOpenEditorResult {

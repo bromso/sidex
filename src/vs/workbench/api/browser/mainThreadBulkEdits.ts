@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer, decodeBase64 } from '../../../base/common/buffer.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { VSBuffer, decodeBase64 } from '@sidex/base/common/buffer.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 import {
 	IBulkEditService,
 	ResourceFileEdit,
 	ResourceTextEdit
-} from '../../../editor/browser/services/bulkEditService.js';
-import { WorkspaceEdit } from '../../../editor/common/languages.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/editor/browser/services/bulkEditService.js';
+import { WorkspaceEdit } from '@sidex/editor/common/languages.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IWorkspaceCellEditDto,
 	IWorkspaceEditDto,

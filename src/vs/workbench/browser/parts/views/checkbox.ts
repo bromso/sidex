@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { Checkbox } from '../../../../base/browser/ui/toggle/toggle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { Checkbox } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import type { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { defaultCheckboxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import type { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { defaultCheckboxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { ITreeItem, ITreeItemCheckboxState } from '../../../common/views.js';
 
 export class CheckboxStateHandler extends Disposable {

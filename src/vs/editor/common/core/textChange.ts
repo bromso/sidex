@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as buffer from '../../../base/common/buffer.js';
+import * as buffer from '@sidex/base/common/buffer.js';
 import { decodeUTF16LE } from './stringBuilder.js';
 
 function escapeNewLine(str: string): string {

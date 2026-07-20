@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancelablePromise, createCancelablePromise, raceCancellation } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { VSDataTransfer } from '../../../../base/common/dataTransfer.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancelablePromise, createCancelablePromise, raceCancellation } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { VSDataTransfer } from '@sidex/base/common/dataTransfer.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { LocalSelectionTransfer } from '../../../../platform/dnd/browser/dnd.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { LocalSelectionTransfer } from '@sidex/platform/dnd/browser/dnd.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { toExternalVSDataTransfer } from '../../../browser/dataTransfer.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';

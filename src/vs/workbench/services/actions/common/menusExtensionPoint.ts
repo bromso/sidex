@@ -4,22 +4,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { isFalsyOrWhitespace } from '../../../../base/common/strings.js';
-import * as resources from '../../../../base/common/resources.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import {
 	IExtensionPointUser,
 	ExtensionMessageCollector,
 	ExtensionsRegistry
 } from '../../extensions/common/extensionsRegistry.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { MenuId, MenuRegistry, IMenuItem, ISubmenuItem } from '../../../../platform/actions/common/actions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { index } from '../../../../base/common/arrays.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { MenuId, MenuRegistry, IMenuItem, ISubmenuItem } from '@sidex/platform/actions/common/actions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { index } from '@sidex/base/common/arrays.js';
 import { isProposedApiEnabled } from '../../extensions/common/extensions.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 import {
 	IExtensionFeatureTableRenderer,
 	IExtensionFeaturesRegistry,
@@ -28,14 +28,14 @@ import {
 	ITableData,
 	Extensions as ExtensionFeaturesExtensions
 } from '../../extensionManagement/common/extensionFeatures.js';
-import { IExtensionManifest, IKeyBinding } from '../../../../platform/extensions/common/extensions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { platform } from '../../../../base/common/process.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ApiProposalName } from '../../../../platform/extensions/common/extensionsApiProposals.js';
+import { IExtensionManifest, IKeyBinding } from '@sidex/platform/extensions/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { platform } from '@sidex/base/common/process.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ApiProposalName } from '@sidex/platform/extensions/common/extensionsApiProposals.js';
 
 interface IAPIMenu {
 	readonly key: string;

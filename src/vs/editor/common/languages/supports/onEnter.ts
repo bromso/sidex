@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import * as strings from '../../../../base/common/strings.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { CharacterPair, EnterAction, IndentAction, OnEnterRule } from '../languageConfiguration.js';
 import { EditorAutoIndentStrategy } from '../../config/editorOptions.js';
 

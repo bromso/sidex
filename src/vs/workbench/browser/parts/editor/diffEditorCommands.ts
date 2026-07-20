@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { TextDiffEditor } from './textDiffEditor.js';
 import {
 	ActiveCompareEditorCanSwapContext,
@@ -21,8 +21,8 @@ import {
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IUntypedEditorInput } from '../../../common/editor.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { isDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 
 export const TOGGLE_DIFF_SIDE_BY_SIDE = 'toggle.diff.renderSideBySide';

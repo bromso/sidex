@@ -4,30 +4,30 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import { RunOnceScheduler } from '../../../../../../base/common/async.js';
-import { observableValue } from '../../../../../../base/common/observable.js';
-import { setTimeout0 } from '../../../../../../base/common/platform.js';
-import { URI } from '../../../../../../base/common/uri.js';
-import { LineRange } from '../../../../../../editor/common/core/ranges/lineRange.js';
-import { LanguageId } from '../../../../../../editor/common/encodedTokenAttributes.js';
-import { IModelChangedEvent, MirrorTextModel } from '../../../../../../editor/common/model/mirrorTextModel.js';
-import { TokenizerWithStateStore } from '../../../../../../editor/common/model/textModelTokens.js';
-import { ContiguousMultilineTokensBuilder } from '../../../../../../editor/common/tokens/contiguousMultilineTokensBuilder.js';
-import { LineTokens } from '../../../../../../editor/common/tokens/lineTokens.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { observableValue } from '@sidex/base/common/observable.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { LineRange } from '@sidex/editor/common/core/ranges/lineRange.js';
+import { LanguageId } from '@sidex/editor/common/encodedTokenAttributes.js';
+import { IModelChangedEvent, MirrorTextModel } from '@sidex/editor/common/model/mirrorTextModel.js';
+import { TokenizerWithStateStore } from '@sidex/editor/common/model/textModelTokens.js';
+import { ContiguousMultilineTokensBuilder } from '@sidex/editor/common/tokens/contiguousMultilineTokensBuilder.js';
+import { LineTokens } from '@sidex/editor/common/tokens/lineTokens.js';
 import { TextMateTokenizationSupport } from '../../tokenizationSupport/textMateTokenizationSupport.js';
 import { TokenizationSupportWithLineLimit } from '../../tokenizationSupport/tokenizationSupportWithLineLimit.js';
 import type { StackDiff, StateStack, diffStateStacksRefEq } from 'vscode-textmate';
 import { ICreateGrammarResult } from '../../../common/TMGrammarFactory.js';
 import { StateDeltas } from './textMateTokenizationWorker.worker.js';
-import { Disposable } from '../../../../../../base/common/lifecycle.js';
-import { IFontTokenOption, serializeFontTokenOptions } from '../../../../../../editor/common/textModelEvents.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IFontTokenOption, serializeFontTokenOptions } from '@sidex/editor/common/textModelEvents.js';
 import {
 	AnnotationsUpdate,
 	IAnnotationUpdate,
 	ISerializedAnnotation
-} from '../../../../../../editor/common/model/tokens/annotations.js';
-import { OffsetRange } from '../../../../../../editor/common/core/ranges/offsetRange.js';
-import { EncodedTokenizationResult } from '../../../../../../editor/common/languages.js';
+} from '@sidex/editor/common/model/tokens/annotations.js';
+import { OffsetRange } from '@sidex/editor/common/core/ranges/offsetRange.js';
+import { EncodedTokenizationResult } from '@sidex/editor/common/languages.js';
 
 export interface TextMateModelTokenizerHost {
 	getOrCreateGrammar(languageId: string, encodedLanguageId: LanguageId): Promise<ICreateGrammarResult | null>;

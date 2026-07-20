@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry, Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
+import { MenuId, MenuRegistry, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IURLService } from '../../../../platform/url/common/url.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IURLService } from '@sidex/platform/url/common/url.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
@@ -21,17 +21,17 @@ import { ExternalUriResolverContribution } from './externalUriResolver.js';
 import { manageTrustedDomainSettingsCommand } from './trustedDomains.js';
 import { TrustedDomainsFileSystemProvider } from './trustedDomainsFileSystemProvider.js';
 import { OpenerValidatorContributions } from './trustedDomainsValidator.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	ConfigurationScope,
 	Extensions as ConfigurationExtensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
 import { ITrustedDomainService, TrustedDomainService } from './trustedDomainService.js';
-import { registerSingleton, InstantiationType } from '../../../../platform/instantiation/common/extensions.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { registerSingleton, InstantiationType } from '@sidex/platform/instantiation/common/extensions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 
 class OpenUrlAction extends Action2 {
 	static readonly STORAGE_KEY = 'workbench.action.url.openUrl.lastInput';

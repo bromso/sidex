@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ILocalizedString, localize, localize2 } from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry, registerAction2, Action2 } from '../../../platform/actions/common/actions.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { alert } from '../../../base/browser/ui/aria/aria.js';
+import { MenuId, MenuRegistry, registerAction2, Action2 } from '@sidex/platform/actions/common/actions.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 import {
 	EditorActionsLocation,
 	EditorTabsMode,
@@ -18,16 +18,16 @@ import {
 	ZenModeSettings,
 	positionToString
 } from '../../services/layout/browser/layoutService.js';
-import { ServicesAccessor, IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { KeyMod, KeyCode, KeyChord } from '../../../base/common/keyCodes.js';
-import { isWindows, isLinux, isWeb, isMacintosh, isNative } from '../../../base/common/platform.js';
-import { IsMacNativeContext } from '../../../platform/contextkey/common/contextkeys.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
+import { ServicesAccessor, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeyMod, KeyCode, KeyChord } from '@sidex/base/common/keyCodes.js';
+import { isWindows, isLinux, isWeb, isMacintosh, isNative } from '@sidex/base/common/platform.js';
+import { IsMacNativeContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKeyService
-} from '../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IViewDescriptorService,
 	ViewContainerLocation,
@@ -41,12 +41,12 @@ import {
 	IQuickPickItem,
 	IQuickPickSeparator,
 	IQuickPick
-} from '../../../platform/quickinput/common/quickInput.js';
-import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { IPaneCompositePartService } from '../../services/panecomposite/browser/panecomposite.js';
 import { ToggleAuxiliaryBarAction } from '../parts/auxiliarybar/auxiliaryBarActions.js';
 import { TogglePanelAction } from '../parts/panel/panelActions.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	AuxiliaryBarVisibleContext,
 	PanelAlignmentContext,
@@ -62,16 +62,16 @@ import {
 	TitleBarStyleContext,
 	IsAuxiliaryWindowContext
 } from '../../common/contextkeys.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { registerIcon } from '../../../platform/theme/common/iconRegistry.js';
-import { ICommandActionTitle } from '../../../platform/action/common/action.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { MenuSettings, TitlebarStyle } from '../../../platform/window/common/window.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ICommandActionTitle } from '@sidex/platform/action/common/action.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { MenuSettings, TitlebarStyle } from '@sidex/platform/window/common/window.js';
 import { IPreferencesService } from '../../services/preferences/common/preferences.js';
-import { QuickInputAlignmentContextKey } from '../../../platform/quickinput/browser/quickInput.js';
+import { QuickInputAlignmentContextKey } from '@sidex/platform/quickinput/browser/quickInput.js';
 import { IEditorGroupsService } from '../../services/editor/common/editorGroupsService.js';
 
 // Register Icons

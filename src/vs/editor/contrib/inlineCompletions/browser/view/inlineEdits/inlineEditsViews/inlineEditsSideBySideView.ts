@@ -2,10 +2,10 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { $, getWindow, n } from '../../../../../../../base/browser/dom.js';
-import { Color } from '../../../../../../../base/common/color.js';
-import { Emitter } from '../../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../../base/common/lifecycle.js';
+import { $, getWindow, n } from '@sidex/base/browser/dom.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -14,11 +14,11 @@ import {
 	derived,
 	derivedObservableWithCache,
 	observableFromEvent
-} from '../../../../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../../../../platform/instantiation/common/instantiation.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
-import { IUserInteractionService } from '../../../../../../../platform/userInteraction/browser/userInteractionService.js';
+} from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
 import { ICodeEditor } from '../../../../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import { Rect } from '../../../../../../common/core/2d/rect.js';

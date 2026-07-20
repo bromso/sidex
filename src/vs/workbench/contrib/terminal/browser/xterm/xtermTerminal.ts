@@ -18,17 +18,17 @@ import type { WebglAddon as WebglAddonType } from '@xterm/addon-webgl';
 import type { SerializeAddon as SerializeAddonType } from '@xterm/addon-serialize';
 import type { ImageAddon as ImageAddonType } from '@xterm/addon-image';
 import type { ClipboardAddon as ClipboardAddonType, ClipboardSelectionType } from '@xterm/addon-clipboard';
-import * as dom from '../../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { IXtermCore } from '../xterm-private.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IEditorOptions } from '../../../../../editor/common/config/editorOptions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import {
 	IShellIntegration,
 	ITerminalLogService,
 	TerminalSettingId,
 	type IDecorationAddon
-} from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { ITerminalFont, ITerminalConfiguration } from '../../common/terminal.js';
 import {
 	IMarkTracker,
@@ -40,11 +40,11 @@ import {
 	IDetachedXtermTerminal,
 	ITerminalConfigurationService
 } from '../terminal.js';
-import { LogLevel } from '../../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../../platform/notification/common/notification.js';
+import { LogLevel } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { MarkNavigationAddon, ScrollPosition } from './markNavigationAddon.js';
 import { localize } from '@sidex/base/nls.js';
-import { IColorTheme, IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { PANEL_BACKGROUND } from '../../../../common/theme.js';
 import {
 	TERMINAL_FOREGROUND_COLOR,
@@ -62,39 +62,39 @@ import {
 	TERMINAL_SELECTION_FOREGROUND_COLOR,
 	TERMINAL_INACTIVE_SELECTION_BACKGROUND_COLOR
 } from '../../common/terminalColorRegistry.js';
-import { ShellIntegrationAddon } from '../../../../../platform/terminal/common/xterm/shellIntegrationAddon.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { ShellIntegrationAddon } from '@sidex/platform/terminal/common/xterm/shellIntegrationAddon.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { DecorationAddon } from './decorationAddon.js';
 import {
 	ITerminalCapabilityStore,
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { IContextKey, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TerminalContextKeys } from '../../common/terminalContextKey.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { debounce } from '../../../../../base/common/decorators.js';
-import { MouseWheelClassifier } from '../../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { IMouseWheelEvent, StandardWheelEvent } from '../../../../../base/browser/mouseEvent.js';
-import { ILayoutService } from '../../../../../platform/layout/browser/layoutService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { MouseWheelClassifier } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { IMouseWheelEvent, StandardWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
 import {
 	scrollbarSliderActiveBackground,
 	scrollbarSliderBackground,
 	scrollbarSliderHoverBackground
-} from '../../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { XtermAddonImporter } from './xtermAddonImporter.js';
-import { equals } from '../../../../../base/common/objects.js';
+import { equals } from '@sidex/base/common/objects.js';
 import type { IProgressState } from '@xterm/addon-progress';
-import type { CommandDetectionCapability } from '../../../../../platform/terminal/common/capabilities/commandDetectionCapability.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { isNumber } from '../../../../../base/common/types.js';
-import { clamp } from '../../../../../base/common/numbers.js';
+import type { CommandDetectionCapability } from '@sidex/platform/terminal/common/capabilities/commandDetectionCapability.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { clamp } from '@sidex/base/common/numbers.js';
 
 const enum RenderConstants {
 	SmoothScrollDuration = 125

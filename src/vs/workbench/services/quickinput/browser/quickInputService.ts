@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { QuickInputController } from '../../../../platform/quickinput/browser/quickInputController.js';
-import { QuickInputService as BaseQuickInputService } from '../../../../platform/quickinput/browser/quickInputService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { QuickInputController } from '@sidex/platform/quickinput/browser/quickInputController.js';
+import { QuickInputService as BaseQuickInputService } from '@sidex/platform/quickinput/browser/quickInputService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { InQuickPickContextKey } from '../../../browser/quickaccess.js';
 
 export class QuickInputService extends BaseQuickInputService {

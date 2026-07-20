@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { illegalArgument } from '../../../base/common/errors.js';
-import { IDisposable, dispose, DisposableStore } from '../../../base/common/lifecycle.js';
-import { equals as objectEquals } from '../../../base/common/objects.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { ICodeEditorService } from '../../../editor/browser/services/codeEditorService.js';
-import { IRange } from '../../../editor/common/core/range.js';
-import { ISelection } from '../../../editor/common/core/selection.js';
-import { IDecorationOptions, IDecorationRenderOptions } from '../../../editor/common/editorCommon.js';
-import { ISingleEditOperation } from '../../../editor/common/core/editOperation.js';
-import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
+import { IDisposable, dispose, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { equals as objectEquals } from '@sidex/base/common/objects.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { ISelection } from '@sidex/editor/common/core/selection.js';
+import { IDecorationOptions, IDecorationRenderOptions } from '@sidex/editor/common/editorCommon.js';
+import { ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import {
 	ITextEditorOptions,
 	IResourceEditorInput,
@@ -21,8 +21,8 @@ import {
 	ITextEditorDiffInformation,
 	isTextEditorDiffInformationEqual,
 	ITextEditorChange
-} from '../../../platform/editor/common/editor.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/editor/common/editor.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { MainThreadTextEditor } from './mainThreadEditor.js';
 import {
 	ExtHostContext,
@@ -42,14 +42,14 @@ import {
 } from '../../services/editor/common/editorGroupColumn.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
 import { IEditorGroupsService } from '../../services/editor/common/editorGroupsService.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 import { IWorkingCopyService } from '../../services/workingCopy/common/workingCopyService.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { IChange } from '../../../editor/common/diff/legacyLinesDiffComputer.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IChange } from '@sidex/editor/common/diff/legacyLinesDiffComputer.js';
 import { IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { IEditorControl } from '../../common/editor.js';
-import { getCodeEditor, ICodeEditor } from '../../../editor/browser/editorBrowser.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { getCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IQuickDiffModelService } from '../../contrib/scm/browser/quickDiffModel.js';
 import {
 	autorun,
@@ -58,13 +58,13 @@ import {
 	derivedOpts,
 	IObservable,
 	observableFromEvent
-} from '../../../base/common/observable.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
-import { isITextModel } from '../../../editor/common/model.js';
-import { LineRangeMapping } from '../../../editor/common/diff/rangeMapping.js';
-import { equals } from '../../../base/common/arrays.js';
-import { Event } from '../../../base/common/event.js';
-import { DiffAlgorithmName } from '../../../editor/common/services/editorWorker.js';
+} from '@sidex/base/common/observable.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { isITextModel } from '@sidex/editor/common/model.js';
+import { LineRangeMapping } from '@sidex/editor/common/diff/rangeMapping.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
+import { DiffAlgorithmName } from '@sidex/editor/common/services/editorWorker.js';
 
 export interface IMainThreadEditorLocator {
 	getEditor(id: string): MainThreadTextEditor | undefined;

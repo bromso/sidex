@@ -4,33 +4,33 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/scm.css';
-import { IDisposable, DisposableStore, combinedDisposable } from '../../../../base/common/lifecycle.js';
-import { autorun, IObservable, observableSignalFromEvent } from '../../../../base/common/observable.js';
-import { append, $ } from '../../../../base/browser/dom.js';
+import { IDisposable, DisposableStore, combinedDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, IObservable, observableSignalFromEvent } from '@sidex/base/common/observable.js';
+import { append, $ } from '@sidex/base/browser/dom.js';
 import { ISCMProvider, ISCMRepository, ISCMViewService } from '../common/scm.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ActionRunner, IAction } from '../../../../base/common/actions.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ActionRunner, IAction } from '@sidex/base/common/actions.js';
 import { connectPrimaryMenu, getRepositoryResourceCount, isSCMRepository, StatusBarAction } from './util.js';
-import { ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { IListRenderer } from '../../../../base/browser/ui/list/list.js';
-import { IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IconLabel } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { shorten } from '../../../../base/common/labels.js';
-import { dirname } from '../../../../base/common/resources.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { IListRenderer } from '@sidex/base/browser/ui/list/list.js';
+import { IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { shorten } from '@sidex/base/common/labels.js';
+import { dirname } from '@sidex/base/common/resources.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 export class RepositoryActionRunner extends ActionRunner {
 	constructor(private readonly getSelectedRepositories: () => ISCMRepository[]) {

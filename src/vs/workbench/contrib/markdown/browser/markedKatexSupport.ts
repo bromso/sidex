@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { importAMDNodeModule, resolveAmdNodeModulePath } from '@sidex/base/amdX.js';
-import * as domSanitize from '../../../../base/browser/domSanitize.js';
-import { MarkdownSanitizerConfig } from '../../../../base/browser/markdownRenderer.js';
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import type * as marked from '../../../../base/common/marked/marked.js';
+import * as domSanitize from '@sidex/base/browser/domSanitize.js';
+import { MarkdownSanitizerConfig } from '@sidex/base/browser/markdownRenderer.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import type * as marked from '@sidex/base/common/marked/marked.js';
 import { katexContainerLatexAttributeName, MarkedKatexExtension } from '../common/markedKatexExtension.js';
 
 export class MarkedKatexSupport {

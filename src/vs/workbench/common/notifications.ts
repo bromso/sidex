@@ -20,16 +20,16 @@ import {
 	INotificationSource,
 	isNotificationSource,
 	IStatusHandle
-} from '../../platform/notification/common/notification.js';
-import { toErrorMessage, isErrorWithActions } from '../../base/common/errorMessage.js';
-import { Event, Emitter } from '../../base/common/event.js';
-import { Disposable } from '../../base/common/lifecycle.js';
-import { isCancellationError } from '../../base/common/errors.js';
-import { Action } from '../../base/common/actions.js';
-import { equals } from '../../base/common/arrays.js';
-import { parseLinkedText, LinkedText } from '../../base/common/linkedText.js';
-import { mapsStrictEqualIgnoreOrder } from '../../base/common/map.js';
-import { IConfigurationService } from '../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { toErrorMessage, isErrorWithActions } from '@sidex/base/common/errorMessage.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { parseLinkedText, LinkedText } from '@sidex/base/common/linkedText.js';
+import { mapsStrictEqualIgnoreOrder } from '@sidex/base/common/map.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 export interface INotificationsModel {
 	//#region Notifications as Toasts/Center

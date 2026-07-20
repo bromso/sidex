@@ -4,30 +4,30 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { IObservable, autorun, keepObserved } from '../../../../../base/common/observable.js';
-import { Proxied } from '../../../../../base/common/worker/webWorker.js';
-import { LineRange } from '../../../../../editor/common/core/ranges/lineRange.js';
-import { Range } from '../../../../../editor/common/core/range.js';
-import { IBackgroundTokenizationStore, ILanguageIdCodec } from '../../../../../editor/common/languages.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { TokenizationStateStore } from '../../../../../editor/common/model/textModelTokens.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, autorun, keepObserved } from '@sidex/base/common/observable.js';
+import { Proxied } from '@sidex/base/common/worker/webWorker.js';
+import { LineRange } from '@sidex/editor/common/core/ranges/lineRange.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IBackgroundTokenizationStore, ILanguageIdCodec } from '@sidex/editor/common/languages.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { TokenizationStateStore } from '@sidex/editor/common/model/textModelTokens.js';
 import {
 	deserializeFontTokenOptions,
 	IFontTokenOption,
 	IModelContentChangedEvent
-} from '../../../../../editor/common/textModelEvents.js';
-import { IModelContentChange } from '../../../../../editor/common/model/mirrorTextModel.js';
-import { ContiguousMultilineTokensBuilder } from '../../../../../editor/common/tokens/contiguousMultilineTokensBuilder.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { observableConfigValue } from '../../../../../platform/observable/common/platformObservableUtils.js';
+} from '@sidex/editor/common/textModelEvents.js';
+import { IModelContentChange } from '@sidex/editor/common/model/mirrorTextModel.js';
+import { ContiguousMultilineTokensBuilder } from '@sidex/editor/common/tokens/contiguousMultilineTokensBuilder.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { MonotonousIndexTransformer } from '../indexTransformer.js';
 import type { StateDeltas, TextMateTokenizationWorker } from './worker/textMateTokenizationWorker.worker.js';
 import type { applyStateStackDiff, StateStack } from 'vscode-textmate';
-import { linesLengthEditFromModelContentChange } from '../../../../../editor/common/model/textModelStringEdit.js';
-import { StringEdit } from '../../../../../editor/common/core/edits/stringEdit.js';
-import { OffsetRange } from '../../../../../editor/common/core/ranges/offsetRange.js';
-import { AnnotationsUpdate, ISerializedAnnotation } from '../../../../../editor/common/model/tokens/annotations.js';
+import { linesLengthEditFromModelContentChange } from '@sidex/editor/common/model/textModelStringEdit.js';
+import { StringEdit } from '@sidex/editor/common/core/edits/stringEdit.js';
+import { OffsetRange } from '@sidex/editor/common/core/ranges/offsetRange.js';
+import { AnnotationsUpdate, ISerializedAnnotation } from '@sidex/editor/common/model/tokens/annotations.js';
 
 export class TextMateWorkerTokenizerController extends Disposable {
 	private static _id = 0;

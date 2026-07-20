@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
-import { ContextKeyExpr, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ContextKeyExpr, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { IView } from '../../../common/views.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { IAction2Options } from '../../../../platform/actions/common/actions.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { IAction2Options } from '@sidex/platform/actions/common/actions.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 
 // Inline types to avoid importing heavy userDataSync module
 export interface IAuthenticationProvider {
@@ -171,7 +171,7 @@ export const DOWNLOAD_ACTIVITY_ACTION_DESCRIPTOR: Readonly<IAction2Options> = {
 };
 
 // Null implementation — no online sync in this build
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 
 export class NullUserDataSyncWorkbenchService implements IUserDataSyncWorkbenchService {
 	declare _serviceBrand: undefined;

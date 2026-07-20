@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { getBaseLayerHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate2.js';
-import { renderIcon } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { IListRenderer, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { List } from '../../../../base/browser/ui/list/listWidget.js';
-import * as arrays from '../../../../base/common/arrays.js';
-import { DeferredPromise, raceCancellation } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { assertType, isDefined } from '../../../../base/common/types.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { getBaseLayerHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate2.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { List } from '@sidex/base/browser/ui/list/listWidget.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { DeferredPromise, raceCancellation } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { assertType, isDefined } from '@sidex/base/common/types.js';
 import './renameWidget.css';
 import * as domFontInfo from '../../../browser/config/domFontInfo.js';
 import {
@@ -40,10 +40,10 @@ import {
 	ProviderResult
 } from '../../../common/languages.js';
 import * as nls from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { getListStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { getListStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import {
 	editorWidgetBackground,
 	inputBackground,
@@ -53,9 +53,9 @@ import {
 	quickInputListFocusForeground,
 	widgetBorder,
 	widgetShadow
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { IColorTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { HoverStyle } from '../../../../base/browser/ui/hover/hover.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { HoverStyle } from '@sidex/base/browser/ui/hover/hover.js';
 
 /** for debugging */
 const _sticky = false;

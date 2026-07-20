@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable, Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
+import { IDisposable, Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor, MouseTargetType } from '../../../browser/editorBrowser.js';
 import { IEditorContribution, ScrollType } from '../../../common/editorCommon.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
@@ -15,26 +15,26 @@ import {
 import { StickyScrollWidget, StickyScrollWidgetState } from './stickyScrollWidget.js';
 import { IStickyLineCandidateProvider, StickyLineCandidateProvider } from './stickyScrollProvider.js';
 import { IModelTokensChangedEvent } from '../../../common/textModelEvents.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { ClickLinkGesture, ClickLinkMouseEvent } from '../../gotoSymbol/browser/link/clickLinkGesture.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { getDefinitionsAtPosition } from '../../gotoSymbol/browser/goToSymbol.js';
 import { goToDefinitionWithLocation } from '../../inlayHints/browser/inlayHintsLocations.js';
 import { IPosition, Position } from '../../../common/core/position.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { ILanguageFeatureDebounceService } from '../../../common/services/languageFeatureDebounce.js';
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { StickyRange } from './stickyScrollElement.js';
-import { IMouseEvent, StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
+import { IMouseEvent, StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import { FoldingController } from '../../folding/browser/folding.js';
 import { FoldingModel, toggleCollapseState } from '../../folding/browser/foldingModel.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 export interface IStickyScrollController {
 	get stickyScrollCandidateProvider(): IStickyLineCandidateProvider;

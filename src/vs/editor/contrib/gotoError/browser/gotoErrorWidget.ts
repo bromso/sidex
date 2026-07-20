@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { Color } from '../../../../base/common/color.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, dispose } from '../../../../base/common/lifecycle.js';
-import { basename } from '../../../../base/common/resources.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { splitLines } from '../../../../base/common/strings.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, dispose } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 import './media/gotoErrorWidget.css';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -23,14 +23,14 @@ import {
 	PeekViewWidget
 } from '../../peekView/browser/peekView.js';
 import * as nls from '@sidex/base/nls.js';
-import { getFlatActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IMarker, IRelatedInformation, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
+import { getFlatActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IMarker, IRelatedInformation, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
 import {
 	contrastBorder,
 	editorBackground,
@@ -43,8 +43,8 @@ import {
 	oneOf,
 	registerColor,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { IColorTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 
 class MessageWidget {
 	private _lines: number = 0;

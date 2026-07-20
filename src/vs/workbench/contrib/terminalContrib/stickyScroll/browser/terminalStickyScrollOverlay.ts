@@ -14,32 +14,32 @@ import type {
 	Terminal as RawXtermTerminal,
 	Terminal as XTermTerminal
 } from '@xterm/xterm';
-import { $, addDisposableListener, addStandardDisposableListener, getWindow } from '../../../../../base/browser/dom.js';
-import { debounce, throttle } from '../../../../../base/common/decorators.js';
-import { Event } from '../../../../../base/common/event.js';
+import { $, addDisposableListener, addStandardDisposableListener, getWindow } from '@sidex/base/browser/dom.js';
+import { debounce, throttle } from '@sidex/base/common/decorators.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	MutableDisposable,
 	combinedDisposable,
 	toDisposable
-} from '../../../../../base/common/lifecycle.js';
-import { removeAnsiEscapeCodes } from '../../../../../base/common/strings.js';
+} from '@sidex/base/common/lifecycle.js';
+import { removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
 import './media/stickyScroll.css';
 import { localize } from '@sidex/base/nls.js';
-import { IMenu, IMenuService, MenuId } from '../../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
+import { IMenu, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	ICommandDetectionCapability,
 	ITerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	ITerminalConfigurationService,
 	ITerminalInstance,

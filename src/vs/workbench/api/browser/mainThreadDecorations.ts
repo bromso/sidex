@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { Emitter } from '../../../base/common/event.js';
-import { IDisposable, dispose } from '../../../base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import {
 	ExtHostContext,
 	MainContext,
@@ -16,9 +16,9 @@ import {
 } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { IDecorationsService, IDecorationData } from '../../services/decorations/common/decorations.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { DeferredPromise } from '../../../base/common/async.js';
-import { CancellationError } from '../../../base/common/errors.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { CancellationError } from '@sidex/base/common/errors.js';
 
 class DecorationRequestsQueue {
 	private _idPool = 0;

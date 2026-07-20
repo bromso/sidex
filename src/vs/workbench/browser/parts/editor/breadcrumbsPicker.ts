@@ -3,33 +3,33 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareFileNames } from '../../../../base/common/comparers.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { createMatches, FuzzyScore } from '../../../../base/common/filters.js';
-import * as glob from '../../../../base/common/glob.js';
-import { IDisposable, DisposableStore, MutableDisposable, Disposable } from '../../../../base/common/lifecycle.js';
-import { posix, relative } from '../../../../base/common/path.js';
-import { basename, dirname, isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
+import { compareFileNames } from '@sidex/base/common/comparers.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { createMatches, FuzzyScore } from '@sidex/base/common/filters.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { IDisposable, DisposableStore, MutableDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import { posix, relative } from '@sidex/base/common/path.js';
+import { basename, dirname, isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './media/breadcrumbscontrol.css';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	FileKind,
 	FileSystemProviderCapabilities,
 	IFileService,
 	IFileStat
-} from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { WorkbenchDataTree, WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { breadcrumbsPickerBackground, widgetBorder } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { WorkbenchDataTree, WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { breadcrumbsPickerBackground, widgetBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	isWorkspace,
 	isWorkspaceFolder,
 	IWorkspace,
 	IWorkspaceContextService,
 	IWorkspaceFolder
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { ResourceLabels, IResourceLabel, DEFAULT_LABELS_CONTAINER } from '../../labels.js';
 import { BreadcrumbsConfig } from './breadcrumbs.js';
 import { OutlineElement2, FileElement } from './breadcrumbsModel.js';
@@ -40,19 +40,19 @@ import {
 	ITreeFilter,
 	TreeVisibility,
 	ITreeSorter
-} from '../../../../base/browser/ui/tree/tree.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
 import {
 	IIdentityProvider,
 	IListVirtualDelegate,
 	IKeyboardNavigationLabelProvider
-} from '../../../../base/browser/ui/list/list.js';
-import { IFileIconTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { IFileIconTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import { localize } from '@sidex/base/nls.js';
 import { IOutline, IOutlineComparator } from '../../../services/outline/browser/outline.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { IEditorService, SIDE_GROUP } from '../../../services/editor/common/editorService.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 
 interface ILayoutInfo {
 	maxHeight: number;

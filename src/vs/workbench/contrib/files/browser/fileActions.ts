@@ -4,75 +4,75 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { isWindows, OperatingSystem, OS } from '../../../../base/common/platform.js';
-import { extname, basename, isAbsolute } from '../../../../base/common/path.js';
-import * as resources from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { Action } from '../../../../base/common/actions.js';
-import { dispose, IDisposable } from '../../../../base/common/lifecycle.js';
+import { isWindows, OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { extname, basename, isAbsolute } from '@sidex/base/common/path.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { VIEWLET_ID, IFilesConfiguration, VIEW_ID, UndoConfirmLevel } from '../common/files.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
-import { IQuickInputService, ItemActivation } from '../../../../platform/quickinput/common/quickInput.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+import { IQuickInputService, ItemActivation } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import {
 	REVEAL_IN_EXPLORER_COMMAND_ID,
 	SAVE_ALL_IN_GROUP_COMMAND_ID,
 	NEW_UNTITLED_FILE_COMMAND_ID
 } from './fileConstants.js';
-import { ITextModelService, ITextModelContentProvider } from '../../../../editor/common/services/resolverService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ICommandService, CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { ITextModelService, ITextModelContentProvider } from '@sidex/editor/common/services/resolverService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ICommandService, CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	IDialogService,
 	IConfirmationResult,
 	getFileNamesMessage
-} from '../../../../platform/dialogs/common/dialogs.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { Constants } from '../../../../base/common/uint.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { CLOSE_EDITORS_AND_GROUP_COMMAND_ID } from '../../../browser/parts/editor/editorCommands.js';
-import { coalesce } from '../../../../base/common/arrays.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
 import { ExplorerItem, NewExplorerItem } from '../common/explorerModel.js';
-import { getErrorMessage } from '../../../../base/common/errors.js';
-import { triggerUpload } from '../../../../base/browser/dom.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { triggerUpload } from '@sidex/base/browser/dom.js';
 import { IFilesConfigurationService } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
 import { IWorkingCopyService } from '../../../services/workingCopy/common/workingCopyService.js';
 import { IWorkingCopy } from '../../../services/workingCopy/common/workingCopy.js';
-import { timeout } from '../../../../base/common/async.js';
+import { timeout } from '@sidex/base/common/async.js';
 import { IWorkingCopyFileService } from '../../../services/workingCopy/common/workingCopyFileService.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { trim, rtrim } from '../../../../base/common/strings.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ResourceFileEdit } from '../../../../editor/browser/services/bulkEditService.js';
+import { trim, rtrim } from '@sidex/base/common/strings.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ResourceFileEdit } from '@sidex/editor/browser/services/bulkEditService.js';
 import { IExplorerService } from './files.js';
 import { BrowserFileUpload, FileDownload } from './fileImportExport.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
-import { Action2 } from '../../../../platform/actions/common/actions.js';
+import { Action2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	ActiveEditorCanToggleReadonlyContext,
 	ActiveEditorContext,
 	EmptyWorkspaceSupportContext
 } from '../../../common/contextkeys.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { getPathForFile } from '../../../../platform/dnd/browser/dnd.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { getPathForFile } from '@sidex/platform/dnd/browser/dnd.js';
 
 export const NEW_FILE_COMMAND_ID = 'explorer.newFile';
 export const NEW_FILE_LABEL = nls.localize2('newFile', 'New File...');

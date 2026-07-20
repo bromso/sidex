@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EventType } from '../../../../../base/browser/dom.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
+import { EventType } from '@sidex/base/browser/dom.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	QuickPickItem,
 	IQuickInputService,
 	IQuickPickItem,
 	QuickInputHideReason
-} from '../../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { IDetectedLinks } from './terminalLinkManager.js';
 import {
 	TerminalLinkQuickPickEvent,
@@ -19,20 +19,20 @@ import {
 	type ITerminalInstance
 } from '../../../terminal/browser/terminal.js';
 import type { ILink } from '@xterm/xterm';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import type { TerminalLink } from './terminalLink.js';
-import { Sequencer, timeout } from '../../../../../base/common/async.js';
+import { Sequencer, timeout } from '@sidex/base/common/async.js';
 import { PickerEditorState } from '../../../../browser/quickaccess.js';
 import { getLinkSuffix } from './terminalLinkParsing.js';
 import { TerminalBuiltinLinkType } from './links.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { basenameOrAuthority, dirname } from '../../../../../base/common/resources.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { basenameOrAuthority, dirname } from '@sidex/base/common/resources.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	AccessibleViewProviderId,
 	IAccessibleViewService
-} from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { hasKey } from '../../../../../base/common/types.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 export class TerminalLinkQuickpick extends DisposableStore {
 	private readonly _editorSequencer = new Sequencer();

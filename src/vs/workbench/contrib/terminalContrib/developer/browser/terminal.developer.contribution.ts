@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal } from '@xterm/xterm';
-import { Delayer } from '../../../../../base/common/async.js';
-import { VSBuffer } from '../../../../../base/common/buffer.js';
-import { Event } from '../../../../../base/common/event.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableMap,
@@ -15,23 +15,23 @@ import {
 	MutableDisposable,
 	combinedDisposable,
 	dispose
-} from '../../../../../base/common/lifecycle.js';
-import { URI } from '../../../../../base/common/uri.js';
+} from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../../platform/action/common/actionCommonCategories.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { IQuickInputService } from '../../../../../platform/quickinput/common/quickInput.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { ITerminalLogService, TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { ITerminalLogService, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	IStatusbarService,
 	StatusbarAlignment,

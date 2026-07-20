@@ -3,27 +3,27 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDimension } from '../../../../base/browser/dom.js';
-import { Orientation } from '../../../../base/browser/ui/splitview/splitview.js';
-import { Color } from '../../../../base/common/color.js';
+import { IDimension } from '@sidex/base/browser/dom.js';
+import { Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { Color } from '@sidex/base/common/color.js';
 import {
 	Event,
 	IDynamicListEventMultiplexer,
 	type DynamicListEventMultiplexer
-} from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, type IReference } from '../../../../base/common/lifecycle.js';
-import { OperatingSystem } from '../../../../base/common/platform.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeyMods } from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, type IReference } from '@sidex/base/common/lifecycle.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeyMods } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IMarkProperties,
 	ITerminalCapabilityImplMap,
 	ITerminalCapabilityStore,
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { IMergedEnvironmentVariableCollection } from '../../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { IMergedEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariable.js';
 import {
 	IExtensionTerminalProfile,
 	IReconnectionProperties,
@@ -43,9 +43,9 @@ import {
 	WaitOnExitValue,
 	type IDecorationAddon,
 	type ShellIntegrationInjectionFailureReason
-} from '../../../../platform/terminal/common/terminal.js';
-import { IColorTheme } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IEditableData } from '../../../common/views.js';
 import { ITerminalStatusList } from './terminalStatusList.js';
@@ -67,21 +67,21 @@ import type {
 	IMarker as IXtermMarker
 } from '@xterm/xterm';
 import { ScrollPosition } from './xterm/markNavigationAddon.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { GroupIdentifier } from '../../../common/editor.js';
 import {
 	ACTIVE_GROUP_TYPE,
 	AUX_WINDOW_GROUP_TYPE,
 	SIDE_GROUP_TYPE
 } from '../../../services/editor/common/editorService.js';
-import type { ICurrentPartialCommand } from '../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+import type { ICurrentPartialCommand } from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
 import type { IXtermCore, IBufferSet } from './xterm-private.js';
-import type { IMenu } from '../../../../platform/actions/common/actions.js';
+import type { IMenu } from '@sidex/platform/actions/common/actions.js';
 import type { IProgressState } from '@xterm/addon-progress';
-import type { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import type { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import type { TerminalEditorInput } from './terminalEditorInput.js';
-import type { MaybePromise } from '../../../../base/common/async.js';
-import { isNumber, type SingleOrMany } from '../../../../base/common/types.js';
+import type { MaybePromise } from '@sidex/base/common/async.js';
+import { isNumber, type SingleOrMany } from '@sidex/base/common/types.js';
 
 export const ITerminalService = createDecorator<ITerminalService>('terminalService');
 export const ITerminalConfigurationService =

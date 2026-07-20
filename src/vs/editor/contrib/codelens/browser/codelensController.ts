@@ -8,9 +8,9 @@ import {
 	createCancelablePromise,
 	disposableTimeout,
 	RunOnceScheduler
-} from '../../../../base/common/async.js';
-import { onUnexpectedError, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/async.js';
+import { onUnexpectedError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { StableEditorScrollState } from '../../../browser/stableEditorScroll.js';
 import {
 	IActiveCodeEditor,
@@ -35,9 +35,9 @@ import { CodeLensItem, CodeLensModel, getCodeLensModel } from './codelens.js';
 import { ICodeLensCache } from './codeLensCache.js';
 import { CodeLensHelper, CodeLensWidget } from './codelensWidget.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IFeatureDebounceInformation,
 	ILanguageFeatureDebounceService

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import { IOverviewRuler } from '../../editorBrowser.js';
 import { OverviewRulerPosition, EditorOption } from '../../../common/config/editorOptions.js';
 import { ColorZone, OverviewRulerZone, OverviewZoneManager } from '../../../common/viewModel/overviewZoneManager.js';

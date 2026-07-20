@@ -4,33 +4,33 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Button, IButtonOptions } from '../../../../base/browser/ui/button/button.js';
-import { IFindInputOptions } from '../../../../base/browser/ui/findinput/findInput.js';
-import { ReplaceInput } from '../../../../base/browser/ui/findinput/replaceInput.js';
-import { IInputBoxStyles, IMessage, InputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { Action } from '../../../../base/common/actions.js';
-import { Delayer, disposableTimeout } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { CONTEXT_FIND_WIDGET_NOT_VISIBLE } from '../../../../editor/contrib/find/browser/findModel.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Button, IButtonOptions } from '@sidex/base/browser/ui/button/button.js';
+import { IFindInputOptions } from '@sidex/base/browser/ui/findinput/findInput.js';
+import { ReplaceInput } from '@sidex/base/browser/ui/findinput/replaceInput.js';
+import { IInputBoxStyles, IMessage, InputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Delayer, disposableTimeout } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { CONTEXT_FIND_WIDGET_NOT_VISIBLE } from '@sidex/editor/contrib/find/browser/findModel.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ISearchConfigurationProperties } from '../../../services/search/common/search.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { ContextScopedReplaceInput } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { ContextScopedReplaceInput } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
 import { isSearchViewFocused, getSearchView } from './searchActionsBase.js';
 import * as Constants from '../common/constants.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
-import { IToggleStyles, Toggle } from '../../../../base/browser/ui/toggle/toggle.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { IToggleStyles, Toggle } from '@sidex/base/browser/ui/toggle/toggle.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import {
 	searchReplaceAllIcon,
@@ -39,16 +39,16 @@ import {
 	searchShowReplaceIcon
 } from './searchIcons.js';
 import { ToggleSearchEditorContextLinesCommandId } from '../../searchEditor/browser/constants.js';
-import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
-import { defaultInputBoxStyles, defaultToggleStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { showHistoryKeybindingHint } from '@sidex/platform/history/browser/historyWidgetKeybindingHint.js';
+import { defaultInputBoxStyles, defaultToggleStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { NotebookFindFilters } from '../../notebook/browser/contrib/find/findFilters.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { NotebookEditorInput } from '../../notebook/common/notebookEditorInput.js';
 import { GroupModelChangeKind } from '../../../common/editor.js';
 import { SearchFindInput } from './searchFindInput.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { NotebookFindScopeType } from '../../notebook/common/notebookCommon.js';
 
 /** Specified in searchview.css */

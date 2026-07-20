@@ -2,8 +2,8 @@
  *  SideX: Stub for removed type hierarchy types (handled by sidex-lsp).
  *--------------------------------------------------------------------------------------------*/
 
-import { IRange } from '../../../../editor/common/core/range.js';
-import { URI } from '../../../../base/common/uri.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export class TypeHierarchyItem {
 	_sessionId: string = '';

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import * as strings from '../../../../base/common/strings.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { applyFontInfo } from '../../config/domFontInfo.js';
 import { TextEditorCursorStyle, EditorOption } from '../../../common/config/editorOptions.js';
 import { Position } from '../../../common/core/position.js';
@@ -13,7 +13,7 @@ import { Range } from '../../../common/core/range.js';
 import { RenderingContext, RestrictedRenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '../../../../base/browser/ui/mouseCursor/mouseCursor.js';
+import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '@sidex/base/browser/ui/mouseCursor/mouseCursor.js';
 
 export interface IViewCursorRenderData {
 	domNode: HTMLElement;

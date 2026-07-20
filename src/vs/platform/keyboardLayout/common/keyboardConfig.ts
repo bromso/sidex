@@ -5,7 +5,7 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { OS, OperatingSystem } from '../../../base/common/platform.js';
+import { OS, OperatingSystem } from '@sidex/base/common/platform.js';
 import {
 	ConfigurationScope,
 	Extensions as ConfigExtensions,

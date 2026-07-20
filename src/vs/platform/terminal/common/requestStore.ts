@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { timeout } from '../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable, dispose, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ILogService } from '../../log/common/log.js';
 
 /**

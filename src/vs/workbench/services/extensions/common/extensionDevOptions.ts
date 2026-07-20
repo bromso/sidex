@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 
 export interface IExtensionDevOptions {
 	readonly isExtensionDevHost: boolean;

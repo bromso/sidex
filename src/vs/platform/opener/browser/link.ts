@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, append, EventHelper, EventLike, clearNode } from '../../../base/browser/dom.js';
-import { DomEmitter } from '../../../base/browser/event.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { EventType as TouchEventType, Gesture } from '../../../base/browser/touch.js';
-import { Event } from '../../../base/common/event.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { $, append, EventHelper, EventLike, clearNode } from '@sidex/base/browser/dom.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { EventType as TouchEventType, Gesture } from '@sidex/base/browser/touch.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IOpenerService } from '../common/opener.js';
 import './link.css';
-import { getDefaultHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate.js';
-import type { IManagedHover } from '../../../base/browser/ui/hover/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
 import { IHoverService } from '../../hover/browser/hover.js';
 
 export interface ILinkDescriptor {

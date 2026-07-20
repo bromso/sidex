@@ -3,13 +3,13 @@
  *  registered search providers are accepted but not wired to a manager.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import type * as vscode from 'vscode';
 import { ExtHostSearchShape, MainThreadSearchShape, MainContext } from './extHost.protocol.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { IURITransformerService } from './extHostUriTransformerService.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	IRawFileQuery,
 	ISearchCompleteStats,
@@ -21,9 +21,9 @@ import {
 	IAITextQuery,
 	ITextQuery
 } from '../../services/search/common/search.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 
 export interface IExtHostSearch extends ExtHostSearchShape {
 	registerTextSearchProviderOld(scheme: string, provider: vscode.TextSearchProvider): IDisposable;

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { Action, IAction, Separator } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { IActiveCodeEditor, ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { Range } from '../../../common/core/range.js';
@@ -20,12 +20,12 @@ import {
 import { ClickLinkMouseEvent } from '../../gotoSymbol/browser/link/clickLinkGesture.js';
 import { RenderedInlayHintLabelPart } from './inlayHintsController.js';
 import { PeekContext } from '../../peekView/browser/peekView.js';
-import { isIMenuItem, MenuId, MenuItemAction, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { isIMenuItem, MenuId, MenuItemAction, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 
 export async function showGoToContextMenu(
 	accessor: ServicesAccessor,

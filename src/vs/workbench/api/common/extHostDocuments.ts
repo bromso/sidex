@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { ExtHostDocumentsShape, IMainContext, MainContext, MainThreadDocumentsShape } from './extHost.protocol.js';
 import { ExtHostDocumentData, setWordDefinitionFor } from './extHostDocumentData.js';
 import { ExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
 import * as TypeConverters from './extHostTypeConverters.js';
 import type * as vscode from 'vscode';
-import { assertReturnsDefined } from '../../../base/common/types.js';
-import { deepFreeze } from '../../../base/common/objects.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { deepFreeze } from '@sidex/base/common/objects.js';
 import { TextDocumentChangeReason } from './extHostTypes.js';
-import { ISerializedModelContentChangedEvent } from '../../../editor/common/textModelEvents.js';
+import { ISerializedModelContentChangedEvent } from '@sidex/editor/common/textModelEvents.js';
 
 export class ExtHostDocuments implements ExtHostDocumentsShape {
 	private readonly _toDispose = new DisposableStore();

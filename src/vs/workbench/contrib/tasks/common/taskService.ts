@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Action } from '../../../../base/common/actions.js';
-import { Event } from '../../../../base/common/event.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IWorkspaceFolder, IWorkspace } from '../../../../platform/workspace/common/workspace.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IWorkspaceFolder, IWorkspace } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	Task,
 	ContributedTask,
@@ -21,11 +21,11 @@ import {
 	TaskRunSource
 } from './tasks.js';
 import { ITaskSummary, ITaskTerminateResponse, ITaskSystemInfo } from './taskSystem.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { RawContextKey, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMarkerData } from '../../../../platform/markers/common/markers.js';
-import type { SingleOrMany } from '../../../../base/common/types.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { RawContextKey, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import type { SingleOrMany } from '@sidex/base/common/types.js';
 export type { ITaskSummary, Task, ITaskTerminateResponse as TaskTerminateResponse };
 export const CustomExecutionSupportedContext = new RawContextKey<boolean>(
 	'customExecutionSupported',

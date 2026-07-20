@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -19,10 +19,10 @@ import {
 	observableValue,
 	transaction,
 	waitForState
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { IDiffProviderFactoryService } from './diffProviderFactoryService.js';
 import { filterWithPrevious } from './utils.js';
-import { readHotReloadableExport } from '../../../../base/common/hotReloadHelpers.js';
+import { readHotReloadableExport } from '@sidex/base/common/hotReloadHelpers.js';
 import { ISerializedLineRange, LineRange, LineRangeSet } from '../../../common/core/ranges/lineRange.js';
 import { DefaultLinesDiffComputer } from '../../../common/diff/defaultLinesDiffComputer/defaultLinesDiffComputer.js';
 import { IDocumentDiff } from '../../../common/diff/documentDiffProvider.js';
@@ -34,9 +34,9 @@ import { TextEditInfo } from '../../../common/model/bracketPairsTextModelPart/br
 import { combineTextEditInfos } from '../../../common/model/bracketPairsTextModelPart/bracketPairsTree/combineTextEditInfos.js';
 import { DiffEditorOptions } from './diffEditorOptions.js';
 import { optimizeSequenceDiffs } from '../../../common/diff/defaultLinesDiffComputer/heuristicSequenceOptimizations.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { groupAdjacentBy } from '../../../../base/common/arrays.js';
-import { softAssert } from '../../../../base/common/assert.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { groupAdjacentBy } from '@sidex/base/common/arrays.js';
+import { softAssert } from '@sidex/base/common/assert.js';
 
 export class DiffEditorViewModel extends Disposable implements IDiffEditorViewModel {
 	private readonly _isDiffUpToDate = observableValue<boolean>(this, false);

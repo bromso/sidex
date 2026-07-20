@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 
 /**
  * Trust Context Keys

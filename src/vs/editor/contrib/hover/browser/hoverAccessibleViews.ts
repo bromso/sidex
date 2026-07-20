@@ -11,11 +11,11 @@ import {
 	AccessibleContentProvider,
 	IAccessibleViewContentProvider,
 	IAccessibleViewOptions
-} from '../../../../platform/accessibility/browser/accessibleView.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
 import {
 	DECREASE_HOVER_VERBOSITY_ACCESSIBLE_ACTION_ID,
@@ -25,12 +25,12 @@ import {
 } from './hoverActionIds.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { ICodeEditorService } from '../../../browser/services/codeEditorService.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { labelForHoverVerbosityAction } from './markdownHoverParticipant.js';
 
 namespace HoverAccessibilityHelpNLS {

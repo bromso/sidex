@@ -3,69 +3,69 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import * as paths from '../../../../base/common/path.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as paths from '@sidex/base/common/path.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
 import { ResourceLabels, IResourceLabel } from '../../../browser/labels.js';
-import { HighlightedLabel } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { IMarker, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
+import { HighlightedLabel } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { IMarker, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import { ResourceMarkers, Marker, RelatedInformation, MarkerElement, MarkerTableItem } from './markersModel.js';
 import Messages from './messages.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IDisposable, dispose, Disposable, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IDisposable, dispose, Disposable, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { QuickFixAction, QuickFixActionViewItem } from './markersViewActions.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { basename, isEqual } from '../../../../base/common/resources.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { basename, isEqual } from '@sidex/base/common/resources.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import {
 	ITreeFilter,
 	TreeVisibility,
 	TreeFilterResult,
 	ITreeRenderer,
 	ITreeNode
-} from '../../../../base/browser/ui/tree/tree.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
 import { FilterOptions } from './markersFilterOptions.js';
-import { IMatch } from '../../../../base/common/filters.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { isUndefinedOrNull } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Action, IAction, toAction } from '../../../../base/common/actions.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Action, IAction, toAction } from '@sidex/base/common/actions.js';
 import { localize } from '@sidex/base/nls.js';
-import { CancelablePromise, createCancelablePromise, Delayer } from '../../../../base/common/async.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { CancelablePromise, createCancelablePromise, Delayer } from '@sidex/base/common/async.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	applyCodeAction,
 	ApplyCodeActionReason,
 	getCodeActions
-} from '../../../../editor/contrib/codeAction/browser/codeAction.js';
+} from '@sidex/editor/contrib/codeAction/browser/codeAction.js';
 import {
 	CodeActionKind,
 	CodeActionSet,
 	CodeActionTriggerSource
-} from '../../../../editor/contrib/codeAction/common/types.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+} from '@sidex/editor/contrib/codeAction/common/types.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import { IEditorService, ACTIVE_GROUP } from '../../../services/editor/common/editorService.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
-import { CodeActionTriggerType } from '../../../../editor/common/languages.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Progress } from '../../../../platform/progress/common/progress.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
+import { CodeActionTriggerType } from '@sidex/editor/common/languages.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Progress } from '@sidex/platform/progress/common/progress.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { MarkersContextKeys, MarkersViewMode } from '../common/markers.js';
-import { unsupportedSchemas } from '../../../../platform/markers/common/markerService.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import Severity from '../../../../base/common/severity.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { unsupportedSchemas } from '@sidex/platform/markers/common/markerService.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import Severity from '@sidex/base/common/severity.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 interface IResourceMarkersTemplateData {
 	readonly resourceLabel: IResourceLabel;

@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IDebugService } from './debug.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { Expression } from './debugModel.js';
 
 export class DebugWatchAccessibilityAnnouncer extends Disposable implements IWorkbenchContribution {

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Promises } from '../../../../base/common/async.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { equals } from '../../../../base/common/objects.js';
-import { IUserDataProfile } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { IUserDataProfile } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { DidChangeUserDataProfileEvent, IUserDataProfileService } from './userDataProfile.js';
 
 export class UserDataProfileService extends Disposable implements IUserDataProfileService {

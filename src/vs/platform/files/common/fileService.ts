@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../base/common/arrays.js';
-import { Promises, ResourceQueue } from '../../../base/common/async.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { Promises, ResourceQueue } from '@sidex/base/common/async.js';
 import {
 	bufferedStreamToBuffer,
 	bufferToReadable,
@@ -15,16 +15,16 @@ import {
 	VSBufferReadable,
 	VSBufferReadableBufferedStream,
 	VSBufferReadableStream
-} from '../../../base/common/buffer.js';
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
-import { hash } from '../../../base/common/hash.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
-import { Schemas } from '../../../base/common/network.js';
-import { mark } from '../../../base/common/performance.js';
-import { extUri, extUriIgnorePathCase, IExtUri, isAbsolutePath } from '../../../base/common/resources.js';
+} from '@sidex/base/common/buffer.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, DisposableStore, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { extUri, extUriIgnorePathCase, IExtUri, isAbsolutePath } from '@sidex/base/common/resources.js';
 import {
 	consumeStream,
 	isReadableBufferedStream,
@@ -34,8 +34,8 @@ import {
 	peekReadable,
 	peekStream,
 	transform
-} from '../../../base/common/stream.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/common/stream.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	ensureFileSystemProviderError,
@@ -95,7 +95,7 @@ import {
 } from './files.js';
 import { readFileIntoStream } from './io.js';
 import { ILogService } from '../../log/common/log.js';
-import { ErrorNoTelemetry } from '../../../base/common/errors.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
 
 export class FileService extends Disposable implements IFileService {
 	declare readonly _serviceBrand: undefined;

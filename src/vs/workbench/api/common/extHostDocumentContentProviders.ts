@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { Disposable } from './extHostTypes.js';
 import type * as vscode from 'vscode';
 import {
@@ -15,10 +15,10 @@ import {
 	IMainContext
 } from './extHost.protocol.js';
 import { ExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
-import { Schemas } from '../../../base/common/network.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { splitLines } from '../../../base/common/strings.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 
 export class ExtHostDocumentContentProvider implements ExtHostDocumentContentProvidersShape {
 	private static _handlePool = 0;

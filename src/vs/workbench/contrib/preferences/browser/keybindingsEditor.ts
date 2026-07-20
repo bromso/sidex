@@ -5,25 +5,25 @@
 
 import './media/keybindingsEditor.css';
 import { localize } from '@sidex/base/nls.js';
-import { Delayer } from '../../../../base/common/async.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { isIOS, OS } from '../../../../base/common/platform.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ToggleActionViewItem } from '../../../../base/browser/ui/toggle/toggle.js';
-import { HighlightedLabel } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { KeybindingLabel } from '../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { IAction, Action, Separator } from '../../../../base/common/actions.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { isIOS, OS } from '@sidex/base/common/platform.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ToggleActionViewItem } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { HighlightedLabel } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IAction, Action, Separator } from '@sidex/base/common/actions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import {
 	KeybindingsEditorModel,
 	KEYBINDING_ENTRY_TEMPLATE_ID
 } from '../../../services/preferences/browser/keybindingsEditorModel.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService, IUserFriendlyKeybinding } from '../../../../platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService, IUserFriendlyKeybinding } from '@sidex/platform/keybinding/common/keybinding.js';
 import { DefineKeybindingWidget, KeybindingsSearchWidget } from './keybindingWidgets.js';
 import {
 	CONTEXT_KEYBINDING_FOCUS,
@@ -44,18 +44,18 @@ import {
 	KEYBINDINGS_EDITOR_COMMAND_COPY_COMMAND_TITLE,
 	CONTEXT_WHEN_FOCUS
 } from '../common/preferences.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { IKeybindingEditingService } from '../../../services/keybinding/common/keybindingEditing.js';
-import { IListContextMenuEvent } from '../../../../base/browser/ui/list/list.js';
+import { IListContextMenuEvent } from '@sidex/base/browser/ui/list/list.js';
 import {
 	IThemeService,
 	registerThemingParticipant,
 	IColorTheme,
 	ICssStyleCollector
-} from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IContextKeyService, IContextKey, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IContextKeyService, IContextKey, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	badgeBackground,
 	contrastBorder,
@@ -73,16 +73,16 @@ import {
 	registerColor,
 	tableOddRowsBackgroundColor,
 	asCssVariable
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { EditorExtensionsRegistry } from '../../../../editor/browser/editorExtensions.js';
-import { WorkbenchTable } from '../../../../platform/list/browser/listService.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { MenuRegistry, MenuId, isIMenuItem } from '../../../../platform/actions/common/actions.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
+import { EditorExtensionsRegistry } from '@sidex/editor/browser/editorExtensions.js';
+import { WorkbenchTable } from '@sidex/platform/list/browser/listService.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { MenuRegistry, MenuId, isIMenuItem } from '@sidex/platform/actions/common/actions.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 import { WORKBENCH_BACKGROUND } from '../../../common/theme.js';
 import { IKeybindingItemEntry, IKeybindingsEditorPane } from '../../../services/preferences/common/preferences.js';
 import {
@@ -92,30 +92,30 @@ import {
 	preferencesClearInputIcon,
 	keybindingsEditIcon
 } from './preferencesIcons.js';
-import { ITableRenderer, ITableVirtualDelegate } from '../../../../base/browser/ui/table/table.js';
+import { ITableRenderer, ITableVirtualDelegate } from '@sidex/base/browser/ui/table/table.js';
 import { KeybindingsEditorInput } from '../../../services/preferences/browser/keybindingsEditorInput.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { ToolBar } from '../../../../base/browser/ui/toolbar/toolbar.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
 import {
 	defaultKeybindingLabelStyles,
 	defaultToggleStyles,
 	getInputBoxStyle
-} from '../../../../platform/theme/browser/defaultStyles.js';
+} from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IExtensionsWorkbenchService } from '../../extensions/common/extensions.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { isString } from '../../../../base/common/types.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { isString } from '@sidex/base/common/types.js';
 import { SuggestEnabledInput } from '../../codeEditor/browser/suggestEnabledInput/suggestEnabledInput.js';
-import { CompletionItemKind } from '../../../../editor/common/languages.js';
+import { CompletionItemKind } from '@sidex/editor/common/languages.js';
 import { settingsTextInputBorder } from '../common/settingsEditorColorRegistry.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 import { registerNavigableContainer } from '../../../browser/actions/widgetNavigationCommands.js';
-import { IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 const $ = DOM.$;
 

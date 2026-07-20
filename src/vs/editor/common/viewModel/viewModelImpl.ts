@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ArrayQueue } from '../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { Color } from '../../../base/common/color.js';
-import { Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import * as platform from '../../../base/common/platform.js';
-import * as strings from '../../../base/common/strings.js';
+import { ArrayQueue } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
 import {
 	ConfigurationChangedEvent,
 	EditorOption,
@@ -97,7 +97,7 @@ import {
 	WidgetFocusChangedEvent
 } from '../viewModelEventDispatcher.js';
 import { IViewModelLines, ViewModelLinesFromModelAsIs, ViewModelLinesFromProjectedModel } from './viewModelLines.js';
-import { IThemeService } from '../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { GlyphMarginLanesModel } from './glyphLanesModel.js';
 import { CustomLineHeightData } from '../viewLayout/lineHeights.js';
 import { TextModelEditSource } from '../textModelEditSource.js';

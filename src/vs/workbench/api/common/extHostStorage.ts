@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { MainContext, MainThreadStorageShape, ExtHostStorageShape } from './extHost.protocol.js';
-import { Emitter } from '../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { IExtensionIdWithVersion } from '../../../platform/extensionManagement/common/extensionStorage.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IExtensionIdWithVersion } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export interface IStorageChangeEvent {
 	shared: boolean;

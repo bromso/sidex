@@ -8,17 +8,17 @@ import {
 	AccessibleViewType,
 	IAccessibleViewContentProvider,
 	IAccessibleViewService
-} from '../../../../platform/accessibility/browser/accessibleView.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 import { IReplElement } from '../common/debug.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { getReplView, Repl } from './repl.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Position } from '../../../../editor/common/core/position.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Position } from '@sidex/editor/common/core/position.js';
 
 export class ReplAccessibleView implements IAccessibleViewImplementation {
 	priority = 70;

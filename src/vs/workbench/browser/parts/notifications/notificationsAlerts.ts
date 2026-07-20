@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	INotificationViewItem,
@@ -12,10 +12,10 @@ import {
 	INotificationChangeEvent,
 	NotificationViewItemContentChangeKind
 } from '../../../common/notifications.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { NotificationPriority, Severity } from '../../../../platform/notification/common/notification.js';
-import { Event } from '../../../../base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { NotificationPriority, Severity } from '@sidex/platform/notification/common/notification.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export class NotificationsAlerts extends Disposable {
 	constructor(private readonly model: INotificationsModel) {

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ACCESSIBLE_VIEW_SHOWN_STORAGE_PREFIX } from '../../../../platform/accessibility/common/accessibility.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope } from '../../../../platform/storage/common/storage.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ACCESSIBLE_VIEW_SHOWN_STORAGE_PREFIX } from '@sidex/platform/accessibility/common/accessibility.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
 
 export interface IAccessibleViewInformationService {
 	_serviceBrand: undefined;

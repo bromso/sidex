@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { registerSingleton, InstantiationType } from '../../../../platform/instantiation/common/extensions.js';
+import { registerSingleton, InstantiationType } from '@sidex/platform/instantiation/common/extensions.js';
 import { ITextMateTokenizationService } from './textMateTokenizationFeature.js';
 import { TextMateTokenizationFeature } from './textMateTokenizationFeatureImpl.js';
 import {
@@ -11,12 +11,12 @@ import {
 	WorkbenchPhase,
 	registerWorkbenchContribution2
 } from '../../../common/contributions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { TokenizationRegistry } from '../../../../editor/common/languages.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { TokenizationRegistry } from '@sidex/editor/common/languages.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 
 /**
  * Makes sure the ITextMateTokenizationService is instantiated

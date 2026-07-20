@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { HoverStyle, type IHoverOptions, type IHoverWidget } from '../../../../base/browser/ui/hover/hover.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { SimpleIconLabel } from '../../../../base/browser/ui/iconLabel/simpleIconLabel.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IMarkdownString, MarkdownString, createMarkdownLink } from '../../../../base/common/htmlContent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { HoverStyle, type IHoverOptions, type IHoverWidget } from '@sidex/base/browser/ui/hover/hover.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { SimpleIconLabel } from '@sidex/base/browser/ui/iconLabel/simpleIconLabel.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IMarkdownString, MarkdownString, createMarkdownLink } from '@sidex/base/common/htmlContent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IUserDataSyncEnablementService } from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataSyncEnablementService } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { IWorkbenchConfigurationService } from '../../../services/configuration/common/configuration.js';
 import {
 	ADVANCED_INDICATOR_DESCRIPTION,

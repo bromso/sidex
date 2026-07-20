@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener } from '../../../../../../base/browser/dom.js';
-import { DisposableStore } from '../../../../../../base/common/lifecycle.js';
+import { addDisposableListener } from '@sidex/base/browser/dom.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { Range } from '../../../../../common/core/range.js';
 import { DetailedLineRangeMapping } from '../../../../../common/diff/rangeMapping.js';
 import { ITextModel } from '../../../../../common/model.js';
-import { IClipboardService } from '../../../../../../platform/clipboard/common/clipboardService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
 import { RenderLinesResult } from './renderLines.js';
 
 export interface IEnableViewZoneCopySelectionOptions {

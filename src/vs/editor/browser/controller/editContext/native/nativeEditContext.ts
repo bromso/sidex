@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './nativeEditContext.css';
-import { isFirefox } from '../../../../../base/browser/browser.js';
-import { addDisposableListener, getActiveElement, getWindow, getWindowId } from '../../../../../base/browser/dom.js';
-import { FastDomNode } from '../../../../../base/browser/fastDomNode.js';
-import { StandardKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { isFirefox } from '@sidex/base/browser/browser.js';
+import { addDisposableListener, getActiveElement, getWindow, getWindowId } from '@sidex/base/browser/dom.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { EndOfLinePreference, IModelDeltaDecoration } from '../../../../common/model.js';
 import {
@@ -38,11 +38,11 @@ import { PositionOffsetTransformer } from '../../../../common/core/text/position
 import { EditContext } from './editContextFactory.js';
 import { NativeEditContextRegistry } from './nativeEditContextRegistry.js';
 import { IEditorAriaOptions } from '../../../editorBrowser.js';
-import { isHighSurrogate, isLowSurrogate } from '../../../../../base/common/strings.js';
-import { IME } from '../../../../../base/common/ime.js';
+import { isHighSurrogate, isLowSurrogate } from '@sidex/base/common/strings.js';
+import { IME } from '@sidex/base/common/ime.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
-import { inputLatency } from '../../../../../base/browser/performance.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { inputLatency } from '@sidex/base/browser/performance.js';
 import { ViewportData } from '../../../../common/viewLayout/viewLinesViewportData.js';
 
 // Corresponds to classes in nativeEditContext.css

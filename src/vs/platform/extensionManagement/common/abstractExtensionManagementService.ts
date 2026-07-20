@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct, isNonEmptyArray } from '../../../base/common/arrays.js';
-import { Barrier, CancelablePromise, createCancelablePromise } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { CancellationError, getErrorMessage, isCancellationError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
+import { distinct, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { Barrier, CancelablePromise, createCancelablePromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { CancellationError, getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	ExtensionManagementError,
@@ -65,7 +65,7 @@ import { IProductService } from '../../product/common/productService.js';
 import { ITelemetryService } from '../../telemetry/common/telemetry.js';
 import { IUriIdentityService } from '../../uriIdentity/common/uriIdentity.js';
 import { IUserDataProfilesService } from '../../userDataProfile/common/userDataProfile.js';
-import { IMarkdownString, MarkdownString } from '../../../base/common/htmlContent.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 
 export type InstallableExtension = {
 	readonly manifest: IExtensionManifest;

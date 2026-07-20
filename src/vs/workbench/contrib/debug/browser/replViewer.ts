@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
-import { HighlightedLabel, IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { CachedListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { createMatches, FuzzyScore } from '../../../../base/common/filters.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { basename } from '../../../../base/common/path.js';
-import severity from '../../../../base/common/severity.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { HighlightedLabel, IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { CachedListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { createMatches, FuzzyScore } from '@sidex/base/common/filters.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/path.js';
+import severity from '@sidex/base/common/severity.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	IDebugConfiguration,

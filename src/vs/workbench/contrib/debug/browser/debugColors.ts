@@ -15,13 +15,13 @@ import {
 	contrastBorder,
 	inputBorder,
 	toolbarHoverBackground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Color } from '../../../../base/common/color.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Color } from '@sidex/base/common/color.js';
 import { localize } from '@sidex/base/nls.js';
 import * as icons from './debugIcons.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
 
 export const debugToolBarBackground = registerColor(
 	'debugToolBar.background',

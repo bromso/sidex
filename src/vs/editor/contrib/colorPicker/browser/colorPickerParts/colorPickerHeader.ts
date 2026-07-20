@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import '../colorPicker.css';
-import * as dom from '../../../../../base/browser/dom.js';
-import { Color } from '../../../../../base/common/color.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ColorPickerModel } from '../colorPickerModel.js';
 import { localize } from '@sidex/base/nls.js';
-import { editorHoverBackground } from '../../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { editorHoverBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { CloseButton } from './colorPickerCloseButton.js';
 import { ColorPickerWidgetType } from '../colorPickerParticipantUtils.js';
 

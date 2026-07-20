@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { UriComponents } from '../../../base/common/uri.js';
+import { UriComponents } from '@sidex/base/common/uri.js';
 import {
 	ISerializableEnvironmentVariableCollection,
 	ISerializableEnvironmentVariableCollections

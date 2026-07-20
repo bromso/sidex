@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Orientation } from '../../../../base/browser/ui/sash/sash.js';
-import { timeout } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IShellLaunchConfig } from '../../../../platform/terminal/common/terminal.js';
+import { Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IShellLaunchConfig } from '@sidex/platform/terminal/common/terminal.js';
 import { IViewDescriptorService } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { ITerminalGroup, ITerminalGroupService, ITerminalInstance } from './terminal.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { TerminalGroup } from './terminalGroup.js';
 import { getInstanceFromResource } from './terminalUri.js';
 import { TerminalViewPane } from './terminalView.js';
 import { TERMINAL_VIEW_ID } from '../common/terminal.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
-import { asArray } from '../../../../base/common/arrays.js';
-import type { SingleOrMany } from '../../../../base/common/types.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import type { SingleOrMany } from '@sidex/base/common/types.js';
 
 export class TerminalGroupService extends Disposable implements ITerminalGroupService {
 	declare _serviceBrand: undefined;

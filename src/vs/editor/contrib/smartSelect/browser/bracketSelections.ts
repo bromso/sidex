@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { LinkedList } from '../../../../base/common/linkedList.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../base/browser/dom.js';
-import { Event } from '../../../base/common/event.js';
-import { IReference, MutableDisposable } from '../../../base/common/lifecycle.js';
-import type { IObservable } from '../../../base/common/observable.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IReference, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import type { IObservable } from '@sidex/base/common/observable.js';
 import { EditorOption } from '../../common/config/editorOptions.js';
 import { ViewEventHandler } from '../../common/viewEventHandler.js';
 import type { ViewScrollChangedEvent } from '../../common/viewEvents.js';

@@ -9,11 +9,11 @@ import {
 	IExtensionManagementServer,
 	IExtensionManagementServerService
 } from './extensionManagement.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { WebExtensionManagementService } from './webExtensionManagementService.js';
-import { IExtension } from '../../../../platform/extensions/common/extensions.js';
+import { IExtension } from '@sidex/platform/extensions/common/extensions.js';
 
 export class ExtensionManagementServerService implements IExtensionManagementServerService {
 	declare readonly _serviceBrand: undefined;

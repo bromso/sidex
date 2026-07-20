@@ -5,12 +5,12 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.js';
-import { IIconRegistry, Extensions as IconRegistryExtensions } from '../../../../platform/theme/common/iconRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import * as resources from '../../../../base/common/resources.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { extname, posix } from '../../../../base/common/path.js';
+import { IIconRegistry, Extensions as IconRegistryExtensions } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { extname, posix } from '@sidex/base/common/path.js';
 
 interface IIconExtensionPoint {
 	[id: string]: {

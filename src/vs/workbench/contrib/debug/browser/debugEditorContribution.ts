@@ -3,63 +3,63 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, isKeyboardEvent } from '../../../../base/browser/dom.js';
-import { DomEmitter } from '../../../../base/browser/event.js';
-import { IKeyboardEvent, StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { illegalArgument, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { Event } from '../../../../base/common/event.js';
-import { visit } from '../../../../base/common/json.js';
-import { setProperty } from '../../../../base/common/jsonEdit.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import { addDisposableListener, isKeyboardEvent } from '@sidex/base/browser/dom.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { IKeyboardEvent, StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { illegalArgument, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { visit } from '@sidex/base/common/json.js';
+import { setProperty } from '@sidex/base/common/jsonEdit.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	dispose,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { basename } from '../../../../base/common/path.js';
-import * as env from '../../../../base/common/platform.js';
-import * as strings from '../../../../base/common/strings.js';
-import { assertType, isDefined } from '../../../../base/common/types.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { URI } from '../../../../base/common/uri.js';
-import { CoreEditingCommands } from '../../../../editor/browser/coreCommands.js';
+} from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { basename } from '@sidex/base/common/path.js';
+import * as env from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { assertType, isDefined } from '@sidex/base/common/types.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CoreEditingCommands } from '@sidex/editor/browser/coreCommands.js';
 import {
 	ICodeEditor,
 	IEditorMouseEvent,
 	IPartialEditorMouseEvent,
 	MouseTargetType
-} from '../../../../editor/browser/editorBrowser.js';
-import { EditorOption, IEditorHoverOptions } from '../../../../editor/common/config/editorOptions.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { DEFAULT_WORD_REGEXP } from '../../../../editor/common/core/wordHelper.js';
-import { IEditorDecorationsCollection, ScrollType } from '../../../../editor/common/editorCommon.js';
-import { StandardTokenType } from '../../../../editor/common/encodedTokenAttributes.js';
-import { InlineValue, InlineValueContext } from '../../../../editor/common/languages.js';
-import { IModelDeltaDecoration, ITextModel, InjectedTextCursorStops } from '../../../../editor/common/model.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { EditorOption, IEditorHoverOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { DEFAULT_WORD_REGEXP } from '@sidex/editor/common/core/wordHelper.js';
+import { IEditorDecorationsCollection, ScrollType } from '@sidex/editor/common/editorCommon.js';
+import { StandardTokenType } from '@sidex/editor/common/encodedTokenAttributes.js';
+import { InlineValue, InlineValueContext } from '@sidex/editor/common/languages.js';
+import { IModelDeltaDecoration, ITextModel, InjectedTextCursorStops } from '@sidex/editor/common/model.js';
 import {
 	IFeatureDebounceInformation,
 	ILanguageFeatureDebounceService
-} from '../../../../editor/common/services/languageFeatureDebounce.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ContentHoverController } from '../../../../editor/contrib/hover/browser/contentHoverController.js';
-import { HoverStartMode, HoverStartSource } from '../../../../editor/contrib/hover/browser/hoverOperation.js';
+} from '@sidex/editor/common/services/languageFeatureDebounce.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ContentHoverController } from '@sidex/editor/contrib/hover/browser/contentHoverController.js';
+import { HoverStartMode, HoverStartSource } from '@sidex/editor/contrib/hover/browser/hoverOperation.js';
 import * as nls from '@sidex/base/nls.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { FloatingEditorClickWidget } from '../../../browser/codeeditor.js';
 import { DebugHoverWidget, ShowDebugHoverResult } from './debugHover.js';
 import { ExceptionWidget } from './exceptionWidget.js';
@@ -77,8 +77,8 @@ import {
 import { Expression } from '../common/debugModel.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { InsertLineAfterAction } from '../../../../editor/contrib/linesOperations/browser/linesOperations.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { InsertLineAfterAction } from '@sidex/editor/contrib/linesOperations/browser/linesOperations.js';
 
 const MAX_NUM_INLINE_VALUES = 100; // JS Global scope can have 700+ entries. We want to limit ourselves for perf reasons
 const MAX_INLINE_DECORATOR_LENGTH = 150; // Max string length of each inline decorator when debugging. If exceeded ... is added

@@ -13,11 +13,11 @@ import {
 import { RenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import * as arrays from '../../../../base/common/arrays.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { Selection } from '../../../common/core/selection.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
 import { Position } from '../../../common/core/position.js';
 
 export abstract class AbstractLineHighlightOverlay extends DynamicViewOverlay {

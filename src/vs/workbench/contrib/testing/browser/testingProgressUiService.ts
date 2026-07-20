@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { autorun } from '../../../../base/common/observable.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { autorun } from '@sidex/base/common/observable.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { AutoOpenTesting, getTestingConfiguration, TestingConfigKeys } from '../common/configuration.js';
 import { Testing } from '../common/constants.js';

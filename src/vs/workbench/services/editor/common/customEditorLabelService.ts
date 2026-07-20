@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { ParsedPattern, parse as parseGlob } from '../../../../base/common/glob.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isAbsolute, parse as parsePath, ParsedPath, dirname } from '../../../../base/common/path.js';
-import { dirname as resourceDirname, relativePath as getRelativePath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { MRUCache } from '../../../../base/common/map.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { ParsedPattern, parse as parseGlob } from '@sidex/base/common/glob.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isAbsolute, parse as parsePath, ParsedPath, dirname } from '@sidex/base/common/path.js';
+import { dirname as resourceDirname, relativePath as getRelativePath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { MRUCache } from '@sidex/base/common/map.js';
 
 interface ICustomEditorLabelObject {
 	readonly [key: string]: string;

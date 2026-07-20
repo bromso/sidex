@@ -2,8 +2,8 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { IWorkspace } from '../../../../platform/workspace/common/workspace.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IWorkspace } from '@sidex/platform/workspace/common/workspace.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 
 export async function areWorkspaceFoldersEmpty(workspace: IWorkspace, fileService: IFileService): Promise<boolean> {
 	for (const folder of workspace.folders) {

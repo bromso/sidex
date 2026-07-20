@@ -8,12 +8,12 @@ import type * as vscode from 'vscode';
 import { ExtHostDocuments } from './extHostDocuments.js';
 import * as typeConvert from './extHostTypeConverters.js';
 import { StandardTokenType, Range, Position, LanguageStatusSeverity } from './extHostTypes.js';
-import Severity from '../../../base/common/severity.js';
-import { disposableTimeout } from '../../../base/common/async.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import Severity from '@sidex/base/common/severity.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { CommandsConverter } from './extHostCommands.js';
-import { IURITransformer } from '../../../base/common/uriIpc.js';
+import { IURITransformer } from '@sidex/base/common/uriIpc.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 export class ExtHostLanguages implements ExtHostLanguagesShape {

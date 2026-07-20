@@ -3,72 +3,72 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { Orientation, Sizing, SplitView } from '../../../../base/browser/ui/splitview/splitview.js';
-import { ToggleActionViewItem } from '../../../../base/browser/ui/toggle/toggle.js';
-import { ITreeElement } from '../../../../base/browser/ui/tree/tree.js';
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { Action } from '../../../../base/common/actions.js';
-import { CancelablePromise, createCancelablePromise, Delayer, raceTimeout } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Color } from '../../../../base/common/color.js';
-import { fromNow } from '../../../../base/common/date.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { Orientation, Sizing, SplitView } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { ToggleActionViewItem } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { ITreeElement } from '@sidex/base/browser/ui/tree/tree.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { CancelablePromise, createCancelablePromise, Delayer, raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { fromNow } from '@sidex/base/common/date.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	Disposable,
 	DisposableStore,
 	dispose,
 	type IDisposable,
 	MutableDisposable
-} from '../../../../base/common/lifecycle.js';
-import * as platform from '../../../../base/common/platform.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+} from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	ConfigurationTarget,
 	IConfigurationUpdateOverrides
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ConfigurationScope,
 	Extensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IExtensionGalleryService,
 	IExtensionManagementService,
 	IGalleryExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IEditorProgressService, IProgressRunner } from '../../../../platform/progress/common/progress.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { defaultButtonStyles, defaultToggleStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { asCssVariable, editorForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IEditorProgressService, IProgressRunner } from '@sidex/platform/progress/common/progress.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { defaultButtonStyles, defaultToggleStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { asCssVariable, editorForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IUserDataSyncEnablementService,
 	IUserDataSyncService
-} from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { SyncStatus } from '../../../services/userDataSync/common/userDataSync.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { registerNavigableContainer } from '../../../browser/actions/widgetNavigationCommands.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorMemento, IEditorOpenContext, IEditorPane } from '../../../common/editor.js';

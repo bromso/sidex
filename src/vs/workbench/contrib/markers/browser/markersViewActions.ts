@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import Messages from './messages.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { Marker } from './markersModel.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { ActionViewItem, IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { ActionViewItem, IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import { MarkersContextKeys } from '../common/markers.js';
 import './markersViewActions.css';
 

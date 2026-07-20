@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IHistoryNavigationWidget } from '../../../base/browser/history.js';
-import { IContextViewProvider } from '../../../base/browser/ui/contextview/contextview.js';
-import { FindInput, IFindInputOptions } from '../../../base/browser/ui/findinput/findInput.js';
-import { IReplaceInputOptions, ReplaceInput } from '../../../base/browser/ui/findinput/replaceInput.js';
-import { HistoryInputBox, IHistoryInputOptions } from '../../../base/browser/ui/inputbox/inputBox.js';
-import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
+import { IHistoryNavigationWidget } from '@sidex/base/browser/history.js';
+import { IContextViewProvider } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { FindInput, IFindInputOptions } from '@sidex/base/browser/ui/findinput/findInput.js';
+import { IReplaceInputOptions, ReplaceInput } from '@sidex/base/browser/ui/findinput/replaceInput.js';
+import { HistoryInputBox, IHistoryInputOptions } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { ContextKeyExpr, IContextKey, IContextKeyService, RawContextKey } from '../../contextkey/common/contextkey.js';
 import { KeybindingsRegistry, KeybindingWeight } from '../../keybinding/common/keybindingsRegistry.js';
 import { localize } from '@sidex/base/nls.js';
-import { DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { isActiveElement } from '../../../base/browser/dom.js';
+import { DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isActiveElement } from '@sidex/base/browser/dom.js';
 
 export const historyNavigationVisible = new RawContextKey<boolean>(
 	'suggestWidgetVisible',

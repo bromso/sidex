@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Disposable, DisposableMap, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, DisposableMap, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
 import { AbstractProblemCollector, StartStopProblemCollector } from '../common/problemCollectors.js';
 import {
 	ITaskGeneralEvent,
@@ -17,13 +17,13 @@ import {
 } from '../common/tasks.js';
 import { ITaskService, Task } from '../common/taskService.js';
 import { ITerminalInstance } from '../../terminal/browser/terminal.js';
-import { MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { spinningLoading } from '../../../../platform/theme/common/iconRegistry.js';
+import { MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { spinningLoading } from '@sidex/platform/theme/common/iconRegistry.js';
 import type { IMarker } from '@xterm/xterm';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
 import { ITerminalStatus } from '../../terminal/common/terminal.js';
 
 interface ITerminalData extends IDisposable {

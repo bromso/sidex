@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindow, addDisposableListener, n } from '../../../../base/browser/dom.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+import { getWindow, addDisposableListener, n } from '@sidex/base/browser/dom.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IEditorContribution, INewScrollPosition } from '../../../common/editorCommon.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -14,7 +14,7 @@ import {
 	disposableObservableValue,
 	IObservable,
 	observableValue
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { observableCodeEditor } from '../../../browser/observableCodeEditor.js';
 import { Point } from '../../../common/core/2d/point.js';
 import { AnimationFrameScheduler } from '../../inlineCompletions/browser/model/animation.js';

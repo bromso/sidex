@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextMenuDelegate } from '../../../base/browser/contextmenu.js';
-import { ModifierKeyEmitter } from '../../../base/browser/dom.js';
-import { IAction, Separator } from '../../../base/common/actions.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { IContextMenuDelegate } from '@sidex/base/browser/contextmenu.js';
+import { ModifierKeyEmitter } from '@sidex/base/browser/dom.js';
+import { IAction, Separator } from '@sidex/base/common/actions.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { getFlatContextMenuActions } from '../../actions/browser/menuEntryActionViewItem.js';
 import { IMenuService, MenuId } from '../../actions/common/actions.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';

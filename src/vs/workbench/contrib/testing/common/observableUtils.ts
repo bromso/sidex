@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservableWithChange, IObserver } from '../../../../base/common/observable.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservableWithChange, IObserver } from '@sidex/base/common/observable.js';
 
 export function onObservableChange<T>(
 	observable: IObservableWithChange<unknown, T>,

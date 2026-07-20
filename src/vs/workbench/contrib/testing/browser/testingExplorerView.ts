@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ActionBar, IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ActionBar, IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import {
 	IIdentityProvider,
 	IKeyboardNavigationLabelProvider,
 	IListVirtualDelegate
-} from '../../../../base/browser/ui/list/list.js';
+} from '@sidex/base/browser/ui/list/list.js';
 import {
 	DefaultKeyboardNavigationDelegate,
 	IListAccessibilityProvider
-} from '../../../../base/browser/ui/list/listWidget.js';
+} from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	ITreeContextMenuEvent,
 	ITreeFilter,
@@ -28,53 +28,53 @@ import {
 	ITreeSorter,
 	TreeFilterResult,
 	TreeVisibility
-} from '../../../../base/browser/ui/tree/tree.js';
-import { Action, ActionRunner, IAction, Separator, toAction } from '../../../../base/common/actions.js';
-import { mapFindFirst } from '../../../../base/common/arraysFind.js';
-import { RunOnceScheduler, disposableTimeout } from '../../../../base/common/async.js';
-import { groupBy } from '../../../../base/common/collections.js';
-import { Color, RGBA } from '../../../../base/common/color.js';
-import { compareFileNames } from '../../../../base/common/comparers.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { autorun, observableFromEvent } from '../../../../base/common/observable.js';
-import { fuzzyContains } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { Action, ActionRunner, IAction, Separator, toAction } from '@sidex/base/common/actions.js';
+import { mapFindFirst } from '@sidex/base/common/arraysFind.js';
+import { RunOnceScheduler, disposableTimeout } from '@sidex/base/common/async.js';
+import { groupBy } from '@sidex/base/common/collections.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
+import { compareFileNames } from '@sidex/base/common/comparers.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, observableFromEvent } from '@sidex/base/common/observable.js';
+import { fuzzyContains } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import { localize } from '@sidex/base/nls.js';
-import { DropdownWithPrimaryActionViewItem } from '../../../../platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
+import { DropdownWithPrimaryActionViewItem } from '@sidex/platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
 import {
 	MenuEntryActionViewItem,
 	createActionViewItem,
 	getActionBarActions,
 	getFlatContextMenuActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { UnmanagedProgress } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { UnmanagedProgress } from '@sidex/platform/progress/common/progress.js';
 import {
 	IStorageService,
 	StorageScope,
 	StorageTarget,
 	WillSaveStateReason
-} from '../../../../platform/storage/common/storage.js';
-import { defaultButtonStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { foreground } from '../../../../platform/theme/common/colorRegistry.js';
-import { spinningLoading } from '../../../../platform/theme/common/iconRegistry.js';
-import { IThemeService, registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { defaultButtonStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { foreground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { spinningLoading } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IThemeService, registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { registerNavigableContainer } from '../../../browser/actions/widgetNavigationCommands.js';
 import { ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';

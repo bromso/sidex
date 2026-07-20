@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as objects from '../../../../base/common/objects.js';
+import * as objects from '@sidex/base/common/objects.js';
 import { ICodeEditor } from '../../editorBrowser.js';
 import { ICodeEditorService } from '../../services/codeEditorService.js';
 import { CodeEditorWidget, ICodeEditorWidgetOptions } from './codeEditorWidget.js';
 import { ConfigurationChangedEvent, IEditorOptions } from '../../../common/config/editorOptions.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IUserInteractionService } from '../../../../platform/userInteraction/browser/userInteractionService.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
 
 export class EmbeddedCodeEditorWidget extends CodeEditorWidget {
 	private readonly _parentEditor: ICodeEditor;

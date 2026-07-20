@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IConfigurationNode } from '../../../platform/configuration/common/configurationRegistry.js';
+import type { IConfigurationNode } from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	TerminalAccessibilityCommandId,
 	defaultTerminalAccessibilityCommandsToSkipShell

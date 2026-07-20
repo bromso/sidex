@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { getCodiconFontCharacters } from '../../../base/common/codiconsUtil.js';
-import { ThemeIcon, IconIdentifier } from '../../../base/common/themables.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
-import { isString } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { getCodiconFontCharacters } from '@sidex/base/common/codiconsUtil.js';
+import { ThemeIcon, IconIdentifier } from '@sidex/base/common/themables.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry
 } from '../../jsonschemas/common/jsonContributionRegistry.js';
 import * as platform from '../../registry/common/platform.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 //  ------ API types
 

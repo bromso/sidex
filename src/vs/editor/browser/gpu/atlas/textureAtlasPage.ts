@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { NKeyMap } from '../../../../base/common/map.js';
-import { ILogService, LogLevel } from '../../../../platform/log/common/log.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { NKeyMap } from '@sidex/base/common/map.js';
+import { ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import type { IBoundingBox, IGlyphRasterizer } from '../raster/raster.js';
 import type { IReadableTextureAtlasPage, ITextureAtlasAllocator, ITextureAtlasPageGlyph, GlyphMap } from './atlas.js';
 import { TextureAtlasShelfAllocator } from './textureAtlasShelfAllocator.js';

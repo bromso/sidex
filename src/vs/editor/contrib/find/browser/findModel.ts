@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { findFirstIdxMonotonousOrArrLen } from '../../../../base/common/arraysFind.js';
-import { RunOnceScheduler, TimeoutTimer } from '../../../../base/common/async.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, dispose } from '../../../../base/common/lifecycle.js';
-import { Constants } from '../../../../base/common/uint.js';
+import { findFirstIdxMonotonousOrArrLen } from '@sidex/base/common/arraysFind.js';
+import { RunOnceScheduler, TimeoutTimer } from '@sidex/base/common/async.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, dispose } from '@sidex/base/common/lifecycle.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import { IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { ReplaceCommand, ReplaceCommandThatPreservesSelection } from '../../../common/commands/replaceCommand.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -22,8 +22,8 @@ import { FindDecorations } from './findDecorations.js';
 import { FindReplaceState, FindReplaceStateChangedEvent } from './findState.js';
 import { ReplaceAllCommand } from './replaceAllCommand.js';
 import { parseReplaceString, ReplacePattern } from './replacePattern.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindings } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindings } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 
 export const CONTEXT_FIND_WIDGET_VISIBLE = new RawContextKey<boolean>('findWidgetVisible', false);
 export const CONTEXT_FIND_WIDGET_NOT_VISIBLE = CONTEXT_FIND_WIDGET_VISIBLE.toNegated();

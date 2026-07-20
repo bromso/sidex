@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	AuthenticationSessionAccount,
 	IAuthenticationService,
@@ -28,7 +28,7 @@ import {
 } from '../common/authenticationQuery.js';
 import { IAuthenticationUsageService } from './authenticationUsageService.js';
 import { IAuthenticationAccessService } from './authenticationAccessService.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 
 /**
  * Base implementation for query interfaces

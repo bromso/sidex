@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
 import { localize } from '@sidex/base/nls.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ExtensionIdentifier,
 	IExtensionDescription,
 	IExtensionManifest
-} from '../../../../platform/extensions/common/extensions.js';
-import { allApiProposals, ApiProposalName } from '../../../../platform/extensions/common/extensionsApiProposals.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { allApiProposals, ApiProposalName } from '@sidex/platform/extensions/common/extensionsApiProposals.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	Extensions,
@@ -23,8 +23,8 @@ import {
 	IExtensionFeaturesRegistry,
 	IRenderedData
 } from '../../extensionManagement/common/extensionFeatures.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Mutable } from '../../../../base/common/types.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Mutable } from '@sidex/base/common/types.js';
 
 export class ExtensionsProposedApi {
 	private readonly _envEnablesProposedApiForAll: boolean;

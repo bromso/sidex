@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../../base/common/arrays.js';
-import { Disposable, DisposableStore, MutableDisposable, dispose } from '../../../../../base/common/lifecycle.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { Disposable, DisposableStore, MutableDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import { IMarkTracker } from '../terminal.js';
 import {
 	ITerminalCapabilityStore,
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import type { Terminal, IMarker, ITerminalAddon, IDecoration, IBufferRange } from '@xterm/xterm';
-import { timeout } from '../../../../../base/common/async.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { TERMINAL_OVERVIEW_RULER_CURSOR_FOREGROUND_COLOR } from '../../common/terminalColorRegistry.js';
-import { getWindow } from '../../../../../base/browser/dom.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TerminalContribSettingId } from '../../terminalContribExports.js';
 
 enum Boundary {

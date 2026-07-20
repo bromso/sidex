@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isIOS } from '../../../../base/common/platform.js';
+import { isIOS } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { workbenchConfigurationNodeBase } from '../../../common/configuration.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
 import { SashSettingsController } from './sash.js';

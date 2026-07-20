@@ -3,47 +3,47 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { isDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IActiveCodeEditor, ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { EmbeddedCodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
-import { EditorOption, GoToLocationValues } from '../../../../editor/common/config/editorOptions.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { SymbolNavigationAction } from '../../../../editor/contrib/gotoSymbol/browser/goToCommands.js';
-import { ReferencesModel } from '../../../../editor/contrib/gotoSymbol/browser/referencesModel.js';
-import { MessageController } from '../../../../editor/contrib/message/browser/messageController.js';
-import { PeekContext } from '../../../../editor/contrib/peekView/browser/peekView.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IActiveCodeEditor, ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { EmbeddedCodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+import { EditorOption, GoToLocationValues } from '@sidex/editor/common/config/editorOptions.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { SymbolNavigationAction } from '@sidex/editor/contrib/gotoSymbol/browser/goToCommands.js';
+import { ReferencesModel } from '@sidex/editor/contrib/gotoSymbol/browser/referencesModel.js';
+import { MessageController } from '@sidex/editor/contrib/message/browser/messageController.js';
+import { PeekContext } from '@sidex/editor/contrib/peekView/browser/peekView.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Action2, IAction2Options, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Action2, IAction2Options, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	ContextKeyGreaterExpr
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { widgetClose } from '../../../../platform/theme/common/iconRegistry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { widgetClose } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { ViewAction } from '../../../browser/parts/views/viewPane.js';
 import { FocusedViewContext } from '../../../common/contextkeys.js';
 import { IExtensionsWorkbenchService } from '../../extensions/common/extensions.js';

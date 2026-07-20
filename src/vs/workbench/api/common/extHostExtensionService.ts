@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as path from '../../../base/common/path.js';
-import * as performance from '../../../base/common/performance.js';
-import { originalFSPath, joinPath, extUriBiasedIgnorePathCase } from '../../../base/common/resources.js';
-import { asPromise, Barrier, IntervalTimer, timeout } from '../../../base/common/async.js';
-import { dispose, toDisposable, Disposable, DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import * as path from '@sidex/base/common/path.js';
+import * as performance from '@sidex/base/common/performance.js';
+import { originalFSPath, joinPath, extUriBiasedIgnorePathCase } from '@sidex/base/common/resources.js';
+import { asPromise, Barrier, IntervalTimer, timeout } from '@sidex/base/common/async.js';
+import { dispose, toDisposable, Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	ExtHostExtensionServiceShape,
 	MainContext,
@@ -48,15 +48,15 @@ import {
 	ExtensionDescriptionRegistry,
 	IActivationEventsReader
 } from '../../services/extensions/common/extensionDescriptionRegistry.js';
-import * as errors from '../../../base/common/errors.js';
+import * as errors from '@sidex/base/common/errors.js';
 import type * as vscode from 'vscode';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
 	ExtensionIdentifierSet,
 	IExtensionDescription
-} from '../../../platform/extensions/common/extensions.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 import { ExtensionGlobalMemento, ExtensionMemento } from './extHostMemento.js';
 import {
 	RemoteAuthorityResolverError,
@@ -74,26 +74,26 @@ import {
 	TunnelInformation,
 	ManagedRemoteConnection,
 	WebSocketRemoteConnection
-} from '../../../platform/remote/common/remoteAuthorityResolver.js';
-import { IInstantiationService, createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { IInstantiationService, createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
 import { IExtensionStoragePaths } from './extHostStoragePaths.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { ServiceCollection } from '../../../platform/instantiation/common/serviceCollection.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IExtHostTunnelService } from './extHostTunnelService.js';
 import { IExtHostTerminalService } from './extHostTerminalService.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	IExtensionActivationHost,
 	checkActivateWorkspaceContainsExtension
 } from '../../services/extensions/common/workspaceContains.js';
 import { ExtHostSecretState, IExtHostSecretState } from './extHostSecretState.js';
 import { ExtensionSecrets } from './extHostSecrets.js';
-import { Schemas } from '../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IResolveAuthorityResult } from '../../services/extensions/common/extensionHostProxy.js';
 import { IExtHostLocalizationService } from './extHostLocalizationService.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
-import { isCI, setTimeout0 } from '../../../base/common/platform.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { isCI, setTimeout0 } from '@sidex/base/common/platform.js';
 import { IExtHostManagedSockets } from './extHostManagedSockets.js';
 import { Dto } from '../../services/extensions/common/proxyIdentifier.js';
 

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { CodeEditorWidget } from '../codeEditor/codeEditorWidget.js';
 import { IEditorOptions } from '../../../common/config/editorOptions.js';
 import { IDimension } from '../../../common/core/2d/dimension.js';

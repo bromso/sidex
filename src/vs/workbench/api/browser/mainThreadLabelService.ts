@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
-import { ILabelService, ResourceLabelFormatter } from '../../../platform/label/common/label.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { ILabelService, ResourceLabelFormatter } from '@sidex/platform/label/common/label.js';
 import { MainContext, MainThreadLabelServiceShape } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 

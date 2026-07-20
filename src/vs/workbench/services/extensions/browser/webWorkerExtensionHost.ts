@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { parentOriginHash } from '../../../../base/browser/iframe.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { Barrier } from '../../../../base/common/async.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { canceled, onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { AppResourcePath, COI, FileAccess } from '../../../../base/common/network.js';
-import * as platform from '../../../../base/common/platform.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { parentOriginHash } from '@sidex/base/browser/iframe.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { canceled, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { AppResourcePath, COI, FileAccess } from '@sidex/base/common/network.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
 import { getNLSLanguage, getNLSMessages } from '@sidex/base/nls.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { ILogService, ILoggerService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { isLoggingOnly } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { WebWorkerDescriptor } from '../../../../platform/webWorker/browser/webWorkerDescriptor.js';
-import { IWebWorkerService } from '../../../../platform/webWorker/browser/webWorkerService.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { ILogService, ILoggerService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { isLoggingOnly } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { WebWorkerDescriptor } from '@sidex/platform/webWorker/browser/webWorkerDescriptor.js';
+import { IWebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerService.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import { IDefaultLogLevelsService } from '../../log/common/defaultLogLevels.js';
 import {

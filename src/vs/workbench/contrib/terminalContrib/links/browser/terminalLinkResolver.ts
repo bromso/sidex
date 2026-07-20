@@ -5,14 +5,14 @@
 
 import { ITerminalLinkResolver, ResolvedLink } from './links.js';
 import { removeLinkSuffix, removeLinkQueryString, winDrivePrefix } from './terminalLinkParsing.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ITerminalProcessManager } from '../../../terminal/common/terminal.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { isWindows, OperatingSystem, OS } from '../../../../../base/common/platform.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
-import { IPath, posix, win32 } from '../../../../../base/common/path.js';
-import { ITerminalBackend } from '../../../../../platform/terminal/common/terminal.js';
-import { mainWindow } from '../../../../../base/browser/window.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isWindows, OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IPath, posix, win32 } from '@sidex/base/common/path.js';
+import { ITerminalBackend } from '@sidex/platform/terminal/common/terminal.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 export class TerminalLinkResolver implements ITerminalLinkResolver {
 	// Link cache could be shared across all terminals, but that could lead to weird results when

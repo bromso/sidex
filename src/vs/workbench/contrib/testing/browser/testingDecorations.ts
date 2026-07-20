@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { renderAsPlaintext } from '../../../../base/browser/markdownRenderer.js';
-import { Action, IAction, Separator, SubmenuAction } from '../../../../base/common/actions.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { mapFindFirst } from '../../../../base/common/arraysFind.js';
-import { RunOnceScheduler, Throttler, timeout } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { stripIcons } from '../../../../base/common/iconLabels.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { renderAsPlaintext } from '@sidex/base/browser/markdownRenderer.js';
+import { Action, IAction, Separator, SubmenuAction } from '@sidex/base/common/actions.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { mapFindFirst } from '@sidex/base/common/arraysFind.js';
+import { RunOnceScheduler, Throttler, timeout } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	Disposable,
 	DisposableMap,
@@ -22,16 +22,16 @@ import {
 	IReference,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { autorun } from '../../../../base/common/observable.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
-import { count, truncateMiddle } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { autorun } from '@sidex/base/common/observable.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { count, truncateMiddle } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import {
 	ContentWidgetPositionPreference,
 	ICodeEditor,
@@ -40,13 +40,13 @@ import {
 	IContentWidgetRenderedCoordinate,
 	IEditorMouseEvent,
 	MouseTargetType
-} from '../../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { overviewRulerError, overviewRulerInfo } from '../../../../editor/common/core/editorColorRegistry.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IRange } from '../../../../editor/common/core/range.js';
-import { IEditorContribution } from '../../../../editor/common/editorCommon.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { overviewRulerError, overviewRulerInfo } from '@sidex/editor/common/core/editorColorRegistry.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { IEditorContribution } from '@sidex/editor/common/editorCommon.js';
 import {
 	GlyphMarginLane,
 	IModelDecorationOptions,
@@ -55,19 +55,19 @@ import {
 	ITextModel,
 	OverviewRulerLane,
 	TrackedRangeStickiness
-} from '../../../../editor/common/model.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
+} from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { EditorLineNumberContextMenu, GutterActionsRegistry } from '../../codeEditor/browser/editorLineNumberMenu.js';
 import { DefaultGutterClickAction, TestingConfigKeys, getTestingConfiguration } from '../common/configuration.js';
 import { TestCommandId, Testing, labelForTestInState } from '../common/constants.js';

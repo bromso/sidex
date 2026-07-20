@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ShutdownReason, ILifecycleService, StartupKind } from '../common/lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { AbstractLifecycleService } from '../common/lifecycleService.js';
 import { localize } from '@sidex/base/nls.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { addDisposableListener, EventType } from '../../../../base/browser/dom.js';
-import { IStorageService, WillSaveStateReason } from '../../../../platform/storage/common/storage.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { addDisposableListener, EventType } from '@sidex/base/browser/dom.js';
+import { IStorageService, WillSaveStateReason } from '@sidex/platform/storage/common/storage.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 export class BrowserLifecycleService extends AbstractLifecycleService {
 	private beforeUnloadListener: IDisposable | undefined = undefined;

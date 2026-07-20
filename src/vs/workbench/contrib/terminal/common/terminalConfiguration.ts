@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
-import type { IStringDictionary } from '../../../../base/common/collections.js';
-import { IJSONSchemaSnippet } from '../../../../base/common/jsonSchema.js';
-import { isMacintosh, isWindows } from '../../../../base/common/platform.js';
-import { isString } from '../../../../base/common/types.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import type { IStringDictionary } from '@sidex/base/common/collections.js';
+import { IJSONSchemaSnippet } from '@sidex/base/common/jsonSchema.js';
+import { isMacintosh, isWindows } from '@sidex/base/common/platform.js';
+import { isString } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,
 	IConfigurationRegistry,
 	type IConfigurationPropertySchema
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import product from '../../../../platform/product/common/product.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { TerminalLocationConfigValue, TerminalSettingId } from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import product from '@sidex/platform/product/common/product.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { TerminalLocationConfigValue, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	terminalColorSchema,
 	terminalIconSchema
-} from '../../../../platform/terminal/common/terminalPlatformConfiguration.js';
+} from '@sidex/platform/terminal/common/terminalPlatformConfiguration.js';
 import {
 	ConfigurationKeyValuePairs,
 	IConfigurationMigrationRegistry,

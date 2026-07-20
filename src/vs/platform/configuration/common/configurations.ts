@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { deepClone, equals } from '../../../base/common/objects.js';
-import { isEmptyObject, isString } from '../../../base/common/types.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { deepClone, equals } from '@sidex/base/common/objects.js';
+import { isEmptyObject, isString } from '@sidex/base/common/types.js';
 import { ConfigurationModel } from './configurationModels.js';
 import { Extensions, IConfigurationRegistry, IRegisteredConfigurationPropertySchema } from './configurationRegistry.js';
 import { ILogService, NullLogService } from '../../log/common/log.js';
 import { IPolicyService, PolicyDefinition, PolicyValue } from '../../policy/common/policy.js';
 import { Registry } from '../../registry/common/platform.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
-import * as json from '../../../base/common/json.js';
-import { PolicyName } from '../../../base/common/policy.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import * as json from '@sidex/base/common/json.js';
+import { PolicyName } from '@sidex/base/common/policy.js';
 
 export class DefaultConfiguration extends Disposable {
 	private readonly _onDidChangeConfiguration = this._register(

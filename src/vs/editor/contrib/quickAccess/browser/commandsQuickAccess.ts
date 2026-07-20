@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { stripIcons } from '../../../../base/common/iconLabels.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
 import { IEditor } from '../../../common/editorCommon.js';
 import { ILocalizedString } from '@sidex/base/nls.js';
-import { isLocalizedString } from '../../../../platform/action/common/action.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { isLocalizedString } from '@sidex/platform/action/common/action.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	AbstractCommandsQuickAccessProvider,
 	ICommandQuickPick,
 	ICommandsQuickAccessOptions
-} from '../../../../platform/quickinput/browser/commandsQuickAccess.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/quickinput/browser/commandsQuickAccess.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 
 export abstract class AbstractEditorCommandsQuickAccessProvider extends AbstractCommandsQuickAccessProvider {
 	constructor(

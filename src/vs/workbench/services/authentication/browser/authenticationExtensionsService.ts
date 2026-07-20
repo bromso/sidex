@@ -9,16 +9,16 @@ import {
 	dispose,
 	IDisposable,
 	MutableDisposable
-} from '../../../../base/common/lifecycle.js';
-import { scopesMatch } from '../../../../base/common/oauth.js';
+} from '@sidex/base/common/lifecycle.js';
+import { scopesMatch } from '@sidex/base/common/oauth.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Severity } from '../../../../platform/notification/common/notification.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Severity } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IActivityService, NumberBadge } from '../../activity/common/activity.js';
 import { IAuthenticationAccessService } from './authenticationAccessService.js';
 import { IAuthenticationUsageService } from './authenticationUsageService.js';
@@ -31,9 +31,9 @@ import {
 	IAuthenticationWwwAuthenticateRequest,
 	isAuthenticationWwwAuthenticateRequest
 } from '../common/authentication.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 
 // OAuth2 spec prohibits space in a scope, so use that to join them.
 const SCOPESLIST_SEPARATOR = ' ';

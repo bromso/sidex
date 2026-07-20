@@ -3,58 +3,58 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { PixelRatio } from '../../../../base/browser/pixelRatio.js';
-import { ActionBar, ActionsOrientation, IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { CodeWindow, mainWindow } from '../../../../base/browser/window.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
+import { ActionBar, ActionsOrientation, IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { CodeWindow, mainWindow } from '@sidex/base/browser/window.js';
 import {
 	Action,
 	IAction,
 	IRunEvent,
 	WorkbenchActionExecutedClassification,
 	WorkbenchActionExecutedEvent
-} from '../../../../base/common/actions.js';
-import * as arrays from '../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import * as errors from '../../../../base/common/errors.js';
-import { DisposableStore, markAsSingleton, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { Platform, platform } from '../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
+} from '@sidex/base/common/actions.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { DisposableStore, markAsSingleton, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { Platform, platform } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandAction, ICommandActionTitle } from '../../../../platform/action/common/action.js';
+import { ICommandAction, ICommandActionTitle } from '@sidex/platform/action/common/action.js';
 import {
 	DropdownWithPrimaryActionViewItem,
 	IDropdownWithPrimaryActionViewItemOptions
-} from '../../../../platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
+} from '@sidex/platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
 import {
 	createActionViewItem,
 	getFlatActionBarActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	IMenu,
 	IMenuService,
 	MenuId,
 	MenuItemAction,
 	MenuRegistry
-} from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { widgetBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { getTitleBarStyle, TitlebarStyle } from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { widgetBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { getTitleBarStyle, TitlebarStyle } from '@sidex/platform/window/common/window.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import {
 	EditorTabsMode,

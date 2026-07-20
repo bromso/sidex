@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { asArray, isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IDisposable, IReference } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { assertType } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { asArray, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	CodeEditorStateFlag,
 	EditorStateCancellationTokenSource,
@@ -32,17 +32,17 @@ import {
 import { IEditorWorkerService } from '../../../common/services/editorWorker.js';
 import { IResolvedTextEditorModel, ITextModelService } from '../../../common/services/resolverService.js';
 import { FormattingEdit } from './formattingEdit.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ExtensionIdentifierSet } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IProgress } from '../../../../platform/progress/common/progress.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ExtensionIdentifierSet } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgress } from '@sidex/platform/progress/common/progress.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
 
 export function getRealAndSyntheticDocumentFormattersOrdered(
 	documentFormattingEditProvider: LanguageFeatureRegistry<DocumentFormattingEditProvider>,

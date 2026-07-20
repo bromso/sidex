@@ -8,11 +8,11 @@ import {
 	ExtensionIdentifierMap,
 	ExtensionIdentifierSet,
 	IExtensionDescription
-} from '../../../../platform/extensions/common/extensions.js';
-import { Emitter } from '../../../../base/common/event.js';
-import * as path from '../../../../base/common/path.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { promiseWithResolvers } from '../../../../base/common/async.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import * as path from '@sidex/base/common/path.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { promiseWithResolvers } from '@sidex/base/common/async.js';
 
 export class DeltaExtensionsResult {
 	constructor(

@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import * as domStylesheets from '../../../base/browser/domStylesheets.js';
-import * as cssJs from '../../../base/browser/cssValue.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	IDisposable,
 	DisposableStore,
 	Disposable,
 	toDisposable,
 	DisposableMap
-} from '../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../base/common/linkedList.js';
-import * as strings from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor, IDiffEditor } from '../editorBrowser.js';
 import { ICodeEditorOpenHandler, ICodeEditorService } from './codeEditorService.js';
 import {
@@ -33,9 +33,9 @@ import {
 	OverviewRulerLane,
 	TrackedRangeStickiness
 } from '../../common/model.js';
-import { IResourceEditorInput } from '../../../platform/editor/common/editor.js';
-import { IColorTheme, IThemeService } from '../../../platform/theme/common/themeService.js';
-import { ThemeColor } from '../../../base/common/themables.js';
+import { IResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
 
 export abstract class AbstractCodeEditorService extends Disposable implements ICodeEditorService {
 	declare readonly _serviceBrand: undefined;

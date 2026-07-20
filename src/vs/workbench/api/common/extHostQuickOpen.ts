@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
-import { dispose, IDisposable } from '../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ExtHostCommands } from './extHostCommands.js';
 import { IExtHostWorkspaceProvider } from './extHostWorkspace.js';
 import {
@@ -30,10 +30,10 @@ import {
 	TransferQuickPickItemOrSeparator
 } from './extHost.protocol.js';
 import { QuickInputButtons, QuickPickItemKind, InputBoxValidationSeverity } from './extHostTypes.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { coalesce } from '../../../base/common/arrays.js';
-import Severity from '../../../base/common/severity.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import Severity from '@sidex/base/common/severity.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 import { IconPath, MarkdownString } from './extHostTypeConverters.js';
 

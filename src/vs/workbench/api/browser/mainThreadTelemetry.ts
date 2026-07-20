@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	ClassifiedEvent,
 	IGDPRProperty,
 	OmitMetadata,
 	StrictPropertyCheck
-} from '../../../platform/telemetry/common/gdprTypings.js';
+} from '@sidex/platform/telemetry/common/gdprTypings.js';
 import {
 	ITelemetryService,
 	TelemetryLevel,
 	TELEMETRY_OLD_SETTING_ID,
 	TELEMETRY_SETTING_ID,
 	ITelemetryData
-} from '../../../platform/telemetry/common/telemetry.js';
-import { supportsTelemetry } from '../../../platform/telemetry/common/telemetryUtils.js';
+} from '@sidex/platform/telemetry/common/telemetry.js';
+import { supportsTelemetry } from '@sidex/platform/telemetry/common/telemetryUtils.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,

@@ -5,7 +5,7 @@
 
 import * as nls from '@sidex/base/nls.js';
 
-import { IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 
 export interface ITaskEntry extends IQuickPickItem {
 	sort?: string;

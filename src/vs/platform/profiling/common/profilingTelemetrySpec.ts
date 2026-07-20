@@ -6,7 +6,7 @@
 import { ILogService } from '../../log/common/log.js';
 import { BottomUpSample } from './profilingModel.js';
 import { ITelemetryService } from '../../telemetry/common/telemetry.js';
-import { errorHandler } from '../../../base/common/errors.js';
+import { errorHandler } from '@sidex/base/common/errors.js';
 
 type TelemetrySampleData = {
 	selfTime: number;

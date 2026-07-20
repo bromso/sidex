@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Disposable, DisposableMap } from '../../../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IOutputChannel,
 	IOutputService,
@@ -39,9 +39,9 @@ import {
 	ILogEntry
 } from '../../../services/output/common/output.js';
 import { OutputLinkProvider } from './outputLinkProvider.js';
-import { ITextModelService, ITextModelContentProvider } from '../../../../editor/common/services/resolverService.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ILogService, ILoggerService, LogLevel, LogLevelToString } from '../../../../platform/log/common/log.js';
+import { ITextModelService, ITextModelContentProvider } from '@sidex/editor/common/services/resolverService.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ILogService, ILoggerService, LogLevel, LogLevelToString } from '@sidex/platform/log/common/log.js';
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
 import {
 	DelegatedOutputChannelModel,
@@ -51,15 +51,15 @@ import {
 } from '../common/outputChannelModel.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { OutputViewPane } from './outputView.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { localize } from '@sidex/base/nls.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { telemetryLogId } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { toLocalISOString } from '../../../../base/common/date.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { telemetryLogId } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { toLocalISOString } from '@sidex/base/common/date.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { IDefaultLogLevelsService } from '../../../services/log/common/defaultLogLevels.js';
 

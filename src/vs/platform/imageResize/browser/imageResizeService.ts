@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { decodeBase64, VSBuffer } from '../../../base/common/buffer.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { decodeBase64, VSBuffer } from '@sidex/base/common/buffer.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IFileService } from '../../files/common/files.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { ILogService } from '../../log/common/log.js';

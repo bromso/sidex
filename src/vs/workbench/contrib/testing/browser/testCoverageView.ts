@@ -3,52 +3,52 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IIdentityProvider, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IIdentityProvider, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import {
 	ICompressedTreeElement,
 	ICompressedTreeNode
-} from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
-import { ITreeNode, ITreeSorter } from '../../../../base/browser/ui/tree/tree.js';
-import { findLast } from '../../../../base/common/arraysFind.js';
-import { assertNever } from '../../../../base/common/assert.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { FuzzyScore, createMatches } from '../../../../base/common/filters.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, autorun, observableValue } from '../../../../base/common/observable.js';
-import { IPrefixTreeNode } from '../../../../base/common/prefixTree.js';
-import { basenameOrAuthority } from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
+} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ITreeNode, ITreeSorter } from '@sidex/base/browser/ui/tree/tree.js';
+import { findLast } from '@sidex/base/common/arraysFind.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { FuzzyScore, createMatches } from '@sidex/base/common/filters.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, autorun, observableValue } from '@sidex/base/common/observable.js';
+import { IPrefixTreeNode } from '@sidex/base/common/prefixTree.js';
+import { basenameOrAuthority } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { getActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { EditorOpenSource, TextEditorSelectionRevealType } from '../../../../platform/editor/common/editor.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchCompressibleObjectTree } from '../../../../platform/list/browser/listService.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { getActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { EditorOpenSource, TextEditorSelectionRevealType } from '@sidex/platform/editor/common/editor.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchCompressibleObjectTree } from '@sidex/platform/list/browser/listService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IResourceLabel, ResourceLabels } from '../../../browser/labels.js';
 import { IViewPaneOptions, ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewDescriptorService } from '../../../common/views.js';

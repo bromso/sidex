@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../base/browser/domStylesheets.js';
-import { GlobalPointerMoveMonitor } from '../../base/browser/globalPointerMoveMonitor.js';
-import { StandardMouseEvent } from '../../base/browser/mouseEvent.js';
-import { RunOnceScheduler } from '../../base/common/async.js';
-import { Disposable, DisposableMap, DisposableStore, IDisposable } from '../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { GlobalPointerMoveMonitor } from '@sidex/base/browser/globalPointerMoveMonitor.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Disposable, DisposableMap, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from './editorBrowser.js';
-import { asCssVariable } from '../../platform/theme/common/colorRegistry.js';
-import { ThemeColor } from '../../base/common/themables.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorRegistry.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
 
 /**
  * Coordinates relative to the whole document (e.g. mouse event's pageX and pageY)

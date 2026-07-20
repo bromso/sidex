@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { TabFocus } from '../../../browser/config/tabFocus.js';
 import * as nls from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 
 export class ToggleTabFocusModeAction extends Action2 {
 	public static readonly ID = 'editor.action.toggleTabFocusMode';

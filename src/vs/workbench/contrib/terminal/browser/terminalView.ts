@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as dom from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
-import * as cssJs from '../../../../base/browser/cssValue.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { switchTerminalShowTabsTitle } from './terminalActions.js';
 import {
 	INotificationService,
 	IPromptChoice,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/notification/common/notification.js';
 import {
 	ICreateTerminalOptions,
 	ITerminalConfigurationService,
@@ -29,34 +29,34 @@ import {
 	TerminalDataTransfers
 } from './terminal.js';
 import { ViewPane, IViewPaneOptions } from '../../../browser/parts/views/viewPane.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IViewDescriptorService } from '../../../common/views.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IMenu, IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IMenu, IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
 import { ITerminalProfileResolverService, ITerminalProfileService, TerminalCommandId } from '../common/terminal.js';
 import {
 	TerminalSettingId,
 	ITerminalProfile,
 	TerminalLocation
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import {
 	ActionViewItem,
 	IBaseActionViewItemOptions,
 	SelectActionViewItem
-} from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { asCssVariable, selectBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { ISelectOptionItem, SeparatorSelectOption } from '../../../../base/browser/ui/selectBox/selectBox.js';
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
+} from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { asCssVariable, selectBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { ISelectOptionItem, SeparatorSelectOption } from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { TerminalTabbedView } from './terminalTabbedView.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import { getColorForSeverity } from './terminalStatusList.js';
 import {
 	getFlatContextMenuActions,
 	MenuEntryActionViewItem
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { DropdownWithPrimaryActionViewItem } from '../../../../platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { DropdownWithPrimaryActionViewItem } from '@sidex/platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
 import {
 	DisposableMap,
 	DisposableStore,
@@ -64,25 +64,25 @@ import {
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { isDark } from '../../../../platform/theme/common/theme.js';
+} from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
 import { getColorClass, getUriClasses } from './terminalIcon.js';
 import { getTerminalActionBarArgs } from './terminalMenus.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
 import { getInstanceHoverInfo } from './terminalTooltip.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { TerminalCapability } from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { defaultSelectBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { Event } from '../../../../base/common/event.js';
-import { IHoverDelegate, IHoverDelegateOptions } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { defaultSelectBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IHoverDelegate, IHoverDelegateOptions } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { InstanceContext, TerminalContextActionRunner } from './terminalContextMenu.js';
-import { MicrotaskDelay } from '../../../../base/common/symbols.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { hasNativeContextMenu } from '../../../../platform/window/common/window.js';
-import { hasKey } from '../../../../base/common/types.js';
+import { MicrotaskDelay } from '@sidex/base/common/symbols.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { hasNativeContextMenu } from '@sidex/platform/window/common/window.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 export class TerminalViewPane extends ViewPane {
 	private _parentDomElement: HTMLElement | undefined;

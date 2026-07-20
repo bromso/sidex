@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
-import { IPager } from '../../../../base/common/paging.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IPager } from '@sidex/base/common/paging.js';
 import {
 	IQueryOptions,
 	ILocalExtension,
@@ -16,27 +16,27 @@ import {
 	IDeprecationInfo,
 	InstallExtensionResult,
 	InstallOptions
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	EnablementState,
 	IExtensionManagementServer,
 	IResourceExtension
 } from '../../../services/extensionManagement/common/extensionManagement.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IExtensionManifest, ExtensionType } from '../../../../platform/extensions/common/extensions.js';
-import { URI } from '../../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IExtensionManifest, ExtensionType } from '@sidex/platform/extensions/common/extensions.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IView, IViewPaneContainer } from '../../../common/views.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IExtensionsStatus as IExtensionRuntimeStatus } from '../../../services/extensions/common/extensions.js';
 import { IExtensionEditorOptions } from './extensionsInput.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { Severity } from '../../../../platform/notification/common/notification.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { Severity } from '@sidex/platform/notification/common/notification.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { ExtensionGalleryManifestStatus } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
+import { ExtensionGalleryManifestStatus } from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
 
 export const VIEWLET_ID = 'workbench.view.extensions';
 export const EXTENSIONS_CATEGORY = localize2('extensions', 'Extensions');

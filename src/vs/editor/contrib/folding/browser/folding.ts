@@ -8,13 +8,13 @@ import {
 	createCancelablePromise,
 	Delayer,
 	RunOnceScheduler
-} from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { illegalArgument, onUnexpectedError } from '../../../../base/common/errors.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
-import * as types from '../../../../base/common/types.js';
+} from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { illegalArgument, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
+import * as types from '@sidex/base/common/types.js';
 import './folding.css';
 import { StableEditorScrollState } from '../../../browser/stableEditorScroll.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../browser/editorBrowser.js';
@@ -54,23 +54,23 @@ import {
 import { HiddenRangeModel } from './hiddenRangeModel.js';
 import { IndentRangeProvider } from './indentRangeProvider.js';
 import * as nls from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { FoldingDecorationProvider } from './foldingDecorations.js';
 import { FoldingRegion, FoldingRegions, FoldRange, FoldSource, ILineRange } from './foldingRanges.js';
 import { SyntaxRangeProvider } from './syntaxRangeProvider.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import {
 	IFeatureDebounceInformation,
 	ILanguageFeatureDebounceService
 } from '../../../common/services/languageFeatureDebounce.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IModelService } from '../../../common/services/model.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 const CONTEXT_FOLDING_ENABLED = new RawContextKey<boolean>('foldingEnabled', false);
 

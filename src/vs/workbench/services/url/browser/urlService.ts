@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IURLService } from '../../../../platform/url/common/url.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { AbstractURLService } from '../../../../platform/url/common/urlService.js';
-import { Event } from '../../../../base/common/event.js';
+import { IURLService } from '@sidex/platform/url/common/url.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { AbstractURLService } from '@sidex/platform/url/common/urlService.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 import {
 	IOpenerService,
 	IOpener,
 	OpenExternalOptions,
 	OpenInternalOptions
-} from '../../../../platform/opener/common/opener.js';
-import { matchesScheme } from '../../../../base/common/network.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+} from '@sidex/platform/opener/common/opener.js';
+import { matchesScheme } from '@sidex/base/common/network.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 
 export interface IURLCallbackProvider {
 	/**

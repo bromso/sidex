@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { BinaryEditorModel } from '../../../common/editor/binaryEditorModel.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ByteSize } from '../../../../platform/files/common/files.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ByteSize } from '@sidex/platform/files/common/files.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { EditorPlaceholder, IEditorPlaceholderContents } from './editorPlaceholder.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 

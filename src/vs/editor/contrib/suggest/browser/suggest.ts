@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { CancellationError, isCancellationError, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { FuzzyScore } from '../../../../base/common/filters.js';
-import { DisposableStore, IDisposable, isDisposable } from '../../../../base/common/lifecycle.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { assertType } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { CancellationError, isCancellationError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { DisposableStore, IDisposable, isDisposable } from '@sidex/base/common/lifecycle.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IPosition, Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
@@ -19,14 +19,14 @@ import * as languages from '../../../common/languages.js';
 import { ITextModelService } from '../../../common/services/resolverService.js';
 import { SnippetParser } from '../../snippet/browser/snippetParser.js';
 import { localize } from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { historyNavigationVisible } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
+import { historyNavigationVisible } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
 import { InternalQuickSuggestionsOptions, QuickSuggestionsValue } from '../../../common/config/editorOptions.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { StandardTokenType } from '../../../common/encodedTokenAttributes.js';
 
 export const Context = {

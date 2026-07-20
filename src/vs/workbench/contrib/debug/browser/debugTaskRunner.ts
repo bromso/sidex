@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { toAction } from '../../../../base/common/actions.js';
-import { disposableTimeout } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { createErrorWithActions } from '../../../../base/common/errorMessage.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import severity from '../../../../base/common/severity.js';
+import { toAction } from '@sidex/base/common/actions.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { createErrorWithActions } from '@sidex/base/common/errorMessage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import severity from '@sidex/base/common/severity.js';
 import * as nls from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IMarkerService, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IWorkspace, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IMarkerService, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IWorkspace, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { DEBUG_CONFIGURE_COMMAND_ID, DEBUG_CONFIGURE_LABEL } from './debugCommands.js';
 import { IDebugConfiguration } from '../common/debug.js';
 import { Markers } from '../../markers/common/markers.js';

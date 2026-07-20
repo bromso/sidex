@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IActivityService, IActivity } from '../common/activity.js';
-import { IDisposable, Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { IDisposable, Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IViewDescriptorService, ViewContainer } from '../../../common/views.js';
 import { GLOBAL_ACTIVITY_ID, ACCOUNTS_ACTIVITY_ID } from '../../../common/activity.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 class ViewContainerActivityByView extends Disposable {
 	private activity: IActivity | undefined = undefined;

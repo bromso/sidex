@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import * as errors from '../../../../base/common/errors.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import * as errors from '@sidex/base/common/errors.js';
 import {
 	Disposable,
 	IDisposable,
@@ -14,8 +14,8 @@ import {
 	MutableDisposable,
 	combinedDisposable,
 	DisposableStore
-} from '../../../../base/common/lifecycle.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+} from '@sidex/base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import {
 	FileChangeType,
 	FileChangesEvent,
@@ -25,13 +25,13 @@ import {
 	FileOperationResult,
 	FileOperation,
 	FileOperationEvent
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import {
 	ConfigurationModel,
 	ConfigurationModelParser,
 	ConfigurationParseOptions,
 	UserSettings
-} from '../../../../platform/configuration/common/configurationModels.js';
+} from '@sidex/platform/configuration/common/configurationModels.js';
 import {
 	WorkspaceConfigurationModelParser,
 	StandaloneConfigurationModelParser
@@ -48,30 +48,30 @@ import {
 	APPLY_ALL_PROFILES_SETTING,
 	APPLICATION_SCOPES
 } from '../common/configuration.js';
-import { IStoredWorkspaceFolder } from '../../../../platform/workspaces/common/workspaces.js';
+import { IStoredWorkspaceFolder } from '@sidex/platform/workspaces/common/workspaces.js';
 import {
 	WorkbenchState,
 	IWorkspaceFolder,
 	IWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import {
 	ConfigurationScope,
 	Extensions,
 	IConfigurationRegistry,
 	OVERRIDE_PROPERTY_REGEX
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { equals } from '../../../../base/common/objects.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { equals } from '@sidex/base/common/objects.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { hash } from '../../../../base/common/hash.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { isEmptyObject, isObject } from '../../../../base/common/types.js';
-import { DefaultConfiguration as BaseDefaultConfiguration } from '../../../../platform/configuration/common/configurations.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { isEmptyObject, isObject } from '@sidex/base/common/types.js';
+import { DefaultConfiguration as BaseDefaultConfiguration } from '@sidex/platform/configuration/common/configurations.js';
 import { IJSONEditingService } from '../common/jsonEditing.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../environment/browser/environmentService.js';
 
 export class DefaultConfiguration extends BaseDefaultConfiguration {

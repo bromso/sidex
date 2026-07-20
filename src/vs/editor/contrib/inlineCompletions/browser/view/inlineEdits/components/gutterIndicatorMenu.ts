@@ -7,13 +7,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ChildNode, LiveElement, n } from '../../../../../../../base/browser/dom.js';
-import { ActionBar, IActionBarOptions } from '../../../../../../../base/browser/ui/actionbar/actionbar.js';
-import { renderIcon } from '../../../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { KeybindingLabel } from '../../../../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { IAction } from '../../../../../../../base/common/actions.js';
-import { Codicon } from '../../../../../../../base/common/codicons.js';
-import { ResolvedKeybinding } from '../../../../../../../base/common/keybindings.js';
+import { ChildNode, LiveElement, n } from '@sidex/base/browser/dom.js';
+import { ActionBar, IActionBarOptions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import {
 	IObservable,
 	autorun,
@@ -21,21 +21,21 @@ import {
 	derived,
 	observableFromEvent,
 	observableValue
-} from '../../../../../../../base/common/observable.js';
-import { OS } from '../../../../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../../../../base/common/themables.js';
+} from '@sidex/base/common/observable.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../../../../platform/commands/common/commands.js';
-import { IContextKeyService } from '../../../../../../../platform/contextkey/common/contextkey.js';
-import { nativeHoverDelegate } from '../../../../../../../platform/hover/browser/hover.js';
-import { IKeybindingService } from '../../../../../../../platform/keybinding/common/keybinding.js';
-import { defaultKeybindingLabelStyles } from '../../../../../../../platform/theme/browser/defaultStyles.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { nativeHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { defaultKeybindingLabelStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import {
 	asCssVariable,
 	descriptionForeground,
 	editorActionListForeground,
 	editorHoverBorder
-} from '../../../../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { ObservableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import { EditorOption } from '../../../../../../common/config/editorOptions.js';
 import {

@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { addDisposableListener } from '../../../../../base/browser/dom.js';
+import { addDisposableListener } from '@sidex/base/browser/dom.js';
 import {
 	combinedDisposable,
 	Disposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { listInactiveSelectionBackground } from '../../../../../platform/theme/common/colorRegistry.js';
-import { registerColor, transparent } from '../../../../../platform/theme/common/colorUtils.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { listInactiveSelectionBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerColor, transparent } from '@sidex/platform/theme/common/colorUtils.js';
 import { PANEL_BORDER } from '../../../../common/theme.js';
 import {
 	IDetachedTerminalInstance,
@@ -33,7 +33,7 @@ import {
 	TerminalCommandGuideSettingId,
 	type ITerminalCommandGuideConfiguration
 } from '../common/terminalCommandGuideConfiguration.js';
-import { isFullTerminalCommand } from '../../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+import { isFullTerminalCommand } from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
 
 // #region Terminal Contributions
 

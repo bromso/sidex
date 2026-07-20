@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ExtensionIdentifierMap, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
+import { ExtensionIdentifierMap, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { localize } from '@sidex/base/nls.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import * as semver from '../../../../base/common/semver/semver.js';
-import { Mutable } from '../../../../base/common/types.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import * as semver from '@sidex/base/common/semver/semver.js';
+import { Mutable } from '@sidex/base/common/types.js';
 
 // TODO: @sandy081 merge this with deduping in extensionsScannerService.ts
 export function dedupExtensions(

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	IGalleryExtension,
@@ -13,10 +13,10 @@ import {
 } from './extensionManagement.js';
 import { ExtensionType, IExtension, TargetPlatform } from '../../extensions/common/extensions.js';
 import { IProductService } from '../../product/common/productService.js';
-import { createCommandUri, IMarkdownString, MarkdownString } from '../../../base/common/htmlContent.js';
+import { createCommandUri, IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { isBoolean, isObject, isUndefined } from '../../../base/common/types.js';
-import { Emitter } from '../../../base/common/event.js';
+import { isBoolean, isObject, isUndefined } from '@sidex/base/common/types.js';
+import { Emitter } from '@sidex/base/common/event.js';
 
 function isGalleryExtension(extension: unknown): extension is IGalleryExtension {
 	return (extension as IGalleryExtension).type === 'gallery';

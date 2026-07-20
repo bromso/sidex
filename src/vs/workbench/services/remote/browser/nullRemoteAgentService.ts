@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { registerSingleton, InstantiationType } from '../../../../platform/instantiation/common/extensions.js';
-import { IRemoteAgentEnvironment } from '../../../../platform/remote/common/remoteAgentEnvironment.js';
-import { IDiagnosticInfoOptions, IDiagnosticInfo } from '../../../../platform/diagnostics/common/diagnostics.js';
-import { ITelemetryData, TelemetryLevel } from '../../../../platform/telemetry/common/telemetry.js';
-import { IChannel, IServerChannel } from '../../../../base/parts/ipc/common/ipc.js';
-import { getSideXRemoteService, RemoteConnection } from '../../../../platform/sidex/browser/sidexRemoteService.js';
+import { Event } from '@sidex/base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { registerSingleton, InstantiationType } from '@sidex/platform/instantiation/common/extensions.js';
+import { IRemoteAgentEnvironment } from '@sidex/platform/remote/common/remoteAgentEnvironment.js';
+import { IDiagnosticInfoOptions, IDiagnosticInfo } from '@sidex/platform/diagnostics/common/diagnostics.js';
+import { ITelemetryData, TelemetryLevel } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
+import { getSideXRemoteService, RemoteConnection } from '@sidex/platform/sidex/browser/sidexRemoteService.js';
 
 export const IRemoteAgentService = createDecorator<IRemoteAgentService>('remoteAgentService');
 

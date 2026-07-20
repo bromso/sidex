@@ -6,22 +6,22 @@
 import * as nls from '@sidex/base/nls.js';
 
 // base
-import * as browser from '../../../../base/browser/browser.js';
-import { BrowserFeatures, KeyboardSupport } from '../../../../base/browser/canIUse.js';
-import * as dom from '../../../../base/browser/dom.js';
+import * as browser from '@sidex/base/browser/browser.js';
+import { BrowserFeatures, KeyboardSupport } from '@sidex/base/browser/canIUse.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import {
 	printKeyboardEvent,
 	printStandardKeyboardEvent,
 	StandardKeyboardEvent
-} from '../../../../base/browser/keyboardEvent.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { DeferredPromise, RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { parse } from '../../../../base/common/json.js';
-import { IJSONSchema, TypeFromJsonSchema } from '../../../../base/common/jsonSchema.js';
-import { UserSettingsLabelProvider } from '../../../../base/common/keybindingLabels.js';
-import { KeybindingParser } from '../../../../base/common/keybindingParser.js';
-import { Keybinding, KeyCodeChord, ResolvedKeybinding, ScanCodeChord } from '../../../../base/common/keybindings.js';
+} from '@sidex/base/browser/keyboardEvent.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { DeferredPromise, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { parse } from '@sidex/base/common/json.js';
+import { IJSONSchema, TypeFromJsonSchema } from '@sidex/base/common/jsonSchema.js';
+import { UserSettingsLabelProvider } from '@sidex/base/common/keybindingLabels.js';
+import { KeybindingParser } from '@sidex/base/common/keybindingParser.js';
+import { Keybinding, KeyCodeChord, ResolvedKeybinding, ScanCodeChord } from '@sidex/base/common/keybindings.js';
 import {
 	IMMUTABLE_CODE_TO_KEY_CODE,
 	KeyCode,
@@ -29,53 +29,53 @@ import {
 	KeyMod,
 	ScanCode,
 	ScanCodeUtils
-} from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import * as objects from '../../../../base/common/objects.js';
-import { isMacintosh, OperatingSystem, OS } from '../../../../base/common/platform.js';
-import { dirname } from '../../../../base/common/resources.js';
+} from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { isMacintosh, OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { dirname } from '@sidex/base/common/resources.js';
 
 // platform
-import { ILocalizedString, isLocalizedString } from '../../../../platform/action/common/action.js';
-import { MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ILocalizedString, isLocalizedString } from '@sidex/platform/action/common/action.js';
+import { MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	ContextKeyExpr,
 	ContextKeyExpression,
 	IContextKey,
 	IContextKeyService
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { FileOperation, IFileService } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { FileOperation, IFileService } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	Extensions,
 	IJSONContributionRegistry
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { AbstractKeybindingService } from '../../../../platform/keybinding/common/abstractKeybindingService.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { AbstractKeybindingService } from '@sidex/platform/keybinding/common/abstractKeybindingService.js';
 import {
 	IKeybindingService,
 	IKeyboardEvent,
 	KeybindingsSchemaContribution
-} from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingResolver } from '../../../../platform/keybinding/common/keybindingResolver.js';
+} from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingResolver } from '@sidex/platform/keybinding/common/keybindingResolver.js';
 import {
 	IExtensionKeybindingRule,
 	IKeybindingItem,
 	KeybindingsRegistry,
 	KeybindingWeight
-} from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ResolvedKeybindingItem } from '../../../../platform/keybinding/common/resolvedKeybindingItem.js';
-import { IKeyboardLayoutService } from '../../../../platform/keyboardLayout/common/keyboardLayout.js';
-import { IKeyboardMapper } from '../../../../platform/keyboardLayout/common/keyboardMapper.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ResolvedKeybindingItem } from '@sidex/platform/keybinding/common/resolvedKeybindingItem.js';
+import { IKeyboardLayoutService } from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
+import { IKeyboardMapper } from '@sidex/platform/keyboardLayout/common/keyboardMapper.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 
 // workbench
-import { remove } from '../../../../base/common/arrays.js';
+import { remove } from '@sidex/base/common/arrays.js';
 import { commandsExtensionPoint } from '../../actions/common/menusExtensionPoint.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import { ExtensionMessageCollector, ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.js';
@@ -84,7 +84,7 @@ import { IUserDataProfileService } from '../../userDataProfile/common/userDataPr
 import { IUserKeybindingItem, KeybindingIO, OutputBuilder } from '../common/keybindingIO.js';
 import { IKeyboard, INavigatorWithKeyboard } from './navigatorKeyboard.js';
 import { getAllUnboundCommands } from './unboundCommands.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 
 function isValidContributedKeyBinding(keyBinding: ContributedKeyBinding, rejects: string[]): boolean {
 	if (!keyBinding) {

@@ -8,26 +8,26 @@ import {
 	INCREASE_HOVER_VERBOSITY_ACTION_ID,
 	SHOW_OR_FOCUS_HOVER_ACTION_ID
 } from './hoverActionIds.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor, IEditorMouseEvent, IPartialEditorMouseEvent } from '../../../browser/editorBrowser.js';
 import { ConfigurationChangedEvent, EditorOption } from '../../../common/config/editorOptions.js';
 import { Range } from '../../../common/core/range.js';
 import { IEditorContribution, IScrollEvent } from '../../../common/editorCommon.js';
 import { HoverStartMode, HoverStartSource } from './hoverOperation.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { InlineSuggestionHintsContentWidget } from '../../inlineCompletions/browser/hintsWidget/inlineCompletionsHintsWidget.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResultKind } from '../../../../platform/keybinding/common/keybindingResolver.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver.js';
 import { HoverVerbosityAction } from '../../../common/languages.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { isMousePositionWithinElement, shouldShowHover, isTriggerModifierPressed } from './hoverUtils.js';
 import { ContentHoverWidgetWrapper } from './contentHoverWidgetWrapper.js';
 import './hover.css';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { isOnColorDecorator } from '../../colorPicker/browser/hoverColorPicker/hoverColorPicker.js';
-import { isModifierKey, KeyCode } from '../../../../base/common/keyCodes.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { isModifierKey, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 
 // sticky hover widget which doesn't disappear on focus out and such
 const _sticky = false;

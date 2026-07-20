@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import Severity from '../../../base/common/severity.js';
-import * as strings from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import Severity from '@sidex/base/common/severity.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { ExtensionKind } from '../../environment/common/environment.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';

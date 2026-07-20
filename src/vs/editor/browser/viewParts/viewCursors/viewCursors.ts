@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './viewCursors.css';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { IntervalTimer, TimeoutTimer } from '../../../../base/common/async.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IntervalTimer, TimeoutTimer } from '@sidex/base/common/async.js';
 import { ViewPart } from '../../view/viewPart.js';
 import { IViewCursorRenderData, ViewCursor, CursorPlurality } from './viewCursor.js';
 import {
@@ -25,10 +25,10 @@ import {
 import { RenderingContext, RestrictedRenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
 import { CursorChangeReason } from '../../../common/cursorEvents.js';
-import { WindowIntervalTimer, getWindow } from '../../../../base/browser/dom.js';
+import { WindowIntervalTimer, getWindow } from '@sidex/base/browser/dom.js';
 
 /**
  * View cursors is a view part responsible for rendering the primary cursor and

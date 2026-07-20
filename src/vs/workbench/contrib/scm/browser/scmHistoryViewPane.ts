@@ -4,26 +4,26 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/scm.css';
-import { $, append, h, reset } from '../../../../base/browser/dom.js';
-import { HoverStyle, IDelayedHoverOptions, IHoverLifecycleOptions } from '../../../../base/browser/ui/hover/hover.js';
-import { IconLabel } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
-import { IIdentityProvider, IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { LabelFuzzyScore } from '../../../../base/browser/ui/tree/abstractTree.js';
+import { $, append, h, reset } from '@sidex/base/browser/dom.js';
+import { HoverStyle, IDelayedHoverOptions, IHoverLifecycleOptions } from '@sidex/base/browser/ui/hover/hover.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { IIdentityProvider, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { LabelFuzzyScore } from '@sidex/base/browser/ui/tree/abstractTree.js';
 import {
 	IAsyncDataSource,
 	ITreeContextMenuEvent,
 	ITreeDragAndDrop,
 	ITreeElementRenderDetails,
 	ITreeNode
-} from '../../../../base/browser/ui/tree/tree.js';
-import { createMatches, FuzzyScore, IMatch } from '../../../../base/common/filters.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { createMatches, FuzzyScore, IMatch } from '@sidex/base/common/filters.js';
 import {
 	combinedDisposable,
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	derived,
@@ -36,19 +36,19 @@ import {
 	runOnChange,
 	observableSignal,
 	ISettableObservable
-} from '../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IOpenEvent, WorkbenchCompressibleAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { asCssVariable, ColorIdentifier, foreground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IFileIconTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IOpenEvent, WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { asCssVariable, ColorIdentifier, foreground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IFileIconTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IViewPaneOptions, ViewAction, ViewPane, ViewPaneShowActions } from '../../../browser/parts/views/viewPane.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import {
@@ -91,9 +91,9 @@ import {
 	ISCMViewService,
 	ViewMode
 } from '../common/scm.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { stripIcons } from '../../../../base/common/iconLabels.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import {
 	Action2,
 	IMenuService,
@@ -101,56 +101,56 @@ import {
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { Sequencer, Throttler } from '../../../../base/common/async.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ActionRunner, IAction, IActionRunner } from '../../../../base/common/actions.js';
-import { delta, groupBy } from '../../../../base/common/arrays.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { Sequencer, Throttler } from '@sidex/base/common/async.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ActionRunner, IAction, IActionRunner } from '@sidex/base/common/actions.js';
+import { delta, groupBy } from '@sidex/base/common/arrays.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
 import { ContextKeys } from './scmViewPane.js';
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IDropdownMenuActionViewItemOptions } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IDropdownMenuActionViewItemOptions } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
-import { compare } from '../../../../base/common/strings.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { groupBy as groupBy2 } from '../../../../base/common/collections.js';
+import { groupBy as groupBy2 } from '@sidex/base/common/collections.js';
 import {
 	getActionBarActions,
 	getFlatContextMenuActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { IResourceLabel, ResourceLabels } from '../../../browser/labels.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { basename } from '../../../../base/common/path.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { basename } from '@sidex/base/common/path.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { ScmHistoryItemResolver } from '../../multiDiffEditor/browser/scmMultiDiffSourceResolver.js';
-import { IResourceNode, ResourceTree } from '../../../../base/common/resourceTree.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ITreeCompressionDelegate } from '../../../../base/browser/ui/tree/asyncDataTree.js';
+import { IResourceNode, ResourceTree } from '@sidex/base/common/resourceTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITreeCompressionDelegate } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
 import {
 	ICompressibleKeyboardNavigationLabelProvider,
 	ICompressibleTreeRenderer
-} from '../../../../base/browser/ui/tree/objectTree.js';
-import { ICompressedTreeNode } from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IDragAndDropData } from '../../../../base/browser/dnd.js';
-import { ElementsDragAndDropData, ListViewTargetSector } from '../../../../base/browser/ui/list/listView.js';
-import { CodeDataTransfers } from '../../../../platform/dnd/browser/dnd.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
+} from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import { ElementsDragAndDropData, ListViewTargetSector } from '@sidex/base/browser/ui/list/listView.js';
+import { CodeDataTransfers } from '@sidex/platform/dnd/browser/dnd.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
 
 interface SCMHistoryItemTransferData {
 	readonly name: string;
@@ -631,7 +631,7 @@ class HistoryItemRenderer
 		const { content, disposables } = toHistoryItemHoverContent(this._markdownRendererService, historyItem, true);
 		const { hoverOptions, hoverLifecycleOptions } = this._getHoverOptions();
 
-		const hoverActions: import('../../../../base/browser/ui/hover/hover.js').IHoverAction[] = [];
+		const hoverActions: import('@sidex/base/browser/ui/hover/hover.js').IHoverAction[] = [];
 
 		hoverActions.push({
 			label: `${historyItem.displayId ?? historyItem.id.substring(0, 7)}  `,

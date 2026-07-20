@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { isString } from '../../../../../base/common/types.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { ICommandDetectionCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { IPromptInputModel } from '../../../../../platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isString } from '@sidex/base/common/types.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { ICommandDetectionCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { IPromptInputModel } from '@sidex/platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
 import { ITerminalCompletion, TerminalCompletionItemKind } from './terminalCompletionItem.js';
 
 export class TerminalSuggestTelemetry extends Disposable {

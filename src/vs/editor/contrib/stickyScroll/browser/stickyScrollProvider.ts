@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { binarySearch } from '../../../../base/common/arrays.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { binarySearch } from '@sidex/base/common/arrays.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { ILanguageConfigurationService } from '../../../common/languages/languageConfigurationRegistry.js';
 import { StickyModelProvider, IStickyModelProvider } from './stickyScrollModelProvider.js';
 import { StickyElement, StickyModel, StickyRange } from './stickyScrollElement.js';

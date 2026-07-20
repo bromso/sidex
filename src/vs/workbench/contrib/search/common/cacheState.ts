@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { defaultGenerator } from '../../../../base/common/idGenerator.js';
+import { defaultGenerator } from '@sidex/base/common/idGenerator.js';
 import { IFileQuery } from '../../../services/search/common/search.js';
-import { equals } from '../../../../base/common/objects.js';
+import { equals } from '@sidex/base/common/objects.js';
 
 enum LoadingPhase {
 	Created = 1,

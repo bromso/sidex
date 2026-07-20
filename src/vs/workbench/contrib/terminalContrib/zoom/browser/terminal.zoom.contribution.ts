@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { Event } from '../../../../../base/common/event.js';
-import { IMouseWheelEvent } from '../../../../../base/browser/mouseEvent.js';
-import { MouseWheelClassifier } from '../../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { isMacintosh } from '../../../../../base/common/platform.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { MouseWheelClassifier } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	IDetachedTerminalInstance,
 	ITerminalContribution,
@@ -21,13 +21,13 @@ import {
 	type IDetachedCompatibleTerminalContributionContext,
 	type ITerminalContributionContext
 } from '../../../terminal/browser/terminalExtensions.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { isNumber } from '../../../../../base/common/types.js';
+import { isNumber } from '@sidex/base/common/types.js';
 import { defaultTerminalFontSize } from '../../../terminal/common/terminalConfiguration.js';
 import { TerminalZoomCommandId, TerminalZoomSettingId } from '../common/terminal.zoom.js';
-import * as dom from '../../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 
 class TerminalMouseWheelZoomContribution extends Disposable implements ITerminalContribution {
 	static readonly ID = 'terminal.mouseWheelZoom';

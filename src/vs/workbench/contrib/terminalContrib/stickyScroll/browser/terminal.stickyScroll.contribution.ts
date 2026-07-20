@@ -5,9 +5,9 @@
 
 import './media/stickyScroll.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
 import { registerTerminalContribution } from '../../../terminal/browser/terminalExtensions.js';
 import { TerminalStickyScrollContribution } from './terminalStickyScrollContribution.js';

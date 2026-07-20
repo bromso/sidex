@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import {
 	BaseActionViewItem,
 	IActionViewItemOptions,
 	IBaseActionViewItemOptions
-} from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
-import { DropdownMenuActionViewItem } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { Action, IAction, IActionRunner, Separator } from '../../../../base/common/actions.js';
-import { Delayer } from '../../../../base/common/async.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
+} from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { DropdownMenuActionViewItem } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { Action, IAction, IActionRunner, Separator } from '@sidex/base/common/actions.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 import { localize } from '@sidex/base/nls.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	ContextScopedSuggestEnabledInputWithHistory,
 	SuggestEnabledInputWithHistory

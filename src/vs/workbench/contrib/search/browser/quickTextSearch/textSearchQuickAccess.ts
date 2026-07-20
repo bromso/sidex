@@ -2,21 +2,21 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { CancellationToken, CancellationTokenSource } from '../../../../../base/common/cancellation.js';
-import { DisposableStore, IDisposable } from '../../../../../base/common/lifecycle.js';
-import { ResourceSet } from '../../../../../base/common/map.js';
-import { basenameOrAuthority, dirname } from '../../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { IRange } from '../../../../../editor/common/core/range.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
+import { basenameOrAuthority, dirname } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ITextEditorSelection } from '../../../../../platform/editor/common/editor.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextEditorSelection } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	WorkbenchCompressibleAsyncDataTree,
 	getSelectionKeyboardEvent
-} from '../../../../../platform/list/browser/listService.js';
+} from '@sidex/platform/list/browser/listService.js';
 import {
 	FastAndSlowPicks,
 	IPickerQuickAccessItem,
@@ -24,19 +24,19 @@ import {
 	PickerQuickAccessProvider,
 	Picks,
 	TriggerAction
-} from '../../../../../platform/quickinput/browser/pickerQuickAccess.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
 import {
 	DefaultQuickAccessFilterValue,
 	IQuickAccessProviderRunOptions
-} from '../../../../../platform/quickinput/common/quickAccess.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
 import {
 	IKeyMods,
 	IQuickPick,
 	IQuickPickItem,
 	QuickInputButtonLocation,
 	QuickInputHideReason
-} from '../../../../../platform/quickinput/common/quickInput.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchEditorConfiguration } from '../../../../common/editor.js';
 import { searchDetailsIcon, searchOpenInFileIcon, searchActivityBarIcon } from '../searchIcons.js';
 import { SearchView, getEditorSelectionFromMatch } from '../searchView.js';
@@ -44,12 +44,12 @@ import { IWorkbenchSearchConfiguration, getOutOfWorkspaceEditorResources } from 
 import { ACTIVE_GROUP, IEditorService, SIDE_GROUP } from '../../../../services/editor/common/editorService.js';
 import { ITextQueryBuilderOptions, QueryBuilder } from '../../../../services/search/common/queryBuilder.js';
 import { IPatternInfo, ISearchComplete, ITextQuery, VIEW_ID } from '../../../../services/search/common/search.js';
-import { Event } from '../../../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 import { PickerEditorState } from '../../../../browser/quickaccess.js';
 import { IViewsService } from '../../../../services/views/common/viewsService.js';
-import { Sequencer } from '../../../../../base/common/async.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
+import { Sequencer } from '@sidex/base/common/async.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { SearchModelImpl } from '../searchTreeModel/searchModel.js';
 import {
 	SearchModelLocation,
@@ -59,7 +59,7 @@ import {
 	ISearchResult
 } from '../searchTreeModel/searchTreeCommon.js';
 import { searchComparer } from '../searchCompare.js';
-import { IMatch } from '../../../../../base/common/filters.js';
+import { IMatch } from '@sidex/base/common/filters.js';
 
 export const TEXT_SEARCH_QUICK_ACCESS_PREFIX = '%';
 

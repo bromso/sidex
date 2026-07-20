@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, getActiveWindow } from '../../../../../base/browser/dom.js';
-import { FastDomNode } from '../../../../../base/browser/fastDomNode.js';
+import { addDisposableListener, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import {
 	AccessibilitySupport,
 	IAccessibilityService
-} from '../../../../../platform/accessibility/common/accessibility.js';
+} from '@sidex/platform/accessibility/common/accessibility.js';
 import { EditorOption, IComputedEditorOptions } from '../../../../common/config/editorOptions.js';
 import { EndOfLineSequence } from '../../../../common/model.js';
 import { ViewContext } from '../../../../common/viewModel/viewContext.js';
 import { Selection } from '../../../../common/core/selection.js';
 import { SimplePagedScreenReaderStrategy, ISimpleScreenReaderContentState } from '../screenReaderUtils.js';
 import { PositionOffsetTransformer } from '../../../../common/core/text/positionToOffset.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IME } from '../../../../../base/common/ime.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IME } from '@sidex/base/common/ime.js';
 import { ViewController } from '../../../view/viewController.js';
 import { IScreenReaderContent } from './screenReaderUtils.js';
 

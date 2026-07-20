@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, timeout } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { getErrorMessage, isCancellationError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
-import { Mimes } from '../../../base/common/mime.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { ConfigurationSyncStore } from '../../../base/common/product.js';
-import { joinPath, relativePath } from '../../../base/common/resources.js';
-import { isObject, isString } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { IHeaders, IRequestContext, IRequestOptions } from '../../../base/parts/request/common/request.js';
+import { CancelablePromise, createCancelablePromise, timeout } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { ConfigurationSyncStore } from '@sidex/base/common/product.js';
+import { joinPath, relativePath } from '@sidex/base/common/resources.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IHeaders, IRequestContext, IRequestOptions } from '@sidex/base/parts/request/common/request.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
@@ -49,8 +49,8 @@ import {
 	UserDataSyncStoreError,
 	UserDataSyncStoreType
 } from './userDataSync.js';
-import { VSBufferReadableStream } from '../../../base/common/buffer.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 
 type IDownloadLatestDataType = {
 	resources?: {

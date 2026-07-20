@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { type ITerminalBackend } from '../../../../../platform/terminal/common/terminal.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { type ITerminalBackend } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	registerWorkbenchContribution2,
 	WorkbenchPhase,

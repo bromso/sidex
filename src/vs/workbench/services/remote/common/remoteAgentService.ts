@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	RemoteAgentConnectionContext,
 	IRemoteAgentEnvironment
-} from '../../../../platform/remote/common/remoteAgentEnvironment.js';
-import { IChannel, IServerChannel } from '../../../../base/parts/ipc/common/ipc.js';
-import { IDiagnosticInfoOptions, IDiagnosticInfo } from '../../../../platform/diagnostics/common/diagnostics.js';
-import { Event } from '../../../../base/common/event.js';
-import { ITelemetryData, TelemetryLevel } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/remote/common/remoteAgentEnvironment.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
+import { IDiagnosticInfoOptions, IDiagnosticInfo } from '@sidex/platform/diagnostics/common/diagnostics.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ITelemetryData, TelemetryLevel } from '@sidex/platform/telemetry/common/telemetry.js';
 
 export type PersistentConnectionEvent = unknown;
 

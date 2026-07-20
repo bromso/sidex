@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import {
 	ICodeEditor,
 	IEditorMouseEvent,
@@ -15,7 +15,7 @@ import {
 } from '../../../browser/editorBrowser.js';
 import { ConfigurationChangedEvent, EditorOption } from '../../../common/config/editorOptions.js';
 import { HoverOperation, HoverResult, HoverStartMode } from './hoverOperation.js';
-import { HoverWidget } from '../../../../base/browser/ui/hover/hoverWidget.js';
+import { HoverWidget } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import { IHoverWidget } from './hoverTypes.js';
 import {
 	IHoverMessage,

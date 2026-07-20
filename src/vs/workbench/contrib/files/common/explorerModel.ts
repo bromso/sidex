@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { isEqual } from '../../../../base/common/extpath.js';
-import { posix } from '../../../../base/common/path.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IFileStat, IFileService, FileSystemProviderCapabilities } from '../../../../platform/files/common/files.js';
-import { rtrim, startsWithIgnoreCase, equalsIgnoreCase } from '../../../../base/common/strings.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { joinPath, isEqualOrParent, basenameOrAuthority } from '../../../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isEqual } from '@sidex/base/common/extpath.js';
+import { posix } from '@sidex/base/common/path.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IFileStat, IFileService, FileSystemProviderCapabilities } from '@sidex/platform/files/common/files.js';
+import { rtrim, startsWithIgnoreCase, equalsIgnoreCase } from '@sidex/base/common/strings.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { joinPath, isEqualOrParent, basenameOrAuthority } from '@sidex/base/common/resources.js';
 import { IFilesConfiguration, SortOrder } from './files.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { ExplorerFileNestingTrie } from './explorerFileNestingTrie.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IFilesConfigurationService } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 
 export class ExplorerModel implements IDisposable {
 	private _roots!: ExplorerItem[];

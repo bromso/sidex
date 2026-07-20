@@ -7,7 +7,7 @@
  *  workbench can keep calling `registerWindowDriver` unconditionally.
  *--------------------------------------------------------------------------------------------*/
 
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export function registerWindowDriver(_instantiationService: IInstantiationService): void {
 	// intentionally empty — smoke-test hook

@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isFirefox } from '../../../../base/browser/browser.js';
-import { raceTimeout } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { stripIcons } from '../../../../base/common/iconLabels.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Language } from '../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IEditor } from '../../../../editor/common/editorCommon.js';
-import { AbstractEditorCommandsQuickAccessProvider } from '../../../../editor/contrib/quickAccess/browser/commandsQuickAccess.js';
+import { isFirefox } from '@sidex/base/browser/browser.js';
+import { raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Language } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IEditor } from '@sidex/editor/common/editorCommon.js';
+import { AbstractEditorCommandsQuickAccessProvider } from '@sidex/editor/contrib/quickAccess/browser/commandsQuickAccess.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { isLocalizedString } from '../../../../platform/action/common/action.js';
+import { isLocalizedString } from '@sidex/platform/action/common/action.js';
 import {
 	Action2,
 	IMenuService,
 	MenuId,
 	MenuItemAction,
 	SubmenuItemAction
-} from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { CommandsHistory, ICommandQuickPick } from '../../../../platform/quickinput/browser/commandsQuickAccess.js';
-import { TriggerAction } from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { DefaultQuickAccessFilterValue } from '../../../../platform/quickinput/common/quickAccess.js';
-import { IQuickInputService, IQuickPickSeparator } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { CommandsHistory, ICommandQuickPick } from '@sidex/platform/quickinput/browser/commandsQuickAccess.js';
+import { TriggerAction } from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { DefaultQuickAccessFilterValue } from '@sidex/platform/quickinput/common/quickAccess.js';
+import { IQuickInputService, IQuickPickSeparator } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IWorkbenchQuickAccessConfiguration } from '../../../browser/quickaccess.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';

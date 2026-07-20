@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { OperatingSystem } from '../../../../../base/common/platform.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
 import type { Terminal as XTermTerminal, IBuffer, ITerminalAddon } from '@xterm/xterm';
 
 /**

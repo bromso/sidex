@@ -2,18 +2,18 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { matchesFuzzy } from '../../../../base/common/filters.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { matchesFuzzy } from '@sidex/base/common/filters.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	FastAndSlowPicks,
 	IPickerQuickAccessItem,
 	PickerQuickAccessProvider,
 	Picks
-} from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { IQuickPickSeparator } from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { IQuickPickSeparator } from '@sidex/platform/quickinput/common/quickInput.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { DEBUG_CONSOLE_QUICK_ACCESS_PREFIX, SELECT_AND_START_ID } from './debugCommands.js';
 import { IDebugService, IDebugSession, REPL_VIEW_ID } from '../common/debug.js';

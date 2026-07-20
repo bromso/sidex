@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { TreeFindMode } from '../../../../base/browser/ui/tree/abstractTree.js';
-import type { ICompressedTreeNode } from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import type { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { TreeFindMode } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import type { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import type { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
 import {
 	ITreeElement,
 	ITreeFilter,
 	ITreeNode,
 	TreeFilterResult,
 	TreeVisibility
-} from '../../../../base/browser/ui/tree/tree.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { createMatches, FuzzyScore } from '../../../../base/common/filters.js';
-import { normalizeDriveLetter, tildify } from '../../../../base/common/labels.js';
-import { dispose, DisposableMap, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { isAbsolute, normalize, posix } from '../../../../base/common/path.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { ltrim } from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { createMatches, FuzzyScore } from '@sidex/base/common/filters.js';
+import { normalizeDriveLetter, tildify } from '@sidex/base/common/labels.js';
+import { dispose, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isAbsolute, normalize, posix } from '@sidex/base/common/path.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { ltrim } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchCompressibleObjectTree } from '../../../../platform/list/browser/listService.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IFileIconTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchCompressibleObjectTree } from '@sidex/platform/list/browser/listService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IFileIconTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IResourceLabel, IResourceLabelOptions, IResourceLabelProps, ResourceLabels } from '../../../browser/labels.js';
 import { ViewAction, ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';

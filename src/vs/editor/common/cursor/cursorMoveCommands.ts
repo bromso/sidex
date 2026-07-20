@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as types from '../../../base/common/types.js';
+import * as types from '@sidex/base/common/types.js';
 import {
 	CursorState,
 	ICursorSimpleModel,
@@ -15,7 +15,7 @@ import { MoveOperations } from './cursorMoveOperations.js';
 import { WordOperations } from './cursorWordOperations.js';
 import { IPosition, Position } from '../core/position.js';
 import { Range } from '../core/range.js';
-import { ICommandMetadata } from '../../../platform/commands/common/commands.js';
+import { ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
 import { IViewModel } from '../viewModel.js';
 import { TextDirection } from '../model.js';
 

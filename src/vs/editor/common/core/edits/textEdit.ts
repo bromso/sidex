@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareBy, equals } from '../../../../base/common/arrays.js';
-import { assertFn, checkAdjacentItems } from '../../../../base/common/assert.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { commonPrefixLength, commonSuffixLength } from '../../../../base/common/strings.js';
+import { compareBy, equals } from '@sidex/base/common/arrays.js';
+import { assertFn, checkAdjacentItems } from '@sidex/base/common/assert.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { commonPrefixLength, commonSuffixLength } from '@sidex/base/common/strings.js';
 import { ISingleEditOperation } from '../editOperation.js';
 import { BaseStringEdit, StringReplacement } from './stringEdit.js';
 import { Position } from '../position.js';
 import { Range } from '../range.js';
 import { TextLength } from '../text/textLength.js';
 import { AbstractText, StringText } from '../text/abstractText.js';
-import { IEquatable } from '../../../../base/common/equals.js';
+import { IEquatable } from '@sidex/base/common/equals.js';
 
 export class TextEdit {
 	public static fromStringEdit(edit: BaseStringEdit, initialState: AbstractText): TextEdit {

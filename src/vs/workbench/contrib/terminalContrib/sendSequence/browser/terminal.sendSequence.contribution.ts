@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { isIOS, isMacintosh, isWindows } from '../../../../../base/common/platform.js';
-import { isObject, isString } from '../../../../../base/common/types.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isIOS, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
-import { ContextKeyExpr, type ContextKeyExpression } from '../../../../../platform/contextkey/common/contextkey.js';
-import type { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ContextKeyExpr, type ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import type { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	KeybindingsRegistry,
 	KeybindingWeight,
 	type IKeybindings
-} from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IQuickInputService } from '../../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	GeneralShellType,
 	TerminalSettingId,
 	WindowsShellType
-} from '../../../../../platform/terminal/common/terminal.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IConfigurationResolverService } from '../../../../services/configurationResolver/common/configurationResolver.js';
 import { IHistoryService } from '../../../../services/history/common/history.js';
 import { ITerminalService } from '../../../terminal/browser/terminal.js';

@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	ETAG_DISABLED,
 	FileOperationError,
@@ -17,7 +17,7 @@ import {
 	IFileStreamContent,
 	IWriteFileOptions,
 	NotModifiedSinceFileOperationError
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { ISaveOptions, IRevertOptions, SaveReason } from '../../../common/editor.js';
 import { IWorkingCopyService } from './workingCopyService.js';
 import {
@@ -26,18 +26,18 @@ import {
 	IWorkingCopySaveEvent,
 	WorkingCopyCapabilities
 } from './workingCopy.js';
-import { raceCancellation, TaskSequentializer, timeout } from '../../../../base/common/async.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { raceCancellation, TaskSequentializer, timeout } from '@sidex/base/common/async.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IWorkingCopyFileService } from './workingCopyFileService.js';
-import { VSBufferReadableStream } from '../../../../base/common/buffer.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 import { IWorkingCopyBackupService, IResolvedWorkingCopyBackup } from './workingCopyBackup.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { hash } from '../../../../base/common/hash.js';
-import { isErrorWithActions, toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { IAction, toAction } from '../../../../base/common/actions.js';
-import { isWindows } from '../../../../base/common/platform.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { isErrorWithActions, toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import { isWindows } from '@sidex/base/common/platform.js';
 import { IWorkingCopyEditorService } from './workingCopyEditorService.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IElevatedFileService } from '../../files/common/elevatedFileService.js';
@@ -48,14 +48,14 @@ import {
 	IFileWorkingCopyModelFactory,
 	SnapshotContext
 } from './fileWorkingCopy.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import {
 	IProgress,
 	IProgressService,
 	IProgressStep,
 	ProgressLocation
-} from '../../../../platform/progress/common/progress.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
+} from '@sidex/platform/progress/common/progress.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
 
 /**
  * Stored file specific working copy model factory.

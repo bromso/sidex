@@ -3,39 +3,39 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { Delayer } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './media/searchEditor.css';
-import { ICodeEditorWidgetOptions } from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { ICodeEditorViewState } from '../../../../editor/common/editorCommon.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { ReferencesController } from '../../../../editor/contrib/gotoSymbol/browser/peek/referencesController.js';
+import { ICodeEditorWidgetOptions } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { ICodeEditorViewState } from '@sidex/editor/common/editorCommon.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { ReferencesController } from '@sidex/editor/contrib/gotoSymbol/browser/peek/referencesController.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IEditorProgressService, LongRunningOperation } from '../../../../platform/progress/common/progress.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { inputBorder, registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IEditorProgressService, LongRunningOperation } from '@sidex/platform/progress/common/progress.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { inputBorder, registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { AbstractTextCodeEditor } from '../../../browser/parts/editor/textCodeEditor.js';
 import { EditorInputCapabilities, IEditorOpenContext } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
@@ -57,22 +57,22 @@ import {
 	SearchSortOrder
 } from '../../../services/search/common/search.js';
 import { searchDetailsIcon } from '../../search/browser/searchIcons.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { TextSearchCompleteMessage } from '../../../services/search/common/searchExtTypes.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { renderSearchMessage } from '../../search/browser/searchMessage.js';
 import {
 	EditorExtensionsRegistry,
 	IEditorContributionDescription
-} from '../../../../editor/browser/editorExtensions.js';
-import { UnusualLineTerminatorsDetector } from '../../../../editor/contrib/unusualLineTerminators/browser/unusualLineTerminators.js';
-import { defaultToggleStyles, getInputBoxStyle } from '../../../../platform/theme/browser/defaultStyles.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { UnusualLineTerminatorsDetector } from '@sidex/editor/contrib/unusualLineTerminators/browser/unusualLineTerminators.js';
+import { defaultToggleStyles, getInputBoxStyle } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { SearchContext } from '../../search/common/constants.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { ISearchResult } from '../../search/browser/searchTreeModel/searchTreeCommon.js';
 
 const RESULT_LINE_REGEX = /^(\s+)(\d+)(: |  )(\s*)(.*)$/;

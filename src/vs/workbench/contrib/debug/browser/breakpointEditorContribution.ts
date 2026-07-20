@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isSafari } from '../../../../base/browser/browser.js';
-import { BrowserFeatures } from '../../../../base/browser/canIUse.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { IAction, Separator, SubmenuAction, toAction } from '../../../../base/common/actions.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { RunOnceScheduler, timeout } from '../../../../base/common/async.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { dispose, disposeIfDisposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import * as env from '../../../../base/common/platform.js';
-import severity from '../../../../base/common/severity.js';
-import { noBreakWhitespace } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { isSafari } from '@sidex/base/browser/browser.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IAction, Separator, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler, timeout } from '@sidex/base/common/async.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { dispose, disposeIfDisposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as env from '@sidex/base/common/platform.js';
+import severity from '@sidex/base/common/severity.js';
+import { noBreakWhitespace } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import {
 	ContentWidgetPositionPreference,
 	IActiveCodeEditor,
@@ -28,11 +28,11 @@ import {
 	IContentWidgetPosition,
 	IEditorMouseEvent,
 	MouseTargetType
-} from '../../../../editor/browser/editorBrowser.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { IPosition } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	GlyphMarginLane,
 	IModelDecorationOptions,
@@ -41,16 +41,16 @@ import {
 	ITextModel,
 	OverviewRulerLane,
 	TrackedRangeStickiness
-} from '../../../../editor/common/model.js';
+} from '@sidex/editor/common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant, themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant, themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 import { GutterActionsRegistry } from '../../codeEditor/browser/editorLineNumberMenu.js';
 import { getBreakpointMessageAndIcon } from './breakpointsView.js';
 import { BreakpointWidget } from './breakpointWidget.js';

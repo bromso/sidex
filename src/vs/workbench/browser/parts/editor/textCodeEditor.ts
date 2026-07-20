@@ -4,22 +4,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { ITextEditorPane } from '../../../common/editor.js';
 import { applyTextEditorOptions } from '../../../common/editor/editorOptions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { IEditorOptions as ICodeEditorOptions } from '../../../../editor/common/config/editorOptions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import {
 	CodeEditorWidget,
 	ICodeEditorWidgetOptions
-} from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { IEditorViewState, ScrollType } from '../../../../editor/common/editorCommon.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+} from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { IEditorViewState, ScrollType } from '@sidex/editor/common/editorCommon.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { AbstractTextEditor } from './textEditor.js';
-import { Dimension } from '../../../../base/browser/dom.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
 
 /**
  * A text editor using the code editor widget.

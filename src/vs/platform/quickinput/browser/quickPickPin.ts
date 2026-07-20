@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { localize } from '@sidex/base/nls.js';
 import { IQuickPick, IQuickPickItem, QuickPickItem } from '../common/quickInput.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 
 const pinButtonClass = ThemeIcon.asClassName(Codicon.pin);
 const pinnedButtonClass = ThemeIcon.asClassName(Codicon.pinned);

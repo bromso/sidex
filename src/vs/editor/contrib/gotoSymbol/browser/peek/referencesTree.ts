@@ -3,27 +3,27 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { CountBadge } from '../../../../../base/browser/ui/countBadge/countBadge.js';
-import { HighlightedLabel } from '../../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { IconLabel } from '../../../../../base/browser/ui/iconLabel/iconLabel.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { HighlightedLabel } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
 import {
 	IIdentityProvider,
 	IKeyboardNavigationLabelProvider,
 	IListVirtualDelegate
-} from '../../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../../base/browser/ui/list/listWidget.js';
-import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '../../../../../base/browser/ui/tree/tree.js';
-import { createMatches, FuzzyScore, IMatch } from '../../../../../base/common/filters.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { basename, dirname } from '../../../../../base/common/resources.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { createMatches, FuzzyScore, IMatch } from '@sidex/base/common/filters.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { basename, dirname } from '@sidex/base/common/resources.js';
 import { ITextModelService } from '../../../../common/services/resolverService.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { defaultCountBadgeStyles } from '../../../../../platform/theme/browser/defaultStyles.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { FileReferences, OneReference, ReferencesModel } from '../referencesModel.js';
 
 //#region data source

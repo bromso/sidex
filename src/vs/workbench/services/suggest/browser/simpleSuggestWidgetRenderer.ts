@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, append, show } from '../../../../base/browser/dom.js';
-import { IconLabel, IIconLabelValueOptions } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
-import { IListRenderer } from '../../../../base/browser/ui/list/list.js';
+import { $, append, show } from '@sidex/base/browser/dom.js';
+import { IconLabel, IIconLabelValueOptions } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { IListRenderer } from '@sidex/base/browser/ui/list/list.js';
 import { SimpleCompletionItem } from './simpleCompletionItem.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { createMatches } from '../../../../base/common/filters.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { getIconClasses } from '../../../../editor/common/services/getIconClasses.js';
-import { URI } from '../../../../base/common/uri.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { createMatches } from '@sidex/base/common/filters.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
 
 export function getAriaId(index: number): string {
 	return `simple-suggest-aria-id-${index}`;

@@ -4,14 +4,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/paneCompositePart.css';
-import { Event } from '../../../base/common/event.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { IProgressIndicator } from '../../../platform/progress/common/progress.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgressIndicator } from '@sidex/platform/progress/common/progress.js';
 import { PaneComposite, PaneCompositeDescriptor, PaneCompositeRegistry } from '../panecomposite.js';
 import { IPaneComposite } from '../../common/panecomposite.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../common/views.js';
-import { DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { IView } from '../../../base/browser/ui/grid/grid.js';
+import { DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IView } from '@sidex/base/browser/ui/grid/grid.js';
 import { IWorkbenchLayoutService, Parts, SINGLE_WINDOW_PARTS } from '../../services/layout/browser/layoutService.js';
 import { CompositePart, ICompositePartOptions, ICompositeTitleLabel } from './compositePart.js';
 import { IPaneCompositeBarOptions, PaneCompositeBar } from './paneCompositeBar.js';
@@ -24,30 +24,30 @@ import {
 	EventType,
 	prepend,
 	getWindow
-} from '../../../base/browser/dom.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { INotificationService } from '../../../platform/notification/common/notification.js';
-import { IStorageService } from '../../../platform/storage/common/storage.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { IThemeService } from '../../../platform/theme/common/themeService.js';
-import { IContextKey, IContextKeyService } from '../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/base/browser/dom.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
 import { IComposite } from '../../common/composite.js';
 import { localize } from '@sidex/base/nls.js';
 import { CompositeDragAndDropObserver, toggleDropEffect } from '../dnd.js';
 import { EDITOR_DRAG_AND_DROP_BACKGROUND } from '../../common/theme.js';
-import { IMenuService, MenuId } from '../../../platform/actions/common/actions.js';
-import { ActionsOrientation } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { Gesture, EventType as GestureEventType } from '../../../base/browser/touch.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { IAction, SubmenuAction } from '../../../base/common/actions.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Gesture, EventType as GestureEventType } from '@sidex/base/browser/touch.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IAction, SubmenuAction } from '@sidex/base/common/actions.js';
 import { Composite } from '../composite.js';
 import { ViewsSubMenu } from './views/viewPaneContainer.js';
-import { getActionBarActions } from '../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IHoverService } from '../../../platform/hover/browser/hover.js';
-import { HiddenItemStrategy, MenuWorkbenchToolBar } from '../../../platform/actions/browser/toolbar.js';
-import { DeferredPromise } from '../../../base/common/async.js';
+import { getActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
 
 export enum CompositeBarPosition {
 	TOP,

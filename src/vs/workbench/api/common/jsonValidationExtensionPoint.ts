@@ -5,9 +5,9 @@
 
 import * as nls from '@sidex/base/nls.js';
 import { ExtensionsRegistry } from '../../services/extensions/common/extensionsRegistry.js';
-import * as resources from '../../../base/common/resources.js';
-import { isString } from '../../../base/common/types.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { isString } from '@sidex/base/common/types.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	Extensions,
 	IExtensionFeatureTableRenderer,
@@ -16,10 +16,10 @@ import {
 	IRowData,
 	ITableData
 } from '../../services/extensionManagement/common/extensionFeatures.js';
-import { IExtensionManifest } from '../../../platform/extensions/common/extensions.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { SyncDescriptor } from '../../../platform/instantiation/common/descriptors.js';
-import { MarkdownString } from '../../../base/common/htmlContent.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
 
 interface IJSONValidationExtensionPoint {
 	fileMatch: string | string[];

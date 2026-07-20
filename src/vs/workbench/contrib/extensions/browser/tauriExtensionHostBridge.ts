@@ -9,16 +9,16 @@ import {
 	Disposable,
 	DisposableStore as _DisposableStore,
 	toDisposable as _toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { Emitter } from '../../../../base/common/event.js';
-import * as languages from '../../../../editor/common/languages.js';
-import { LanguageSelector } from '../../../../editor/common/languageSelector.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { URI } from '../../../../base/common/uri.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { LanguageSelector } from '@sidex/editor/common/languageSelector.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	IWorkbenchContribution,
 	WorkbenchPhase,

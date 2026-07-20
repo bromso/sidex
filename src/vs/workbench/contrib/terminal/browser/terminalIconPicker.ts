@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension, getActiveDocument } from '../../../../base/browser/dom.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { codiconsLibrary } from '../../../../base/common/codiconsLibrary.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { getIconRegistry, IconContribution } from '../../../../platform/theme/common/iconRegistry.js';
+import { Dimension, getActiveDocument } from '@sidex/base/browser/dom.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { codiconsLibrary } from '@sidex/base/common/codiconsLibrary.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { getIconRegistry, IconContribution } from '@sidex/platform/theme/common/iconRegistry.js';
 import { WorkbenchIconSelectBox } from '../../../services/userDataProfile/browser/iconSelectBox.js';
 
 const icons = new Lazy<IconContribution[]>(() => {

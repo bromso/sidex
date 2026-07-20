@@ -15,21 +15,21 @@ import {
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
-import { dispose, Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { dispose, Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	IEditorGroupsService,
 	IEditorGroup,
 	GroupsOrder,
 	IEditorGroupsContainer
 } from '../../../services/editor/common/editorGroupsService.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { LinkedMap, Touch, ResourceMap } from '../../../../base/common/map.js';
-import { equals } from '../../../../base/common/objects.js';
-import { IResourceEditorInputIdentifier } from '../../../../platform/editor/common/editor.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { LinkedMap, Touch, ResourceMap } from '@sidex/base/common/map.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { IResourceEditorInputIdentifier } from '@sidex/platform/editor/common/editor.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 interface ISerializedEditorsList {
 	entries: ISerializedEditorIdentifier[];

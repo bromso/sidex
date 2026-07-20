@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, addDisposableListener, getWindow, h, reset } from '../../../../../base/browser/dom.js';
-import { renderIcon, renderLabelWithIcons } from '../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { Disposable, IDisposable } from '../../../../../base/common/lifecycle.js';
+import { $, addDisposableListener, getWindow, h, reset } from '@sidex/base/browser/dom.js';
+import { renderIcon, renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -16,11 +16,11 @@ import {
 	derivedDisposable,
 	observableValue,
 	transaction
-} from '../../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { isDefined } from '../../../../../base/common/types.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { LineRange } from '../../../../common/core/ranges/lineRange.js';
 import { Position } from '../../../../common/core/position.js';

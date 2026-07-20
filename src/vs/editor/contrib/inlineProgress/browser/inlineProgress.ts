@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { disposableTimeout } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { noBreakWhitespace } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { noBreakWhitespace } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import './inlineProgressWidget.css';
 import {
 	ContentWidgetPositionPreference,
@@ -22,7 +22,7 @@ import { Range } from '../../../common/core/range.js';
 import { IEditorDecorationsCollection } from '../../../common/editorCommon.js';
 import { TrackedRangeStickiness } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 const inlineProgressDecoration = ModelDecorationOptions.register({
 	description: 'inline-progress-widget',

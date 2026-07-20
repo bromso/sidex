@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { KeyMod, KeyChord, KeyCode } from '../../../../base/common/keyCodes.js';
-import { ModesRegistry } from '../../../../editor/common/languages/modesRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { MenuId, registerAction2, Action2, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { KeyMod, KeyChord, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ModesRegistry } from '@sidex/editor/common/languages/modesRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { MenuId, registerAction2, Action2, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { OutputService } from './outputServices.js';
 import {
 	OUTPUT_MODE_ID,
@@ -36,14 +36,14 @@ import {
 	isSingleSourceOutputChannelDescriptor
 } from '../../../services/output/common/output.js';
 import { OutputViewPane } from './outputView.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import {
 	IWorkbenchContributionsRegistry,
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContribution
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ViewContainer,
 	IViewContainersRegistry,
@@ -57,48 +57,48 @@ import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	IQuickPickItem,
 	IQuickInputService,
 	IQuickPickSeparator,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	AUX_WINDOW_GROUP,
 	AUX_WINDOW_GROUP_TYPE,
 	IEditorService
 } from '../../../services/editor/common/editorService.js';
-import { ContextKeyExpr, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { Disposable, dispose, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { ContextKeyExpr, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Disposable, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
 import {
 	ILoggerService,
 	LogLevel,
 	LogLevelToLocalizedString,
 	LogLevelToString
-} from '../../../../platform/log/common/log.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../platform/accessibility/common/accessibility.js';
-import { IsWindowsContext } from '../../../../platform/contextkey/common/contextkeys.js';
+} from '@sidex/platform/log/common/log.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IsWindowsContext } from '@sidex/platform/contextkey/common/contextkeys.js';
 import { FocusedViewContext } from '../../../common/contextkeys.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { viewFilterSubmenu } from '../../../browser/parts/views/viewFilter.js';
 import { ViewAction } from '../../../browser/parts/views/viewPane.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { basename } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { hasKey } from '../../../../base/common/types.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { hasKey } from '@sidex/base/common/types.js';
 import { IDefaultLogLevelsService } from '../../../services/log/common/defaultLogLevels.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { OutputAccessibilityHelp } from './outputAccessibilityHelp.js';
 
 const IMPORTED_LOG_ID_PREFIX = 'importedLog.';

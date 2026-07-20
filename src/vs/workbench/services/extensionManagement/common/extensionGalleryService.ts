@@ -6,18 +6,18 @@
 import {
 	IAllowedExtensionsService,
 	IExtensionGalleryService
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IRequestService } from '../../../../platform/request/common/request.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { AbstractExtensionGalleryService } from '../../../../platform/extensionManagement/common/extensionGalleryService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IExtensionGalleryManifestService } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IRequestService } from '@sidex/platform/request/common/request.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { AbstractExtensionGalleryService } from '@sidex/platform/extensionManagement/common/extensionGalleryService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IExtensionGalleryManifestService } from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
 
 export class WorkbenchExtensionGalleryService extends AbstractExtensionGalleryService {
 	constructor(

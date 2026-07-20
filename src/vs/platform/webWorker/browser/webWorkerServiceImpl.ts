@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createTrustedTypesPolicy } from '../../../base/browser/trustedTypes.js';
-import { coalesce } from '../../../base/common/arrays.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { COI } from '../../../base/common/network.js';
-import { IWebWorker, IWebWorkerClient, Message, WebWorkerClient } from '../../../base/common/worker/webWorker.js';
+import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { COI } from '@sidex/base/common/network.js';
+import { IWebWorker, IWebWorkerClient, Message, WebWorkerClient } from '@sidex/base/common/worker/webWorker.js';
 import { getNLSLanguage, getNLSMessages } from '@sidex/base/nls.js';
 import { WebWorkerDescriptor } from './webWorkerDescriptor.js';
 import { IWebWorkerService } from './webWorkerService.js';

@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import './media/scm.css';
 import { localize } from '@sidex/base/nls.js';
-import { getActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenu, IMenuService, MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+import { getActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenu, IMenuService, MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import {
 	ISCMMenus,
 	ISCMProvider,

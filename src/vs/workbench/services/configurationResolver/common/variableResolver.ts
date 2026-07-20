@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { normalizeDriveLetter } from '../../../../base/common/labels.js';
-import * as paths from '../../../../base/common/path.js';
-import { IProcessEnvironment, isWindows } from '../../../../base/common/platform.js';
-import * as process from '../../../../base/common/process.js';
-import * as types from '../../../../base/common/types.js';
-import { URI as uri } from '../../../../base/common/uri.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import * as paths from '@sidex/base/common/path.js';
+import { IProcessEnvironment, isWindows } from '@sidex/base/common/platform.js';
+import * as process from '@sidex/base/common/process.js';
+import * as types from '@sidex/base/common/types.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IWorkspaceFolderData } from '../../../../platform/workspace/common/workspace.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IWorkspaceFolderData } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	allVariableKinds,
 	IConfigurationResolverService,

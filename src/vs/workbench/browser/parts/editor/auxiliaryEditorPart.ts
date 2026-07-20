@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onDidChangeFullscreen } from '../../../../base/browser/browser.js';
-import { $, getActiveWindow, hide, show } from '../../../../base/browser/dom.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, markAsSingleton, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { isNative } from '../../../../base/common/platform.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { hasCustomTitlebar } from '../../../../platform/window/common/window.js';
+import { onDidChangeFullscreen } from '@sidex/base/browser/browser.js';
+import { $, getActiveWindow, hide, show } from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, markAsSingleton, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isNative } from '@sidex/base/common/platform.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { hasCustomTitlebar } from '@sidex/platform/window/common/window.js';
 import { IEditorGroupView, IEditorPartsView } from './editor.js';
 import { EditorPart, IEditorPartUIState } from './editorPart.js';
 import { IAuxiliaryTitlebarPart } from '../titlebar/titlebarPart.js';
@@ -40,15 +40,15 @@ import {
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
 import { IStatusbarService } from '../../../services/statusbar/browser/statusbar.js';
 import { ITitleService } from '../../../services/title/browser/titleService.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import {
 	IsAuxiliaryWindowContext,
 	IsAuxiliaryWindowFocusedContext,
 	IsCompactTitleBarContext
 } from '../../../common/contextkeys.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { GroupIdentifier } from '../../../common/editor.js';
 
 export interface IAuxiliaryEditorPartOpenOptions extends IAuxiliaryWindowOpenOptions {

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { MarshalledId } from '../../../../base/common/marshallingIds.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { IPosition, Position } from '../../../../editor/common/core/position.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IPosition, Position } from '@sidex/editor/common/core/position.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
 import { localize } from '@sidex/base/nls.js';
 import { TestId } from './testId.js';
 

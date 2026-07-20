@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../../base/browser/ui/aria/aria.js';
-import { timeout } from '../../../../../base/common/async.js';
-import { cancelOnDispose } from '../../../../../base/common/cancellation.js';
-import { createHotClass } from '../../../../../base/common/hotReloadHelpers.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { cancelOnDispose } from '@sidex/base/common/cancellation.js';
+import { createHotClass } from '@sidex/base/common/hotReloadHelpers.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ITransaction,
 	autorun,
@@ -21,21 +21,21 @@ import {
 	runOnChangeWithStore,
 	transaction,
 	waitForState
-} from '../../../../../base/common/observable.js';
-import { isEqual } from '../../../../../base/common/resources.js';
-import { isUndefined } from '../../../../../base/common/types.js';
+} from '@sidex/base/common/observable.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { isUndefined } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { hotClassGetOriginalInstance } from '../../../../../platform/observable/common/wrapInHotClass.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { hotClassGetOriginalInstance } from '@sidex/platform/observable/common/wrapInHotClass.js';
 import { CoreEditingCommands } from '../../../../browser/coreCommands.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../../browser/observableCodeEditor.js';

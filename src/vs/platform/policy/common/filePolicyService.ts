@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ThrottledDelayer } from '../../../base/common/async.js';
-import { Event } from '../../../base/common/event.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { PolicyName } from '../../../base/common/policy.js';
-import { isObject } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { PolicyName } from '@sidex/base/common/policy.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { FileOperationError, FileOperationResult, IFileService } from '../../files/common/files.js';
 import { ILogService } from '../../log/common/log.js';
 import { AbstractPolicyService, IPolicyService, PolicyValue } from './policy.js';

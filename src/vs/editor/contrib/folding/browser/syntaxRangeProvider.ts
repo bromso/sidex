@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ITextModel } from '../../../common/model.js';
 import { FoldingContext, FoldingRange, FoldingRangeProvider } from '../../../common/languages.js';
 import { FoldingLimitReporter, RangeProvider } from './folding.js';

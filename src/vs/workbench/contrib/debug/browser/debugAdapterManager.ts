@@ -3,30 +3,30 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
-import * as strings from '../../../../base/common/strings.js';
-import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { IEditorModel } from '../../../../editor/common/editorCommon.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IEditorModel } from '@sidex/editor/common/editorCommon.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { Breakpoints } from '../common/breakpoints.js';
 import {
 	CONTEXT_DEBUGGERS_AVAILABLE,

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter, DebounceEmitter, Event } from '../../../../base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, DebounceEmitter, Event } from '@sidex/base/common/event.js';
 import {
 	IDecorationsService,
 	IDecoration,
@@ -12,28 +12,28 @@ import {
 	IDecorationsProvider,
 	IDecorationData
 } from '../common/decorations.js';
-import { TernarySearchTree } from '../../../../base/common/ternarySearchTree.js';
-import { IDisposable, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { isThenable } from '../../../../base/common/async.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { IDisposable, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isThenable } from '@sidex/base/common/async.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
 import {
 	createStyleSheet,
 	createCSSRule,
 	removeCSSRulesContainingSelector
-} from '../../../../base/browser/domStylesheets.js';
-import * as cssValue from '../../../../base/browser/cssValue.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isFalsyOrWhitespace } from '../../../../base/common/strings.js';
+} from '@sidex/base/browser/domStylesheets.js';
+import * as cssValue from '@sidex/base/browser/cssValue.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
 import { localize } from '@sidex/base/nls.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { hash } from '../../../../base/common/hash.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { asArray, distinct } from '../../../../base/common/arrays.js';
-import { asCssVariable, ColorIdentifier } from '../../../../platform/theme/common/colorRegistry.js';
-import { getIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { asArray, distinct } from '@sidex/base/common/arrays.js';
+import { asCssVariable, ColorIdentifier } from '@sidex/platform/theme/common/colorRegistry.js';
+import { getIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
 
 class DecorationRule {
 	static keyOf(data: IDecorationData | IDecorationData[]): string {

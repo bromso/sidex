@@ -7,7 +7,7 @@
  *  to accept implementations without registering anything.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 type AccessibleViewImplementation = (...args: unknown[]) => boolean | void | Promise<void>;
 

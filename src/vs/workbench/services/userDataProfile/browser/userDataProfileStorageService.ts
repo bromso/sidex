@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IStorageDatabase } from '../../../../base/parts/storage/common/storage.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IStorageDatabase } from '@sidex/base/parts/storage/common/storage.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	AbstractUserDataProfileStorageService,
 	IProfileStorageChanges,
 	IUserDataProfileStorageService
-} from '../../../../platform/userDataProfile/common/userDataProfileStorageService.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfileStorageService.js';
 import {
 	IProfileStorageValueChangeEvent,
 	isProfileUsingDefaultStorage,
 	IStorageService,
 	StorageScope
-} from '../../../../platform/storage/common/storage.js';
-import { IUserDataProfile } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { IUserDataProfile } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IndexedDBStorageDatabase } from '../../storage/browser/storageService.js';
 import { IUserDataProfileService } from '../common/userDataProfile.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 
 export class UserDataProfileStorageService
 	extends AbstractUserDataProfileStorageService

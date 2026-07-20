@@ -10,7 +10,7 @@ import {
 	NOTIFICATIONS_CENTER_HEADER_BACKGROUND,
 	NOTIFICATIONS_CENTER_BORDER
 } from '../../../common/theme.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
 import {
 	INotificationsModel,
 	INotificationChangeEvent,
@@ -21,15 +21,15 @@ import {
 	getNotificationsPosition
 } from '../../../common/notifications.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { INotificationsCenterController, NotificationActionRunner } from './notificationsCommands.js';
 import { NotificationsList } from './notificationsList.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { $, Dimension, isAncestorOfActiveElement } from '../../../../base/browser/dom.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { $, Dimension, isAncestorOfActiveElement } from '@sidex/base/browser/dom.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { localize } from '@sidex/base/nls.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import {
 	ClearAllNotificationsAction,
 	ConfigureDoNotDisturbAction,
@@ -40,23 +40,23 @@ import {
 	hideIcon,
 	hideUpIcon
 } from './notificationsActions.js';
-import { IAction, Separator, toAction } from '../../../../base/common/actions.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { assertReturnsAllDefined, assertReturnsDefined } from '../../../../base/common/types.js';
+import { IAction, Separator, toAction } from '@sidex/base/common/actions.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { assertReturnsAllDefined, assertReturnsDefined } from '@sidex/base/common/types.js';
 import { NotificationsCenterVisibleContext } from '../../../common/contextkeys.js';
-import { INotificationService, NotificationsFilter } from '../../../../platform/notification/common/notification.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { DropdownMenuActionViewItem } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { INotificationService, NotificationsFilter } from '@sidex/platform/notification/common/notification.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { DropdownMenuActionViewItem } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { DEFAULT_CUSTOM_TITLEBAR_HEIGHT } from '../../../../platform/window/common/window.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { DEFAULT_CUSTOM_TITLEBAR_HEIGHT } from '@sidex/platform/window/common/window.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export class NotificationsCenter extends Themable implements INotificationsCenterController {
 	private static readonly MAX_DIMENSIONS = new Dimension(450, 400);

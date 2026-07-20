@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IMatch } from '../../../../base/common/filters.js';
-import { defaultGenerator } from '../../../../base/common/idGenerator.js';
-import { dispose, IDisposable, IReference } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { basename, extUri } from '../../../../base/common/resources.js';
-import * as strings from '../../../../base/common/strings.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { URI } from '../../../../base/common/uri.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { defaultGenerator } from '@sidex/base/common/idGenerator.js';
+import { dispose, IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { basename, extUri } from '@sidex/base/common/resources.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { Position } from '../../../common/core/position.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { Location, LocationLink } from '../../../common/languages.js';

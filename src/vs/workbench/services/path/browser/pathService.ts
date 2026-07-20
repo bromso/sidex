@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
 import { IPathService, AbstractPathService } from '../common/pathService.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { dirname } from '../../../../base/common/resources.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { dirname } from '@sidex/base/common/resources.js';
 
 export class BrowserPathService extends AbstractPathService {
 	constructor(

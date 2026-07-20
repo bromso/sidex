@@ -23,10 +23,10 @@ import {
 	registerEditorAction,
 	registerEditorContribution
 } from '../../../browser/editorExtensions.js';
-import { editorHoverBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { editorHoverBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { HIDE_LONG_LINE_WARNING_HOVER_ACTION_ID } from './hoverActionIds.js';
 import { HoverParticipantRegistry } from './hoverTypes.js';
 import { MarkdownHoverParticipant } from './markdownHoverParticipant.js';
@@ -34,7 +34,7 @@ import { MarkerHoverParticipant } from './markerHoverParticipant.js';
 import { ContentHoverController } from './contentHoverController.js';
 import { GlyphHoverController } from './glyphHoverController.js';
 import './hover.css';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { ExtHoverAccessibleView, HoverAccessibilityHelp, HoverAccessibleView } from './hoverAccessibleViews.js';
 
 registerEditorContribution(

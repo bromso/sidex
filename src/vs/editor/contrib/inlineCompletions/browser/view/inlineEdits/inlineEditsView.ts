@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $ } from '../../../../../../base/browser/dom.js';
-import { equals } from '../../../../../../base/common/equals.js';
-import { BugIndicatingError, onUnexpectedError } from '../../../../../../base/common/errors.js';
-import { Event } from '../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../base/common/lifecycle.js';
+import { $ } from '@sidex/base/browser/dom.js';
+import { equals } from '@sidex/base/common/equals.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	derived,
@@ -16,8 +16,8 @@ import {
 	IReader,
 	mapObservableArrayCached,
 	observableValue
-} from '../../../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor, observableCodeEditor } from '../../../../../browser/observableCodeEditor.js';
 import { EditorOption } from '../../../../../common/config/editorOptions.js';
@@ -66,7 +66,7 @@ import { OffsetRange } from '../../../../../common/core/ranges/offsetRange.js';
 import { getPositionOffsetTransformerFromTextModel } from '../../../../../common/core/text/getPositionOffsetTransformerFromTextModel.js';
 import { InlineCompletionEditorType } from '../../model/provideInlineCompletions.js';
 import { TextModelValueReference } from '../../model/textModelValueReference.js';
-import { URI } from '../../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export class InlineEditsView extends Disposable {
 	private readonly _editorObs: ObservableCodeEditor;

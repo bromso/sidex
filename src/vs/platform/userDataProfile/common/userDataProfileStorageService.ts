@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap, isDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { IStorage, IStorageDatabase, Storage } from '../../../base/parts/storage/common/storage.js';
+import { Disposable, DisposableMap, isDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IStorage, IStorageDatabase, Storage } from '@sidex/base/parts/storage/common/storage.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import {
 	AbstractStorageService,
@@ -13,7 +13,7 @@ import {
 	StorageScope,
 	StorageTarget
 } from '../../storage/common/storage.js';
-import { Event } from '../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IUserDataProfile } from './userDataProfile.js';
 
 export interface IProfileStorageValueChanges {

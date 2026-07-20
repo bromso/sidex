@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isHTMLElement, ModifierKeyEmitter } from '../../../../base/browser/dom.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { disposableTimeout, RunOnceScheduler } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { LRUCache } from '../../../../base/common/map.js';
-import { IRange } from '../../../../base/common/range.js';
-import { assertType } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { isHTMLElement, ModifierKeyEmitter } from '@sidex/base/browser/dom.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { disposableTimeout, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { IRange } from '@sidex/base/common/range.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IActiveCodeEditor, ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../browser/editorBrowser.js';
 import { ClassNameReference, CssProperties, DynamicCssRules } from '../../../browser/editorDom.js';
 import { StableEditorScrollState } from '../../../browser/stableEditorScroll.js';
@@ -39,12 +39,12 @@ import { ITextModelService } from '../../../common/services/resolverService.js';
 import { ClickLinkGesture, ClickLinkMouseEvent } from '../../gotoSymbol/browser/link/clickLinkGesture.js';
 import { InlayHintAnchor, InlayHintItem, InlayHintsFragments } from './inlayHints.js';
 import { goToDefinitionWithLocation, showGoToContextMenu } from './inlayHintsLocations.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import * as colors from '../../../../platform/theme/common/colorRegistry.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import * as colors from '@sidex/platform/theme/common/colorRegistry.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 import { Position } from '../../../common/core/position.js';
 
 // --- hint caching service (per session)

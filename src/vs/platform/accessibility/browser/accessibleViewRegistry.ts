@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { AccessibleViewType, AccessibleContentProvider, ExtensionContentProvider } from './accessibleView.js';
 import { ContextKeyExpression } from '../../contextkey/common/contextkey.js';
 import { ServicesAccessor } from '../../instantiation/common/instantiation.js';

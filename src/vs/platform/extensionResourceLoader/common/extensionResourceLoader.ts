@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isWeb } from '../../../base/common/platform.js';
-import { format2 } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { format2 } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';
@@ -15,7 +15,7 @@ import { getServiceMachineId } from '../../externalServices/common/serviceMachin
 import { IStorageService } from '../../storage/common/storage.js';
 import { TelemetryLevel } from '../../telemetry/common/telemetry.js';
 import { getTelemetryLevel, supportsTelemetry } from '../../telemetry/common/telemetryUtils.js';
-import { RemoteAuthorities } from '../../../base/common/network.js';
+import { RemoteAuthorities } from '@sidex/base/common/network.js';
 import { TargetPlatform } from '../../extensions/common/extensions.js';
 import {
 	ExtensionGalleryResourceType,
@@ -24,7 +24,7 @@ import {
 	IExtensionGalleryManifestService
 } from '../../extensionManagement/common/extensionGalleryManifest.js';
 import { ILogService } from '../../log/common/log.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 const WEB_EXTENSION_RESOURCE_END_POINT_SEGMENT = '/web-extension-resource/';
 

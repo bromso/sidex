@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 
 export function applyDeprecatedVariableMessage(schema: IJSONSchema) {
 	schema.pattern = schema.pattern || '^(?!.*\\$\\{(env|config|command)\\.)';

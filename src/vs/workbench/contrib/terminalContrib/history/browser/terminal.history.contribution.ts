@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { Disposable, DisposableMap, DisposableStore } from '../../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../../base/common/network.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { AccessibleViewProviderId } from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
-import { MenuId } from '../../../../../platform/actions/common/actions.js';
+import { AccessibleViewProviderId } from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import {
 	ContextKeyExpr,
 	IContextKeyService,
 	type IContextKey
-} from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalLocation } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 import { ResourceContextKey } from '../../../../common/contextkeys.js';
 import {
 	accessibleViewCurrentProviderId,

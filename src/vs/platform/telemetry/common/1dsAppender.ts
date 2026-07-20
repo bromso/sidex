@@ -11,9 +11,9 @@ import type {
 } from '@microsoft/1ds-core-js';
 import type { IChannelConfiguration, IXHROverride, PostChannel } from '@microsoft/1ds-post-js';
 import { importAMDNodeModule } from '@sidex/base/amdX.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { mixin } from '../../../base/common/objects.js';
-import { isWeb } from '../../../base/common/platform.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { mixin } from '@sidex/base/common/objects.js';
+import { isWeb } from '@sidex/base/common/platform.js';
 import { ITelemetryAppender, validateTelemetryData } from './telemetryUtils.js';
 
 // Interface type which is a subset of @microsoft/1ds-core-js AppInsightsCore.

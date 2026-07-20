@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { DropdownWithPrimaryActionViewItem } from '../../../../platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
-import { IMenu, IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DropdownWithPrimaryActionViewItem } from '@sidex/platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
+import { IMenu, IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import {
@@ -31,9 +31,9 @@ import { IEditorGroup } from '../../../services/editor/common/editorGroupsServic
 import { openContextMenu } from './terminalContextMenu.js';
 import { ACTIVE_GROUP } from '../../../services/editor/common/editorService.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { ITerminalProfile, TerminalLocation } from '../../../../platform/terminal/common/terminal.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { ITerminalProfile, TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 
 export class TerminalEditor extends EditorPane {
 	private _editorInstanceElement: HTMLElement | undefined;

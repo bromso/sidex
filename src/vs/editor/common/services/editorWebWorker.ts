@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { stringDiff } from '../../../base/common/diff/diff.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { IWebWorkerServerRequestHandler } from '../../../base/common/worker/webWorker.js';
+import { stringDiff } from '@sidex/base/common/diff/diff.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IWebWorkerServerRequestHandler } from '@sidex/base/common/worker/webWorker.js';
 import { Position } from '../core/position.js';
 import { IRange, Range } from '../core/range.js';
 import { EndOfLineSequence, ITextModel } from '../model.js';
@@ -16,14 +16,14 @@ import { computeLinks } from '../languages/linkComputer.js';
 import { BasicInplaceReplace } from '../languages/supports/inplaceReplaceSupport.js';
 import { DiffAlgorithmName, IDiffComputationResult, ILineChange, IUnicodeHighlightsResult } from './editorWorker.js';
 import { createMonacoBaseAPI } from './editorBaseApi.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 import { UnicodeTextModelHighlighter, UnicodeHighlighterOptions } from './unicodeTextModelHighlighter.js';
 import { DiffComputer, IChange } from '../diff/legacyLinesDiffComputer.js';
 import { ILinesDiffComputer, ILinesDiffComputerOptions } from '../diff/linesDiffComputer.js';
 import { DetailedLineRangeMapping } from '../diff/rangeMapping.js';
 import { linesDiffComputers } from '../diff/linesDiffComputers.js';
 import { IDocumentDiffProviderOptions } from '../diff/documentDiffProvider.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { computeDefaultDocumentColors } from '../languages/defaultDocumentColorsComputer.js';
 import { FindSectionHeaderOptions, SectionHeader, findSectionHeaders } from './findSectionHeaders.js';
 import { IRawModelData, IWorkerTextModelSyncChannelServer } from './textModelSync/textModelSync.protocol.js';

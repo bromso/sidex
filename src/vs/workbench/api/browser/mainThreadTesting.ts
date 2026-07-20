@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
-import { ISettableObservable, observableValue, transaction } from '../../../base/common/observable.js';
-import { WellDefinedPrefixTree } from '../../../base/common/prefixTree.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { Range } from '../../../editor/common/core/range.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ISettableObservable, observableValue, transaction } from '@sidex/base/common/observable.js';
+import { WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { TestCoverage } from '../../contrib/testing/common/testCoverage.js';
 import { TestId } from '../../contrib/testing/common/testId.js';
 import { ITestProfileService } from '../../contrib/testing/common/testProfileService.js';

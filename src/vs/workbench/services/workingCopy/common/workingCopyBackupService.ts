@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { joinPath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { equals, deepClone } from '../../../../base/common/objects.js';
-import { Promises, ResourceQueue } from '../../../../base/common/async.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { equals, deepClone } from '@sidex/base/common/objects.js';
+import { Promises, ResourceQueue } from '@sidex/base/common/async.js';
 import { IResolvedWorkingCopyBackup, IWorkingCopyBackupService } from './workingCopyBackup.js';
-import { IFileService, FileOperationError, FileOperationResult } from '../../../../platform/files/common/files.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { isReadableStream, peekStream } from '../../../../base/common/stream.js';
+import { IFileService, FileOperationError, FileOperationResult } from '@sidex/platform/files/common/files.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { isReadableStream, peekStream } from '@sidex/base/common/stream.js';
 import {
 	bufferToStream,
 	prefixedBufferReadable,
@@ -21,13 +21,13 @@ import {
 	VSBuffer,
 	VSBufferReadable,
 	VSBufferReadableStream
-} from '../../../../base/common/buffer.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { hash } from '../../../../base/common/hash.js';
-import { isEmptyObject } from '../../../../base/common/types.js';
+} from '@sidex/base/common/buffer.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { isEmptyObject } from '@sidex/base/common/types.js';
 import { IWorkingCopyBackupMeta, IWorkingCopyIdentifier, NO_TYPE_ID } from './workingCopy.js';
 
 export class WorkingCopyBackupsModel {

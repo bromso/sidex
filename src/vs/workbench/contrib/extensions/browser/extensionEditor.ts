@@ -3,74 +3,74 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, Dimension, append, hide, setParentFlowTo, show } from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { CheckboxActionViewItem } from '../../../../base/browser/ui/toggle/toggle.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import * as arrays from '../../../../base/common/arrays.js';
-import { Cache, CacheResult } from '../../../../base/common/cache.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { $, Dimension, append, hide, setParentFlowTo, show } from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { CheckboxActionViewItem } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { Cache, CacheResult } from '@sidex/base/common/cache.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	Disposable,
 	DisposableStore,
 	MutableDisposable,
 	dispose,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { Schemas, matchesScheme } from '../../../../base/common/network.js';
-import { isNative } from '../../../../base/common/platform.js';
-import { isUndefined } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Schemas, matchesScheme } from '@sidex/base/common/network.js';
+import { isNative } from '@sidex/base/common/platform.js';
+import { isUndefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import './media/extensionEditor.css';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { TokenizationRegistry } from '../../../../editor/common/languages.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { generateTokensCSSForColorMap } from '../../../../editor/common/languages/supports/tokenization.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { TokenizationRegistry } from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { generateTokensCSSForColorMap } from '@sidex/editor/common/languages/supports/tokenization.js';
 import { localize } from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	IScopedContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	computeSize,
 	FilterType,
 	IExtensionGalleryService,
 	IGalleryExtension,
 	ILocalExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { ExtensionType, IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { defaultCheckboxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { ExtensionType, IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { defaultCheckboxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import {
 	buttonForeground,
 	buttonHoverBackground,
 	editorBackground,
 	textLinkActiveForeground,
 	textLinkForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	IColorTheme,
 	ICssStyleCollector,
 	IThemeService,
 	registerThemingParticipant
-} from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/themeService.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import { ExtensionFeaturesTab } from './extensionFeaturesTab.js';
@@ -135,16 +135,16 @@ import { IEditorGroup } from '../../../services/editor/common/editorGroupsServic
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { IExtensionRecommendationsService } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { ByteSize, IFileService } from '../../../../platform/files/common/files.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { ByteSize, IFileService } from '@sidex/platform/files/common/files.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IRemoteAgentService } from '../../../services/remote/common/remoteAgentService.js';
-import { IExtensionGalleryManifestService } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
+import { IExtensionGalleryManifestService } from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
 import { ShowCurrentReleaseNotesActionId } from '../../update/common/update.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { fromNow as _fromNow } from '../../../../base/common/date.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { fromNow as _fromNow } from '@sidex/base/common/date.js';
 
 class NavBar extends Disposable {
 	private readonly _onChange = this._register(new Emitter<{ id: string | null; focus: boolean }>());

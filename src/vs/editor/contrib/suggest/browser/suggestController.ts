@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedError, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import {
 	DisposableStore,
 	dispose,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { assertType, isObject } from '../../../../base/common/types.js';
+} from '@sidex/base/common/lifecycle.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { assertType, isObject } from '@sidex/base/common/types.js';
 import { StableEditorScrollState } from '../../../browser/stableEditorScroll.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
@@ -47,11 +47,11 @@ import { SnippetParser } from '../../snippet/browser/snippetParser.js';
 import { ISuggestMemoryService } from './suggestMemory.js';
 import { WordContextKey } from './wordContextKey.js';
 import * as nls from '@sidex/base/nls.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	CompletionItem,
 	Context as SuggestContext,
@@ -63,10 +63,10 @@ import { CommitCharacterController } from './suggestCommitCharacters.js';
 import { State, SuggestModel } from './suggestModel.js';
 import { OvertypingCapturer } from './suggestOvertypingCapturer.js';
 import { ISelectedSuggestion, SuggestWidget } from './suggestWidget.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { basename, extname } from '../../../../base/common/resources.js';
-import { hash } from '../../../../base/common/hash.js';
-import { WindowIdleValue, getWindow } from '../../../../base/browser/dom.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { basename, extname } from '@sidex/base/common/resources.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { WindowIdleValue, getWindow } from '@sidex/base/browser/dom.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { EditSources } from '../../../common/textModelEditSource.js';
 

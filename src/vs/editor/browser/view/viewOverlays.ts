@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode, createFastDomNode } from '../../../base/browser/fastDomNode.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import { applyFontInfo } from '../config/domFontInfo.js';
 import { DynamicViewOverlay } from './dynamicViewOverlay.js';
 import { IVisibleLine, VisibleLinesCollection } from './viewLayer.js';

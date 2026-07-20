@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as objects from '../../../base/common/objects.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import { ExtensionsRegistry, IExtensionPointUser } from '../../services/extensions/common/extensionsRegistry.js';
 import {
 	IConfigurationNode,
@@ -23,19 +23,19 @@ import {
 	parseScope,
 	EXTENSION_UNIFICATION_EXTENSION_IDS,
 	overrideIdentifiersFromKey
-} from '../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import {
 	IJSONContributionRegistry,
 	Extensions as JSONExtensions
-} from '../../../platform/jsonschemas/common/jsonContributionRegistry.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
 import {
 	workspaceSettingsSchemaId,
 	launchSchemaId,
 	tasksSchemaId
 } from '../../services/configuration/common/configuration.js';
-import { isObject, isUndefined } from '../../../base/common/types.js';
-import { ExtensionIdentifierMap, IExtensionManifest } from '../../../platform/extensions/common/extensions.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
+import { isObject, isUndefined } from '@sidex/base/common/types.js';
+import { ExtensionIdentifierMap, IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import {
 	Extensions as ExtensionFeaturesExtensions,
 	IExtensionFeatureTableRenderer,
@@ -44,10 +44,10 @@ import {
 	IRowData,
 	ITableData
 } from '../../services/extensionManagement/common/extensionFeatures.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { SyncDescriptor } from '../../../platform/instantiation/common/descriptors.js';
-import { MarkdownString } from '../../../base/common/htmlContent.js';
-import product from '../../../platform/product/common/product.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import product from '@sidex/platform/product/common/product.js';
 
 const jsonRegistry = Registry.as<IJSONContributionRegistry>(JSONExtensions.JSONContribution);
 const configurationRegistry = Registry.as<IConfigurationRegistry>(Extensions.Configuration);

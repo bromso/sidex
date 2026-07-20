@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { assertNever } from '../../../../base/common/assert.js';
-import { URI } from '../../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	FileChangeType,
 	IFileOpenOptions,
@@ -21,7 +21,7 @@ import {
 	IStat,
 	IWatchOptions,
 	createFileSystemProviderError
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import {
 	DEBUG_MEMORY_SCHEME,
 	IDebugService,

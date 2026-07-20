@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as perf from '../../../../base/common/performance.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+import * as perf from '@sidex/base/common/performance.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { IUpdateService } from '../../../../platform/update/common/update.js';
+import { IUpdateService } from '@sidex/platform/update/common/update.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { ITelemetryData, ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { Barrier, timeout } from '../../../../base/common/async.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ITelemetryData, ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Barrier, timeout } from '@sidex/base/common/async.js';
 import { IWorkbenchLayoutService } from '../../layout/browser/layoutService.js';
 import { IPaneCompositePartService } from '../../panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../../common/views.js';
-import { TelemetryTrustedValue } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { createBlobWorker } from '../../../../platform/webWorker/browser/webWorkerServiceImpl.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ITerminalBackendRegistry, TerminalExtensions } from '../../../../platform/terminal/common/terminal.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { createBlobWorker } from '@sidex/platform/webWorker/browser/webWorkerServiceImpl.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ITerminalBackendRegistry, TerminalExtensions } from '@sidex/platform/terminal/common/terminal.js';
 
 /* __GDPR__FRAGMENT__
 	"IMemoryInfo" : {

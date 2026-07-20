@@ -40,12 +40,12 @@ import {
 import { RenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { EditorOption, InternalGuidesOptions } from '../../../common/config/editorOptions.js';
 import { Position } from '../../../common/core/position.js';
-import { ArrayQueue } from '../../../../base/common/arrays.js';
-import { Color } from '../../../../base/common/color.js';
-import { isDefined } from '../../../../base/common/types.js';
+import { ArrayQueue } from '@sidex/base/common/arrays.js';
+import { Color } from '@sidex/base/common/color.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import { BracketPairGuidesClassNames } from '../../../common/model/guidesTextModelPart.js';
 import { IndentGuide, HorizontalGuidesState } from '../../../common/textModelGuides.js';
 

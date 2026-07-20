@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IFilter, matchesFuzzy, matchesFuzzy2 } from '../../../../base/common/filters.js';
+import { IFilter, matchesFuzzy, matchesFuzzy2 } from '@sidex/base/common/filters.js';
 import {
 	IExpression,
 	splitGlobAware,
 	getEmptyExpression,
 	ParsedExpression,
 	parse
-} from '../../../../base/common/glob.js';
-import * as strings from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
-import { relativePath } from '../../../../base/common/resources.js';
-import { TernarySearchTree } from '../../../../base/common/ternarySearchTree.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/base/common/glob.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { relativePath } from '@sidex/base/common/resources.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 
 const SOURCE_FILTER_REGEX = /(!)?@source:("[^"]*"|[^\s,]+)(\s*)/i;
 

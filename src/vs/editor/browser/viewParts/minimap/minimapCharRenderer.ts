@@ -5,7 +5,7 @@
 
 import { RGBA8 } from '../../../common/core/misc/rgba.js';
 import { Constants, getCharIndex } from './minimapCharSheet.js';
-import { toUint8 } from '../../../../base/common/uint.js';
+import { toUint8 } from '@sidex/base/common/uint.js';
 
 export class MinimapCharRenderer {
 	_minimapCharRendererBrand: void = undefined;

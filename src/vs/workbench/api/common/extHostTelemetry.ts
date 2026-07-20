@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { Event, Emitter } from '../../../base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { ExtHostTelemetryShape } from './extHost.protocol.js';
-import { TelemetryLevel } from '../../../platform/telemetry/common/telemetry.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { TelemetryLevel } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 
 export class ExtHostTelemetry extends Disposable implements ExtHostTelemetryShape {
 	readonly _serviceBrand: undefined;

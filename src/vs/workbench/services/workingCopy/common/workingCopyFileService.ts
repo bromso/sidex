@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Event, AsyncEmitter, IWaitUntil } from '../../../../base/common/event.js';
-import { Promises } from '../../../../base/common/async.js';
-import { insert } from '../../../../base/common/arrays.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { IFileService, FileOperation, IFileStatWithMetadata } from '../../../../platform/files/common/files.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Event, AsyncEmitter, IWaitUntil } from '@sidex/base/common/event.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { insert } from '@sidex/base/common/arrays.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IFileService, FileOperation, IFileStatWithMetadata } from '@sidex/platform/files/common/files.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IWorkingCopyService } from './workingCopyService.js';
 import { IWorkingCopy } from './workingCopy.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { WorkingCopyFileOperationParticipant } from './workingCopyFileOperationParticipant.js';
-import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
+import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
 import { SaveReason } from '../../../common/editor.js';
-import { IProgress, IProgressStep } from '../../../../platform/progress/common/progress.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
 import { StoredFileWorkingCopySaveParticipant } from './storedFileWorkingCopySaveParticipant.js';
 import { IStoredFileWorkingCopy, IStoredFileWorkingCopyModel } from './storedFileWorkingCopy.js';
 

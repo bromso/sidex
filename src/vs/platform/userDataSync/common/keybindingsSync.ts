@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../base/common/arrays.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
-import { parse } from '../../../base/common/json.js';
-import { OperatingSystem, OS } from '../../../base/common/platform.js';
-import { isUndefined } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { parse } from '@sidex/base/common/json.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
+import { isUndefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';

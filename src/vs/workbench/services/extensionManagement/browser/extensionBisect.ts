@@ -8,34 +8,34 @@ import {
 	IExtensionManagementService,
 	IGlobalExtensionEnablementService,
 	ILocalExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ExtensionType, IExtension, isResolverExtension } from '../../../../platform/extensions/common/extensions.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ExtensionType, IExtension, isResolverExtension } from '@sidex/platform/extensions/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	INotificationService,
 	IPromptChoice,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/notification/common/notification.js';
 import { IHostService } from '../../host/browser/host.js';
-import { createDecorator, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	ContextKeyExpr,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { Extensions, IWorkbenchContributionsRegistry } from '../../../common/contributions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { IWorkbenchExtensionEnablementService } from '../common/extensionManagement.js';
 
 // --- bisect service

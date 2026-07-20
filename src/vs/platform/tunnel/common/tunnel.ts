@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IDisposable, Disposable } from '../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IAddressProvider } from '../../remote/common/remoteAgentConnection.js';
 import { TunnelPrivacy } from '../../remote/common/remoteAuthorityResolver.js';

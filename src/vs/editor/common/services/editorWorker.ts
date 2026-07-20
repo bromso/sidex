@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IRange } from '../core/range.js';
 import { IDocumentDiff, IDocumentDiffProviderOptions } from '../diff/documentDiffProvider.js';
 import { IChange } from '../diff/legacyLinesDiffComputer.js';
 import { IColorInformation, IInplaceReplaceSupportResult, TextEdit } from '../languages.js';
 import { UnicodeHighlighterOptions } from './unicodeTextModelHighlighter.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import type { EditorWorker as _EditorWorker } from './editorWebWorker.js';
 import { SectionHeader, FindSectionHeaderOptions } from './findSectionHeaders.js';
 import { StringEdit } from '../core/edits/stringEdit.js';

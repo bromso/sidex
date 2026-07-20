@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { ExtensionIdentifier, IExtensionDescription } from '../../extensions/common/extensions.js';
 
 export interface IActivationEventsGenerator<T> {

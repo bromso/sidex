@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { createDecorator } from '../../instantiation/common/instantiation.js';
-import { Disposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { IHoverDelegate, IHoverDelegateOptions } from '../../../base/browser/ui/hover/hoverDelegate.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IHoverDelegate, IHoverDelegateOptions } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { addStandardDisposableListener, isHTMLElement } from '../../../base/browser/dom.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+import { addStandardDisposableListener, isHTMLElement } from '@sidex/base/browser/dom.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import type {
 	IHoverDelegate2,
 	IHoverOptions,
 	IHoverWidget,
 	IManagedHoverContentOrFactory
-} from '../../../base/browser/ui/hover/hover.js';
+} from '@sidex/base/browser/ui/hover/hover.js';
 
 export const IHoverService = createDecorator<IHoverService>('hoverService');
 

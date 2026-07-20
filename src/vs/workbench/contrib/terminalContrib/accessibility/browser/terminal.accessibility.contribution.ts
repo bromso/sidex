@@ -4,36 +4,36 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal } from '@xterm/xterm';
-import { Event } from '../../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { isWindows } from '../../../../../base/common/platform.js';
-import { Position } from '../../../../../editor/common/core/position.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { Position } from '@sidex/editor/common/core/position.js';
 import { localize2 } from '@sidex/base/nls.js';
 import {
 	AccessibleViewProviderId,
 	IAccessibleViewService,
 	NavigationType
-} from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '../../../../../platform/accessibility/common/accessibility.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { CONTEXT_ACCESSIBILITY_MODE_ENABLED } from '@sidex/platform/accessibility/common/accessibility.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { Action2, registerAction2 } from '../../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import {
 	accessibleViewCurrentProviderId,
 	accessibleViewIsShown
@@ -57,7 +57,7 @@ import { BufferContentTracker } from './bufferContentTracker.js';
 import { TerminalAccessibilityHelpProvider } from './terminalAccessibilityHelp.js';
 import { ICommandWithEditorLine, TerminalAccessibleBufferProvider } from './terminalAccessibleBufferProvider.js';
 import { TextAreaSyncAddon } from './textAreaSyncAddon.js';
-import { alert } from '../../../../../base/browser/ui/aria/aria.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 
 // #region Terminal Contributions
 

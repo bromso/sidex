@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isFalsyOrEmpty, isNonEmptyArray } from '../../../base/common/arrays.js';
-import { MicrotaskEmitter } from '../../../base/common/event.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap, ResourceSet } from '../../../base/common/map.js';
-import { Schemas } from '../../../base/common/network.js';
-import { URI } from '../../../base/common/uri.js';
+import { isFalsyOrEmpty, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { MicrotaskEmitter } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap, ResourceSet } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IMarker,

@@ -5,8 +5,8 @@
 
 import * as nls from '@sidex/base/nls.js';
 
-import * as types from '../../../../base/common/types.js';
-import * as resources from '../../../../base/common/resources.js';
+import * as types from '@sidex/base/common/types.js';
+import * as resources from '@sidex/base/common/resources.js';
 import {
 	ExtensionMessageCollector,
 	IExtensionPoint,
@@ -14,20 +14,20 @@ import {
 } from '../../extensions/common/extensionsRegistry.js';
 import { ExtensionData, IThemeExtensionPoint, migrateThemeSettingsId } from './workbenchThemeService.js';
 
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	Extensions,
 	IExtensionFeatureMarkdownRenderer,
 	IExtensionFeaturesRegistry,
 	IRenderedData
 } from '../../extensionManagement/common/extensionFeatures.js';
-import { IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { IMarkdownString, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { ThemeTypeSelector } from '../../../../platform/theme/common/theme.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { ThemeTypeSelector } from '@sidex/platform/theme/common/theme.js';
 
 export function registerColorThemeExtensionPoint() {
 	return ExtensionsRegistry.registerExtensionPoint<IThemeExtensionPoint[]>({

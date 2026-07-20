@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Constants } from '../../../../base/common/uint.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import './codelensWidget.css';
 import {
 	ContentWidgetPositionPreference,

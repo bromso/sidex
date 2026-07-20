@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../base/browser/keyboardEvent.js';
-import { IMouseEvent, IMouseWheelEvent } from '../../base/browser/mouseEvent.js';
-import { IBoundarySashes } from '../../base/browser/ui/sash/sash.js';
-import { Event } from '../../base/common/event.js';
-import { MenuId } from '../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent, IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { Event } from '@sidex/base/common/event.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ConfigurationChangedEvent,
 	EditorLayoutInfo,

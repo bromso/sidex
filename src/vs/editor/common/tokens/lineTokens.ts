@@ -15,7 +15,7 @@ import {
 import { IPosition } from '../core/position.js';
 import { ITextModel } from '../model.js';
 import { OffsetRange } from '../core/ranges/offsetRange.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 
 export interface IViewLineTokens {
 	languageIdCodec: ILanguageIdCodec;

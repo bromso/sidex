@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { illegalArgument } from '../../../../base/common/errors.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
 import { es5ClassCompat } from './es5ClassCompat.js';
 import { Position } from './position.js';
 import { Range } from './range.js';

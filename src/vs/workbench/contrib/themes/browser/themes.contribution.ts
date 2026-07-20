@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { KeyMod, KeyChord, KeyCode } from '../../../../base/common/keyCodes.js';
+import { KeyMod, KeyChord, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	MenuRegistry,
 	MenuId,
 	Action2,
 	registerAction2,
 	ISubmenuItem
-} from '../../../../platform/actions/common/actions.js';
-import { equalsIgnoreCase } from '../../../../base/common/strings.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { equalsIgnoreCase } from '@sidex/base/common/strings.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	IWorkbenchThemeService,
 	IWorkbenchTheme,
@@ -30,16 +30,16 @@ import {
 	IExtensionGalleryService,
 	IExtensionManagementService,
 	IGalleryExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IColorRegistry,
 	Extensions as ColorRegistryExtensions
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { Color } from '../../../../base/common/color.js';
-import { ColorScheme, isHighContrast } from '../../../../platform/theme/common/theme.js';
+import { Color } from '@sidex/base/common/color.js';
+import { ColorScheme, isHighContrast } from '@sidex/platform/theme/common/theme.js';
 import { colorThemeSchemaId } from '../../../services/themes/common/colorThemeSchema.js';
-import { isCancellationError, onUnexpectedError } from '../../../../base/common/errors.js';
+import { isCancellationError, onUnexpectedError } from '@sidex/base/common/errors.js';
 import {
 	IQuickInputButton,
 	IQuickInputService,
@@ -47,31 +47,31 @@ import {
 	IQuickPickItem,
 	QuickInputButtonLocation,
 	QuickPickInput
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	DEFAULT_PRODUCT_ICON_THEME_ID,
 	ProductIconThemeData
 } from '../../../services/themes/browser/productIconThemeData.js';
-import { ThrottledDelayer } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { FileIconThemeData } from '../../../services/themes/browser/fileIconThemeData.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export const manageExtensionIcon = registerIcon(
 	'theme-selection-manage-extension',

@@ -9,8 +9,8 @@ import { Range } from '../../../common/core/range.js';
 import { HorizontalRange, LineVisibleRanges, RenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import { editorSelectionForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+import { editorSelectionForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 
 const enum CornerStyle {

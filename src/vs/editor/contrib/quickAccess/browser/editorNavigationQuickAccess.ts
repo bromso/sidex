@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Event } from '../../../../base/common/event.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { DisposableStore, IDisposable, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import { getCodeEditor, isDiffEditor } from '../../../browser/editorBrowser.js';
 import { IRange } from '../../../common/core/range.js';
@@ -16,11 +16,11 @@ import { overviewRulerRangeHighlight } from '../../../common/core/editorColorReg
 import {
 	IQuickAccessProvider,
 	IQuickAccessProviderRunOptions
-} from '../../../../platform/quickinput/common/quickAccess.js';
-import { IKeyMods, IQuickPick, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { status } from '../../../../base/browser/ui/aria/aria.js';
-import { TextEditorSelectionSource } from '../../../../platform/editor/common/editor.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
+import { IKeyMods, IQuickPick, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
+import { TextEditorSelectionSource } from '@sidex/platform/editor/common/editor.js';
 
 interface IEditorLineDecoration {
 	readonly rangeHighlightId: string;

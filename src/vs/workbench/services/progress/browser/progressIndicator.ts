@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ProgressBar } from '../../../../base/browser/ui/progressbar/progressbar.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
 import {
 	IProgressRunner,
 	IProgressIndicator,
 	emptyProgressRunner
-} from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/progress/common/progress.js';
 import { IEditorGroupView } from '../../../browser/parts/editor/editor.js';
 import { GroupModelChangeKind } from '../../../common/editor.js';
 

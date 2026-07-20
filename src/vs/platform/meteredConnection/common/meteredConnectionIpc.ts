@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import { IMeteredConnectionService } from './meteredConnection.js';
 
 export const METERED_CONNECTION_CHANNEL = 'meteredConnection';

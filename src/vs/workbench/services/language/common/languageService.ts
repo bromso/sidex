@@ -7,14 +7,14 @@ import { localize } from '@sidex/base/nls.js';
 import {
 	clearConfiguredLanguageAssociations,
 	registerConfiguredLanguageAssociation
-} from '../../../../editor/common/services/languagesAssociations.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageExtensionPoint, ILanguageService } from '../../../../editor/common/languages/language.js';
-import { LanguageService } from '../../../../editor/common/services/languageService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { FILES_ASSOCIATIONS_CONFIG, IFilesConfiguration } from '../../../../platform/files/common/files.js';
+} from '@sidex/editor/common/services/languagesAssociations.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageExtensionPoint, ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { LanguageService } from '@sidex/editor/common/services/languageService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { FILES_ASSOCIATIONS_CONFIG, IFilesConfiguration } from '@sidex/platform/files/common/files.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 import {
 	ExtensionMessageCollector,
@@ -22,10 +22,10 @@ import {
 	IExtensionPoint,
 	IExtensionPointUser
 } from '../../extensions/common/extensionsRegistry.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	Extensions,
 	IExtensionFeatureTableRenderer,
@@ -34,11 +34,11 @@ import {
 	IRowData,
 	ITableData
 } from '../../extensionManagement/common/extensionFeatures.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { index } from '../../../../base/common/arrays.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { isString } from '../../../../base/common/types.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { index } from '@sidex/base/common/arrays.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export interface IRawLanguageExtensionPoint {
 	id: string;

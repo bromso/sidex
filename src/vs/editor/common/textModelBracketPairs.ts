@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CallbackIterable } from '../../base/common/arrays.js';
-import { Event } from '../../base/common/event.js';
+import { CallbackIterable } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IPosition } from './core/position.js';
 import { IRange, Range } from './core/range.js';
 import { ClosingBracketKind, OpeningBracketKind } from './languages/supports/languageBracketsConfiguration.js';

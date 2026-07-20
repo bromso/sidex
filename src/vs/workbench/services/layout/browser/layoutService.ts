@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { refineServiceDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Event } from '../../../../base/common/event.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
+import { refineServiceDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
 import { Part } from '../../../browser/part.js';
-import { IDimension } from '../../../../base/browser/dom.js';
-import { Direction, IViewSize } from '../../../../base/browser/ui/grid/grid.js';
-import { isMacintosh, isNative, isWeb } from '../../../../base/common/platform.js';
-import { isAuxiliaryWindow } from '../../../../base/browser/window.js';
+import { IDimension } from '@sidex/base/browser/dom.js';
+import { Direction, IViewSize } from '@sidex/base/browser/ui/grid/grid.js';
+import { isMacintosh, isNative, isWeb } from '@sidex/base/common/platform.js';
+import { isAuxiliaryWindow } from '@sidex/base/browser/window.js';
 import {
 	CustomTitleBarVisibility,
 	TitleBarSetting,
@@ -18,10 +18,10 @@ import {
 	hasCustomTitlebar,
 	hasNativeMenu,
 	hasNativeTitlebar
-} from '../../../../platform/window/common/window.js';
-import { isFullscreen, isWCOEnabled } from '../../../../base/browser/browser.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/window/common/window.js';
+import { isFullscreen, isWCOEnabled } from '@sidex/base/browser/browser.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export const IWorkbenchLayoutService = refineServiceDecorator<ILayoutService, IWorkbenchLayoutService>(ILayoutService);
 

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { TerminalLocation } from '../../../../platform/terminal/common/terminal.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import {
 	ITerminalEditorService,

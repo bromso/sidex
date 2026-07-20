@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import {
 	IOverviewRulerLayoutInfo,
 	SmoothScrollableElement
-} from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
+} from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
 import {
 	ScrollableElementChangeOptions,
 	ScrollableElementCreationOptions
-} from '../../../../base/browser/ui/scrollbar/scrollableElementOptions.js';
+} from '@sidex/base/browser/ui/scrollbar/scrollableElementOptions.js';
 import { PartFingerprint, PartFingerprints, ViewPart } from '../../view/viewPart.js';
 import { INewScrollPosition, ScrollType } from '../../../common/editorCommon.js';
 import { RenderingContext, RestrictedRenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
-import { getThemeTypeSelector } from '../../../../platform/theme/common/themeService.js';
+import { getThemeTypeSelector } from '@sidex/platform/theme/common/themeService.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import { IMouseWheelEvent } from '../../../../base/browser/mouseEvent.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
 
 /**
  * The editor scrollbar built on VS Code's scrollable element that sits beside

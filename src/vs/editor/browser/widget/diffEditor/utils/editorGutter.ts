@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { h, reset } from '../../../../../base/browser/dom.js';
-import { Disposable, DisposableMap, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+import { h, reset } from '@sidex/base/browser/dom.js';
+import { Disposable, DisposableMap, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	IObservable,
@@ -15,7 +15,7 @@ import {
 	observableSignalFromEvent,
 	observableValue,
 	transaction
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { CodeEditorWidget } from '../../codeEditor/codeEditorWidget.js';
 import { LineRange } from '../../../../common/core/ranges/lineRange.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, EventHelper, EventType, getWindow } from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { isMacintosh } from '../../../base/common/platform.js';
+import { addDisposableListener, EventHelper, EventType, getWindow } from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 import { IEditorOptions } from '../common/editor.js';
 
 //#region Editor Open Event Listeners

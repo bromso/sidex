@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../../../base/common/collections.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationPropertySchema } from '../../../../../platform/configuration/common/configurationRegistry.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+import { IConfigurationPropertySchema } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 
 export const enum TerminalInitialHintSettingId {
 	Enabled = 'terminal.integrated.initialHint'

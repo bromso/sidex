@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../../base/common/charCode.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import * as strings from '../../../../base/common/strings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { DefaultEndOfLine, ITextBuffer, ITextBufferBuilder, ITextBufferFactory } from '../../model.js';
 import { StringBuffer, createLineStarts, createLineStartsFast } from './pieceTreeBase.js';
 import { PieceTreeTextBuffer } from './pieceTreeTextBuffer.js';

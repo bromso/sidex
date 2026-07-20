@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { getErrorMessage, isCancellationError } from '../../../base/common/errors.js';
-import { Schemas } from '../../../base/common/network.js';
-import { basename } from '../../../base/common/resources.js';
-import { gt } from '../../../base/common/semver/semver.js';
-import { URI } from '../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { gt } from '@sidex/base/common/semver/semver.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	EXTENSION_IDENTIFIER_REGEX,

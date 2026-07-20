@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { diffSets } from '../../../base/common/collections.js';
-import { Emitter } from '../../../base/common/event.js';
-import { assertReturnsDefined } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { diffSets } from '@sidex/base/common/collections.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IEditorTabDto,
 	IEditorTabGroupDto,

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../base/common/objects.js';
+import { equals } from '@sidex/base/common/objects.js';
 import { IUserDataProfile, UseDefaultProfileFlags } from '../../userDataProfile/common/userDataProfile.js';
 import { ISyncUserDataProfile } from './userDataSync.js';
 

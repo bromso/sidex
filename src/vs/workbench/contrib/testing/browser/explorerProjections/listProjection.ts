@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ObjectTree } from '../../../../../base/browser/ui/tree/objectTree.js';
-import { Emitter } from '../../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../../base/common/filters.js';
-import { Iterable } from '../../../../../base/common/iterator.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { ObjectTree } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { flatTestItemDelimiter } from './display.js';
 import {
 	ITestTreeProjection,

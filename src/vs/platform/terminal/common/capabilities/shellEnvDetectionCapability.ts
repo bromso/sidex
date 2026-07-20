@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IShellEnvDetectionCapability,
 	TerminalCapability,
 	TerminalShellIntegrationEnvironment
 } from './capabilities.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { equals } from '../../../../base/common/objects.js';
-import { mapsStrictEqualIgnoreOrder } from '../../../../base/common/map.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { mapsStrictEqualIgnoreOrder } from '@sidex/base/common/map.js';
 
 export interface IShellEnv {
 	value: Map<string, string>;

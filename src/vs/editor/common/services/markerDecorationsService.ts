@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMarkerService, IMarker, MarkerSeverity, MarkerTag } from '../../../platform/markers/common/markers.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
+import { IMarkerService, IMarker, MarkerSeverity, MarkerTag } from '@sidex/platform/markers/common/markers.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IModelDeltaDecoration,
 	ITextModel,
@@ -17,18 +17,18 @@ import {
 	IModelDecorationMinimapOptions
 } from '../model.js';
 import { ClassName } from '../model/intervalTree.js';
-import { themeColorFromId } from '../../../platform/theme/common/themeService.js';
-import { ThemeColor } from '../../../base/common/themables.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
 import { overviewRulerWarning, overviewRulerInfo, overviewRulerError } from '../core/editorColorRegistry.js';
 import { IModelService } from './model.js';
 import { Range } from '../core/range.js';
 import { IMarkerDecorationsService } from './markerDecorations.js';
-import { Schemas } from '../../../base/common/network.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { minimapInfo, minimapWarning, minimapError } from '../../../platform/theme/common/colorRegistry.js';
-import { BidirectionalMap, ResourceMap } from '../../../base/common/map.js';
-import { diffSets } from '../../../base/common/collections.js';
-import { Iterable } from '../../../base/common/iterator.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { minimapInfo, minimapWarning, minimapError } from '@sidex/platform/theme/common/colorRegistry.js';
+import { BidirectionalMap, ResourceMap } from '@sidex/base/common/map.js';
+import { diffSets } from '@sidex/base/common/collections.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 
 export class MarkerDecorationsService extends Disposable implements IMarkerDecorationsService {
 	declare readonly _serviceBrand: undefined;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextMenuDelegate } from '../../../base/browser/contextmenu.js';
+import { IContextMenuDelegate } from '@sidex/base/browser/contextmenu.js';
 import {
 	$,
 	addDisposableListener,
@@ -12,17 +12,17 @@ import {
 	getWindow,
 	isAncestor,
 	isHTMLElement
-} from '../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { Menu } from '../../../base/browser/ui/menu/menu.js';
+} from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Menu } from '@sidex/base/browser/ui/menu/menu.js';
 import {
 	ActionRunner,
 	IRunEvent,
 	WorkbenchActionExecutedClassification,
 	WorkbenchActionExecutedEvent
-} from '../../../base/common/actions.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { combinedDisposable, DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/actions.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { combinedDisposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IContextViewService } from './contextView.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 import { INotificationService } from '../../notification/common/notification.js';

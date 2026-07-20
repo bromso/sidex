@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ILogger, ILoggerService, log, LogLevel } from '../../../../platform/log/common/log.js';
-import { URI } from '../../../../base/common/uri.js';
+import { ILogger, ILoggerService, log, LogLevel } from '@sidex/platform/log/common/log.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export class DelayedLogChannel {
 	private readonly logger: ILogger;

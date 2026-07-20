@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { editorOverviewRulerBorder } from '../../../../editor/common/core/editorColorRegistry.js';
+import { editorOverviewRulerBorder } from '@sidex/editor/common/core/editorColorRegistry.js';
 import * as nls from '@sidex/base/nls.js';
 
 import {
@@ -16,7 +16,7 @@ import {
 	editorSelectionBackground,
 	transparent,
 	editorHoverHighlight
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { EDITOR_DRAG_AND_DROP_BACKGROUND, PANEL_BORDER, TAB_ACTIVE_BORDER } from '../../../common/theme.js';
 
 /**

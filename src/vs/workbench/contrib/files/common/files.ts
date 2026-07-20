@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import {
 	IWorkbenchEditorConfiguration,
 	IEditorIdentifier,
@@ -16,21 +16,21 @@ import {
 	IFilesConfiguration as PlatformIFilesConfiguration,
 	FileChangeType,
 	IFileService
-} from '../../../../platform/files/common/files.js';
-import { ContextKeyExpr, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { ITextModelContentProvider } from '../../../../editor/common/services/resolverService.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService, ILanguageSelection } from '../../../../editor/common/languages/language.js';
+} from '@sidex/platform/files/common/files.js';
+import { ContextKeyExpr, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextModelContentProvider } from '@sidex/editor/common/services/resolverService.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService, ILanguageSelection } from '@sidex/editor/common/languages/language.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
-import { InputFocusedContextKey } from '../../../../platform/contextkey/common/contextkeys.js';
+import { InputFocusedContextKey } from '@sidex/platform/contextkey/common/contextkeys.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
-import { Event } from '../../../../base/common/event.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { localize } from '@sidex/base/nls.js';
-import { IExpression } from '../../../../base/common/glob.js';
+import { IExpression } from '@sidex/base/common/glob.js';
 
 /**
  * Explorer viewlet id.

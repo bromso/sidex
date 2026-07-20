@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IEditorPane } from '../../../common/editor.js';
 import { IOutline, IOutlineCreator, IOutlineService, OutlineTarget } from './outline.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 
 class OutlineService implements IOutlineService {
 	declare _serviceBrand: undefined;

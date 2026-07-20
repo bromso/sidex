@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import '../colorPicker.css';
-import * as dom from '../../../../../base/browser/dom.js';
-import { Color, HSVA } from '../../../../../base/common/color.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Color, HSVA } from '@sidex/base/common/color.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ColorPickerModel } from '../colorPickerModel.js';
 import { SaturationBox } from './colorPickerSaturationBox.js';
 import { InsertButton } from './colorPickerInsertButton.js';

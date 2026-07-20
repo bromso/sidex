@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	MainThreadDiaglogsShape,
 	MainContext,
@@ -15,7 +15,7 @@ import {
 	IFileDialogService,
 	IOpenDialogOptions,
 	ISaveDialogOptions
-} from '../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
 
 @extHostNamedCustomer(MainContext.MainThreadDialogs)
 export class MainThreadDialogs implements MainThreadDiaglogsShape {

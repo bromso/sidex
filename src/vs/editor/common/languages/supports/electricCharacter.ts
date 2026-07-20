@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import { ScopedLineTokens, ignoreBracketsInToken } from '../supports.js';
 import { BracketsUtils, RichEditBrackets } from './richEditBrackets.js';
 

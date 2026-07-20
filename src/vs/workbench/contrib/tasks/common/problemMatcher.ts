@@ -5,34 +5,34 @@
 
 import { localize } from '@sidex/base/nls.js';
 
-import * as Objects from '../../../../base/common/objects.js';
-import * as Strings from '../../../../base/common/strings.js';
-import * as Assert from '../../../../base/common/assert.js';
-import { join, normalize } from '../../../../base/common/path.js';
-import * as Types from '../../../../base/common/types.js';
-import * as UUID from '../../../../base/common/uuid.js';
-import * as Platform from '../../../../base/common/platform.js';
-import Severity from '../../../../base/common/severity.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { ValidationStatus, ValidationState, IProblemReporter, Parser } from '../../../../base/common/parsers.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { asArray } from '../../../../base/common/arrays.js';
-import { Schemas as NetworkSchemas } from '../../../../base/common/network.js';
+import * as Objects from '@sidex/base/common/objects.js';
+import * as Strings from '@sidex/base/common/strings.js';
+import * as Assert from '@sidex/base/common/assert.js';
+import { join, normalize } from '@sidex/base/common/path.js';
+import * as Types from '@sidex/base/common/types.js';
+import * as UUID from '@sidex/base/common/uuid.js';
+import * as Platform from '@sidex/base/common/platform.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { ValidationStatus, ValidationState, IProblemReporter, Parser } from '@sidex/base/common/parsers.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { Schemas as NetworkSchemas } from '@sidex/base/common/network.js';
 
-import { IMarkerData, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
+import { IMarkerData, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import {
 	ExtensionsRegistry,
 	ExtensionMessageCollector
 } from '../../../services/extensions/common/extensionsRegistry.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	FileType,
 	IFileService,
 	IFileStatWithPartialMetadata,
 	IFileSystemProvider
-} from '../../../../platform/files/common/files.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/files/common/files.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export enum FileLocationKind {
 	Default,

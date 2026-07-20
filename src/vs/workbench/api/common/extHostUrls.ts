@@ -5,10 +5,10 @@
 
 import type * as vscode from 'vscode';
 import { ExtHostUrlsShape } from './extHost.protocol.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { toDisposable } from '../../../base/common/lifecycle.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export class ExtHostUrls implements ExtHostUrlsShape {
 	declare _serviceBrand: undefined;

@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/searchEditor.css';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { basename } from '../../../../base/common/path.js';
-import { extname, isEqual, joinPath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { ITextModel, TrackedRangeStickiness } from '../../../../editor/common/model.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { basename } from '@sidex/base/common/path.js';
+import { extname, isEqual, joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { ITextModel, TrackedRangeStickiness } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 import { localize } from '@sidex/base/nls.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	GroupIdentifier,
 	IRevertOptions,
@@ -48,16 +48,16 @@ import {
 	IWorkingCopySaveEvent,
 	WorkingCopyCapabilities
 } from '../../../services/workingCopy/common/workingCopy.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ISearchComplete, ISearchConfigurationProperties } from '../../../services/search/common/search.js';
-import { bufferToReadable, VSBuffer } from '../../../../base/common/buffer.js';
+import { bufferToReadable, VSBuffer } from '@sidex/base/common/buffer.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { IResourceEditorInput } from '../../../../platform/editor/common/editor.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { IResourceEditorInput } from '@sidex/platform/editor/common/editor.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 
 export const SEARCH_EDITOR_EXT = '.code-search';
 

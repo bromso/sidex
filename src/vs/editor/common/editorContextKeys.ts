@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { RawContextKey } from '../../platform/contextkey/common/contextkey.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export namespace EditorContextKeys {
 	export const editorSimpleInput = new RawContextKey<boolean>('editorSimpleInput', false, true);

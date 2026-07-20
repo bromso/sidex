@@ -5,9 +5,9 @@
 
 import './media/sidebysideeditor.css';
 import { localize } from '@sidex/base/nls.js';
-import { Dimension, $, clearNode } from '../../../../base/browser/dom.js';
-import { multibyteAwareBtoa } from '../../../../base/common/strings.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Dimension, $, clearNode } from '@sidex/base/browser/dom.js';
+import { multibyteAwareBtoa } from '@sidex/base/common/strings.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IEditorControl,
 	IEditorPane,
@@ -24,30 +24,30 @@ import {
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { EditorPane } from './editorPane.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IEditorPaneRegistry } from '../../editor.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { SplitView, Sizing, Orientation } from '../../../../base/browser/ui/splitview/splitview.js';
-import { Event, Relay, Emitter } from '../../../../base/common/event.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { SplitView, Sizing, Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { Event, Relay, Emitter } from '@sidex/base/common/event.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import { DEFAULT_EDITOR_MIN_DIMENSIONS } from './editor.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { SIDE_BY_SIDE_EDITOR_HORIZONTAL_BORDER, SIDE_BY_SIDE_EDITOR_VERTICAL_BORDER } from '../../../common/theme.js';
 import { AbstractEditorWithViewState } from './editorWithViewState.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
 
 interface ISideBySideEditorViewState {
 	primary: object;

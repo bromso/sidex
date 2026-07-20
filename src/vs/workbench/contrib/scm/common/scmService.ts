@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	ISCMService,
 	ISCMProvider,
@@ -16,18 +16,18 @@ import {
 	InputValidationType,
 	IInputValidation
 } from './scm.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { HistoryNavigator2 } from '../../../../base/common/history.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { runOnChange } from '../../../../base/common/observable.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { HistoryNavigator2 } from '@sidex/base/common/history.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { runOnChange } from '@sidex/base/common/observable.js';
 
 class SCMInput extends Disposable implements ISCMInput {
 	private _value = '';

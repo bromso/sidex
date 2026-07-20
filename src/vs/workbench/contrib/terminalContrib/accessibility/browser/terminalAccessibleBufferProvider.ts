@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IAccessibleViewContentProvider,
 	AccessibleViewProviderId,
 	IAccessibleViewOptions,
 	AccessibleViewType,
 	IAccessibleViewSymbol
-} from '../../../../../platform/accessibility/browser/accessibleView.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	TerminalCapability,
 	ITerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	ICurrentPartialCommand,
 	isFullTerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
+} from '@sidex/platform/terminal/common/capabilities/commandDetection/terminalCommand.js';
 import { AccessibilityVerbositySettingId } from '../../../accessibility/browser/accessibilityConfiguration.js';
 import { ITerminalInstance, ITerminalService } from '../../../terminal/browser/terminal.js';
 import { BufferContentTracker } from './bufferContentTracker.js';

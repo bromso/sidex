@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListAccessibilityProvider } from '../../../../../base/browser/ui/list/listWidget.js';
-import * as DOM from '../../../../../base/browser/dom.js';
-import * as glob from '../../../../../base/common/glob.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import * as glob from '@sidex/base/common/glob.js';
 import {
 	IListVirtualDelegate,
 	ListDragOverEffectPosition,
 	ListDragOverEffectType
-} from '../../../../../base/browser/ui/list/list.js';
-import { IProgressService, ProgressLocation } from '../../../../../platform/progress/common/progress.js';
-import { INotificationService, Severity } from '../../../../../platform/notification/common/notification.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import {
 	IFileService,
 	FileKind,
@@ -20,17 +20,17 @@ import {
 	FileOperationResult,
 	FileChangeType,
 	FileSystemProviderCapabilities
-} from '../../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { IWorkbenchLayoutService } from '../../../../services/layout/browser/layoutService.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	IDisposable,
 	Disposable,
 	dispose,
 	toDisposable,
 	DisposableStore
-} from '../../../../../base/common/lifecycle.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
+} from '@sidex/base/common/lifecycle.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { IFileLabelOptions, IResourceLabel, ResourceLabels } from '../../../../browser/labels.js';
 import {
 	ITreeNode,
@@ -41,21 +41,21 @@ import {
 	ITreeDragAndDrop,
 	ITreeDragOverReaction,
 	TreeDragOverBubble
-} from '../../../../../base/browser/ui/tree/tree.js';
-import { IContextMenuService, IContextViewService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import { ExplorerFindProviderActive, IFilesConfiguration, UndoConfirmLevel } from '../../common/files.js';
-import { dirname, joinPath, distinctParents, relativePath } from '../../../../../base/common/resources.js';
-import { InputBox, MessageType } from '../../../../../base/browser/ui/inputbox/inputBox.js';
+import { dirname, joinPath, distinctParents, relativePath } from '@sidex/base/common/resources.js';
+import { InputBox, MessageType } from '@sidex/base/browser/ui/inputbox/inputBox.js';
 import { localize } from '@sidex/base/nls.js';
-import { createSingleCallFunction } from '../../../../../base/common/functional.js';
-import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { equals, deepClone } from '../../../../../base/common/objects.js';
-import * as path from '../../../../../base/common/path.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { equals, deepClone } from '@sidex/base/common/objects.js';
+import * as path from '@sidex/base/common/path.js';
 import { ExplorerItem, NewExplorerItem } from '../../common/explorerModel.js';
 import {
 	compareFileExtensionsDefault,
@@ -66,54 +66,54 @@ import {
 	compareFileExtensionsLower,
 	compareFileNamesUnicode,
 	compareFileExtensionsUnicode
-} from '../../../../../base/common/comparers.js';
-import { CodeDataTransfers, containsDragType } from '../../../../../platform/dnd/browser/dnd.js';
+} from '@sidex/base/common/comparers.js';
+import { CodeDataTransfers, containsDragType } from '@sidex/platform/dnd/browser/dnd.js';
 import { fillEditorsDragData } from '../../../../browser/dnd.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IDragAndDropData, DataTransfers } from '../../../../../base/browser/dnd.js';
-import { Schemas } from '../../../../../base/common/network.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDragAndDropData, DataTransfers } from '@sidex/base/browser/dnd.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	NativeDragAndDropData,
 	ExternalElementsDragAndDropData,
 	ElementsDragAndDropData,
 	ListViewTargetSector
-} from '../../../../../base/browser/ui/list/listView.js';
-import { isMacintosh } from '../../../../../base/common/platform.js';
-import { IDialogService, getFileNamesMessage } from '../../../../../platform/dialogs/common/dialogs.js';
+} from '@sidex/base/browser/ui/list/listView.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { IDialogService, getFileNamesMessage } from '@sidex/platform/dialogs/common/dialogs.js';
 import { IWorkspaceEditingService } from '../../../../services/workspaces/common/workspaceEditing.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { IWorkspaceFolderCreationData } from '../../../../../platform/workspaces/common/workspaces.js';
+import { IWorkspaceFolderCreationData } from '@sidex/platform/workspaces/common/workspaces.js';
 import { findValidPasteFileTarget } from '../fileActions.js';
-import { FuzzyScore, createMatches } from '../../../../../base/common/filters.js';
-import { Emitter, Event, EventMultiplexer } from '../../../../../base/common/event.js';
+import { FuzzyScore, createMatches } from '@sidex/base/common/filters.js';
+import { Emitter, Event, EventMultiplexer } from '@sidex/base/common/event.js';
 import {
 	IAsyncDataTreeViewState,
 	IAsyncFindProvider,
 	IAsyncFindResult,
 	IAsyncFindToggles,
 	ITreeCompressionDelegate
-} from '../../../../../base/browser/ui/tree/asyncDataTree.js';
-import { ICompressibleTreeRenderer } from '../../../../../base/browser/ui/tree/objectTree.js';
-import { ICompressedTreeNode } from '../../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { isNumber } from '../../../../../base/common/types.js';
+} from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { isNumber } from '@sidex/base/common/types.js';
 import { IEditableData } from '../../../../common/views.js';
 import { EditorInput } from '../../../../common/editor/editorInput.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ResourceFileEdit } from '../../../../../editor/browser/services/bulkEditService.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ResourceFileEdit } from '@sidex/editor/browser/services/bulkEditService.js';
 import { IExplorerService } from '../files.js';
 import { ExternalFileImport, getMultipleFilesOverwriteConfirm } from '../fileImportExport.js';
-import { toErrorMessage } from '../../../../../base/common/errorMessage.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
 import { IgnoreFile } from '../../../../services/search/common/ignoreFile.js';
-import { ResourceSet } from '../../../../../base/common/map.js';
-import { TernarySearchTree } from '../../../../../base/common/ternarySearchTree.js';
-import { defaultCountBadgeStyles, defaultInputBoxStyles } from '../../../../../platform/theme/browser/defaultStyles.js';
-import { timeout } from '../../../../../base/common/async.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { defaultCountBadgeStyles, defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { timeout } from '@sidex/base/common/async.js';
 import { IFilesConfigurationService } from '../../../../services/filesConfiguration/common/filesConfigurationService.js';
-import { mainWindow } from '../../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { IExplorerFileContribution, explorerFileContribRegistry } from '../explorerFileContrib.js';
-import { WorkbenchCompressibleAsyncDataTree } from '../../../../../platform/list/browser/listService.js';
+import { WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import {
 	ISearchService,
 	QueryType,
@@ -122,16 +122,16 @@ import {
 	ISearchComplete,
 	IFileQuery
 } from '../../../../services/search/common/search.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { TreeFindMatchType, TreeFindMode } from '../../../../../base/browser/ui/tree/abstractTree.js';
-import { isCancellationError } from '../../../../../base/common/errors.js';
-import { IContextKey, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { CountBadge } from '../../../../../base/browser/ui/countBadge/countBadge.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { TreeFindMatchType, TreeFindMode } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
 import {
 	listFilterMatchHighlight,
 	listFilterMatchHighlightBorder
-} from '../../../../../platform/theme/common/colorRegistry.js';
-import { asCssVariable } from '../../../../../platform/theme/common/colorUtils.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
 
 export class ExplorerDelegate implements IListVirtualDelegate<ExplorerItem> {
 	static readonly ITEM_HEIGHT = 22;

@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	IRemoteConnectionData,
 	RemoteAuthorityResolverErrorCode,
 	ResolverResult
-} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 import { IExtensionDescriptionDelta } from './extensionHostProtocol.js';
 import { ActivationKind, ExtensionActivationReason } from './extensions.js';
 

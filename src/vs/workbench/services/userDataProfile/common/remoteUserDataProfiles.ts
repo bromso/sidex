@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	DidChangeProfilesEvent,
 	IUserDataProfile,
 	IUserDataProfilesService
-} from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IUserDataProfileService } from './userDataProfile.js';
-import { distinct } from '../../../../base/common/arrays.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { UserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfileIpc.js';
-import { ErrorNoTelemetry } from '../../../../base/common/errors.js';
+import { UserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfileIpc.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
 
 const associatedRemoteProfilesKey = 'associatedRemoteProfiles';
 

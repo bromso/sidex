@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Widget } from '../../../../../base/browser/ui/widget.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
 
 export interface ISimpleFindWidgetOpts {
 	showCommonFindToggles?: boolean;

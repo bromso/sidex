@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareBy } from '../../../base/common/arrays.js';
-import { findLastMax, findFirstMin } from '../../../base/common/arraysFind.js';
+import { compareBy } from '@sidex/base/common/arrays.js';
+import { findLastMax, findFirstMin } from '@sidex/base/common/arraysFind.js';
 import { CursorState, PartialCursorState } from '../cursorCommon.js';
 import { CursorContext } from './cursorContext.js';
 import { Cursor } from './oneCursor.js';

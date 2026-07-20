@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as objects from '../../../../base/common/objects.js';
+import * as objects from '@sidex/base/common/objects.js';
 import { ICodeEditor, IDiffEditorConstructionOptions } from '../../editorBrowser.js';
 import { ICodeEditorService } from '../../services/codeEditorService.js';
 import { DiffEditorWidget, IDiffCodeEditorWidgetOptions } from './diffEditorWidget.js';
 import { ConfigurationChangedEvent, IDiffEditorOptions, IEditorOptions } from '../../../common/config/editorOptions.js';
-import { IAccessibilitySignalService } from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
+import { IAccessibilitySignalService } from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
 export class EmbeddedDiffEditorWidget extends DiffEditorWidget {
 	private readonly _parentEditor: ICodeEditor;
 	private readonly _overwriteOptions: IDiffEditorOptions;

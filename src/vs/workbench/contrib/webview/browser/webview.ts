@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension } from '../../../../base/browser/dom.js';
-import { IMouseWheelEvent } from '../../../../base/browser/mouseEvent.js';
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable } from '../../../../base/common/observable.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IWebviewPortMapping } from '../../../../platform/webview/common/webviewPortMapping.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IWebviewPortMapping } from '@sidex/platform/webview/common/webviewPortMapping.js';
 import { Memento } from '../../../common/memento.js';
 
 /**

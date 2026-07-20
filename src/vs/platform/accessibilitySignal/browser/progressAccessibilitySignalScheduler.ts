@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { AccessibilitySignal, IAccessibilitySignalService } from './accessibilitySignalService.js';
 
 const PROGRESS_SIGNAL_LOOP_DELAY = 5000;

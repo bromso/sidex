@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { IJSONSchema, TypeFromJsonSchema } from '../../../../base/common/jsonSchema.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { IJSONSchema, TypeFromJsonSchema } from '@sidex/base/common/jsonSchema.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorAction, EditorAction2, EditorCommand, ServicesAccessor } from '../../../browser/editorExtensions.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
@@ -20,9 +20,9 @@ import {
 	sourceActionCommandId
 } from './codeAction.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	CodeActionAutoApply,
 	CodeActionCommandArgs,
@@ -32,7 +32,7 @@ import {
 } from '../common/types.js';
 import { CodeActionController } from './codeActionController.js';
 import { SUPPORTED_CODE_ACTIONS } from './codeActionModel.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 function contextKeyForSupportedActions(kind: HierarchicalKind) {
 	return ContextKeyExpr.regex(

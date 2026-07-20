@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
-import Severity from '../../../../base/common/severity.js';
-import { ICodeEditor, getCodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
+import { ICodeEditor, getCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	ILanguageStatus,
 	ILanguageStatusService
 } from '../../../services/languageStatus/common/languageStatusService.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
 	IWorkbenchContribution
 } from '../../../common/contributions.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { Event } from '../../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 import * as nls from '@sidex/base/nls.js';
 
-import { FoldingController } from '../../../../editor/contrib/folding/browser/folding.js';
-import { ColorDetector } from '../../../../editor/contrib/colorPicker/browser/colorDetector.js';
+import { FoldingController } from '@sidex/editor/contrib/folding/browser/folding.js';
+import { ColorDetector } from '@sidex/editor/contrib/colorPicker/browser/colorDetector.js';
 
 const openSettingsCommand = 'workbench.action.openSettings';
 const configureSettingsLabel = nls.localize('status.button.configure', 'Configure');

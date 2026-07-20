@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../../base/common/arrays.js';
-import { URI } from '../../../../base/common/uri.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { es5ClassCompat } from './es5ClassCompat.js';
 import { Location } from './location.js';
 import { Range } from './range.js';

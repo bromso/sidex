@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { safeIntl } from '../../../base/common/date.js';
-import type { GraphemeIterator as _GraphemeIterator } from '../../../base/common/strings.js';
+import { safeIntl } from '@sidex/base/common/date.js';
+import type { GraphemeIterator as _GraphemeIterator } from '@sidex/base/common/strings.js';
 import type { ViewLineRenderingData } from '../../common/viewModel.js';
 import type { ViewLineOptions } from '../viewParts/viewLines/viewLineOptions.js';
 

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,
@@ -11,9 +11,9 @@ import {
 	MainContext,
 	MainThreadSecretStateShape
 } from '../common/extHost.protocol.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { SequencerByKey } from '../../../base/common/async.js';
-import { ISecretStorageService } from '../../../platform/secrets/common/secrets.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { SequencerByKey } from '@sidex/base/common/async.js';
+import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../services/environment/browser/environmentService.js';
 
 @extHostNamedCustomer(MainContext.MainThreadSecretState)

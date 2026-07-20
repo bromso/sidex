@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IAddressProvider } from '../../../../platform/remote/common/remoteAgentConnection.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IAddressProvider } from '@sidex/platform/remote/common/remoteAgentConnection.js';
 import {
 	AbstractTunnelService,
 	ITunnelProvider,
 	ITunnelService,
 	RemoteTunnel,
 	isTunnelProvider
-} from '../../../../platform/tunnel/common/tunnel.js';
+} from '@sidex/platform/tunnel/common/tunnel.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 
 export class TunnelService extends AbstractTunnelService {

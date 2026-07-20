@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Color } from '../../../../base/common/color.js';
-import { IFontTokenOptions } from '../../../../platform/theme/common/themeService.js';
+import { Color } from '@sidex/base/common/color.js';
+import { IFontTokenOptions } from '@sidex/platform/theme/common/themeService.js';
 import { LanguageId, FontStyle, ColorId, StandardTokenType, MetadataConsts } from '../../encodedTokenAttributes.js';
 
 export interface ITokenThemeRule {

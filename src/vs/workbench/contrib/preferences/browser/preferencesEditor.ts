@@ -4,34 +4,34 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/preferencesEditor.css';
-import * as DOM from '../../../../base/browser/dom.js';
+import * as DOM from '@sidex/base/browser/dom.js';
 import { localize } from '@sidex/base/nls.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { Event } from '../../../../base/common/event.js';
-import { getInputBoxStyle } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Event } from '@sidex/base/common/event.js';
+import { getInputBoxStyle } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 import { CONTEXT_PREFERENCES_SEARCH_FOCUS } from '../common/preferences.js';
 import { settingsTextInputBorder } from '../common/settingsEditorColorRegistry.js';
 import { SearchWidget } from './preferencesWidgets.js';
-import { ActionBar, ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { ActionBar, ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IPreferencesEditorPaneRegistry,
 	Extensions,
 	IPreferencesEditorPaneDescriptor,
 	IPreferencesEditorPane
 } from './preferencesEditorRegistry.js';
-import { Action } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
 
 class PreferenceTabAction extends Action {
 	constructor(

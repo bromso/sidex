@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../../base/common/uri.js';
-import * as perf from '../../../../../base/common/performance.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as perf from '@sidex/base/common/performance.js';
 import {
 	WorkbenchActionExecutedEvent,
 	WorkbenchActionExecutedClassification
-} from '../../../../../base/common/actions.js';
-import { memoize } from '../../../../../base/common/decorators.js';
+} from '@sidex/base/common/actions.js';
+import { memoize } from '@sidex/base/common/decorators.js';
 import {
 	IFilesConfiguration,
 	ExplorerFolderContext,
@@ -32,30 +32,30 @@ import {
 	ExplorerFindProviderActive
 } from '../../common/files.js';
 import { FileCopiedContext, NEW_FILE_COMMAND_ID, NEW_FOLDER_COMMAND_ID } from '../fileActions.js';
-import * as DOM from '../../../../../base/browser/dom.js';
+import * as DOM from '@sidex/base/browser/dom.js';
 import { IWorkbenchLayoutService } from '../../../../services/layout/browser/layoutService.js';
 import { ExplorerDecorationsProvider } from './explorerDecorationsProvider.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../../platform/configuration/common/configuration.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IProgressService, ProgressLocation } from '../../../../../platform/progress/common/progress.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	IContextKeyService,
 	IContextKey,
 	ContextKeyExpr
-} from '../../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import { ResourceContextKey } from '../../../../common/contextkeys.js';
 import { IDecorationsService } from '../../../../services/decorations/common/decorations.js';
-import { WorkbenchCompressibleAsyncDataTree } from '../../../../../platform/list/browser/listService.js';
-import { DelayedDragHandler } from '../../../../../base/browser/dnd.js';
+import { WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { DelayedDragHandler } from '@sidex/base/browser/dnd.js';
 import { IEditorService, SIDE_GROUP, ACTIVE_GROUP } from '../../../../services/editor/common/editorService.js';
 import { IViewPaneOptions, ViewPane } from '../../../../browser/parts/views/viewPane.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	ExplorerDelegate,
 	ExplorerDataSource,
@@ -68,34 +68,34 @@ import {
 	isCompressedFolderName,
 	ExplorerFindProvider
 } from './explorerViewer.js';
-import { IThemeService, IFileIconTheme } from '../../../../../platform/theme/common/themeService.js';
+import { IThemeService, IFileIconTheme } from '@sidex/platform/theme/common/themeService.js';
 import { IWorkbenchThemeService } from '../../../../services/themes/common/workbenchThemeService.js';
-import { ITreeContextMenuEvent, TreeVisibility } from '../../../../../base/browser/ui/tree/tree.js';
-import { MenuId, Action2, registerAction2 } from '../../../../../platform/actions/common/actions.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
+import { ITreeContextMenuEvent, TreeVisibility } from '@sidex/base/browser/ui/tree/tree.js';
+import { MenuId, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { ExplorerItem, NewExplorerItem } from '../../common/explorerModel.js';
 import { ResourceLabels } from '../../../../browser/labels.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
-import { IAsyncDataTreeViewState } from '../../../../../base/browser/ui/tree/asyncDataTree.js';
-import { FuzzyScore } from '../../../../../base/common/filters.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { IFileService, FileSystemProviderCapabilities } from '../../../../../platform/files/common/files.js';
-import { IDisposable } from '../../../../../base/common/lifecycle.js';
-import { Event } from '../../../../../base/common/event.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IAsyncDataTreeViewState } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IFileService, FileSystemProviderCapabilities } from '@sidex/platform/files/common/files.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 import { IViewDescriptorService } from '../../../../common/views.js';
 import { IViewsService } from '../../../../services/views/common/viewsService.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../../common/editor.js';
 import { IExplorerService, IExplorerView } from '../files.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IEditorResolverService } from '../../../../services/editor/common/editorResolverService.js';
-import { EditorOpenSource } from '../../../../../platform/editor/common/editor.js';
-import { ResourceMap } from '../../../../../base/common/map.js';
-import { AbstractTreePart } from '../../../../../base/browser/ui/tree/abstractTree.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
+import { EditorOpenSource } from '@sidex/platform/editor/common/editor.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { AbstractTreePart } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 function hasExpandedRootChild(
 	tree: WorkbenchCompressibleAsyncDataTree<ExplorerItem | ExplorerItem[], ExplorerItem, FuzzyScore>,

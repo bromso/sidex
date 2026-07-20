@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { findLastIdxMonotonous, findLastMonotonous, findFirstMonotonous } from '../../../../base/common/arraysFind.js';
-import { CharCode } from '../../../../base/common/charCode.js';
+import { findLastIdxMonotonous, findLastMonotonous, findFirstMonotonous } from '@sidex/base/common/arraysFind.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
 import { OffsetRange } from '../../core/ranges/offsetRange.js';
 import { Position } from '../../core/position.js';
 import { Range } from '../../core/range.js';

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareIgnoreCase } from '../../../base/common/strings.js';
+import { compareIgnoreCase } from '@sidex/base/common/strings.js';
 import {
 	IExtensionIdentifier,
 	IGalleryExtension,
@@ -18,13 +18,13 @@ import {
 	UNDEFINED_PUBLISHER
 } from '../../extensions/common/extensions.js';
 import { IFileService } from '../../files/common/files.js';
-import { isLinux, platform } from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
+import { isLinux, platform } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
 import { ILogService } from '../../log/common/log.js';
-import { arch } from '../../../base/common/process.js';
+import { arch } from '@sidex/base/common/process.js';
 import { TelemetryTrustedValue } from '../../telemetry/common/telemetryUtils.js';
-import { isString } from '../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export function areSameExtensions(a: IExtensionIdentifier, b: IExtensionIdentifier): boolean {
 	if (a.uuid && b.uuid) {

@@ -3,33 +3,33 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getDomNodePagePosition } from '../../../../base/browser/dom.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { IAnchor } from '../../../../base/browser/ui/contextview/contextview.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Color } from '../../../../base/common/color.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { derivedOpts, IObservable, observableValue } from '../../../../base/common/observable.js';
-import { Event } from '../../../../base/common/event.js';
+import { getDomNodePagePosition } from '@sidex/base/browser/dom.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { derivedOpts, IObservable, observableValue } from '@sidex/base/common/observable.js';
+import { Event } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
-import { IActionListDelegate } from '../../../../platform/actionWidget/browser/actionList.js';
-import { IActionWidgetService } from '../../../../platform/actionWidget/browser/actionWidget.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IMarkerService } from '../../../../platform/markers/common/markers.js';
-import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
+import { IActionListDelegate } from '@sidex/platform/actionWidget/browser/actionList.js';
+import { IActionWidgetService } from '@sidex/platform/actionWidget/browser/actionWidget.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
 import {
 	editorFindMatchHighlight,
 	editorFindMatchHighlightBorder
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IPosition, Position } from '../../../common/core/position.js';
 import { IEditorContribution, ScrollType } from '../../../common/editorCommon.js';
@@ -52,7 +52,7 @@ import { CodeActionKeybindingResolver } from './codeActionKeybindingResolver.js'
 import { toMenuItems } from './codeActionMenu.js';
 import { CodeActionModel, CodeActionsState } from './codeActionModel.js';
 import { computeLightBulbInfo, LightBulbInfo, LightBulbWidget } from './lightBulbWidget.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 
 interface IActionShowOptions {
 	readonly includeDisabledActions?: boolean;

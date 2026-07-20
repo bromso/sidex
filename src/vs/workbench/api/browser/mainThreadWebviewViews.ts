@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { Disposable, DisposableMap, DisposableStore } from '../../../base/common/lifecycle.js';
-import { generateUuid } from '../../../base/common/uuid.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { MainThreadWebviews, reviveWebviewExtension } from './mainThreadWebviews.js';
 import * as extHostProtocol from '../common/extHost.protocol.js';
 import { IViewBadge } from '../../common/views.js';
 import { IWebviewViewService, WebviewView } from '../../contrib/webviewView/browser/webviewViewService.js';
-import { ITelemetryService } from '../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 
 export class MainThreadWebviewsViews extends Disposable implements extHostProtocol.MainThreadWebviewViewsShape {

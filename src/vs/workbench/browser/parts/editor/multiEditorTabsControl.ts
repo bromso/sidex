@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/multieditortabscontrol.css';
-import { isLinux, isMacintosh, isWindows } from '../../../../base/common/platform.js';
-import { shorten } from '../../../../base/common/labels.js';
+import { isLinux, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
+import { shorten } from '@sidex/base/common/labels.js';
 import {
 	EditorResourceAccessor,
 	Verbosity,
@@ -21,18 +21,18 @@ import {
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { computeEditorAriaLabel } from '../../editor.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { EventType as TouchEventType, GestureEvent, Gesture } from '../../../../base/browser/touch.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { EventType as TouchEventType, GestureEvent, Gesture } from '@sidex/base/browser/touch.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { ResourceLabels, IResourceLabel, DEFAULT_LABELS_CONTAINER } from '../../labels.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import { EditorCommandsContextActionRunner, EditorTabsControl } from './editorTabsControl.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IDisposable,
 	dispose,
@@ -40,11 +40,11 @@ import {
 	combinedDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { ScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { getOrSet } from '../../../../base/common/map.js';
-import { IThemeService, registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { getOrSet } from '@sidex/base/common/map.js';
+import { IThemeService, registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import {
 	TAB_INACTIVE_BACKGROUND,
 	TAB_ACTIVE_BACKGROUND,
@@ -76,7 +76,7 @@ import {
 	activeContrastBorder,
 	contrastBorder,
 	editorBackground
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	ResourcesDropHandler,
 	DraggedEditorIdentifier,
@@ -84,8 +84,8 @@ import {
 	extractTreeDropData,
 	isWindowDraggedOver
 } from '../../dnd.js';
-import { Color } from '../../../../base/common/color.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { Color } from '@sidex/base/common/color.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { MergeGroupMode, IMergeGroupOptions } from '../../../services/editor/common/editorGroupsService.js';
 import {
 	addDisposableListener,
@@ -99,7 +99,7 @@ import {
 	isMouseEvent,
 	getWindow,
 	$
-} from '../../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IEditorGroupsView,
@@ -110,28 +110,28 @@ import {
 	prepareMoveCopyEditors
 } from './editor.js';
 import { CloseEditorTabAction, UnpinEditorAction } from './editorActions.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { basenameOrAuthority } from '../../../../base/common/resources.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+import { basenameOrAuthority } from '@sidex/base/common/resources.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { IPathService } from '../../../services/path/common/pathService.js';
-import { IPath, win32, posix } from '../../../../base/common/path.js';
-import { coalesce, insert } from '../../../../base/common/arrays.js';
-import { isHighContrast } from '../../../../platform/theme/common/theme.js';
-import { isSafari } from '../../../../base/browser/browser.js';
-import { equals } from '../../../../base/common/objects.js';
-import { EditorActivation, IEditorOptions } from '../../../../platform/editor/common/editor.js';
+import { IPath, win32, posix } from '@sidex/base/common/path.js';
+import { coalesce, insert } from '@sidex/base/common/arrays.js';
+import { isHighContrast } from '@sidex/platform/theme/common/theme.js';
+import { isSafari } from '@sidex/base/browser/browser.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { EditorActivation, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
 import { UNLOCK_GROUP_COMMAND_ID } from './editorCommands.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { ITreeViewsDnDService } from '../../../../editor/common/services/treeViewsDndService.js';
-import { DraggedTreeItemsIdentifier } from '../../../../editor/common/services/treeViewsDnd.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ITreeViewsDnDService } from '@sidex/editor/common/services/treeViewsDndService.js';
+import { DraggedTreeItemsIdentifier } from '@sidex/editor/common/services/treeViewsDnd.js';
 import { IEditorResolverService } from '../../../services/editor/common/editorResolverService.js';
 import { IEditorTitleControlDimensions } from './editorTitleControl.js';
 import { StickyEditorGroupModel, UnstickyEditorGroupModel } from '../../../common/editor/filteredEditorGroupModel.js';
 import { IReadonlyEditorGroupModel } from '../../../common/editor/editorGroupModel.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { applyDragImage } from '../../../../base/browser/ui/dnd/dnd.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { applyDragImage } from '@sidex/base/browser/ui/dnd/dnd.js';
 
 interface IEditorInputLabel {
 	readonly editor: EditorInput;

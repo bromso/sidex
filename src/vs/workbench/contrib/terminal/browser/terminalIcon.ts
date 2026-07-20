@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { hash } from '../../../../base/common/hash.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IExtensionTerminalProfile, ITerminalProfile } from '../../../../platform/terminal/common/terminal.js';
-import { getIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
-import { ColorScheme, isDark } from '../../../../platform/theme/common/theme.js';
-import { IColorTheme } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IExtensionTerminalProfile, ITerminalProfile } from '@sidex/platform/terminal/common/terminal.js';
+import { getIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ColorScheme, isDark } from '@sidex/platform/theme/common/theme.js';
+import { IColorTheme } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ITerminalInstance } from './terminal.js';
 import { ITerminalProfileResolverService } from '../common/terminal.js';
 import { ansiColorMap } from '../common/terminalColorRegistry.js';
-import { createStyleSheet } from '../../../../base/browser/domStylesheets.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { isString } from '../../../../base/common/types.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export function getColorClass(colorKey: string): string;
 export function getColorClass(profile: ITerminalProfile): string;

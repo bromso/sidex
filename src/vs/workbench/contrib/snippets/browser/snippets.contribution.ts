@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
 import * as nls from '@sidex/base/nls.js';
-import { registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import * as JSONContributionRegistry from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import * as JSONContributionRegistry from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { Extensions as WorkbenchExtensions, IWorkbenchContributionsRegistry } from '../../../common/contributions.js';
 import { ConfigureSnippetsAction } from './commands/configureSnippets.js';
 import { ApplyFileSnippetAction } from './commands/fileTemplateSnippets.js';
@@ -19,10 +19,10 @@ import { SnippetCodeActions } from './snippetCodeActionProvider.js';
 import { ISnippetsService } from './snippets.js';
 import { SnippetsService } from './snippetsService.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { Extensions, IConfigurationRegistry } from '../../../../platform/configuration/common/configurationRegistry.js';
+import { Extensions, IConfigurationRegistry } from '@sidex/platform/configuration/common/configurationRegistry.js';
 
 import './tabCompletion.js';
-import { editorConfigurationBaseNode } from '../../../../editor/common/config/editorConfigurationSchema.js';
+import { editorConfigurationBaseNode } from '@sidex/editor/common/config/editorConfigurationSchema.js';
 
 // service
 registerSingleton(ISnippetsService, SnippetsService, InstantiationType.Delayed);

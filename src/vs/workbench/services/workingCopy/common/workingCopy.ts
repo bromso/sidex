@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ISaveOptions, IRevertOptions, SaveReason, SaveSource } from '../../../common/editor.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
 
 export const enum WorkingCopyCapabilities {
 	/**

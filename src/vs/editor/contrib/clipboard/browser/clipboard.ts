@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as browser from '../../../../base/browser/browser.js';
-import { getActiveDocument, getActiveWindow } from '../../../../base/browser/dom.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import * as platform from '../../../../base/common/platform.js';
+import * as browser from '@sidex/base/browser/browser.js';
+import { getActiveDocument, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import * as platform from '@sidex/base/common/platform.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	CopyOptions,
 	generateDataToCopyAndStoreInMemory,

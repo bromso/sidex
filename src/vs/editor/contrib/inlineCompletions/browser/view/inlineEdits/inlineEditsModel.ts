@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../../../base/common/event.js';
-import { derived, IObservable } from '../../../../../../base/common/observable.js';
-import { setTimeout0 } from '../../../../../../base/common/platform.js';
+import { Event } from '@sidex/base/common/event.js';
+import { derived, IObservable } from '@sidex/base/common/observable.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
 import { InlineCompletionsModel, isSuggestionInViewport } from '../../model/inlineCompletionsModel.js';
 import { InlineSuggestHint } from '../../model/inlineSuggestionItem.js';
 import { InlineCompletionEditorType } from '../../model/provideInlineCompletions.js';

@@ -7,9 +7,9 @@ import './placeholderText.css';
 import { EditorContributionInstantiation, registerEditorContribution } from '../../../browser/editorExtensions.js';
 import { ghostTextForeground } from '../../../common/core/editorColorRegistry.js';
 import { localize } from '@sidex/base/nls.js';
-import { registerColor } from '../../../../platform/theme/common/colorUtils.js';
+import { registerColor } from '@sidex/platform/theme/common/colorUtils.js';
 import { PlaceholderTextContribution } from './placeholderTextContribution.js';
-import { wrapInReloadableClass1 } from '../../../../platform/observable/common/wrapInReloadableClass.js';
+import { wrapInReloadableClass1 } from '@sidex/platform/observable/common/wrapInReloadableClass.js';
 
 registerEditorContribution(
 	PlaceholderTextContribution.ID,

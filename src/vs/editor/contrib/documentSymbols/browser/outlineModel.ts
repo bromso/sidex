@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { binarySearch, coalesceInPlace, equals } from '../../../../base/common/arrays.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { LRUCache } from '../../../../base/common/map.js';
-import { commonPrefixLength } from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
+import { binarySearch, coalesceInPlace, equals } from '@sidex/base/common/arrays.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { commonPrefixLength } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IPosition, Position } from '../../../common/core/position.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';
 import { DocumentSymbol, DocumentSymbolProvider } from '../../../common/languages.js';
-import { MarkerSeverity } from '../../../../platform/markers/common/markers.js';
+import { MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import {
 	IFeatureDebounceInformation,
 	ILanguageFeatureDebounceService
 } from '../../../common/services/languageFeatureDebounce.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IModelService } from '../../../common/services/model.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 

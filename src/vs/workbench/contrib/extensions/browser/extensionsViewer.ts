@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IDisposable,
@@ -13,53 +13,53 @@ import {
 	toDisposable,
 	isDisposable,
 	MutableDisposable
-} from '../../../../base/common/lifecycle.js';
-import { Action, ActionRunner, IAction, Separator } from '../../../../base/common/actions.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Action, ActionRunner, IAction, Separator } from '@sidex/base/common/actions.js';
 import { IExtensionsWorkbenchService, IExtension, IExtensionsViewState } from '../common/extensions.js';
-import { Event } from '../../../../base/common/event.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IListService,
 	IWorkbenchPagedListOptions,
 	WorkbenchAsyncDataTree,
 	WorkbenchPagedList
-} from '../../../../platform/list/browser/listService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	registerThemingParticipant,
 	IColorTheme,
 	ICssStyleCollector
-} from '../../../../platform/theme/common/themeService.js';
-import { IAsyncDataSource, ITreeNode } from '../../../../base/browser/ui/tree/tree.js';
-import { IListVirtualDelegate, IListRenderer, IListContextMenuEvent } from '../../../../base/browser/ui/list/list.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { IModalEditorPartOptions } from '../../../../platform/editor/common/editor.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { IAsyncDataSource, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { IListVirtualDelegate, IListRenderer, IListContextMenuEvent } from '@sidex/base/browser/ui/list/list.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { IModalEditorPartOptions } from '@sidex/platform/editor/common/editor.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
 import { Delegate, Renderer } from './extensionsList.js';
 import {
 	listFocusForeground,
 	listFocusBackground,
 	foreground,
 	editorBackground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { IListStyles } from '../../../../base/browser/ui/list/listWidget.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { IStyleOverride } from '../../../../platform/theme/browser/defaultStyles.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { IListStyles } from '@sidex/base/browser/ui/list/listWidget.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IStyleOverride } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import { IWorkbenchLayoutService, Position } from '../../../services/layout/browser/layoutService.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import { ExtensionAction, getContextMenuActions, ManageExtensionAction } from './extensionsActions.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { getLocationBasedViewColors } from '../../../browser/parts/views/viewPane.js';
-import { DelayedPagedModel, IPagedModel } from '../../../../base/common/paging.js';
+import { DelayedPagedModel, IPagedModel } from '@sidex/base/common/paging.js';
 import { ExtensionIconWidget } from './extensionsWidgets.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
 
 function getAriaLabelForExtension(extension: IExtension | null): string {
 	if (!extension) {

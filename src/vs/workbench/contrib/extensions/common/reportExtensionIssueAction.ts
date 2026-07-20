@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Action } from '../../../../base/common/actions.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { IWorkbenchIssueService } from '../../issue/common/issue.js';
 
 export class ReportExtensionIssueAction extends Action {

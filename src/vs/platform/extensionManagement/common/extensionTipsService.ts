@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../base/common/arrays.js';
-import { Disposable, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { IConfigBasedExtensionTip as IRawConfigBasedExtensionTip } from '../../../base/common/product.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IConfigBasedExtensionTip as IRawConfigBasedExtensionTip } from '@sidex/base/common/product.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IConfigBasedExtensionTip,
 	IExecutableBasedExtensionTip,
@@ -17,12 +17,12 @@ import {
 } from './extensionManagement.js';
 import { IFileService } from '../../files/common/files.js';
 import { IProductService } from '../../product/common/productService.js';
-import { disposableTimeout } from '../../../base/common/async.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Event } from '../../../base/common/event.js';
-import { join } from '../../../base/common/path.js';
-import { isWindows } from '../../../base/common/platform.js';
-import { env } from '../../../base/common/process.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import { join } from '@sidex/base/common/path.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { env } from '@sidex/base/common/process.js';
 import { areSameExtensions } from './extensionManagementUtil.js';
 import {
 	IExtensionRecommendationNotificationService,

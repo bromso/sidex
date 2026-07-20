@@ -3,37 +3,37 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { sequence } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import * as json from '../../../../base/common/json.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { DisposableStore, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import * as resources from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI as uri } from '../../../../base/common/uri.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { sequence } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as json from '@sidex/base/common/json.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { DisposableStore, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IJSONContributionRegistry,
 	Extensions as JSONExtensions
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	IWorkspaceFoldersChangeEvent,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
-import { OS } from '../../../../base/common/platform.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { OS } from '@sidex/base/common/platform.js';
 import { IEditorPane } from '../../../common/editor.js';
 import { launchSchemaId } from '../../../services/configuration/common/configuration.js';
 import { ACTIVE_GROUP, IEditorService } from '../../../services/editor/common/editorService.js';

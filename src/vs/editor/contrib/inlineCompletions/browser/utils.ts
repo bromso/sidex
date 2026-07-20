@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Permutation, compareBy } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+import { Permutation, compareBy } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	observableValue,
@@ -13,13 +13,13 @@ import {
 	autorun,
 	transaction,
 	IReader
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import {
 	ContextKeyValue,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { bindContextKey } from '../../../../platform/observable/common/platformObservableUtils.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { bindContextKey } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { Position } from '../../../common/core/position.js';
 import { PositionOffsetTransformer } from '../../../common/core/text/positionToOffset.js';
 import { Range } from '../../../common/core/range.js';

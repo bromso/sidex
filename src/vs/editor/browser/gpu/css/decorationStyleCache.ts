@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { NKeyMap } from '../../../../base/common/map.js';
+import { NKeyMap } from '@sidex/base/common/map.js';
 
 export interface IDecorationStyleSet {
 	/**

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EventType, addDisposableListener, h } from '../../../../../base/browser/dom.js';
-import { IMouseWheelEvent } from '../../../../../base/browser/mouseEvent.js';
-import { ActionsOrientation } from '../../../../../base/browser/ui/actionbar/actionbar.js';
-import { HoverPosition } from '../../../../../base/browser/ui/hover/hoverWidget.js';
-import { IBoundarySashes } from '../../../../../base/browser/ui/sash/sash.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { EventType, addDisposableListener, h } from '@sidex/base/browser/dom.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
@@ -18,13 +18,13 @@ import {
 	derivedWithSetter,
 	observableFromEvent,
 	observableValue
-} from '../../../../../base/common/observable.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { HiddenItemStrategy, MenuWorkbenchToolBar } from '../../../../../platform/actions/browser/toolbar.js';
-import { IMenuService, MenuId } from '../../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { WorkbenchHoverDelegate } from '../../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { WorkbenchHoverDelegate } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { LineRange, LineRangeSet } from '../../../../common/core/ranges/lineRange.js';
 import { OffsetRange } from '../../../../common/core/ranges/offsetRange.js';

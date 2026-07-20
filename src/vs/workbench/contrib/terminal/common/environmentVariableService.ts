@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { debounce, throttle } from '../../../../base/common/decorators.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { debounce, throttle } from '@sidex/base/common/decorators.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { MergedEnvironmentVariableCollection } from '../../../../platform/terminal/common/environmentVariableCollection.js';
+import { MergedEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariableCollection.js';
 import {
 	deserializeEnvironmentDescriptionMap,
 	deserializeEnvironmentVariableCollection,
 	serializeEnvironmentDescriptionMap,
 	serializeEnvironmentVariableCollection
-} from '../../../../platform/terminal/common/environmentVariableShared.js';
+} from '@sidex/platform/terminal/common/environmentVariableShared.js';
 import { IEnvironmentVariableCollectionWithPersistence, IEnvironmentVariableService } from './environmentVariable.js';
 import { TerminalStorageKeys } from './terminalStorageKeys.js';
 import {
 	IMergedEnvironmentVariableCollection,
 	ISerializableEnvironmentDescriptionMap,
 	ISerializableEnvironmentVariableCollection
-} from '../../../../platform/terminal/common/environmentVariable.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 interface ISerializableExtensionEnvironmentVariableCollection {
 	extensionIdentifier: string;

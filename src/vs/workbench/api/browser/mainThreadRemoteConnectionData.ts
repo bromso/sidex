@@ -5,8 +5,8 @@
 
 import { extHostCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { ExtHostContext, ExtHostExtensionServiceShape } from '../common/extHost.protocol.js';
-import { IRemoteAuthorityResolverService } from '../../../platform/remote/common/remoteAuthorityResolver.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { IRemoteAuthorityResolverService } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
 
 @extHostCustomer

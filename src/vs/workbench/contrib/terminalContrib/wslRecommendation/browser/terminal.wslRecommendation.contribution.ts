@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, type IDisposable } from '../../../../../base/common/lifecycle.js';
-import { basename } from '../../../../../base/common/path.js';
-import { isWindows } from '../../../../../base/common/platform.js';
+import { Disposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/path.js';
+import { isWindows } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
-import { IExtensionManagementService } from '../../../../../platform/extensionManagement/common/extensionManagement.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IExtensionManagementService } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	INotificationService,
 	NeverShowAgainScope,
 	NotificationPriority,
 	Severity
-} from '../../../../../platform/notification/common/notification.js';
-import { IProductService } from '../../../../../platform/product/common/productService.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	registerWorkbenchContribution2,
 	WorkbenchPhase,

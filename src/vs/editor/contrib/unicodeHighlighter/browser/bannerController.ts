@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 import './bannerController.css';
 import { localize } from '@sidex/base/nls.js';
-import { $, append, clearNode } from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Action } from '../../../../base/common/actions.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import { $, append, clearNode } from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILinkDescriptor, Link } from '../../../../platform/opener/browser/link.js';
-import { widgetClose } from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILinkDescriptor, Link } from '@sidex/platform/opener/browser/link.js';
+import { widgetClose } from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 const BANNER_ELEMENT_HEIGHT = 26;
 

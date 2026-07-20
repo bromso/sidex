@@ -2,13 +2,13 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { getWindow, h } from '../../../../base/browser/dom.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
-import { findLast } from '../../../../base/common/arraysFind.js';
-import { BugIndicatingError, onUnexpectedError } from '../../../../base/common/errors.js';
-import { Event } from '../../../../base/common/event.js';
-import { readHotReloadableExport } from '../../../../base/common/hotReloadHelpers.js';
-import { toDisposable } from '../../../../base/common/lifecycle.js';
+import { getWindow, h } from '@sidex/base/browser/dom.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
+import { findLast } from '@sidex/base/common/arraysFind.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { readHotReloadableExport } from '@sidex/base/common/hotReloadHelpers.js';
+import { toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	ITransaction,
@@ -22,16 +22,16 @@ import {
 	recomputeInitiallyAndOnChange,
 	subtransaction,
 	transaction
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { bindContextKey } from '../../../../platform/observable/common/platformObservableUtils.js';
-import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { bindContextKey } from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
 import { IDiffEditorOptions } from '../../../common/config/editorOptions.js';
 import { IDimension } from '../../../common/core/2d/dimension.js';
 import { LineRange } from '../../../common/core/ranges/lineRange.js';

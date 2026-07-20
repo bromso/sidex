@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IExtensionManagementService,
 	IExtensionIdentifier,
@@ -14,7 +14,7 @@ import {
 	DISABLED_EXTENSIONS_STORAGE_PATH,
 	InstallOperation,
 	IAllowedExtensionsService
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IWorkbenchExtensionEnablementService,
 	EnablementState,
@@ -28,9 +28,9 @@ import {
 	BetterMergeId,
 	getExtensionDependencies,
 	isMalicious
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	ExtensionType,
@@ -38,34 +38,34 @@ import {
 	isAuthenticationProviderExtension,
 	isLanguagePackExtension,
 	isResolverExtension
-} from '../../../../platform/extensions/common/extensions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { StorageManager } from '../../../../platform/extensionManagement/common/extensionEnablementService.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { StorageManager } from '@sidex/platform/extensionManagement/common/extensionEnablementService.js';
 import { webWorkerExtHostConfig, WebWorkerExtHostConfigValue } from '../../extensions/common/extensions.js';
 import {
 	IUserDataSyncAccountService,
 	IUserDataSyncEnablementService
-} from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
 import {
 	INotificationService,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/notification/common/notification.js';
 import { IHostService } from '../../host/browser/host.js';
 import { IExtensionBisectService } from './extensionBisect.js';
 import {
 	IWorkspaceTrustManagementService,
 	IWorkspaceTrustRequestService
-} from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IExtensionManifestPropertiesService } from '../../extensions/common/extensionManifestPropertiesService.js';
-import { isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { isString } from '../../../../base/common/types.js';
-import { Delayer } from '../../../../base/common/async.js';
+import { isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { isString } from '@sidex/base/common/types.js';
+import { Delayer } from '@sidex/base/common/async.js';
 
 const SOURCE = 'IWorkbenchExtensionEnablementService';
 

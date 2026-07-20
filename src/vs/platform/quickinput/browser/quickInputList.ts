@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as cssJs from '../../../base/browser/cssValue.js';
-import * as dom from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { ToolBar } from '../../../base/browser/ui/toolbar/toolbar.js';
-import { AriaRole } from '../../../base/browser/ui/aria/aria.js';
-import type { IHoverWidget, IManagedHoverTooltipMarkdownString } from '../../../base/browser/ui/hover/hover.js';
-import { IHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate.js';
-import { HoverPosition } from '../../../base/browser/ui/hover/hoverWidget.js';
-import { IIconLabelValueOptions, IconLabel } from '../../../base/browser/ui/iconLabel/iconLabel.js';
-import { KeybindingLabel } from '../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { IListVirtualDelegate } from '../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider, IListStyles } from '../../../base/browser/ui/list/listWidget.js';
-import { Checkbox, createToggleActionViewItemProvider, IToggleStyles } from '../../../base/browser/ui/toggle/toggle.js';
-import { RenderIndentGuides } from '../../../base/browser/ui/tree/abstractTree.js';
-import { IObjectTreeElement, ITreeNode, ITreeRenderer, TreeVisibility } from '../../../base/browser/ui/tree/tree.js';
-import { equals } from '../../../base/common/arrays.js';
-import { ThrottledDelayer } from '../../../base/common/async.js';
-import { compareAnything } from '../../../base/common/comparers.js';
-import { memoize } from '../../../base/common/decorators.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { Emitter, Event, EventBufferer, IValueWithChangeEvent } from '../../../base/common/event.js';
-import { IMatch } from '../../../base/common/filters.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import * as cssJs from '@sidex/base/browser/cssValue.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
+import { AriaRole } from '@sidex/base/browser/ui/aria/aria.js';
+import type { IHoverWidget, IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IIconLabelValueOptions, IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider, IListStyles } from '@sidex/base/browser/ui/list/listWidget.js';
+import { Checkbox, createToggleActionViewItemProvider, IToggleStyles } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { RenderIndentGuides } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { IObjectTreeElement, ITreeNode, ITreeRenderer, TreeVisibility } from '@sidex/base/browser/ui/tree/tree.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { compareAnything } from '@sidex/base/common/comparers.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event, EventBufferer, IValueWithChangeEvent } from '@sidex/base/common/event.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import {
 	IParsedLabelWithIcons,
 	getCodiconAriaLabel,
 	matchesFuzzyIconAware,
 	parseLabelWithIcons
-} from '../../../base/common/iconLabels.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { observableValue, observableValueOpts, transaction } from '../../../base/common/observable.js';
-import { OS } from '../../../base/common/platform.js';
-import { escape, ltrim } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/common/iconLabels.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { observableValue, observableValueOpts, transaction } from '@sidex/base/common/observable.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { escape, ltrim } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { IContextMenuService } from '../../contextview/browser/contextView.js';

@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ExtHostStorage } from './extHostStorage.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { DeferredPromise, RunOnceScheduler } from '../../../base/common/async.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { DeferredPromise, RunOnceScheduler } from '@sidex/base/common/async.js';
 
 export class ExtensionMemento implements vscode.Memento {
 	protected readonly _id: string;

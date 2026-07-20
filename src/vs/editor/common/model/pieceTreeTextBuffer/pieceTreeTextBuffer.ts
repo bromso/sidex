@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import * as strings from '../../../../base/common/strings.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { Position } from '../../core/position.js';
 import { Range } from '../../core/range.js';
 import {
@@ -22,7 +22,7 @@ import {
 import { PieceTreeBase, StringBuffer } from './pieceTreeBase.js';
 import { countEOL, StringEOL } from '../../core/misc/eolCounter.js';
 import { TextChange } from '../../core/textChange.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export interface IValidatedEditOperation {
 	sortIndex: number;

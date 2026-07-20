@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { asArray } from '../../../../base/common/arrays.js';
-import { IMarkdownString, isEmptyMarkdownString } from '../../../../base/common/htmlContent.js';
+import { asArray } from '@sidex/base/common/arrays.js';
+import { IMarkdownString, isEmptyMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { IHoverComputer } from './hoverOperation.js';
 import { GlyphMarginLane } from '../../../common/model.js';

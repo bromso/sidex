@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import {
 	CancelablePromise,
 	createCancelablePromise,
@@ -11,24 +11,24 @@ import {
 	raceCancellablePromises,
 	raceCancellation,
 	timeout
-} from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { isString } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IGalleryExtension } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IGalleryExtension } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import {
 	IExtensionRecommendationNotificationService,
 	IExtensionRecommendations,
 	RecommendationsNotificationResult,
 	RecommendationSource,
 	RecommendationSourceToString
-} from '../../../../platform/extensionRecommendations/common/extensionRecommendations.js';
+} from '@sidex/platform/extensionRecommendations/common/extensionRecommendations.js';
 import {
 	INotificationHandle,
 	INotificationService,
@@ -36,14 +36,14 @@ import {
 	IPromptChoiceWithMenu,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IUserDataSyncEnablementService,
 	SyncResource
-} from '../../../../platform/userDataSync/common/nullUserDataSync.js';
+} from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { IExtension, IExtensionsWorkbenchService } from '../common/extensions.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import {

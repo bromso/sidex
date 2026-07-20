@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equals } from '../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../../base/common/lifecycle.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { LineRange } from '../../core/ranges/lineRange.js';
 import { StandardTokenType } from '../../encodedTokenAttributes.js';
 import { ILanguageIdCodec } from '../../languages.js';
@@ -25,8 +25,8 @@ import {
 	ISettableObservable,
 	observableSignal,
 	observableValueOpts
-} from '../../../../base/common/observable.js';
-import { equalsIfDefinedC, thisEqualsC, arrayEqualsC } from '../../../../base/common/equals.js';
+} from '@sidex/base/common/observable.js';
+import { equalsIfDefinedC, thisEqualsC, arrayEqualsC } from '@sidex/base/common/equals.js';
 
 /**
  * @internal

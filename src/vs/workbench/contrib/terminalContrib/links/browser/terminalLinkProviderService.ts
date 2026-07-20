@@ -5,8 +5,8 @@
 
 import { ITerminalExternalLinkProvider } from '../../../terminal/browser/terminal.js';
 import { ITerminalLinkProviderService } from './links.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { IDisposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export class TerminalLinkProviderService implements ITerminalLinkProviderService {
 	declare _serviceBrand: undefined;

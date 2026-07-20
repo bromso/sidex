@@ -6,16 +6,16 @@
 import { IExtensionsWorkbenchService } from '../common/extensions.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { MenuRegistry, MenuId } from '../../../../platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { MenuRegistry, MenuId } from '@sidex/platform/actions/common/actions.js';
 import { localize } from '@sidex/base/nls.js';
-import { areSameExtensions } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { Action } from '../../../../base/common/actions.js';
+import { areSameExtensions } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { Action } from '@sidex/base/common/actions.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Promises } from '../../../../base/common/async.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Promises } from '@sidex/base/common/async.js';
 
 export class ExtensionDependencyChecker extends Disposable implements IWorkbenchContribution {
 	constructor(

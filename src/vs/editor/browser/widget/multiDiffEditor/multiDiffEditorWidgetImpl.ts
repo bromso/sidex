@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension, getWindow, h, scheduleAtNextAnimationFrame } from '../../../../base/browser/dom.js';
-import { SmoothScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { compareBy, numberComparator } from '../../../../base/common/arrays.js';
-import { findFirstMax } from '../../../../base/common/arraysFind.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { Disposable, IReference, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Dimension, getWindow, h, scheduleAtNextAnimationFrame } from '@sidex/base/browser/dom.js';
+import { SmoothScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { compareBy, numberComparator } from '@sidex/base/common/arrays.js';
+import { findFirstMax } from '@sidex/base/common/arraysFind.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Disposable, IReference, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IReader,
@@ -21,14 +21,14 @@ import {
 	observableFromEvent,
 	observableValue,
 	transaction
-} from '../../../../base/common/observable.js';
-import { Scrollable, ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/common/observable.js';
+import { Scrollable, ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ContextKeyValue, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+import { ContextKeyValue, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { OffsetRange } from '../../../common/core/ranges/offsetRange.js';
 import { IRange } from '../../../common/core/range.js';
 import { ISelection, Selection } from '../../../common/core/selection.js';

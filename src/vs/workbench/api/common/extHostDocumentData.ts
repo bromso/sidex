@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ok } from '../../../base/common/assert.js';
-import { Schemas } from '../../../base/common/network.js';
-import { regExpLeadsToEndlessLoop } from '../../../base/common/strings.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { MirrorTextModel } from '../../../editor/common/model/mirrorTextModel.js';
-import { ensureValidWordDefinition, getWordAtText } from '../../../editor/common/core/wordHelper.js';
+import { ok } from '@sidex/base/common/assert.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { regExpLeadsToEndlessLoop } from '@sidex/base/common/strings.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { MirrorTextModel } from '@sidex/editor/common/model/mirrorTextModel.js';
+import { ensureValidWordDefinition, getWordAtText } from '@sidex/editor/common/core/wordHelper.js';
 import type * as vscode from 'vscode';
-import { equals } from '../../../base/common/arrays.js';
+import { equals } from '@sidex/base/common/arrays.js';
 import { EndOfLine } from './extHostTypes/textEdit.js';
 import { Position } from './extHostTypes/position.js';
 import { Range } from './extHostTypes/range.js';

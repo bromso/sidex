@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { sanitizeHtml } from '../../../../base/browser/domSanitize.js';
-import { allowedMarkdownHtmlAttributes, allowedMarkdownHtmlTags } from '../../../../base/browser/markdownRenderer.js';
-import { raceCancellationError } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import * as marked from '../../../../base/common/marked/marked.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { escape } from '../../../../base/common/strings.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { tokenizeToString } from '../../../../editor/common/languages/textToHtmlTokenizer.js';
+import { sanitizeHtml } from '@sidex/base/browser/domSanitize.js';
+import { allowedMarkdownHtmlAttributes, allowedMarkdownHtmlTags } from '@sidex/base/browser/markdownRenderer.js';
+import { raceCancellationError } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import * as marked from '@sidex/base/common/marked/marked.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { escape } from '@sidex/base/common/strings.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { tokenizeToString } from '@sidex/editor/common/languages/textToHtmlTokenizer.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { markedGfmHeadingIdPlugin } from './markedGfmHeadingIdPlugin.js';
 

@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import * as Constants from '../common/constants.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { category } from './searchActionsBase.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { TEXT_SEARCH_QUICK_ACCESS_PREFIX } from './quickTextSearch/textSearchQuickAccess.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IEditor } from '../../../../editor/common/editorCommon.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IEditor } from '@sidex/editor/common/editorCommon.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { getSelectionTextFromEditor } from './searchView.js';
 import { RenderableMatch } from './searchTreeModel/searchTreeCommon.js';
 

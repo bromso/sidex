@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedError } from '../../../base/common/errors.js';
-import { Event } from '../../../base/common/event.js';
-import { Disposable, DisposableMap } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { IStorageService } from '../../../platform/storage/common/storage.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableMap } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import { DiffEditorInput } from '../../common/editor/diffEditorInput.js';
 import { EditorInput } from '../../common/editor/editorInput.js';
 import { ExtensionKeyedWebviewOriginStore, WebviewOptions } from '../../contrib/webview/browser/webview.js';
@@ -36,7 +36,7 @@ import { IExtensionService } from '../../services/extensions/common/extensions.j
 import { IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import * as extHostProtocol from '../common/extHost.protocol.js';
 import { MainThreadWebviews, reviveWebviewContentOptions, reviveWebviewExtension } from './mainThreadWebviews.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 /**
  * Bi-directional map between webview handles and inputs.

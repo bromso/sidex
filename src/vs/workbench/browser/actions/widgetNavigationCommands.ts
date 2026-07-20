@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyMod, KeyCode } from '../../../base/common/keyCodes.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight, KeybindingsRegistry } from '../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight, KeybindingsRegistry } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	WorkbenchListFocusContextKey,
 	WorkbenchListScrollAtBottomContextKey,
 	WorkbenchListScrollAtTopContextKey
-} from '../../../platform/list/browser/listService.js';
-import { Event } from '../../../base/common/event.js';
-import { combinedDisposable, toDisposable, IDisposable, Disposable } from '../../../base/common/lifecycle.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { Event } from '@sidex/base/common/event.js';
+import { combinedDisposable, toDisposable, IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
 import { WorkbenchPhase, registerWorkbenchContribution2 } from '../../common/contributions.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 /** INavigableContainer represents a logical container composed of widgets that can
 	be navigated back and forth with key shortcuts */

@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	getScopes
-} from '../../../platform/configuration/common/configurationRegistry.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	MainThreadConfigurationShape,
 	MainContext,
@@ -24,8 +24,8 @@ import {
 	ConfigurationTarget,
 	IConfigurationService,
 	IConfigurationOverrides
-} from '../../../platform/configuration/common/configuration.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
 
 @extHostNamedCustomer(MainContext.MainThreadConfiguration)
 export class MainThreadConfiguration implements MainThreadConfigurationShape {

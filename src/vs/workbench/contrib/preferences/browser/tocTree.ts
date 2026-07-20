@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { DefaultStyleController, IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { RenderIndentGuides } from '../../../../base/browser/ui/tree/abstractTree.js';
-import { ITreeElement, ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { DefaultStyleController, IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { RenderIndentGuides } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { ITreeElement, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IListService,
 	IWorkbenchObjectTreeOptions,
 	WorkbenchObjectTree
-} from '../../../../platform/list/browser/listService.js';
-import { getListStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { editorBackground, focusBorder } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { getListStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { editorBackground, focusBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 import { settingsHeaderForeground, settingsHeaderHoverForeground } from '../common/settingsEditorColorRegistry.js';
 import { SettingsTreeFilter } from './settingsTree.js';

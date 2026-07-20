@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { basename } from '../../../../base/common/resources.js';
-import { MarkerSeverity, IRelatedInformation } from '../../../../platform/markers/common/markers.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { MarkerSeverity, IRelatedInformation } from '@sidex/platform/markers/common/markers.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 import { Marker } from './markersModel.js';
 
 export default class Messages {

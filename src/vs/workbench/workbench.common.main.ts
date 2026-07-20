@@ -5,22 +5,22 @@
 
 //#region --- editor/workbench core
 
-import '../editor/editor.all.js';
+import '@sidex/editor/editor.all.js';
 
 // SideX: Register null stubs for stripped services (must be early)
 import './sidexNullServices.js';
 
 // SideX: Register Rust-backed bridge services as DI singletons
-import '../platform/sidex/browser/sidexFileSystemProvider.js';
-import '../platform/sidex/browser/sidexSearchProvider.js';
-import '../platform/sidex/browser/sidexSCMProvider.js';
-import '../platform/sidex/browser/sidexSyntaxService.js';
-import '../platform/sidex/browser/sidexLspService.js';
-import '../platform/sidex/browser/sidexDapService.js';
-import '../platform/sidex/browser/sidexRemoteService.js';
-import '../platform/sidex/common/sidexThemeService.js';
-import '../platform/sidex/common/sidexSettingsService.js';
-import '../platform/sidex/common/sidexKeymapService.js';
+import '@sidex/platform/sidex/browser/sidexFileSystemProvider.js';
+import '@sidex/platform/sidex/browser/sidexSearchProvider.js';
+import '@sidex/platform/sidex/browser/sidexSCMProvider.js';
+import '@sidex/platform/sidex/browser/sidexSyntaxService.js';
+import '@sidex/platform/sidex/browser/sidexLspService.js';
+import '@sidex/platform/sidex/browser/sidexDapService.js';
+import '@sidex/platform/sidex/browser/sidexRemoteService.js';
+import '@sidex/platform/sidex/common/sidexThemeService.js';
+import '@sidex/platform/sidex/common/sidexSettingsService.js';
+import '@sidex/platform/sidex/common/sidexKeymapService.js';
 
 import './api/browser/extensionHost.contribution.js';
 import './browser/workbench.contribution.js';
@@ -63,8 +63,8 @@ import './browser/parts/statusbar/statusbarPart.js';
 
 //#region --- workbench services
 
-import '../platform/actions/common/actions.contribution.js';
-import '../platform/undoRedo/common/undoRedoService.js';
+import '@sidex/platform/actions/common/actions.contribution.js';
+import '@sidex/platform/undoRedo/common/undoRedoService.js';
 import './services/workspaces/common/editSessionIdentityService.js';
 import './services/workspaces/common/canonicalUriService.js';
 import './services/extensions/browser/extensionUrlHandler.js';
@@ -117,13 +117,13 @@ import './services/authentication/browser/authenticationUsageService.js';
 import './services/authentication/browser/authenticationAccessService.js';
 import './services/authentication/browser/dynamicAuthenticationProviderStorageService.js';
 import './services/authentication/browser/authenticationQueryService.js';
-import '../platform/hover/browser/hoverService.js';
-import '../platform/userInteraction/browser/userInteractionServiceImpl.js';
+import '@sidex/platform/hover/browser/hoverService.js';
+import '@sidex/platform/userInteraction/browser/userInteractionServiceImpl.js';
 import './services/assignment/common/assignmentService.js';
 import './services/outline/browser/outlineService.js';
 import './services/languageDetection/browser/languageDetectionWorkerServiceImpl.js';
-import '../editor/common/services/languageFeaturesService.js';
-import '../editor/common/services/treeViewsDndService.js';
+import '@sidex/editor/common/services/languageFeaturesService.js';
+import '@sidex/editor/common/services/treeViewsDndService.js';
 import './services/textMate/browser/textMateTokenizationFeature.contribution.js';
 import './services/treeSitter/browser/treeSitter.contribution.js';
 import './services/userActivity/common/userActivityService.js';
@@ -134,36 +134,36 @@ import './services/editor/common/customEditorLabelService.js';
 import './services/dataChannel/browser/dataChannelService.js';
 import './services/log/common/defaultLogLevels.js';
 
-import { InstantiationType, registerSingleton } from '../platform/instantiation/common/extensions.js';
-import { GlobalExtensionEnablementService } from '../platform/extensionManagement/common/extensionEnablementService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { GlobalExtensionEnablementService } from '@sidex/platform/extensionManagement/common/extensionEnablementService.js';
 import {
 	IAllowedExtensionsService,
 	IGlobalExtensionEnablementService
-} from '../platform/extensionManagement/common/extensionManagement.js';
-import { ContextViewService } from '../platform/contextview/browser/contextViewService.js';
-import { IContextViewService } from '../platform/contextview/browser/contextView.js';
-import { IListService, ListService } from '../platform/list/browser/listService.js';
-import { MarkerDecorationsService } from '../editor/common/services/markerDecorationsService.js';
-import { IMarkerDecorationsService } from '../editor/common/services/markerDecorations.js';
-import { IMarkerService } from '../platform/markers/common/markers.js';
-import { MarkerService } from '../platform/markers/common/markerService.js';
-import { ContextKeyService } from '../platform/contextkey/browser/contextKeyService.js';
-import { IContextKeyService } from '../platform/contextkey/common/contextkey.js';
-import { ITextResourceConfigurationService } from '../editor/common/services/textResourceConfiguration.js';
-import { TextResourceConfigurationService } from '../editor/common/services/textResourceConfigurationService.js';
-import { IDownloadService } from '../platform/download/common/download.js';
-import { DownloadService } from '../platform/download/common/downloadService.js';
-import { OpenerService } from '../editor/browser/services/openerService.js';
-import { IOpenerService } from '../platform/opener/common/opener.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { ContextViewService } from '@sidex/platform/contextview/browser/contextViewService.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IListService, ListService } from '@sidex/platform/list/browser/listService.js';
+import { MarkerDecorationsService } from '@sidex/editor/common/services/markerDecorationsService.js';
+import { IMarkerDecorationsService } from '@sidex/editor/common/services/markerDecorations.js';
+import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { MarkerService } from '@sidex/platform/markers/common/markerService.js';
+import { ContextKeyService } from '@sidex/platform/contextkey/browser/contextKeyService.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { TextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfigurationService.js';
+import { IDownloadService } from '@sidex/platform/download/common/download.js';
+import { DownloadService } from '@sidex/platform/download/common/downloadService.js';
+import { OpenerService } from '@sidex/editor/browser/services/openerService.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import {
 	ExtensionStorageService,
 	IExtensionStorageService
-} from '../platform/extensionManagement/common/extensionStorage.js';
+} from '@sidex/platform/extensionManagement/common/extensionStorage.js';
 // Null UserDataSync stubs (avoid importing heavy userDataSync modules)
-import '../platform/userDataSync/common/nullUserDataSync.js';
-import { AllowedExtensionsService } from '../platform/extensionManagement/common/allowedExtensionsService.js';
-import { IWebWorkerService } from '../platform/webWorker/browser/webWorkerService.js';
-import { WebWorkerService } from '../platform/webWorker/browser/webWorkerServiceImpl.js';
+import '@sidex/platform/userDataSync/common/nullUserDataSync.js';
+import { AllowedExtensionsService } from '@sidex/platform/extensionManagement/common/allowedExtensionsService.js';
+import { IWebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerService.js';
+import { WebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerServiceImpl.js';
 
 registerSingleton(IAllowedExtensionsService, AllowedExtensionsService, InstantiationType.Delayed);
 registerSingleton(IGlobalExtensionEnablementService, GlobalExtensionEnablementService, InstantiationType.Delayed);
@@ -183,7 +183,7 @@ registerSingleton(IWebWorkerService, WebWorkerService, InstantiationType.Delayed
 //#region --- workbench contributions
 
 // Default Account (null stub)
-import './services/accounts/browser/nullDefaultAccount.js';
+import '@sidex/platform/accounts/common/nullDefaultAccount.js';
 
 // Preferences
 import './contrib/preferences/browser/preferences.contribution.js';
@@ -300,6 +300,6 @@ import './contrib/accessibilitySignals/browser/accessibilitySignal.contribution.
 import './contrib/opener/browser/opener.contribution.js';
 
 // Null stubs for stripped services
-import '../editor/browser/services/renameSymbolTrackerService.js';
+import '@sidex/editor/browser/services/renameSymbolTrackerService.js';
 
 //#endregion

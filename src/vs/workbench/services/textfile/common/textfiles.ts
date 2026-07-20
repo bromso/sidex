@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ISaveOptions, IRevertOptions, SaveReason } from '../../../common/editor.js';
-import { ReadableStream } from '../../../../base/common/stream.js';
+import { ReadableStream } from '@sidex/base/common/stream.js';
 import {
 	IBaseFileStatWithMetadata,
 	IFileStatWithMetadata,
@@ -16,16 +16,16 @@ import {
 	FileOperationResult,
 	IReadFileStreamOptions,
 	IFileReadLimits
-} from '../../../../platform/files/common/files.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITextEditorModel } from '../../../../editor/common/services/resolverService.js';
-import { ITextBufferFactory, ITextModel, ITextSnapshot } from '../../../../editor/common/model.js';
-import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { areFunctions, isUndefinedOrNull } from '../../../../base/common/types.js';
+} from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITextEditorModel } from '@sidex/editor/common/services/resolverService.js';
+import { ITextBufferFactory, ITextModel, ITextSnapshot } from '@sidex/editor/common/model.js';
+import { VSBuffer, VSBufferReadable, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { areFunctions, isUndefinedOrNull } from '@sidex/base/common/types.js';
 import { IWorkingCopy, IWorkingCopySaveEvent } from '../../workingCopy/common/workingCopy.js';
 import { IUntitledTextEditorModelManager } from '../../untitled/common/untitledTextEditorService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IProgress, IProgressStep } from '../../../../platform/progress/common/progress.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
 import { IFileOperationUndoRedoInfo } from '../../workingCopy/common/workingCopyFileService.js';
 
 export const ITextFileService = createDecorator<ITextFileService>('textFileService');

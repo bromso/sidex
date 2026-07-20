@@ -16,7 +16,7 @@ import {
 	GoToStickyScrollLine
 } from './stickyScrollActions.js';
 import { StickyScrollController as _StickyScrollController } from './stickyScrollController.js';
-import { registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
 
 // registerEditorContribution(StickyScrollController.ID, StickyScrollController, EditorContributionInstantiation.AfterFirstRender); // DISABLED for performance
 registerAction2(ToggleStickyScroll);

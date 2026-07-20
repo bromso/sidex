@@ -24,43 +24,43 @@ import {
 	IModalEditorPart,
 	IEditorGroupActivationEvent
 } from '../../../services/editor/common/editorGroupsService.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { DisposableMap, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { DisposableMap, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { GroupIdentifier, IEditorPartOptions } from '../../../common/editor.js';
 import { EditorPart, IEditorPartUIState, MainEditorPart } from './editorPart.js';
 import { IEditorGroupView, IEditorPartsView } from './editor.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { distinct } from '../../../../base/common/arrays.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { distinct } from '@sidex/base/common/arrays.js';
 import { AuxiliaryEditorPart, IAuxiliaryEditorPartOpenOptions } from './auxiliaryEditorPart.js';
 import { ModalEditorPart } from './modalEditorPart.js';
 import { MultiWindowParts } from '../../part.js';
-import { DeferredPromise } from '../../../../base/common/async.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
 import {
 	IStorageService,
 	IStorageValueChangeEvent,
 	StorageScope,
 	StorageTarget
-} from '../../../../platform/storage/common/storage.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IAuxiliaryWindowOpenOptions,
 	IAuxiliaryWindowService
 } from '../../../services/auxiliaryWindow/browser/auxiliaryWindowService.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import {
 	ContextKeyValue,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { getActiveElement, IDimension, isAncestor, isHTMLElement } from '../../../../base/browser/dom.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { getActiveElement, IDimension, isAncestor, isHTMLElement } from '@sidex/base/browser/dom.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { DeepPartial } from '../../../../base/common/types.js';
+import { DeepPartial } from '@sidex/base/common/types.js';
 import { IStatusbarService } from '../../../services/statusbar/browser/statusbar.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { IModalEditorPartOptions } from '../../../../platform/editor/common/editor.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { IModalEditorPartOptions } from '@sidex/platform/editor/common/editor.js';
 
 interface IEditorPartsUIState {
 	readonly auxiliary: IAuxiliaryEditorPartState[];

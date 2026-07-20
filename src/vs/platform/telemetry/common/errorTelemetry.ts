@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { binarySearch } from '../../../base/common/arrays.js';
-import { errorHandler, ErrorNoTelemetry, PendingMigrationError } from '../../../base/common/errors.js';
-import { DisposableStore, toDisposable } from '../../../base/common/lifecycle.js';
-import { safeStringify } from '../../../base/common/objects.js';
+import { binarySearch } from '@sidex/base/common/arrays.js';
+import { errorHandler, ErrorNoTelemetry, PendingMigrationError } from '@sidex/base/common/errors.js';
+import { DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { safeStringify } from '@sidex/base/common/objects.js';
 import { FileOperationError } from '../../files/common/files.js';
 import { ITelemetryService } from './telemetry.js';
 

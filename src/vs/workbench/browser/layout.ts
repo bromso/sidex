@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableMap, DisposableStore, IDisposable, toDisposable } from '../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../base/common/event.js';
+import { Disposable, DisposableMap, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	EventType,
 	addDisposableListener,
@@ -21,9 +21,9 @@ import {
 	getWindowId,
 	getActiveElement,
 	Dimension
-} from '../../base/browser/dom.js';
-import { onDidChangeFullscreen, isFullscreen, isWCOEnabled } from '../../base/browser/browser.js';
-import { isWindows, isLinux, isMacintosh, isWeb, isIOS } from '../../base/common/platform.js';
+} from '@sidex/base/browser/dom.js';
+import { onDidChangeFullscreen, isFullscreen, isWCOEnabled } from '@sidex/base/browser/browser.js';
+import { isWindows, isLinux, isMacintosh, isWeb, isIOS } from '@sidex/base/common/platform.js';
 import {
 	EditorInputCapabilities,
 	GroupIdentifier,
@@ -58,15 +58,15 @@ import {
 	isTemporaryWorkspace,
 	IWorkspaceContextService,
 	WorkbenchState
-} from '../../platform/workspace/common/workspace.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../platform/storage/common/storage.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService,
 	isConfigured
-} from '../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import { ITitleService } from '../services/title/browser/titleService.js';
-import { ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { StartupKind, ILifecycleService } from '../services/lifecycle/common/lifecycle.js';
 import {
 	getMenuBarVisibility,
@@ -80,7 +80,7 @@ import {
 	DEFAULT_WORKSPACE_WINDOW_SIZE,
 	hasNativeMenu,
 	MenuSettings
-} from '../../platform/window/common/window.js';
+} from '@sidex/platform/window/common/window.js';
 import { IHostService } from '../services/host/browser/host.js';
 import { IBrowserWorkbenchEnvironmentService } from '../services/environment/browser/environmentService.js';
 import { IEditorService } from '../services/editor/common/editorService.js';
@@ -101,30 +101,30 @@ import {
 	Direction,
 	IViewSize,
 	Sizing
-} from '../../base/browser/ui/grid/grid.js';
+} from '@sidex/base/browser/ui/grid/grid.js';
 import { Part } from './part.js';
 import { IStatusbarService } from '../services/statusbar/browser/statusbar.js';
-import { IFileService } from '../../platform/files/common/files.js';
-import { isCodeEditor } from '../../editor/browser/editorBrowser.js';
-import { coalesce } from '../../base/common/arrays.js';
-import { assertReturnsDefined } from '../../base/common/types.js';
-import { INotificationService, NotificationsFilter } from '../../platform/notification/common/notification.js';
-import { IThemeService } from '../../platform/theme/common/themeService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { INotificationService, NotificationsFilter } from '@sidex/platform/notification/common/notification.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { WINDOW_ACTIVE_BORDER, WINDOW_INACTIVE_BORDER } from '../common/theme.js';
-import { LineNumbersType } from '../../editor/common/config/editorOptions.js';
-import { URI } from '../../base/common/uri.js';
+import { LineNumbersType } from '@sidex/editor/common/config/editorOptions.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../common/views.js';
 import { DiffEditorInput } from '../common/editor/diffEditorInput.js';
-import { mark } from '../../base/common/performance.js';
+import { mark } from '@sidex/base/common/performance.js';
 import { IExtensionService } from '../services/extensions/common/extensions.js';
-import { ILogService } from '../../platform/log/common/log.js';
-import { DeferredPromise, Promises } from '../../base/common/async.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { DeferredPromise, Promises } from '@sidex/base/common/async.js';
 import { IBannerService } from '../services/banner/browser/bannerService.js';
 import { IPaneCompositePartService } from '../services/panecomposite/browser/panecomposite.js';
 import { AuxiliaryBarPart } from './parts/auxiliarybar/auxiliaryBarPart.js';
-import { ITelemetryService } from '../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IAuxiliaryWindowService } from '../services/auxiliaryWindow/browser/auxiliaryWindowService.js';
-import { CodeWindow, mainWindow } from '../../base/browser/window.js';
+import { CodeWindow, mainWindow } from '@sidex/base/browser/window.js';
 
 //#region Layout Implementation
 

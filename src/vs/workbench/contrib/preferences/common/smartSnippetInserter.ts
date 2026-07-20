@@ -7,10 +7,10 @@ import {
 	JSONScanner,
 	createScanner as createJSONScanner,
 	SyntaxKind as JSONSyntaxKind
-} from '../../../../base/common/json.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+} from '@sidex/base/common/json.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 
 export interface InsertSnippetResult {
 	position: Position;

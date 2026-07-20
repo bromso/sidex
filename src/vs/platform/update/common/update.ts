@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { upcast } from '../../../base/common/types.js';
+import { Event } from '@sidex/base/common/event.js';
+import { upcast } from '@sidex/base/common/types.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 
 export interface IUpdate {

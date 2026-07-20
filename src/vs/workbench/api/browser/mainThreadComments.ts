@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableMap,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable
-} from '../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IRange, Range } from '../../../editor/common/core/range.js';
-import * as languages from '../../../editor/common/languages.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+} from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { ICommentController, ICommentService } from '../../contrib/comments/browser/commentService.js';
 import { CommentsPanel } from '../../contrib/comments/browser/commentsView.js';
@@ -41,19 +41,19 @@ import {
 	IViewsRegistry,
 	IViewDescriptorService
 } from '../../common/views.js';
-import { SyncDescriptor } from '../../../platform/instantiation/common/descriptors.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import { ViewPaneContainer } from '../../browser/parts/views/viewPaneContainer.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { registerIcon } from '../../../platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { localize } from '@sidex/base/nls.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
 import { ICellRange } from '../../contrib/notebook/common/notebookRange.js';
-import { Schemas } from '../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IViewsService } from '../../services/views/common/viewsService.js';
 import { MarshalledCommentThread } from '../../common/comments.js';
 import { revealCommentThread } from '../../contrib/comments/browser/commentsController.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 
 export class MainThreadCommentThread<T> implements languages.CommentThread<T> {
 	private _input?: languages.CommentInput;

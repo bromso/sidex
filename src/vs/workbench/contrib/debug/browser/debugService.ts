@@ -3,39 +3,39 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { IAction, toAction } from '../../../../base/common/actions.js';
-import { distinct } from '../../../../base/common/arrays.js';
-import { RunOnceScheduler, raceTimeout } from '../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { isErrorWithActions } from '../../../../base/common/errorMessage.js';
-import * as errors from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { deepClone, equals } from '../../../../base/common/objects.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler, raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { isErrorWithActions } from '@sidex/base/common/errorMessage.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { deepClone, equals } from '@sidex/base/common/objects.js';
 
-import severity from '../../../../base/common/severity.js';
-import { URI, URI as uri } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+import severity from '@sidex/base/common/severity.js';
+import { URI, URI as uri } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import * as nls from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IExtensionHostDebugService } from '../../../../platform/debug/common/extensionHostDebug.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { FileChangeType, FileChangesEvent, IFileService } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IExtensionHostDebugService } from '@sidex/platform/debug/common/extensionHostDebug.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { FileChangeType, FileChangesEvent, IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IWorkspaceContextService,
 	IWorkspaceFolder,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
-import { IWorkspaceTrustRequestService } from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceTrustRequestService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { EditorsOrder } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';

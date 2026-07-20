@@ -8,7 +8,7 @@ import { createMonacoBaseAPI } from './common/services/editorBaseApi.js';
 import { createMonacoEditorAPI } from './standalone/browser/standaloneEditor.js';
 import { createMonacoLanguagesAPI } from './standalone/browser/standaloneLanguages.js';
 import { FormattingConflicts } from './contrib/format/browser/format.js';
-import { getMonacoEnvironment } from '../base/browser/browser.js';
+import { getMonacoEnvironment } from '@sidex/base/browser/browser.js';
 
 // Set defaults for standalone editor
 EditorOptions.wrappingIndent.defaultValue = WrappingIndent.None;

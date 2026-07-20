@@ -5,23 +5,23 @@
 
 import './media/notificationsList.css';
 import { localize } from '@sidex/base/nls.js';
-import { $, getWindow, isAncestorOfActiveElement, trackFocus } from '../../../../base/browser/dom.js';
-import { WorkbenchList } from '../../../../platform/list/browser/listService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IListAccessibilityProvider, IListOptions } from '../../../../base/browser/ui/list/listWidget.js';
+import { $, getWindow, isAncestorOfActiveElement, trackFocus } from '@sidex/base/browser/dom.js';
+import { WorkbenchList } from '@sidex/platform/list/browser/listService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IListAccessibilityProvider, IListOptions } from '@sidex/base/browser/ui/list/listWidget.js';
 import { NOTIFICATIONS_BACKGROUND } from '../../../common/theme.js';
 import { INotificationViewItem } from '../../../common/notifications.js';
 import { NotificationsListDelegate, NotificationRenderer } from './notificationsViewer.js';
 import { CopyNotificationMessageAction } from './notificationsActions.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { assertReturnsAllDefined } from '../../../../base/common/types.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { assertReturnsAllDefined } from '@sidex/base/common/types.js';
 import { NotificationFocusedContext } from '../../../common/contextkeys.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { AriaRole } from '../../../../base/browser/ui/aria/aria.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { AriaRole } from '@sidex/base/browser/ui/aria/aria.js';
 import { NotificationActionRunner } from './notificationsCommands.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { withSeverityPrefix } from '../../../../platform/notification/common/notification.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { withSeverityPrefix } from '@sidex/platform/notification/common/notification.js';
 
 export interface INotificationsListOptions extends IListOptions<INotificationViewItem> {
 	readonly widgetAriaLabel?: string;

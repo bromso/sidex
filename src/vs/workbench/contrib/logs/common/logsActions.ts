@@ -4,23 +4,23 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Action } from '../../../../base/common/actions.js';
+import { Action } from '@sidex/base/common/actions.js';
 import {
 	ILoggerService,
 	LogLevel,
 	LogLevelToLocalizedString,
 	isLogLevel
-} from '../../../../platform/log/common/log.js';
+} from '@sidex/platform/log/common/log.js';
 import {
 	IQuickInputButton,
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { dirname, basename, isEqual } from '../../../../base/common/resources.js';
+import { dirname, basename, isEqual } from '@sidex/base/common/resources.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	IOutputChannelDescriptor,
@@ -28,9 +28,9 @@ import {
 	isMultiSourceOutputChannelDescriptor,
 	isSingleSourceOutputChannelDescriptor
 } from '../../../services/output/common/output.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IDefaultLogLevelsService } from '../../../services/log/common/defaultLogLevels.js';
 
 type LogLevelQuickPickItem = IQuickPickItem & { level: LogLevel };

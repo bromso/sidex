@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Event } from '../../../../base/common/event.js';
-import { ColorIdentifier } from '../../../../platform/theme/common/colorRegistry.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ColorIdentifier } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export const IDecorationsService = createDecorator<IDecorationsService>('IFileDecorationsService');
 

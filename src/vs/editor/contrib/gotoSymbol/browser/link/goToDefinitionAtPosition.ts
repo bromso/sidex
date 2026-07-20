@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../../../base/browser/keyboardEvent.js';
-import { CancelablePromise, createCancelablePromise } from '../../../../../base/common/async.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { onUnexpectedError } from '../../../../../base/common/errors.js';
-import { MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { CancelablePromise, createCancelablePromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import './goToDefinitionAtPosition.css';
 import { CodeEditorStateFlag, EditorState } from '../../../editorState/browser/editorState.js';
 import { ICodeEditor, MouseTargetType } from '../../../../browser/editorBrowser.js';
@@ -24,8 +24,8 @@ import { ITextModelService } from '../../../../common/services/resolverService.j
 import { ClickLinkGesture, ClickLinkKeyboardEvent, ClickLinkMouseEvent } from './clickLinkGesture.js';
 import { PeekContext } from '../../../peekView/browser/peekView.js';
 import * as nls from '@sidex/base/nls.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { DefinitionAction } from '../goToCommands.js';
 import { getDefinitionsAtPosition } from '../goToSymbol.js';
 import { IWordAtPosition } from '../../../../common/core/wordHelper.js';

@@ -2,13 +2,13 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import * as glob from '../../../../../base/common/glob.js';
-import { ResourceSet, ResourceMap } from '../../../../../base/common/map.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { ILogService } from '../../../../../platform/log/common/log.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { ResourceSet, ResourceMap } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { NotebookEditorWidget } from '../../../notebook/browser/notebookEditorWidget.js';
 import { INotebookService } from '../../../notebook/common/notebookService.js';
 import { INotebookSearchService } from '../../common/notebookSearch.js';
@@ -29,15 +29,15 @@ import {
 	IFolderQuery,
 	DEFAULT_MAX_SEARCH_RESULTS
 } from '../../../../services/search/common/search.js';
-import * as arrays from '../../../../../base/common/arrays.js';
-import { isNumber } from '../../../../../base/common/types.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { isNumber } from '@sidex/base/common/types.js';
 import { IEditorResolverService } from '../../../../services/editor/common/editorResolverService.js';
 import { INotebookFileMatchNoModel } from '../../common/searchNotebookHelpers.js';
 import { INotebookEditorService } from '../../../notebook/browser/services/notebookEditorService.js';
 import { NotebookPriorityInfo } from '../../common/search.js';
 import { INotebookExclusiveDocumentFilter } from '../../../notebook/common/notebookCommon.js';
 import { QueryBuilder } from '../../../../services/search/common/queryBuilder.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 interface IOpenNotebookSearchResults {
 	results: ResourceMap<INotebookFileMatchWithModel | null>;

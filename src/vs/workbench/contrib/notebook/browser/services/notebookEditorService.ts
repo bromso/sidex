@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../../platform/instantiation/common/instantiation.js';
-import { Event, Emitter as _Emitter } from '../../../../../base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Event, Emitter as _Emitter } from '@sidex/base/common/event.js';
 import type { NotebookEditorWidget } from '../notebookEditorWidget.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export const INotebookEditorService = createDecorator<INotebookEditorService>('notebookEditorService');
 

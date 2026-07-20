@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../base/common/arrays.js';
-import { VSBufferReadableStream } from '../../../base/common/buffer.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Event } from '../../../base/common/event.js';
-import { FormattingOptions } from '../../../base/common/jsonFormatter.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { IExtUri } from '../../../base/common/resources.js';
-import { isObject, isString } from '../../../base/common/types.js';
-import { URI } from '../../../base/common/uri.js';
-import { IHeaders } from '../../../base/parts/request/common/request.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import { FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IHeaders } from '@sidex/base/parts/request/common/request.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	allSettings,

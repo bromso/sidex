@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BugIndicatingError } from '../../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { OffsetRange } from '../ranges/offsetRange.js';
 import { Point } from './point.js';
 import { Size2D } from './size.js';

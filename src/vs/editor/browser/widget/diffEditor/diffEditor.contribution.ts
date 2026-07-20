@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import {
 	AccessibleDiffViewerNext,
 	AccessibleDiffViewerPrev,
@@ -18,9 +18,9 @@ import {
 } from './commands.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { localize } from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyEqualsExpr, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { MenuId, MenuRegistry, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyEqualsExpr, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import './registrations.contribution.js';
 
 registerAction2(ToggleCollapseUnchangedRegions);

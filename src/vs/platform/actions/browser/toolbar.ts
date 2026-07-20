@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener, getWindow } from '../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { IToolBarOptions, ToggleMenuAction, ToolBar } from '../../../base/browser/ui/toolbar/toolbar.js';
+import { addDisposableListener, getWindow } from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IToolBarOptions, ToggleMenuAction, ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
 import {
 	IAction,
 	Separator,
@@ -13,13 +13,13 @@ import {
 	toAction,
 	WorkbenchActionExecutedClassification,
 	WorkbenchActionExecutedEvent
-} from '../../../base/common/actions.js';
-import { coalesceInPlace } from '../../../base/common/arrays.js';
-import { intersection } from '../../../base/common/collections.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
-import { Emitter } from '../../../base/common/event.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/actions.js';
+import { coalesceInPlace } from '@sidex/base/common/arrays.js';
+import { intersection } from '@sidex/base/common/collections.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import { createActionViewItem, getActionBarActions } from './menuEntryActionViewItem.js';
 import {

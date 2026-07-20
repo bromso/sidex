@@ -12,19 +12,19 @@ import {
 } from '../editor.js';
 import { EditorInput } from './editorInput.js';
 import { AbstractResourceEditorInput } from './resourceEditorInput.js';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ITextFileService, ITextFileSaveOptions, ILanguageSupport } from '../../services/textfile/common/textfiles.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
-import { IFileService } from '../../../platform/files/common/files.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isEqual } from '../../../base/common/resources.js';
-import { ITextEditorModel, ITextModelService } from '../../../editor/common/services/resolverService.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ITextEditorModel, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { TextResourceEditorModel } from './textResourceEditorModel.js';
-import { IReference } from '../../../base/common/lifecycle.js';
-import { createTextBufferFactory } from '../../../editor/common/model/textModel.js';
+import { IReference } from '@sidex/base/common/lifecycle.js';
+import { createTextBufferFactory } from '@sidex/editor/common/model/textModel.js';
 import { IFilesConfigurationService } from '../../services/filesConfiguration/common/filesConfigurationService.js';
-import { ITextResourceConfigurationService } from '../../../editor/common/services/textResourceConfiguration.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { ICustomEditorLabelService } from '../../services/editor/common/customEditorLabelService.js';
 
 /**

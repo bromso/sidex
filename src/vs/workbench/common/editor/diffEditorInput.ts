@@ -23,10 +23,10 @@ import {
 import { BaseTextEditorModel } from './textEditorModel.js';
 import { DiffEditorModel } from './diffEditorModel.js';
 import { TextDiffEditorModel } from './textDiffEditorModel.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
-import { shorten } from '../../../base/common/labels.js';
-import { isResolvedEditorModel } from '../../../platform/editor/common/editor.js';
+import { shorten } from '@sidex/base/common/labels.js';
+import { isResolvedEditorModel } from '@sidex/platform/editor/common/editor.js';
 
 interface IDiffEditorInputLabels {
 	readonly name: string;

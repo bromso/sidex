@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IEditorAction } from './editorCommon.js';
-import { ICommandMetadata } from '../../platform/commands/common/commands.js';
-import { ContextKeyExpression, IContextKeyService } from '../../platform/contextkey/common/contextkey.js';
+import { ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpression, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export class InternalEditorAction implements IEditorAction {
 	constructor(

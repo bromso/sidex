@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IExtensionGalleryManifest } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
-import { FilterType, SortBy } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { EXTENSION_CATEGORIES } from '../../../../platform/extensions/common/extensions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { IExtensionGalleryManifest } from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
+import { FilterType, SortBy } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { EXTENSION_CATEGORIES } from '@sidex/platform/extensions/common/extensions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions,
 	IExtensionFeaturesRegistry

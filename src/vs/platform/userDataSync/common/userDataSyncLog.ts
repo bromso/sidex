@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { joinPath } from '../../../base/common/resources.js';
+import { joinPath } from '@sidex/base/common/resources.js';
 import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { AbstractLogger, ILogger, ILoggerService } from '../../log/common/log.js';

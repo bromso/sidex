@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../base/common/network.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	ExtensionKind,
 	IEnvironmentService,
 	IExtensionHostDebugParams
-} from '../../../../platform/environment/common/environment.js';
-import { IPath } from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/environment/common/environment.js';
+import { IPath } from '@sidex/platform/window/common/window.js';
 import { IWorkbenchEnvironmentService } from '../common/environmentService.js';
 import { IWorkbenchConstructionOptions } from '../../../browser/web.api.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { memoize } from '../../../../base/common/decorators.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { parseLineAndColumnAware } from '../../../../base/common/extpath.js';
-import { LogLevelToString } from '../../../../platform/log/common/log.js';
-import { isUndefined } from '../../../../base/common/types.js';
-import { refineServiceDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { EXTENSION_IDENTIFIER_WITH_LOG_REGEX } from '../../../../platform/environment/common/environmentService.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { memoize } from '@sidex/base/common/decorators.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { parseLineAndColumnAware } from '@sidex/base/common/extpath.js';
+import { LogLevelToString } from '@sidex/platform/log/common/log.js';
+import { isUndefined } from '@sidex/base/common/types.js';
+import { refineServiceDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { EXTENSION_IDENTIFIER_WITH_LOG_REGEX } from '@sidex/platform/environment/common/environmentService.js';
 
 export const IBrowserWorkbenchEnvironmentService = refineServiceDecorator<
 	IEnvironmentService,

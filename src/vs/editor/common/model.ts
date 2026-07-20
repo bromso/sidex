@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../base/common/event.js';
-import { IMarkdownString } from '../../base/common/htmlContent.js';
-import { IDisposable } from '../../base/common/lifecycle.js';
-import { equals } from '../../base/common/objects.js';
-import { ThemeColor } from '../../base/common/themables.js';
-import { URI } from '../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ISingleEditOperation } from './core/editOperation.js';
 import { IPosition, Position } from './core/position.js';
 import { IRange, Range } from './core/range.js';
@@ -33,7 +33,7 @@ import {
 import { IModelContentChange } from './model/mirrorTextModel.js';
 import { IGuidesTextModelPart } from './textModelGuides.js';
 import { ITokenizationTextModelPart } from './tokenizationTextModelPart.js';
-import { UndoRedoGroup } from '../../platform/undoRedo/common/undoRedo.js';
+import { UndoRedoGroup } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { TokenArray } from './tokens/lineTokens.js';
 import { IEditorModel } from './editorCommon.js';
 import { TextModelEditSource } from './textModelEditSource.js';

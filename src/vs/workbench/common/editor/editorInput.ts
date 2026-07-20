@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../base/common/event.js';
-import { URI } from '../../../base/common/uri.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	EditorInputCapabilities,
 	Verbosity,
@@ -20,11 +20,11 @@ import {
 	isEditorInput,
 	IEditorIdentifier
 } from '../editor.js';
-import { isEqual } from '../../../base/common/resources.js';
-import { ConfirmResult } from '../../../platform/dialogs/common/dialogs.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ConfirmResult } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 
 export interface IEditorCloseHandler {
 	/**

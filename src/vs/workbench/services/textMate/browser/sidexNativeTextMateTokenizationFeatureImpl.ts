@@ -2,13 +2,13 @@
  *  SideX — Native Rust textmate tokenization, wired as ITextMateTokenizationService.
  *--------------------------------------------------------------------------------------------*/
 
-import * as domStylesheets from '../../../../base/browser/domStylesheets.js';
-import { equals as equalArray } from '../../../../base/common/arrays.js';
-import { Color } from '../../../../base/common/color.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, observableFromEvent } from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { LanguageId } from '../../../../editor/common/encodedTokenAttributes.js';
+import * as domStylesheets from '@sidex/base/browser/domStylesheets.js';
+import { equals as equalArray } from '@sidex/base/common/arrays.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { LanguageId } from '@sidex/editor/common/encodedTokenAttributes.js';
 import {
 	EncodedTokenizationResult,
 	IBackgroundTokenizationStore,
@@ -18,18 +18,18 @@ import {
 	LazyTokenizationSupport,
 	TokenizationRegistry,
 	TokenizationResult
-} from '../../../../editor/common/languages.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { nullTokenizeEncoded } from '../../../../editor/common/languages/nullTokenize.js';
+} from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { nullTokenizeEncoded } from '@sidex/editor/common/languages/nullTokenize.js';
 import {
 	generateTokensCSSForColorMap,
 	generateTokensCSSForFontMap
-} from '../../../../editor/common/languages/supports/tokenization.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IFontTokenOptions } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/editor/common/languages/supports/tokenization.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IFontTokenOptions } from '@sidex/platform/theme/common/themeService.js';
 import { ExtensionMessageCollector, IExtensionPointUser } from '../../extensions/common/extensionsRegistry.js';
 import {
 	ITextMateThemingRule,
@@ -38,14 +38,14 @@ import {
 } from '../../themes/common/workbenchThemeService.js';
 import { ITMSyntaxExtensionPoint, grammarsExtPoint } from '../common/TMGrammars.js';
 import { IValidGrammarDefinition } from '../common/TMScopeRegistry.js';
-import * as resources from '../../../../base/common/resources.js';
-import * as types from '../../../../base/common/types.js';
+import * as resources from '@sidex/base/common/resources.js';
+import * as types from '@sidex/base/common/types.js';
 import * as nls from '@sidex/base/nls.js';
-import { getNativeTextMate } from '../../../../platform/sidex/browser/sidexTextMateService.js';
+import { getNativeTextMate } from '@sidex/platform/sidex/browser/sidexTextMateService.js';
 import { ITextMateTokenizationService } from './textMateTokenizationFeature.js';
 import type { IGrammar } from 'vscode-textmate';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { ContiguousMultilineTokensBuilder } from '../../../../editor/common/tokens/contiguousMultilineTokensBuilder.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ContiguousMultilineTokensBuilder } from '@sidex/editor/common/tokens/contiguousMultilineTokensBuilder.js';
 
 // ---------------------------------------------------------------------------
 // Native tokenizer state — wraps an opaque Rust rule-stack handle.

@@ -6,20 +6,20 @@
 import * as nls from '@sidex/base/nls.js';
 
 import './media/dirtydiffDecorator.css';
-import { Disposable, DisposableStore, DisposableMap, IReference } from '../../../../base/common/lifecycle.js';
-import { Event } from '../../../../base/common/event.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ModelDecorationOptions } from '../../../../editor/common/model/textModel.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { ICodeEditor, isCodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
+import { Disposable, DisposableStore, DisposableMap, IReference } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ModelDecorationOptions } from '@sidex/editor/common/model/textModel.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { ICodeEditor, isCodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
 import {
 	OverviewRulerLane,
 	IModelDecorationOptions,
 	MinimapPosition,
 	IModelDeltaDecoration
-} from '../../../../editor/common/model.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
+} from '@sidex/editor/common/model.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	ChangeType,
@@ -35,19 +35,19 @@ import {
 } from '../common/quickDiff.js';
 import { QuickDiffModel, IQuickDiffModelService } from './quickDiffModel.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	ContextKeyTrueExpr,
 	ContextKeyFalseExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { autorun, IObservable, observableFromEvent } from '../../../../base/common/observable.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { autorun, IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { registerAction2, Action2, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { registerAction2, Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export const quickDiffDecorationCount = new RawContextKey<number>('quickDiffDecorationCount', 0);
 

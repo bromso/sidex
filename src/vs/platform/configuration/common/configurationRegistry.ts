@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import * as types from '../../../base/common/types.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import * as types from '@sidex/base/common/types.js';
 import * as nls from '@sidex/base/nls.js';
 import { getLanguageTagSettingPlainKey } from './configuration.js';
 import {
@@ -15,8 +15,8 @@ import {
 	IJSONContributionRegistry
 } from '../../jsonschemas/common/jsonContributionRegistry.js';
 import { Registry } from '../../registry/common/platform.js';
-import { IPolicy, PolicyName } from '../../../base/common/policy.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { IPolicy, PolicyName } from '@sidex/base/common/policy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export enum EditPresentationTypes {
 	Multiline = 'multilineText',

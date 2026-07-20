@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
-import { Event } from '../../../base/common/event.js';
-import { parse } from '../../../base/common/json.js';
-import { toFormattedString } from '../../../base/common/jsonFormatter.js';
-import { isWeb } from '../../../base/common/platform.js';
-import { URI } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { IHeaders } from '../../../base/parts/request/common/request.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { parse } from '@sidex/base/common/json.js';
+import { toFormattedString } from '@sidex/base/common/jsonFormatter.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IHeaders } from '@sidex/base/parts/request/common/request.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { IFileService } from '../../files/common/files.js';

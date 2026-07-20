@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, Emitter } from '../../../base/common/event.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	IEditorFactoryRegistry,
 	GroupIdentifier,
@@ -17,14 +17,14 @@ import {
 } from '../editor.js';
 import { EditorInput } from './editorInput.js';
 import { SideBySideEditorInput } from './sideBySideEditorInput.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IConfigurationChangeEvent,
 	IConfigurationService
-} from '../../../platform/configuration/common/configuration.js';
-import { dispose, Disposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
-import { coalesce } from '../../../base/common/arrays.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { dispose, Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
 
 const EditorOpenPositioning = {
 	LEFT: 'left',

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { Event } from '../../../../base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	IEditorMemento,
 	IEditorCloseEvent,
@@ -13,15 +13,15 @@ import {
 	SideBySideEditor
 } from '../../../common/editor.js';
 import { EditorPane } from './editorPane.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { IEditorGroupsService, IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IExtUri } from '../../../../base/common/resources.js';
-import { DisposableMap, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { IExtUri } from '@sidex/base/common/resources.js';
+import { DisposableMap, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 
 /**

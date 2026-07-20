@@ -4,22 +4,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
-import Severity from '../../../../base/common/severity.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { SeverityIcon } from '../../../../base/browser/ui/severityIcon/severityIcon.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import Severity from '@sidex/base/common/severity.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { SeverityIcon } from '@sidex/base/browser/ui/severityIcon/severityIcon.js';
 import {
 	TextSearchCompleteMessage,
 	TextSearchCompleteMessageType
 } from '../../../services/search/common/searchExtTypes.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { URI } from '../../../../base/common/uri.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export const renderSearchMessage = (
 	message: TextSearchCompleteMessage,

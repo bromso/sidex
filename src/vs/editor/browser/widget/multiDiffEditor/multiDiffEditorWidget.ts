@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Dimension } from '../../../../base/browser/dom.js';
-import { Event } from '../../../../base/common/event.js';
-import { readHotReloadableExport } from '../../../../base/common/hotReloadHelpers.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { derived, observableValue, recomputeInitiallyAndOnChange } from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { Event } from '@sidex/base/common/event.js';
+import { readHotReloadableExport } from '@sidex/base/common/hotReloadHelpers.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { derived, observableValue, recomputeInitiallyAndOnChange } from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { Range } from '../../../common/core/range.js';
 import { IDiffEditor } from '../../../common/editorCommon.js';
 import { ICodeEditor } from '../../editorBrowser.js';

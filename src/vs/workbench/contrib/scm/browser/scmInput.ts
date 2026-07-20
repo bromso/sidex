@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/scm.css';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { append, $, Dimension, trackFocus } from '../../../../base/browser/dom.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { append, $, Dimension, trackFocus } from '@sidex/base/browser/dom.js';
 import {
 	InputValidationType,
 	ISCMInput,
@@ -18,95 +18,95 @@ import {
 import {
 	IInstantiationService,
 	ServicesAccessor as _ServicesAccessor
-} from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IContextViewService,
 	IContextMenuService,
 	IOpenContextView
-} from '../../../../platform/contextview/browser/contextView.js';
+} from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	IContextKeyService,
 	IContextKey,
 	ContextKeyExpr as _ContextKeyExpr,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	MenuItemAction,
 	IMenuService,
 	registerAction2 as _registerAction2,
 	MenuId,
 	Action2 as _Action2
-} from '../../../../platform/actions/common/actions.js';
-import { IAction, ActionRunner, Action } from '../../../../base/common/actions.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IConfigurationService, ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { ThrottledDelayer } from '../../../../base/common/async.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IAction, ActionRunner, Action } from '@sidex/base/common/actions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IConfigurationService, ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
 import { localize } from '@sidex/base/nls.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	CodeEditorWidget,
 	ICodeEditorWidgetOptions
-} from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { IEditorConstructionOptions } from '../../../../editor/browser/config/editorConfiguration.js';
+} from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { IEditorConstructionOptions } from '@sidex/editor/browser/config/editorConfiguration.js';
 import {
 	getSimpleEditorOptions,
 	setupSimpleEditorSelectionStyling
 } from '../../codeEditor/browser/simpleEditorOptions.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { EditorExtensionsRegistry } from '../../../../editor/browser/editorExtensions.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { EditorExtensionsRegistry } from '@sidex/editor/browser/editorExtensions.js';
 import { MenuPreventer } from '../../codeEditor/browser/menuPreventer.js';
 import { SelectionClipboardContributionID } from '../../codeEditor/browser/selectionClipboard.js';
-import { ContextMenuController } from '../../../../editor/contrib/contextmenu/browser/contextmenu.js';
-import * as platform from '../../../../base/common/platform.js';
-import { format } from '../../../../base/common/strings.js';
-import { SuggestController } from '../../../../editor/contrib/suggest/browser/suggestController.js';
-import { SnippetController2 } from '../../../../editor/contrib/snippet/browser/snippetController2.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { ColorDetector } from '../../../../editor/contrib/colorPicker/browser/colorDetector.js';
-import { LinkDetector } from '../../../../editor/contrib/links/browser/links.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DEFAULT_FONT_FAMILY } from '../../../../base/browser/fonts.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
+import { ContextMenuController } from '@sidex/editor/contrib/contextmenu/browser/contextmenu.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { format } from '@sidex/base/common/strings.js';
+import { SuggestController } from '@sidex/editor/contrib/suggest/browser/suggestController.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { ColorDetector } from '@sidex/editor/contrib/colorPicker/browser/colorDetector.js';
+import { LinkDetector } from '@sidex/editor/contrib/links/browser/links.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DEFAULT_FONT_FAMILY } from '@sidex/base/browser/fonts.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
 import {
 	createActionViewItem,
 	getFlatActionBarActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	IMarkdownRendererService,
 	openLinkFromMarkdown
-} from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { DragAndDropController } from '../../../../editor/contrib/dnd/browser/dnd.js';
-import { CopyPasteController } from '../../../../editor/contrib/dropOrPasteInto/browser/copyPasteController.js';
-import { DropIntoEditorController } from '../../../../editor/contrib/dropOrPasteInto/browser/dropIntoEditorController.js';
-import { MessageController } from '../../../../editor/contrib/message/browser/messageController.js';
-import { InlineCompletionsController } from '../../../../editor/contrib/inlineCompletions/browser/controller/inlineCompletionsController.js';
-import { CodeActionController } from '../../../../editor/contrib/codeAction/browser/codeActionController.js';
-import { FormatOnType } from '../../../../editor/contrib/format/browser/formatActions.js';
-import { EditorOption, EditorOptions, IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
+} from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { DragAndDropController } from '@sidex/editor/contrib/dnd/browser/dnd.js';
+import { CopyPasteController } from '@sidex/editor/contrib/dropOrPasteInto/browser/copyPasteController.js';
+import { DropIntoEditorController } from '@sidex/editor/contrib/dropOrPasteInto/browser/dropIntoEditorController.js';
+import { MessageController } from '@sidex/editor/contrib/message/browser/messageController.js';
+import { InlineCompletionsController } from '@sidex/editor/contrib/inlineCompletions/browser/controller/inlineCompletionsController.js';
+import { CodeActionController } from '@sidex/editor/contrib/codeAction/browser/codeActionController.js';
+import { FormatOnType } from '@sidex/editor/contrib/format/browser/formatActions.js';
+import { EditorOption, EditorOptions, IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
 import {
 	HiddenItemStrategy,
 	IMenuWorkbenchToolBarOptions,
 	WorkbenchToolBar
-} from '../../../../platform/actions/browser/toolbar.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { DropdownWithPrimaryActionViewItem } from '../../../../platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { ContentHoverController } from '../../../../editor/contrib/hover/browser/contentHoverController.js';
-import { GlyphHoverController } from '../../../../editor/contrib/hover/browser/glyphHoverController.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { autorun, runOnChange } from '../../../../base/common/observable.js';
-import { PlaceholderTextContribution } from '../../../../editor/contrib/placeholderText/browser/placeholderTextContribution.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
+} from '@sidex/platform/actions/browser/toolbar.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { DropdownWithPrimaryActionViewItem } from '@sidex/platform/actions/browser/dropdownWithPrimaryActionViewItem.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { ContentHoverController } from '@sidex/editor/contrib/hover/browser/contentHoverController.js';
+import { GlyphHoverController } from '@sidex/editor/contrib/hover/browser/glyphHoverController.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { autorun, runOnChange } from '@sidex/base/common/observable.js';
+import { PlaceholderTextContribution } from '@sidex/editor/contrib/placeholderText/browser/placeholderTextContribution.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { AccessibilityCommandId } from '../../accessibility/common/accessibilityCommands.js';
 
 export const SCMInputContextKeys = {

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { Color } from '../../../base/common/color.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	Extensions as JSONExtensions,

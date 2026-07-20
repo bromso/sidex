@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, registerEditorAction, ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, registerEditorAction, ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import * as nls from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { IExtensionsWorkbenchService } from '../../extensions/common/extensions.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
 
 registerEditorAction(
 	class FormatDocumentMultipleAction extends EditorAction {

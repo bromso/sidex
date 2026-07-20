@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertNever } from '../../../base/common/assert.js';
-import { RunOnceScheduler } from '../../../base/common/async.js';
-import { Color } from '../../../base/common/color.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IJSONSchema, IJSONSchemaSnippet } from '../../../base/common/jsonSchema.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IJSONSchema, IJSONSchemaSnippet } from '@sidex/base/common/jsonSchema.js';
 import {
 	IJSONContributionRegistry,
 	Extensions as JSONExtensions
@@ -15,7 +15,7 @@ import {
 import * as platform from '../../registry/common/platform.js';
 import { IColorTheme } from './themeService.js';
 import * as nls from '@sidex/base/nls.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 //  ------ API types
 

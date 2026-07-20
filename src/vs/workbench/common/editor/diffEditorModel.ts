@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { EditorModel } from './editorModel.js';
-import { IResolvableEditorModel } from '../../../platform/editor/common/editor.js';
+import { IResolvableEditorModel } from '@sidex/platform/editor/common/editor.js';
 
 /**
  * The base editor model for the diff editor. It is made up of two editor models, the original version

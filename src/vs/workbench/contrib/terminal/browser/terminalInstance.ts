@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isFirefox } from '../../../../base/browser/browser.js';
-import { BrowserFeatures } from '../../../../base/browser/canIUse.js';
-import { DataTransfers } from '../../../../base/browser/dnd.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { Orientation } from '../../../../base/browser/ui/sash/sash.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { AutoOpenBarrier, Promises, disposableTimeout, timeout } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { debounce } from '../../../../base/common/decorators.js';
-import { BugIndicatingError, onUnexpectedError } from '../../../../base/common/errors.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { ISeparator, normalizeDriveLetter, template } from '../../../../base/common/labels.js';
+import { isFirefox } from '@sidex/base/browser/browser.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import { DataTransfers } from '@sidex/base/browser/dnd.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { AutoOpenBarrier, Promises, disposableTimeout, timeout } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ISeparator, normalizeDriveLetter, template } from '@sidex/base/common/labels.js';
 import {
 	Disposable,
 	DisposableMap,
@@ -27,45 +27,45 @@ import {
 	dispose,
 	toDisposable,
 	type IReference
-} from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as path from '../../../../base/common/path.js';
-import { OS, OperatingSystem, isMacintosh, isWindows } from '../../../../base/common/platform.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { TabFocus } from '../../../../editor/browser/config/tabFocus.js';
+} from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as path from '@sidex/base/common/path.js';
+import { OS, OperatingSystem, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { TabFocus } from '@sidex/editor/browser/config/tabFocus.js';
 import * as nls from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { CodeDataTransfers, containsDragType, getPathForFile } from '../../../../platform/dnd/browser/dnd.js';
-import { FileSystemProviderCapabilities, IFileService } from '../../../../platform/files/common/files.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResultKind } from '../../../../platform/keybinding/common/keybindingResolver.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { CodeDataTransfers, containsDragType, getPathForFile } from '@sidex/platform/dnd/browser/dnd.js';
+import { FileSystemProviderCapabilities, IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	QuickPickItem
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IMarkProperties, TerminalCapability } from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalCapabilityStoreMultiplexer } from '../../../../platform/terminal/common/capabilities/terminalCapabilityStore.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IMarkProperties, TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalCapabilityStoreMultiplexer } from '@sidex/platform/terminal/common/capabilities/terminalCapabilityStore.js';
 import {
 	IEnvironmentVariableCollection,
 	IMergedEnvironmentVariableCollection
-} from '../../../../platform/terminal/common/environmentVariable.js';
-import { deserializeEnvironmentVariableCollections } from '../../../../platform/terminal/common/environmentVariableShared.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
+import { deserializeEnvironmentVariableCollections } from '@sidex/platform/terminal/common/environmentVariableShared.js';
 import {
 	GeneralShellType,
 	IProcessDataEvent,
@@ -86,13 +86,13 @@ import {
 	TitleEventSource,
 	WindowsShellType,
 	type ShellIntegrationInjectionFailureReason
-} from '../../../../platform/terminal/common/terminal.js';
-import { formatMessageForTerminal } from '../../../../platform/terminal/common/terminalStrings.js';
-import { editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
-import { getIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
-import { IColorTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceContextService, IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
-import { IWorkspaceTrustRequestService } from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { formatMessageForTerminal } from '@sidex/platform/terminal/common/terminalStrings.js';
+import { editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { getIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceContextService, IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceTrustRequestService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { PANEL_BACKGROUND, SIDE_BAR_BACKGROUND } from '../../../common/theme.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
@@ -145,13 +145,13 @@ import { terminalStrings } from '../common/terminalStrings.js';
 import { TerminalIconPicker } from './terminalIconPicker.js';
 import { TerminalResizeDebouncer } from './terminalResizeDebouncer.js';
 import { openContextMenu } from './terminalContextMenu.js';
-import type { IMenu } from '../../../../platform/actions/common/actions.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import type { IMenu } from '@sidex/platform/actions/common/actions.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { TerminalContribCommandId } from '../terminalContribExports.js';
 import type { IProgressState } from '@xterm/addon-progress';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { PromptInputState } from '../../../../platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
-import { hasKey, isNumber, isString } from '../../../../base/common/types.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { PromptInputState } from '@sidex/platform/terminal/common/capabilities/commandDetection/promptInputModel.js';
+import { hasKey, isNumber, isString } from '@sidex/base/common/types.js';
 
 const enum Constants {
 	/**

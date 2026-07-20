@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Memento } from './memento.js';
-import { IThemeService, Themable } from '../../platform/theme/common/themeService.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IStorageService,
 	IStorageValueChangeEvent,
 	StorageScope,
 	StorageTarget
-} from '../../platform/storage/common/storage.js';
-import { DisposableStore } from '../../base/common/lifecycle.js';
-import { Event } from '../../base/common/event.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export class Component<MementoType extends object = object> extends Themable {
 	private readonly memento: Memento<MementoType>;

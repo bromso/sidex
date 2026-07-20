@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
-import { CodeWindow } from '../../../../base/browser/window.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWebview } from './webview.js';
 
 /**

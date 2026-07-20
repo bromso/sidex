@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IRectangle } from '../../window/common/window.js';
 

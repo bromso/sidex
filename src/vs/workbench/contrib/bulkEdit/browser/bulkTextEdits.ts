@@ -3,26 +3,26 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { dispose, IDisposable, IReference } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditOperation, ISingleEditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { EndOfLineSequence, ITextModel } from '../../../../editor/common/model.js';
-import { ITextModelService, IResolvedTextEditorModel } from '../../../../editor/common/services/resolverService.js';
-import { IProgress } from '../../../../platform/progress/common/progress.js';
-import { IEditorWorkerService } from '../../../../editor/common/services/editorWorker.js';
-import { IUndoRedoService, UndoRedoGroup, UndoRedoSource } from '../../../../platform/undoRedo/common/undoRedo.js';
-import { SingleModelEditStackElement, MultiModelEditStackElement } from '../../../../editor/common/model/editStack.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ResourceTextEdit } from '../../../../editor/browser/services/bulkEditService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { SnippetController2 } from '../../../../editor/contrib/snippet/browser/snippetController2.js';
-import { SnippetParser } from '../../../../editor/contrib/snippet/browser/snippetParser.js';
-import { ISnippetEdit } from '../../../../editor/contrib/snippet/browser/snippetSession.js';
-import { TextModelEditSource } from '../../../../editor/common/textModelEditSource.js';
+import { dispose, IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditOperation, ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { EndOfLineSequence, ITextModel } from '@sidex/editor/common/model.js';
+import { ITextModelService, IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
+import { IProgress } from '@sidex/platform/progress/common/progress.js';
+import { IEditorWorkerService } from '@sidex/editor/common/services/editorWorker.js';
+import { IUndoRedoService, UndoRedoGroup, UndoRedoSource } from '@sidex/platform/undoRedo/common/undoRedo.js';
+import { SingleModelEditStackElement, MultiModelEditStackElement } from '@sidex/editor/common/model/editStack.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ResourceTextEdit } from '@sidex/editor/browser/services/bulkEditService.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
+import { SnippetParser } from '@sidex/editor/contrib/snippet/browser/snippetParser.js';
+import { ISnippetEdit } from '@sidex/editor/contrib/snippet/browser/snippetSession.js';
+import { TextModelEditSource } from '@sidex/editor/common/textModelEditSource.js';
 
 type ValidationResult = { canApply: true } | { canApply: false; reason: URI };
 

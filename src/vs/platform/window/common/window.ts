@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { PerformanceMark } from '../../../base/common/performance.js';
-import { isMacintosh, isNative, isWeb } from '../../../base/common/platform.js';
-import { URI, UriComponents, UriDto } from '../../../base/common/uri.js';
-import { ISandboxConfiguration } from '../../../base/parts/sandbox/common/sandboxTypes.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { PerformanceMark } from '@sidex/base/common/performance.js';
+import { isMacintosh, isNative, isWeb } from '@sidex/base/common/platform.js';
+import { URI, UriComponents, UriDto } from '@sidex/base/common/uri.js';
+import { ISandboxConfiguration } from '@sidex/base/parts/sandbox/common/sandboxTypes.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IEditorOptions } from '../../editor/common/editor.js';
 import { NativeParsedArgs } from '../../environment/common/argv.js';

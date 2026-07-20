@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './scrollDecoration.css';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import { ViewPart } from '../../view/viewPart.js';
 import { RenderingContext, RestrictedRenderingContext } from '../../view/renderingContext.js';
 import { ViewContext } from '../../../common/viewModel/viewContext.js';

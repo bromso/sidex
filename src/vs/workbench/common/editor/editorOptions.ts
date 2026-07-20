@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IRange } from '../../../editor/common/core/range.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
 import {
 	ICodeEditorViewState,
 	IDiffEditorViewState,
 	IEditor,
 	ScrollType
-} from '../../../editor/common/editorCommon.js';
+} from '@sidex/editor/common/editorCommon.js';
 import {
 	ITextEditorOptions,
 	TextEditorSelectionRevealType,
 	TextEditorSelectionSource
-} from '../../../platform/editor/common/editor.js';
+} from '@sidex/platform/editor/common/editor.js';
 import { isTextEditorViewState } from '../editor.js';
 
 export function applyTextEditorOptions(options: ITextEditorOptions, editor: IEditor, scrollType: ScrollType): boolean {

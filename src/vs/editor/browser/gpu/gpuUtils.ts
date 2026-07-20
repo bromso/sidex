@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BugIndicatingError as _BugIndicatingError } from '../../../base/common/errors.js';
-import { toDisposable, type IDisposable } from '../../../base/common/lifecycle.js';
+import { BugIndicatingError as _BugIndicatingError } from '@sidex/base/common/errors.js';
+import { toDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export const quadVertices = new Float32Array([1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0]);
 

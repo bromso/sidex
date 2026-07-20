@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas, matchesScheme } from '../../../../base/common/network.js';
-import Severity from '../../../../base/common/severity.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Schemas, matchesScheme } from '@sidex/base/common/network.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IOpenerService, OpenOptions } from '../../../../platform/opener/common/opener.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IOpenerService, OpenOptions } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ITrustedDomainService } from './trustedDomainService.js';
-import { isURLDomainTrusted } from '../../../../platform/url/common/trustedDomains.js';
+import { isURLDomainTrusted } from '@sidex/platform/url/common/trustedDomains.js';
 import { configureOpenerTrustedDomainsHandler, readStaticTrustedDomains } from './trustedDomains.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 

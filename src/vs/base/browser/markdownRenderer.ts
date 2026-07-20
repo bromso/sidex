@@ -213,7 +213,8 @@ export interface IRenderedMarkdown extends IDisposable {
 /**
  * Low-level way create a html element from a markdown string.
  *
- * **Note** that for most cases you should be using {@link import('../../editor/browser/widget/markdownRenderer/browser/markdownRenderer.js').MarkdownRenderer MarkdownRenderer}
+ * **Note** that for most cases you should be using `MarkdownRenderer` from
+ * `@sidex/editor/browser/widget/markdownRenderer/browser/markdownRenderer.js`,
  * which comes with support for pretty code block rendering and which uses the default way of handling links.
  */
 export function renderMarkdown(

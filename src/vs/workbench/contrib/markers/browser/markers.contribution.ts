@@ -4,16 +4,16 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './markersFileDecorations.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Extensions, IConfigurationRegistry } from '../../../../platform/configuration/common/configurationRegistry.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Extensions, IConfigurationRegistry } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { Marker, RelatedInformation, ResourceMarkers } from './markersModel.js';
 import { MarkersView } from './markersView.js';
-import { MenuId, registerAction2, Action2 } from '../../../../platform/actions/common/actions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { MenuId, registerAction2, Action2 } from '@sidex/platform/actions/common/actions.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { MarkersViewMode, Markers, MarkersContextKeys } from '../common/markers.js';
 import Messages from './messages.js';
 import {
@@ -25,15 +25,15 @@ import {
 } from '../../../common/contributions.js';
 import { IMarkersView } from './markers.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { Disposable, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { Disposable, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IStatusbarEntryAccessor,
 	IStatusbarService,
 	StatusbarAlignment,
 	IStatusbarEntry
 } from '../../../services/statusbar/browser/statusbar.js';
-import { IMarkerService, MarkerStatistics } from '../../../../platform/markers/common/markers.js';
+import { IMarkerService, MarkerStatistics } from '@sidex/platform/markers/common/markers.js';
 import {
 	ViewContainer,
 	IViewContainersRegistry,
@@ -44,16 +44,16 @@ import {
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { getVisbileViewContextKey, FocusedViewContext } from '../../../common/contextkeys.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { ViewAction } from '../../../browser/parts/views/viewPane.js';
 import { IActivityService, NumberBadge } from '../../../services/activity/common/activity.js';
 import { viewFilterSubmenu } from '../../../browser/parts/views/viewFilter.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { problemsConfigurationNodeBase } from '../../../common/configuration.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { ProblemsAccessibilityHelp } from './markersAccessibilityHelp.js';
 
 KeybindingsRegistry.registerCommandAndKeybindingRule({

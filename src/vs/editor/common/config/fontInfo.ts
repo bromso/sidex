@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as platform from '../../../base/common/platform.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { EditorOption, FindComputedEditorOptionValueById } from './editorOptions.js';
 import { EditorZoom } from './editorZoom.js';
 

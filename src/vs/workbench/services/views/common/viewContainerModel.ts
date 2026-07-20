@@ -16,21 +16,21 @@ import {
 	VIEWS_LOG_ID,
 	VIEWS_LOG_NAME
 } from '../../../common/views.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { URI } from '../../../../base/common/uri.js';
-import { coalesce, move } from '../../../../base/common/arrays.js';
-import { isUndefined, isUndefinedOrNull } from '../../../../base/common/types.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ILogger, ILoggerService } from '../../../../platform/log/common/log.js';
-import { CounterSet } from '../../../../base/common/map.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { coalesce, move } from '@sidex/base/common/arrays.js';
+import { isUndefined, isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ILogger, ILoggerService } from '@sidex/platform/log/common/log.js';
+import { CounterSet } from '@sidex/base/common/map.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import { windowLogGroup } from '../../log/common/logConstants.js';
 
 export function getViewsStateStorageId(viewContainerStorageId: string): string {

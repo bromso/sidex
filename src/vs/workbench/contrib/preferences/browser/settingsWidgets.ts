@@ -3,39 +3,39 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BrowserFeatures } from '../../../../base/browser/canIUse.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { applyDragImage } from '../../../../base/browser/ui/dnd/dnd.js';
-import { InputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { SelectBox } from '../../../../base/browser/ui/selectBox/selectBox.js';
-import { Toggle, unthemedToggleStyles } from '../../../../base/browser/ui/toggle/toggle.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { disposableTimeout } from '../../../../base/common/async.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { isIOS } from '../../../../base/common/platform.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { isDefined, isUndefinedOrNull } from '../../../../base/common/types.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { applyDragImage } from '@sidex/base/browser/ui/dnd/dnd.js';
+import { InputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { SelectBox } from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { Toggle, unthemedToggleStyles } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { disposableTimeout } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isIOS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isDefined, isUndefinedOrNull } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import {
 	defaultButtonStyles,
 	getInputBoxStyle,
 	getSelectBoxStyles
-} from '../../../../platform/theme/browser/defaultStyles.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { hasNativeContextMenu } from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { hasNativeContextMenu } from '@sidex/platform/window/common/window.js';
 import { SettingValueType } from '../../../services/preferences/common/preferences.js';
 import { validatePropertyName } from '../../../services/preferences/common/preferencesValidation.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import {
 	settingsSelectBackground,
 	settingsSelectBorder,

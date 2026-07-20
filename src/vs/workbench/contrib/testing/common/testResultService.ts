@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { findFirstIdxMonotonousOrArrLen } from '../../../../base/common/arraysFind.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { Disposable, DisposableStore, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { findFirstIdxMonotonousOrArrLen } from '@sidex/base/common/arraysFind.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { Disposable, DisposableStore, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { TestingContextKeys } from './testingContextKeys.js';
 import { ITestProfileService } from './testProfileService.js';
 import { ITestResult, LiveTestResult, TestResultItemChange, TestResultItemChangeReason } from './testResult.js';

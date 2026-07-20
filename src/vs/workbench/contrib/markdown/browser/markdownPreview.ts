@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IEditorService, SIDE_GROUP } from '../../../services/editor/common/editorService.js';
 import { IWebviewWorkbenchService } from '../../webviewPanel/browser/webviewWorkbenchService.js';
 import { WebviewInput } from '../../webviewPanel/browser/webviewEditorInput.js';
 import { WebviewInitInfo } from '../../webview/browser/webview.js';
 import { asWebviewUri } from '../../webview/common/webview.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
 import { DEFAULT_MARKDOWN_STYLES } from './markdownDocumentRenderer.js';
-import * as marked from '../../../../base/common/marked/marked.js';
+import * as marked from '@sidex/base/common/marked/marked.js';
 
 const MARKDOWN_PREVIEW_VIEW_TYPE = 'sidex.markdown.preview';
 const PREVIEW_OPEN_FILES_KEY = 'markdown.preview.openFiles';

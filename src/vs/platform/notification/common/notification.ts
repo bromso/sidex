@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IAction } from '../../../base/common/actions.js';
-import { Event } from '../../../base/common/event.js';
-import BaseSeverity from '../../../base/common/severity.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import BaseSeverity from '@sidex/base/common/severity.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 
 export import Severity = BaseSeverity;

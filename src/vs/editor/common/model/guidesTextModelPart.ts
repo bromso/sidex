@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { findLast } from '../../../base/common/arraysFind.js';
-import * as strings from '../../../base/common/strings.js';
+import { findLast } from '@sidex/base/common/arraysFind.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { CursorColumns } from '../core/cursorColumns.js';
 import { IPosition, Position } from '../core/position.js';
 import { Range } from '../core/range.js';
@@ -23,7 +23,7 @@ import {
 	IndentGuide,
 	IndentGuideHorizontalLine
 } from '../textModelGuides.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 
 export class GuidesTextModelPart extends TextModelPart implements IGuidesTextModelPart {
 	constructor(

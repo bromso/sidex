@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './minimap.css';
-import * as dom from '../../../../base/browser/dom.js';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { GlobalPointerMoveMonitor } from '../../../../base/browser/globalPointerMoveMonitor.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { IDisposable, Disposable } from '../../../../base/common/lifecycle.js';
-import * as platform from '../../../../base/common/platform.js';
-import * as strings from '../../../../base/common/strings.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { GlobalPointerMoveMonitor } from '@sidex/base/browser/globalPointerMoveMonitor.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { ILine, RenderedLinesCollection } from '../../view/viewLayer.js';
 import { PartFingerprint, PartFingerprints, ViewPart } from '../../view/viewPart.js';
 import {
@@ -37,18 +37,18 @@ import {
 	minimapBackground,
 	minimapForegroundOpacity,
 	editorForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { ModelDecorationMinimapOptions } from '../../../common/model/textModel.js';
 import { Selection } from '../../../common/core/selection.js';
-import { Color } from '../../../../base/common/color.js';
-import { GestureEvent, EventType, Gesture } from '../../../../base/browser/touch.js';
+import { Color } from '@sidex/base/common/color.js';
+import { GestureEvent, EventType, Gesture } from '@sidex/base/browser/touch.js';
 import { MinimapCharRendererFactory } from './minimapCharRendererFactory.js';
 import { MinimapPosition, MinimapSectionHeaderStyle, TextModelResolvedOptions } from '../../../common/model.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { LRUCache } from '../../../../base/common/map.js';
-import { DEFAULT_FONT_FAMILY } from '../../../../base/browser/fonts.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { DEFAULT_FONT_FAMILY } from '@sidex/base/browser/fonts.js';
 import { ViewModelDecoration } from '../../../common/viewModel/viewModelDecoration.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 
 /**
  * The orthogonal distance to the slider at which dragging "resets". This implements "snapping"

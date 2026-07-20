@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as resources from '../../../../base/common/resources.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ITaskService, IWorkspaceFolderTaskResult } from '../common/taskService.js';
 import {
@@ -18,17 +18,17 @@ import {
 	WorkspaceFileTaskSource,
 	IWorkspaceTaskSource
 } from '../common/tasks.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IQuickPickItem, IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { Action2 } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Event } from '../../../../base/common/event.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IQuickPickItem, IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Action2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 const HAS_PROMPTED_FOR_AUTOMATIC_TASKS = 'task.hasPromptedForAutomaticTasks.v2';
 const ALLOW_AUTOMATIC_TASKS = 'task.allowAutomaticTasks';

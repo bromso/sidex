@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Promises, RunOnceScheduler, runWhenGlobalIdle } from '../../../base/common/async.js';
-import { Emitter, Event, PauseableEmitter } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, dispose, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { mark } from '../../../base/common/performance.js';
-import { isUndefinedOrNull } from '../../../base/common/types.js';
+import { Promises, RunOnceScheduler, runWhenGlobalIdle } from '@sidex/base/common/async.js';
+import { Emitter, Event, PauseableEmitter } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, dispose, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { isUndefinedOrNull } from '@sidex/base/common/types.js';
 import {
 	InMemoryStorageDatabase,
 	IStorage,
@@ -15,7 +15,7 @@ import {
 	Storage,
 	StorageHint,
 	StorageValue
-} from '../../../base/parts/storage/common/storage.js';
+} from '@sidex/base/parts/storage/common/storage.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { isUserDataProfile, IUserDataProfile } from '../../userDataProfile/common/userDataProfile.js';
 import { IAnyWorkspaceIdentifier } from '../../workspace/common/workspace.js';

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { Event, Emitter } from '../../../base/common/event.js';
-import { debounce } from '../../../base/common/decorators.js';
-import { DisposableMap, DisposableStore, IDisposable, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { asPromise } from '../../../base/common/async.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { DisposableMap, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { asPromise } from '@sidex/base/common/async.js';
 import { ExtHostCommands } from './extHostCommands.js';
 import {
 	MainContext,
@@ -27,23 +27,23 @@ import {
 	SCMArtifactGroupDto,
 	SCMArtifactDto
 } from './extHost.protocol.js';
-import { sortedDiff, equals } from '../../../base/common/arrays.js';
-import { comparePaths } from '../../../base/common/comparers.js';
+import { sortedDiff, equals } from '@sidex/base/common/arrays.js';
+import { comparePaths } from '@sidex/base/common/comparers.js';
 import type * as vscode from 'vscode';
-import { ISplice } from '../../../base/common/sequence.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { ExtensionIdentifierMap, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { ISplice } from '@sidex/base/common/sequence.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ExtensionIdentifierMap, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { MarkdownString, SourceControlInputBoxValidationType } from './extHostTypeConverters.js';
 import { checkProposedApiEnabled, isProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 import { ExtHostDocuments } from './extHostDocuments.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isLinux } from '../../../base/common/platform.js';
-import { structuralEquals } from '../../../base/common/equals.js';
-import { Iterable } from '../../../base/common/iterator.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isLinux } from '@sidex/base/common/platform.js';
+import { structuralEquals } from '@sidex/base/common/equals.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 
 type ProviderHandle = number;
 type GroupHandle = number;

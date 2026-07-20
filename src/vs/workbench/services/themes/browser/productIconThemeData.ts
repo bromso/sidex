@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import * as Paths from '../../../../base/common/path.js';
-import * as resources from '../../../../base/common/resources.js';
-import * as Json from '../../../../base/common/json.js';
+import * as Paths from '@sidex/base/common/path.js';
+import * as resources from '@sidex/base/common/resources.js';
+import * as Json from '@sidex/base/common/json.js';
 import {
 	ExtensionData,
 	IThemeExtensionPoint,
 	IWorkbenchProductIconTheme,
 	ThemeSettingDefaults
 } from '../common/workbenchThemeService.js';
-import { getParseErrorMessage } from '../../../../base/common/jsonErrorMessages.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { isObject, isString } from '../../../../base/common/types.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { getParseErrorMessage } from '@sidex/base/common/jsonErrorMessages.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	IconDefinition,
 	getIconRegistry,
@@ -28,9 +28,9 @@ import {
 	fontWeightRegex,
 	fontStyleRegex,
 	fontFormatRegex
-} from '../../../../platform/theme/common/iconRegistry.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
+} from '@sidex/platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
 
 export const DEFAULT_PRODUCT_ICON_THEME_ID = ''; // TODO
 

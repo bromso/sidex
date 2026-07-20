@@ -4,24 +4,24 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Queue } from '../../../../base/common/async.js';
-import * as json from '../../../../base/common/json.js';
-import * as objects from '../../../../base/common/objects.js';
-import { setProperty } from '../../../../base/common/jsonEdit.js';
-import { Edit } from '../../../../base/common/jsonFormatter.js';
-import { Disposable, IReference } from '../../../../base/common/lifecycle.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ITextModelService, IResolvedTextEditorModel } from '../../../../editor/common/services/resolverService.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IUserFriendlyKeybinding } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResolvedKeybindingItem } from '../../../../platform/keybinding/common/resolvedKeybindingItem.js';
+import { Queue } from '@sidex/base/common/async.js';
+import * as json from '@sidex/base/common/json.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { setProperty } from '@sidex/base/common/jsonEdit.js';
+import { Edit } from '@sidex/base/common/jsonFormatter.js';
+import { Disposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ITextModelService, IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IUserFriendlyKeybinding } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResolvedKeybindingItem } from '@sidex/platform/keybinding/common/resolvedKeybindingItem.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
 
 export const IKeybindingEditingService = createDecorator<IKeybindingEditingService>('keybindingEditingService');

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
 import { Position } from '../core/position.js';
 import { IRange, Range } from '../core/range.js';
 import { countEOL } from '../core/misc/eolCounter.js';

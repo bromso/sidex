@@ -5,7 +5,7 @@
 
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IDebugService, State } from '../common/debug.js';
-import { dispose, IDisposable } from '../../../../base/common/lifecycle.js';
+import { dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { ITitleService } from '../../../services/title/browser/titleService.js';
 

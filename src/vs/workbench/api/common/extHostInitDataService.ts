@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IExtensionHostInitData } from '../../services/extensions/common/extensionHostProtocol.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export const IExtHostInitDataService = createDecorator<IExtHostInitDataService>('IExtHostInitDataService');
 

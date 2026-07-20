@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction, SubmenuAction } from '../../../base/common/actions.js';
-import { Event, MicrotaskEmitter } from '../../../base/common/event.js';
+import { IAction, SubmenuAction } from '@sidex/base/common/actions.js';
+import { Event, MicrotaskEmitter } from '@sidex/base/common/event.js';
 import {
 	DisposableStore,
 	dispose,
 	IDisposable,
 	markAsSingleton,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../base/common/linkedList.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+} from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ICommandAction, ICommandActionTitle, Icon, ILocalizedString } from '../../action/common/action.js';
 import { Categories } from '../../action/common/actionCommonCategories.js';
 import { CommandsRegistry, ICommandService } from '../../commands/common/commands.js';

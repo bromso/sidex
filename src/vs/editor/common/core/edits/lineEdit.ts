@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareBy, groupAdjacentBy, numberComparator } from '../../../../base/common/arrays.js';
-import { assert, checkAdjacentItems } from '../../../../base/common/assert.js';
-import { splitLines } from '../../../../base/common/strings.js';
+import { compareBy, groupAdjacentBy, numberComparator } from '@sidex/base/common/arrays.js';
+import { assert, checkAdjacentItems } from '@sidex/base/common/assert.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 import { LineRange } from '../ranges/lineRange.js';
 import { BaseStringEdit, StringEdit, StringReplacement } from './stringEdit.js';
 import { Position } from '../position.js';

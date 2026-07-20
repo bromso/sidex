@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ExtensionRecommendations, GalleryExtensionRecommendation } from './extensionRecommendations.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
-import { PlatformToString, platform } from '../../../../base/common/platform.js';
+import { PlatformToString, platform } from '@sidex/base/common/platform.js';
 
 export class RemoteRecommendations extends ExtensionRecommendations {
 	private _recommendations: GalleryExtensionRecommendation[] = [];

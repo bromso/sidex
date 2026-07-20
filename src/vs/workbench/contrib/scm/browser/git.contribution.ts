@@ -4,17 +4,17 @@
  *  instead of the VS Code extension host protocol.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import type { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { observableValue } from '../../../../base/common/observable.js';
-import type { IObservable } from '../../../../base/common/observable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ResourceTree } from '../../../../base/common/resourceTree.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { basename, relativePath } from '../../../../base/common/resources.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { observableValue } from '@sidex/base/common/observable.js';
+import type { IObservable } from '@sidex/base/common/observable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ResourceTree } from '@sidex/base/common/resourceTree.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { basename, relativePath } from '@sidex/base/common/resources.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
 import type { IWorkbenchContribution } from '../../../common/contributions.js';
 import {
@@ -33,19 +33,19 @@ import type {
 	ISCMHistoryItemRef,
 	ISCMHistoryItemRefsChangeEvent
 } from '../common/history.js';
-import type { CancellationToken } from '../../../../base/common/cancellation.js';
+import type { CancellationToken } from '@sidex/base/common/cancellation.js';
 import type { ISCMArtifactProvider } from '../common/artifact.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { FileSystemProviderCapabilities, FileType, FilePermission } from '../../../../platform/files/common/files.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { FileSystemProviderCapabilities, FileType, FilePermission } from '@sidex/platform/files/common/files.js';
 import type {
 	IFileSystemProvider,
 	IStat,
@@ -54,16 +54,16 @@ import type {
 	IFileWriteOptions,
 	IWatchOptions,
 	IFileChange
-} from '../../../../platform/files/common/files.js';
-import type { ITextModel } from '../../../../editor/common/model.js';
-import type { Command } from '../../../../editor/common/languages.js';
-import type { Event } from '../../../../base/common/event.js';
+} from '@sidex/platform/files/common/files.js';
+import type { ITextModel } from '@sidex/editor/common/model.js';
+import type { Command } from '@sidex/editor/common/languages.js';
+import type { Event } from '@sidex/base/common/event.js';
 import {
 	IDecorationsService,
 	IDecorationsProvider,
 	IDecorationData
 } from '../../../services/decorations/common/decorations.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
 import { historyItemRefColor, historyItemRemoteRefColor } from './scmHistory.js';
 
 // ─── Tauri invoke() bridge ──────────────────────────────────────────────────

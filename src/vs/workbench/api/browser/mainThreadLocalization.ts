@@ -5,10 +5,10 @@
 
 import { MainContext, MainThreadLocalizationShape } from '../common/extHost.protocol.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IFileService } from '../../../platform/files/common/files.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { ILanguagePackService } from '../../../platform/languagePacks/common/languagePacks.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ILanguagePackService } from '@sidex/platform/languagePacks/common/languagePacks.js';
 
 @extHostNamedCustomer(MainContext.MainThreadLocalization)
 export class MainThreadLocalization extends Disposable implements MainThreadLocalizationShape {

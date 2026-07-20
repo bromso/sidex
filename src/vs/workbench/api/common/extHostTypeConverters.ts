@@ -4,46 +4,46 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { asArray, coalesce, isNonEmptyArray } from '../../../base/common/arrays.js';
-import { VSBuffer, encodeBase64 } from '../../../base/common/buffer.js';
-import { IDataTransferFile, IDataTransferItem, UriList } from '../../../base/common/dataTransfer.js';
-import { createSingleCallFunction } from '../../../base/common/functional.js';
-import * as htmlContent from '../../../base/common/htmlContent.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { ResourceMap, ResourceSet } from '../../../base/common/map.js';
-import * as marked from '../../../base/common/marked/marked.js';
-import { parse } from '../../../base/common/marshalling.js';
-import { Mimes } from '../../../base/common/mime.js';
-import { cloneAndChange } from '../../../base/common/objects.js';
-import { IPrefixTreeNode, WellDefinedPrefixTree } from '../../../base/common/prefixTree.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { isDefined, isEmptyObject, isNumber, isString, isUndefinedOrNull } from '../../../base/common/types.js';
-import { URI, UriComponents, isUriComponents } from '../../../base/common/uri.js';
-import { IURITransformer } from '../../../base/common/uriIpc.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { RenderLineNumbersType } from '../../../editor/common/config/editorOptions.js';
-import { IPosition } from '../../../editor/common/core/position.js';
-import * as editorRange from '../../../editor/common/core/range.js';
-import { ISelection } from '../../../editor/common/core/selection.js';
+import { asArray, coalesce, isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { VSBuffer, encodeBase64 } from '@sidex/base/common/buffer.js';
+import { IDataTransferFile, IDataTransferItem, UriList } from '@sidex/base/common/dataTransfer.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import * as htmlContent from '@sidex/base/common/htmlContent.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap, ResourceSet } from '@sidex/base/common/map.js';
+import * as marked from '@sidex/base/common/marked/marked.js';
+import { parse } from '@sidex/base/common/marshalling.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { cloneAndChange } from '@sidex/base/common/objects.js';
+import { IPrefixTreeNode, WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isDefined, isEmptyObject, isNumber, isString, isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { URI, UriComponents, isUriComponents } from '@sidex/base/common/uri.js';
+import { IURITransformer } from '@sidex/base/common/uriIpc.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { RenderLineNumbersType } from '@sidex/editor/common/config/editorOptions.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import * as editorRange from '@sidex/editor/common/core/range.js';
+import { ISelection } from '@sidex/editor/common/core/selection.js';
 import {
 	IContentDecorationRenderOptions,
 	IDecorationOptions,
 	IDecorationRenderOptions,
 	IThemeDecorationRenderOptions
-} from '../../../editor/common/editorCommon.js';
-import * as encodedTokenAttributes from '../../../editor/common/encodedTokenAttributes.js';
-import * as languageSelector from '../../../editor/common/languageSelector.js';
-import * as languages from '../../../editor/common/languages.js';
-import { EndOfLineSequence, TrackedRangeStickiness } from '../../../editor/common/model.js';
-import { ITextEditorOptions } from '../../../platform/editor/common/editor.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+} from '@sidex/editor/common/editorCommon.js';
+import * as encodedTokenAttributes from '@sidex/editor/common/encodedTokenAttributes.js';
+import * as languageSelector from '@sidex/editor/common/languageSelector.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { EndOfLineSequence, TrackedRangeStickiness } from '@sidex/editor/common/model.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	IMarkerData,
 	IRelatedInformation,
 	MarkerSeverity,
 	MarkerTag
-} from '../../../platform/markers/common/markers.js';
-import { ProgressLocation as MainProgressLocation } from '../../../platform/progress/common/progress.js';
+} from '@sidex/platform/markers/common/markers.js';
+import { ProgressLocation as MainProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { DEFAULT_EDITOR_ASSOCIATION, SaveReason } from '../../common/editor.js';
 import { IViewBadge } from '../../common/views.js';
 import { DebugTreeItemCollapsibleState, IDebugVisualizationTreeItem } from '../../contrib/debug/common/debug.js';

@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { ContextKeyExpr, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { TerminalSettingId } from '../../../../platform/terminal/common/terminal.js';
+import { ContextKeyExpr, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 import { TERMINAL_VIEW_ID } from './terminal.js';
 
 export const enum TerminalContextKeyStrings {

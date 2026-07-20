@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { Color } from '../../../../base/common/color.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { Color } from '@sidex/base/common/color.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { CursorColumns } from '../../../common/core/cursorColumns.js';
 import type { IViewLineTokens } from '../../../common/tokens/lineTokens.js';
 import {

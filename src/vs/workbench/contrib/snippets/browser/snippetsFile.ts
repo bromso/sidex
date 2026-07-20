@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { parse as jsonParse, getNodeType } from '../../../../base/common/json.js';
+import { parse as jsonParse, getNodeType } from '@sidex/base/common/json.js';
 import { localize } from '@sidex/base/nls.js';
-import { extname, basename } from '../../../../base/common/path.js';
+import { extname, basename } from '@sidex/base/common/path.js';
 import {
 	SnippetParser,
 	Variable,
 	Placeholder,
 	Text
-} from '../../../../editor/contrib/snippet/browser/snippetParser.js';
-import { KnownSnippetVariableNames } from '../../../../editor/contrib/snippet/browser/snippetVariables.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { relativePath } from '../../../../base/common/resources.js';
-import { isObject } from '../../../../base/common/types.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { WindowIdleValue, getActiveWindow } from '../../../../base/browser/dom.js';
-import { match as matchGlob } from '../../../../base/common/glob.js';
-import { Schemas } from '../../../../base/common/network.js';
+} from '@sidex/editor/contrib/snippet/browser/snippetParser.js';
+import { KnownSnippetVariableNames } from '@sidex/editor/contrib/snippet/browser/snippetVariables.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { relativePath } from '@sidex/base/common/resources.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { WindowIdleValue, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { match as matchGlob } from '@sidex/base/common/glob.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 class SnippetBodyInsights {
 	readonly codeSnippet: string;

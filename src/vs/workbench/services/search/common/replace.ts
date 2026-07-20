@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as strings from '../../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { IPatternInfo } from './search.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { buildReplaceStringWithCasePreserved } from '../../../../base/common/search.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { buildReplaceStringWithCasePreserved } from '@sidex/base/common/search.js';
 
 export class ReplacePattern {
 	private _replacePattern: string;

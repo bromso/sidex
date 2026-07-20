@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { LRUCache } from '../../../../base/common/map.js';
+import { Event } from '@sidex/base/common/event.js';
+import { LRUCache } from '@sidex/base/common/map.js';
 import { Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';
 import { CodeLens, CodeLensList, CodeLensProvider } from '../../../common/languages.js';
 import { CodeLensModel } from './codelens.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IStorageService,
 	StorageScope,
 	StorageTarget,
 	WillSaveStateReason
-} from '../../../../platform/storage/common/storage.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { runWhenWindowIdle } from '../../../../base/browser/dom.js';
+} from '@sidex/platform/storage/common/storage.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { runWhenWindowIdle } from '@sidex/base/browser/dom.js';
 
 export const ICodeLensCache = createDecorator<ICodeLensCache>('ICodeLensCache');
 

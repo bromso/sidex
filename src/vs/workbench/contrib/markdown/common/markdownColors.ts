@@ -9,8 +9,8 @@ import {
 	editorInfoForeground,
 	editorWarningForeground,
 	editorErrorForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { chartsGreen, chartsPurple } from '../../../../platform/theme/common/colors/chartsColors.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { chartsGreen, chartsPurple } from '@sidex/platform/theme/common/colors/chartsColors.js';
 
 /*
  * Markdown alert colors for GitHub-style alert syntax.

@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
-import { matchesFuzzy } from '../../../../base/common/filters.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { matchesFuzzy } from '@sidex/base/common/filters.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IDebugService, IDebugSession, REPL_VIEW_ID } from '../common/debug.js';
-import { IQuickInputService, IQuickPickSeparator } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService, IQuickPickSeparator } from '@sidex/platform/quickinput/common/quickInput.js';
 
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IPickerDebugItem } from '../common/loadedScriptsPicker.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 
 export async function showDebugSessionMenu(accessor: ServicesAccessor, selectAndStartID: string) {
 	const quickInputService = accessor.get(IQuickInputService);

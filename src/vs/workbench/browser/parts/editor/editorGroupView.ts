@@ -62,8 +62,8 @@ import {
 } from '../../../common/contextkeys.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
-import { Emitter, Event, Relay } from '../../../../base/common/event.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Emitter, Event, Relay } from '@sidex/base/common/event.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	Dimension,
 	trackFocus,
@@ -78,12 +78,12 @@ import {
 	getWindow,
 	getActiveElement,
 	$
-} from '../../../../base/browser/dom.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ProgressBar } from '../../../../base/browser/ui/progressbar/progressbar.js';
-import { IThemeService, Themable } from '../../../../platform/theme/common/themeService.js';
-import { editorBackground, contrastBorder } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/base/browser/dom.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
+import { IThemeService, Themable } from '@sidex/platform/theme/common/themeService.js';
+import { editorBackground, contrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	EDITOR_GROUP_HEADER_TABS_BACKGROUND,
 	EDITOR_GROUP_HEADER_NO_TABS_BACKGROUND,
@@ -99,14 +99,14 @@ import {
 	IActiveEditorActions
 } from '../../../services/editor/common/editorGroupsService.js';
 import { EditorPanes } from './editorPanes.js';
-import { IEditorProgressService } from '../../../../platform/progress/common/progress.js';
+import { IEditorProgressService } from '@sidex/platform/progress/common/progress.js';
 import { EditorProgressIndicator } from '../../../services/progress/browser/progressIndicator.js';
 import { localize } from '@sidex/base/nls.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { DisposableStore, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ITelemetryData, ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { DeferredPromise, Promises, RunOnceWorker } from '../../../../base/common/async.js';
-import { EventType as TouchEventType, GestureEvent } from '../../../../base/browser/touch.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ITelemetryData, ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { DeferredPromise, Promises, RunOnceWorker } from '@sidex/base/common/async.js';
+import { EventType as TouchEventType, GestureEvent } from '@sidex/base/browser/touch.js';
 import {
 	IEditorGroupsView,
 	IEditorGroupView,
@@ -120,41 +120,41 @@ import {
 	IEditorPartsView,
 	IEditorGroupViewOptions
 } from './editor.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { SubmenuAction } from '../../../../base/common/actions.js';
-import { IMenuChangeEvent, IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { SubmenuAction } from '@sidex/base/common/actions.js';
+import { IMenuChangeEvent, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import {
 	getActionBarActions,
 	PrimaryAndSecondaryActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { hash } from '../../../../base/common/hash.js';
-import { getMimeTypes } from '../../../../editor/common/services/languagesAssociations.js';
-import { extname, isEqual } from '../../../../base/common/resources.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { EditorActivation, IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IFileDialogService, ConfirmResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { getMimeTypes } from '@sidex/editor/common/services/languagesAssociations.js';
+import { extname, isEqual } from '@sidex/base/common/resources.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { EditorActivation, IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IFileDialogService, ConfirmResult, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import {
 	IFilesConfigurationService,
 	AutoSaveMode
 } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { isLinux, isMacintosh, isNative, isWindows } from '../../../../base/common/platform.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { TelemetryTrustedValue } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { defaultProgressBarStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { isLinux, isMacintosh, isNative, isWindows } from '@sidex/base/common/platform.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { defaultProgressBarStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
 import { EditorGroupWatermark } from './editorGroupWatermark.js';
 import { EditorTitleControl } from './editorTitleControl.js';
 import { EditorPane } from './editorPane.js';
 import { IEditorResolverService } from '../../../services/editor/common/editorResolverService.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
-import { FileSystemProviderCapabilities, IFileService } from '../../../../platform/files/common/files.js';
+import { FileSystemProviderCapabilities, IFileService } from '@sidex/platform/files/common/files.js';
 
 export class EditorGroupView extends Themable implements IEditorGroupView {
 	//#region factory

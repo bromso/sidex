@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	EditorResourceAccessor,
 	IEditorCommandsContext,
@@ -20,10 +20,10 @@ import {
 	IOpenWindowOptions,
 	isWorkspaceToOpen,
 	IOpenEmptyWindowOptions
-} from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/window/common/window.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { ServicesAccessor, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkspaceContextService, UNTITLED_WORKSPACE_NAME } from '../../../../platform/workspace/common/workspace.js';
+import { ServicesAccessor, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkspaceContextService, UNTITLED_WORKSPACE_NAME } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	ExplorerFocusCondition,
 	TextFileContentProvider,
@@ -36,15 +36,15 @@ import {
 	VIEW_ID
 } from '../common/files.js';
 import { ExplorerViewPaneContainer } from './explorerViewlet.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { toErrorMessage } from '../../../../base/common/errorMessage.js';
-import { CommandsRegistry, ICommandHandler, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IContextKey, IContextKeyService, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { KeyMod, KeyCode, KeyChord } from '../../../../base/common/keyCodes.js';
-import { isWeb, isWindows } from '../../../../base/common/platform.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { CommandsRegistry, ICommandHandler, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKey, IContextKeyService, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { KeyMod, KeyCode, KeyChord } from '@sidex/base/common/keyCodes.js';
+import { isWeb, isWindows } from '@sidex/base/common/platform.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import {
 	getResourceForCommand,
 	getMultiSelectedResources,
@@ -53,28 +53,28 @@ import {
 } from './files.js';
 import { IWorkspaceEditingService } from '../../../services/workspaces/common/workspaceEditing.js';
 import { resolveCommandsContext } from '../../../browser/parts/editor/editorCommandsContext.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import { IEditorService, SIDE_GROUP, ISaveEditorsOptions } from '../../../services/editor/common/editorService.js';
 import {
 	IEditorGroupsService,
 	GroupsOrder,
 	IEditorGroup
 } from '../../../services/editor/common/editorGroupsService.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { basename, joinPath, isEqual } from '../../../../base/common/resources.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { EmbeddedCodeEditorWidget } from '../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { basename, joinPath, isEqual } from '@sidex/base/common/resources.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { EmbeddedCodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { IAction, toAction } from '../../../../base/common/actions.js';
-import { EditorOpenSource, EditorResolution } from '../../../../platform/editor/common/editor.js';
-import { hash } from '../../../../base/common/hash.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { IAction, toAction } from '@sidex/base/common/actions.js';
+import { EditorOpenSource, EditorResolution } from '@sidex/platform/editor/common/editor.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IPaneCompositePartService } from '../../../services/panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
@@ -105,11 +105,11 @@ import {
 	NEW_UNTITLED_FILE_LABEL,
 	NEW_FILE_COMMAND_ID
 } from './fileConstants.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { RemoveRootFolderAction } from '../../../browser/actions/workspaceActions.js';
 import { OpenEditorsView } from './views/openEditorsView.js';
 import { ExplorerView } from './views/explorerView.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
 
 export const openWindowCommand = (
 	accessor: ServicesAccessor,

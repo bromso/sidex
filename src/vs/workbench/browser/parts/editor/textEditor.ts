@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { distinct, deepClone } from '../../../../base/common/objects.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { isObject, assertReturnsDefined } from '../../../../base/common/types.js';
-import { MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { distinct, deepClone } from '@sidex/base/common/objects.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { isObject, assertReturnsDefined } from '@sidex/base/common/types.js';
+import { MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	IEditorOpenContext,
 	IEditorPaneSelection,
@@ -23,29 +23,29 @@ import {
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { computeEditorAriaLabel } from '../../editor.js';
 import { AbstractEditorWithViewState } from './editorWithViewState.js';
-import { IEditorViewState } from '../../../../editor/common/editorCommon.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IEditorViewState } from '@sidex/editor/common/editorCommon.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	ITextResourceConfigurationChangeEvent,
 	ITextResourceConfigurationService
-} from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IEditorOptions as ICodeEditorOptions } from '../../../../editor/common/config/editorOptions.js';
+} from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	IEditorOptions,
 	ITextEditorOptions,
 	TextEditorSelectionRevealType,
 	TextEditorSelectionSource
-} from '../../../../platform/editor/common/editor.js';
-import { ICursorPositionChangedEvent } from '../../../../editor/common/cursorEvents.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+} from '@sidex/platform/editor/common/editor.js';
+import { ICursorPositionChangedEvent } from '@sidex/editor/common/cursorEvents.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 
 export interface IEditorConfiguration {
 	editor: object;

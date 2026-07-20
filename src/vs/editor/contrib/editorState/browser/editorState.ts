@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as strings from '../../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { ICodeEditor, IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { Position } from '../../../common/core/position.js';
 import { Range, IRange } from '../../../common/core/range.js';
-import { CancellationTokenSource, CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
+import { CancellationTokenSource, CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { ITextModel } from '../../../common/model.js';
 import { EditorKeybindingCancellationTokenSource } from './keybindingCancellation.js';
 

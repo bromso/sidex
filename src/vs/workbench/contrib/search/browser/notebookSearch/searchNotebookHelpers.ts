@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FindMatch } from '../../../../../editor/common/model.js';
+import { FindMatch } from '@sidex/editor/common/model.js';
 import { IFileMatch, ITextSearchMatch, TextSearchMatch } from '../../../../services/search/common/search.js';
-import { Range } from '../../../../../editor/common/core/range.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	INotebookCellMatchNoModel,
 	INotebookFileMatchNoModel,
@@ -13,7 +13,7 @@ import {
 	rawCellPrefix
 } from '../../common/searchNotebookHelpers.js';
 import { CellWebviewFindMatch, ICellViewModel } from '../../../notebook/browser/notebookBrowser.js';
-import { URI } from '../../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export type INotebookCellMatch = INotebookCellMatchWithModel | INotebookCellMatchNoModel;
 export type INotebookFileMatch = INotebookFileMatchWithModel | INotebookFileMatchNoModel;

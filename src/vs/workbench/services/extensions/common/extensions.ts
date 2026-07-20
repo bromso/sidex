@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import Severity from '../../../../base/common/severity.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
+import { Event } from '@sidex/base/common/event.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
 import {
 	getExtensionId,
 	getGalleryExtensionId
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { ImplicitActivationEvents } from '../../../../platform/extensionManagement/common/implicitActivationEvents.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { ImplicitActivationEvents } from '@sidex/platform/extensionManagement/common/implicitActivationEvents.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierMap,
@@ -21,10 +21,10 @@ import {
 	IExtensionContributions,
 	IExtensionDescription,
 	TargetPlatform
-} from '../../../../platform/extensions/common/extensions.js';
-import { ApiProposalName } from '../../../../platform/extensions/common/extensionsApiProposals.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IV8Profile } from '../../../../platform/profiling/common/profiling.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { ApiProposalName } from '@sidex/platform/extensions/common/extensionsApiProposals.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IV8Profile } from '@sidex/platform/profiling/common/profiling.js';
 import { ExtensionHostKind } from './extensionHostKind.js';
 import { IExtensionDescriptionDelta, IExtensionDescriptionSnapshot } from './extensionHostProtocol.js';
 import { ExtensionRunningLocation } from './extensionRunningLocation.js';

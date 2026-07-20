@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { LanguagesRegistry } from './languagesRegistry.js';
 import {
 	ILanguageNameIdPair,
@@ -16,7 +16,7 @@ import {
 } from '../languages/language.js';
 import { ILanguageIdCodec, TokenizationRegistry } from '../languages.js';
 import { PLAINTEXT_LANGUAGE_ID } from '../languages/modesRegistry.js';
-import { IObservable, observableFromEvent } from '../../../base/common/observable.js';
+import { IObservable, observableFromEvent } from '@sidex/base/common/observable.js';
 
 export class LanguageService extends Disposable implements ILanguageService {
 	public _serviceBrand: undefined;

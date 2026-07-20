@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { splitLines } from '../../../../../base/common/strings.js';
+import { splitLines } from '@sidex/base/common/strings.js';
 import { Position } from '../../../core/position.js';
 import { Range } from '../../../core/range.js';
 import { TextLength } from '../../../core/text/textLength.js';

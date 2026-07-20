@@ -4,20 +4,20 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { ITerminalAddon, Terminal } from '@xterm/xterm';
-import { Disposable, IReference } from '../../../../../base/common/lifecycle.js';
+import { Disposable, IReference } from '@sidex/base/common/lifecycle.js';
 import { ITerminalCompletionProvider, type TerminalCompletionList } from './terminalCompletionService.js';
-import type { CancellationToken } from '../../../../../base/common/cancellation.js';
+import type { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { ITerminalCompletion, mapLspKindToTerminalKind, TerminalCompletionItemKind } from './terminalCompletionItem.js';
-import { IResolvedTextEditorModel } from '../../../../../editor/common/services/resolverService.js';
-import { Position } from '../../../../../editor/common/core/position.js';
+import { IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
+import { Position } from '@sidex/editor/common/core/position.js';
 import {
 	CompletionItemLabel,
 	CompletionItemProvider,
 	CompletionTriggerKind
-} from '../../../../../editor/common/languages.js';
+} from '@sidex/editor/common/languages.js';
 import { LspTerminalModelContentProvider } from './lspTerminalModelContentProvider.js';
-import { MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { GeneralShellType, TerminalShellType } from '../../../../../platform/terminal/common/terminal.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { GeneralShellType, TerminalShellType } from '@sidex/platform/terminal/common/terminal.js';
 
 export class LspCompletionProviderAddon extends Disposable implements ITerminalAddon, ITerminalCompletionProvider {
 	readonly id = 'lsp';

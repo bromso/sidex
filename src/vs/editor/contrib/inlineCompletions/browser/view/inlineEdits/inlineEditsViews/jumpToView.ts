@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { n } from '../../../../../../../base/browser/dom.js';
-import { KeybindingLabel } from '../../../../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { RunOnceScheduler } from '../../../../../../../base/common/async.js';
-import { ResolvedKeybinding } from '../../../../../../../base/common/keybindings.js';
-import { Disposable } from '../../../../../../../base/common/lifecycle.js';
+import { n } from '@sidex/base/browser/dom.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	constObservable,
@@ -15,13 +15,13 @@ import {
 	derived,
 	IObservable,
 	observableFromEvent
-} from '../../../../../../../base/common/observable.js';
-import { OS } from '../../../../../../../base/common/platform.js';
-import { IContextKeyService } from '../../../../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../../../../platform/keybinding/common/keybinding.js';
-import { defaultKeybindingLabelStyles } from '../../../../../../../platform/theme/browser/defaultStyles.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/common/observable.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { defaultKeybindingLabelStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ObservableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import { Rect } from '../../../../../../common/core/2d/rect.js';
 import { Position } from '../../../../../../common/core/position.js';

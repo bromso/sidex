@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { URI } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IPosition } from '../core/position.js';
-import { ConfigurationTarget, IConfigurationValue } from '../../../platform/configuration/common/configuration.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { ConfigurationTarget, IConfigurationValue } from '@sidex/platform/configuration/common/configuration.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export const ITextResourceConfigurationService = createDecorator<ITextResourceConfigurationService>(
 	'textResourceConfigurationService'

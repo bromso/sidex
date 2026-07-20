@@ -3,9 +3,9 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../platform/instantiation/common/instantiation.js';
-import { Emitter, Event } from '../base/common/event.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IWorkbenchIssueService } from './contrib/issue/common/issue.js';
 
 // --- IAccessibleViewService ---

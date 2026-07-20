@@ -11,9 +11,9 @@ import {
 	derivedConstOnceDefined,
 	observableFromEvent,
 	observableValue
-} from '../../../../base/common/observable.js';
-import { Constants } from '../../../../base/common/uint.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+} from '@sidex/base/common/observable.js';
+import { Constants } from '@sidex/base/common/uint.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { diffEditorDefaultOptions } from '../../../common/config/diffEditor.js';
 import {
 	IDiffEditorBaseOptions,

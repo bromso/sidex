@@ -3,34 +3,34 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../../base/common/lifecycle.js';
-import { basename } from '../../../../../base/common/path.js';
-import { URI, UriComponents } from '../../../../../base/common/uri.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { FileSystemProviderCapabilities, IFileService } from '../../../../../platform/files/common/files.js';
-import { createDecorator } from '../../../../../platform/instantiation/common/instantiation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/path.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { FileSystemProviderCapabilities, IFileService } from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	TerminalCapability,
 	type ITerminalCapabilityStore
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import {
 	GeneralShellType,
 	ITerminalLogService,
 	TerminalShellType,
 	WindowsShellType
-} from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { TerminalSuggestSettingId } from '../common/terminalSuggestConfiguration.js';
 import { TerminalCompletionItemKind, type ITerminalCompletion } from './terminalCompletionItem.js';
-import { env as processEnv } from '../../../../../base/common/process.js';
-import type { IProcessEnvironment } from '../../../../../base/common/platform.js';
-import { timeout } from '../../../../../base/common/async.js';
+import { env as processEnv } from '@sidex/base/common/process.js';
+import type { IProcessEnvironment } from '@sidex/base/common/platform.js';
+import { timeout } from '@sidex/base/common/async.js';
 import { gitBashToWindowsPath, windowsToGitBashPath } from './terminalGitBashHelpers.js';
-import { isEqual } from '../../../../../base/common/resources.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { IRelativePattern, match } from '../../../../../base/common/glob.js';
-import { isString } from '../../../../../base/common/types.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IRelativePattern, match } from '@sidex/base/common/glob.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export const ITerminalCompletionService = createDecorator<ITerminalCompletionService>('terminalCompletionService');
 

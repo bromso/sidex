@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Iterable } from '../../../../base/common/iterator.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 import { TestResultState } from './testTypes.js';
 import { makeEmptyCounts, maxPriority, statePriority } from './testingStates.js';
 

@@ -10,11 +10,11 @@ import {
 	firstParallel,
 	RunOnceScheduler,
 	timeout
-} from '../../../base/common/async.js';
-import { DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import * as platform from '../../../base/common/platform.js';
+} from '@sidex/base/common/async.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
 import * as nls from '@sidex/base/nls.js';
-import { ISignService } from '../../../platform/sign/common/sign.js';
+import { ISignService } from '@sidex/platform/sign/common/sign.js';
 import { AbstractDebugAdapter } from '../../contrib/debug/common/abstractDebugAdapter.js';
 import { TauriExecutableDebugAdapter, TauriSocketDebugAdapter } from '../../contrib/debug/tauri/tauriDebugAdapter.js';
 import { ExtensionDescriptionRegistry } from '../../services/extensions/common/extensionDescriptionRegistry.js';
@@ -95,7 +95,7 @@ export class ExtHostDebugService extends ExtHostDebugServiceBase {
 	}
 
 	private _resolveAdapterExecutable(
-		extensions: readonly import('../../../platform/extensions/common/extensions.js').IExtensionDescription[],
+		extensions: readonly import('@sidex/platform/extensions/common/extensions.js').IExtensionDescription[],
 		debugType: string
 	): IDebugAdapterExecutable | undefined {
 		// Inline platform adapter resolution (mirrors ExecutableDebugAdapter.platformAdapterExecutable)

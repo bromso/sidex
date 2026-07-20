@@ -3,29 +3,29 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IActionViewItem } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
+import { IActionViewItem } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
 import './media/debugViewlet.css';
 import * as nls from '@sidex/base/nls.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import {
 	Action2,
 	MenuId,
 	MenuItemAction,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService, IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService, IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { ViewPane } from '../../../browser/parts/views/viewPane.js';
 import { ViewPaneContainer, ViewsSubMenu } from '../../../browser/parts/views/viewPaneContainer.js';
 import { WorkbenchStateContext } from '../../../common/contextkeys.js';
@@ -62,9 +62,9 @@ import {
 } from '../common/debug.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export class DebugViewPaneContainer extends ViewPaneContainer {
 	private startDebugActionViewItem: StartDebugActionViewItem | undefined;

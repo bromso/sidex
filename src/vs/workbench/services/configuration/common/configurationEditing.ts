@@ -4,18 +4,18 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as json from '../../../../base/common/json.js';
-import { setProperty } from '../../../../base/common/jsonEdit.js';
-import { Queue } from '../../../../base/common/async.js';
-import { Edit, FormattingOptions } from '../../../../base/common/jsonFormatter.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as json from '@sidex/base/common/json.js';
+import { setProperty } from '@sidex/base/common/jsonEdit.js';
+import { Queue } from '@sidex/base/common/async.js';
+import { Edit, FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
 import {
 	IConfigurationUpdateOptions,
 	IConfigurationUpdateOverrides
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import {
 	FOLDER_SETTINGS_PATH,
 	WORKSPACE_STANDALONE_CONFIGURATIONS,
@@ -27,27 +27,27 @@ import {
 	IWorkbenchConfigurationService,
 	APPLICATION_SCOPES
 } from './configuration.js';
-import { FileOperationError, FileOperationResult, IFileService } from '../../../../platform/files/common/files.js';
-import { IResolvedTextEditorModel, ITextModelService } from '../../../../editor/common/services/resolverService.js';
+import { FileOperationError, FileOperationResult, IFileService } from '@sidex/platform/files/common/files.js';
+import { IResolvedTextEditorModel, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope,
 	keyFromOverrideIdentifiers,
 	OVERRIDE_PROPERTY_REGEX
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
 import { IOpenSettingsOptions, IPreferencesService } from '../../preferences/common/preferences.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IDisposable, IReference } from '../../../../base/common/lifecycle.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { EditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { EditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { ErrorNoTelemetry } from '../../../../base/common/errors.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 
 export const enum ConfigurationEditingErrorCode {

@@ -13,11 +13,11 @@ import {
 	FileSystemProviderErrorCode,
 	IFileSystemProviderWithFileReadWriteCapability,
 	createFileSystemProviderError
-} from '../../../../platform/files/common/files.js';
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable, Disposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { NotSupportedError } from '../../../../base/common/errors.js';
+} from '@sidex/platform/files/common/files.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { NotSupportedError } from '@sidex/base/common/errors.js';
 
 export class FetchFileSystemProvider implements IFileSystemProviderWithFileReadWriteCapability {
 	readonly capabilities =

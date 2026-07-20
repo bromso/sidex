@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { registerSingleton, InstantiationType } from '../../../platform/instantiation/common/extensions.js';
+import { registerSingleton, InstantiationType } from '@sidex/platform/instantiation/common/extensions.js';
 import { IEditorWorkerService } from '../../common/services/editorWorker.js';
 import { EditorContributionInstantiation, registerEditorContribution } from '../editorExtensions.js';
 import { EditorWorkerService } from './editorWorkerService.js';

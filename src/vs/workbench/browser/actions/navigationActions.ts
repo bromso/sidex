@@ -11,19 +11,19 @@ import {
 	IFindGroupScope
 } from '../../services/editor/common/editorGroupsService.js';
 import { IWorkbenchLayoutService, Parts } from '../../services/layout/browser/layoutService.js';
-import { Action2, IAction2Options, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
-import { Direction } from '../../../base/browser/ui/grid/grid.js';
-import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
+import { Action2, IAction2Options, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { Direction } from '@sidex/base/browser/ui/grid/grid.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
 import { IPaneComposite } from '../../common/panecomposite.js';
 import { IComposite } from '../../common/composite.js';
 import { IPaneCompositePartService } from '../../services/panecomposite/browser/panecomposite.js';
 import { ViewContainerLocation } from '../../common/views.js';
-import { KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { getActiveWindow } from '../../../base/browser/dom.js';
-import { isAuxiliaryWindow } from '../../../base/browser/window.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { isAuxiliaryWindow } from '@sidex/base/browser/window.js';
 
 abstract class BaseNavigationAction extends Action2 {
 	constructor(

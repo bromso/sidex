@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { createDecorator } from '../../instantiation/common/instantiation.js';
-import { IWebWorkerClient } from '../../../base/common/worker/webWorker.js';
+import { IWebWorkerClient } from '@sidex/base/common/worker/webWorker.js';
 import { WebWorkerDescriptor } from './webWorkerDescriptor.js';
 
 export const IWebWorkerService = createDecorator<IWebWorkerService>('IWebWorkerService');

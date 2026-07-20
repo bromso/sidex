@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ThrottledDelayer } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { basename, dirname, joinPath } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { basename, dirname, joinPath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	ByteSize,
 	FileOperationError,

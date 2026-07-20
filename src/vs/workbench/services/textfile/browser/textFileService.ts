@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IEncodingSupport,
 	ITextFileService,
@@ -34,9 +34,9 @@ import {
 	IFileStatWithMetadata,
 	ICreateFileOptions,
 	IFileStreamContent
-} from '../../../../platform/files/common/files.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { extname as pathExtname } from '../../../../base/common/path.js';
+} from '@sidex/platform/files/common/files.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { extname as pathExtname } from '@sidex/base/common/path.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	IUntitledTextEditorService,
@@ -47,31 +47,31 @@ import {
 	UntitledTextEditorModel
 } from '../../untitled/common/untitledTextEditorModel.js';
 import { TextFileEditorModelManager } from '../common/textFileEditorModelManager.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	createTextBufferFactoryFromSnapshot,
 	createTextBufferFactoryFromStream
-} from '../../../../editor/common/model/textModel.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { joinPath, dirname, basename, toLocalResource, extname, isEqual } from '../../../../base/common/resources.js';
-import { IDialogService, IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { VSBuffer, VSBufferReadable, bufferToStream, VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { ITextSnapshot, ITextModel } from '../../../../editor/common/model.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
+} from '@sidex/editor/common/model/textModel.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { joinPath, dirname, basename, toLocalResource, extname, isEqual } from '@sidex/base/common/resources.js';
+import { IDialogService, IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { VSBuffer, VSBufferReadable, bufferToStream, VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { ITextSnapshot, ITextModel } from '@sidex/editor/common/model.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
-import { IResolvedTextEditorModel } from '../../../../editor/common/services/resolverService.js';
+import { IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { BaseTextEditorModel } from '../../../common/editor/textEditorModel.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
 import { IPathService } from '../../path/common/pathService.js';
 import {
 	IWorkingCopyFileService,
 	IFileOperationUndoRedoInfo,
 	ICreateFileOperation
 } from '../../workingCopy/common/workingCopyFileService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService, WORKSPACE_EXTENSION } from '../../../../platform/workspace/common/workspace.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService, WORKSPACE_EXTENSION } from '@sidex/platform/workspace/common/workspace.js';
 import {
 	UTF8,
 	UTF8_with_bom,
@@ -84,15 +84,15 @@ import {
 	DecodeStreamError,
 	DecodeStreamErrorKind
 } from '../common/encoding.js';
-import { consumeStream, ReadableStream } from '../../../../base/common/stream.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { consumeStream, ReadableStream } from '@sidex/base/common/stream.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { IElevatedFileService } from '../../files/common/elevatedFileService.js';
 import { IDecorationData, IDecorationsProvider, IDecorationsService } from '../../decorations/common/decorations.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { listErrorForeground } from '../../../../platform/theme/common/colorRegistry.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { listErrorForeground } from '@sidex/platform/theme/common/colorRegistry.js';
 
 export abstract class AbstractTextFileService extends Disposable implements ITextFileService {
 	declare readonly _serviceBrand: undefined;

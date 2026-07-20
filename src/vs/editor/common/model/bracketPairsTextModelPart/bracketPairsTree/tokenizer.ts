@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { NotSupportedError } from '../../../../../base/common/errors.js';
+import { NotSupportedError } from '@sidex/base/common/errors.js';
 import { StandardTokenType, TokenMetadata } from '../../../encodedTokenAttributes.js';
 import { IViewLineTokens } from '../../../tokens/lineTokens.js';
 import { BracketAstNode, TextAstNode } from './ast.js';

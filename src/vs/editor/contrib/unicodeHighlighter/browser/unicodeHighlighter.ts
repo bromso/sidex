@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { createCommandUri, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import * as platform from '../../../../base/common/platform.js';
-import { InvisibleCharacters, isBasicASCII } from '../../../../base/common/strings.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { createCommandUri, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { InvisibleCharacters, isBasicASCII } from '@sidex/base/common/strings.js';
 import './unicodeHighlighter.css';
 import { IActiveCodeEditor, ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
@@ -48,19 +48,19 @@ import {
 import { MarkdownHover, renderMarkdownHovers } from '../../hover/browser/markdownHoverParticipant.js';
 import { BannerController } from './bannerController.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { safeIntl } from '../../../../base/common/date.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { safeIntl } from '@sidex/base/common/date.js';
 import {
 	isModelDecorationInComment,
 	isModelDecorationInString,
 	isModelDecorationVisible
 } from '../../../common/viewModel/viewModelDecoration.js';
-import { IMarkdownRendererService } from '../../../../platform/markdown/browser/markdownRenderer.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 
 export const warningIcon = registerIcon(
 	'extensions-warning-message',

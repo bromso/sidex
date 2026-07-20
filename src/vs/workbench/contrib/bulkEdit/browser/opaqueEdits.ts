@@ -3,18 +3,18 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { isObject } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ResourceEdit } from '../../../../editor/browser/services/bulkEditService.js';
-import { ICustomEdit, WorkspaceEditMetadata } from '../../../../editor/common/languages.js';
-import { IProgress } from '../../../../platform/progress/common/progress.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { isObject } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ResourceEdit } from '@sidex/editor/browser/services/bulkEditService.js';
+import { ICustomEdit, WorkspaceEditMetadata } from '@sidex/editor/common/languages.js';
+import { IProgress } from '@sidex/platform/progress/common/progress.js';
 import {
 	IUndoRedoService,
 	UndoRedoElementType,
 	UndoRedoGroup,
 	UndoRedoSource
-} from '../../../../platform/undoRedo/common/undoRedo.js';
+} from '@sidex/platform/undoRedo/common/undoRedo.js';
 
 export class ResourceAttachmentEdit extends ResourceEdit implements ICustomEdit {
 	static is(candidate: unknown): candidate is ICustomEdit {

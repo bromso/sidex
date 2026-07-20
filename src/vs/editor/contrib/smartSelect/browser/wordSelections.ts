@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../../base/common/charCode.js';
-import { isLowerAsciiLetter, isUpperAsciiLetter } from '../../../../base/common/strings.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { isLowerAsciiLetter, isUpperAsciiLetter } from '@sidex/base/common/strings.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';

@@ -4,16 +4,16 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IDisposable, Disposable, dispose } from '../../../../base/common/lifecycle.js';
-import { posix, sep, win32 } from '../../../../base/common/path.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IDisposable, Disposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { posix, sep, win32 } from '@sidex/base/common/path.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
 	IWorkbenchContribution
 } from '../../../common/contributions.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import {
 	IWorkspaceContextService,
@@ -27,26 +27,26 @@ import {
 	WORKSPACE_EXTENSION,
 	isUntitledWorkspace,
 	isTemporaryWorkspace
-} from '../../../../platform/workspace/common/workspace.js';
-import { basenameOrAuthority, basename, joinPath, dirname } from '../../../../base/common/resources.js';
-import { tildify, getPathLabel } from '../../../../base/common/labels.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { basenameOrAuthority, basename, joinPath, dirname } from '@sidex/base/common/resources.js';
+import { tildify, getPathLabel } from '@sidex/base/common/labels.js';
 import {
 	ILabelService,
 	ResourceLabelFormatter,
 	ResourceLabelFormatting,
 	IFormatterChangeEvent,
 	Verbosity
-} from '../../../../platform/label/common/label.js';
+} from '@sidex/platform/label/common/label.js';
 import { ExtensionsRegistry } from '../../extensions/common/extensionsRegistry.js';
-import { match } from '../../../../base/common/glob.js';
+import { match } from '@sidex/base/common/glob.js';
 import { ILifecycleService, LifecyclePhase } from '../../lifecycle/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { IPathService } from '../../path/common/pathService.js';
 import { isProposedApiEnabled } from '../../extensions/common/extensions.js';
-import { OperatingSystem, OS } from '../../../../base/common/platform.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
 import { IRemoteAgentService } from '../../remote/common/remoteAgentService.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { Memento } from '../../../common/memento.js';
 
 const resourceLabelFormattersExtPoint = ExtensionsRegistry.registerExtensionPoint<ResourceLabelFormatter[]>({

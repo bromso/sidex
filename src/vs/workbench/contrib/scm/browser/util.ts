@@ -18,25 +18,25 @@ import {
 	ISCMViewService,
 	ISCMProvider
 } from '../common/scm.js';
-import { IMenu, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
+import { IMenu, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
 import {
 	createActionViewItem,
 	getActionBarActions,
 	getContextMenuActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { equals } from '../../../../base/common/arrays.js';
-import { ActionViewItem, IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { Command } from '../../../../editor/common/languages.js';
-import { reset } from '../../../../base/browser/dom.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IResourceNode, ResourceTree } from '../../../../base/common/resourceTree.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { ActionViewItem, IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { Command } from '@sidex/editor/common/languages.js';
+import { reset } from '@sidex/base/browser/dom.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IResourceNode, ResourceTree } from '@sidex/base/common/resourceTree.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { SCMArtifactGroupTreeElement, SCMArtifactTreeElement } from '../common/artifact.js';
 
 export function isSCMViewService(element: unknown): element is ISCMViewService {

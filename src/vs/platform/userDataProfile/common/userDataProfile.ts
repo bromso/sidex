@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { hash } from '../../../base/common/hash.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { basename, joinPath } from '../../../base/common/resources.js';
-import { URI, UriDto } from '../../../base/common/uri.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { basename, joinPath } from '@sidex/base/common/resources.js';
+import { URI, UriDto } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
 import { FileOperationResult, IFileService, toFileOperationResult } from '../../files/common/files.js';
@@ -18,12 +18,12 @@ import {
 	isSingleFolderWorkspaceIdentifier,
 	isWorkspaceIdentifier
 } from '../../workspace/common/workspace.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 import { IUriIdentityService } from '../../uriIdentity/common/uriIdentity.js';
-import { Promises } from '../../../base/common/async.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import { escapeRegExpCharacters } from '../../../base/common/strings.js';
-import { isString, Mutable } from '../../../base/common/types.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
+import { isString, Mutable } from '@sidex/base/common/types.js';
 
 export const enum ProfileResourceType {
 	Settings = 'settings',

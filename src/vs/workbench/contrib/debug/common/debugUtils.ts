@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { equalsIgnoreCase } from '../../../../base/common/strings.js';
+import { equalsIgnoreCase } from '@sidex/base/common/strings.js';
 import { IDebuggerContribution, IDebugSession, IConfig, IConfigPresentation, State } from './debug.js';
-import { URI as uri } from '../../../../base/common/uri.js';
-import { isAbsolute } from '../../../../base/common/path.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { URI as uri } from '@sidex/base/common/uri.js';
+import { isAbsolute } from '@sidex/base/common/path.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { OperatingSystem, OS } from '../../../../base/common/platform.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
 
 const _formatPIIRegexp = /{([^}]+)}/g;
 

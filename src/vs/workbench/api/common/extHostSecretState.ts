@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ExtHostSecretStateShape, MainContext, MainThreadSecretStateShape } from './extHost.protocol.js';
-import { Emitter } from '../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export class ExtHostSecretState implements ExtHostSecretStateShape {
 	private _proxy: MainThreadSecretStateShape;

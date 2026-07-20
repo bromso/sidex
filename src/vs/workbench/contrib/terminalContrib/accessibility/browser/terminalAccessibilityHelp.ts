@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	ShellIntegrationStatus,
 	TerminalSettingId,
 	WindowsShellType
-} from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { AccessibilityCommandId } from '../../../accessibility/common/accessibilityCommands.js';
 import { ITerminalInstance, IXtermTerminal } from '../../../terminal/browser/terminal.js';
 import { TerminalCommandId } from '../../../terminal/common/terminal.js';
 import type { Terminal } from '@xterm/xterm';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TerminalAccessibilitySettingId } from '../common/terminalAccessibilityConfiguration.js';
 import { TerminalAccessibilityCommandId } from '../common/terminal.accessibility.js';
 import { TerminalLinksCommandId } from '../../links/common/terminal.links.js';
@@ -25,7 +25,7 @@ import {
 	AccessibleViewProviderId,
 	IAccessibleViewOptions,
 	AccessibleViewType
-} from '../../../../../platform/accessibility/browser/accessibleView.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
 import {
 	accessibleViewIsShown,
 	accessibleViewCurrentProviderId,

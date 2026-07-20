@@ -5,18 +5,18 @@
 
 import * as nls from '@sidex/base/nls.js';
 
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
-import * as Types from '../../../base/common/types.js';
-import * as Platform from '../../../base/common/platform.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import * as Types from '@sidex/base/common/types.js';
+import * as Platform from '@sidex/base/common/platform.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 
 import {
 	IWorkspace,
 	IWorkspaceContextService,
 	IWorkspaceFolder
-} from '../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 
 import {
 	ContributedTask,
@@ -70,9 +70,9 @@ import {
 	TaskEventKind
 } from '../common/shared/tasks.js';
 import { IConfigurationResolverService } from '../../services/configurationResolver/common/configurationResolver.js';
-import { ConfigurationTarget } from '../../../platform/configuration/common/configuration.js';
-import { ErrorNoTelemetry } from '../../../base/common/errors.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { ConfigurationResolverExpression } from '../../services/configurationResolver/common/configurationResolverExpression.js';
 
 namespace TaskExecutionDTO {

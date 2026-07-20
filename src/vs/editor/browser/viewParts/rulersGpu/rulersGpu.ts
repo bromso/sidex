@@ -11,9 +11,9 @@ import { EditorOption } from '../../../common/config/editorOptions.js';
 import type { ViewGpuContext } from '../../gpu/viewGpuContext.js';
 import type { IObjectCollectionBufferEntry } from '../../gpu/objectCollectionBuffer.js';
 import type { RectangleRenderer, RectangleRendererEntrySpec } from '../../gpu/rectangleRenderer.js';
-import { Color } from '../../../../base/common/color.js';
+import { Color } from '@sidex/base/common/color.js';
 import { editorRuler } from '../../../common/core/editorColorRegistry.js';
-import { autorun, type IReader } from '../../../../base/common/observable.js';
+import { autorun, type IReader } from '@sidex/base/common/observable.js';
 
 /**
  * Rulers are vertical lines that appear at certain columns in the editor. There can be >= 0 rulers

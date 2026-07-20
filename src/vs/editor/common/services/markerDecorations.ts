@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ITextModel, IModelDecoration } from '../model.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { IMarker } from '../../../platform/markers/common/markers.js';
-import { Event } from '../../../base/common/event.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IMarker } from '@sidex/platform/markers/common/markers.js';
+import { Event } from '@sidex/base/common/event.js';
 import { Range } from '../core/range.js';
-import { URI } from '../../../base/common/uri.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export const IMarkerDecorationsService = createDecorator<IMarkerDecorationsService>('markerDecorationsService');
 

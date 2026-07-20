@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ILink } from '../../../../editor/common/languages.js';
-import { URI } from '../../../../base/common/uri.js';
-import * as extpath from '../../../../base/common/extpath.js';
-import * as resources from '../../../../base/common/resources.js';
-import * as strings from '../../../../base/common/strings.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IWebWorkerServerRequestHandler, IWebWorkerServer } from '../../../../base/common/worker/webWorker.js';
+import { ILink } from '@sidex/editor/common/languages.js';
+import { URI } from '@sidex/base/common/uri.js';
+import * as extpath from '@sidex/base/common/extpath.js';
+import * as resources from '@sidex/base/common/resources.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IWebWorkerServerRequestHandler, IWebWorkerServer } from '@sidex/base/common/worker/webWorker.js';
 import {
 	WorkerTextModelSyncServer,
 	ICommonModel
-} from '../../../../editor/common/services/textModelSync/textModelSync.impl.js';
+} from '@sidex/editor/common/services/textModelSync/textModelSync.impl.js';
 
 export interface IResourceCreator {
 	toResource: (folderRelativePath: string) => URI | null;

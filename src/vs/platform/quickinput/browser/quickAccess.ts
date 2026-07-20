@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DeferredPromise } from '../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	isDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import {

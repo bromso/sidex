@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isWindows } from '../../../../../base/common/platform.js';
-import { count } from '../../../../../base/common/strings.js';
-import { isString } from '../../../../../base/common/types.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { count } from '@sidex/base/common/strings.js';
+import { isString } from '@sidex/base/common/types.js';
 import { SimpleCompletionModel, type LineContext } from '../../../../services/suggest/browser/simpleCompletionModel.js';
 import { TerminalCompletionItemKind, type TerminalCompletionItem } from './terminalCompletionItem.js';
 

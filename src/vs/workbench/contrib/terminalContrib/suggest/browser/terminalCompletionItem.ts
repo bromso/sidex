@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { basename } from '../../../../../base/common/path.js';
-import { CompletionItem, CompletionItemKind, CompletionItemProvider } from '../../../../../editor/common/languages.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { basename } from '@sidex/base/common/path.js';
+import { CompletionItem, CompletionItemKind, CompletionItemProvider } from '@sidex/editor/common/languages.js';
 import { ISimpleCompletion, SimpleCompletionItem } from '../../../../services/suggest/browser/simpleCompletionItem.js';
 
 export enum TerminalCompletionItemKind {

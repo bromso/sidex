@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
 import { OpenEditor, ISortOrderConfiguration } from '../common/files.js';
 import { EditorResourceAccessor, SideBySideEditor, IEditorIdentifier } from '../../../common/editor.js';
-import { List } from '../../../../base/browser/ui/list/listWidget.js';
+import { List } from '@sidex/base/browser/ui/list/listWidget.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { ExplorerItem } from '../common/explorerModel.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { AsyncDataTree } from '../../../../base/browser/ui/tree/asyncDataTree.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { AsyncDataTree } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditableData } from '../../../common/views.js';
-import { createDecorator, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ResourceFileEdit } from '../../../../editor/browser/services/bulkEditService.js';
-import { ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { isActiveElement } from '../../../../base/browser/dom.js';
+import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ResourceFileEdit } from '@sidex/editor/browser/services/bulkEditService.js';
+import { ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { isActiveElement } from '@sidex/base/browser/dom.js';
 
 export interface IExplorerService {
 	readonly _serviceBrand: undefined;

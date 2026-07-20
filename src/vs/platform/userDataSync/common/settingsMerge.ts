@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { JSONVisitor, parse, visit } from '../../../base/common/json.js';
-import { applyEdits, setProperty, withFormatting } from '../../../base/common/jsonEdit.js';
-import { Edit, FormattingOptions, getEOL } from '../../../base/common/jsonFormatter.js';
-import * as objects from '../../../base/common/objects.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { JSONVisitor, parse, visit } from '@sidex/base/common/json.js';
+import { applyEdits, setProperty, withFormatting } from '@sidex/base/common/jsonEdit.js';
+import { Edit, FormattingOptions, getEOL } from '@sidex/base/common/jsonFormatter.js';
+import * as objects from '@sidex/base/common/objects.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import * as contentUtil from './content.js';
 import { getDisallowedIgnoredSettings, IConflictSetting } from './userDataSync.js';

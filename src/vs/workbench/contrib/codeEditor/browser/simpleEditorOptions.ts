@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IEditorOptions } from '../../../../editor/common/config/editorOptions.js';
+import type { IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
 
 export function getSimpleEditorOptions(_configurationService?: any): IEditorOptions {
 	return {

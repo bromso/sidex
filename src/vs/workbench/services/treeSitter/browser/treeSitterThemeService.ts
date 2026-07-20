@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { derived, IObservable, IReader, observableFromEvent } from '../../../../base/common/observable.js';
-import { ITreeSitterThemeService } from '../../../../editor/common/services/treeSitter/treeSitterThemeService.js';
+import { derived, IObservable, IReader, observableFromEvent } from '@sidex/base/common/observable.js';
+import { ITreeSitterThemeService } from '@sidex/editor/common/services/treeSitter/treeSitterThemeService.js';
 import { ColorThemeData, findMetadata } from '../../themes/common/colorThemeData.js';
 import { IWorkbenchThemeService } from '../../themes/common/workbenchThemeService.js';
 

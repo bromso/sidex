@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IAccessibleViewService,
 	AccessibleViewProviderId,
 	AccessibleViewType,
 	AccessibleContentProvider
-} from '../../../../platform/accessibility/browser/accessibleView.js';
-import { IAccessibleViewImplementation } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+} from '@sidex/platform/accessibility/browser/accessibleView.js';
+import { IAccessibleViewImplementation } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import {
 	IAccessibilitySignalService,
 	AccessibilitySignal
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IListService, WorkbenchList } from '../../../../platform/list/browser/listService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IListService, WorkbenchList } from '@sidex/platform/list/browser/listService.js';
 import { getNotificationFromContext } from './notificationsCommands.js';
 import { NotificationFocusedContext } from '../../../common/contextkeys.js';
 import { INotificationViewItem } from '../../../common/notifications.js';
-import { withSeverityPrefix } from '../../../../platform/notification/common/notification.js';
+import { withSeverityPrefix } from '@sidex/platform/notification/common/notification.js';
 
 export class NotificationAccessibleView implements IAccessibleViewImplementation {
 	readonly priority = 90;

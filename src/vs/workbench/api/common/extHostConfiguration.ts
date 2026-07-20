@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { deepClone } from '../../../base/common/objects.js';
-import { Event, Emitter } from '../../../base/common/event.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import type * as vscode from 'vscode';
 import { ExtHostWorkspace, IExtHostWorkspace } from './extHostWorkspace.js';
 import {
@@ -19,15 +19,15 @@ import {
 	IConfigurationChange,
 	IConfigurationData,
 	IConfigurationOverrides
-} from '../../../platform/configuration/common/configuration.js';
-import { Configuration, ConfigurationChangeEvent } from '../../../platform/configuration/common/configurationModels.js';
-import { ConfigurationScope } from '../../../platform/configuration/common/configurationRegistry.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { Barrier } from '../../../base/common/async.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { Configuration, ConfigurationChangeEvent } from '@sidex/platform/configuration/common/configurationModels.js';
+import { ConfigurationScope } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { Barrier } from '@sidex/base/common/async.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { Workspace } from '../../../platform/workspace/common/workspace.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Workspace } from '@sidex/platform/workspace/common/workspace.js';
 
 export type ConfigurationInspect<T> = {
 	key: string;

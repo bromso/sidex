@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { URI } from '../../../base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IPosition, Position } from '../core/position.js';
 import { ILanguageService } from '../languages/language.js';
 import { IModelService } from './model.js';
@@ -18,7 +18,7 @@ import {
 	ConfigurationTarget,
 	IConfigurationValue,
 	IConfigurationChangeEvent
-} from '../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 
 export class TextResourceConfigurationService extends Disposable implements ITextResourceConfigurationService {
 	public _serviceBrand: undefined;

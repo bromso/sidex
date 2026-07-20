@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action } from '../../../../base/common/actions.js';
+import { Action } from '@sidex/base/common/actions.js';
 import {
 	IEditorIdentifier,
 	IEditorCommandsContext,
@@ -20,8 +20,8 @@ import { EditorInput } from '../../../common/editor/editorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
 import { GoFilter, IHistoryService } from '../../../services/history/common/history.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	CLOSE_EDITOR_COMMAND_ID,
 	MOVE_ACTIVE_EDITOR_COMMAND_ID,
@@ -60,30 +60,30 @@ import {
 	MergeGroupMode
 } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IWorkspacesService } from '../../../../platform/workspaces/common/workspaces.js';
-import { IFileDialogService, ConfirmResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ItemActivation, IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
+import { IFileDialogService, ConfirmResult, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ItemActivation, IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	AllEditorsByMostRecentlyUsedQuickAccess,
 	ActiveGroupEditorsByMostRecentlyUsedQuickAccess,
 	AllEditorsByAppearanceQuickAccess
 } from './editorQuickAccess.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	IFilesConfigurationService,
 	AutoSaveMode
 } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
 import { IEditorResolverService } from '../../../services/editor/common/editorResolverService.js';
-import { isLinux, isNative, isWindows } from '../../../../base/common/platform.js';
-import { Action2, IAction2Options, MenuId } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { IKeybindingRule, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { isLinux, isNative, isWindows } from '@sidex/base/common/platform.js';
+import { Action2, IAction2Options, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { IKeybindingRule, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	ActiveEditorAvailableEditorIdsContext,
 	ActiveEditorContext,
@@ -96,11 +96,11 @@ import {
 	MultipleEditorGroupsContext,
 	SideBarVisibleContext
 } from '../../../common/contextkeys.js';
-import { getActiveDocument } from '../../../../base/browser/dom.js';
-import { ICommandActionTitle } from '../../../../platform/action/common/action.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { getActiveDocument } from '@sidex/base/browser/dom.js';
+import { ICommandActionTitle } from '@sidex/platform/action/common/action.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import { resolveCommandsContext } from './editorCommandsContext.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
 import { prepareMoveCopyEditors } from './editor.js';
 
 class ExecuteCommandAction extends Action2 {

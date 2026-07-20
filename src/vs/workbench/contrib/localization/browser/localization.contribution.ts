@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILanguagePackItem, ILanguagePackService } from '../../../../platform/languagePacks/common/languagePacks.js';
-import { IQuickPickItem, IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
-import { LANGUAGE_DEFAULT, Language } from '../../../../base/common/platform.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILanguagePackItem, ILanguagePackService } from '@sidex/platform/languagePacks/common/languagePacks.js';
+import { IQuickPickItem, IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { LANGUAGE_DEFAULT, Language } from '@sidex/base/common/platform.js';
 import { ILocaleService } from '../../../services/localization/common/locale.js';
 
 registerAction2(

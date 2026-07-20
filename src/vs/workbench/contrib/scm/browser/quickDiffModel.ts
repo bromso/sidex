@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ResourceMap } from '../../../../base/common/map.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	EncodingMode,
 	IResolvedTextFileEditorModel,
@@ -18,13 +18,13 @@ import {
 	DisposableStore,
 	IReference,
 	ReferenceCollection
-} from '../../../../base/common/lifecycle.js';
-import { DiffAlgorithmName, IEditorWorkerService } from '../../../../editor/common/services/editorWorker.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IChange } from '../../../../editor/common/diff/legacyLinesDiffComputer.js';
-import { IResolvedTextEditorModel, ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { ITextModel, shouldSynchronizeModel } from '../../../../editor/common/model.js';
+} from '@sidex/base/common/lifecycle.js';
+import { DiffAlgorithmName, IEditorWorkerService } from '@sidex/editor/common/services/editorWorker.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IChange } from '@sidex/editor/common/diff/legacyLinesDiffComputer.js';
+import { IResolvedTextEditorModel, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { ITextModel, shouldSynchronizeModel } from '@sidex/editor/common/model.js';
 import {
 	compareChanges,
 	getModifiedEndLineNumber,
@@ -33,19 +33,19 @@ import {
 	QuickDiffChange,
 	QuickDiffResult
 } from '../common/quickDiff.js';
-import { ThrottledDelayer } from '../../../../base/common/async.js';
+import { ThrottledDelayer } from '@sidex/base/common/async.js';
 import { ISCMRepository, ISCMService } from '../common/scm.js';
-import { sortedDiff, equals } from '../../../../base/common/arrays.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { ISplice } from '../../../../base/common/sequence.js';
-import { DiffState } from '../../../../editor/browser/widget/diffEditor/diffEditorViewModel.js';
-import { toLineChanges } from '../../../../editor/browser/widget/diffEditor/diffEditorWidget.js';
-import { LineRangeMapping } from '../../../../editor/common/diff/rangeMapping.js';
-import { IDiffEditorModel } from '../../../../editor/common/editorCommon.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { sortedDiff, equals } from '@sidex/base/common/arrays.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { ISplice } from '@sidex/base/common/sequence.js';
+import { DiffState } from '@sidex/editor/browser/widget/diffEditor/diffEditorViewModel.js';
+import { toLineChanges } from '@sidex/editor/browser/widget/diffEditor/diffEditorWidget.js';
+import { LineRangeMapping } from '@sidex/editor/common/diff/rangeMapping.js';
+import { IDiffEditorModel } from '@sidex/editor/common/editorCommon.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
 
 export const IQuickDiffModelService = createDecorator<IQuickDiffModelService>('IQuickDiffModelService');

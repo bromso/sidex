@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { ITransaction, observableSignal } from '../../../../base/common/observable.js';
-import { IPrefixTreeNode, WellDefinedPrefixTree } from '../../../../base/common/prefixTree.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { ITransaction, observableSignal } from '@sidex/base/common/observable.js';
+import { IPrefixTreeNode, WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { TestId } from './testId.js';
 import { LiveTestResult } from './testResult.js';
 import { CoverageDetails, DetailType, ICoverageCount, IFileCoverage } from './testTypes.js';

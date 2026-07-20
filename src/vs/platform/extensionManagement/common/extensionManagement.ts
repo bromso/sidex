@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Event } from '../../../base/common/event.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { IPager } from '../../../base/common/paging.js';
-import { Platform } from '../../../base/common/platform.js';
-import { PolicyCategory } from '../../../base/common/policy.js';
-import { URI } from '../../../base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IPager } from '@sidex/base/common/paging.js';
+import { Platform } from '@sidex/base/common/platform.js';
+import { PolicyCategory } from '@sidex/base/common/policy.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,

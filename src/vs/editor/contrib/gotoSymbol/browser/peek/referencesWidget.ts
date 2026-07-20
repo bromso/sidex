@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { IMouseEvent } from '../../../../../base/browser/mouseEvent.js';
-import { Orientation } from '../../../../../base/browser/ui/sash/sash.js';
-import { Sizing, SplitView } from '../../../../../base/browser/ui/splitview/splitview.js';
-import { Color } from '../../../../../base/common/color.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../../base/common/filters.js';
-import { KeyCode } from '../../../../../base/common/keyCodes.js';
-import { DisposableStore, dispose, IDisposable, IReference } from '../../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { basenameOrAuthority, dirname } from '../../../../../base/common/resources.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { Sizing, SplitView } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, dispose, IDisposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basenameOrAuthority, dirname } from '@sidex/base/common/resources.js';
 import './referencesWidget.css';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { EmbeddedCodeEditorWidget } from '../../../../browser/widget/codeEditor/embeddedCodeEditorWidget.js';
@@ -37,19 +37,19 @@ import {
 } from './referencesTree.js';
 import * as peekView from '../../../peekView/browser/peekView.js';
 import * as nls from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	IWorkbenchAsyncDataTreeOptions,
 	WorkbenchAsyncDataTree
-} from '../../../../../platform/list/browser/listService.js';
-import { IColorTheme, IThemeService } from '../../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/list/browser/listService.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { FileReferences, OneReference, ReferencesModel } from '../referencesModel.js';
-import { ITreeDragAndDrop, ITreeDragOverReaction } from '../../../../../base/browser/ui/tree/tree.js';
-import { DataTransfers, IDragAndDropData } from '../../../../../base/browser/dnd.js';
-import { ElementsDragAndDropData } from '../../../../../base/browser/ui/list/listView.js';
-import { withSelection } from '../../../../../platform/opener/common/opener.js';
+import { ITreeDragAndDrop, ITreeDragOverReaction } from '@sidex/base/browser/ui/tree/tree.js';
+import { DataTransfers, IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import { ElementsDragAndDropData } from '@sidex/base/browser/ui/list/listView.js';
+import { withSelection } from '@sidex/platform/opener/common/opener.js';
 
 class DecorationsManager implements IDisposable {
 	private static readonly DecorationOptions = ModelDecorationOptions.register({

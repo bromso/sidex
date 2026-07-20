@@ -5,21 +5,21 @@
 
 import { ISaveOptions } from '../../../common/editor.js';
 import { BaseTextEditorModel } from '../../../common/editor/textEditorModel.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { IWorkingCopyBackupService } from '../../workingCopy/common/workingCopyBackup.js';
 import {
 	ITextResourceConfigurationChangeEvent,
 	ITextResourceConfigurationService
-} from '../../../../editor/common/services/textResourceConfiguration.js';
-import { ITextModel } from '../../../../editor/common/model.js';
+} from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
 import {
 	createTextBufferFactory,
 	createTextBufferFactoryFromStream
-} from '../../../../editor/common/model/textModel.js';
-import { ITextEditorModel } from '../../../../editor/common/services/resolverService.js';
+} from '@sidex/editor/common/model/textModel.js';
+import { ITextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { IWorkingCopyService } from '../../workingCopy/common/workingCopyService.js';
 import {
 	IWorkingCopy,
@@ -29,13 +29,13 @@ import {
 	IWorkingCopySaveEvent
 } from '../../workingCopy/common/workingCopy.js';
 import { IEncodingSupport, ILanguageSupport, ITextFileService } from '../../textfile/common/textfiles.js';
-import { IModelContentChangedEvent } from '../../../../editor/common/textModelEvents.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ensureValidWordDefinition } from '../../../../editor/common/core/wordHelper.js';
+import { IModelContentChangedEvent } from '@sidex/editor/common/textModelEvents.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ensureValidWordDefinition } from '@sidex/editor/common/core/wordHelper.js';
 import { IEditorService } from '../../editor/common/editorService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { getCharContainingOffset } from '../../../../base/common/strings.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { getCharContainingOffset } from '@sidex/base/common/strings.js';
 import { UTF8 } from '../../textfile/common/encoding.js';
 import {
 	bufferToReadable,
@@ -43,9 +43,9 @@ import {
 	VSBuffer,
 	VSBufferReadable,
 	VSBufferReadableStream
-} from '../../../../base/common/buffer.js';
+} from '@sidex/base/common/buffer.js';
 import { ILanguageDetectionService } from '../../languageDetection/common/languageDetectionWorkerService.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 export interface IUntitledTextEditorModel extends ITextEditorModel, ILanguageSupport, IEncodingSupport, IWorkingCopy {
 	/**

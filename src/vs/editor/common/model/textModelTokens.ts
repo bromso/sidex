@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IdleDeadline, runWhenGlobalIdle } from '../../../base/common/async.js';
-import { BugIndicatingError, onUnexpectedError } from '../../../base/common/errors.js';
-import { setTimeout0 } from '../../../base/common/platform.js';
-import { StopWatch } from '../../../base/common/stopwatch.js';
+import { IdleDeadline, runWhenGlobalIdle } from '@sidex/base/common/async.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 import { countEOL } from '../core/misc/eolCounter.js';
 import { LineRange } from '../core/ranges/lineRange.js';
 import { OffsetRange } from '../core/ranges/offsetRange.js';

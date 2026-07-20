@@ -5,8 +5,8 @@
 
 import { IModelService } from './model.js';
 import { ITextModelService } from './resolverService.js';
-import { Disposable, IDisposable, dispose } from '../../../base/common/lifecycle.js';
-import { IUndoRedoService } from '../../../platform/undoRedo/common/undoRedo.js';
+import { Disposable, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { IUndoRedoService } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { IUndoRedoDelegate, MultiModelEditStackElement } from '../model/editStack.js';
 
 export class ModelUndoRedoParticipant extends Disposable implements IUndoRedoDelegate {

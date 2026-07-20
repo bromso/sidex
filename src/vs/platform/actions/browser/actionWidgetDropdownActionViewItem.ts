@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, append } from '../../../base/browser/dom.js';
-import { BaseActionViewItem } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ILabelRenderer } from '../../../base/browser/ui/dropdown/dropdown.js';
-import { getBaseLayerHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate2.js';
-import { getDefaultHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IAction } from '../../../base/common/actions.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { $, append } from '@sidex/base/browser/dom.js';
+import { BaseActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ILabelRenderer } from '@sidex/base/browser/ui/dropdown/dropdown.js';
+import { getBaseLayerHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate2.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IActionWidgetService } from '../../actionWidget/browser/actionWidget.js';
 import { ActionWidgetDropdown, IActionWidgetDropdownOptions } from '../../actionWidget/browser/actionWidgetDropdown.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';

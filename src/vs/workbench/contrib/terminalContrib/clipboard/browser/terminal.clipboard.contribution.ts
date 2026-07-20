@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { Terminal as RawXtermTerminal } from '@xterm/xterm';
-import { Disposable, toDisposable, type IDisposable } from '../../../../../base/common/lifecycle.js';
-import { IClipboardService } from '../../../../../platform/clipboard/common/clipboardService.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { Disposable, toDisposable, type IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IDetachedTerminalInstance,
 	ITerminalConfigurationService,
@@ -20,25 +20,25 @@ import {
 	type ITerminalContributionContext
 } from '../../../terminal/browser/terminalExtensions.js';
 import { shouldPasteTerminalText } from './terminalClipboard.js';
-import { Emitter } from '../../../../../base/common/event.js';
-import { BrowserFeatures } from '../../../../../base/browser/canIUse.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
 import {
 	TerminalCapability,
 	type ITerminalCommand
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
-import { isLinux, isMacintosh } from '../../../../../base/common/platform.js';
-import { INotificationService } from '../../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import { isLinux, isMacintosh } from '@sidex/base/common/platform.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { registerActiveInstanceAction, registerActiveXtermAction } from '../../../terminal/browser/terminalActions.js';
 import { TerminalCommandId } from '../../../terminal/common/terminal.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TerminalContextKeys } from '../../../terminal/common/terminalContextKey.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { terminalStrings } from '../../../terminal/common/terminalStrings.js';
-import { isString } from '../../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 // #region Terminal Contributions
 

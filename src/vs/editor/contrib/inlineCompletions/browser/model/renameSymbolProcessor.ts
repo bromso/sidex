@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { raceTimeout } from '../../../../../base/common/async.js';
-import { CancellationTokenSource } from '../../../../../base/common/cancellation.js';
-import { LcsDiff, StringDiffSequence } from '../../../../../base/common/diff/diff.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { LcsDiff, StringDiffSequence } from '@sidex/base/common/diff/diff.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { CommandsRegistry, ICommandService } from '../../../../../platform/commands/common/commands.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { ServicesAccessor } from '../../../../browser/editorExtensions.js';
 import { IBulkEditService, ResourceTextEdit } from '../../../../browser/services/bulkEditService.js';
 import { TextReplacement } from '../../../../common/core/edits/textEdit.js';
@@ -25,9 +25,9 @@ import { renameSymbolCommandId } from '../controller/commandIds.js';
 import { InlineSuggestionItem } from './inlineSuggestionItem.js';
 import { IInlineSuggestDataActionEdit, InlineCompletionContextWithoutUuid } from './provideInlineCompletions.js';
 import { InlineSuggestAlternativeAction } from './InlineSuggestAlternativeAction.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { IRenameSymbolTrackerService } from '../../../../browser/services/renameSymbolTrackerService.js';
-import type { URI } from '../../../../../base/common/uri.js';
+import type { URI } from '@sidex/base/common/uri.js';
 import type { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { ICodeEditorService } from '../../../../browser/services/codeEditorService.js';
 import { TextModelValueReference } from './textModelValueReference.js';

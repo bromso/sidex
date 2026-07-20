@@ -4,36 +4,36 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { AppResourcePath as _AppResourcePath, FileAccess as _FileAccess } from '../../../../base/common/network.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { AppResourcePath as _AppResourcePath, FileAccess as _FileAccess } from '@sidex/base/common/network.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { KeymapInfo, IRawMixedKeyboardMapping, IKeymapInfo } from '../common/keymapInfo.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { DispatchConfig, readKeyboardConfig } from '../../../../platform/keyboardLayout/common/keyboardConfig.js';
-import { IKeyboardMapper, CachedKeyboardMapper } from '../../../../platform/keyboardLayout/common/keyboardMapper.js';
-import { OS, OperatingSystem, isMacintosh, isWindows } from '../../../../base/common/platform.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { DispatchConfig, readKeyboardConfig } from '@sidex/platform/keyboardLayout/common/keyboardConfig.js';
+import { IKeyboardMapper, CachedKeyboardMapper } from '@sidex/platform/keyboardLayout/common/keyboardMapper.js';
+import { OS, OperatingSystem, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
 import { WindowsKeyboardMapper } from '../common/windowsKeyboardMapper.js';
 import { FallbackKeyboardMapper } from '../common/fallbackKeyboardMapper.js';
-import { IKeyboardEvent } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeyboardEvent } from '@sidex/platform/keybinding/common/keybinding.js';
 import { MacLinuxKeyboardMapper } from '../common/macLinuxKeyboardMapper.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { parse, getNodeType } from '../../../../base/common/json.js';
-import * as objects from '../../../../base/common/objects.js';
-import { IEnvironmentService } from '../../../../platform/environment/common/environment.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { parse, getNodeType } from '@sidex/base/common/json.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as ConfigExtensions,
 	IConfigurationRegistry,
 	IConfigurationNode
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { INavigatorWithKeyboard } from './navigatorKeyboard.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import {
 	getKeyboardLayoutId,
 	IKeyboardLayoutInfo,
@@ -41,7 +41,7 @@ import {
 	IKeyboardMapping,
 	IMacLinuxKeyboardMapping,
 	IWindowsKeyboardMapping
-} from '../../../../platform/keyboardLayout/common/keyboardLayout.js';
+} from '@sidex/platform/keyboardLayout/common/keyboardLayout.js';
 
 export class BrowserKeyboardMapperFactoryBase extends Disposable {
 	// keyboard mapper

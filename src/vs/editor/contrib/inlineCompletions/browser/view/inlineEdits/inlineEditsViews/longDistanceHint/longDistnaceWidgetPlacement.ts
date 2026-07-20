@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { derived, IReader } from '../../../../../../../../base/common/observable.js';
+import { derived, IReader } from '@sidex/base/common/observable.js';
 import { ObservableCodeEditor } from '../../../../../../../browser/observableCodeEditor.js';
 import { Size2D } from '../../../../../../../common/core/2d/size.js';
 import { LineRange } from '../../../../../../../common/core/ranges/lineRange.js';

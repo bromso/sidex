@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { URI } from '../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor, IDiffEditor } from './editorBrowser.js';
 import { ICodeEditorService } from './services/codeEditorService.js';
 import { Position } from '../common/core/position.js';
@@ -12,32 +12,32 @@ import { IEditorContribution, IDiffEditorContribution } from '../common/editorCo
 import { ITextModel } from '../common/model.js';
 import { IModelService } from '../common/services/model.js';
 import { ITextModelService } from '../common/services/resolverService.js';
-import { MenuId, MenuRegistry, Action2 } from '../../platform/actions/common/actions.js';
-import { CommandsRegistry, ICommandMetadata } from '../../platform/commands/common/commands.js';
+import { MenuId, MenuRegistry, Action2 } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandMetadata } from '@sidex/platform/commands/common/commands.js';
 import {
 	ContextKeyExpr,
 	IContextKeyService,
 	ContextKeyExpression
-} from '../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	ServicesAccessor as InstantiationServicesAccessor,
 	BrandedService,
 	IInstantiationService,
 	IConstructorSignature
-} from '../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IKeybindings,
 	KeybindingsRegistry,
 	KeybindingWeight
-} from '../../platform/keybinding/common/keybindingsRegistry.js';
-import { Registry } from '../../platform/registry/common/platform.js';
-import { ITelemetryService } from '../../platform/telemetry/common/telemetry.js';
-import { assertType } from '../../base/common/types.js';
-import { ThemeIcon } from '../../base/common/themables.js';
-import { IDisposable } from '../../base/common/lifecycle.js';
-import { KeyMod, KeyCode } from '../../base/common/keyCodes.js';
-import { ILogService } from '../../platform/log/common/log.js';
-import { getActiveElement } from '../../base/browser/dom.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
 import { TriggerInlineEditCommandsRegistry } from './triggerInlineEditCommandsRegistry.js';
 
 export type ServicesAccessor = InstantiationServicesAccessor;

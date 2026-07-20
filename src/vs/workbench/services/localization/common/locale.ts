@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILanguagePackItem } from '../../../../platform/languagePacks/common/languagePacks.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILanguagePackItem } from '@sidex/platform/languagePacks/common/languagePacks.js';
 
 export const ILocaleService = createDecorator<ILocaleService>('localizationService');
 

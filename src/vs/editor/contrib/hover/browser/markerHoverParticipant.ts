@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancelablePromise, createCancelablePromise, disposableTimeout } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { basename } from '../../../../base/common/resources.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancelablePromise, createCancelablePromise, disposableTimeout } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { basename } from '@sidex/base/common/resources.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { Range } from '../../../common/core/range.js';
@@ -36,14 +36,14 @@ import {
 	RenderedHoverParts
 } from './hoverTypes.js';
 import * as nls from '@sidex/base/nls.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IMarker, IMarkerData, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Progress } from '../../../../platform/progress/common/progress.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IMarker, IMarkerData, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Progress } from '@sidex/platform/progress/common/progress.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 const $ = dom.$;
 

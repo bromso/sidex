@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { EXTENSION_IDENTIFIER_PATTERN } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { distinct, equals } from '../../../../base/common/arrays.js';
+import { EXTENSION_IDENTIFIER_PATTERN } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { distinct, equals } from '@sidex/base/common/arrays.js';
 import { ExtensionRecommendations, ExtensionRecommendation } from './extensionRecommendations.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { ExtensionRecommendationReason } from '../../../services/extensionRecommendations/common/extensionRecommendations.js';
 import { localize } from '@sidex/base/nls.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import {
 	IExtensionsConfigContent,
 	IWorkspaceExtensionsConfigService
 } from '../../../services/extensionRecommendations/common/workspaceExtensionsConfig.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { FileChangeType, IFileService } from '../../../../platform/files/common/files.js';
-import { URI } from '../../../../base/common/uri.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { FileChangeType, IFileService } from '@sidex/platform/files/common/files.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { IWorkbenchExtensionManagementService } from '../../../services/extensionManagement/common/extensionManagement.js';
 
 const WORKSPACE_EXTENSIONS_FOLDER = '.vscode/extensions';

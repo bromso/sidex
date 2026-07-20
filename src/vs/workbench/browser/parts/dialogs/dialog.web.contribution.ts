@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDialogHandler, IDialogResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { IDialogHandler, IDialogResult, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	IWorkbenchContribution,
 	WorkbenchPhase,
@@ -13,9 +13,9 @@ import {
 import { IDialogsModel, IDialogViewItem } from '../../../common/dialogs.js';
 import { BrowserDialogHandler } from './dialogHandler.js';
 import { DialogService } from '../../../services/dialogs/common/dialogService.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import { createBrowserAboutDialogDetails } from './dialog.js';
 
 export class DialogHandlerContribution extends Disposable implements IWorkbenchContribution {

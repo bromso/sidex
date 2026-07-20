@@ -4,16 +4,16 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Language, LANGUAGE_DEFAULT } from '../../../../base/common/platform.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { ILanguagePackItem } from '../../../../platform/languagePacks/common/languagePacks.js';
+import { Language, LANGUAGE_DEFAULT } from '@sidex/base/common/platform.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ILanguagePackItem } from '@sidex/platform/languagePacks/common/languagePacks.js';
 import { IActiveLanguagePackService, ILocaleService } from '../common/locale.js';
 import { IHostService } from '../../host/browser/host.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IExtensionGalleryService } from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IExtensionGalleryService } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 const localeStorage = new (class LocaleStorage {
 	private static readonly LOCAL_STORAGE_LOCALE_KEY = 'vscode.nls.locale';

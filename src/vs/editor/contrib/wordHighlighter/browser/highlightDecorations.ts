@@ -14,8 +14,8 @@ import {
 	minimapSelectionOccurrenceHighlight,
 	overviewRulerSelectionHighlightForeground,
 	registerColor
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant, themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant, themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 
 const wordHighlightBackground = registerColor(
 	'editor.wordHighlightBackground',

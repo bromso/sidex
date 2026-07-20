@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertNever } from '../../../base/common/assert.js';
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { Event } from '../../../base/common/event.js';
-import * as types from '../../../base/common/types.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { assertNever } from '@sidex/base/common/assert.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import * as types from '@sidex/base/common/types.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IWorkspaceFolder } from '../../workspace/common/workspace.js';
 

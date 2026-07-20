@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { IDiffChange, ISequence, LcsDiff, IDiffResult } from '../../../base/common/diff/diff.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { IDiffChange, ISequence, LcsDiff, IDiffResult } from '@sidex/base/common/diff/diff.js';
 import { ILinesDiffComputer, ILinesDiffComputerOptions, LinesDiff } from './linesDiffComputer.js';
 import { RangeMapping, DetailedLineRangeMapping } from './rangeMapping.js';
-import * as strings from '../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { Range } from '../core/range.js';
-import { assertFn, checkAdjacentItems } from '../../../base/common/assert.js';
+import { assertFn, checkAdjacentItems } from '@sidex/base/common/assert.js';
 import { LineRange } from '../core/ranges/lineRange.js';
 
 const MINIMUM_MATCHING_CHARACTER_LENGTH = 3;

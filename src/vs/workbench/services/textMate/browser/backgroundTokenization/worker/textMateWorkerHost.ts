@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { UriComponents } from '../../../../../../base/common/uri.js';
-import { IWebWorkerServer, IWebWorkerClient } from '../../../../../../base/common/worker/webWorker.js';
-import { ISerializedAnnotation } from '../../../../../../editor/common/model/tokens/annotations.js';
-import { IFontTokenOption } from '../../../../../../editor/common/textModelEvents.js';
+import { UriComponents } from '@sidex/base/common/uri.js';
+import { IWebWorkerServer, IWebWorkerClient } from '@sidex/base/common/worker/webWorker.js';
+import { ISerializedAnnotation } from '@sidex/editor/common/model/tokens/annotations.js';
+import { IFontTokenOption } from '@sidex/editor/common/textModelEvents.js';
 import { StateDeltas } from './textMateTokenizationWorker.worker.js';
 
 export abstract class TextMateWorkerHost {

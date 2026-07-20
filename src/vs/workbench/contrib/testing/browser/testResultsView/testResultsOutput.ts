@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { Delayer } from '../../../../../base/common/async.js';
-import { VSBuffer } from '../../../../../base/common/buffer.js';
-import { Event } from '../../../../../base/common/event.js';
-import { Iterable } from '../../../../../base/common/iterator.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Delayer } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
 import {
 	Disposable,
 	DisposableStore,
@@ -16,26 +16,26 @@ import {
 	MutableDisposable,
 	combinedDisposable,
 	toDisposable
-} from '../../../../../base/common/lifecycle.js';
-import { ScrollEvent } from '../../../../../base/common/scrollable.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ICodeEditor, IDiffEditorConstructionOptions } from '../../../../../editor/browser/editorBrowser.js';
-import { CodeEditorWidget } from '../../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { EmbeddedCodeEditorWidget } from '../../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
-import { DiffEditorWidget } from '../../../../../editor/browser/widget/diffEditor/diffEditorWidget.js';
-import { EmbeddedDiffEditorWidget } from '../../../../../editor/browser/widget/diffEditor/embeddedDiffEditorWidget.js';
-import { IMarkdownRendererService } from '../../../../../platform/markdown/browser/markdownRenderer.js';
-import { IDiffEditorOptions, IEditorOptions } from '../../../../../editor/common/config/editorOptions.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IResolvedTextEditorModel, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { peekViewResultsBackground } from '../../../../../editor/contrib/peekView/browser/peekView.js';
+} from '@sidex/base/common/lifecycle.js';
+import { ScrollEvent } from '@sidex/base/common/scrollable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor, IDiffEditorConstructionOptions } from '@sidex/editor/browser/editorBrowser.js';
+import { CodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { EmbeddedCodeEditorWidget } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+import { DiffEditorWidget } from '@sidex/editor/browser/widget/diffEditor/diffEditorWidget.js';
+import { EmbeddedDiffEditorWidget } from '@sidex/editor/browser/widget/diffEditor/embeddedDiffEditorWidget.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IDiffEditorOptions, IEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IResolvedTextEditorModel, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { peekViewResultsBackground } from '@sidex/editor/contrib/peekView/browser/peekView.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { TerminalCapability } from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalCapabilityStore } from '../../../../../platform/terminal/common/capabilities/terminalCapabilityStore.js';
-import { formatMessageForTerminal } from '../../../../../platform/terminal/common/terminalStrings.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { TerminalCapability } from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalCapabilityStore } from '@sidex/platform/terminal/common/capabilities/terminalCapabilityStore.js';
+import { formatMessageForTerminal } from '@sidex/platform/terminal/common/terminalStrings.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IEditorConfiguration } from '../../../../browser/parts/editor/textEditor.js';
 import { EditorModel } from '../../../../common/editor/editorModel.js';
 import { PANEL_BACKGROUND, SIDE_BAR_BACKGROUND } from '../../../../common/theme.js';

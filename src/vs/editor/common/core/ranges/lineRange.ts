@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BugIndicatingError } from '../../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { OffsetRange } from './offsetRange.js';
 import { IRange, Range } from '../range.js';
 import {
 	findFirstIdxMonotonousOrArrLen,
 	findLastIdxMonotonous,
 	findLastMonotonous
-} from '../../../../base/common/arraysFind.js';
-import { Comparator, compareBy, numberComparator } from '../../../../base/common/arrays.js';
+} from '@sidex/base/common/arraysFind.js';
+import { Comparator, compareBy, numberComparator } from '@sidex/base/common/arrays.js';
 
 /**
  * A range of lines (1-based).

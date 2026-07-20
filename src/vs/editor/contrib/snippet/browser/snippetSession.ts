@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { groupBy } from '../../../../base/common/arrays.js';
-import { CharCode } from '../../../../base/common/charCode.js';
-import { dispose } from '../../../../base/common/lifecycle.js';
-import { getLeadingWhitespace } from '../../../../base/common/strings.js';
+import { groupBy } from '@sidex/base/common/arrays.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { dispose } from '@sidex/base/common/lifecycle.js';
+import { getLeadingWhitespace } from '@sidex/base/common/strings.js';
 import './snippetSession.css';
 import { IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
@@ -19,8 +19,8 @@ import { ILanguageConfigurationService } from '../../../common/languages/languag
 import { IIdentifiedSingleEditOperation, ITextModel, TrackedRangeStickiness } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { OvertypingCapturer } from '../../suggest/browser/suggestOvertypingCapturer.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { Choice, Marker, Placeholder, SnippetParser, Text, TextmateSnippet } from './snippetParser.js';
 import {
 	ClipboardBasedVariableResolver,

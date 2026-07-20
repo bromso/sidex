@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { addMatchMediaChangeListener } from '../../../../base/browser/browser.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { addMatchMediaChangeListener } from '@sidex/base/browser/browser.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IHostColorSchemeService } from '../common/hostColorSchemeService.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 export class BrowserHostColorSchemeService extends Disposable implements IHostColorSchemeService {
 	declare readonly _serviceBrand: undefined;

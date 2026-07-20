@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { compareBy, numberComparator } from '../../../../../base/common/arrays.js';
-import { findFirstMax } from '../../../../../base/common/arraysFind.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { compareBy, numberComparator } from '@sidex/base/common/arrays.js';
+import { findFirstMax } from '@sidex/base/common/arraysFind.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { Position } from '../../../../common/core/position.js';
 import { Range } from '../../../../common/core/range.js';
@@ -23,7 +23,7 @@ import { SnippetSession } from '../../../snippet/browser/snippetSession.js';
 import { CompletionItem } from '../../../suggest/browser/suggest.js';
 import { SuggestController } from '../../../suggest/browser/suggestController.js';
 import { ObservableCodeEditor } from '../../../../browser/observableCodeEditor.js';
-import { observableFromEvent } from '../../../../../base/common/observable.js';
+import { observableFromEvent } from '@sidex/base/common/observable.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 
 export class SuggestWidgetAdaptor extends Disposable {

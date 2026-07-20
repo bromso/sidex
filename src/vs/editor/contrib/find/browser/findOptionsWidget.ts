@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import './findOptionsWidget.css';
 import {
 	CaseSensitiveToggle,
 	RegexToggle,
 	WholeWordsToggle
-} from '../../../../base/browser/ui/findinput/findInputToggles.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
+} from '@sidex/base/browser/ui/findinput/findInputToggles.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import {
 	ICodeEditor,
 	IOverlayWidget,
@@ -20,14 +20,14 @@ import {
 } from '../../../browser/editorBrowser.js';
 import { FIND_IDS } from './findModel.js';
 import { FindReplaceState } from './findState.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	asCssVariable,
 	inputActiveOptionBackground,
 	inputActiveOptionBorder,
 	inputActiveOptionForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import type { IHoverLifecycleOptions } from '../../../../base/browser/ui/hover/hover.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import type { IHoverLifecycleOptions } from '@sidex/base/browser/ui/hover/hover.js';
 
 export class FindOptionsWidget extends Widget implements IOverlayWidget {
 	private static readonly ID = 'editor.contrib.findOptionsWidget';

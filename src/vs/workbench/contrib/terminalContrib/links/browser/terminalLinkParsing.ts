@@ -9,8 +9,8 @@
  * exist.
  */
 
-import { Lazy } from '../../../../../base/common/lazy.js';
-import { OperatingSystem } from '../../../../../base/common/platform.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { OperatingSystem } from '@sidex/base/common/platform.js';
 
 export interface IParsedLink {
 	path: ILinkPartialRange;

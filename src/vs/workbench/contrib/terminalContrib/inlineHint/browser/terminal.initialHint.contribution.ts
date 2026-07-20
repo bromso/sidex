@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import type { IDecoration, ITerminalAddon, Terminal as RawXtermTerminal } from '@xterm/xterm';
-import * as dom from '../../../../../base/browser/dom.js';
-import { IContentActionHandler, renderFormattedText } from '../../../../../base/browser/formattedTextRenderer.js';
-import { StandardMouseEvent } from '../../../../../base/browser/mouseEvent.js';
-import { status } from '../../../../../base/browser/ui/aria/aria.js';
-import { KeybindingLabel } from '../../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { OS } from '../../../../../base/common/platform.js';
-import { hasKey } from '../../../../../base/common/types.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IContentActionHandler, renderFormattedText } from '@sidex/base/browser/formattedTextRenderer.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { hasKey } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	ITerminalCapabilityStore,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 import { AccessibilityVerbositySettingId } from '../../../accessibility/browser/accessibilityConfiguration.js';
 import {
 	IDetachedTerminalInstance,

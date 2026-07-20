@@ -9,19 +9,19 @@ import {
 	IExtensionManifest,
 	TargetPlatform,
 	IExtension
-} from '../../../../platform/extensions/common/extensions.js';
-import { isWeb, Language } from '../../../../base/common/platform.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { isWeb, Language } from '@sidex/base/common/platform.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { getGalleryExtensionId } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
-import { builtinExtensionsPath, FileAccess } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IExtensionResourceLoaderService } from '../../../../platform/extensionResourceLoader/common/extensionResourceLoader.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { ITranslations, localizeManifest } from '../../../../platform/extensionManagement/common/extensionNls.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { getGalleryExtensionId } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
+import { builtinExtensionsPath, FileAccess } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IExtensionResourceLoaderService } from '@sidex/platform/extensionResourceLoader/common/extensionResourceLoader.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ITranslations, localizeManifest } from '@sidex/platform/extensionManagement/common/extensionNls.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 
 interface IBundledExtension {
 	extensionPath: string;

@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '../../../../base/browser/ui/mouseCursor/mouseCursor.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import * as platform from '../../../../base/common/platform.js';
-import { Constants } from '../../../../base/common/uint.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { MOUSE_CURSOR_TEXT_CSS_CLASS_NAME } from '@sidex/base/browser/ui/mouseCursor/mouseCursor.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { Constants } from '@sidex/base/common/uint.js';
 import './viewLines.css';
 import { applyFontInfo } from '../../config/domFontInfo.js';
 import {

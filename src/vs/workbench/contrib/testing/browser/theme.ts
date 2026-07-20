@@ -21,9 +21,9 @@ import {
 	opaque,
 	registerColor,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { listErrorForeground, listWarningForeground } from '../../../../platform/theme/common/colors/listColors.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { listErrorForeground, listWarningForeground } from '@sidex/platform/theme/common/colors/listColors.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { TestResultState } from '../common/testTypes.js';
 
 export const testingColorIconFailed = registerColor(

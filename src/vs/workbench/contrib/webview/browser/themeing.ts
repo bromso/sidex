@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DEFAULT_FONT_FAMILY } from '../../../../base/browser/fonts.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IEditorOptions, EditorFontLigatures } from '../../../../editor/common/config/editorOptions.js';
-import { EDITOR_FONT_DEFAULTS } from '../../../../editor/common/config/fontInfo.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import * as colorRegistry from '../../../../platform/theme/common/colorRegistry.js';
-import { getSizeRegistry, sizeValueToCss } from '../../../../platform/theme/common/sizeRegistry.js';
-import { ColorScheme } from '../../../../platform/theme/common/theme.js';
+import { DEFAULT_FONT_FAMILY } from '@sidex/base/browser/fonts.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IEditorOptions, EditorFontLigatures } from '@sidex/editor/common/config/editorOptions.js';
+import { EDITOR_FONT_DEFAULTS } from '@sidex/editor/common/config/fontInfo.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import * as colorRegistry from '@sidex/platform/theme/common/colorRegistry.js';
+import { getSizeRegistry, sizeValueToCss } from '@sidex/platform/theme/common/sizeRegistry.js';
+import { ColorScheme } from '@sidex/platform/theme/common/theme.js';
 import { IWorkbenchColorTheme, IWorkbenchThemeService } from '../../../services/themes/common/workbenchThemeService.js';
 import { WebviewStyles } from './webview.js';
 

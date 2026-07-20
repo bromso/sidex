@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IShellIntegration, ShellIntegrationStatus } from '../terminal.js';
-import { Disposable, dispose, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, dispose, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { TerminalCapabilityStore } from '../capabilities/terminalCapabilityStore.js';
 import { CommandDetectionCapability } from '../capabilities/commandDetectionCapability.js';
 import { CwdDetectionCapability } from '../capabilities/cwdDetectionCapability.js';
@@ -20,12 +20,12 @@ import {
 import { PartialCommandDetectionCapability } from '../capabilities/partialCommandDetectionCapability.js';
 import { ILogService } from '../../../log/common/log.js';
 import { ITelemetryService } from '../../../telemetry/common/telemetry.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { BufferMarkCapability } from '../capabilities/bufferMarkCapability.js';
 import type { ITerminalAddon, Terminal } from '@xterm/headless';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { sanitizeCwd } from '../terminalEnvironment.js';
-import { removeAnsiEscapeCodesFromPrompt } from '../../../../base/common/strings.js';
+import { removeAnsiEscapeCodesFromPrompt } from '@sidex/base/common/strings.js';
 import { ShellEnvDetectionCapability } from '../capabilities/shellEnvDetectionCapability.js';
 import { PromptTypeDetectionCapability } from '../capabilities/promptTypeDetectionCapability.js';
 

@@ -3,36 +3,36 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Delayer, disposableTimeout } from '../../../../base/common/async.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { HistoryInputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { toDisposable, IDisposable } from '../../../../base/common/lifecycle.js';
+import { Delayer, disposableTimeout } from '@sidex/base/common/async.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { HistoryInputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { toDisposable, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	badgeBackground,
 	badgeForeground,
 	contrastBorder,
 	asCssVariable
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { localize } from '@sidex/base/nls.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ContextScopedHistoryInputBox } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
-import { MenuId, MenuRegistry, SubmenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { HiddenItemStrategy, MenuWorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { SubmenuEntryActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ContextScopedHistoryInputBox } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { showHistoryKeybindingHint } from '@sidex/platform/history/browser/historyWidgetKeybindingHint.js';
+import { MenuId, MenuRegistry, SubmenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { HiddenItemStrategy, MenuWorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { SubmenuEntryActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 
 const viewFilterMenu = new MenuId('menu.view.filter');
 export const viewFilterSubmenu = new MenuId('submenu.view.filter');

@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import { Delayer, first } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Color } from '../../../../base/common/color.js';
-import { isCancellationError, onUnexpectedError, onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import * as strings from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { Delayer, first } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { isCancellationError, onUnexpectedError, onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import * as strings from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -40,17 +40,17 @@ import {
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { ISingleEditOperation } from '../../../common/core/editOperation.js';
 import {
 	IFeatureDebounceInformation,
 	ILanguageFeatureDebounceService
 } from '../../../common/services/languageFeatureDebounce.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 import './linkedEditing.css';
 
 export const CONTEXT_ONTYPE_RENAME_INPUT_VISIBLE = new RawContextKey<boolean>('LinkedEditingInputVisible', false);

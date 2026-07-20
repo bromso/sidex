@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import { IDebugService, State, IDebugConfiguration } from '../common/debug.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IStatusbarEntry,
 	IStatusbarService,

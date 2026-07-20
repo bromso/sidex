@@ -4,47 +4,47 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as dom from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
-import { Action, ActionRunner, IAction } from '../../../../base/common/actions.js';
-import { Event } from '../../../../base/common/event.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { ISelectOptionItem } from '../../../../base/browser/ui/selectBox/selectBox.js';
-import { SelectActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { defaultSelectBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { IColorTheme, IThemeService } from '../../../../platform/theme/common/themeService.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { Action, ActionRunner, IAction } from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ISelectOptionItem } from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { SelectActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { defaultSelectBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	peekViewBorder,
 	peekViewTitleBackground,
 	peekViewTitleForeground,
 	peekViewTitleInfoForeground,
 	PeekViewWidget
-} from '../../../../editor/contrib/peekView/browser/peekView.js';
-import { editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/editor/contrib/peekView/browser/peekView.js';
+import { editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	IMenu,
 	IMenuService,
 	MenuId,
 	MenuItemAction,
 	MenuRegistry
-} from '../../../../platform/actions/common/actions.js';
-import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, registerEditorAction } from '../../../../editor/browser/editorExtensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { EmbeddedDiffEditorWidget } from '../../../../editor/browser/widget/diffEditor/embeddedDiffEditorWidget.js';
-import { IEditorContribution, ScrollType } from '../../../../editor/common/editorCommon.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { EmbeddedDiffEditorWidget } from '@sidex/editor/browser/widget/diffEditor/embeddedDiffEditorWidget.js';
+import { IEditorContribution, ScrollType } from '@sidex/editor/common/editorCommon.js';
 import { IQuickDiffModelService, QuickDiffModel } from './quickDiffModel.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { rot } from '../../../../base/common/numbers.js';
-import { ISplice } from '../../../../base/common/sequence.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { rot } from '@sidex/base/common/numbers.js';
+import { ISplice } from '@sidex/base/common/sequence.js';
 import {
 	ChangeType,
 	getChangeHeight,
@@ -56,31 +56,31 @@ import {
 	QuickDiff,
 	QuickDiffChange
 } from '../common/quickDiff.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
 import { TextCompareEditorActiveContext } from '../../../common/contextkeys.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IChange } from '../../../../editor/common/diff/legacyLinesDiffComputer.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IChange } from '@sidex/editor/common/diff/legacyLinesDiffComputer.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { basename } from '../../../../base/common/resources.js';
-import { EditorOption, IDiffEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { getFlatActionBarActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IActionBarOptions } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { gotoNextLocation, gotoPreviousLocation } from '../../../../platform/theme/common/iconRegistry.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Color } from '../../../../base/common/color.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { getOuterEditor } from '../../../../editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { EditorOption, IDiffEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { getFlatActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IActionBarOptions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { gotoNextLocation, gotoPreviousLocation } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Color } from '@sidex/base/common/color.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { getOuterEditor } from '@sidex/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.js';
 import { quickDiffDecorationCount } from './quickDiffDecorator.js';
-import { hasNativeContextMenu } from '../../../../platform/window/common/window.js';
+import { hasNativeContextMenu } from '@sidex/platform/window/common/window.js';
 
 export const isQuickDiffVisible = new RawContextKey<boolean>('dirtyDiffVisible', false);
 

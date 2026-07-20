@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { Event, Emitter } from '../../../base/common/event.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	ExtHostTerminalServiceShape,
 	ITerminalDimensionsDto,
@@ -18,20 +18,20 @@ import {
 	ITerminalQuickFixOpenerDto,
 	ITerminalQuickFixTerminalCommandDto
 } from './extHost.protocol.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { URI } from '../../../base/common/uri.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import {
 	ICreateContributedTerminalProfileOptions,
 	ITerminalLaunchError,
 	ITerminalProfile,
 	TerminalLocation,
 	TerminalShellType
-} from '../../../platform/terminal/common/terminal.js';
-import { ISerializableEnvironmentVariableCollection } from '../../../platform/terminal/common/environmentVariable.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { SingleOrMany } from '../../../base/common/types.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { ISerializableEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariable.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { SingleOrMany } from '@sidex/base/common/types.js';
 
 export interface ITerminalInternalOptions {
 	cwd?: string | URI;

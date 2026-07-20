@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { ICodeEditor, IPasteEvent } from '../../../../editor/browser/editorBrowser.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { ICodeEditor, IPasteEvent } from '@sidex/editor/browser/editorBrowser.js';
 import { IEditorOpenContext, isTextEditorViewState } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { applyTextEditorOptions } from '../../../common/editor/editorOptions.js';
@@ -15,22 +15,22 @@ import {
 import { BaseTextEditorModel } from '../../../common/editor/textEditorModel.js';
 import { UntitledTextEditorInput } from '../../../services/untitled/common/untitledTextEditorInput.js';
 import { AbstractTextCodeEditor } from './textCodeEditor.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ScrollType, ICodeEditorViewState } from '../../../../editor/common/editorCommon.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ScrollType, ICodeEditorViewState } from '@sidex/editor/common/editorCommon.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
-import { EditorOption, IEditorOptions as ICodeEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { ModelConstants } from '../../../../editor/common/model.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
+import { EditorOption, IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { ModelConstants } from '@sidex/editor/common/model.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 
 /**
  * An editor implementation that is capable of showing the contents of resource inputs. Uses

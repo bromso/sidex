@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/scm.css';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { basename, dirname } from '../../../../base/common/resources.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { basename, dirname } from '@sidex/base/common/resources.js';
 import {
 	IDisposable,
 	Disposable,
@@ -15,11 +15,11 @@ import {
 	toDisposable,
 	MutableDisposable,
 	DisposableMap
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { ViewPane, IViewPaneOptions, ViewAction } from '../../../browser/parts/views/viewPane.js';
-import { append, $, clearNode, isPointerEvent, isActiveElement } from '../../../../base/browser/dom.js';
-import { asCSSUrl } from '../../../../base/browser/cssValue.js';
-import { IListVirtualDelegate, IIdentityProvider } from '../../../../base/browser/ui/list/list.js';
+import { append, $, clearNode, isPointerEvent, isActiveElement } from '@sidex/base/browser/dom.js';
+import { asCSSUrl } from '@sidex/base/browser/cssValue.js';
+import { IListVirtualDelegate, IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
 import {
 	ISCMResourceGroup,
 	ISCMResource,
@@ -36,18 +36,18 @@ import {
 	ISCMRepositorySelectionMode
 } from '../common/scm.js';
 import { ResourceLabels, IResourceLabel, IFileLabelOptions } from '../../../browser/labels.js';
-import { CountBadge } from '../../../../base/browser/ui/countBadge/countBadge.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	IContextKeyService,
 	IContextKey,
 	ContextKeyExpr,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	MenuItemAction,
 	IMenuService,
@@ -57,10 +57,10 @@ import {
 	MenuRegistry,
 	Action2,
 	IMenu
-} from '../../../../platform/actions/common/actions.js';
-import { IAction, ActionRunner, Separator, IActionRunner, toAction } from '../../../../base/common/actions.js';
-import { IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { IThemeService, IFileIconTheme } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { IAction, ActionRunner, Separator, IActionRunner, toAction } from '@sidex/base/common/actions.js';
+import { IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IThemeService, IFileIconTheme } from '@sidex/platform/theme/common/themeService.js';
 import {
 	isSCMResource,
 	isSCMResourceGroup,
@@ -73,9 +73,9 @@ import {
 	isSCMResourceNode,
 	connectPrimaryMenu
 } from './util.js';
-import { WorkbenchCompressibleAsyncDataTree, IOpenEvent } from '../../../../platform/list/browser/listService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { disposableTimeout, Sequencer, Throttler } from '../../../../base/common/async.js';
+import { WorkbenchCompressibleAsyncDataTree, IOpenEvent } from '@sidex/platform/list/browser/listService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { disposableTimeout, Sequencer, Throttler } from '@sidex/base/common/async.js';
 import {
 	ITreeNode,
 	ITreeFilter,
@@ -84,57 +84,57 @@ import {
 	ITreeDragAndDrop,
 	ITreeDragOverReaction,
 	IAsyncDataSource
-} from '../../../../base/browser/ui/tree/tree.js';
-import { ResourceTree, IResourceNode } from '../../../../base/common/resourceTree.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { ResourceTree, IResourceNode } from '@sidex/base/common/resourceTree.js';
 import {
 	ICompressibleTreeRenderer,
 	ICompressibleKeyboardNavigationLabelProvider
-} from '../../../../base/browser/ui/tree/objectTree.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { ICompressedTreeNode } from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { URI } from '../../../../base/common/uri.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { compareFileNames, comparePaths } from '../../../../base/common/comparers.js';
-import { FuzzyScore, createMatches, IMatch } from '../../../../base/common/filters.js';
+} from '@sidex/base/browser/ui/tree/objectTree.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { compareFileNames, comparePaths } from '@sidex/base/common/comparers.js';
+import { FuzzyScore, createMatches, IMatch } from '@sidex/base/common/filters.js';
 import { IViewDescriptorService } from '../../../common/views.js';
 import { localize } from '@sidex/base/nls.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
-import { compare } from '../../../../base/common/strings.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { RepositoryActionRunner, RepositoryRenderer } from './scmRepositoryRenderer.js';
-import { isDark } from '../../../../platform/theme/common/theme.js';
-import { LabelFuzzyScore } from '../../../../base/browser/ui/tree/abstractTree.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
+import { isDark } from '@sidex/platform/theme/common/theme.js';
+import { LabelFuzzyScore } from '@sidex/base/browser/ui/tree/abstractTree.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
 import {
 	API_OPEN_DIFF_EDITOR_COMMAND_ID,
 	API_OPEN_EDITOR_COMMAND_ID
 } from '../../../browser/parts/editor/editorCommands.js';
-import { getFlatContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Button, ButtonWithDescription, ButtonWithDropdown } from '../../../../base/browser/ui/button/button.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { getFlatContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Button, ButtonWithDescription, ButtonWithDropdown } from '@sidex/base/browser/ui/button/button.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { RepositoryContextKeys } from './scmViewService.js';
-import { defaultButtonStyles, defaultCountBadgeStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { IDragAndDropData } from '../../../../base/browser/dnd.js';
+import { defaultButtonStyles, defaultCountBadgeStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { IDragAndDropData } from '@sidex/base/browser/dnd.js';
 import { fillEditorsDragData } from '../../../browser/dnd.js';
-import { ElementsDragAndDropData, ListViewTargetSector } from '../../../../base/browser/ui/list/listView.js';
-import { CodeDataTransfers } from '../../../../platform/dnd/browser/dnd.js';
-import { IAsyncDataTreeViewState, ITreeCompressionDelegate } from '../../../../base/browser/ui/tree/asyncDataTree.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { rot } from '../../../../base/common/numbers.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { ElementsDragAndDropData, ListViewTargetSector } from '@sidex/base/browser/ui/list/listView.js';
+import { CodeDataTransfers } from '@sidex/platform/dnd/browser/dnd.js';
+import { IAsyncDataTreeViewState, ITreeCompressionDelegate } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { rot } from '@sidex/base/common/numbers.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { OpenScmGroupAction } from '../../multiDiffEditor/browser/scmMultiDiffSourceResolver.js';
-import { autorun } from '../../../../base/common/observable.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
+import { autorun } from '@sidex/base/common/observable.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
 import { AccessibilityCommandId } from '../../accessibility/common/accessibilityCommands.js';
 import { SCMInputWidget } from './scmInput.js';
 

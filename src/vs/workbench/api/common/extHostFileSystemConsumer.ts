@@ -5,15 +5,15 @@
 
 import { MainContext, MainThreadFileSystemShape } from './extHost.protocol.js';
 import type * as vscode from 'vscode';
-import * as files from '../../../platform/files/common/files.js';
+import * as files from '@sidex/platform/files/common/files.js';
 import { FileSystemError } from './extHostTypes.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { IExtHostFileSystemInfo } from './extHostFileSystemInfo.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { IExtUri, extUri, extUriIgnorePathCase } from '../../../base/common/resources.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { IExtUri, extUri, extUriIgnorePathCase } from '@sidex/base/common/resources.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 
 export class ExtHostConsumerFileSystem {
 	readonly _serviceBrand: undefined;

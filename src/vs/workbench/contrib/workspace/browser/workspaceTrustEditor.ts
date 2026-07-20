@@ -13,55 +13,55 @@ import {
 	EventHelper,
 	EventType,
 	isAncestorOfActiveElement
-} from '../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { ButtonBar } from '../../../../base/browser/ui/button/button.js';
-import { IMessage, InputBox, MessageType } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { ITableRenderer, ITableVirtualDelegate } from '../../../../base/browser/ui/table/table.js';
-import { Action, IAction } from '../../../../base/common/actions.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { debounce } from '../../../../base/common/decorators.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { normalizeDriveLetter } from '../../../../base/common/labels.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ButtonBar } from '@sidex/base/browser/ui/button/button.js';
+import { IMessage, InputBox, MessageType } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { ITableRenderer, ITableVirtualDelegate } from '@sidex/base/browser/ui/table/table.js';
+import { Action, IAction } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IFileDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { WorkbenchTable } from '../../../../platform/list/browser/listService.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { isVirtualResource, isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { WorkbenchTable } from '@sidex/platform/list/browser/listService.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { isVirtualResource, isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	asCssVariable,
 	buttonBackground,
 	buttonSecondaryBackground,
 	editorErrorForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	ISingleFolderWorkspaceIdentifier,
 	IWorkspaceContextService,
 	toWorkspaceIdentifier,
 	WorkbenchState
-} from '../../../../platform/workspace/common/workspace.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { EditorPane } from '../../../browser/parts/editor/editorPane.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import { debugIconStartForeground } from '../../debug/browser/debugColors.js';
@@ -74,24 +74,24 @@ import {
 	IWorkbenchConfigurationService
 } from '../../../services/configuration/common/configuration.js';
 import { IExtensionManifestPropertiesService } from '../../../services/extensions/common/extensionManifestPropertiesService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { WorkspaceTrustEditorInput } from '../../../services/workspaces/browser/workspaceTrustEditorInput.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { getExtensionDependencies } from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { getExtensionDependencies } from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import {
 	EnablementState,
 	IWorkbenchExtensionEnablementService
 } from '../../../services/extensionManagement/common/extensionManagement.js';
-import { posix, win32 } from '../../../../base/common/path.js';
-import { hasDriveLetter, toSlashes } from '../../../../base/common/extpath.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { defaultButtonStyles, defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { basename, dirname } from '../../../../base/common/resources.js';
+import { posix, win32 } from '@sidex/base/common/path.js';
+import { hasDriveLetter, toSlashes } from '@sidex/base/common/extpath.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { defaultButtonStyles, defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { basename, dirname } from '@sidex/base/common/resources.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 
 export const shieldIcon = registerIcon(

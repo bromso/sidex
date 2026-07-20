@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { sumBy } from '../../base/common/arrays.js';
-import { prefixedUuid } from '../../base/common/uuid.js';
+import { sumBy } from '@sidex/base/common/arrays.js';
+import { prefixedUuid } from '@sidex/base/common/uuid.js';
 import { LineEdit } from './core/edits/lineEdit.js';
 import { BaseStringEdit } from './core/edits/stringEdit.js';
 import { StringText } from './core/text/abstractText.js';

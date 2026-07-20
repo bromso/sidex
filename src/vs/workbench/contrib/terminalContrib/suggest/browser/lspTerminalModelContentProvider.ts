@@ -2,19 +2,19 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import { IModelService } from '../../../../../editor/common/services/model.js';
-import { ILanguageService } from '../../../../../editor/common/languages/language.js';
-import { ITextModelContentProvider, ITextModelService } from '../../../../../editor/common/services/resolverService.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { Schemas } from '../../../../../base/common/network.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { ITextModelContentProvider, ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	ICommandDetectionCapability,
 	ITerminalCapabilityStore,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import { TerminalShellType } from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { TerminalShellType } from '@sidex/platform/terminal/common/terminal.js';
 import { VSCODE_LSP_TERMINAL_PROMPT_TRACKER } from './lspTerminalUtil.js';
 
 export interface ILspTerminalModelContentProvider extends ITextModelContentProvider {

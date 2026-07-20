@@ -5,17 +5,17 @@
 
 import * as extensionsRegistry from '../../../services/extensions/common/extensionsRegistry.js';
 import { terminalContributionsDescriptor } from './terminal.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IExtensionTerminalProfile,
 	ITerminalCompletionProviderContribution,
 	ITerminalContributions,
 	ITerminalProfileContribution
-} from '../../../../platform/terminal/common/terminal.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { isProposedApiEnabled } from '../../../services/extensions/common/extensions.js';
-import { isObject, isString } from '../../../../base/common/types.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
 
 // terminal extension point
 const terminalsExtPoint = extensionsRegistry.ExtensionsRegistry.registerExtensionPoint<ITerminalContributions>(

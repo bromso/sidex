@@ -4,33 +4,33 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IDisposable, combinedDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { createDecorator, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IURLHandler, IURLService, IOpenURLOptions } from '../../../../platform/url/common/url.js';
+import { IDisposable, combinedDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { createDecorator, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IURLHandler, IURLService, IOpenURLOptions } from '@sidex/platform/url/common/url.js';
 import { IHostService } from '../../host/browser/host.js';
 import { ActivationKind, IExtensionService } from '../common/extensions.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	IWorkbenchContribution,
 	WorkbenchPhase,
 	registerWorkbenchContribution2
 } from '../../../common/contributions.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { IsWebContext } from '../../../../platform/contextkey/common/contextkeys.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { disposableWindowInterval } from '../../../../base/browser/dom.js';
-import { mainWindow } from '../../../../base/browser/window.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { equalsIgnoreCase } from '../../../../base/common/strings.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IsWebContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { disposableWindowInterval } from '@sidex/base/browser/dom.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { equalsIgnoreCase } from '@sidex/base/common/strings.js';
 
 const FIVE_MINUTES = 5 * 60 * 1000;
 const THIRTY_SECONDS = 30 * 1000;

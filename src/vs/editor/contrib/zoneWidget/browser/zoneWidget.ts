@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../../base/browser/domStylesheets.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
 import {
 	IHorizontalSashLayoutProvider,
 	ISashEvent,
 	Orientation,
 	Sash,
 	SashState
-} from '../../../../base/browser/ui/sash/sash.js';
-import { Color, RGBA } from '../../../../base/common/color.js';
-import { IdGenerator } from '../../../../base/common/idGenerator.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import * as objects from '../../../../base/common/objects.js';
+} from '@sidex/base/browser/ui/sash/sash.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
+import { IdGenerator } from '@sidex/base/common/idGenerator.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import * as objects from '@sidex/base/common/objects.js';
 import './zoneWidget.css';
 import {
 	ICodeEditor,

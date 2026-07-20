@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../base/common/codicons.js';
-import { isUriComponents, URI } from '../../../base/common/uri.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { isUriComponents, URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { IExtensionTerminalProfile, ITerminalProfile, TerminalIcon } from './terminal.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { isObject, isString, type SingleOrMany } from '../../../base/common/types.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isObject, isString, type SingleOrMany } from '@sidex/base/common/types.js';
 
 export function createProfileSchemaEnums(
 	detectedProfiles: ITerminalProfile[],

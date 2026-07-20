@@ -5,8 +5,8 @@
 
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import { MainContext, MainThreadClipboardShape } from '../common/extHost.protocol.js';
-import { IClipboardService } from '../../../platform/clipboard/common/clipboardService.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 @extHostNamedCustomer(MainContext.MainThreadClipboard)
 export class MainThreadClipboard implements MainThreadClipboardShape {

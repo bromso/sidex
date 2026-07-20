@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IReadonlyVSDataTransfer, UriList } from '../../../../base/common/dataTransfer.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Mimes } from '../../../../base/common/mime.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { relativePath } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IReadonlyVSDataTransfer, UriList } from '@sidex/base/common/dataTransfer.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { relativePath } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IPosition } from '../../../common/core/position.js';
 import { IRange } from '../../../common/core/range.js';
 import {

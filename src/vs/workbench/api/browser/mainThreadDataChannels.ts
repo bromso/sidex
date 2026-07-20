@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IDataChannelService } from '../../../platform/dataChannel/common/dataChannel.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IDataChannelService } from '@sidex/platform/dataChannel/common/dataChannel.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,

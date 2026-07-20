@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { EditorModel } from './editorModel.js';
-import { URI } from '../../../base/common/uri.js';
-import { IFileService } from '../../../platform/files/common/files.js';
-import { Mimes } from '../../../base/common/mime.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { Mimes } from '@sidex/base/common/mime.js';
 
 /**
  * An editor model that just represents a resource that can be loaded.

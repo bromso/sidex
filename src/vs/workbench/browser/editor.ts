@@ -13,25 +13,25 @@ import {
 	IWillInstantiateEditorPaneEvent
 } from '../common/editor.js';
 import { EditorInput } from '../common/editor/editorInput.js';
-import { SyncDescriptor } from '../../platform/instantiation/common/descriptors.js';
-import { Registry } from '../../platform/registry/common/platform.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { EditorPane } from './parts/editor/editorPane.js';
 import {
 	IConstructorSignature,
 	IInstantiationService,
 	BrandedService,
 	ServicesAccessor
-} from '../../platform/instantiation/common/instantiation.js';
-import { IDisposable, toDisposable } from '../../base/common/lifecycle.js';
-import { Promises } from '../../base/common/async.js';
+} from '@sidex/platform/instantiation/common/instantiation.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Promises } from '@sidex/base/common/async.js';
 import { IEditorService } from '../services/editor/common/editorService.js';
-import { IUriIdentityService } from '../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IWorkingCopyService } from '../services/workingCopy/common/workingCopyService.js';
-import { URI } from '../../base/common/uri.js';
-import { Schemas } from '../../base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IEditorGroup } from '../services/editor/common/editorGroupsService.js';
-import { Iterable } from '../../base/common/iterator.js';
-import { Emitter } from '../../base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Emitter } from '@sidex/base/common/event.js';
 
 //#region Editor Pane Registry
 

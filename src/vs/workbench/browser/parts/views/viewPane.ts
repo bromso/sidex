@@ -5,8 +5,8 @@
 
 import './media/paneviewlet.css';
 import * as nls from '@sidex/base/nls.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { asCssVariable, foreground } from '../../../../platform/theme/common/colorRegistry.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { asCssVariable, foreground } from '@sidex/platform/theme/common/colorRegistry.js';
 import {
 	after,
 	append,
@@ -18,23 +18,23 @@ import {
 	reset,
 	isAncestorOfActiveElement,
 	isActiveElement
-} from '../../../../base/browser/dom.js';
-import { createCSSRule } from '../../../../base/browser/domStylesheets.js';
-import { asCssValueWithDefault, asCSSUrl } from '../../../../base/browser/cssValue.js';
-import { DisposableMap, DisposableStore, toDisposable } from '../../../../base/common/lifecycle.js';
-import { Action, IAction, IActionRunner } from '../../../../base/common/actions.js';
+} from '@sidex/base/browser/dom.js';
+import { createCSSRule } from '@sidex/base/browser/domStylesheets.js';
+import { asCssValueWithDefault, asCSSUrl } from '@sidex/base/browser/cssValue.js';
+import { DisposableMap, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { Action, IAction, IActionRunner } from '@sidex/base/common/actions.js';
 import {
 	ActionsOrientation,
 	IActionViewItem,
 	prepareActions
-} from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IPaneOptions, Pane, IPaneStyles } from '../../../../base/browser/ui/splitview/paneview.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IPaneOptions, Pane, IPaneStyles } from '@sidex/base/browser/ui/splitview/paneview.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	Extensions as ViewContainerExtensions,
 	IView,
@@ -46,38 +46,38 @@ import {
 	ViewContainerLocationToString
 } from '../../../common/views.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { assertReturnsDefined, PartialExcept } from '../../../../base/common/types.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { MenuId, Action2, IAction2Options, SubmenuItemAction } from '../../../../platform/actions/common/actions.js';
-import { createActionViewItem } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { parseLinkedText } from '../../../../base/common/linkedText.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { Link } from '../../../../platform/opener/browser/link.js';
-import { Orientation } from '../../../../base/browser/ui/sash/sash.js';
-import { ProgressBar } from '../../../../base/browser/ui/progressbar/progressbar.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { assertReturnsDefined, PartialExcept } from '@sidex/base/common/types.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { MenuId, Action2, IAction2Options, SubmenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { createActionViewItem } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { parseLinkedText } from '@sidex/base/common/linkedText.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { Link } from '@sidex/platform/opener/browser/link.js';
+import { Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
 import {
 	AbstractProgressScope,
 	ScopedProgressIndicator
 } from '../../../services/progress/browser/progressIndicator.js';
-import { IProgressIndicator } from '../../../../platform/progress/common/progress.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
-import { URI } from '../../../../base/common/uri.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IDropdownMenuActionViewItemOptions } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
+import { IProgressIndicator } from '@sidex/platform/progress/common/progress.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IDropdownMenuActionViewItemOptions } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
 import { FilterWidget, IFilterWidgetOptions } from './viewFilter.js';
-import { BaseActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { defaultButtonStyles, defaultProgressBarStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
+import { BaseActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { defaultButtonStyles, defaultProgressBarStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
 import { ILifecycleService } from '../../../services/lifecycle/common/lifecycle.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IListStyles } from '../../../../base/browser/ui/list/listWidget.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IListStyles } from '@sidex/base/browser/ui/list/listWidget.js';
 import {
 	PANEL_BACKGROUND,
 	PANEL_SECTION_DRAG_AND_DROP_BACKGROUND,
@@ -91,7 +91,7 @@ import {
 	SIDE_BAR_STICKY_SCROLL_SHADOW
 } from '../../../common/theme.js';
 import { IAccessibleViewInformationService } from '../../../services/accessibility/common/accessibleViewInformationService.js';
-import { renderLabelWithIcons } from '../../../../base/browser/ui/iconLabel/iconLabels.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
 import { ViewMenuActions } from './viewMenuActions.js';
 
 export enum ViewPaneShowActions {

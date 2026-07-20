@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { NotSupportedError } from '../../../../base/common/errors.js';
-import { IDisposable, Disposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { URI } from '../../../../base/common/uri.js';
+import { NotSupportedError } from '@sidex/base/common/errors.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	FileChangeType,
 	FilePermission,
@@ -19,14 +19,14 @@ import {
 	IFileSystemProviderWithFileReadWriteCapability,
 	IStat,
 	IWatchOptions
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import * as JSONContributionRegistry from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { ILogService, LogLevel } from '../../../../platform/log/common/log.js';
-import { isEqual } from '../../../../base/common/resources.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import * as JSONContributionRegistry from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { isEqual } from '@sidex/base/common/resources.js';
 
 const schemaRegistry = Registry.as<JSONContributionRegistry.IJSONContributionRegistry>(
 	JSONContributionRegistry.Extensions.JSONContribution

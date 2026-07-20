@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Event } from '../../../../base/common/event.js';
-import { IMatch } from '../../../../base/common/filters.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IRange } from '../../../../editor/common/core/range.js';
-import { IEditorContribution } from '../../../../editor/common/editorCommon.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { IEditorContribution } from '@sidex/editor/common/editorCommon.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ConfigurationDefaultValueSource,
 	ConfigurationScope,
 	EditPresentationTypes,
 	IExtensionInfo
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IExtensionDescription } from '../../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ResolvedKeybindingItem } from '../../../../platform/keybinding/common/resolvedKeybindingItem.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ResolvedKeybindingItem } from '@sidex/platform/keybinding/common/resolvedKeybindingItem.js';
 import { DEFAULT_EDITOR_ASSOCIATION, IEditorPane } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { Settings2EditorModel } from './preferencesModels.js';

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary, INumberDictionary } from '../../../../base/common/collections.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { IDisposable, DisposableStore, Disposable } from '../../../../base/common/lifecycle.js';
+import { IStringDictionary, INumberDictionary } from '@sidex/base/common/collections.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IDisposable, DisposableStore, Disposable } from '@sidex/base/common/lifecycle.js';
 
-import { IModelService } from '../../../../editor/common/services/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
 
 import {
 	ILineMatcher,
@@ -19,11 +19,11 @@ import {
 	IWatchingPattern,
 	getResource
 } from './problemMatcher.js';
-import { IMarkerService, IMarkerData, MarkerSeverity, IMarker } from '../../../../platform/markers/common/markers.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { isWindows } from '../../../../base/common/platform.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IMarkerService, IMarkerData, MarkerSeverity, IMarker } from '@sidex/platform/markers/common/markers.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export const enum ProblemCollectorEventKind {
 	BackgroundProcessingBegins = 'backgroundProcessingBegins',

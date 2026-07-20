@@ -9,7 +9,7 @@ import {
 	registerEditorCommand,
 	registerEditorContribution
 } from '../../../browser/editorExtensions.js';
-import { registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { editorConfigurationBaseNode } from '../../../common/config/editorConfigurationSchema.js';
 import {
 	AutoFixAction,
@@ -27,8 +27,8 @@ import {
 	ConfigurationScope,
 	Extensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 
 registerEditorContribution(CodeActionController.ID, CodeActionController, EditorContributionInstantiation.Eventually);
 registerEditorContribution(LightBulbWidget.ID, LightBulbWidget, EditorContributionInstantiation.Lazy);

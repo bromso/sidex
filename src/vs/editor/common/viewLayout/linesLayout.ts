@@ -10,7 +10,7 @@ import {
 	IViewWhitespaceViewportData,
 	IWhitespaceChangeAccessor
 } from '../viewModel.js';
-import * as strings from '../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { CustomLineHeightData, LineHeightsManager } from './lineHeights.js';
 
 interface IPendingChange {

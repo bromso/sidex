@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/scm.css';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { VIEWLET_ID } from '../common/scm.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IViewDescriptorService } from '../../../common/views.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export class SCMViewPaneContainer extends ViewPaneContainer {
 	constructor(

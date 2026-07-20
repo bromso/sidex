@@ -6,9 +6,9 @@
 import {
 	ISingleFolderWorkspaceIdentifier,
 	IWorkspaceIdentifier
-} from '../../../../platform/workspace/common/workspace.js';
-import { URI } from '../../../../base/common/uri.js';
-import { hash } from '../../../../base/common/hash.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { hash } from '@sidex/base/common/hash.js';
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // NOTE: DO NOT CHANGE. IDENTIFIERS HAVE TO REMAIN STABLE

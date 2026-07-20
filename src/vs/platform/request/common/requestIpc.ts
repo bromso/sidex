@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { bufferToStream, VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Event } from '../../../base/common/event.js';
-import { IChannel } from '../../../base/parts/ipc/common/ipc.js';
-import { IHeaders, IRequestContext, IRequestOptions } from '../../../base/parts/request/common/request.js';
+import { bufferToStream, VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IChannel } from '@sidex/base/parts/ipc/common/ipc.js';
+import { IHeaders, IRequestContext, IRequestOptions } from '@sidex/base/parts/request/common/request.js';
 import { AuthInfo, Credentials, IRequestCompleteEvent, IRequestService } from './request.js';
 
 type RequestResponse = [

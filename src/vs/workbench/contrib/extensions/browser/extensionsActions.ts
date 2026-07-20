@@ -5,13 +5,13 @@
 
 import './media/extensionActions.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IAction, Action, Separator, SubmenuAction, IActionChangeEvent } from '../../../../base/common/actions.js';
-import { Delayer, Promises, Throttler } from '../../../../base/common/async.js';
-import * as DOM from '../../../../base/browser/dom.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import * as json from '../../../../base/common/json.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { disposeIfDisposable } from '../../../../base/common/lifecycle.js';
+import { IAction, Action, Separator, SubmenuAction, IActionChangeEvent } from '@sidex/base/common/actions.js';
+import { Delayer, Promises, Throttler } from '@sidex/base/common/async.js';
+import * as DOM from '@sidex/base/browser/dom.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as json from '@sidex/base/common/json.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { disposeIfDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IExtension,
 	ExtensionState,
@@ -37,7 +37,7 @@ import {
 	ExtensionManagementErrorCode,
 	IAllowedExtensionsService,
 	shouldRequireRepositorySignatureFor
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 import {
 	IWorkbenchExtensionEnablementService,
 	EnablementState,
@@ -53,7 +53,7 @@ import {
 import {
 	areSameExtensions,
 	getExtensionId
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import {
 	ExtensionType,
 	ExtensionIdentifier,
@@ -63,29 +63,29 @@ import {
 	getWorkspaceSupportTypeMessage,
 	TargetPlatform,
 	isApplicationScopedExtension
-} from '../../../../platform/extensions/common/extensions.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IFileService, IFileContent } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IFileService, IFileContent } from '@sidex/platform/files/common/files.js';
 import {
 	IWorkspaceContextService,
 	WorkbenchState,
 	IWorkspaceFolder
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import {
 	IExtensionService,
 	toExtension,
 	toExtensionDescription
 } from '../../../services/extensions/common/extensions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	registerThemingParticipant,
 	IColorTheme,
 	ICssStyleCollector
-} from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	buttonBackground,
 	buttonForeground,
@@ -100,32 +100,32 @@ import {
 	buttonSeparator,
 	buttonBorder,
 	contrastBorder
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { IJSONEditingService } from '../../../services/configuration/common/jsonEditing.js';
-import { ITextEditorSelection } from '../../../../platform/editor/common/editor.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { ITextEditorSelection } from '@sidex/platform/editor/common/editor.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	MenuId,
 	IMenuService,
 	MenuItemAction,
 	SubmenuItemAction
-} from '../../../../platform/actions/common/actions.js';
+} from '@sidex/platform/actions/common/actions.js';
 import { PICK_WORKSPACE_FOLDER_COMMAND_ID } from '../../../browser/actions/workspaceCommands.js';
 import {
 	INotificationService,
 	IPromptChoice,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	IQuickPickItem,
 	IQuickInputService,
 	QuickPickItem
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { alert } from '../../../../base/browser/ui/aria/aria.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { alert } from '@sidex/base/browser/ui/aria/aria.js';
 import {
 	IWorkbenchThemeService,
 	IWorkbenchTheme,
@@ -133,20 +133,20 @@ import {
 	IWorkbenchFileIconTheme,
 	IWorkbenchProductIconTheme
 } from '../../../services/themes/common/workbenchThemeService.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import { ITextFileService } from '../../../services/textfile/common/textfiles.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { IDialogService, IPromptButton } from '../../../../platform/dialogs/common/dialogs.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { IActionViewItemOptions, ActionViewItem } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { IDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { IActionViewItemOptions, ActionViewItem } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import {
 	EXTENSIONS_CONFIG,
 	IExtensionsConfigContent
 } from '../../../services/extensionRecommendations/common/workspaceExtensionsConfig.js';
-import { getErrorMessage, isCancellationError } from '../../../../base/common/errors.js';
-import { IUserDataSyncEnablementService } from '../../../../platform/userDataSync/common/nullUserDataSync.js';
-import { IContextMenuProvider } from '../../../../base/browser/contextmenu.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { getErrorMessage, isCancellationError } from '@sidex/base/common/errors.js';
+import { IUserDataSyncEnablementService } from '@sidex/platform/userDataSync/common/nullUserDataSync.js';
+import { IContextMenuProvider } from '@sidex/base/browser/contextmenu.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	errorIcon,
 	infoIcon,
@@ -156,41 +156,41 @@ import {
 	trustIcon,
 	warningIcon
 } from './extensionsIcons.js';
-import { isIOS, isWeb, language } from '../../../../base/common/platform.js';
+import { isIOS, isWeb, language } from '@sidex/base/common/platform.js';
 import { IExtensionManifestPropertiesService } from '../../../services/extensions/common/extensionManifestPropertiesService.js';
 import {
 	IWorkspaceTrustEnablementService,
 	IWorkspaceTrustManagementService
-} from '../../../../platform/workspace/common/workspaceTrust.js';
-import { isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
+} from '@sidex/platform/workspace/common/workspaceTrust.js';
+import { isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
 import {
 	createCommandUri,
 	escapeMarkdownSyntaxTokens,
 	IMarkdownString,
 	MarkdownString
-} from '../../../../base/common/htmlContent.js';
-import { fromNow } from '../../../../base/common/date.js';
+} from '@sidex/base/common/htmlContent.js';
+import { fromNow } from '@sidex/base/common/date.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { getLocale } from '../../../../platform/languagePacks/common/languagePacks.js';
+import { getLocale } from '@sidex/platform/languagePacks/common/languagePacks.js';
 import { ILocaleService } from '../../../services/localization/common/locale.js';
-import { isString } from '../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 import { showWindowLogActionId } from '../../../services/log/common/logConstants.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	Extensions,
 	IExtensionFeaturesManagementService,
 	IExtensionFeaturesRegistry
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IUpdateService } from '../../../../platform/update/common/update.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IUpdateService } from '@sidex/platform/update/common/update.js';
 import {
 	ActionWithDropdownActionViewItem,
 	IActionWithDropdownActionViewItemOptions
-} from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
+} from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
 import { IAuthenticationUsageService } from '../../../services/authentication/browser/authenticationUsageService.js';
-import { IExtensionGalleryManifestService } from '../../../../platform/extensionManagement/common/extensionGalleryManifest.js';
+import { IExtensionGalleryManifestService } from '@sidex/platform/extensionManagement/common/extensionGalleryManifest.js';
 import { IWorkbenchIssueService } from '../../issue/common/issue.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 
 export class PromptExtensionInstallFailureAction extends Action {
 	constructor(

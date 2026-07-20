@@ -2,7 +2,7 @@
  *  SideX: Stub for removed contributed external URI openers store.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export class ContributedExternalUriOpenersStore extends Disposable {
 	constructor(..._args: unknown[]) {

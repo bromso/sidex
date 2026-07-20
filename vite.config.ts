@@ -35,10 +35,13 @@ export default defineConfig({
   envPrefix: ['VITE_', 'TAURI_'],
   resolve: {
     alias: {
-      // Temporary: nls.ts, amdX.ts and sidex-bridge.ts are imported as
-      // @sidex/base/* ahead of the move that puts them in packages/base.
-      // Task 14 repoints this at the real package.
-      '@sidex/base': path.resolve(__dirname, 'src/vs'),
+      // Temporary: imports are already rewritten to @sidex/* ahead of the move
+      // that puts each layer in its own package. Task 14 repoints these at the
+      // real package directories.
+      '@sidex/base': path.resolve(__dirname, 'src/vs/base'),
+      '@sidex/platform': path.resolve(__dirname, 'src/vs/platform'),
+      '@sidex/editor': path.resolve(__dirname, 'src/vs/editor'),
+      '@sidex/workbench': path.resolve(__dirname, 'src/vs/workbench'),
       'vs': path.resolve(__dirname, 'src/vs'),
     },
   },

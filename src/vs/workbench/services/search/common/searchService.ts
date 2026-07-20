@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import { DeferredPromise, raceCancellationError } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { CancellationError } from '../../../../base/common/errors.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap, ResourceSet } from '../../../../base/common/map.js';
-import { Schemas } from '../../../../base/common/network.js';
-import { randomChance } from '../../../../base/common/numbers.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { isNumber } from '../../../../base/common/types.js';
-import { URI, URI as uri } from '../../../../base/common/uri.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { DeferredPromise, raceCancellationError } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { CancellationError } from '@sidex/base/common/errors.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap, ResourceSet } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { randomChance } from '@sidex/base/common/numbers.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { URI, URI as uri } from '@sidex/base/common/uri.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';

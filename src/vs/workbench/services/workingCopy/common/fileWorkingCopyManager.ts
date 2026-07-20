@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Promises } from '../../../../base/common/async.js';
-import { VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { toLocalResource, joinPath, isEqual, basename, dirname } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IFileDialogService, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Promises } from '@sidex/base/common/async.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { toLocalResource, joinPath, isEqual, basename, dirname } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IFileDialogService, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { ISaveOptions, SaveSourceRegistry } from '../../../common/editor.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import {
 	IStoredFileWorkingCopy,
 	IStoredFileWorkingCopyModel,
@@ -45,9 +45,9 @@ import {
 import { IWorkingCopyFileService } from './workingCopyFileService.js';
 import { IBaseFileWorkingCopyManager } from './abstractFileWorkingCopyManager.js';
 import { IFileWorkingCopy, SnapshotContext } from './fileWorkingCopy.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IElevatedFileService } from '../../files/common/elevatedFileService.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
@@ -55,11 +55,11 @@ import { ILifecycleService } from '../../lifecycle/common/lifecycle.js';
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
 import { IWorkingCopyEditorService } from './workingCopyEditorService.js';
 import { IWorkingCopyService } from './workingCopyService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IDecorationData, IDecorationsProvider, IDecorationsService } from '../../decorations/common/decorations.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { listErrorForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { listErrorForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
 
 export interface IFileWorkingCopyManager<S extends IStoredFileWorkingCopyModel, U extends IUntitledFileWorkingCopyModel>
 	extends IBaseFileWorkingCopyManager<S | U, IFileWorkingCopy<S | U>> {

@@ -4,15 +4,15 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './media/style.css';
-import { registerThemingParticipant } from '../../platform/theme/common/themeService.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 import { WORKBENCH_BACKGROUND, TITLE_BAR_ACTIVE_BACKGROUND } from '../common/theme.js';
-import { isWeb, isIOS } from '../../base/common/platform.js';
-import { createMetaElement } from '../../base/browser/dom.js';
-import { isSafari, isStandalone } from '../../base/browser/browser.js';
-import { selectionBackground } from '../../platform/theme/common/colorRegistry.js';
-import { mainWindow } from '../../base/browser/window.js';
-import { getIconsStyleSheet } from '../../platform/theme/browser/iconsStyleSheet.js';
-import { createStyleSheet } from '../../base/browser/domStylesheets.js';
+import { isWeb, isIOS } from '@sidex/base/common/platform.js';
+import { createMetaElement } from '@sidex/base/browser/dom.js';
+import { isSafari, isStandalone } from '@sidex/base/browser/browser.js';
+import { selectionBackground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { getIconsStyleSheet } from '@sidex/platform/theme/browser/iconsStyleSheet.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
 
 // Eagerly inject icon CSS so aliased codicon rules (e.g. .codicon-search-view-icon)
 // are available before the WorkbenchThemeService initialises its own <style> element.

@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Schemas } from '../../../../../base/common/network.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ILinkComputerTarget, LinkComputer } from '../../../../../editor/common/languages/linkComputer.js';
-import { IUriIdentityService } from '../../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILinkComputerTarget, LinkComputer } from '@sidex/editor/common/languages/linkComputer.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { ITerminalLinkDetector, ITerminalLinkResolver, ITerminalSimpleLink, TerminalBuiltinLinkType } from './links.js';
 import { convertLinkRangeToBuffer, getXtermLineContent } from './terminalLinkHelpers.js';
 import { getTerminalLinkType } from './terminalLocalLinkDetector.js';
 import { ITerminalProcessManager } from '../../../terminal/common/terminal.js';
 import type { IBufferLine, Terminal } from '@xterm/xterm';
-import { ITerminalBackend, ITerminalLogService } from '../../../../../platform/terminal/common/terminal.js';
-import { isString } from '../../../../../base/common/types.js';
+import { ITerminalBackend, ITerminalLogService } from '@sidex/platform/terminal/common/terminal.js';
+import { isString } from '@sidex/base/common/types.js';
 
 const enum Constants {
 	/**

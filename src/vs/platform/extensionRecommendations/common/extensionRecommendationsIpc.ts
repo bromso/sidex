@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { IChannel, IServerChannel } from '../../../base/parts/ipc/common/ipc.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IChannel, IServerChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import {
 	IExtensionRecommendationNotificationService,
 	IExtensionRecommendations,

@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getDomNodePagePosition } from '../../../../base/browser/dom.js';
-import { toAction } from '../../../../base/common/actions.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, IActionOptions, registerEditorAction } from '../../../../editor/browser/editorExtensions.js';
-import { ICodeEditorService } from '../../../../editor/browser/services/codeEditorService.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { MessageController } from '../../../../editor/contrib/message/browser/messageController.js';
+import { getDomNodePagePosition } from '@sidex/base/browser/dom.js';
+import { toAction } from '@sidex/base/common/actions.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, IActionOptions, registerEditorAction } from '@sidex/editor/browser/editorExtensions.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { MessageController } from '@sidex/editor/contrib/message/browser/messageController.js';
 import * as nls from '@sidex/base/nls.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { PanelFocusContext } from '../../../common/contextkeys.js';
 import { openBreakpointSource } from './breakpointsView.js';
 import { DisassemblyView, IDisassembledInstructionEntry } from './disassemblyView.js';

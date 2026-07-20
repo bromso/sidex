@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DeferredPromise } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IMatch } from '../../../../base/common/filters.js';
-import { IPreparedQuery, pieceToQuery, prepareQuery, scoreFuzzy2 } from '../../../../base/common/fuzzyScorer.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { IPreparedQuery, pieceToQuery, prepareQuery, scoreFuzzy2 } from '@sidex/base/common/fuzzyScorer.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
-import { format, trim } from '../../../../base/common/strings.js';
+} from '@sidex/base/common/lifecycle.js';
+import { format, trim } from '@sidex/base/common/strings.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { ScrollType } from '../../../common/editorCommon.js';
 import { ITextModel } from '../../../common/model.js';
@@ -41,12 +41,12 @@ import {
 	IQuickPickDidAcceptEvent,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { Position } from '../../../common/core/position.js';
-import { findLast } from '../../../../base/common/arraysFind.js';
-import { IQuickAccessProviderRunOptions } from '../../../../platform/quickinput/common/quickAccess.js';
-import { URI } from '../../../../base/common/uri.js';
+import { findLast } from '@sidex/base/common/arraysFind.js';
+import { IQuickAccessProviderRunOptions } from '@sidex/platform/quickinput/common/quickAccess.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 export interface IGotoSymbolQuickPickItem extends IQuickPickItem {
 	kind: SymbolKind;

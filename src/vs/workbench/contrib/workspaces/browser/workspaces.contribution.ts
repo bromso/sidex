@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as WorkbenchExtensions,
 	IWorkbenchContributionsRegistry,
@@ -16,26 +16,26 @@ import {
 	IWorkspaceContextService,
 	WorkbenchState,
 	WORKSPACE_SUFFIX
-} from '../../../../platform/workspace/common/workspace.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import {
 	INeverShowAgainOptions,
 	INotificationService,
 	NeverShowAgainScope,
 	NotificationPriority,
 	Severity
-} from '../../../../platform/notification/common/notification.js';
-import { URI } from '../../../../base/common/uri.js';
-import { isEqual, joinPath } from '../../../../base/common/resources.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { isEqual, joinPath } from '@sidex/base/common/resources.js';
 import { IHostService } from '../../../services/host/browser/host.js';
-import { IQuickInputService, IQuickPickItem } from '../../../../platform/quickinput/common/quickInput.js';
-import { IStorageService, StorageScope } from '../../../../platform/storage/common/storage.js';
-import { isVirtualWorkspace } from '../../../../platform/workspace/common/virtualWorkspace.js';
-import { Action2, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
+import { IQuickInputService, IQuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
+import { isVirtualWorkspace } from '@sidex/platform/workspace/common/virtualWorkspace.js';
+import { Action2, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
 import { ActiveEditorContext, ResourceContextKey, TemporaryWorkspaceContext } from '../../../common/contextkeys.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { TEXT_FILE_EDITOR_ID } from '../../files/common/files.js';
 
 /**

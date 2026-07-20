@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mapValues } from '../../../../base/common/objects.js';
+import { mapValues } from '@sidex/base/common/objects.js';
 import { TestResultState } from './testTypes.js';
 
 export type TreeStateNode = { statusNode: true; state: TestResultState; priority: number };

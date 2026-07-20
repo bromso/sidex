@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ContentWidgetPositionPreference,
 	ICodeEditor,
@@ -13,7 +13,7 @@ import {
 } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { IPosition, Position } from '../../../common/core/position.js';
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 
 const TOP_HEIGHT = 30;
 const BOTTOM_HEIGHT = 24;

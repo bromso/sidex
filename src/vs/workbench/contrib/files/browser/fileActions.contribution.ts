@@ -42,9 +42,9 @@ import {
 	acceptLocalChangesCommand,
 	CONFLICT_RESOLUTION_CONTEXT
 } from './editors/textFileSaveErrorHandler.js';
-import { MenuId, MenuRegistry, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { ICommandAction } from '../../../../platform/action/common/action.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
+import { MenuId, MenuRegistry, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { ICommandAction } from '@sidex/platform/action/common/action.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import { openWindowCommand, newWindowCommand } from './fileCommands.js';
 import {
 	COPY_PATH_COMMAND_ID,
@@ -76,9 +76,9 @@ import {
 	SAVE_ALL_COMMAND_ID,
 	OpenEditorsSelectedFileOrUntitledContext
 } from './fileConstants.js';
-import { CommandsRegistry, ICommandHandler } from '../../../../platform/commands/common/commands.js';
-import { ContextKeyExpr, ContextKeyExpression } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { CommandsRegistry, ICommandHandler } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr, ContextKeyExpression } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	FilesExplorerFocusCondition,
 	ExplorerRootContext,
@@ -98,8 +98,8 @@ import {
 	REOPEN_WITH_COMMAND_ID
 } from '../../../browser/parts/editor/editorCommands.js';
 import { AutoSaveAfterShortDelayContext } from '../../../services/filesConfiguration/common/filesConfigurationService.js';
-import { WorkbenchListDoubleSelection } from '../../../../platform/list/browser/listService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { WorkbenchListDoubleSelection } from '@sidex/platform/list/browser/listService.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import {
 	DirtyWorkingCopiesContext,
 	EnterMultiRootWorkspaceSupportContext,
@@ -115,12 +115,12 @@ import {
 	TwoEditorsSelectedInGroupContext,
 	SelectedEditorsInGroupFileOrUntitledResourceContextKey
 } from '../../../common/contextkeys.js';
-import { IsWebContext } from '../../../../platform/contextkey/common/contextkeys.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IsWebContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { IExplorerService } from './files.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 
 // Contribute Global Actions
 

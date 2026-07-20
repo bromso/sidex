@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise } from '../../../base/common/async.js';
+import { CancelablePromise } from '@sidex/base/common/async.js';
 
-import { Emitter } from '../../../base/common/event.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { IIPCLogger } from '../../../base/parts/ipc/common/ipc.js';
-import { Client, PersistentProtocol } from '../../../base/parts/ipc/common/ipc.net.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IIPCLogger } from '@sidex/base/parts/ipc/common/ipc.js';
+import { Client, PersistentProtocol } from '@sidex/base/parts/ipc/common/ipc.net.js';
 import { ILogService } from '../../log/common/log.js';
 import { RemoteAgentConnectionContext } from './remoteAgentEnvironment.js';
 import { RemoteConnection } from './remoteAuthorityResolver.js';

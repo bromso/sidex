@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../base/browser/dom.js';
-import { FastDomNode, createFastDomNode } from '../../base/browser/fastDomNode.js';
-import { IMouseWheelEvent } from '../../base/browser/mouseEvent.js';
-import { inputLatency } from '../../base/browser/performance.js';
-import { CodeWindow } from '../../base/browser/window.js';
-import { BugIndicatingError, onUnexpectedError } from '../../base/common/errors.js';
-import { Disposable, DisposableStore, IDisposable } from '../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
+import { inputLatency } from '@sidex/base/browser/performance.js';
+import { CodeWindow } from '@sidex/base/browser/window.js';
+import { BugIndicatingError, onUnexpectedError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IPointerHandlerHelper } from './controller/mouseHandler.js';
 import { PointerHandlerLastRenderData } from './controller/mouseTarget.js';
 import { PointerHandler } from './controller/pointerHandler.js';
@@ -66,8 +66,8 @@ import * as viewEvents from '../common/viewEvents.js';
 import { ViewportData } from '../common/viewLayout/viewLinesViewportData.js';
 import { IViewModel } from '../common/viewModel.js';
 import { ViewContext } from '../common/viewModel/viewContext.js';
-import { IInstantiationService } from '../../platform/instantiation/common/instantiation.js';
-import { IColorTheme, getThemeTypeSelector } from '../../platform/theme/common/themeService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IColorTheme, getThemeTypeSelector } from '@sidex/platform/theme/common/themeService.js';
 import { ViewGpuContext } from './gpu/viewGpuContext.js';
 import { ViewLinesGpu } from './viewParts/viewLinesGpu/viewLinesGpu.js';
 import { AbstractEditContext } from './controller/editContext/editContext.js';
@@ -76,9 +76,9 @@ import { IVisibleRangeProvider, TextAreaEditContext } from './controller/editCon
 import { NativeEditContext } from './controller/editContext/native/nativeEditContext.js';
 import { RulersGpu } from './viewParts/rulersGpu/rulersGpu.js';
 import { GpuMarkOverlay } from './viewParts/gpuMark/gpuMark.js';
-import { AccessibilitySupport } from '../../platform/accessibility/common/accessibility.js';
-import { Event, Emitter } from '../../base/common/event.js';
-import { IUserInteractionService } from '../../platform/userInteraction/browser/userInteractionService.js';
+import { AccessibilitySupport } from '@sidex/platform/accessibility/common/accessibility.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
 
 export interface IContentWidgetData {
 	widget: IContentWidget;

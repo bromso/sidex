@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { BugIndicatingError } from '../../../../base/common/errors.js';
-import { NKeyMap } from '../../../../base/common/map.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { NKeyMap } from '@sidex/base/common/map.js';
 import { ensureNonNullable } from '../gpuUtils.js';
 import type { IRasterizedGlyph } from '../raster/raster.js';
 import { UsagePreviewColors, type ITextureAtlasAllocator, type ITextureAtlasPageGlyph } from './atlas.js';

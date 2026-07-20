@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './overlayWidgets.css';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
 import {
 	IOverlayWidget,
 	IOverlayWidgetPosition,
@@ -16,7 +16,7 @@ import { RenderingContext, RestrictedRenderingContext } from '../../view/renderi
 import { ViewContext } from '../../../common/viewModel/viewContext.js';
 import * as viewEvents from '../../../common/viewEvents.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
-import * as dom from '../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 
 interface IWidgetData {
 	widget: IOverlayWidget;

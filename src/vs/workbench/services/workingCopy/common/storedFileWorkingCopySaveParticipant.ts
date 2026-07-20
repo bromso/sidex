@@ -3,24 +3,24 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { raceCancellation } from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { raceCancellation } from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	IProgress,
 	IProgressService,
 	IProgressStep,
 	ProgressLocation
-} from '../../../../platform/progress/common/progress.js';
-import { IDisposable, Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/progress/common/progress.js';
+import { IDisposable, Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IStoredFileWorkingCopySaveParticipant,
 	IStoredFileWorkingCopySaveParticipantContext
 } from './workingCopyFileService.js';
 import { IStoredFileWorkingCopy, IStoredFileWorkingCopyModel } from './storedFileWorkingCopy.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { CancellationError, isCancellationError } from '../../../../base/common/errors.js';
-import { NotificationPriority } from '../../../../platform/notification/common/notification.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { CancellationError, isCancellationError } from '@sidex/base/common/errors.js';
+import { NotificationPriority } from '@sidex/platform/notification/common/notification.js';
 import { localize } from '@sidex/base/nls.js';
 
 export class StoredFileWorkingCopySaveParticipant extends Disposable {

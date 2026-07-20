@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { registerColor, editorBackground } from '../../../../platform/theme/common/colorRegistry.js';
+import { registerColor, editorBackground } from '@sidex/platform/theme/common/colorRegistry.js';
 
 export const multiDiffEditorHeaderBackground = registerColor(
 	'multiDiffEditor.headerBackground',

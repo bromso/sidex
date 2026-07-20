@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IActiveCodeEditor } from '../../../browser/editorBrowser.js';
 import { Position } from '../../../common/core/position.js';
 import { Range } from '../../../common/core/range.js';
@@ -16,8 +16,8 @@ import {
 	TrackedRangeStickiness
 } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
-import { minimapFindMatch, overviewRulerFindMatchForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+import { minimapFindMatch, overviewRulerFindMatchForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 
 export class FindDecorations implements IDisposable {
 	private readonly _editor: IActiveCodeEditor;

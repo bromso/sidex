@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, append, hide, show } from '../../../../base/browser/dom.js';
-import { IconLabel, IIconLabelValueOptions } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
-import { IListRenderer } from '../../../../base/browser/ui/list/list.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { createMatches } from '../../../../base/common/filters.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { $, append, hide, show } from '@sidex/base/browser/dom.js';
+import { IconLabel, IIconLabelValueOptions } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
+import { IListRenderer } from '@sidex/base/browser/ui/list/list.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { createMatches } from '@sidex/base/common/filters.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 import { CompletionItemKind, CompletionItemKinds, CompletionItemTag } from '../../../common/languages.js';
@@ -19,9 +19,9 @@ import { getIconClasses } from '../../../common/services/getIconClasses.js';
 import { IModelService } from '../../../common/services/model.js';
 import { ILanguageService } from '../../../common/languages/language.js';
 import * as nls from '@sidex/base/nls.js';
-import { FileKind } from '../../../../platform/files/common/files.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { CompletionItem } from './suggest.js';
 import { canExpandCompletionItem } from './suggestWidgetDetails.js';
 

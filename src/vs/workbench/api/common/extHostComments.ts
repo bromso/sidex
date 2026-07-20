@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { asPromise } from '../../../base/common/async.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { debounce } from '../../../base/common/decorators.js';
-import { Emitter } from '../../../base/common/event.js';
-import { DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IRange } from '../../../editor/common/core/range.js';
-import * as languages from '../../../editor/common/languages.js';
-import { ExtensionIdentifierMap, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { asPromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { ExtensionIdentifierMap, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { ExtHostDocuments } from './extHostDocuments.js';
 import * as extHostTypeConverter from './extHostTypeConverters.js';
 import * as types from './extHostTypes.js';

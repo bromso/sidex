@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import './bracketMatching.css';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
@@ -24,10 +24,10 @@ import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { IModelDeltaDecoration, OverviewRulerLane, TrackedRangeStickiness } from '../../../common/model.js';
 import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId, MenuRegistry } from '../../../../platform/actions/common/actions.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { registerColor } from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant, themeColorFromId } from '../../../../platform/theme/common/themeService.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant, themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
 import { editorBracketMatchForeground } from '../../../common/core/editorColorRegistry.js';
 
 const overviewRulerBracketMatchForeground = registerColor(

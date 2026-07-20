@@ -5,9 +5,9 @@
 
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { localize } from '@sidex/base/nls.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 
 const DisassemblyEditorIcon = registerIcon(
 	'disassembly-editor-label-icon',

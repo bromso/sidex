@@ -6,10 +6,10 @@
 import '../common/markdownColors.js';
 import './media/markdown.css';
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {

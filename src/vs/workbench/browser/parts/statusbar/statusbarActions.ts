@@ -5,18 +5,18 @@
 
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { IStatusbarService } from '../../../services/statusbar/browser/statusbar.js';
-import { Action } from '../../../../base/common/actions.js';
+import { Action } from '@sidex/base/common/actions.js';
 import { Parts, IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { StatusbarViewModel } from './statusbarModel.js';
 import { StatusBarFocused } from '../../../common/contextkeys.js';
-import { getActiveWindow } from '../../../../base/browser/dom.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+import { getActiveWindow } from '@sidex/base/browser/dom.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 
 export class ToggleStatusbarEntryVisibilityAction extends Action {
 	constructor(

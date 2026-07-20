@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IQuickInputService,
 	IKeyMods,
@@ -12,27 +12,27 @@ import {
 	IQuickPickSeparator,
 	IQuickInputButton,
 	IQuickPickItem
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IExtensionTerminalProfile,
 	ITerminalProfile,
 	ITerminalProfileObject,
 	TerminalSettingPrefix,
 	type ITerminalExecutable
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { getUriClasses, getColorClass, createColorStyleElement } from './terminalIcon.js';
 import { configureTerminalProfileIcon } from './terminalIcons.js';
 import * as nls from '@sidex/base/nls.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ITerminalProfileResolverService, ITerminalProfileService } from '../common/terminal.js';
 import { IQuickPickTerminalObject, ITerminalInstance } from './terminal.js';
-import { IPickerQuickAccessItem } from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { getIconRegistry } from '../../../../platform/theme/common/iconRegistry.js';
-import { basename } from '../../../../base/common/path.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { hasKey, isString } from '../../../../base/common/types.js';
-import { Event } from '../../../../base/common/event.js';
+import { IPickerQuickAccessItem } from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { getIconRegistry } from '@sidex/platform/theme/common/iconRegistry.js';
+import { basename } from '@sidex/base/common/path.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { hasKey, isString } from '@sidex/base/common/types.js';
+import { Event } from '@sidex/base/common/event.js';
 
 type DefaultProfileName = string;
 export class TerminalProfileQuickpick {

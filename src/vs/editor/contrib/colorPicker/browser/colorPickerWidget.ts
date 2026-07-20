@@ -4,12 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 
 import './colorPicker.css';
-import { PixelRatio } from '../../../../base/browser/pixelRatio.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
+import { PixelRatio } from '@sidex/base/browser/pixelRatio.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
 import { ColorPickerModel } from './colorPickerModel.js';
 import { IEditorHoverColorPickerWidget } from '../../hover/browser/hoverTypes.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ColorPickerBody } from './colorPickerParts/colorPickerBody.js';
 import { ColorPickerHeader } from './colorPickerParts/colorPickerHeader.js';
 import { ColorPickerWidgetType } from './colorPickerParticipantUtils.js';

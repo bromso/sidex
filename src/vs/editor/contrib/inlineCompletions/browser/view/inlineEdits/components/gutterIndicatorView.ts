@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { n } from '../../../../../../../base/browser/dom.js';
-import { renderIcon } from '../../../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Codicon } from '../../../../../../../base/common/codicons.js';
-import { BugIndicatingError } from '../../../../../../../base/common/errors.js';
-import { Disposable, DisposableStore, toDisposable } from '../../../../../../../base/common/lifecycle.js';
+import { n } from '@sidex/base/browser/dom.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
+import { Disposable, DisposableStore, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	ISettableObservable,
@@ -18,17 +18,17 @@ import {
 	observableFromEvent,
 	observableValue,
 	runOnChange
-} from '../../../../../../../base/common/observable.js';
-import { IAccessibilityService } from '../../../../../../../platform/accessibility/common/accessibility.js';
-import { IHoverService } from '../../../../../../../platform/hover/browser/hover.js';
-import { IInstantiationService } from '../../../../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/common/observable.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IEditorMouseEvent } from '../../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import { Point } from '../../../../../../common/core/2d/point.js';
 import { Rect } from '../../../../../../common/core/2d/rect.js';
-import { HoverService } from '../../../../../../../platform/hover/browser/hoverService.js';
-import { HoverWidget } from '../../../../../../../platform/hover/browser/hoverWidget.js';
+import { HoverService } from '@sidex/platform/hover/browser/hoverService.js';
+import { HoverWidget } from '@sidex/platform/hover/browser/hoverWidget.js';
 import { EditorOption, RenderLineNumbersType } from '../../../../../../common/config/editorOptions.js';
 import { LineRange } from '../../../../../../common/core/ranges/lineRange.js';
 import { OffsetRange } from '../../../../../../common/core/ranges/offsetRange.js';
@@ -50,16 +50,16 @@ import {
 } from '../theme.js';
 import { mapOutFalsy, rectToProps } from '../utils/utils.js';
 import { GutterIndicatorMenuContent } from './gutterIndicatorMenu.js';
-import { assertNever } from '../../../../../../../base/common/assert.js';
+import { assertNever } from '@sidex/base/common/assert.js';
 import { Command, InlineCompletionCommand, IInlineCompletionModelInfo } from '../../../../../../common/languages.js';
 import { InlineSuggestionItem } from '../../../model/inlineSuggestionItem.js';
 import { localize } from '@sidex/base/nls.js';
 import { InlineCompletionsModel } from '../../../model/inlineCompletionsModel.js';
 import { InlineSuggestAlternativeAction } from '../../../model/InlineSuggestAlternativeAction.js';
-import { asCssVariable } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { ThemeIcon } from '../../../../../../../base/common/themables.js';
-import { IUserInteractionService } from '../../../../../../../platform/userInteraction/browser/userInteractionService.js';
-import { Event, Emitter } from '../../../../../../../base/common/event.js';
+import { asCssVariable } from '@sidex/platform/theme/common/colorUtils.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IUserInteractionService } from '@sidex/platform/userInteraction/browser/userInteractionService.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 
 /**
  * Customization options for the gutter indicator appearance and behavior.

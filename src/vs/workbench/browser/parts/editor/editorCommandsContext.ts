@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveElement } from '../../../../base/browser/dom.js';
-import { List } from '../../../../base/browser/ui/list/listWidget.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IListService } from '../../../../platform/list/browser/listService.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
+import { List } from '@sidex/base/browser/ui/list/listWidget.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IListService } from '@sidex/platform/list/browser/listService.js';
 import {
 	IEditorCommandsContext,
 	isEditorCommandsContext,

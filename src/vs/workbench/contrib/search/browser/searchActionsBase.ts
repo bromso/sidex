@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as DOM from '../../../../base/browser/dom.js';
+import * as DOM from '@sidex/base/browser/dom.js';
 import * as nls from '@sidex/base/nls.js';
-import { WorkbenchCompressibleAsyncDataTree } from '../../../../platform/list/browser/listService.js';
+import { WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
 import { SearchView } from './searchView.js';
 import { ISearchConfigurationProperties, VIEW_ID } from '../../../services/search/common/search.js';

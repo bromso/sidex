@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { asCSSUrl } from '../../../base/browser/cssValue.js';
-import { $, addDisposableListener, append, EventType, ModifierKeyEmitter, prepend } from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
+import { asCSSUrl } from '@sidex/base/browser/cssValue.js';
+import { $, addDisposableListener, append, EventType, ModifierKeyEmitter, prepend } from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
 import {
 	ActionViewItem,
 	BaseActionViewItem,
 	SelectActionViewItem
-} from '../../../base/browser/ui/actionbar/actionViewItems.js';
+} from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import {
 	DropdownMenuActionViewItem,
 	IDropdownMenuActionViewItemOptions
-} from '../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { IHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegate.js';
-import { SeparatorSelectOption } from '../../../base/browser/ui/selectBox/selectBox.js';
+} from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { SeparatorSelectOption } from '@sidex/base/browser/ui/selectBox/selectBox.js';
 import {
 	ActionRunner,
 	IAction,
@@ -24,20 +24,20 @@ import {
 	IRunEvent,
 	Separator,
 	SubmenuAction
-} from '../../../base/common/actions.js';
-import { Event } from '../../../base/common/event.js';
-import { UILabelProvider } from '../../../base/common/keybindingLabels.js';
-import { ResolvedKeybinding } from '../../../base/common/keybindings.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+} from '@sidex/base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { UILabelProvider } from '@sidex/base/common/keybindingLabels.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	combinedDisposable,
 	DisposableStore,
 	MutableDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
-import { isLinux, isWindows, OS } from '../../../base/common/platform.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { assertType } from '../../../base/common/types.js';
+} from '@sidex/base/common/lifecycle.js';
+import { isLinux, isWindows, OS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { assertType } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { ICommandAction, isICommandActionToggleInfo } from '../../action/common/action.js';
@@ -50,7 +50,7 @@ import { INotificationService } from '../../notification/common/notification.js'
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
 import { defaultSelectBoxStyles } from '../../theme/browser/defaultStyles.js';
 import { asCssVariable, selectBorder } from '../../theme/common/colorRegistry.js';
-import { ClickAnimation, triggerClickAnimation } from '../../../base/browser/ui/animations/animations.js';
+import { ClickAnimation, triggerClickAnimation } from '@sidex/base/browser/ui/animations/animations.js';
 import { isDark } from '../../theme/common/theme.js';
 import { IThemeService } from '../../theme/common/themeService.js';
 import { hasNativeContextMenu } from '../../window/common/window.js';

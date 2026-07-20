@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, IValueWithChangeEvent } from '../../../../base/common/event.js';
+import { Event, IValueWithChangeEvent } from '@sidex/base/common/event.js';
 import { RefCounted } from '../diffEditor/utils.js';
 import { IDiffEditorOptions } from '../../../common/config/editorOptions.js';
 import { ITextModel } from '../../../common/model.js';
-import { ContextKeyValue } from '../../../../platform/contextkey/common/contextkey.js';
+import { ContextKeyValue } from '@sidex/platform/contextkey/common/contextkey.js';
 
 export interface IMultiDiffEditorModel {
 	readonly documents: IValueWithChangeEvent<readonly RefCounted<IDocumentDiffItem>[] | 'loading'>;

@@ -6,13 +6,13 @@
 import { ProgressOptions } from 'vscode';
 import { MainThreadProgressShape, ExtHostProgressShape, MainContext } from './extHost.protocol.js';
 import { ProgressLocation } from './extHostTypeConverters.js';
-import { Progress, IProgressStep } from '../../../platform/progress/common/progress.js';
-import { CancellationTokenSource, CancellationToken } from '../../../base/common/cancellation.js';
-import { throttle } from '../../../base/common/decorators.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { onUnexpectedExternalError } from '../../../base/common/errors.js';
-import { INotificationSource } from '../../../platform/notification/common/notification.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { Progress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import { CancellationTokenSource, CancellationToken } from '@sidex/base/common/cancellation.js';
+import { throttle } from '@sidex/base/common/decorators.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { INotificationSource } from '@sidex/platform/notification/common/notification.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 
 export interface IExtHostProgress extends ExtHostProgress {}

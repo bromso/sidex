@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { setTimeout0 } from '../../../../../base/common/platform.js';
-import { StopWatch } from '../../../../../base/common/stopwatch.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { setTimeout0 } from '@sidex/base/common/platform.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
 import { LanguageId } from '../../../encodedTokenAttributes.js';
 import { ILanguageIdCodec, QueryCapture } from '../../../languages.js';
 import { IModelContentChangedEvent, IModelTokensChangedEvent } from '../../../textModelEvents.js';
@@ -21,14 +21,14 @@ import {
 	IObservable,
 	recordChanges,
 	runOnChange
-} from '../../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { LineRange } from '../../../core/ranges/lineRange.js';
 import { LineTokens } from '../../../tokens/lineTokens.js';
 import { Position } from '../../../core/position.js';
 import { Range } from '../../../core/range.js';
-import { isDefined } from '../../../../../base/common/types.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import { ITreeSitterThemeService } from '../../../services/treeSitter/treeSitterThemeService.js';
-import { BugIndicatingError } from '../../../../../base/common/errors.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 
 export class TreeSitterTokenizationImpl extends Disposable {
 	private readonly _tokenStore: TokenStore;

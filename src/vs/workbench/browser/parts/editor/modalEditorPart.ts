@@ -16,30 +16,30 @@ import {
 	isHTMLElement,
 	setVisibility,
 	show
-} from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar, prepareActions } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { Button } from '../../../../base/browser/ui/button/button.js';
-import { Action } from '../../../../base/common/actions.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { Orientation, Sash, SashState } from '../../../../base/browser/ui/sash/sash.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { DisposableStore, MutableDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { ResizableHTMLElement } from '../../../../base/browser/ui/resizable/resizable.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
+} from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar, prepareActions } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { Action } from '@sidex/base/common/actions.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { Orientation, Sash, SashState } from '@sidex/base/browser/ui/sash/sash.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResizableHTMLElement } from '@sidex/base/browser/ui/resizable/resizable.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 import {
 	HiddenItemStrategy,
 	MenuWorkbenchToolBar,
 	WorkbenchToolBar
-} from '../../../../platform/actions/browser/toolbar.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResultKind } from '../../../../platform/keybinding/common/keybindingResolver.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/actions/browser/toolbar.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResultKind } from '@sidex/platform/keybinding/common/keybindingResolver.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IEditorGroupView, IEditorPartsView } from './editor.js';
 import { EditorPart } from './editorPart.js';
 import {
@@ -61,9 +61,9 @@ import { EditorInput } from '../../../common/editor/editorInput.js';
 import { ResourceLabel } from '../../labels.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { IWorkbenchLayoutService, Parts } from '../../../services/layout/browser/layoutService.js';
-import { mainWindow } from '../../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { localize } from '@sidex/base/nls.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import {
 	CLOSE_MODAL_EDITOR_COMMAND_ID,
 	MOVE_MODAL_EDITOR_TO_MAIN_COMMAND_ID,
@@ -77,7 +77,7 @@ import {
 	IModalEditorNavigation,
 	IModalEditorPartOptions,
 	IModalEditorSidebar
-} from '../../../../platform/editor/common/editor.js';
+} from '@sidex/platform/editor/common/editor.js';
 
 const MODAL_MIN_WIDTH = 400;
 const MODAL_MIN_HEIGHT = 300;

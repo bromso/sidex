@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { binarySearch } from '../../../../base/common/arrays.js';
-import { Event } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { IModelDeltaDecoration } from '../../../../editor/common/model.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { binarySearch } from '@sidex/base/common/arrays.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { IModelDeltaDecoration } from '@sidex/editor/common/model.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ITestMessage } from './testTypes.js';
 
 export interface ITestingDecorationsService {

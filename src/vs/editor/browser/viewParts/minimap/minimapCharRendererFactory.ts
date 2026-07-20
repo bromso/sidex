@@ -6,7 +6,7 @@
 import { MinimapCharRenderer } from './minimapCharRenderer.js';
 import { allCharCodes, Constants } from './minimapCharSheet.js';
 import { prebakedMiniMaps } from './minimapPreBaked.js';
-import { toUint8 } from '../../../../base/common/uint.js';
+import { toUint8 } from '@sidex/base/common/uint.js';
 
 /**
  * Creates character renderers. It takes a 'scale' that determines how large

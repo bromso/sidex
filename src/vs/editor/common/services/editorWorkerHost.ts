@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IWebWorkerServer, IWebWorkerClient } from '../../../base/common/worker/webWorker.js';
+import { IWebWorkerServer, IWebWorkerClient } from '@sidex/base/common/worker/webWorker.js';
 
 export abstract class EditorWorkerHost {
 	public static CHANNEL_NAME = 'editorWorkerHost';

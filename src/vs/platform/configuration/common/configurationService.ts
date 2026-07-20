@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct, equals as arrayEquals } from '../../../base/common/arrays.js';
-import { Queue, RunOnceScheduler } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { JSONPath, ParseError, parse } from '../../../base/common/json.js';
-import { applyEdits, setProperty } from '../../../base/common/jsonEdit.js';
-import { Edit, FormattingOptions } from '../../../base/common/jsonFormatter.js';
-import { Disposable, IDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { equals } from '../../../base/common/objects.js';
-import { OS, OperatingSystem } from '../../../base/common/platform.js';
-import { extUriBiasedIgnorePathCase } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { distinct, equals as arrayEquals } from '@sidex/base/common/arrays.js';
+import { Queue, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { JSONPath, ParseError, parse } from '@sidex/base/common/json.js';
+import { applyEdits, setProperty } from '@sidex/base/common/jsonEdit.js';
+import { Edit, FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { equals } from '@sidex/base/common/objects.js';
+import { OS, OperatingSystem } from '@sidex/base/common/platform.js';
+import { extUriBiasedIgnorePathCase } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	ConfigurationTarget,
 	IConfigurationChange,

@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { LogLevel } from '../../../../platform/log/common/log.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { LogLevel } from '@sidex/platform/log/common/log.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 /**
  * Mime type used by the output editor.

@@ -9,7 +9,7 @@ import {
 	DisposableStore,
 	IDisposable,
 	toDisposable
-} from '../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
 import { IExtHostContext, extHostNamedCustomer } from '../../services/extensions/common/extHostCustomers.js';
 import {
@@ -20,13 +20,13 @@ import {
 	MainThreadBrowsersShape
 } from '../common/extHost.protocol.js';
 import { IBrowserViewCDPService } from '../../contrib/browserView/common/browserView.js';
-import { BrowserViewUri } from '../../../platform/browserView/common/browserViewUri.js';
-import { generateUuid } from '../../../base/common/uuid.js';
+import { BrowserViewUri } from '@sidex/platform/browserView/common/browserViewUri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { EditorGroupColumn, columnToEditorGroup } from '../../services/editor/common/editorGroupColumn.js';
 import { IEditorGroupsService } from '../../services/editor/common/editorGroupsService.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { IEditorOptions } from '../../../platform/editor/common/editor.js';
-import { CDPRequest } from '../../../platform/browserView/common/cdp/types.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { CDPRequest } from '@sidex/platform/browserView/common/cdp/types.js';
 import { BrowserEditorInput } from '../../contrib/browserView/common/browserEditorInput.js';
 
 @extHostNamedCustomer(MainContext.MainThreadBrowsers)

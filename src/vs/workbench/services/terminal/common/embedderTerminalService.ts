@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	IProcessDataEvent,
 	IProcessProperty,
@@ -15,8 +15,8 @@ import {
 	ITerminalChildProcess,
 	ITerminalLaunchError,
 	ProcessPropertyType
-} from '../../../../platform/terminal/common/terminal.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 
 export const IEmbedderTerminalService = createDecorator<IEmbedderTerminalService>('embedderTerminalService');
 

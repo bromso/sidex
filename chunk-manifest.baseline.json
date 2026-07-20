@@ -21,7 +21,7 @@
   },
   {
     "name": "core.js",
-    "size": 6541667
+    "size": 6541668
   },
   {
     "name": "dialog.js",
@@ -33,7 +33,7 @@
   },
   {
     "name": "editorWebWorkerMain.js",
-    "size": 545
+    "size": 543
   },
   {
     "name": "editorWorker.js",
@@ -89,7 +89,7 @@
   },
   {
     "name": "textMateTokenizationWorker.workerMain.js",
-    "size": 544
+    "size": 533
   },
   {
     "name": "textMateWorker.js",
@@ -129,7 +129,7 @@
   },
   {
     "name": "workbench.common.main.js",
-    "size": 4061113
+    "size": 4061105
   },
   {
     "name": "workbench.web.css",

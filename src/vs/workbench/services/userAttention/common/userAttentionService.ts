@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable } from '../../../../base/common/observable.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 
 export const IUserAttentionService = createDecorator<IUserAttentionService>('userAttentionService');
 

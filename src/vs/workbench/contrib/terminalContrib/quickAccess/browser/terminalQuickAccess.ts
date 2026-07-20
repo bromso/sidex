@@ -4,29 +4,29 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IQuickPickSeparator } from '../../../../../platform/quickinput/common/quickInput.js';
+import { IQuickPickSeparator } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IPickerQuickAccessItem,
 	PickerQuickAccessProvider,
 	TriggerAction
-} from '../../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { matchesFuzzy } from '../../../../../base/common/filters.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { matchesFuzzy } from '@sidex/base/common/filters.js';
 import {
 	ITerminalEditorService,
 	ITerminalGroupService,
 	ITerminalInstance,
 	ITerminalService
 } from '../../../terminal/browser/terminal.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { TerminalCommandId } from '../../../terminal/common/terminal.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { killTerminalIcon, renameTerminalIcon } from '../../../terminal/browser/terminalIcons.js';
 import { getColorClass, getIconId, getUriClasses } from '../../../terminal/browser/terminalIcon.js';
 import { terminalStrings } from '../../../terminal/common/terminalStrings.js';
-import { TerminalLocation } from '../../../../../platform/terminal/common/terminal.js';
+import { TerminalLocation } from '@sidex/platform/terminal/common/terminal.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 let terminalPicks: Array<IPickerQuickAccessItem | IQuickPickSeparator> = [];
 
 export class TerminalQuickAccessProvider extends PickerQuickAccessProvider<IPickerQuickAccessItem> {

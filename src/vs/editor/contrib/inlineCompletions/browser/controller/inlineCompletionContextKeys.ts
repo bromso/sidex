@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { RawContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { localize } from '@sidex/base/nls.js';
 import * as nls from '@sidex/base/nls.js';
 

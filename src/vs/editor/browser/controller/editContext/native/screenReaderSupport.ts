@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode } from '../../../../../base/browser/fastDomNode.js';
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { FontInfo } from '../../../../common/config/fontInfo.js';
 import { Selection } from '../../../../common/core/selection.js';

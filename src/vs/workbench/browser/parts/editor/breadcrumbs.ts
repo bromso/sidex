@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BreadcrumbsWidget } from '../../../../base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import * as glob from '../../../../base/common/glob.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { BreadcrumbsWidget } from '@sidex/base/browser/ui/breadcrumbs/breadcrumbsWidget.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IConfigurationOverrides,
 	IConfigurationService
-} from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/configuration/common/configuration.js';
 import {
 	Extensions,
 	IConfigurationRegistry,
 	ConfigurationScope
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { GroupIdentifier, IEditorPartOptions } from '../../../common/editor.js';
 
 export const IBreadcrumbsService = createDecorator<IBreadcrumbsService>('IEditorBreadcrumbsService');

@@ -4,20 +4,20 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
-import { Disposable, IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkingCopyService } from './workingCopyService.js';
 import { IWorkingCopy, IWorkingCopyIdentifier, WorkingCopyCapabilities } from './workingCopy.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	ShutdownReason,
 	ILifecycleService,
 	LifecyclePhase,
 	InternalBeforeShutdownEvent
 } from '../../lifecycle/common/lifecycle.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 import { IWorkingCopyEditorHandler, IWorkingCopyEditorService } from './workingCopyEditorService.js';
-import { Promises } from '../../../../base/common/async.js';
+import { Promises } from '@sidex/base/common/async.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { EditorsOrder } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';

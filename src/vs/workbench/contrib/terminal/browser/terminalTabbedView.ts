@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { LayoutPriority, Orientation, Sizing, SplitView } from '../../../../base/browser/ui/splitview/splitview.js';
-import { Disposable, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { Event } from '../../../../base/common/event.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { LayoutPriority, Orientation, Sizing, SplitView } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { Disposable, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ITerminalConfigurationService,
 	ITerminalGroupService,
@@ -17,22 +17,22 @@ import {
 	TerminalDataTransfers
 } from './terminal.js';
 import { TerminalTabsListSizes, TerminalTabList } from './terminalTabsList.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { Action, IAction, Separator } from '../../../../base/common/actions.js';
-import { IMenu, IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { TerminalSettingId } from '../../../../platform/terminal/common/terminal.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
+import { IMenu, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { localize } from '@sidex/base/nls.js';
 import { openContextMenu } from './terminalContextMenu.js';
 import { TerminalStorageKeys } from '../common/terminalStorageKeys.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
 import { getInstanceHoverInfo } from './terminalTooltip.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { containsDragType } from '../../../../platform/dnd/browser/dnd.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { containsDragType } from '@sidex/platform/dnd/browser/dnd.js';
 import { getTerminalResourcesFromDragEvent, parseTerminalUri } from './terminalUri.js';
-import type { IProcessDetails } from '../../../../platform/terminal/common/terminalProcess.js';
+import type { IProcessDetails } from '@sidex/platform/terminal/common/terminalProcess.js';
 
 const $ = dom.$;
 

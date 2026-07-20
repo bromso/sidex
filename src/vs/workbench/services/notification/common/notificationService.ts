@@ -22,13 +22,13 @@ import {
 	INotificationSourceFilter,
 	isNotificationSource,
 	IStatusHandle
-} from '../../../../platform/notification/common/notification.js';
+} from '@sidex/platform/notification/common/notification.js';
 import { NotificationsModel, ChoiceAction, NotificationChangeType } from '../../../common/notifications.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IAction, Action } from '../../../../base/common/actions.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IAction, Action } from '@sidex/base/common/actions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 
 export class NotificationService extends Disposable implements INotificationService {
 	declare readonly _serviceBrand: undefined;

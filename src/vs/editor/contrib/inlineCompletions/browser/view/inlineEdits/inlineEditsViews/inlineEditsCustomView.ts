@@ -2,9 +2,9 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { n } from '../../../../../../../base/browser/dom.js';
-import { Emitter } from '../../../../../../../base/common/event.js';
-import { Disposable } from '../../../../../../../base/common/lifecycle.js';
+import { n } from '@sidex/base/browser/dom.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	constObservable,
@@ -13,8 +13,8 @@ import {
 	IObservable,
 	IReader,
 	observableValue
-} from '../../../../../../../base/common/observable.js';
-import { IThemeService } from '../../../../../../../platform/theme/common/themeService.js';
+} from '@sidex/base/common/observable.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { ICodeEditor } from '../../../../../../browser/editorBrowser.js';
 import { ObservableCodeEditor, observableCodeEditor } from '../../../../../../browser/observableCodeEditor.js';
 import {

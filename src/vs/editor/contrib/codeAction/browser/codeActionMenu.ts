@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import '../../../../base/browser/ui/codicons/codiconStyles.js'; // The codicon symbol styles are defined here and must be loaded
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
+import '@sidex/base/browser/ui/codicons/codiconStyles.js'; // The codicon symbol styles are defined here and must be loaded
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { CodeAction } from '../../../common/languages.js';
 import { CodeActionItem, CodeActionKind } from '../common/types.js';
 import '../../symbolIcons/browser/symbolIcons.js'; // The codicon symbol colors are defined here and must be loaded to get colors
 import { localize } from '@sidex/base/nls.js';
-import { ActionListItemKind, IActionListItem } from '../../../../platform/actionWidget/browser/actionList.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
+import { ActionListItemKind, IActionListItem } from '@sidex/platform/actionWidget/browser/actionList.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
 
 interface ActionGroup {
 	readonly kind: HierarchicalKind;

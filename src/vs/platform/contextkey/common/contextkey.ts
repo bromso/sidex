@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CharCode } from '../../../base/common/charCode.js';
-import { Event } from '../../../base/common/event.js';
+import { CharCode } from '@sidex/base/common/charCode.js';
+import { Event } from '@sidex/base/common/event.js';
 import {
 	isChrome,
 	isEdge,
@@ -14,13 +14,13 @@ import {
 	isSafari,
 	isWeb,
 	isWindows
-} from '../../../base/common/platform.js';
-import { isFalsyOrWhitespace } from '../../../base/common/strings.js';
+} from '@sidex/base/common/platform.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
 import { Scanner, LexingError, Token, TokenType } from './scanner.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { localize } from '@sidex/base/nls.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
-import { illegalArgument } from '../../../base/common/errors.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { illegalArgument } from '@sidex/base/common/errors.js';
 
 const CONSTANT_VALUES = new Map<string, boolean>();
 CONSTANT_VALUES.set('false', false);

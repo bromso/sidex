@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { registerEditorCommand } from '../../../browser/editorExtensions.js';
 import {
 	DeleteWordContext,
@@ -16,8 +16,8 @@ import { Range } from '../../../common/core/range.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { ITextModel } from '../../../common/model.js';
 import { DeleteWordCommand, MoveWordCommand } from '../../wordOperations/browser/wordOperations.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 
 export class DeleteWordPartLeft extends DeleteWordCommand {
 	constructor() {

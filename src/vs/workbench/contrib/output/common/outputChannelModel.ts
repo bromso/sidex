@@ -3,39 +3,39 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import * as resources from '../../../../base/common/resources.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { IEditorWorkerService } from '../../../../editor/common/services/editorWorker.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Promises, ThrottledDelayer } from '../../../../base/common/async.js';
-import { FileOperationResult, IFileService, toFileOperationResult } from '../../../../platform/files/common/files.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILanguageSelection } from '../../../../editor/common/languages/language.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IEditorWorkerService } from '@sidex/editor/common/services/editorWorker.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Promises, ThrottledDelayer } from '@sidex/base/common/async.js';
+import { FileOperationResult, IFileService, toFileOperationResult } from '@sidex/platform/files/common/files.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILanguageSelection } from '@sidex/editor/common/languages/language.js';
 import {
 	Disposable,
 	toDisposable,
 	IDisposable,
 	MutableDisposable,
 	DisposableStore
-} from '../../../../base/common/lifecycle.js';
-import { isNumber } from '../../../../base/common/types.js';
-import { EditOperation, ISingleEditOperation } from '../../../../editor/common/core/editOperation.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { ILogger, ILoggerService, ILogService, LogLevel } from '../../../../platform/log/common/log.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+} from '@sidex/base/common/lifecycle.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { EditOperation, ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { ILogger, ILoggerService, ILogService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	ILogEntry,
 	IOutputContentSource,
 	LOG_MIME,
 	OutputChannelUpdateMode
 } from '../../../services/output/common/output.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { TextModel } from '../../../../editor/common/model/textModel.js';
-import { binarySearch, sortedDiff } from '../../../../base/common/arrays.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { TextModel } from '@sidex/editor/common/model/textModel.js';
+import { binarySearch, sortedDiff } from '@sidex/base/common/arrays.js';
 
 const LOG_ENTRY_REGEX =
 	/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})\s(\[(info|trace|debug|error|warning)\])\s(\[(.*?)\])?/;

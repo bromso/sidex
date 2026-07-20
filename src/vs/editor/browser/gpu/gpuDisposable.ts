@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { IReference } from '../../../base/common/lifecycle.js';
-import { isFunction } from '../../../base/common/types.js';
+import type { IReference } from '@sidex/base/common/lifecycle.js';
+import { isFunction } from '@sidex/base/common/types.js';
 
 export namespace GPULifecycle {
 	export async function requestDevice(fallback?: (message: string) => void): Promise<IReference<GPUDevice>> {

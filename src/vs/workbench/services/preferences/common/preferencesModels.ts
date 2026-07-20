@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { JSONVisitor, visit } from '../../../../base/common/json.js';
-import { Disposable, IReference } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { Selection } from '../../../../editor/common/core/selection.js';
-import { ITextModel } from '../../../../editor/common/model.js';
-import { ISingleEditOperation } from '../../../../editor/common/core/editOperation.js';
-import { ITextEditorModel } from '../../../../editor/common/services/resolverService.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { JSONVisitor, visit } from '@sidex/base/common/json.js';
+import { Disposable, IReference } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { ITextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import * as nls from '@sidex/base/nls.js';
-import { ConfigurationTarget, IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { ConfigurationTarget, IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	ConfigurationDefaultValueSource,
 	ConfigurationScope,
@@ -24,9 +24,9 @@ import {
 	IConfigurationRegistry,
 	IRegisteredConfigurationPropertySchema,
 	OVERRIDE_PROPERTY_REGEX
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { EditorModel } from '../../../common/editor/editorModel.js';
 import {
 	IFilterMetadata,
@@ -43,7 +43,7 @@ import {
 } from './preferences.js';
 import { FOLDER_SCOPES, WORKSPACE_SCOPES } from '../../configuration/common/configuration.js';
 import { createValidator } from './preferencesValidation.js';
-import { isString } from '../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 
 export const nullRange: IRange = { startLineNumber: -1, startColumn: -1, endLineNumber: -1, endColumn: -1 };
 function isNullRange(range: IRange): boolean {

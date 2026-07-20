@@ -3,43 +3,43 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../../base/browser/ui/actionbar/actionbar.js';
-import { renderLabelWithIcons } from '../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { IIdentityProvider } from '../../../../../base/browser/ui/list/list.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { renderLabelWithIcons } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
 import {
 	ICompressedTreeElement,
 	ICompressedTreeNode
-} from '../../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { ICompressibleTreeRenderer } from '../../../../../base/browser/ui/tree/objectTree.js';
-import { ITreeContextMenuEvent, ITreeNode } from '../../../../../base/browser/ui/tree/tree.js';
-import { Action, ActionRunner, IAction, Separator } from '../../../../../base/common/actions.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../../base/common/filters.js';
-import { Iterable } from '../../../../../base/common/iterator.js';
-import { Disposable, DisposableStore } from '../../../../../base/common/lifecycle.js';
-import { MarshalledId } from '../../../../../base/common/marshallingIds.js';
-import { autorun } from '../../../../../base/common/observable.js';
-import { count } from '../../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { isDefined } from '../../../../../base/common/types.js';
-import { URI } from '../../../../../base/common/uri.js';
+} from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ITreeContextMenuEvent, ITreeNode } from '@sidex/base/browser/ui/tree/tree.js';
+import { Action, ActionRunner, IAction, Separator } from '@sidex/base/common/actions.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { autorun } from '@sidex/base/common/observable.js';
+import { count } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isDefined } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	MenuEntryActionViewItem,
 	fillInActionBarActions
-} from '../../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IMenuService, MenuId, MenuItemAction } from '../../../../../platform/actions/common/actions.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { IContextKeyService } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { WorkbenchCompressibleObjectTree } from '../../../../../platform/list/browser/listService.js';
-import { IProgressService } from '../../../../../platform/progress/common/progress.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { widgetClose } from '../../../../../platform/theme/common/iconRegistry.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IMenuService, MenuId, MenuItemAction } from '@sidex/platform/actions/common/actions.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { WorkbenchCompressibleObjectTree } from '@sidex/platform/list/browser/listService.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { widgetClose } from '@sidex/platform/theme/common/iconRegistry.js';
 import { IEditorService } from '../../../../services/editor/common/editorService.js';
 import { TestCommandId, Testing } from '../../common/constants.js';
 import { ITestCoverageService } from '../../common/testCoverageService.js';

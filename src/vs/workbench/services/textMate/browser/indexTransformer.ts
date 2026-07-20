@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { AnyEdit } from '../../../../editor/common/core/edits/edit.js';
+import { AnyEdit } from '@sidex/editor/common/core/edits/edit.js';
 
 export interface IIndexTransformer {
 	transform(index: number): number | undefined;

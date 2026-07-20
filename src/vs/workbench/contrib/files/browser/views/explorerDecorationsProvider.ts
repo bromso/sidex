@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../../base/common/uri.js';
-import { Event, Emitter } from '../../../../../base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
-import { IWorkspaceContextService } from '../../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { IDecorationsProvider, IDecorationData } from '../../../../services/decorations/common/decorations.js';
 import {
 	listInvalidItemForeground,
 	listDeemphasizedForeground
-} from '../../../../../platform/theme/common/colorRegistry.js';
-import { DisposableStore } from '../../../../../base/common/lifecycle.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { explorerRootErrorEmitter } from './explorerViewer.js';
 import { ExplorerItem } from '../../common/explorerModel.js';
 import { IExplorerService } from '../files.js';
-import { toErrorMessage } from '../../../../../base/common/errorMessage.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
 
 export function provideDecorations(fileStat: ExplorerItem): IDecorationData | undefined {
 	if (fileStat.isRoot && fileStat.error) {

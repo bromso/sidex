@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, getActiveDocument, getActiveWindow } from '../../../../base/browser/dom.js';
-import { Disposable, toDisposable } from '../../../../base/common/lifecycle.js';
+import { $, getActiveDocument, getActiveWindow } from '@sidex/base/browser/dom.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import './media/decorationCssRuleExtractor.css';
 
 /**

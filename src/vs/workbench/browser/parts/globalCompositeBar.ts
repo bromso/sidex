@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { ActionBar, ActionsOrientation } from '../../../base/browser/ui/actionbar/actionbar.js';
+import { ActionBar, ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { ACCOUNTS_ACTIVITY_ID, GLOBAL_ACTIVITY_ID } from '../../common/activity.js';
 import { IActivityService } from '../../services/activity/common/activity.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { DisposableStore, Disposable } from '../../../base/common/lifecycle.js';
-import { IColorTheme, IThemeService } from '../../../platform/theme/common/themeService.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../platform/storage/common/storage.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { DisposableStore, Disposable } from '@sidex/base/common/lifecycle.js';
+import { IColorTheme, IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IExtensionService } from '../../services/extensions/common/extensions.js';
 import {
 	CompositeBarActionViewItem,
@@ -19,11 +19,11 @@ import {
 	ICompositeBarActionViewItemOptions,
 	ICompositeBarColors
 } from './compositeBarActions.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { registerIcon } from '../../../platform/theme/common/iconRegistry.js';
-import { Action, IAction, Separator, SubmenuAction, toAction } from '../../../base/common/actions.js';
-import { IMenu, IMenuService, MenuId } from '../../../platform/actions/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Action, IAction, Separator, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { IMenu, IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
 import {
 	addDisposableListener,
 	EventType,
@@ -35,20 +35,20 @@ import {
 	$,
 	runWhenWindowIdle,
 	getWindow
-} from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { EventType as TouchEventType, GestureEvent } from '../../../base/browser/touch.js';
-import { AnchorAlignment, AnchorAxisAlignment } from '../../../base/browser/ui/contextview/contextview.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { getActionBarActions } from '../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IProductService } from '../../../platform/product/common/productService.js';
-import { ISecretStorageService } from '../../../platform/secrets/common/secrets.js';
+} from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { EventType as TouchEventType, GestureEvent } from '@sidex/base/browser/touch.js';
+import { AnchorAlignment, AnchorAxisAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { getActionBarActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
 import {
 	AuthenticationSessionInfo,
 	getCurrentAuthenticationSessionInfo
@@ -59,15 +59,15 @@ import {
 	INTERNAL_AUTH_PROVIDER_PREFIX
 } from '../../services/authentication/common/authentication.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
-import { IHoverService } from '../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { ILifecycleService, LifecyclePhase } from '../../services/lifecycle/common/lifecycle.js';
 import { IUserDataProfileService } from '../../services/userDataProfile/common/userDataProfile.js';
 import { DEFAULT_ICON } from '../../services/userDataProfile/common/userDataProfileIcons.js';
-import { isString } from '../../../base/common/types.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
+import { isString } from '@sidex/base/common/types.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import { ACTIVITY_BAR_BADGE_BACKGROUND, ACTIVITY_BAR_BADGE_FOREGROUND } from '../../common/theme.js';
-import { IBaseActionViewItemOptions } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 
 export class GlobalCompositeBar extends Disposable {
 	private static readonly ACCOUNTS_ACTION_INDEX = 0;

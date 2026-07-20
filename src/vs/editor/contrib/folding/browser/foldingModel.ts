@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	IModelDecorationOptions,
 	IModelDecorationsChangeAccessor,
@@ -11,9 +11,9 @@ import {
 	ITextModel
 } from '../../../common/model.js';
 import { FoldingRegion, FoldingRegions, ILineRange, FoldRange, FoldSource } from './foldingRanges.js';
-import { hash } from '../../../../base/common/hash.js';
+import { hash } from '@sidex/base/common/hash.js';
 import { SelectedLines } from './folding.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 
 export interface IDecorationProvider {
 	getDecorationOption(isCollapsed: boolean, isHidden: boolean, isManual: boolean): IModelDecorationOptions;

@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { hash } from '../../../base/common/hash.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { Schemas } from '../../../base/common/network.js';
-import { joinPath } from '../../../base/common/resources.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { ExtHostDocuments } from './extHostDocuments.js';
 import { IExtensionStoragePaths } from './extHostStoragePaths.js';
 import * as typeConverters from './extHostTypeConverters.js';

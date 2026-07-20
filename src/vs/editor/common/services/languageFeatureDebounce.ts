@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { doHash } from '../../../base/common/hash.js';
-import { LRUCache } from '../../../base/common/map.js';
-import { clamp, MovingAverage, SlidingWindowAverage } from '../../../base/common/numbers.js';
+import { doHash } from '@sidex/base/common/hash.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { clamp, MovingAverage, SlidingWindowAverage } from '@sidex/base/common/numbers.js';
 import { LanguageFeatureRegistry } from '../languageFeatureRegistry.js';
 import { ITextModel } from '../model.js';
-import { IEnvironmentService } from '../../../platform/environment/common/environment.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { matchesScheme } from '../../../base/common/network.js';
+import { IEnvironmentService } from '@sidex/platform/environment/common/environment.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { matchesScheme } from '@sidex/base/common/network.js';
 
 export const ILanguageFeatureDebounceService = createDecorator<ILanguageFeatureDebounceService>(
 	'ILanguageFeatureDebounceService'

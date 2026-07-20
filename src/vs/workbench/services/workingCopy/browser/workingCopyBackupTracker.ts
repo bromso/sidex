@@ -8,7 +8,7 @@ import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 import { IWorkingCopyService } from '../common/workingCopyService.js';
 import { ILifecycleService, ShutdownReason } from '../../lifecycle/common/lifecycle.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { WorkingCopyBackupTracker } from '../common/workingCopyBackupTracker.js';
 import { IWorkingCopyEditorService } from '../common/workingCopyEditorService.js';
 import { IEditorService } from '../../editor/common/editorService.js';

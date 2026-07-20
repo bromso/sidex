@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import '../colorPicker.css';
-import { Disposable, MutableDisposable } from '../../../../../base/common/lifecycle.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IEditorHoverRenderContext } from '../../../hover/browser/hoverTypes.js';
 import {
 	ContentWidgetPositionPreference,
@@ -14,14 +14,14 @@ import {
 } from '../../../../browser/editorBrowser.js';
 import { PositionAffinity } from '../../../../common/model.js';
 import { Position } from '../../../../common/core/position.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { EditorHoverStatusBar } from '../../../hover/browser/contentHoverStatusBar.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
-import { Emitter } from '../../../../../base/common/event.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { IColorInformation } from '../../../../common/languages.js';
 import { ILanguageFeaturesService } from '../../../../common/services/languageFeatures.js';
-import { IContextKey } from '../../../../../platform/contextkey/common/contextkey.js';
+import { IContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IRange } from '../../../../common/core/range.js';
 import { DefaultDocumentColorProvider } from '../defaultDocumentColorProvider.js';
 import { IEditorWorkerService } from '../../../../common/services/editorWorker.js';
@@ -30,9 +30,9 @@ import {
 	StandaloneColorPickerParticipant,
 	StandaloneColorPickerRenderedParts
 } from './standaloneColorPickerParticipant.js';
-import * as dom from '../../../../../base/browser/dom.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import { InsertButton } from '../colorPickerParts/colorPickerInsertButton.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 
 class StandaloneColorPickerResult {
 	// The color picker result consists of: an array of color results and a boolean indicating if the color was found in the editor

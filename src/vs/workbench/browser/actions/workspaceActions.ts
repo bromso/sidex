@@ -4,24 +4,24 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ITelemetryData } from '../../../platform/telemetry/common/telemetry.js';
+import { ITelemetryData } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	IWorkspaceContextService,
 	WorkbenchState,
 	IWorkspaceFolder,
 	hasWorkspaceFileExtension
-} from '../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkspaceEditingService } from '../../services/workspaces/common/workspaceEditing.js';
 import { IEditorService } from '../../services/editor/common/editorService.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import {
 	ADD_ROOT_FOLDER_COMMAND_ID,
 	ADD_ROOT_FOLDER_LABEL,
 	PICK_WORKSPACE_FOLDER_COMMAND_ID,
 	SET_ROOT_FOLDER_COMMAND_ID
 } from './workspaceCommands.js';
-import { IFileDialogService } from '../../../platform/dialogs/common/dialogs.js';
-import { MenuRegistry, MenuId, Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
+import { IFileDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { MenuRegistry, MenuId, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import {
 	EmptyWorkspaceSupportContext,
 	EnterMultiRootWorkspaceSupportContext,
@@ -29,16 +29,16 @@ import {
 	WorkbenchStateContext,
 	WorkspaceFolderCountContext
 } from '../../common/contextkeys.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IHostService } from '../../services/host/browser/host.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
-import { ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IWorkbenchEnvironmentService } from '../../services/environment/common/environmentService.js';
-import { IWorkspacesService } from '../../../platform/workspaces/common/workspaces.js';
-import { KeybindingWeight } from '../../../platform/keybinding/common/keybindingsRegistry.js';
-import { IsMacNativeContext } from '../../../platform/contextkey/common/contextkeys.js';
-import { ILocalizedString } from '../../../platform/action/common/action.js';
-import { Categories } from '../../../platform/action/common/actionCommonCategories.js';
+import { IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { IsMacNativeContext } from '@sidex/platform/contextkey/common/contextkeys.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 
 const workspacesCategory: ILocalizedString = localize2('workspaces', 'Workspaces');
 

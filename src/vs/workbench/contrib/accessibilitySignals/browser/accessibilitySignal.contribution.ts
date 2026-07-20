@@ -1,7 +1,7 @@
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	IAccessibilitySignalService,
 	AccessibilitySignalService
-} from '../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
 
 registerSingleton(IAccessibilitySignalService, AccessibilitySignalService, InstantiationType.Delayed);

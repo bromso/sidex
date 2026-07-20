@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { Disposable, DisposableStore, IDisposable, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
+import { Disposable, DisposableStore, IDisposable, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IFilesConfigurationService,
 	AutoSaveMode,
@@ -17,11 +17,11 @@ import { IEditorService } from '../../../services/editor/common/editorService.js
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IWorkingCopyService } from '../../../services/workingCopy/common/workingCopyService.js';
 import { IWorkingCopy, WorkingCopyCapabilities } from '../../../services/workingCopy/common/workingCopy.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IMarkerService } from '../../../../platform/markers/common/markers.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 
 export class EditorAutoSave extends Disposable implements IWorkbenchContribution {
 	static readonly ID = 'workbench.contrib.editorAutoSave';

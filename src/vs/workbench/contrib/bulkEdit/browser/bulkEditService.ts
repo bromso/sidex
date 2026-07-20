@@ -3,12 +3,12 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { ResourceMap, ResourceSet } from '../../../../base/common/map.js';
-import { URI } from '../../../../base/common/uri.js';
-import { ICodeEditor, isCodeEditor, isDiffEditor } from '../../../../editor/browser/editorBrowser.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { ResourceMap, ResourceSet } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ICodeEditor, isCodeEditor, isDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	IBulkEditOptions,
 	IBulkEditPreviewHandler,
@@ -17,19 +17,19 @@ import {
 	ResourceEdit,
 	ResourceFileEdit,
 	ResourceTextEdit
-} from '../../../../editor/browser/services/bulkEditService.js';
-import { EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { WorkspaceEdit } from '../../../../editor/common/languages.js';
+} from '@sidex/editor/browser/services/bulkEditService.js';
+import { EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { WorkspaceEdit } from '@sidex/editor/common/languages.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { Extensions, IConfigurationRegistry } from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProgress, IProgressStep, Progress } from '../../../../platform/progress/common/progress.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { UndoRedoGroup, UndoRedoSource } from '../../../../platform/undoRedo/common/undoRedo.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { Extensions, IConfigurationRegistry } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProgress, IProgressStep, Progress } from '@sidex/platform/progress/common/progress.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { UndoRedoGroup, UndoRedoSource } from '@sidex/platform/undoRedo/common/undoRedo.js';
 import { BulkCellEdits, ResourceNotebookCellEdit } from './bulkCellEdits.js';
 import { BulkFileEdits } from './bulkFileEdits.js';
 import { BulkTextEdits } from './bulkTextEdits.js';
@@ -37,8 +37,8 @@ import { IEditorService } from '../../../services/editor/common/editorService.js
 import { ILifecycleService, ShutdownReason } from '../../../services/lifecycle/common/lifecycle.js';
 import { IWorkingCopyService } from '../../../services/workingCopy/common/workingCopyService.js';
 import { OpaqueEdits, ResourceAttachmentEdit } from './opaqueEdits.js';
-import { TextModelEditSource } from '../../../../editor/common/textModelEditSource.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
+import { TextModelEditSource } from '@sidex/editor/common/textModelEditSource.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
 
 function liftEdits(edits: ResourceEdit[]): ResourceEdit[] {
 	return edits.map(edit => {

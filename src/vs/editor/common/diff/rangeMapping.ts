@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { groupAdjacentBy } from '../../../base/common/arrays.js';
-import { assertFn, checkAdjacentItems } from '../../../base/common/assert.js';
-import { BugIndicatingError } from '../../../base/common/errors.js';
+import { groupAdjacentBy } from '@sidex/base/common/arrays.js';
+import { assertFn, checkAdjacentItems } from '@sidex/base/common/assert.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import { LineRange } from '../core/ranges/lineRange.js';
 import { Position } from '../core/position.js';
 import { Range } from '../core/range.js';

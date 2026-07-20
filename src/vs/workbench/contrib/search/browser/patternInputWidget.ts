@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { Toggle } from '../../../../base/browser/ui/toggle/toggle.js';
-import { IContextViewProvider } from '../../../../base/browser/ui/contextview/contextview.js';
-import { HistoryInputBox, IInputBoxStyles } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { Emitter, Event as CommonEvent } from '../../../../base/common/event.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { Toggle } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { IContextViewProvider } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { HistoryInputBox, IInputBoxStyles } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event as CommonEvent } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
 import * as nls from '@sidex/base/nls.js';
-import { ContextScopedHistoryInputBox } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
-import { showHistoryKeybindingHint } from '../../../../platform/history/browser/historyWidgetKeybindingHint.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { defaultToggleStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { ContextScopedHistoryInputBox } from '@sidex/platform/history/browser/contextScopedHistoryWidget.js';
+import { showHistoryKeybindingHint } from '@sidex/platform/history/browser/historyWidgetKeybindingHint.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { defaultToggleStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 
 export interface IOptions {
 	placeholder?: string;

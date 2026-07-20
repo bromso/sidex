@@ -4,24 +4,24 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import * as objects from '../../../../base/common/objects.js';
-import { toAction } from '../../../../base/common/actions.js';
-import * as errors from '../../../../base/common/errors.js';
-import { createErrorWithActions } from '../../../../base/common/errorMessage.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import * as objects from '@sidex/base/common/objects.js';
+import { toAction } from '@sidex/base/common/actions.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { createErrorWithActions } from '@sidex/base/common/errorMessage.js';
 import { formatPII, isUriString } from '../common/debugUtils.js';
 import { IDebugAdapter, IConfig, AdapterEndEvent, IDebugger } from '../common/debug.js';
 import {
 	IExtensionHostDebugService,
 	IOpenExtensionWindowResult
-} from '../../../../platform/debug/common/extensionHostDebug.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { INotificationService, Severity } from '../../../../platform/notification/common/notification.js';
-import { IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { Schemas } from '../../../../base/common/network.js';
+} from '@sidex/platform/debug/common/extensionHostDebug.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 /**
  * This interface represents a single command line argument split into a "prefix" and a "path" half.

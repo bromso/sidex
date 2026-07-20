@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import * as platform from '../../../base/common/platform.js';
+import { Event } from '@sidex/base/common/event.js';
+import * as platform from '@sidex/base/common/platform.js';
 import type { IExperimentationFilterProvider } from 'tas-client';
 
 export const ASSIGNMENT_STORAGE_KEY = 'VSCode.ABExp.FeatureData';

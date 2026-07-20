@@ -3,29 +3,29 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { IChannel } from '../../../../base/parts/ipc/common/ipc.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IChannel } from '@sidex/base/parts/ipc/common/ipc.js';
 import {
 	IExtensionHostDebugService,
 	IOpenExtensionWindowResult
-} from '../../../../platform/debug/common/extensionHostDebug.js';
+} from '@sidex/platform/debug/common/extensionHostDebug.js';
 import {
 	ExtensionHostDebugBroadcastChannel,
 	ExtensionHostDebugChannelClient
-} from '../../../../platform/debug/common/extensionHostDebugIpc.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { isFolderToOpen, isWorkspaceToOpen } from '../../../../platform/window/common/window.js';
+} from '@sidex/platform/debug/common/extensionHostDebugIpc.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { isFolderToOpen, isWorkspaceToOpen } from '@sidex/platform/window/common/window.js';
 import {
 	IWorkspaceContextService,
 	isSingleFolderWorkspaceIdentifier,
 	isWorkspaceIdentifier,
 	toWorkspaceIdentifier,
 	hasWorkspaceFileExtension
-} from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkspace, IWorkspaceProvider } from '../../../browser/web.api.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../../services/environment/browser/environmentService.js';
 import { IHostService } from '../../../services/host/browser/host.js';

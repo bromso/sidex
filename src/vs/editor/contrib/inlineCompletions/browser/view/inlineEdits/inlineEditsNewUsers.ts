@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { timeout } from '../../../../../../base/common/async.js';
-import { BugIndicatingError } from '../../../../../../base/common/errors.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { BugIndicatingError } from '@sidex/base/common/errors.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	MutableDisposable
-} from '../../../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	autorun,
 	derived,
@@ -18,9 +18,9 @@ import {
 	observableValue,
 	runOnChange,
 	runOnChangeWithCancellationToken
-} from '../../../../../../base/common/observable.js';
-import { IConfigurationService } from '../../../../../../platform/configuration/common/configuration.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../../platform/storage/common/storage.js';
+} from '@sidex/base/common/observable.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { InlineEditsGutterIndicator } from './components/gutterIndicatorView.js';
 import { ModelPerInlineEdit } from './inlineEditsModel.js';
 import { InlineEditsCollapsedView } from './inlineEditsViews/inlineEditsCollapsedView.js';

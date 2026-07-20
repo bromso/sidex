@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { FastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { FastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { Position } from '../../../common/core/position.js';
 import { IEditorAriaOptions } from '../../editorBrowser.js';
 import { ViewPart } from '../../view/viewPart.js';

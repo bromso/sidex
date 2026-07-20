@@ -8,23 +8,23 @@ import {
 	IWorkbenchContributionsRegistry,
 	Extensions as WorkbenchExtensions
 } from '../../../common/contributions.js';
-import { IMarkerService, IMarker, MarkerSeverity } from '../../../../platform/markers/common/markers.js';
+import { IMarkerService, IMarker, MarkerSeverity } from '@sidex/platform/markers/common/markers.js';
 import {
 	IDecorationsService,
 	IDecorationsProvider,
 	IDecorationData
 } from '../../../services/decorations/common/decorations.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Event } from '../../../../base/common/event.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
 import { localize } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { listErrorForeground, listWarningForeground } from '../../../../platform/theme/common/colorRegistry.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { listErrorForeground, listWarningForeground } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 
 class MarkersDecorationsProvider implements IDecorationsProvider {

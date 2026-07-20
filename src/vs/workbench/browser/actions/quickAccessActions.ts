@@ -4,26 +4,26 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { MenuId, Action2, registerAction2 } from '../../../platform/actions/common/actions.js';
-import { KeyMod, KeyCode } from '../../../base/common/keyCodes.js';
+import { MenuId, Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	KeybindingsRegistry,
 	KeybindingWeight,
 	IKeybindingRule
-} from '../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import {
 	IQuickInputService,
 	ItemActivation,
 	QuickInputHideReason
-} from '../../../platform/quickinput/common/quickInput.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { CommandsRegistry, ICommandService } from '../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { inQuickPickContext, defaultQuickAccessContext, getQuickNavigateHandler } from '../quickaccess.js';
-import { ILocalizedString } from '../../../platform/action/common/action.js';
-import { AnythingQuickAccessProviderRunOptions } from '../../../platform/quickinput/common/quickAccess.js';
-import { Codicon } from '../../../base/common/codicons.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { AnythingQuickAccessProviderRunOptions } from '@sidex/platform/quickinput/common/quickAccess.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 
 const UNIFIED_AGENTS_BAR_SETTING = 'chat.unifiedAgentsBar.enabled';
 

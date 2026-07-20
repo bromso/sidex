@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { URI } from '../../../../base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IUserDataProfile,
 	ProfileResourceTypeFlags
-} from '../../../../platform/userDataProfile/common/userDataProfile.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import {
 	IUserDataProfileImportExportService,
 	IUserDataProfileContentHandler,

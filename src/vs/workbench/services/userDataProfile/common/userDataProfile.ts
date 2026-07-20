@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isUndefined } from '../../../../base/common/types.js';
-import { Event } from '../../../../base/common/event.js';
+import { isUndefined } from '@sidex/base/common/types.js';
+import { Event } from '@sidex/base/common/event.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IUserDataProfile,
 	IUserDataProfileOptions,
 	IUserDataProfileUpdateOptions,
 	ProfileResourceType,
 	ProfileResourceTypeFlags
-} from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { URI } from '../../../../base/common/uri.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+} from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { ITreeItem, ITreeItemLabel } from '../../../common/views.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 
 export interface DidChangeUserDataProfileEvent {
 	readonly previous: IUserDataProfile;

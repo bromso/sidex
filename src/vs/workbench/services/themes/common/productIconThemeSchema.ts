@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 import * as nls from '@sidex/base/nls.js';
 
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	Extensions as JSONExtensions,
 	IJSONContributionRegistry
-} from '../../../../platform/jsonschemas/common/jsonContributionRegistry.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+} from '@sidex/platform/jsonschemas/common/jsonContributionRegistry.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import {
 	fontIdErrorMessage,
 	fontIdRegex,
 	fontStyleRegex,
 	fontWeightRegex,
 	iconsSchemaId
-} from '../../../../platform/theme/common/iconRegistry.js';
+} from '@sidex/platform/theme/common/iconRegistry.js';
 
 const schemaId = 'vscode://schemas/product-icon-theme';
 const schema: IJSONSchema = {

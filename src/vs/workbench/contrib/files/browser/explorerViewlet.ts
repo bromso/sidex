@@ -5,20 +5,20 @@
 
 import './media/explorerviewlet.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { mark } from '../../../../base/common/performance.js';
+import { mark } from '@sidex/base/common/performance.js';
 import { VIEWLET_ID, VIEW_ID, IFilesConfiguration, ExplorerViewletVisibleContext } from '../common/files.js';
 import { IViewletViewOptions } from '../../../browser/parts/views/viewsViewlet.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { ExplorerView } from './views/explorerView.js';
 import { EmptyView } from './views/emptyView.js';
 import { OpenEditorsView } from './views/openEditorsView.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IContextKeyService, IContextKey, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IContextKeyService, IContextKey, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	IViewsRegistry,
 	IViewDescriptor,
@@ -29,32 +29,32 @@ import {
 	IViewDescriptorService,
 	ViewContentGroups
 } from '../../../common/views.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IWorkbenchLayoutService } from '../../../services/layout/browser/layoutService.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { ViewPane } from '../../../browser/parts/views/viewPane.js';
-import { KeyChord, KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
+import { KeyChord, KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import {
 	WorkbenchStateContext,
 	RemoteNameContext,
 	OpenFolderWorkspaceSupportContext
 } from '../../../common/contextkeys.js';
-import { IsWebContext } from '../../../../platform/contextkey/common/contextkeys.js';
+import { IsWebContext } from '@sidex/platform/contextkey/common/contextkeys.js';
 import {
 	AddRootFolderAction,
 	OpenFolderAction,
 	OpenFolderViaWorkspaceAction
 } from '../../../browser/actions/workspaceActions.js';
 import { OpenRecentAction } from '../../../browser/actions/windowActions.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
-import { isMouseEvent } from '../../../../base/browser/dom.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
+import { isMouseEvent } from '@sidex/base/browser/dom.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 const explorerViewIcon = registerIcon(
 	'explorer-view-icon',

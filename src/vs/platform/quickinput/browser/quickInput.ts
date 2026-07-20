@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
-import { ToolBar } from '../../../base/browser/ui/toolbar/toolbar.js';
-import { Button, IButtonStyles } from '../../../base/browser/ui/button/button.js';
-import { CountBadge, ICountBadgeStyles } from '../../../base/browser/ui/countBadge/countBadge.js';
-import { IHoverDelegate, IHoverDelegateOptions } from '../../../base/browser/ui/hover/hoverDelegate.js';
-import { IInputBoxStyles } from '../../../base/browser/ui/inputbox/inputBox.js';
-import { IKeybindingLabelStyles } from '../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { IListStyles } from '../../../base/browser/ui/list/listWidget.js';
-import { IProgressBarStyles, ProgressBar } from '../../../base/browser/ui/progressbar/progressbar.js';
-import { IToggleStyles, TriStateCheckbox } from '../../../base/browser/ui/toggle/toggle.js';
-import { equals } from '../../../base/common/arrays.js';
-import { TimeoutTimer } from '../../../base/common/async.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { Emitter, Event, EventBufferer } from '../../../base/common/event.js';
-import { KeyCode } from '../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { isIOS } from '../../../base/common/platform.js';
-import Severity from '../../../base/common/severity.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
+import { Button, IButtonStyles } from '@sidex/base/browser/ui/button/button.js';
+import { CountBadge, ICountBadgeStyles } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { IHoverDelegate, IHoverDelegateOptions } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { IInputBoxStyles } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { IKeybindingLabelStyles } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { IListStyles } from '@sidex/base/browser/ui/list/listWidget.js';
+import { IProgressBarStyles, ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
+import { IToggleStyles, TriStateCheckbox } from '@sidex/base/browser/ui/toggle/toggle.js';
+import { equals } from '@sidex/base/common/arrays.js';
+import { TimeoutTimer } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event, EventBufferer } from '@sidex/base/common/event.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isIOS } from '@sidex/base/common/platform.js';
+import Severity from '@sidex/base/common/severity.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import './media/quickInput.css';
 import { localize } from '@sidex/base/nls.js';
 import {
@@ -56,10 +56,10 @@ import {
 import { IConfigurationService } from '../../configuration/common/configuration.js';
 import { IHoverService, WorkbenchHoverDelegate } from '../../hover/browser/hover.js';
 import { QuickInputList } from './quickInputList.js';
-import type { IHoverOptions } from '../../../base/browser/ui/hover/hover.js';
+import type { IHoverOptions } from '@sidex/base/browser/ui/hover/hover.js';
 import { ContextKeyExpr, RawContextKey } from '../../contextkey/common/contextkey.js';
 import { QuickInputTreeController } from './tree/quickInputTreeController.js';
-import { observableValue } from '../../../base/common/observable.js';
+import { observableValue } from '@sidex/base/common/observable.js';
 
 export const inQuickInputContextKeyValue = 'inQuickInput';
 export const InQuickInputContextKey = new RawContextKey<boolean>(

@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { $, addDisposableListener } from '../../../../../../base/browser/dom.js';
-import { ArrayQueue } from '../../../../../../base/common/arrays.js';
-import { RunOnceScheduler } from '../../../../../../base/common/async.js';
-import { Codicon } from '../../../../../../base/common/codicons.js';
-import { Disposable, DisposableStore } from '../../../../../../base/common/lifecycle.js';
+import { $, addDisposableListener } from '@sidex/base/browser/dom.js';
+import { ArrayQueue } from '@sidex/base/common/arrays.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
 	derived,
 	observableFromEvent,
 	observableValue
-} from '../../../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../../../base/common/themables.js';
-import { assertReturnsDefined } from '../../../../../../base/common/types.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { applyFontInfo } from '../../../../config/domFontInfo.js';
 import { CodeEditorWidget } from '../../../codeEditor/codeEditorWidget.js';
 import { diffDeleteDecoration, diffRemoveIcon } from '../../registrations.contribution.js';
@@ -32,8 +32,8 @@ import { Position } from '../../../../../common/core/position.js';
 import { DetailedLineRangeMapping } from '../../../../../common/diff/rangeMapping.js';
 import { ScrollType } from '../../../../../common/editorCommon.js';
 import { BackgroundTokenizationState } from '../../../../../common/tokenizationTextModelPart.js';
-import { IClipboardService } from '../../../../../../platform/clipboard/common/clipboardService.js';
-import { IContextMenuService } from '../../../../../../platform/contextview/browser/contextView.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { DiffEditorOptions } from '../../diffEditorOptions.js';
 import { Range } from '../../../../../common/core/range.js';
 import { InlineDecoration, InlineDecorationType } from '../../../../../common/viewModel/inlineDecorations.js';

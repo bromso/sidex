@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Lazy } from '../../../base/common/lazy.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { basenameOrAuthority, dirname, hasTrailingPathSeparator } from '../../../base/common/resources.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { isUriComponents, URI } from '../../../base/common/uri.js';
-import { ILanguageService } from '../../../editor/common/languages/language.js';
-import { getIconClasses } from '../../../editor/common/services/getIconClasses.js';
-import { IModelService } from '../../../editor/common/services/model.js';
-import { FileKind } from '../../../platform/files/common/files.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { basenameOrAuthority, dirname, hasTrailingPathSeparator } from '@sidex/base/common/resources.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { isUriComponents, URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { getIconClasses } from '@sidex/editor/common/services/getIconClasses.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { FileKind } from '@sidex/platform/files/common/files.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
 import {
 	IInputOptions,
 	IPickOptions,
@@ -21,7 +21,7 @@ import {
 	IQuickInputService,
 	IQuickPick,
 	IQuickPickItem
-} from '../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import { ICustomEditorLabelService } from '../../services/editor/common/customEditorLabelService.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
 import {

@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { MarshalledId } from '../../../../base/common/marshallingIds.js';
-import { IProcessEnvironment, isLinux, OperatingSystem } from '../../../../base/common/platform.js';
-import Severity from '../../../../base/common/severity.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { IProcessEnvironment, isLinux, OperatingSystem } from '@sidex/base/common/platform.js';
+import Severity from '@sidex/base/common/severity.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	ISerializedCommandDetectionCapability,
 	ITerminalCapabilityStore
-} from '../../../../platform/terminal/common/capabilities/capabilities.js';
-import { IMergedEnvironmentVariableCollection } from '../../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import { IMergedEnvironmentVariableCollection } from '@sidex/platform/terminal/common/environmentVariable.js';
 import {
 	ICreateContributedTerminalProfileOptions,
 	IExtensionTerminalProfile,
@@ -39,12 +39,12 @@ import {
 	TerminalIcon,
 	TerminalLocationConfigValue,
 	TitleEventSource
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { AccessibilityCommandId } from '../../accessibility/common/accessibilityCommands.js';
 import { IEnvironmentVariableInfo } from './environmentVariable.js';
 import { IExtensionPointDescriptor } from '../../../services/extensions/common/extensionsRegistry.js';
 import { defaultTerminalContribCommandsToSkipShell } from '../terminalContribExports.js';
-import type { SingleOrMany } from '../../../../base/common/types.js';
+import type { SingleOrMany } from '@sidex/base/common/types.js';
 
 export const TERMINAL_VIEW_ID = 'terminal';
 

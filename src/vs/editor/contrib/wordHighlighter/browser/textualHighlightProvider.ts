@@ -14,9 +14,9 @@ import {
 } from '../../../common/languages.js';
 import { ITextModel } from '../../../common/model.js';
 import { Position } from '../../../common/core/position.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 import { LanguageFilter } from '../../../common/languageSelector.js';
 
 class TextualDocumentHighlightProvider implements DocumentHighlightProvider, MultiDocumentHighlightProvider {

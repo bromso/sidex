@@ -9,12 +9,12 @@ import {
 	Event,
 	EventMultiplexer,
 	IDynamicListEventMultiplexer
-} from '../../../../base/common/event.js';
-import { DisposableMap, DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/event.js';
+import { DisposableMap, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	ITerminalCapabilityImplMap,
 	TerminalCapability
-} from '../../../../platform/terminal/common/capabilities/capabilities.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
 
 export function createInstanceCapabilityEventMultiplexer<T extends TerminalCapability, K>(
 	currentInstances: ITerminalInstance[],

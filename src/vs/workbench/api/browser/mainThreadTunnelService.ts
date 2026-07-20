@@ -33,20 +33,20 @@ import {
 	ProvidedPortAttributes,
 	PortAttributesProvider,
 	TunnelProtocol
-} from '../../../platform/tunnel/common/tunnel.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import type { TunnelDescription } from '../../../platform/remote/common/remoteAuthorityResolver.js';
-import { INotificationService, Severity } from '../../../platform/notification/common/notification.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { ILogService } from '../../../platform/log/common/log.js';
+} from '@sidex/platform/tunnel/common/tunnel.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import type { TunnelDescription } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { INotificationService, Severity } from '@sidex/platform/notification/common/notification.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IRemoteAgentService } from '../../services/remote/common/remoteAgentService.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions
-} from '../../../platform/configuration/common/configurationRegistry.js';
-import { IContextKeyService } from '../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	CandidatePort,
 	TunnelCloseReason,

@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { WorkbenchActionExecutedClassification, WorkbenchActionExecutedEvent } from '../../../base/common/actions.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { toErrorMessage } from '../../../base/common/errorMessage.js';
-import { isCancellationError } from '../../../base/common/errors.js';
-import { IMatch, matchesBaseContiguousSubString, matchesWords, or } from '../../../base/common/filters.js';
-import { createSingleCallFunction } from '../../../base/common/functional.js';
-import { Disposable, DisposableStore, IDisposable } from '../../../base/common/lifecycle.js';
-import { LRUCache } from '../../../base/common/map.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { TfIdfCalculator, normalizeTfIdfScores } from '../../../base/common/tfIdf.js';
+import { WorkbenchActionExecutedClassification, WorkbenchActionExecutedEvent } from '@sidex/base/common/actions.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { toErrorMessage } from '@sidex/base/common/errorMessage.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { IMatch, matchesBaseContiguousSubString, matchesWords, or } from '@sidex/base/common/filters.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { Disposable, DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { TfIdfCalculator, normalizeTfIdfScores } from '@sidex/base/common/tfIdf.js';
 import { localize } from '@sidex/base/nls.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { ICommandService } from '../../commands/common/commands.js';

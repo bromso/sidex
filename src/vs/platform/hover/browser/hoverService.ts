@@ -10,8 +10,8 @@ import { IHoverService } from './hover.js';
 import { IContextMenuService } from '../../contextview/browser/contextView.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { HoverWidget } from './hoverWidget.js';
-import { ContextView, ContextViewDOMPosition, IDelegate } from '../../../base/browser/ui/contextview/contextview.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { ContextView, ContextViewDOMPosition, IDelegate } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	addDisposableListener,
 	EventType,
@@ -21,13 +21,13 @@ import {
 	getWindow,
 	isHTMLElement,
 	isEditableElement
-} from '../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
-import { StandardKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
 import { ResultKind } from '../../keybinding/common/keybindingResolver.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
-import { mainWindow } from '../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import {
 	HoverStyle,
 	isManagedHoverTooltipMarkdownString,
@@ -38,16 +38,16 @@ import {
 	type IManagedHover,
 	type IManagedHoverContentOrFactory,
 	type IManagedHoverOptions
-} from '../../../base/browser/ui/hover/hover.js';
-import type { IHoverDelegate, IHoverDelegateTarget } from '../../../base/browser/ui/hover/hoverDelegate.js';
+} from '@sidex/base/browser/ui/hover/hover.js';
+import type { IHoverDelegate, IHoverDelegateTarget } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
 import { ManagedHoverWidget } from './updatableHoverWidget.js';
-import { timeout, TimeoutTimer } from '../../../base/common/async.js';
+import { timeout, TimeoutTimer } from '@sidex/base/common/async.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { isNumber, isString } from '../../../base/common/types.js';
-import { KeyChord, KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
+import { isNumber, isString } from '@sidex/base/common/types.js';
+import { KeyChord, KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { KeybindingsRegistry, KeybindingWeight } from '../../keybinding/common/keybindingsRegistry.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { stripIcons } from '../../../base/common/iconLabels.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { stripIcons } from '@sidex/base/common/iconLabels.js';
 
 /**
  * Maximum nesting depth for hovers. This prevents runaway nesting.

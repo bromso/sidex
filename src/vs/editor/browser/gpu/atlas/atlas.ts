@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import type { NKeyMap } from '../../../../base/common/map.js';
+import type { NKeyMap } from '@sidex/base/common/map.js';
 import type { IBoundingBox, IRasterizedGlyph } from '../raster/raster.js';
 
 /**

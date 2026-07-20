@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IDataChannelService,
 	CoreDataChannel,
 	IDataChannelEvent
-} from '../../../../platform/dataChannel/common/dataChannel.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/dataChannel/common/dataChannel.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 
 export class DataChannelService extends Disposable implements IDataChannelService {
 	declare readonly _serviceBrand: undefined;

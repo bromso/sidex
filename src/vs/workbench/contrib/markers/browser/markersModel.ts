@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IMatch } from '../../../../base/common/filters.js';
-import { hash } from '../../../../base/common/hash.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { basename, extUri } from '../../../../base/common/resources.js';
-import { splitLines } from '../../../../base/common/strings.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IMatch } from '@sidex/base/common/filters.js';
+import { hash } from '@sidex/base/common/hash.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { basename, extUri } from '@sidex/base/common/resources.js';
+import { splitLines } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
 import {
 	IMarker,
 	IMarkerData,
 	IRelatedInformation,
 	MarkerSeverity
-} from '../../../../platform/markers/common/markers.js';
-import { unsupportedSchemas } from '../../../../platform/markers/common/markerService.js';
+} from '@sidex/platform/markers/common/markers.js';
+import { unsupportedSchemas } from '@sidex/platform/markers/common/markerService.js';
 
 export type MarkerElement = ResourceMarkers | Marker | RelatedInformation;
 

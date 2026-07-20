@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IMainThreadTestCollection } from './testService.js';
 import {
 	AbstractIncrementalTestCollection,

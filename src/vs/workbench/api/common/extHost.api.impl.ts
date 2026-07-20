@@ -4,28 +4,28 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { CancellationTokenSource } from '../../../base/common/cancellation.js';
-import * as errors from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { combinedDisposable } from '../../../base/common/lifecycle.js';
-import { Schemas, matchesScheme } from '../../../base/common/network.js';
-import Severity from '../../../base/common/severity.js';
-import { URI } from '../../../base/common/uri.js';
-import { TextEditorCursorStyle } from '../../../editor/common/config/editorOptions.js';
-import { score } from '../../../editor/common/languageSelector.js';
-import * as languageConfiguration from '../../../editor/common/languages/languageConfiguration.js';
-import { OverviewRulerLane } from '../../../editor/common/model.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import * as errors from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { combinedDisposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas, matchesScheme } from '@sidex/base/common/network.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { TextEditorCursorStyle } from '@sidex/editor/common/config/editorOptions.js';
+import { score } from '@sidex/editor/common/languageSelector.js';
+import * as languageConfiguration from '@sidex/editor/common/languages/languageConfiguration.js';
+import { OverviewRulerLane } from '@sidex/editor/common/model.js';
 import {
 	ExtensionError,
 	ExtensionIdentifierSet,
 	IExtensionDescription
-} from '../../../platform/extensions/common/extensions.js';
-import * as files from '../../../platform/files/common/files.js';
-import { ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService, ILoggerService, LogLevel } from '../../../platform/log/common/log.js';
-import { getRemoteName } from '../../../platform/remote/common/remoteHosts.js';
-import { TelemetryTrustedValue } from '../../../platform/telemetry/common/telemetryUtils.js';
-import { EditSessionIdentityMatch } from '../../../platform/workspace/common/editSessions.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import * as files from '@sidex/platform/files/common/files.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService, ILoggerService, LogLevel } from '@sidex/platform/log/common/log.js';
+import { getRemoteName } from '@sidex/platform/remote/common/remoteHosts.js';
+import { TelemetryTrustedValue } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { EditSessionIdentityMatch } from '@sidex/platform/workspace/common/editSessions.js';
 import { DebugConfigurationProviderTriggerKind } from '../../contrib/debug/common/debug.js';
 import { ExtensionDescriptionRegistry } from '../../services/extensions/common/extensionDescriptionRegistry.js';
 import { UIKind } from '../../services/extensions/common/extensionHostProtocol.js';

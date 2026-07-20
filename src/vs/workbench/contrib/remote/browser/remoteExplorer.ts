@@ -9,17 +9,17 @@
 import './media/remoteExplorer.css';
 
 import { localize } from '@sidex/base/nls.js';
-import { Disposable as _Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable as _Disposable } from '@sidex/base/common/lifecycle.js';
 import { IViewPaneOptions, ViewPane } from '../../../browser/parts/views/viewPane.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IViewDescriptorService } from '../../../common/views.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import {
 	ISideXRemoteService,
 	SshHost,
@@ -27,17 +27,17 @@ import {
 	ContainerEntry,
 	CodespaceEntry,
 	RemoteKind
-} from '../../../../platform/sidex/browser/sidexRemoteService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { IQuickInputService } from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/sidex/browser/sidexRemoteService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { ITreeRenderer, ITreeNode, IAsyncDataSource } from '../../../../base/browser/ui/tree/tree.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { ITreeRenderer, ITreeNode, IAsyncDataSource } from '@sidex/base/browser/ui/tree/tree.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 
 // ── Tree data model ─────────────────────────────────────────────────────────
 

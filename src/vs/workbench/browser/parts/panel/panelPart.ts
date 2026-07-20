@@ -5,16 +5,16 @@
 
 import './media/panelpart.css';
 import { localize } from '@sidex/base/nls.js';
-import { IAction, Separator, SubmenuAction, toAction } from '../../../../base/common/actions.js';
-import { ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import { IAction, Separator, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { ActivePanelContext, PanelFocusContext } from '../../../common/contextkeys.js';
 import { IWorkbenchLayoutService, Parts, Position } from '../../../services/layout/browser/layoutService.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { TogglePanelAction } from './panelActions.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	PANEL_BACKGROUND,
 	PANEL_BORDER,
@@ -26,21 +26,21 @@ import {
 	PANEL_TITLE_BADGE_BACKGROUND,
 	PANEL_TITLE_BADGE_FOREGROUND
 } from '../../../common/theme.js';
-import { contrastBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { Dimension } from '../../../../base/browser/dom.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { contrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { IViewDescriptorService, ViewContainerLocation } from '../../../common/views.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
 import { AbstractPaneCompositePart, CompositeBarPosition } from '../paneCompositePart.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { getContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { IPaneCompositeBarOptions } from '../paneCompositeBar.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { Extensions } from '../../panecomposite.js';
 
 export class PanelPart extends AbstractPaneCompositePart {

@@ -2,8 +2,8 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IFileSystemProviderWithFileReadWriteCapability,
 	IFileChange,
@@ -28,13 +28,13 @@ import {
 	IFileAtomicReadOptions,
 	IFileAtomicOptions
 } from '../../files/common/files.js';
-import { URI } from '../../../base/common/uri.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { ReadableStreamEvents } from '../../../base/common/stream.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ReadableStreamEvents } from '@sidex/base/common/stream.js';
 import { ILogService } from '../../log/common/log.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
 import { IUserDataProfilesService } from '../../userDataProfile/common/userDataProfile.js';
-import { ResourceSet } from '../../../base/common/map.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
 import { IUriIdentityService } from '../../uriIdentity/common/uriIdentity.js';
 
 /**

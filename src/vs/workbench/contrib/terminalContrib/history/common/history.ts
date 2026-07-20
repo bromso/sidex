@@ -3,28 +3,28 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { LRUCache } from '../../../../../base/common/map.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { join } from '../../../../../base/common/path.js';
-import { isWindows, OperatingSystem } from '../../../../../base/common/platform.js';
-import { env } from '../../../../../base/common/process.js';
-import { isNumber } from '../../../../../base/common/types.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { LRUCache } from '@sidex/base/common/map.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { join } from '@sidex/base/common/path.js';
+import { isWindows, OperatingSystem } from '@sidex/base/common/platform.js';
+import { env } from '@sidex/base/common/process.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	FileOperationError,
 	FileOperationResult,
 	IFileContent,
 	IFileService
-} from '../../../../../platform/files/common/files.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/files/common/files.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	GeneralShellType,
 	PosixShellType,
 	TerminalShellType
-} from '../../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { IRemoteAgentService } from '../../../../services/remote/common/remoteAgentService.js';
 import { TerminalHistorySettingId } from './terminal.history.js';
 

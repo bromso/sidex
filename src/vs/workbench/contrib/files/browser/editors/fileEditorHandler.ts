@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { URI, UriComponents } from '../../../../../base/common/uri.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { IEditorSerializer } from '../../../../common/editor.js';
 import { EditorInput } from '../../../../common/editor/editorInput.js';
 import { ITextEditorService } from '../../../../services/textfile/common/textEditorService.js';
-import { isEqual } from '../../../../../base/common/resources.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IWorkbenchContribution } from '../../../../common/contributions.js';
 import { IWorkingCopyIdentifier, NO_TYPE_ID } from '../../../../services/workingCopy/common/workingCopy.js';
 import {
@@ -17,7 +17,7 @@ import {
 	IWorkingCopyEditorService
 } from '../../../../services/workingCopy/common/workingCopyEditorService.js';
 import { FileEditorInput } from './fileEditorInput.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 
 interface ISerializedFileEditorInput {
 	resourceJSON: UriComponents;

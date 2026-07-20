@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { BrandedService, IConstructorSignature } from '../../../../platform/instantiation/common/instantiation.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { BrandedService, IConstructorSignature } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ExtensionHostKind } from './extensionHostKind.js';
 import { IExtensionHostProxy } from './extensionHostProxy.js';
 import { IInternalExtensionService } from './extensions.js';

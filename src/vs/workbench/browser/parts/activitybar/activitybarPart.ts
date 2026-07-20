@@ -6,7 +6,7 @@
 import './media/activitybarpart.css';
 import './media/activityaction.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { ActionsOrientation } from '../../../../base/browser/ui/actionbar/actionbar.js';
+import { ActionsOrientation } from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { Part } from '../../part.js';
 import {
 	ActivityBarPosition,
@@ -15,14 +15,14 @@ import {
 	Parts,
 	Position
 } from '../../../services/layout/browser/layoutService.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { DisposableStore, MutableDisposable } from '../../../../base/common/lifecycle.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { ToggleSidebarPositionAction, ToggleSidebarVisibilityAction } from '../../actions/layoutActions.js';
 import {
 	IThemeService,
 	IColorTheme,
 	registerThemingParticipant
-} from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/themeService.js';
 import {
 	ACTIVITY_BAR_BACKGROUND,
 	ACTIVITY_BAR_BORDER,
@@ -35,31 +35,31 @@ import {
 	ACTIVITY_BAR_DRAG_AND_DROP_BORDER,
 	ACTIVITY_BAR_ACTIVE_FOCUS_BORDER
 } from '../../../common/theme.js';
-import { activeContrastBorder, contrastBorder, focusBorder } from '../../../../platform/theme/common/colorRegistry.js';
-import { addDisposableListener, append, EventType, isAncestor, $, clearNode } from '../../../../base/browser/dom.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { activeContrastBorder, contrastBorder, focusBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { addDisposableListener, append, EventType, isAncestor, $, clearNode } from '@sidex/base/browser/dom.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import { CustomMenubarControl } from '../titlebar/menubarControl.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { getMenuBarVisibility, MenuSettings } from '../../../../platform/window/common/window.js';
-import { IAction, Separator, SubmenuAction, toAction } from '../../../../base/common/actions.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
-import { GestureEvent } from '../../../../base/browser/touch.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { getMenuBarVisibility, MenuSettings } from '@sidex/platform/window/common/window.js';
+import { IAction, Separator, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { GestureEvent } from '@sidex/base/browser/touch.js';
 import { IPaneCompositePart } from '../paneCompositePart.js';
 import { IPaneCompositeBarOptions, PaneCompositeBar } from '../paneCompositeBar.js';
 import { GlobalCompositeBar } from '../globalCompositeBar.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import {
 	Action2,
 	IMenuService,
 	MenuId,
 	MenuRegistry,
 	registerAction2
-} from '../../../../platform/actions/common/actions.js';
-import { ContextKeyExpr, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
-import { getContextMenuActions } from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
+} from '@sidex/platform/actions/common/actions.js';
+import { ContextKeyExpr, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
+import { getContextMenuActions } from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
 import { IViewDescriptorService, ViewContainerLocation, ViewContainerLocationToString } from '../../../common/views.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';

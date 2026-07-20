@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { ISocket } from '../../../base/parts/ipc/common/ipc.net.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ISocket } from '@sidex/base/parts/ipc/common/ipc.net.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { RemoteConnectionOfType, RemoteConnectionType, RemoteConnection } from './remoteAuthorityResolver.js';
 

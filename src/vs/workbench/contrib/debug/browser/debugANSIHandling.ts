@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { Color, RGBA } from '../../../../base/common/color.js';
-import { isDefined } from '../../../../base/common/types.js';
+import { IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
+import { isDefined } from '@sidex/base/common/types.js';
 import {
 	editorHoverBackground,
 	listActiveSelectionBackground,
 	listFocusBackground,
 	listInactiveFocusBackground,
 	listInactiveSelectionBackground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant } from '../../../../platform/theme/common/themeService.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { PANEL_BACKGROUND, SIDE_BAR_BACKGROUND } from '../../../common/theme.js';
 import { ansiColorIdentifiers } from '../../terminal/common/terminalColorRegistry.js';
 import { DebugLinkHoverBehaviorTypeData, ILinkDetector } from './linkDetector.js';

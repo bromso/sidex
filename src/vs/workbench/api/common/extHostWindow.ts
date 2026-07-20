@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isFalsyOrWhitespace } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
 import { WindowState } from 'vscode';
 import { ExtHostWindowShape, IOpenUriOptions, MainContext, MainThreadWindowShape } from './extHost.protocol.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
-import { decodeBase64 } from '../../../base/common/buffer.js';
+import { decodeBase64 } from '@sidex/base/common/buffer.js';
 
 export class ExtHostWindow implements ExtHostWindowShape {
 	declare _serviceBrand: undefined;

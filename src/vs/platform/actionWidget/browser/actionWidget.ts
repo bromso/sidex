@@ -2,12 +2,12 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as dom from '../../../base/browser/dom.js';
-import { ActionBar } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { IAnchor } from '../../../base/browser/ui/contextview/contextview.js';
-import { IAction } from '../../../base/common/actions.js';
-import { KeyCode, KeyMod } from '../../../base/common/keyCodes.js';
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import './actionWidget.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import {
@@ -25,8 +25,8 @@ import { InstantiationType, registerSingleton } from '../../instantiation/common
 import { createDecorator, IInstantiationService, ServicesAccessor } from '../../instantiation/common/instantiation.js';
 import { KeybindingWeight } from '../../keybinding/common/keybindingsRegistry.js';
 import { inputActiveOptionBackground, registerColor } from '../../theme/common/colorRegistry.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { IListAccessibilityProvider } from '../../../base/browser/ui/list/listWidget.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
 
 registerColor(
 	'actionBar.toggledBackground',

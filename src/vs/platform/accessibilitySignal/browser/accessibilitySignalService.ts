@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { addDisposableListener } from '../../../base/browser/dom.js';
-import { CachedFunction } from '../../../base/common/cache.js';
-import { getStructuralKey } from '../../../base/common/equals.js';
-import { Event, IValueWithChangeEvent } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { FileAccess } from '../../../base/common/network.js';
-import { derived, observableFromEvent, ValueWithChangeEventFromObservable } from '../../../base/common/observable.js';
+import { addDisposableListener } from '@sidex/base/browser/dom.js';
+import { CachedFunction } from '@sidex/base/common/cache.js';
+import { getStructuralKey } from '@sidex/base/common/equals.js';
+import { Event, IValueWithChangeEvent } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import { derived, observableFromEvent, ValueWithChangeEventFromObservable } from '@sidex/base/common/observable.js';
 import { localize } from '@sidex/base/nls.js';
 import { IAccessibilityService } from '../../accessibility/common/accessibility.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';

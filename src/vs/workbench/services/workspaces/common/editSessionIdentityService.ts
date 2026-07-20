@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { insert } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IDisposable, toDisposable } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { insert } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	EditSessionIdentityMatch,
 	IEditSessionIdentityCreateParticipant,
 	IEditSessionIdentityProvider,
 	IEditSessionIdentityService
-} from '../../../../platform/workspace/common/editSessions.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/workspace/common/editSessions.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
 
 export class EditSessionIdentityService implements IEditSessionIdentityService {

@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableMap, DisposableStore } from '../../../base/common/lifecycle.js';
-import { ISocket, SocketCloseEventType } from '../../../base/parts/ipc/common/ipc.net.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableMap, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ISocket, SocketCloseEventType } from '@sidex/base/parts/ipc/common/ipc.net.js';
 import {
 	ManagedSocket,
 	RemoteSocketHalf,
 	connectManagedSocket
-} from '../../../platform/remote/common/managedSocket.js';
+} from '@sidex/platform/remote/common/managedSocket.js';
 import {
 	ManagedRemoteConnection,
 	RemoteConnectionType
-} from '../../../platform/remote/common/remoteAuthorityResolver.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
 import {
 	IRemoteSocketFactoryService,
 	ISocketFactory
-} from '../../../platform/remote/common/remoteSocketFactoryService.js';
+} from '@sidex/platform/remote/common/remoteSocketFactoryService.js';
 import { IExtHostContext, extHostNamedCustomer } from '../../services/extensions/common/extHostCustomers.js';
 import {
 	ExtHostContext,

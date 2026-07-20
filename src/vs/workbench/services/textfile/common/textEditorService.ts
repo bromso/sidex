@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { createDecorator, IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { createDecorator, IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IEditorFactoryRegistry,
 	IFileEditorInput,
@@ -24,20 +24,20 @@ import {
 	INewUntitledTextEditorOptions,
 	IUntitledTextEditorService
 } from '../../untitled/common/untitledTextEditorService.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
 import { SideBySideEditorInput } from '../../../common/editor/sideBySideEditorInput.js';
 import { TextResourceEditorInput } from '../../../common/editor/textResourceEditorInput.js';
 import { UntitledTextEditorInput } from '../../untitled/common/untitledTextEditorInput.js';
 import { IUntitledTextEditorModel } from '../../untitled/common/untitledTextEditorModel.js';
-import { basename } from '../../../../base/common/resources.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IEditorResolverService, RegisteredEditorPriority } from '../../editor/common/editorResolverService.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 
 export const ITextEditorService = createDecorator<ITextEditorService>('textEditorService');
 

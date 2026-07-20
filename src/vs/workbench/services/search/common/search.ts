@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { mapArrayOrNot } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import * as glob from '../../../../base/common/glob.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import * as objects from '../../../../base/common/objects.js';
-import * as extpath from '../../../../base/common/extpath.js';
-import { fuzzyContains, getNLines } from '../../../../base/common/strings.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
-import { IFilesConfiguration } from '../../../../platform/files/common/files.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryData } from '../../../../platform/telemetry/common/telemetry.js';
-import { Event } from '../../../../base/common/event.js';
-import * as paths from '../../../../base/common/path.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
+import { mapArrayOrNot } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import * as glob from '@sidex/base/common/glob.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import * as objects from '@sidex/base/common/objects.js';
+import * as extpath from '@sidex/base/common/extpath.js';
+import { fuzzyContains, getNLines } from '@sidex/base/common/strings.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IFilesConfiguration } from '@sidex/platform/files/common/files.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryData } from '@sidex/platform/telemetry/common/telemetry.js';
+import { Event } from '@sidex/base/common/event.js';
+import * as paths from '@sidex/base/common/path.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
 import { AISearchKeyword, GlobPattern, TextSearchCompleteMessageType } from './searchExtTypes.js';
-import { isThenable } from '../../../../base/common/async.js';
-import { ResourceSet } from '../../../../base/common/map.js';
+import { isThenable } from '@sidex/base/common/async.js';
+import { ResourceSet } from '@sidex/base/common/map.js';
 
 export { TextSearchCompleteMessageType };
 

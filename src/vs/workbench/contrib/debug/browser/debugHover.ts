@@ -3,47 +3,47 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { IMouseEvent } from '../../../../base/browser/mouseEvent.js';
-import { IListVirtualDelegate } from '../../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider } from '../../../../base/browser/ui/list/listWidget.js';
-import { DomScrollableElement } from '../../../../base/browser/ui/scrollbar/scrollableElement.js';
-import { AsyncDataTree } from '../../../../base/browser/ui/tree/asyncDataTree.js';
-import { ITreeContextMenuEvent } from '../../../../base/browser/ui/tree/tree.js';
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import * as lifecycle from '../../../../base/common/lifecycle.js';
-import { clamp } from '../../../../base/common/numbers.js';
-import { isMacintosh } from '../../../../base/common/platform.js';
-import { ScrollbarVisibility } from '../../../../base/common/scrollable.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { IMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { DomScrollableElement } from '@sidex/base/browser/ui/scrollbar/scrollableElement.js';
+import { AsyncDataTree } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { ITreeContextMenuEvent } from '@sidex/base/browser/ui/tree/tree.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import * as lifecycle from '@sidex/base/common/lifecycle.js';
+import { clamp } from '@sidex/base/common/numbers.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { ScrollbarVisibility } from '@sidex/base/common/scrollable.js';
 import {
 	ContentWidgetPositionPreference,
 	ICodeEditor,
 	IContentWidget,
 	IContentWidgetPosition
-} from '../../../../editor/browser/editorBrowser.js';
-import { ConfigurationChangedEvent, EditorOption } from '../../../../editor/common/config/editorOptions.js';
-import { IDimension } from '../../../../editor/common/core/2d/dimension.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
-import { ModelDecorationOptions } from '../../../../editor/common/model/textModel.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
+} from '@sidex/editor/browser/editorBrowser.js';
+import { ConfigurationChangedEvent, EditorOption } from '@sidex/editor/common/config/editorOptions.js';
+import { IDimension } from '@sidex/editor/common/core/2d/dimension.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
+import { ModelDecorationOptions } from '@sidex/editor/common/model/textModel.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
 import * as nls from '@sidex/base/nls.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { WorkbenchAsyncDataTree } from '../../../../platform/list/browser/listService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { WorkbenchAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import {
 	asCssVariable,
 	editorHoverBackground,
 	editorHoverBorder,
 	editorHoverForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { IDebugService, IDebugSession, IExpression, IExpressionContainer, IStackFrame } from '../common/debug.js';
 import { Expression, Variable, VisualizedExpression } from '../common/debugModel.js';
 import { getEvaluatableExpressionAtPosition } from '../common/debugUtils.js';

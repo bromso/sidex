@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getActiveElement } from '../../../../base/browser/dom.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { getActiveElement } from '@sidex/base/browser/dom.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { ICodeEditor, IDiffEditor } from '../../editorBrowser.js';
 import { EditorAction2, ServicesAccessor } from '../../editorExtensions.js';
 import { ICodeEditorService } from '../../services/codeEditorService.js';
 import { DiffEditorWidget } from './diffEditorWidget.js';
 import { EditorContextKeys } from '../../../common/editorContextKeys.js';
 import { localize2 } from '@sidex/base/nls.js';
-import { ILocalizedString } from '../../../../platform/action/common/action.js';
-import { Action2, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { Action2, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import './registrations.contribution.js';
 import { DiffEditorSelectionHunkToolbarContext } from './features/gutterFeature.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { EditorOption } from '../../../common/config/editorOptions.js';
 
 export class ToggleCollapseUnchangedRegions extends Action2 {

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindow, IFocusTracker, ModifierKeyEmitter, trackFocus } from '../../../base/browser/dom.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { IObservable, IReader, observableFromEvent, observableValue } from '../../../base/common/observable.js';
+import { getWindow, IFocusTracker, ModifierKeyEmitter, trackFocus } from '@sidex/base/browser/dom.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IObservable, IReader, observableFromEvent, observableValue } from '@sidex/base/common/observable.js';
 import { InstantiationType, registerSingleton } from '../../instantiation/common/extensions.js';
 import { IModifierKeyStatus, IUserInteractionService } from './userInteractionService.js';
 

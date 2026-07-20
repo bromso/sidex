@@ -3,12 +3,12 @@
  *  Bridges VSCode's terminal infrastructure to Tauri's PTY commands.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { isMacintosh, isWindows, OperatingSystem } from '../../../../base/common/platform.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { isMacintosh, isWindows, OperatingSystem } from '@sidex/base/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import {
 	IProcessDataEvent,
 	IProcessProperty,
@@ -29,14 +29,14 @@ import {
 	ProcessPropertyType,
 	IProcessPropertyMap,
 	ITerminalLaunchResult
-} from '../../../../platform/terminal/common/terminal.js';
-import type { IProcessDetails } from '../../../../platform/terminal/common/terminalProcess.js';
-import type { IProcessEnvironment } from '../../../../base/common/platform.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import type { IProcessDetails } from '@sidex/platform/terminal/common/terminalProcess.js';
+import type { IProcessEnvironment } from '@sidex/base/common/platform.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { ITerminalInstanceService, ITerminalService } from './terminal.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 let _invoke: ((cmd: string, args?: Record<string, unknown>) => Promise<unknown>) | undefined;
 let _listen: ((event: string, handler: (event: { payload: unknown }) => void) => Promise<() => void>) | undefined;

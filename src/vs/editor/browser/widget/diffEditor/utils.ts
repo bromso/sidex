@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IDimension } from '../../../../base/browser/dom.js';
-import { findLast } from '../../../../base/common/arraysFind.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { IDimension } from '@sidex/base/browser/dom.js';
+import { findLast } from '@sidex/base/common/arraysFind.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	Disposable,
 	DisposableStore,
 	IDisposable,
 	IReference,
 	toDisposable
-} from '../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	IObservableWithChange,
@@ -23,7 +23,7 @@ import {
 	autorunWithStore,
 	observableValue,
 	transaction
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { ElementSizeObserver } from '../../config/elementSizeObserver.js';
 import { ICodeEditor, IOverlayWidget, IViewZone } from '../../editorBrowser.js';
 import { Position } from '../../../common/core/position.js';

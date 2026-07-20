@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { assert } from '../../../../base/common/assert.js';
-import { DeferredPromise } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { Event } from '../../../../base/common/event.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { LinkedList } from '../../../../base/common/linkedList.js';
-import { MarshalledId } from '../../../../base/common/marshallingIds.js';
-import { IObservable } from '../../../../base/common/observable.js';
-import { IPrefixTreeNode, WellDefinedPrefixTree } from '../../../../base/common/prefixTree.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Position } from '../../../../editor/common/core/position.js';
-import { Location } from '../../../../editor/common/languages.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { assert } from '@sidex/base/common/assert.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { IObservable } from '@sidex/base/common/observable.js';
+import { IPrefixTreeNode, WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Position } from '@sidex/editor/common/core/position.js';
+import { Location } from '@sidex/editor/common/languages.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { MutableObservableValue } from './observableValue.js';
 import { TestExclusions } from './testExclusions.js';
 import { TestId, TestIdPathParts } from './testId.js';

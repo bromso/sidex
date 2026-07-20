@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
 	EditorAction,
@@ -28,14 +28,14 @@ import * as languages from '../../../common/languages.js';
 import { BracketSelectionRangeProvider } from './bracketSelections.js';
 import { WordSelectionRangeProvider } from './wordSelections.js';
 import * as nls from '@sidex/base/nls.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { ITextModelService } from '../../../common/services/resolverService.js';
-import { assertType, isArrayOf } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { assertType, isArrayOf } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 class SelectionRanges {
 	constructor(

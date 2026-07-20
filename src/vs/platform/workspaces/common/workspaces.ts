@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { isUNC, toSlashes } from '../../../base/common/extpath.js';
-import * as json from '../../../base/common/json.js';
-import * as jsonEdit from '../../../base/common/jsonEdit.js';
-import { FormattingOptions } from '../../../base/common/jsonFormatter.js';
-import { normalizeDriveLetter } from '../../../base/common/labels.js';
-import { Schemas } from '../../../base/common/network.js';
-import { isAbsolute, posix } from '../../../base/common/path.js';
-import { isLinux, isMacintosh, isWindows } from '../../../base/common/platform.js';
-import { IExtUri, isEqualAuthority } from '../../../base/common/resources.js';
-import { URI } from '../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { isUNC, toSlashes } from '@sidex/base/common/extpath.js';
+import * as json from '@sidex/base/common/json.js';
+import * as jsonEdit from '@sidex/base/common/jsonEdit.js';
+import { FormattingOptions } from '@sidex/base/common/jsonFormatter.js';
+import { normalizeDriveLetter } from '@sidex/base/common/labels.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { isAbsolute, posix } from '@sidex/base/common/path.js';
+import { isLinux, isMacintosh, isWindows } from '@sidex/base/common/platform.js';
+import { IExtUri, isEqualAuthority } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IWorkspaceBackupInfo, IFolderBackupInfo } from '../../backup/common/backup.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { ILogService } from '../../log/common/log.js';

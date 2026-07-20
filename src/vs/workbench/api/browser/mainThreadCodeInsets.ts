@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { getWindow } from '../../../base/browser/dom.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { isEqual } from '../../../base/common/resources.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { IActiveCodeEditor, IViewZone } from '../../../editor/browser/editorBrowser.js';
-import { ICodeEditorService } from '../../../editor/browser/services/codeEditorService.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
+import { getWindow } from '@sidex/base/browser/dom.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IActiveCodeEditor, IViewZone } from '@sidex/editor/browser/editorBrowser.js';
+import { ICodeEditorService } from '@sidex/editor/browser/services/codeEditorService.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
 import { reviveWebviewContentOptions } from './mainThreadWebviews.js';
 import {
 	ExtHostContext,

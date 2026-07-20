@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IWorkbenchContributionsRegistry,
 	registerWorkbenchContribution2,
@@ -21,24 +21,24 @@ import {
 	REPOSITORIES_VIEW_PANE_ID,
 	HISTORY_VIEW_PANE_ID
 } from '../common/scm.js';
-import { KeyMod, KeyCode } from '../../../../base/common/keyCodes.js';
+import { KeyMod, KeyCode } from '@sidex/base/common/keyCodes.js';
 import {
 	MenuRegistry,
 	MenuId,
 	registerAction2 as _registerAction2,
 	Action2 as _Action2
-} from '../../../../platform/actions/common/actions.js';
+} from '@sidex/platform/actions/common/actions.js';
 import { SCMActiveResourceContextKeyController, SCMActiveRepositoryController } from './activity.js';
 import { LifecyclePhase } from '../../../services/lifecycle/common/lifecycle.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	ConfigurationScope
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { IContextKeyService, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { CommandsRegistry, ICommandService } from '../../../../platform/commands/common/commands.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IContextKeyService, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { SCMService } from '../common/scmService.js';
 import {
 	IViewContainersRegistry,
@@ -47,23 +47,23 @@ import {
 	IViewsRegistry
 } from '../../../common/views.js';
 import { SCMViewPaneContainer } from './scmViewPaneContainer.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { ModesRegistry } from '../../../../editor/common/languages/modesRegistry.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { registerIcon } from '../../../../platform/theme/common/iconRegistry.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { ModesRegistry } from '@sidex/editor/common/languages/modesRegistry.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { registerIcon } from '@sidex/platform/theme/common/iconRegistry.js';
 import { ContextKeys, SCMViewPane } from './scmViewPane.js';
 import { RepositoryPicker, SCMViewService } from './scmViewService.js';
 import { SCMRepositoriesViewPane } from './scmRepositoriesViewPane.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Context as SuggestContext } from '../../../../editor/contrib/suggest/browser/suggest.js';
-import { InlineCompletionContextKeys } from '../../../../editor/contrib/inlineCompletions/browser/controller/inlineCompletionContextKeys.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Context as SuggestContext } from '@sidex/editor/contrib/suggest/browser/suggest.js';
+import { InlineCompletionContextKeys } from '@sidex/editor/contrib/inlineCompletions/browser/controller/inlineCompletionContextKeys.js';
 import { MANAGE_TRUST_COMMAND_ID, WorkspaceTrustContext } from '../../workspace/common/workspace.js';
 import { IQuickDiffService } from '../common/quickDiff.js';
 import { QuickDiffService } from '../common/quickDiffService.js';
-import { getActiveElement, isActiveElement } from '../../../../base/browser/dom.js';
+import { getActiveElement, isActiveElement } from '@sidex/base/browser/dom.js';
 import { SCMWorkingSetController } from './workingSet.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { IListService, WorkbenchList } from '../../../../platform/list/browser/listService.js';
+import { IListService, WorkbenchList } from '@sidex/platform/list/browser/listService.js';
 import { isSCMRepository } from './util.js';
 import { SCMHistoryViewPane } from './scmHistoryViewPane.js';
 import { QuickDiffModelService, IQuickDiffModelService } from './quickDiffModel.js';
@@ -71,13 +71,13 @@ import { QuickDiffEditorController } from './quickDiffWidget.js';
 import {
 	EditorContributionInstantiation,
 	registerEditorContribution
-} from '../../../../editor/browser/editorExtensions.js';
+} from '@sidex/editor/browser/editorExtensions.js';
 import { RemoteNameContext, ResourceContextKey as _ResourceContextKey } from '../../../common/contextkeys.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { SCMAccessibilityHelp } from './scmAccessibilityHelp.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 import { SCMInputContextKeys } from './scmInput.js';
-import _product from '../../../../platform/product/common/product.js';
+import _product from '@sidex/platform/product/common/product.js';
 
 ModesRegistry.registerLanguage({
 	id: 'scminput',

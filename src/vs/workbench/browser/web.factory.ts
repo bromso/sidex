@@ -5,13 +5,13 @@
 
 import { ITunnel, ITunnelOptions, IWorkbench, IWorkbenchConstructionOptions, Menu } from './web.api.js';
 import { BrowserMain } from './web.main.js';
-import { URI, UriComponents } from '../../base/common/uri.js';
-import { IDisposable, toDisposable } from '../../base/common/lifecycle.js';
-import { CommandsRegistry } from '../../platform/commands/common/commands.js';
-import { mark, PerformanceMark } from '../../base/common/performance.js';
-import { MenuId, MenuRegistry } from '../../platform/actions/common/actions.js';
-import { DeferredPromise } from '../../base/common/async.js';
-import { asArray } from '../../base/common/arrays.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { mark, PerformanceMark } from '@sidex/base/common/performance.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { asArray } from '@sidex/base/common/arrays.js';
 import {
 	IProgress,
 	IProgressCompositeOptions,
@@ -20,8 +20,8 @@ import {
 	IProgressOptions,
 	IProgressStep,
 	IProgressWindowOptions
-} from '../../platform/progress/common/progress.js';
-import { LogLevel } from '../../platform/log/common/log.js';
+} from '@sidex/platform/progress/common/progress.js';
+import { LogLevel } from '@sidex/platform/log/common/log.js';
 import { IEmbedderTerminalOptions } from '../services/terminal/common/embedderTerminalService.js';
 
 let created = false;

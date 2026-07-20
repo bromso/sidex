@@ -4,20 +4,20 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import * as types from '../../../../base/common/types.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import * as types from '@sidex/base/common/types.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	IConfigurationRegistry,
 	Extensions as ConfigurationExtensions,
 	IConfigurationPropertySchema,
 	IConfigurationNode,
 	ConfigurationScope
-} from '../../../../platform/configuration/common/configurationRegistry.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
 
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import { textmateColorsSchemaId, textmateColorGroupSchemaId } from './colorThemeSchema.js';
-import { workbenchColorsSchemaId } from '../../../../platform/theme/common/colorRegistry.js';
-import { tokenStylingSchemaId } from '../../../../platform/theme/common/tokenClassificationRegistry.js';
+import { workbenchColorsSchemaId } from '@sidex/platform/theme/common/colorRegistry.js';
+import { tokenStylingSchemaId } from '@sidex/platform/theme/common/tokenClassificationRegistry.js';
 import {
 	ThemeSettings,
 	IWorkbenchColorTheme,
@@ -29,9 +29,9 @@ import {
 	ThemeSettingTarget,
 	ThemeSettingDefaults
 } from './workbenchThemeService.js';
-import { IConfigurationService, ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { ColorScheme } from '../../../../platform/theme/common/theme.js';
+import { IConfigurationService, ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { ColorScheme } from '@sidex/platform/theme/common/theme.js';
 import { IHostColorSchemeService } from './hostColorSchemeService.js';
 
 // Configuration: Themes

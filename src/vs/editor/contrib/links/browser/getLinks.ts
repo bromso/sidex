@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { coalesce } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { DisposableStore, isDisposable } from '../../../../base/common/lifecycle.js';
-import { assertType } from '../../../../base/common/types.js';
-import { URI } from '../../../../base/common/uri.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { DisposableStore, isDisposable } from '@sidex/base/common/lifecycle.js';
+import { assertType } from '@sidex/base/common/types.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IRange, Range } from '../../../common/core/range.js';
 import { ITextModel } from '../../../common/model.js';
 import { ILink, ILinksList, LinkProvider } from '../../../common/languages.js';
 import { IModelService } from '../../../common/services/model.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { LanguageFeatureRegistry } from '../../../common/languageFeatureRegistry.js';
 import { ILanguageFeaturesService } from '../../../common/services/languageFeatures.js';
 

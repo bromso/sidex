@@ -4,19 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Event } from '../../../base/common/event.js';
-import { basename, extname } from '../../../base/common/path.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
+import { Event } from '@sidex/base/common/event.js';
+import { basename, extname } from '@sidex/base/common/path.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
 import {
 	extname as resourceExtname,
 	basenameOrAuthority,
 	joinPath,
 	extUriBiasedIgnorePathCase
-} from '../../../base/common/resources.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+} from '@sidex/base/common/resources.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IEnvironmentService } from '../../environment/common/environment.js';
-import { Schemas } from '../../../base/common/network.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 export const IWorkspaceContextService = createDecorator<IWorkspaceContextService>('contextService');
 

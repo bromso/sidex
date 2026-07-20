@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isString } from '../../../../../base/common/types.js';
+import { isString } from '@sidex/base/common/types.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IDialogService } from '../../../../../platform/dialogs/common/dialogs.js';
-import { ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
-import { TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
 
 export async function shouldPasteTerminalText(
 	accessor: ServicesAccessor,

@@ -7,7 +7,7 @@ import './media/titlebarpart.css';
 import { localize, localize2 } from '@sidex/base/nls.js';
 import { MultiWindowParts, Part } from '../../part.js';
 import { ITitleService } from '../../../services/title/browser/titleService.js';
-import { getWCOTitlebarAreaRect, getZoomFactor, isWCOEnabled } from '../../../../base/browser/browser.js';
+import { getWCOTitlebarAreaRect, getZoomFactor, isWCOEnabled } from '@sidex/base/browser/browser.js';
 import {
 	MenuBarVisibility,
 	getTitleBarStyle,
@@ -20,16 +20,16 @@ import {
 	TitlebarStyle,
 	MenuSettings,
 	hasNativeMenu
-} from '../../../../platform/window/common/window.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { StandardMouseEvent } from '../../../../base/browser/mouseEvent.js';
+} from '@sidex/platform/window/common/window.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../platform/configuration/common/configuration.js';
-import { DisposableStore, IDisposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
 import { IBrowserWorkbenchEnvironmentService } from '../../../services/environment/browser/environmentService.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	TITLE_BAR_ACTIVE_BACKGROUND,
 	TITLE_BAR_ACTIVE_FOREGROUND,
@@ -38,8 +38,8 @@ import {
 	TITLE_BAR_BORDER,
 	WORKBENCH_BACKGROUND
 } from '../../../common/theme.js';
-import { isMacintosh, isWindows, isLinux, isWeb, isNative, platformLocale } from '../../../../base/common/platform.js';
-import { Color } from '../../../../base/common/color.js';
+import { isMacintosh, isWindows, isLinux, isWeb, isNative, platformLocale } from '@sidex/base/common/platform.js';
+import { Color } from '@sidex/base/common/color.js';
 import {
 	EventType,
 	EventHelper,
@@ -54,11 +54,11 @@ import {
 	isAncestor,
 	getActiveDocument,
 	isHTMLElement
-} from '../../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 import { CustomMenubarControl } from './menubarControl.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { IStorageService, StorageScope } from '../../../../platform/storage/common/storage.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IStorageService, StorageScope } from '@sidex/platform/storage/common/storage.js';
 import {
 	Parts,
 	IWorkbenchLayoutService,
@@ -70,18 +70,18 @@ import {
 import {
 	createActionViewItem,
 	fillInActionBarActions
-} from '../../../../platform/actions/browser/menuEntryActionViewItem.js';
-import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+} from '@sidex/platform/actions/browser/menuEntryActionViewItem.js';
+import { Action2, IMenu, IMenuService, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 import { WindowTitle } from './windowTitle.js';
 import { CommandCenterControl } from './commandCenterControl.js';
-import { Categories } from '../../../../platform/action/common/actionCommonCategories.js';
+import { Categories } from '@sidex/platform/action/common/actionCommonCategories.js';
 import {
 	HiddenItemStrategy,
 	MenuWorkbenchToolBar,
 	WorkbenchToolBar
-} from '../../../../platform/actions/browser/toolbar.js';
+} from '@sidex/platform/actions/browser/toolbar.js';
 import { ACCOUNTS_ACTIVITY_ID, GLOBAL_ACTIVITY_ID } from '../../../common/activity.js';
 import {
 	AccountsActivityActionViewItem,
@@ -89,32 +89,32 @@ import {
 	SimpleAccountActivityActionViewItem,
 	SimpleGlobalActivityActionViewItem
 } from '../globalCompositeBar.js';
-import { HoverPosition } from '../../../../base/browser/ui/hover/hoverWidget.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
 import { IEditorGroupsContainer, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { ActionRunner, IAction } from '../../../../base/common/actions.js';
+import { ActionRunner, IAction } from '@sidex/base/common/actions.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import {
 	ActionsOrientation,
 	IActionViewItem,
 	prepareActions
-} from '../../../../base/browser/ui/actionbar/actionbar.js';
+} from '@sidex/base/browser/ui/actionbar/actionbar.js';
 import { EDITOR_CORE_NAVIGATION_COMMANDS } from '../editor/editorCommands.js';
-import { AnchorAlignment } from '../../../../base/browser/ui/contextview/contextview.js';
+import { AnchorAlignment } from '@sidex/base/browser/ui/contextview/contextview.js';
 import { EditorPane } from '../editor/editorPane.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
 import { EditorCommandsContextActionRunner } from '../editor/editorTabsControl.js';
 import { IEditorCommandsContext, IEditorPartOptionsChangeEvent, IToolbarActions } from '../../../common/editor.js';
-import { CodeWindow, mainWindow } from '../../../../base/browser/window.js';
+import { CodeWindow, mainWindow } from '@sidex/base/browser/window.js';
 import { ACCOUNTS_ACTIVITY_TILE_ACTION, GLOBAL_ACTIVITY_TITLE_ACTION } from './titlebarActions.js';
-import { IView } from '../../../../base/browser/ui/grid/grid.js';
-import { createInstantHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IBaseActionViewItemOptions } from '../../../../base/browser/ui/actionbar/actionViewItems.js';
-import { IHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegate.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { safeIntl } from '../../../../base/common/date.js';
+import { IView } from '@sidex/base/browser/ui/grid/grid.js';
+import { createInstantHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IBaseActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { IHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegate.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { safeIntl } from '@sidex/base/common/date.js';
 import { IsCompactTitleBarContext, TitleBarVisibleContext } from '../../../common/contextkeys.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 
 export interface ITitleVariable {
 	readonly name: string;

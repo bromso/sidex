@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../base/common/collections.js';
-import { ProcessItem } from '../../../base/common/processes.js';
-import { UriComponents } from '../../../base/common/uri.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ProcessItem } from '@sidex/base/common/processes.js';
+import { UriComponents } from '@sidex/base/common/uri.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IWorkspace } from '../../workspace/common/workspace.js';
 

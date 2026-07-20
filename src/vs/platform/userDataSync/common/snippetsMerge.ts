@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../base/common/collections.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
 
 export interface IMergeResult {
 	local: {

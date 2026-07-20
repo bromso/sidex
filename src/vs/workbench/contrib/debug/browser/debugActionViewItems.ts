@@ -4,39 +4,39 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IAction } from '../../../../base/common/actions.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import * as dom from '../../../../base/browser/dom.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
 import {
 	SelectBox,
 	ISelectOptionItem,
 	SeparatorSelectOption
-} from '../../../../base/browser/ui/selectBox/selectBox.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+} from '@sidex/base/browser/ui/selectBox/selectBox.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
 import { IDebugService, IDebugSession, IDebugConfiguration, IConfig, ILaunch, State } from '../common/debug.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { selectBorder, selectBackground, asCssVariable } from '../../../../platform/theme/common/colorRegistry.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
-import { IDisposable, dispose } from '../../../../base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { selectBorder, selectBackground, asCssVariable } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
+import { IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import { ADD_CONFIGURATION_ID } from './debugCommands.js';
 import {
 	BaseActionViewItem,
 	IBaseActionViewItemOptions,
 	SelectActionViewItem
-} from '../../../../base/browser/ui/actionbar/actionViewItems.js';
+} from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
 import { debugStart } from './debugIcons.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { defaultSelectBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { defaultSelectBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { AccessibilityVerbositySettingId } from '../../accessibility/browser/accessibilityConfiguration.js';
 import { AccessibilityCommandId } from '../../accessibility/common/accessibilityCommands.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { hasNativeContextMenu } from '../../../../platform/window/common/window.js';
-import { Gesture, EventType as TouchEventType } from '../../../../base/browser/touch.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { hasNativeContextMenu } from '@sidex/platform/window/common/window.js';
+import { Gesture, EventType as TouchEventType } from '@sidex/base/browser/touch.js';
 
 const $ = dom.$;
 

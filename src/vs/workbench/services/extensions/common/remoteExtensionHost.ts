@@ -3,32 +3,32 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Schemas } from '../../../../base/common/network.js';
-import * as platform from '../../../../base/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IMessagePassingProtocol } from '../../../../base/parts/ipc/common/ipc.js';
-import { PersistentProtocol } from '../../../../base/parts/ipc/common/ipc.net.js';
-import { IExtensionHostDebugService } from '../../../../platform/debug/common/extensionHostDebug.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ILogService, ILoggerService } from '../../../../platform/log/common/log.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
+import { PersistentProtocol } from '@sidex/base/parts/ipc/common/ipc.net.js';
+import { IExtensionHostDebugService } from '@sidex/platform/debug/common/extensionHostDebug.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ILogService, ILoggerService } from '@sidex/platform/log/common/log.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import {
 	IConnectionOptions,
 	IRemoteExtensionHostStartParams,
 	connectRemoteAgentExtensionHost
-} from '../../../../platform/remote/common/remoteAgentConnection.js';
+} from '@sidex/platform/remote/common/remoteAgentConnection.js';
 import {
 	IRemoteAuthorityResolverService,
 	IRemoteConnectionData
-} from '../../../../platform/remote/common/remoteAuthorityResolver.js';
-import { IRemoteSocketFactoryService } from '../../../../platform/remote/common/remoteSocketFactoryService.js';
-import { ISignService } from '../../../../platform/sign/common/sign.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { isLoggingOnly } from '../../../../platform/telemetry/common/telemetryUtils.js';
-import { IWorkspaceContextService, WorkbenchState } from '../../../../platform/workspace/common/workspace.js';
+} from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { IRemoteSocketFactoryService } from '@sidex/platform/remote/common/remoteSocketFactoryService.js';
+import { ISignService } from '@sidex/platform/sign/common/sign.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { isLoggingOnly } from '@sidex/platform/telemetry/common/telemetryUtils.js';
+import { IWorkspaceContextService, WorkbenchState } from '@sidex/platform/workspace/common/workspace.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
 import { IDefaultLogLevelsService } from '../../log/common/defaultLogLevels.js';
 import { parseExtensionDevOptions } from './extensionDevOptions.js';

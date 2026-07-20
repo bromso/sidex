@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isHTMLElement } from '../../../../../base/browser/dom.js';
-import { createTrustedTypesPolicy } from '../../../../../base/browser/trustedTypes.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { isHTMLElement } from '@sidex/base/browser/dom.js';
+import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
 	IMarkdownCodeBlockRenderer,
 	IMarkdownRendererExtraOptions
-} from '../../../../../platform/markdown/browser/markdownRenderer.js';
+} from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import { EditorOption, IEditorOptions } from '../../../../common/config/editorOptions.js';
 import { BareFontInfo } from '../../../../common/config/fontInfo.js';
 import { createBareFontInfoFromRawSettings } from '../../../../common/config/fontInfoFromSettings.js';

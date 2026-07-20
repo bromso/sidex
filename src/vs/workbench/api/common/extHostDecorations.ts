@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type * as vscode from 'vscode';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	MainContext,
 	ExtHostDecorationsShape,
@@ -14,14 +14,14 @@ import {
 	DecorationReply
 } from './extHost.protocol.js';
 import { Disposable, FileDecoration } from './extHostTypes.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { asArray, groupBy } from '../../../base/common/arrays.js';
-import { compare, count } from '../../../base/common/strings.js';
-import { dirname } from '../../../base/common/path.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { asArray, groupBy } from '@sidex/base/common/arrays.js';
+import { compare, count } from '@sidex/base/common/strings.js';
+import { dirname } from '@sidex/base/common/path.js';
 import { checkProposedApiEnabled } from '../../services/extensions/common/extensions.js';
 
 interface ProviderData {

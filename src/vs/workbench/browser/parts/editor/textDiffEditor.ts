@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { deepClone } from '../../../../base/common/objects.js';
-import { isObject, assertReturnsDefined } from '../../../../base/common/types.js';
-import { ICodeEditor, IDiffEditor } from '../../../../editor/browser/editorBrowser.js';
+import { deepClone } from '@sidex/base/common/objects.js';
+import { isObject, assertReturnsDefined } from '@sidex/base/common/types.js';
+import { ICodeEditor, IDiffEditor } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	IDiffEditorOptions,
 	IEditorOptions as ICodeEditorOptions
-} from '../../../../editor/common/config/editorOptions.js';
+} from '@sidex/editor/common/config/editorOptions.js';
 import { AbstractTextEditor, IEditorConfiguration } from './textEditor.js';
 import {
 	TEXT_DIFF_EDITOR_ID,
@@ -26,42 +26,42 @@ import { EditorInput } from '../../../common/editor/editorInput.js';
 import { applyTextEditorOptions } from '../../../common/editor/editorOptions.js';
 import { DiffEditorInput } from '../../../common/editor/diffEditorInput.js';
 import { TextDiffEditorModel } from '../../../common/editor/textDiffEditorModel.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IStorageService } from '../../../../platform/storage/common/storage.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IStorageService } from '@sidex/platform/storage/common/storage.js';
 import {
 	ITextResourceConfigurationChangeEvent,
 	ITextResourceConfigurationService
-} from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+} from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { TextFileOperationError, TextFileOperationResult } from '../../../services/textfile/common/textfiles.js';
 import {
 	ScrollType,
 	IDiffEditorViewState,
 	IDiffEditorModel,
 	IDiffEditorViewModel
-} from '../../../../editor/common/editorCommon.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/editor/common/editorCommon.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IEditorGroup, IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { EditorActivation, ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { isEqual } from '../../../../base/common/resources.js';
-import { Dimension } from '../../../../base/browser/dom.js';
-import { multibyteAwareBtoa } from '../../../../base/common/strings.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { EditorActivation, ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { isEqual } from '@sidex/base/common/resources.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { multibyteAwareBtoa } from '@sidex/base/common/strings.js';
 import {
 	ByteSize,
 	FileOperationError,
 	FileOperationResult,
 	IFileService,
 	TooLargeFileOperationError
-} from '../../../../platform/files/common/files.js';
-import { IBoundarySashes } from '../../../../base/browser/ui/sash/sash.js';
+} from '@sidex/platform/files/common/files.js';
+import { IBoundarySashes } from '@sidex/base/browser/ui/sash/sash.js';
 import { IPreferencesService } from '../../../services/preferences/common/preferences.js';
-import { StopWatch } from '../../../../base/common/stopwatch.js';
-import { DiffEditorWidget } from '../../../../editor/browser/widget/diffEditor/diffEditorWidget.js';
+import { StopWatch } from '@sidex/base/common/stopwatch.js';
+import { DiffEditorWidget } from '@sidex/editor/browser/widget/diffEditor/diffEditorWidget.js';
 
 /**
  * The text editor that leverages the diff text editor for the editing experience.

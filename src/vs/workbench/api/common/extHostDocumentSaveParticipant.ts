@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { illegalState } from '../../../base/common/errors.js';
+import { Event } from '@sidex/base/common/event.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { illegalState } from '@sidex/base/common/errors.js';
 import {
 	ExtHostDocumentSaveParticipantShape,
 	IWorkspaceEditDto,
@@ -16,9 +16,9 @@ import { Range, TextDocumentSaveReason, EndOfLine } from './extHostTypeConverter
 import { ExtHostDocuments } from './extHostDocuments.js';
 import { SaveReason } from '../../common/editor.js';
 import type * as vscode from 'vscode';
-import { LinkedList } from '../../../base/common/linkedList.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
+import { LinkedList } from '@sidex/base/common/linkedList.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
 import { SerializableObjectWithBuffers } from '../../services/extensions/common/proxyIdentifier.js';
 
 type Listener = [(...args: any[]) => any, unknown, IExtensionDescription];

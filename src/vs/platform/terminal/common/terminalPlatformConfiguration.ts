@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Codicon, getAllCodicons } from '../../../base/common/codicons.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../base/common/jsonSchema.js';
-import { OperatingSystem, Platform, PlatformToString } from '../../../base/common/platform.js';
+import { Codicon, getAllCodicons } from '@sidex/base/common/codicons.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { OperatingSystem, Platform, PlatformToString } from '@sidex/base/common/platform.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,

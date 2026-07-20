@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IIconSelectBoxOptions, IconSelectBox } from '../../../../base/browser/ui/icons/iconSelectBox.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import * as dom from '../../../../base/browser/dom.js';
+import { IIconSelectBoxOptions, IconSelectBox } from '@sidex/base/browser/ui/icons/iconSelectBox.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
 import {
 	ContextKeyExpr,
 	IContextKey,
 	IContextKeyService,
 	RawContextKey
-} from '../../../../platform/contextkey/common/contextkey.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+} from '@sidex/platform/contextkey/common/contextkey.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 
 export const WorkbenchIconSelectBoxFocusContextKey = new RawContextKey<boolean>('iconSelectBoxFocus', true);
 export const WorkbenchIconSelectBoxInputFocusContextKey = new RawContextKey<boolean>('iconSelectBoxInputFocus', true);

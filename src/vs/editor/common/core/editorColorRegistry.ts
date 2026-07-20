@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { Color, RGBA } from '../../../base/common/color.js';
+import { Color, RGBA } from '@sidex/base/common/color.js';
 import {
 	activeContrastBorder,
 	editorBackground,
@@ -16,8 +16,8 @@ import {
 	contrastBorder,
 	editorFindMatchHighlight,
 	editorWarningBackground
-} from '../../../platform/theme/common/colorRegistry.js';
-import { registerThemingParticipant } from '../../../platform/theme/common/themeService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { registerThemingParticipant } from '@sidex/platform/theme/common/themeService.js';
 
 /**
  * Definition of the editor colors

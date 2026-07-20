@@ -9,12 +9,12 @@ import {
 	AbstractMessageLogger,
 	LogLevel,
 	AbstractLoggerService
-} from '../../../platform/log/common/log.js';
+} from '@sidex/platform/log/common/log.js';
 import { MainThreadLoggerShape, MainContext, ExtHostLogLevelServiceShape } from './extHost.protocol.js';
 import { IExtHostInitDataService } from './extHostInitDataService.js';
 import { IExtHostRpcService } from './extHostRpcService.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
-import { revive } from '../../../base/common/marshalling.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
+import { revive } from '@sidex/base/common/marshalling.js';
 
 export class ExtHostLoggerService extends AbstractLoggerService implements ExtHostLogLevelServiceShape {
 	declare readonly _serviceBrand: undefined;

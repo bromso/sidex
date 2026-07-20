@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, ISettableObservable, observableValue, transaction } from '../../../../base/common/observable.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, ISettableObservable, observableValue, transaction } from '@sidex/base/common/observable.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	bindContextKey,
 	observableConfigValue
-} from '../../../../platform/observable/common/platformObservableUtils.js';
+} from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { TestingConfigKeys } from './configuration.js';
 import { Testing } from './constants.js';
 import { TestCoverage } from './testCoverage.js';

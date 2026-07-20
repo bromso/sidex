@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
-import * as platform from '../../../../base/common/platform.js';
-import { AbstractGotoLineQuickAccessProvider } from '../../../../editor/contrib/quickAccess/browser/gotoLineQuickAccess.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import * as platform from '@sidex/base/common/platform.js';
+import { AbstractGotoLineQuickAccessProvider } from '@sidex/editor/contrib/quickAccess/browser/gotoLineQuickAccess.js';
 import * as nls from '@sidex/base/nls.js';
 import {
 	ConfigurationScope,
 	Extensions as ConfigurationExtensions,
 	IConfigurationRegistry
-} from '../../../../platform/configuration/common/configurationRegistry.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	Extensions as QuickAccessExtensions,
 	IQuickAccessRegistry
-} from '../../../../platform/quickinput/common/quickAccess.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+} from '@sidex/platform/quickinput/common/quickAccess.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { ViewPaneContainer } from '../../../browser/parts/views/viewPaneContainer.js';
 import { defaultQuickAccessContextKeyValue } from '../../../browser/quickaccess.js';
 import {
@@ -49,8 +49,8 @@ import {
 	DEFAULT_MAX_SEARCH_RESULTS,
 	SemanticSearchBehavior
 } from '../../../services/search/common/search.js';
-import { CommandsRegistry } from '../../../../platform/commands/common/commands.js';
-import { assertType } from '../../../../base/common/types.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { assertType } from '@sidex/base/common/types.js';
 import { getWorkspaceSymbols, IWorkspaceSymbol } from '../common/search.js';
 import * as Constants from '../common/constants.js';
 
@@ -67,7 +67,7 @@ import {
 	registerWorkbenchContribution2 as _registerWorkbenchContribution2,
 	WorkbenchPhase as _WorkbenchPhase
 } from '../../../common/contributions.js';
-import { AccessibleViewRegistry } from '../../../../platform/accessibility/browser/accessibleViewRegistry.js';
+import { AccessibleViewRegistry } from '@sidex/platform/accessibility/browser/accessibleViewRegistry.js';
 import { SearchAccessibilityHelp } from './searchAccessibilityHelp.js';
 
 registerSingleton(ISearchViewModelWorkbenchService, SearchViewModelWorkbenchService, InstantiationType.Delayed);

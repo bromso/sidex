@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IListVirtualDelegate, IListRenderer } from '../../../../base/browser/ui/list/list.js';
+import { IListVirtualDelegate, IListRenderer } from '@sidex/base/browser/ui/list/list.js';
 import {
 	clearNode,
 	addDisposableListener,
@@ -11,16 +11,16 @@ import {
 	EventHelper,
 	$,
 	isEventLike
-} from '../../../../base/browser/dom.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { URI } from '../../../../base/common/uri.js';
+} from '@sidex/base/browser/dom.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ButtonBar, IButtonOptions } from '../../../../base/browser/ui/button/button.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { ActionRunner, IAction, IActionRunner, Separator, toAction } from '../../../../base/common/actions.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { dispose, DisposableStore, Disposable } from '../../../../base/common/lifecycle.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { ButtonBar, IButtonOptions } from '@sidex/base/browser/ui/button/button.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ActionRunner, IAction, IActionRunner, Separator, toAction } from '@sidex/base/common/actions.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { dispose, DisposableStore, Disposable } from '@sidex/base/common/lifecycle.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import {
 	INotificationViewItem,
 	NotificationViewItem,
@@ -38,28 +38,28 @@ import {
 	getNotificationExpandIcon,
 	getNotificationCollapseIcon
 } from './notificationsActions.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { ProgressBar } from '../../../../base/browser/ui/progressbar/progressbar.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
 import {
 	INotificationService,
 	NotificationsFilter,
 	Severity,
 	isNotificationSource
-} from '../../../../platform/notification/common/notification.js';
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { DropdownMenuActionViewItem } from '../../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { DomEmitter } from '../../../../base/browser/event.js';
-import { Gesture, EventType as GestureEventType } from '../../../../base/browser/touch.js';
-import { Event } from '../../../../base/common/event.js';
-import { defaultButtonStyles, defaultProgressBarStyles } from '../../../../platform/theme/browser/defaultStyles.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import type { IManagedHover } from '../../../../base/browser/ui/hover/hover.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/platform/notification/common/notification.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { DropdownMenuActionViewItem } from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
+import { Gesture, EventType as GestureEventType } from '@sidex/base/browser/touch.js';
+import { Event } from '@sidex/base/common/event.js';
+import { defaultButtonStyles, defaultProgressBarStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import type { IManagedHover } from '@sidex/base/browser/ui/hover/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 export class NotificationsListDelegate implements IListVirtualDelegate<INotificationViewItem> {
 	private static readonly ROW_HEIGHT = 42;

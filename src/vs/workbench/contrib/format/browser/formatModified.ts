@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isNonEmptyArray } from '../../../../base/common/arrays.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { EditorAction, registerEditorAction, ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
-import { ITextModel, shouldSynchronizeModel } from '../../../../editor/common/model.js';
-import { IEditorWorkerService } from '../../../../editor/common/services/editorWorker.js';
-import { ITextModelService } from '../../../../editor/common/services/resolverService.js';
+import { isNonEmptyArray } from '@sidex/base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { EditorAction, registerEditorAction, ServicesAccessor } from '@sidex/editor/browser/editorExtensions.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
+import { ITextModel, shouldSynchronizeModel } from '@sidex/editor/common/model.js';
+import { IEditorWorkerService } from '@sidex/editor/common/services/editorWorker.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import {
 	formatDocumentRangesWithSelectedProvider,
 	FormattingMode
-} from '../../../../editor/contrib/format/browser/format.js';
+} from '@sidex/editor/contrib/format/browser/format.js';
 import * as nls from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Progress } from '../../../../platform/progress/common/progress.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Progress } from '@sidex/platform/progress/common/progress.js';
 import { IQuickDiffService } from '../../scm/common/quickDiff.js';
 import { getOriginalResource } from '../../scm/common/quickDiffService.js';
 

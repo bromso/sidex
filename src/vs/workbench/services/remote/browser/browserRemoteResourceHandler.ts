@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { getMediaOrTextMime } from '../../../../base/common/mime.js';
-import { URI, UriComponents } from '../../../../base/common/uri.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { getMediaOrTextMime } from '@sidex/base/common/mime.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import {
 	FileOperationError,
 	FileOperationResult,
 	IFileContent,
 	IFileService
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { IRemoteResourceProvider, IResourceUriProvider } from '../../../browser/web.api.js';
 
 export class BrowserRemoteResourceLoader extends Disposable {

@@ -9,7 +9,7 @@ import {
 	getTokenClassificationRegistry,
 	ITokenClassificationRegistry,
 	typeAndModifierIdPattern
-} from '../../../../platform/theme/common/tokenClassificationRegistry.js';
+} from '@sidex/platform/theme/common/tokenClassificationRegistry.js';
 
 interface ITokenTypeExtensionPoint {
 	id: string;

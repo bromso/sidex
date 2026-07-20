@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IMessagePassingProtocol } from '../../../base/parts/ipc/common/ipc.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Emitter } from '../../../base/common/event.js';
+import { IMessagePassingProtocol } from '@sidex/base/parts/ipc/common/ipc.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter } from '@sidex/base/common/event.js';
 import {
 	isMessageOfType,
 	MessageType,
@@ -15,13 +15,13 @@ import {
 import { ExtensionHostMain } from '../common/extensionHostMain.js';
 import { IHostUtils } from '../common/extHostExtensionService.js';
 import { NestedWorker } from '../../services/extensions/worker/polyfillNestedWorker.js';
-import * as path from '../../../base/common/path.js';
-import * as performance from '../../../base/common/performance.js';
+import * as path from '@sidex/base/common/path.js';
+import * as performance from '@sidex/base/common/performance.js';
 
 import '../common/extHost.common.services.js';
 import './extHost.worker.services.js';
-import { FileAccess } from '../../../base/common/network.js';
-import { URI } from '../../../base/common/uri.js';
+import { FileAccess } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 
 //#region --- Define, capture, and override some globals
 

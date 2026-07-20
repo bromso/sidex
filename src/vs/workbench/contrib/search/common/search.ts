@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { onUnexpectedExternalError } from '../../../../base/common/errors.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
+import { onUnexpectedExternalError } from '@sidex/base/common/errors.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import { ISearchConfiguration, ISearchConfigurationProperties } from '../../../services/search/common/search.js';
-import { SymbolKind, Location, ProviderResult, SymbolTag } from '../../../../editor/common/languages.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { URI } from '../../../../base/common/uri.js';
+import { SymbolKind, Location, ProviderResult, SymbolTag } from '@sidex/editor/common/languages.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { EditorResourceAccessor, SideBySideEditor } from '../../../common/editor.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { ServicesAccessor } from '../../../../platform/instantiation/common/instantiation.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
-import { isNumber } from '../../../../base/common/types.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { compare } from '../../../../base/common/strings.js';
-import { groupBy } from '../../../../base/common/arrays.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
+import { isNumber } from '@sidex/base/common/types.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { groupBy } from '@sidex/base/common/arrays.js';
 
 export interface IWorkspaceSymbol {
 	name: string;

@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isSafari, setFullscreen } from '../../base/browser/browser.js';
+import { isSafari, setFullscreen } from '@sidex/base/browser/browser.js';
 import {
 	addDisposableListener,
 	EventHelper,
@@ -16,8 +16,8 @@ import {
 	windowOpenNoOpener,
 	windowOpenPopup,
 	windowOpenWithSuccess
-} from '../../base/browser/dom.js';
-import { DomEmitter } from '../../base/browser/event.js';
+} from '@sidex/base/browser/dom.js';
+import { DomEmitter } from '@sidex/base/browser/event.js';
 import {
 	HidDeviceData,
 	requestHidDevice,
@@ -25,33 +25,33 @@ import {
 	requestUsbDevice,
 	SerialPortData,
 	UsbDeviceData
-} from '../../base/browser/deviceAccess.js';
-import { timeout } from '../../base/common/async.js';
-import { Event } from '../../base/common/event.js';
-import { Disposable, IDisposable, dispose, toDisposable } from '../../base/common/lifecycle.js';
-import { matchesScheme, Schemas } from '../../base/common/network.js';
-import { isIOS, isMacintosh } from '../../base/common/platform.js';
-import Severity from '../../base/common/severity.js';
-import { URI } from '../../base/common/uri.js';
+} from '@sidex/base/browser/deviceAccess.js';
+import { timeout } from '@sidex/base/common/async.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Disposable, IDisposable, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { matchesScheme, Schemas } from '@sidex/base/common/network.js';
+import { isIOS, isMacintosh } from '@sidex/base/common/platform.js';
+import Severity from '@sidex/base/common/severity.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { CommandsRegistry } from '../../platform/commands/common/commands.js';
-import { IDialogService, IPromptButton } from '../../platform/dialogs/common/dialogs.js';
-import { IInstantiationService, ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../platform/label/common/label.js';
-import { IOpenerService } from '../../platform/opener/common/opener.js';
-import { IProductService } from '../../platform/product/common/productService.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { IDialogService, IPromptButton } from '@sidex/platform/dialogs/common/dialogs.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { IBrowserWorkbenchEnvironmentService } from '../services/environment/browser/environmentService.js';
 import { IWorkbenchLayoutService } from '../services/layout/browser/layoutService.js';
 import { BrowserLifecycleService } from '../services/lifecycle/browser/lifecycleService.js';
 import { ILifecycleService, ShutdownReason } from '../services/lifecycle/common/lifecycle.js';
 import { IHostService } from '../services/host/browser/host.js';
 import { registerWindowDriver } from '../services/driver/browser/driver.js';
-import { CodeWindow, isAuxiliaryWindow, mainWindow } from '../../base/browser/window.js';
-import { createSingleCallFunction } from '../../base/common/functional.js';
-import { IConfigurationService } from '../../platform/configuration/common/configuration.js';
+import { CodeWindow, isAuxiliaryWindow, mainWindow } from '@sidex/base/browser/window.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IWorkbenchEnvironmentService } from '../services/environment/common/environmentService.js';
-import { MarkdownString } from '../../base/common/htmlContent.js';
-import { IContextMenuService } from '../../platform/contextview/browser/contextView.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 
 export abstract class BaseWindow extends Disposable {
 	private static TIMEOUT_HANDLES = Number.MIN_SAFE_INTEGER; // try to not compete with the IDs of native `setTimeout`

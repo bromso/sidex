@@ -4,17 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { IViewportRange, IBufferRange, ILink, ILinkDecorations, Terminal } from '@xterm/xterm';
-import { Disposable, DisposableStore, MutableDisposable } from '../../../../../base/common/lifecycle.js';
-import * as dom from '../../../../../base/browser/dom.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
+import { Disposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import { convertBufferRangeToViewport } from './terminalLinkHelpers.js';
-import { isMacintosh } from '../../../../../base/common/platform.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
+import { isMacintosh } from '@sidex/base/common/platform.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TerminalLinkType } from './links.js';
-import type { URI } from '../../../../../base/common/uri.js';
+import type { URI } from '@sidex/base/common/uri.js';
 import type { IParsedLink } from './terminalLinkParsing.js';
-import type { IHoverAction } from '../../../../../base/browser/ui/hover/hover.js';
+import type { IHoverAction } from '@sidex/base/browser/ui/hover/hover.js';
 
 export class TerminalLink extends Disposable implements ILink {
 	decorations: ILinkDecorations;

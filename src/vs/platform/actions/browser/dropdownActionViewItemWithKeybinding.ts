@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IContextMenuProvider } from '../../../base/browser/contextmenu.js';
-import { IActionProvider } from '../../../base/browser/ui/dropdown/dropdown.js';
+import { IContextMenuProvider } from '@sidex/base/browser/contextmenu.js';
+import { IActionProvider } from '@sidex/base/browser/ui/dropdown/dropdown.js';
 import {
 	DropdownMenuActionViewItem,
 	IDropdownMenuActionViewItemOptions
-} from '../../../base/browser/ui/dropdown/dropdownActionViewItem.js';
-import { IAction } from '../../../base/common/actions.js';
+} from '@sidex/base/browser/ui/dropdown/dropdownActionViewItem.js';
+import { IAction } from '@sidex/base/common/actions.js';
 import { IContextKeyService } from '../../contextkey/common/contextkey.js';
 import { IKeybindingService } from '../../keybinding/common/keybinding.js';
 

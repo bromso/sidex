@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ParsedPattern, parse } from '../../../base/common/glob.js';
-import { Mimes } from '../../../base/common/mime.js';
-import { Schemas } from '../../../base/common/network.js';
-import { basename, posix } from '../../../base/common/path.js';
-import { DataUri } from '../../../base/common/resources.js';
-import { endsWithIgnoreCase, equals, startsWithUTF8BOM } from '../../../base/common/strings.js';
-import { URI } from '../../../base/common/uri.js';
+import { ParsedPattern, parse } from '@sidex/base/common/glob.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { basename, posix } from '@sidex/base/common/path.js';
+import { DataUri } from '@sidex/base/common/resources.js';
+import { endsWithIgnoreCase, equals, startsWithUTF8BOM } from '@sidex/base/common/strings.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { PLAINTEXT_LANGUAGE_ID } from '../languages/modesRegistry.js';
 
 export interface ILanguageAssociation {

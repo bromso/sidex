@@ -2,30 +2,30 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as dom from '../../../base/browser/dom.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
-import { renderMarkdown } from '../../../base/browser/markdownRenderer.js';
-import { ActionBar } from '../../../base/browser/ui/actionbar/actionbar.js';
-import { getAnchorRect, IAnchor } from '../../../base/browser/ui/contextview/contextview.js';
-import { KeybindingLabel } from '../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { renderMarkdown } from '@sidex/base/browser/markdownRenderer.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { getAnchorRect, IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
 import {
 	IListEvent,
 	IListMouseEvent,
 	IListRenderer,
 	IListVirtualDelegate
-} from '../../../base/browser/ui/list/list.js';
-import { IListAccessibilityProvider, List } from '../../../base/browser/ui/list/listWidget.js';
-import { IAction, SubmenuAction, toAction } from '../../../base/common/actions.js';
-import { CancellationToken, CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { Emitter } from '../../../base/common/event.js';
-import { IMarkdownString, MarkdownString } from '../../../base/common/htmlContent.js';
-import { ResolvedKeybinding } from '../../../base/common/keybindings.js';
-import { AnchorPosition } from '../../../base/common/layout.js';
-import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '../../../base/common/lifecycle.js';
-import { OS } from '../../../base/common/platform.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { URI } from '../../../base/common/uri.js';
+} from '@sidex/base/browser/ui/list/list.js';
+import { IListAccessibilityProvider, List } from '@sidex/base/browser/ui/list/listWidget.js';
+import { IAction, SubmenuAction, toAction } from '@sidex/base/common/actions.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { AnchorPosition } from '@sidex/base/common/layout.js';
+import { Disposable, DisposableStore, MutableDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
 import './actionWidget.css';
 import { localize } from '@sidex/base/nls.js';
 import { IContextViewService } from '../../contextview/browser/contextView.js';
@@ -36,8 +36,8 @@ import { asCssVariable } from '../../theme/common/colorRegistry.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { IHoverService } from '../../hover/browser/hover.js';
-import { HoverPosition } from '../../../base/browser/ui/hover/hoverWidget.js';
-import { IHoverPositionOptions, IHoverWidget } from '../../../base/browser/ui/hover/hover.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { IHoverPositionOptions, IHoverWidget } from '@sidex/base/browser/ui/hover/hover.js';
 
 export const acceptSelectedActionCommand = 'acceptSelectedCodeAction';
 export const previewSelectedActionCommand = 'previewSelectedCodeAction';

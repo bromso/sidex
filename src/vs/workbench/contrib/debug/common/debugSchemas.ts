@@ -7,9 +7,9 @@ import * as extensionsRegistry from '../../../services/extensions/common/extensi
 import * as nls from '@sidex/base/nls.js';
 import { IDebuggerContribution, ICompound, IBreakpointContribution } from './debug.js';
 import { launchSchemaId } from '../../../services/configuration/common/configuration.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
 import { inputsSchema } from '../../../services/configurationResolver/common/configurationResolverSchema.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	Extensions,
 	IExtensionFeatureTableRenderer,
@@ -18,9 +18,9 @@ import {
 	IRowData,
 	ITableData
 } from '../../../services/extensionManagement/common/extensionFeatures.js';
-import { IExtensionManifest } from '../../../../platform/extensions/common/extensions.js';
-import { SyncDescriptor } from '../../../../platform/instantiation/common/descriptors.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { IExtensionManifest } from '@sidex/platform/extensions/common/extensions.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 
 // debuggers extension point
 export const debuggersExtPoint = extensionsRegistry.ExtensionsRegistry.registerExtensionPoint<IDebuggerContribution[]>({

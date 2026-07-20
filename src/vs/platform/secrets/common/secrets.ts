@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { SequencerByKey } from '../../../base/common/async.js';
+import { SequencerByKey } from '@sidex/base/common/async.js';
 import { IEncryptionService } from '../../encryption/common/encryptionService.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IStorageService, InMemoryStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { ILogService } from '../../log/common/log.js';
-import { Disposable, DisposableStore } from '../../../base/common/lifecycle.js';
-import { Lazy } from '../../../base/common/lazy.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 
 export const ISecretStorageService = createDecorator<ISecretStorageService>('secretStorageService');
 

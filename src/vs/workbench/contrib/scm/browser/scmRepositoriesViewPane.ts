@@ -6,32 +6,32 @@
 import './media/scm.css';
 import { localize } from '@sidex/base/nls.js';
 import { ViewPane, IViewPaneOptions } from '../../../browser/parts/views/viewPane.js';
-import { append, $ } from '../../../../base/browser/dom.js';
-import { IListVirtualDelegate, IIdentityProvider } from '../../../../base/browser/ui/list/list.js';
+import { append, $ } from '@sidex/base/browser/dom.js';
+import { IListVirtualDelegate, IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
 import {
 	IAsyncDataSource,
 	ITreeEvent,
 	ITreeContextMenuEvent,
 	ITreeNode,
 	ITreeElementRenderDetails
-} from '../../../../base/browser/ui/tree/tree.js';
-import { IOpenEvent, WorkbenchCompressibleAsyncDataTree } from '../../../../platform/list/browser/listService.js';
+} from '@sidex/base/browser/ui/tree/tree.js';
+import { IOpenEvent, WorkbenchCompressibleAsyncDataTree } from '@sidex/platform/list/browser/listService.js';
 import { ISCMRepository, ISCMService, ISCMViewService } from '../common/scm.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	combinedDisposable,
 	Disposable,
 	DisposableMap,
 	DisposableStore,
 	IDisposable
-} from '../../../../base/common/lifecycle.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+} from '@sidex/base/common/lifecycle.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IViewDescriptorService } from '../../../common/views.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { RepositoryActionRunner, RepositoryRenderer } from './scmRepositoryRenderer.js';
 import {
 	collectContextMenuActions,
@@ -42,31 +42,31 @@ import {
 	isSCMArtifactTreeElement,
 	isSCMRepository
 } from './util.js';
-import { Orientation } from '../../../../base/browser/ui/sash/sash.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IMenuService, MenuId } from '../../../../platform/actions/common/actions.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
-import { autorun, IObservable, observableSignalFromEvent, runOnChange } from '../../../../base/common/observable.js';
-import { Sequencer, Throttler } from '../../../../base/common/async.js';
+import { Orientation } from '@sidex/base/browser/ui/sash/sash.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IMenuService, MenuId } from '@sidex/platform/actions/common/actions.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
+import { autorun, IObservable, observableSignalFromEvent, runOnChange } from '@sidex/base/common/observable.js';
+import { Sequencer, Throttler } from '@sidex/base/common/async.js';
 import { SCMArtifactGroupTreeElement, SCMArtifactTreeElement } from '../common/artifact.js';
-import { FuzzyScore } from '../../../../base/common/fuzzyScorer.js';
-import { IconLabel } from '../../../../base/browser/ui/iconLabel/iconLabel.js';
+import { FuzzyScore } from '@sidex/base/common/fuzzyScorer.js';
+import { IconLabel } from '@sidex/base/browser/ui/iconLabel/iconLabel.js';
 import { SCMViewService } from './scmViewService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
-import { WorkbenchToolBar } from '../../../../platform/actions/browser/toolbar.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IResourceNode, ResourceTree } from '../../../../base/common/resourceTree.js';
-import { URI } from '../../../../base/common/uri.js';
-import { basename } from '../../../../base/common/resources.js';
-import { ICompressibleTreeRenderer } from '../../../../base/browser/ui/tree/objectTree.js';
-import { ICompressedTreeNode } from '../../../../base/browser/ui/tree/compressedObjectTreeModel.js';
-import { IAsyncDataTreeViewState, ITreeCompressionDelegate } from '../../../../base/browser/ui/tree/asyncDataTree.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { IActionViewItemProvider } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { fromNow } from '../../../../base/common/date.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { WorkbenchToolBar } from '@sidex/platform/actions/browser/toolbar.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IResourceNode, ResourceTree } from '@sidex/base/common/resourceTree.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { ICompressibleTreeRenderer } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { ICompressedTreeNode } from '@sidex/base/browser/ui/tree/compressedObjectTreeModel.js';
+import { IAsyncDataTreeViewState, ITreeCompressionDelegate } from '@sidex/base/browser/ui/tree/asyncDataTree.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { IActionViewItemProvider } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { fromNow } from '@sidex/base/common/date.js';
 
 type TreeElement =
 	| ISCMRepository

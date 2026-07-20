@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Action, IAction, Separator } from '../../../base/common/actions.js';
+import { Action, IAction, Separator } from '@sidex/base/common/actions.js';
 import {
 	$,
 	addDisposableListener,
@@ -15,31 +15,31 @@ import {
 	getDomNodePagePosition,
 	hide,
 	show
-} from '../../../base/browser/dom.js';
-import { ICommandService } from '../../../platform/commands/common/commands.js';
-import { toDisposable, DisposableStore, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { IContextMenuService } from '../../../platform/contextview/browser/contextView.js';
-import { IThemeService, IColorTheme } from '../../../platform/theme/common/themeService.js';
+} from '@sidex/base/browser/dom.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { toDisposable, DisposableStore, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IThemeService, IColorTheme } from '@sidex/platform/theme/common/themeService.js';
 import { NumberBadge, IBadge, IActivity, ProgressBadge, IconBadge } from '../../services/activity/common/activity.js';
-import { IInstantiationService, ServicesAccessor } from '../../../platform/instantiation/common/instantiation.js';
-import { DelayedDragHandler } from '../../../base/browser/dnd.js';
-import { IKeybindingService } from '../../../platform/keybinding/common/keybinding.js';
-import { Emitter, Event } from '../../../base/common/event.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { DelayedDragHandler } from '@sidex/base/browser/dnd.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { CompositeDragAndDropObserver, ICompositeDragAndDrop, Before2D, toggleDropEffect } from '../dnd.js';
-import { Color } from '../../../base/common/color.js';
-import { BaseActionViewItem, IActionViewItemOptions } from '../../../base/browser/ui/actionbar/actionViewItems.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { IHoverService } from '../../../platform/hover/browser/hover.js';
-import { IConfigurationService } from '../../../platform/configuration/common/configuration.js';
-import { HoverPosition } from '../../../base/browser/ui/hover/hoverWidget.js';
-import { URI } from '../../../base/common/uri.js';
-import { badgeBackground, badgeForeground, contrastBorder } from '../../../platform/theme/common/colorRegistry.js';
-import { Action2, IAction2Options } from '../../../platform/actions/common/actions.js';
+import { Color } from '@sidex/base/common/color.js';
+import { BaseActionViewItem, IActionViewItemOptions } from '@sidex/base/browser/ui/actionbar/actionViewItems.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { HoverPosition } from '@sidex/base/browser/ui/hover/hoverWidget.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { badgeBackground, badgeForeground, contrastBorder } from '@sidex/platform/theme/common/colorRegistry.js';
+import { Action2, IAction2Options } from '@sidex/platform/actions/common/actions.js';
 import { ViewContainerLocation } from '../../common/views.js';
 import { IPaneCompositePartService } from '../../services/panecomposite/browser/panecomposite.js';
-import { createConfigureKeybindingAction } from '../../../platform/actions/common/menuService.js';
-import { HoverStyle } from '../../../base/browser/ui/hover/hover.js';
+import { createConfigureKeybindingAction } from '@sidex/platform/actions/common/menuService.js';
+import { HoverStyle } from '@sidex/base/browser/ui/hover/hover.js';
 
 export interface ICompositeBar {
 	/**

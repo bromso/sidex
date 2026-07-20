@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isObject, isString } from '../../../base/common/types.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
 import { ILocalizedString } from '../../action/common/action.js';
 import { IExtensionManifest } from '../../extensions/common/extensions.js';
 import { localize } from '@sidex/base/nls.js';

@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { MenuId } from '../../../../platform/actions/common/actions.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { MenuId } from '@sidex/platform/actions/common/actions.js';
 
 export const EditorLineNumberContextMenu = MenuId.EditorLineNumberContext;
 

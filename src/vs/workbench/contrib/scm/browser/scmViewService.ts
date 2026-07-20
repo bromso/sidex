@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	ISCMViewService,
 	ISCMRepository,
@@ -15,17 +15,17 @@ import {
 	ISCMRepositorySortKey,
 	ISCMRepositorySelectionMode
 } from '../common/scm.js';
-import { Iterable } from '../../../../base/common/iterator.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { SCMMenus } from './menus.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { debounce } from '../../../../base/common/decorators.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
-import { compareFileNames, comparePaths } from '../../../../base/common/comparers.js';
-import { basename } from '../../../../base/common/resources.js';
-import { binarySearch } from '../../../../base/common/arrays.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IContextKey, IContextKeyService, RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { debounce } from '@sidex/base/common/decorators.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import { compareFileNames, comparePaths } from '@sidex/base/common/comparers.js';
+import { basename } from '@sidex/base/common/resources.js';
+import { binarySearch } from '@sidex/base/common/arrays.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService, RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IExtensionService } from '../../../services/extensions/common/extensions.js';
 import {
 	autorun,
@@ -38,7 +38,7 @@ import {
 	observableFromEventOpts,
 	observableValue,
 	runOnChange
-} from '../../../../base/common/observable.js';
+} from '@sidex/base/common/observable.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { EditorResourceAccessor } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
@@ -46,10 +46,10 @@ import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { observableConfigValue } from '../../../../platform/observable/common/platformObservableUtils.js';
+import { observableConfigValue } from '@sidex/platform/observable/common/platformObservableUtils.js';
 import { getSCMRepositoryIcon } from './util.js';
 
 function getProviderStorageKey(provider: ISCMProvider): string {

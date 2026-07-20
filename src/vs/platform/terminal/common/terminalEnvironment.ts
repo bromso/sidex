@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { OperatingSystem, OS } from '../../../base/common/platform.js';
+import { OperatingSystem, OS } from '@sidex/base/common/platform.js';
 import {
 	IShellLaunchConfig,
 	TerminalShellType,

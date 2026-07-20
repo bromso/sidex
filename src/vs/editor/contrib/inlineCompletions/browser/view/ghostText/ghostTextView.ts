@@ -3,16 +3,16 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createTrustedTypesPolicy } from '../../../../../../base/browser/trustedTypes.js';
-import { renderIcon } from '../../../../../../base/browser/ui/iconLabel/iconLabels.js';
-import { Codicon } from '../../../../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../../../../base/common/event.js';
+import { createTrustedTypesPolicy } from '@sidex/base/browser/trustedTypes.js';
+import { renderIcon } from '@sidex/base/browser/ui/iconLabel/iconLabels.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableStore,
 	MutableDisposable,
 	toDisposable
-} from '../../../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
@@ -22,8 +22,8 @@ import {
 	derivedOpts,
 	observableSignalFromEvent,
 	observableValue
-} from '../../../../../../base/common/observable.js';
-import * as strings from '../../../../../../base/common/strings.js';
+} from '@sidex/base/common/observable.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { applyFontInfo } from '../../../../../browser/config/domFontInfo.js';
 import {
 	ContentWidgetPositionPreference,
@@ -56,15 +56,15 @@ import { RenderLineInput, renderViewLine } from '../../../../../common/viewLayou
 import { GhostText, GhostTextReplacement, IGhostTextLine } from '../../model/ghostText.js';
 import { RangeSingleLine } from '../../../../../common/core/ranges/rangeSingleLine.js';
 import { ColumnRange } from '../../../../../common/core/ranges/columnRange.js';
-import { addDisposableListener, getWindow, isHTMLElement, n } from '../../../../../../base/browser/dom.js';
+import { addDisposableListener, getWindow, isHTMLElement, n } from '@sidex/base/browser/dom.js';
 import './ghostTextView.css';
-import { IMouseEvent, StandardMouseEvent } from '../../../../../../base/browser/mouseEvent.js';
+import { IMouseEvent, StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import { CodeEditorWidget } from '../../../../../browser/widget/codeEditor/codeEditorWidget.js';
 import { TokenWithTextArray } from '../../../../../common/tokens/tokenWithTextArray.js';
 import { InlineCompletionViewData } from '../inlineEdits/inlineEditsViewInterface.js';
 import { InlineDecorationType } from '../../../../../common/viewModel/inlineDecorations.js';
-import { equals, sum } from '../../../../../../base/common/arrays.js';
-import { equalsIfDefinedC, IEquatable, thisEqualsC } from '../../../../../../base/common/equals.js';
+import { equals, sum } from '@sidex/base/common/arrays.js';
+import { equalsIfDefinedC, IEquatable, thisEqualsC } from '@sidex/base/common/equals.js';
 
 export interface IGhostTextWidgetData {
 	readonly ghostText: GhostText | GhostTextReplacement;

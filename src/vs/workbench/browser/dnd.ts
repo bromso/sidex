@@ -3,22 +3,22 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DataTransfers, IDragAndDropData } from '../../base/browser/dnd.js';
-import { DragAndDropObserver, EventType, addDisposableListener, onDidRegisterWindow } from '../../base/browser/dom.js';
-import { DragMouseEvent } from '../../base/browser/mouseEvent.js';
-import { IListDragAndDrop } from '../../base/browser/ui/list/list.js';
-import { ElementsDragAndDropData, ListViewTargetSector } from '../../base/browser/ui/list/listView.js';
-import { ITreeDragOverReaction } from '../../base/browser/ui/tree/tree.js';
-import { coalesce } from '../../base/common/arrays.js';
-import { UriList, VSDataTransfer } from '../../base/common/dataTransfer.js';
-import { Emitter, Event } from '../../base/common/event.js';
-import { Disposable, DisposableStore, IDisposable, markAsSingleton } from '../../base/common/lifecycle.js';
-import { stringify } from '../../base/common/marshalling.js';
-import { Mimes } from '../../base/common/mime.js';
-import { FileAccess, Schemas } from '../../base/common/network.js';
-import { isWindows } from '../../base/common/platform.js';
-import { basename, isEqual } from '../../base/common/resources.js';
-import { URI } from '../../base/common/uri.js';
+import { DataTransfers, IDragAndDropData } from '@sidex/base/browser/dnd.js';
+import { DragAndDropObserver, EventType, addDisposableListener, onDidRegisterWindow } from '@sidex/base/browser/dom.js';
+import { DragMouseEvent } from '@sidex/base/browser/mouseEvent.js';
+import { IListDragAndDrop } from '@sidex/base/browser/ui/list/list.js';
+import { ElementsDragAndDropData, ListViewTargetSector } from '@sidex/base/browser/ui/list/listView.js';
+import { ITreeDragOverReaction } from '@sidex/base/browser/ui/tree/tree.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
+import { UriList, VSDataTransfer } from '@sidex/base/common/dataTransfer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, IDisposable, markAsSingleton } from '@sidex/base/common/lifecycle.js';
+import { stringify } from '@sidex/base/common/marshalling.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { FileAccess, Schemas } from '@sidex/base/common/network.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { basename, isEqual } from '@sidex/base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	CodeDataTransfers,
 	Extensions,
@@ -28,19 +28,19 @@ import {
 	LocalSelectionTransfer,
 	createDraggedEditorInputFromRawResourcesData,
 	extractEditorsAndFilesDropData
-} from '../../platform/dnd/browser/dnd.js';
-import { IFileService } from '../../platform/files/common/files.js';
-import { IInstantiationService, ServicesAccessor } from '../../platform/instantiation/common/instantiation.js';
-import { ILabelService } from '../../platform/label/common/label.js';
-import { extractSelection, withSelection } from '../../platform/opener/common/opener.js';
-import { Registry } from '../../platform/registry/common/platform.js';
-import { IWindowOpenable } from '../../platform/window/common/window.js';
+} from '@sidex/platform/dnd/browser/dnd.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { extractSelection, withSelection } from '@sidex/platform/opener/common/opener.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IWindowOpenable } from '@sidex/platform/window/common/window.js';
 import {
 	IWorkspaceContextService,
 	hasWorkspaceFileExtension,
 	isTemporaryWorkspace
-} from '../../platform/workspace/common/workspace.js';
-import { IWorkspaceFolderCreationData, IWorkspacesService } from '../../platform/workspaces/common/workspaces.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { IWorkspaceFolderCreationData, IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
 import {
 	EditorResourceAccessor,
 	GroupIdentifier,
@@ -55,9 +55,9 @@ import { IEditorService } from '../services/editor/common/editorService.js';
 import { IHostService } from '../services/host/browser/host.js';
 import { ITextFileService } from '../services/textfile/common/textfiles.js';
 import { IWorkspaceEditingService } from '../services/workspaces/common/workspaceEditing.js';
-import { IEditorOptions } from '../../platform/editor/common/editor.js';
-import { mainWindow } from '../../base/browser/window.js';
-import { BroadcastDataChannel } from '../../base/browser/broadcast.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { BroadcastDataChannel } from '@sidex/base/browser/broadcast.js';
 
 //#region Editor / Resources DND
 

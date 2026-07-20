@@ -4,40 +4,40 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { MarkdownString } from '../../../../base/common/htmlContent.js';
-import { Disposable, MutableDisposable } from '../../../../base/common/lifecycle.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { Range } from '../../../../editor/common/core/range.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Disposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	registerEditorContribution,
 	EditorContributionInstantiation
-} from '../../../../editor/browser/editorExtensions.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { SnippetController2 } from '../../../../editor/contrib/snippet/browser/snippetController2.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { SnippetController2 } from '@sidex/editor/contrib/snippet/browser/snippetController2.js';
 import { SmartSnippetInserter } from '../common/smartSnippetInserter.js';
 import { DefineKeybindingOverlayWidget } from './keybindingWidgets.js';
-import { parseTree, Node } from '../../../../base/common/json.js';
+import { parseTree, Node } from '@sidex/base/common/json.js';
 import { WindowsNativeResolvedKeybinding } from '../../../services/keybinding/common/windowsKeyboardMapper.js';
-import { themeColorFromId } from '../../../../platform/theme/common/themeService.js';
-import { ThemeColor } from '../../../../base/common/themables.js';
-import { overviewRulerInfo, overviewRulerError } from '../../../../editor/common/core/editorColorRegistry.js';
+import { themeColorFromId } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
+import { overviewRulerInfo, overviewRulerError } from '@sidex/editor/common/core/editorColorRegistry.js';
 import {
 	IModelDeltaDecoration,
 	ITextModel,
 	TrackedRangeStickiness,
 	OverviewRulerLane
-} from '../../../../editor/common/model.js';
-import { KeybindingParser } from '../../../../base/common/keybindingParser.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { isEqual } from '../../../../base/common/resources.js';
+} from '@sidex/editor/common/model.js';
+import { KeybindingParser } from '@sidex/base/common/keybindingParser.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { isEqual } from '@sidex/base/common/resources.js';
 import { IUserDataProfileService } from '../../../services/userDataProfile/common/userDataProfile.js';
 import {
 	DEFINE_KEYBINDING_EDITOR_CONTRIB_ID,
 	IDefineKeybindingEditorContribution
 } from '../../../services/preferences/common/preferences.js';
-import { IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
+import { IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
 
 const NLS_KB_LAYOUT_ERROR_MESSAGE = nls.localize(
 	'defineKeybinding.kbLayoutErrorMessage',

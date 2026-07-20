@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationTokenSource } from '../../../base/common/cancellation.js';
-import { Emitter } from '../../../base/common/event.js';
-import { KeyChord, KeyMod as ConstKeyMod } from '../../../base/common/keyCodes.js';
-import { URI } from '../../../base/common/uri.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { KeyChord, KeyMod as ConstKeyMod } from '@sidex/base/common/keyCodes.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { Position } from '../core/position.js';
 import { Range } from '../core/range.js';
 import { Selection } from '../core/selection.js';

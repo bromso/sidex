@@ -5,34 +5,34 @@
 
 import './media/keybindings.css';
 import * as nls from '@sidex/base/nls.js';
-import { OS } from '../../../../base/common/platform.js';
-import { Disposable, toDisposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { KeybindingLabel } from '../../../../base/browser/ui/keybindingLabel/keybindingLabel.js';
-import { Widget } from '../../../../base/browser/ui/widget.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import * as dom from '../../../../base/browser/dom.js';
-import * as aria from '../../../../base/browser/ui/aria/aria.js';
-import { IKeyboardEvent, StandardKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { FastDomNode, createFastDomNode } from '../../../../base/browser/fastDomNode.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ICodeEditor, IOverlayWidget, IOverlayWidgetPosition } from '../../../../editor/browser/editorBrowser.js';
+import { OS } from '@sidex/base/common/platform.js';
+import { Disposable, toDisposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { KeybindingLabel } from '@sidex/base/browser/ui/keybindingLabel/keybindingLabel.js';
+import { Widget } from '@sidex/base/browser/ui/widget.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as aria from '@sidex/base/browser/ui/aria/aria.js';
+import { IKeyboardEvent, StandardKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { FastDomNode, createFastDomNode } from '@sidex/base/browser/fastDomNode.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ICodeEditor, IOverlayWidget, IOverlayWidgetPosition } from '@sidex/editor/browser/editorBrowser.js';
 import {
 	asCssVariable,
 	editorWidgetBackground,
 	editorWidgetForeground
-} from '../../../../platform/theme/common/colorRegistry.js';
-import { ScrollType } from '../../../../editor/common/editorCommon.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { ScrollType } from '@sidex/editor/common/editorCommon.js';
 import { SearchWidget, SearchOptions } from './preferencesWidgets.js';
-import { Promises, timeout } from '../../../../base/common/async.js';
-import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
+import { Promises, timeout } from '@sidex/base/common/async.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	defaultInputBoxStyles,
 	defaultKeybindingLabelStyles
-} from '../../../../platform/theme/browser/defaultStyles.js';
+} from '@sidex/platform/theme/browser/defaultStyles.js';
 
 export interface KeybindingsSearchOptions extends SearchOptions {
 	recordEnter?: boolean;

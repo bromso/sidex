@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as arrays from '../../base/common/arrays.js';
-import { IScrollPosition, Scrollable } from '../../base/common/scrollable.js';
-import * as strings from '../../base/common/strings.js';
+import * as arrays from '@sidex/base/common/arrays.js';
+import { IScrollPosition, Scrollable } from '@sidex/base/common/scrollable.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { ISimpleModel } from './viewModel/screenReaderSimpleModel.js';
 import { ICoordinatesConverter } from './coordinatesConverter.js';
 import { IPosition, Position } from './core/position.js';

@@ -4,21 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IQuickAccessRegistry, Extensions } from '../../../../platform/quickinput/common/quickAccess.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
-import { HelpQuickAccessProvider } from '../../../../platform/quickinput/browser/helpQuickAccess.js';
+import { IQuickAccessRegistry, Extensions } from '@sidex/platform/quickinput/common/quickAccess.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { HelpQuickAccessProvider } from '@sidex/platform/quickinput/browser/helpQuickAccess.js';
 import { ViewQuickAccessProvider, OpenViewPickerAction, QuickAccessViewPickerAction } from './viewQuickAccess.js';
 import {
 	CommandsQuickAccessProvider,
 	ShowAllCommandsAction,
 	ClearCommandHistoryAction
 } from './commandsQuickAccess.js';
-import { MenuRegistry, MenuId, registerAction2 } from '../../../../platform/actions/common/actions.js';
-import { KeyMod } from '../../../../base/common/keyCodes.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { MenuRegistry, MenuId, registerAction2 } from '@sidex/platform/actions/common/actions.js';
+import { KeyMod } from '@sidex/base/common/keyCodes.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { inQuickPickContext, getQuickNavigateHandler } from '../../../browser/quickaccess.js';
-import { KeybindingsRegistry, KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { EditorContextKeys } from '../../../../editor/common/editorContextKeys.js';
+import { KeybindingsRegistry, KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { EditorContextKeys } from '@sidex/editor/common/editorContextKeys.js';
 
 //#region Quick Access Proviers
 

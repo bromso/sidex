@@ -3,17 +3,17 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DeferredPromise } from '../../../../base/common/async.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Lazy } from '../../../../base/common/lazy.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IObservable, observableValue } from '../../../../base/common/observable.js';
-import { language } from '../../../../base/common/platform.js';
-import { WellDefinedPrefixTree } from '../../../../base/common/prefixTree.js';
+import { DeferredPromise } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, observableValue } from '@sidex/base/common/observable.js';
+import { language } from '@sidex/base/common/platform.js';
+import { WellDefinedPrefixTree } from '@sidex/base/common/prefixTree.js';
 import { localize } from '@sidex/base/nls.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IComputedStateAccessor, refreshComputedState } from './getComputedState.js';
 import { TestCoverage } from './testCoverage.js';
 import { TestId } from './testId.js';

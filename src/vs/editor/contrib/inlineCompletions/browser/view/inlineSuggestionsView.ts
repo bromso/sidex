@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createStyleSheetFromObservable } from '../../../../../base/browser/domStylesheets.js';
-import { createHotClass } from '../../../../../base/common/hotReloadHelpers.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { createStyleSheetFromObservable } from '@sidex/base/browser/domStylesheets.js';
+import { createHotClass } from '@sidex/base/common/hotReloadHelpers.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	derived,
 	mapObservableArrayCached,
@@ -15,8 +15,8 @@ import {
 	ISettableObservable,
 	constObservable,
 	observableValue
-} from '../../../../../base/common/observable.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/observable.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { observableCodeEditor } from '../../../../browser/observableCodeEditor.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';

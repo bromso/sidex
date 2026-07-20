@@ -4,40 +4,40 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { ITerminalAddon } from '@xterm/headless';
-import { Emitter, Event } from '../../../../../base/common/event.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	Disposable,
 	DisposableStore,
 	MutableDisposable,
 	type IDisposable
-} from '../../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/lifecycle.js';
 import {
 	ITerminalCapabilityStore,
 	ITerminalCommand,
 	TerminalCapability
-} from '../../../../../platform/terminal/common/capabilities/capabilities.js';
-import * as dom from '../../../../../base/browser/dom.js';
-import { IAction } from '../../../../../base/common/actions.js';
-import { asArray } from '../../../../../base/common/arrays.js';
+} from '@sidex/platform/terminal/common/capabilities/capabilities.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { asArray } from '@sidex/base/common/arrays.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../../platform/configuration/common/configuration.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { DecorationSelector, updateLayout } from '../../../terminal/browser/xterm/decorationStyles.js';
 import type { IDecoration, Terminal } from '@xterm/xterm';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { CancellationTokenSource } from '../../../../../base/common/cancellation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { IExtensionService } from '../../../../services/extensions/common/extensions.js';
 import {
 	AccessibilitySignal,
 	IAccessibilitySignalService
-} from '../../../../../platform/accessibilitySignal/browser/accessibilitySignalService.js';
-import { IActionWidgetService } from '../../../../../platform/actionWidget/browser/actionWidget.js';
-import { ActionSet } from '../../../../../platform/actionWidget/common/actionWidget.js';
-import { getLinesForCommand } from '../../../../../platform/terminal/common/capabilities/commandDetectionCapability.js';
-import { IAnchor } from '../../../../../base/browser/ui/contextview/contextview.js';
-import { ILabelService } from '../../../../../platform/label/common/label.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { URI } from '../../../../../base/common/uri.js';
+} from '@sidex/platform/accessibilitySignal/browser/accessibilitySignalService.js';
+import { IActionWidgetService } from '@sidex/platform/actionWidget/browser/actionWidget.js';
+import { ActionSet } from '@sidex/platform/actionWidget/common/actionWidget.js';
+import { getLinesForCommand } from '@sidex/platform/terminal/common/capabilities/commandDetectionCapability.js';
+import { IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	ITerminalQuickFixInternalOptions,
 	ITerminalQuickFixResolvedExtensionOptions,
@@ -51,13 +51,13 @@ import {
 	TerminalQuickFixType,
 	ITerminalQuickFixCommandAction
 } from './quickFix.js';
-import { ITerminalCommandSelector, TerminalSettingId } from '../../../../../platform/terminal/common/terminal.js';
-import { ActionListItemKind, IActionListItem } from '../../../../../platform/actionWidget/browser/actionList.js';
-import { CodeActionKind } from '../../../../../editor/contrib/codeAction/common/types.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { hasKey, type SingleOrMany } from '../../../../../base/common/types.js';
+import { ITerminalCommandSelector, TerminalSettingId } from '@sidex/platform/terminal/common/terminal.js';
+import { ActionListItemKind, IActionListItem } from '@sidex/platform/actionWidget/browser/actionList.js';
+import { CodeActionKind } from '@sidex/editor/contrib/codeAction/common/types.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { hasKey, type SingleOrMany } from '@sidex/base/common/types.js';
 
 const enum QuickFixDecorationSelector {
 	QuickFix = 'quick-fix'

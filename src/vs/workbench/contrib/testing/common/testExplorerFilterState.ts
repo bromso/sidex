@@ -2,12 +2,12 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { splitGlobAware } from '../../../../base/common/glob.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { ISettableObservable, observableValue } from '../../../../base/common/observable.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { splitGlobAware } from '@sidex/base/common/glob.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { ISettableObservable, observableValue } from '@sidex/base/common/observable.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IObservableValue, MutableObservableValue } from './observableValue.js';
 import { StoredValue } from './storedValue.js';
 import { namespaceTestTag } from './testTypes.js';

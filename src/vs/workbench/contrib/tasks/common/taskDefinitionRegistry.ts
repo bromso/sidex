@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as nls from '@sidex/base/nls.js';
-import { IJSONSchema, IJSONSchemaMap } from '../../../../base/common/jsonSchema.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import * as Types from '../../../../base/common/types.js';
-import * as Objects from '../../../../base/common/objects.js';
+import { IJSONSchema, IJSONSchemaMap } from '@sidex/base/common/jsonSchema.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import * as Types from '@sidex/base/common/types.js';
+import * as Objects from '@sidex/base/common/objects.js';
 
 import {
 	ExtensionsRegistry,
@@ -15,9 +15,9 @@ import {
 } from '../../../services/extensions/common/extensionsRegistry.js';
 
 import * as Tasks from './tasks.js';
-import { ExtensionIdentifier } from '../../../../platform/extensions/common/extensions.js';
-import { ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 
 const taskDefinitionSchema: IJSONSchema = {
 	type: 'object',

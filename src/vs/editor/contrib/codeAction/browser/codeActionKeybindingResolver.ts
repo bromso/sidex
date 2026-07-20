@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { ResolvedKeybinding } from '../../../../base/common/keybindings.js';
-import { Lazy } from '../../../../base/common/lazy.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { ResolvedKeybinding } from '@sidex/base/common/keybindings.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
 import { CodeAction } from '../../../common/languages.js';
 import {
 	codeActionCommandId,
@@ -15,7 +15,7 @@ import {
 	sourceActionCommandId
 } from './codeAction.js';
 import { CodeActionAutoApply, CodeActionCommandArgs, CodeActionKind } from '../common/types.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 
 interface ResolveCodeActionKeybinding {
 	readonly kind: HierarchicalKind;

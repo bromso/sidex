@@ -3,20 +3,20 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { RunOnceScheduler } from '../../../../base/common/async.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { ILink } from '../../../../editor/common/languages.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ILink } from '@sidex/editor/common/languages.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { OUTPUT_MODE_ID, LOG_MODE_ID } from '../../../services/output/common/output.js';
 import { OutputLinkComputer } from '../common/outputLinkComputer.js';
-import { IDisposable, dispose, Disposable } from '../../../../base/common/lifecycle.js';
-import { ILanguageFeaturesService } from '../../../../editor/common/services/languageFeatures.js';
-import { WebWorkerDescriptor } from '../../../../platform/webWorker/browser/webWorkerDescriptor.js';
-import { IWebWorkerService } from '../../../../platform/webWorker/browser/webWorkerService.js';
-import { IWebWorkerClient } from '../../../../base/common/worker/webWorker.js';
-import { WorkerTextModelSyncClient } from '../../../../editor/common/services/textModelSync/textModelSync.impl.js';
-import { FileAccess } from '../../../../base/common/network.js';
+import { IDisposable, dispose, Disposable } from '@sidex/base/common/lifecycle.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { WebWorkerDescriptor } from '@sidex/platform/webWorker/browser/webWorkerDescriptor.js';
+import { IWebWorkerService } from '@sidex/platform/webWorker/browser/webWorkerService.js';
+import { IWebWorkerClient } from '@sidex/base/common/worker/webWorker.js';
+import { WorkerTextModelSyncClient } from '@sidex/editor/common/services/textModelSync/textModelSync.impl.js';
+import { FileAccess } from '@sidex/base/common/network.js';
 
 export class OutputLinkProvider extends Disposable {
 	private static readonly DISPOSE_WORKER_TIME = 3 * 60 * 1000; // dispose worker after 3 minutes of inactivity

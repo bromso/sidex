@@ -3,27 +3,27 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IWorkspaceContextService, toWorkspaceIdentifier } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService, toWorkspaceIdentifier } from '@sidex/platform/workspace/common/workspace.js';
 import { IJSONEditingService } from '../../configuration/common/jsonEditing.js';
-import { IWorkspacesService } from '../../../../platform/workspaces/common/workspaces.js';
+import { IWorkspacesService } from '@sidex/platform/workspaces/common/workspaces.js';
 import { WorkspaceService } from '../../configuration/browser/configurationService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { IFileDialogService, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
+import { IFileDialogService, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
 import { ITextFileService } from '../../textfile/common/textfiles.js';
 import { IHostService } from '../../host/browser/host.js';
 import { AbstractWorkspaceEditingService } from './abstractWorkspaceEditingService.js';
 import { IWorkspaceEditingService } from '../common/workspaceEditing.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { URI } from '../../../../base/common/uri.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceTrustManagementService } from '../../../../platform/workspace/common/workspaceTrust.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceTrustManagementService } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { IWorkbenchConfigurationService } from '../../configuration/common/configuration.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
 import { IUserDataProfileService } from '../../userDataProfile/common/userDataProfile.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 
 export class BrowserWorkspaceEditingService extends AbstractWorkspaceEditingService {
 	constructor(

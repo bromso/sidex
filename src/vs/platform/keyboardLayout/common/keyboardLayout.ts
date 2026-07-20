@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../base/common/event.js';
-import { ScanCode, ScanCodeUtils } from '../../../base/common/keyCodes.js';
+import { Event } from '@sidex/base/common/event.js';
+import { ScanCode, ScanCodeUtils } from '@sidex/base/common/keyCodes.js';
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IKeyboardEvent } from '../../keybinding/common/keybinding.js';
 import { IKeyboardMapper } from './keyboardMapper.js';

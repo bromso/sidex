@@ -8,9 +8,9 @@
  *  so the status bar and untitled-editor flows still get a crisp answer.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { ILanguageDetectionService } from '../common/languageDetectionWorkerService.js';
 
 interface TauriCore {

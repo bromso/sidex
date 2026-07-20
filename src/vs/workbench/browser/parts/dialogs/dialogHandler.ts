@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	IConfirmation,
 	IConfirmationResult,
@@ -17,20 +17,20 @@ import {
 	DialogType,
 	IPrompt,
 	IAsyncPromptResult
-} from '../../../../platform/dialogs/common/dialogs.js';
-import { ILayoutService } from '../../../../platform/layout/browser/layoutService.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import Severity from '../../../../base/common/severity.js';
-import { Dialog, IDialogResult } from '../../../../base/browser/ui/dialog/dialog.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/dialogs/common/dialogs.js';
+import { ILayoutService } from '@sidex/platform/layout/browser/layoutService.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import Severity from '@sidex/base/common/severity.js';
+import { Dialog, IDialogResult } from '@sidex/base/browser/ui/dialog/dialog.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IMarkdownRendererService,
 	openLinkFromMarkdown
-} from '../../../../platform/markdown/browser/markdownRenderer.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
+} from '@sidex/platform/markdown/browser/markdownRenderer.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import { createWorkbenchDialogOptions } from './dialog.js';
 import { IHostService } from '../../../services/host/browser/host.js';
 

@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../base/browser/dom.js';
-import * as domStylesheetsJs from '../../../base/browser/domStylesheets.js';
-import { ToolBar } from '../../../base/browser/ui/toolbar/toolbar.js';
-import { Button } from '../../../base/browser/ui/button/button.js';
-import { CountBadge } from '../../../base/browser/ui/countBadge/countBadge.js';
-import { ProgressBar } from '../../../base/browser/ui/progressbar/progressbar.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { Disposable, DisposableStore, dispose } from '../../../base/common/lifecycle.js';
-import Severity from '../../../base/common/severity.js';
-import { isString } from '../../../base/common/types.js';
-import { isModifierKey } from '../../../base/common/keyCodes.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import * as domStylesheetsJs from '@sidex/base/browser/domStylesheets.js';
+import { ToolBar } from '@sidex/base/browser/ui/toolbar/toolbar.js';
+import { Button } from '@sidex/base/browser/ui/button/button.js';
+import { CountBadge } from '@sidex/base/browser/ui/countBadge/countBadge.js';
+import { ProgressBar } from '@sidex/base/browser/ui/progressbar/progressbar.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable, DisposableStore, dispose } from '@sidex/base/common/lifecycle.js';
+import Severity from '@sidex/base/common/severity.js';
+import { isString } from '@sidex/base/common/types.js';
+import { isModifierKey } from '@sidex/base/common/keyCodes.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IInputBox,
@@ -52,25 +52,25 @@ import {
 	QuickInputAlignmentContextKey
 } from './quickInput.js';
 import { ILayoutService } from '../../layout/browser/layoutService.js';
-import { mainWindow } from '../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { IInstantiationService } from '../../instantiation/common/instantiation.js';
 import { IContextMenuService } from '../../contextview/browser/contextView.js';
 import { QuickInputList } from './quickInputList.js';
 import { IContextKey, IContextKeyService } from '../../contextkey/common/contextkey.js';
 import './quickInputActions.js';
-import { IObservable, autorun, observableValue } from '../../../base/common/observable.js';
-import { StandardMouseEvent } from '../../../base/browser/mouseEvent.js';
+import { IObservable, autorun, observableValue } from '@sidex/base/common/observable.js';
+import { StandardMouseEvent } from '@sidex/base/browser/mouseEvent.js';
 import { IStorageService, StorageScope, StorageTarget } from '../../storage/common/storage.js';
 import { IConfigurationService } from '../../configuration/common/configuration.js';
-import { Platform, platform, setTimeout0 } from '../../../base/common/platform.js';
+import { Platform, platform, setTimeout0 } from '@sidex/base/common/platform.js';
 import { getWindowControlsStyle, WindowControlsStyle } from '../../window/common/window.js';
-import { getZoomFactor } from '../../../base/browser/browser.js';
-import { TriStateCheckbox, createToggleActionViewItemProvider } from '../../../base/browser/ui/toggle/toggle.js';
+import { getZoomFactor } from '@sidex/base/browser/browser.js';
+import { TriStateCheckbox, createToggleActionViewItemProvider } from '@sidex/base/browser/ui/toggle/toggle.js';
 import { defaultCheckboxStyles } from '../../theme/browser/defaultStyles.js';
 import { QuickInputTreeController } from './tree/quickInputTreeController.js';
 import { QuickTree } from './tree/quickTree.js';
-import { AnchorAlignment, AnchorPosition, layout2d } from '../../../base/common/layout.js';
-import { getAnchorRect, IAnchor } from '../../../base/browser/ui/contextview/contextview.js';
+import { AnchorAlignment, AnchorPosition, layout2d } from '@sidex/base/common/layout.js';
+import { getAnchorRect, IAnchor } from '@sidex/base/browser/ui/contextview/contextview.js';
 
 const $ = dom.$;
 

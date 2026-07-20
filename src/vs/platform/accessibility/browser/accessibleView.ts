@@ -6,10 +6,10 @@
 import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { IKeyboardEvent } from '../../keybinding/common/keybinding.js';
 import { IPickerQuickAccessItem } from '../../quickinput/browser/pickerQuickAccess.js';
-import { Event } from '../../../base/common/event.js';
-import { IAction } from '../../../base/common/actions.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IAction } from '@sidex/base/common/actions.js';
 import { IQuickPickItem } from '../../quickinput/common/quickInput.js';
-import { IDisposable, Disposable } from '../../../base/common/lifecycle.js';
+import { IDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
 
 export const IAccessibleViewService = createDecorator<IAccessibleViewService>('accessibleViewService');
 

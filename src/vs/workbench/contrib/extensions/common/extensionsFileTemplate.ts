@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { IJSONSchema } from '../../../../base/common/jsonSchema.js';
-import { EXTENSION_IDENTIFIER_PATTERN } from '../../../../platform/extensionManagement/common/extensionManagement.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { EXTENSION_IDENTIFIER_PATTERN } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
 
 export const ExtensionsConfigurationSchemaId = 'vscode://schemas/extensions';
 export const ExtensionsConfigurationSchema: IJSONSchema = {

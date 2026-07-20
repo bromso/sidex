@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Range } from '../../../../../editor/common/core/range.js';
+import { Range } from '@sidex/editor/common/core/range.js';
 import {
 	IFileMatch,
 	ISearchComplete,
@@ -13,15 +13,15 @@ import {
 	ITextSearchQuery,
 	ITextSearchResult
 } from '../../../../services/search/common/search.js';
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { URI } from '../../../../../base/common/uri.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { IFileStatWithPartialMetadata, IFileService } from '../../../../../platform/files/common/files.js';
-import { IProgress, IProgressStep } from '../../../../../platform/progress/common/progress.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { IFileStatWithPartialMetadata, IFileService } from '@sidex/platform/files/common/files.js';
+import { IProgress, IProgressStep } from '@sidex/platform/progress/common/progress.js';
 import { ReplacePattern } from '../../../../services/search/common/replace.js';
 import { NotebookEditorWidget } from '../../../notebook/browser/notebookEditorWidget.js';
 import { RangeHighlightDecorations } from './rangeDecorations.js';
-import { Event } from '../../../../../base/common/event.js';
+import { Event } from '@sidex/base/common/event.js';
 
 export type FileMatchOrMatch = ISearchTreeFileMatch | ISearchTreeMatch;
 

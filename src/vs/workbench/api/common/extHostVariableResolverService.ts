@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Lazy } from '../../../base/common/lazy.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import * as path from '../../../base/common/path.js';
-import * as process from '../../../base/common/process.js';
-import { URI } from '../../../base/common/uri.js';
-import { createDecorator } from '../../../platform/instantiation/common/instantiation.js';
+import { Lazy } from '@sidex/base/common/lazy.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as path from '@sidex/base/common/path.js';
+import * as process from '@sidex/base/common/process.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import { IExtHostDocumentsAndEditors } from './extHostDocumentsAndEditors.js';
 import { IExtHostEditorTabs } from './extHostEditorTabs.js';
 import { IExtHostExtensionService } from './extHostExtensionService.js';

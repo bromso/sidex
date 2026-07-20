@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { ErrorNoTelemetry } from '../../../../base/common/errors.js';
-import { IProcessEnvironment } from '../../../../base/common/platform.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IWorkspaceFolderData } from '../../../../platform/workspace/common/workspace.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { ErrorNoTelemetry } from '@sidex/base/common/errors.js';
+import { IProcessEnvironment } from '@sidex/base/common/platform.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IWorkspaceFolderData } from '@sidex/platform/workspace/common/workspace.js';
 import { ConfigurationResolverExpression } from './configurationResolverExpression.js';
 
 export const IConfigurationResolverService =

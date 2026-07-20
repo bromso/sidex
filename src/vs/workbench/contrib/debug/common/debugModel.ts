@@ -3,23 +3,23 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { distinct } from '../../../../base/common/arrays.js';
-import { DeferredPromise, RunOnceScheduler } from '../../../../base/common/async.js';
-import { VSBuffer, decodeBase64, encodeBase64 } from '../../../../base/common/buffer.js';
-import { CancellationTokenSource } from '../../../../base/common/cancellation.js';
-import { Emitter, Event, trackSetChanges } from '../../../../base/common/event.js';
-import { stringHash } from '../../../../base/common/hash.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { mixin } from '../../../../base/common/objects.js';
-import { autorun } from '../../../../base/common/observable.js';
-import * as resources from '../../../../base/common/resources.js';
-import { isString, isUndefinedOrNull } from '../../../../base/common/types.js';
-import { URI, URI as uri } from '../../../../base/common/uri.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
-import { IRange, Range } from '../../../../editor/common/core/range.js';
+import { distinct } from '@sidex/base/common/arrays.js';
+import { DeferredPromise, RunOnceScheduler } from '@sidex/base/common/async.js';
+import { VSBuffer, decodeBase64, encodeBase64 } from '@sidex/base/common/buffer.js';
+import { CancellationTokenSource } from '@sidex/base/common/cancellation.js';
+import { Emitter, Event, trackSetChanges } from '@sidex/base/common/event.js';
+import { stringHash } from '@sidex/base/common/hash.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { mixin } from '@sidex/base/common/objects.js';
+import { autorun } from '@sidex/base/common/observable.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { isString, isUndefinedOrNull } from '@sidex/base/common/types.js';
+import { URI, URI as uri } from '@sidex/base/common/uri.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
+import { IRange, Range } from '@sidex/editor/common/core/range.js';
 import * as nls from '@sidex/base/nls.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { IEditorPane } from '../../../common/editor.js';
 import {
 	DEBUG_MEMORY_SCHEME,

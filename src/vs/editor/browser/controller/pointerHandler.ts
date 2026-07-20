@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { BrowserFeatures } from '../../../base/browser/canIUse.js';
-import * as dom from '../../../base/browser/dom.js';
-import { EventType, Gesture, GestureEvent } from '../../../base/browser/touch.js';
-import { mainWindow } from '../../../base/browser/window.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import * as platform from '../../../base/common/platform.js';
+import { BrowserFeatures } from '@sidex/base/browser/canIUse.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { EventType, Gesture, GestureEvent } from '@sidex/base/browser/touch.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as platform from '@sidex/base/common/platform.js';
 import { IPointerHandlerHelper, MouseHandler } from './mouseHandler.js';
 import { NavigationCommandRevealType } from '../coreCommands.js';
 import { IMouseTarget, MouseTargetType } from '../editorBrowser.js';

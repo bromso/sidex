@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ResourceLabelFormatter } from '../../../platform/label/common/label.js';
-import { IDisposable, toDisposable } from '../../../base/common/lifecycle.js';
+import { ResourceLabelFormatter } from '@sidex/platform/label/common/label.js';
+import { IDisposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	MainThreadLabelServiceShape,
 	ExtHostLabelServiceShape,

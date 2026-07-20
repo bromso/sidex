@@ -3,37 +3,37 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	createStringDataTransferItem,
 	IReadonlyVSDataTransfer,
 	VSDataTransfer
-} from '../../../base/common/dataTransfer.js';
-import { CancellationError } from '../../../base/common/errors.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { HierarchicalKind } from '../../../base/common/hierarchicalKind.js';
-import { combinedDisposable, Disposable, DisposableMap, toDisposable } from '../../../base/common/lifecycle.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { revive } from '../../../base/common/marshalling.js';
-import { mixin } from '../../../base/common/objects.js';
-import { URI } from '../../../base/common/uri.js';
-import { Position as EditorPosition, IPosition } from '../../../editor/common/core/position.js';
-import { Range as EditorRange, IRange } from '../../../editor/common/core/range.js';
-import { Selection } from '../../../editor/common/core/selection.js';
-import * as languages from '../../../editor/common/languages.js';
-import { ILanguageService } from '../../../editor/common/languages/language.js';
+} from '@sidex/base/common/dataTransfer.js';
+import { CancellationError } from '@sidex/base/common/errors.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { combinedDisposable, Disposable, DisposableMap, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { revive } from '@sidex/base/common/marshalling.js';
+import { mixin } from '@sidex/base/common/objects.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Position as EditorPosition, IPosition } from '@sidex/editor/common/core/position.js';
+import { Range as EditorRange, IRange } from '@sidex/editor/common/core/range.js';
+import { Selection } from '@sidex/editor/common/core/selection.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
 import {
 	IndentationRule,
 	LanguageConfiguration,
 	OnEnterRule
-} from '../../../editor/common/languages/languageConfiguration.js';
-import { ILanguageConfigurationService } from '../../../editor/common/languages/languageConfigurationRegistry.js';
-import { ITextModel } from '../../../editor/common/model.js';
-import { ILanguageFeaturesService } from '../../../editor/common/services/languageFeatures.js';
-import { decodeSemanticTokensDto } from '../../../editor/common/services/semanticTokensDto.js';
-import { ExtensionIdentifier } from '../../../platform/extensions/common/extensions.js';
-import { IUriIdentityService } from '../../../platform/uriIdentity/common/uriIdentity.js';
+} from '@sidex/editor/common/languages/languageConfiguration.js';
+import { ILanguageConfigurationService } from '@sidex/editor/common/languages/languageConfigurationRegistry.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { ILanguageFeaturesService } from '@sidex/editor/common/services/languageFeatures.js';
+import { decodeSemanticTokensDto } from '@sidex/editor/common/services/semanticTokensDto.js';
+import { ExtensionIdentifier } from '@sidex/platform/extensions/common/extensions.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
 import { reviveWorkspaceEditDto } from './mainThreadBulkEdits.js';
 import * as typeConvert from '../common/extHostTypeConverters.js';
 import { DataTransferFileCache } from '../common/shared/dataTransferCache.js';
@@ -76,8 +76,8 @@ import {
 	MainContext,
 	MainThreadLanguageFeaturesShape
 } from '../common/extHost.protocol.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { EditDeltaInfo } from '../../../editor/common/textModelEditSource.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { EditDeltaInfo } from '@sidex/editor/common/textModelEditSource.js';
 
 @extHostNamedCustomer(MainContext.MainThreadLanguageFeatures)
 export class MainThreadLanguageFeatures extends Disposable implements MainThreadLanguageFeaturesShape {

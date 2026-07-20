@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { LanguageId } from '../../../../../editor/common/encodedTokenAttributes.js';
+import { LanguageId } from '@sidex/editor/common/encodedTokenAttributes.js';
 import {
 	EncodedTokenizationResult,
 	IBackgroundTokenizationStore,
@@ -11,11 +11,11 @@ import {
 	IState,
 	ITokenizationSupport,
 	TokenizationResult
-} from '../../../../../editor/common/languages.js';
-import { nullTokenizeEncoded } from '../../../../../editor/common/languages/nullTokenize.js';
-import { ITextModel } from '../../../../../editor/common/model.js';
-import { Disposable, IDisposable } from '../../../../../base/common/lifecycle.js';
-import { IObservable, keepObserved } from '../../../../../base/common/observable.js';
+} from '@sidex/editor/common/languages.js';
+import { nullTokenizeEncoded } from '@sidex/editor/common/languages/nullTokenize.js';
+import { ITextModel } from '@sidex/editor/common/model.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IObservable, keepObserved } from '@sidex/base/common/observable.js';
 
 export class TokenizationSupportWithLineLimit extends Disposable implements ITokenizationSupport {
 	get backgroundTokenizerShouldOnlyVerifyTokens(): boolean | undefined {

@@ -4,10 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { URI } from '../../../../base/common/uri.js';
-import { mark } from '../../../../base/common/performance.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { mark } from '@sidex/base/common/performance.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
 import {
 	EncodingMode,
 	ITextFileService,
@@ -22,7 +22,7 @@ import {
 } from './textfiles.js';
 import { IRevertOptions, SaveReason, SaveSourceRegistry } from '../../../common/editor.js';
 import { BaseTextEditorModel } from '../../../common/editor/textEditorModel.js';
-import { IResolvedTextEditorModel } from '../../../../editor/common/services/resolverService.js';
+import { IResolvedTextEditorModel } from '@sidex/editor/common/services/resolverService.js';
 import { IWorkingCopyBackupService, IResolvedWorkingCopyBackup } from '../../workingCopy/common/workingCopyBackup.js';
 import {
 	IFileService,
@@ -33,13 +33,13 @@ import {
 	IFileStatWithMetadata,
 	ETAG_DISABLED,
 	NotModifiedSinceFileOperationError
-} from '../../../../platform/files/common/files.js';
-import { ILanguageService } from '../../../../editor/common/languages/language.js';
-import { IModelService } from '../../../../editor/common/services/model.js';
-import { timeout, TaskSequentializer } from '../../../../base/common/async.js';
-import { ITextBufferFactory, ITextModel } from '../../../../editor/common/model.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { basename } from '../../../../base/common/path.js';
+} from '@sidex/platform/files/common/files.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { timeout, TaskSequentializer } from '@sidex/base/common/async.js';
+import { ITextBufferFactory, ITextModel } from '@sidex/editor/common/model.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { basename } from '@sidex/base/common/path.js';
 import { IWorkingCopyService } from '../../workingCopy/common/workingCopyService.js';
 import {
 	IWorkingCopyBackup,
@@ -48,25 +48,25 @@ import {
 	IWorkingCopyBackupMeta
 } from '../../workingCopy/common/workingCopy.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import { UTF16be, UTF16le, UTF8, UTF8_with_bom } from './encoding.js';
-import { createTextBufferFactoryFromStream } from '../../../../editor/common/model/textModel.js';
+import { createTextBufferFactoryFromStream } from '@sidex/editor/common/model/textModel.js';
 import { ILanguageDetectionService } from '../../languageDetection/common/languageDetectionWorkerService.js';
 import { IPathService } from '../../path/common/pathService.js';
-import { extUri } from '../../../../base/common/resources.js';
-import { IAccessibilityService } from '../../../../platform/accessibility/common/accessibility.js';
-import { PLAINTEXT_LANGUAGE_ID } from '../../../../editor/common/languages/modesRegistry.js';
+import { extUri } from '@sidex/base/common/resources.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { PLAINTEXT_LANGUAGE_ID } from '@sidex/editor/common/languages/modesRegistry.js';
 import { IExtensionService } from '../../extensions/common/extensions.js';
-import { IMarkdownString } from '../../../../base/common/htmlContent.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import {
 	IProgress,
 	IProgressService,
 	IProgressStep,
 	ProgressLocation
-} from '../../../../platform/progress/common/progress.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { TextModelEditSource, EditSources } from '../../../../editor/common/textModelEditSource.js';
+} from '@sidex/platform/progress/common/progress.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { TextModelEditSource, EditSources } from '@sidex/editor/common/textModelEditSource.js';
 
 interface IBackupMetaData extends IWorkingCopyBackupMeta {
 	mtime: number;

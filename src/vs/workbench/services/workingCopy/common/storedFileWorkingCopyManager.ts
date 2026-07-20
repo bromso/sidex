@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import { DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
+import { DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
 import {
 	StoredFileWorkingCopy,
 	StoredFileWorkingCopyState,
@@ -15,8 +15,8 @@ import {
 	IStoredFileWorkingCopyResolveOptions,
 	IStoredFileWorkingCopySaveEvent as IBaseStoredFileWorkingCopySaveEvent
 } from './storedFileWorkingCopy.js';
-import { ResourceMap } from '../../../../base/common/map.js';
-import { Promises, ResourceQueue } from '../../../../base/common/async.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { Promises, ResourceQueue } from '@sidex/base/common/async.js';
 import {
 	FileChangesEvent,
 	FileChangeType,
@@ -24,28 +24,28 @@ import {
 	IFileService,
 	IFileSystemProviderCapabilitiesChangeEvent,
 	IFileSystemProviderRegistrationEvent
-} from '../../../../platform/files/common/files.js';
+} from '@sidex/platform/files/common/files.js';
 import { ILifecycleService } from '../../lifecycle/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
-import { VSBufferReadableStream } from '../../../../base/common/buffer.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { joinPath } from '../../../../base/common/resources.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { VSBufferReadableStream } from '@sidex/base/common/buffer.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { joinPath } from '@sidex/base/common/resources.js';
 import { IWorkingCopyFileService, WorkingCopyFileEvent } from './workingCopyFileService.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
 import { BaseFileWorkingCopyManager, IBaseFileWorkingCopyManager } from './abstractFileWorkingCopyManager.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
 import { IEditorService } from '../../editor/common/editorService.js';
 import { IElevatedFileService } from '../../files/common/elevatedFileService.js';
 import { IFilesConfigurationService } from '../../filesConfiguration/common/filesConfigurationService.js';
 import { IWorkingCopyEditorService } from './workingCopyEditorService.js';
 import { IWorkingCopyService } from './workingCopyService.js';
-import { isWeb } from '../../../../base/common/platform.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
+import { isWeb } from '@sidex/base/common/platform.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { SnapshotContext } from './fileWorkingCopy.js';
-import { IProgressService } from '../../../../platform/progress/common/progress.js';
+import { IProgressService } from '@sidex/platform/progress/common/progress.js';
 
 /**
  * The only one that should be dealing with `IStoredFileWorkingCopy` and handle all

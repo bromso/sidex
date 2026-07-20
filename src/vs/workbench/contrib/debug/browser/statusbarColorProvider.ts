@@ -9,15 +9,15 @@ import {
 	asCssVariableName,
 	registerColor,
 	transparent
-} from '../../../../platform/theme/common/colorRegistry.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
 import { IDebugService, State, IDebugSession, IDebugConfiguration } from '../common/debug.js';
-import { IWorkspaceContextService } from '../../../../platform/workspace/common/workspace.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
 import { STATUS_BAR_FOREGROUND, STATUS_BAR_BORDER, COMMAND_CENTER_BACKGROUND } from '../../../common/theme.js';
-import { DisposableStore, IDisposable } from '../../../../base/common/lifecycle.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
 import { IStatusbarService } from '../../../services/statusbar/browser/statusbar.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { createStyleSheet } from '../../../../base/browser/domStylesheets.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { createStyleSheet } from '@sidex/base/browser/domStylesheets.js';
 
 // colors for theming
 

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { ILanguagePackItem, ILanguagePackService } from '../common/languagePacks.js';
 import { IExtensionGalleryService } from '../../extensionManagement/common/extensionManagement.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 
 export class WebLanguagePacksService implements ILanguagePackService {
 	declare readonly _serviceBrand: undefined;

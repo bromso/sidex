@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isWindows } from '../../../../../base/common/platform.js';
-import { isObject, isString } from '../../../../../base/common/types.js';
+import { isWindows } from '@sidex/base/common/platform.js';
+import { isObject, isString } from '@sidex/base/common/types.js';
 import { localize, localize2 } from '@sidex/base/nls.js';
-import { IQuickInputService, type QuickPickItem } from '../../../../../platform/quickinput/common/quickInput.js';
+import { IQuickInputService, type QuickPickItem } from '@sidex/platform/quickinput/common/quickInput.js';
 import { registerTerminalAction } from '../../../terminal/browser/terminalActions.js';
 
 export const enum TerminalSendSignalCommandId {

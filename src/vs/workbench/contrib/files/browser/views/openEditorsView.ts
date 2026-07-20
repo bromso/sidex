@@ -5,16 +5,16 @@
 
 import './media/openeditors.css';
 import * as nls from '@sidex/base/nls.js';
-import { RunOnceScheduler } from '../../../../../base/common/async.js';
+import { RunOnceScheduler } from '@sidex/base/common/async.js';
 import {
 	IAction,
 	ActionRunner,
 	WorkbenchActionExecutedEvent,
 	WorkbenchActionExecutedClassification
-} from '../../../../../base/common/actions.js';
-import * as dom from '../../../../../base/browser/dom.js';
-import { IContextMenuService } from '../../../../../platform/contextview/browser/contextView.js';
-import { IInstantiationService, ServicesAccessor } from '../../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/base/common/actions.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IInstantiationService, ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IEditorGroupsService,
 	IEditorGroup,
@@ -24,8 +24,8 @@ import {
 import {
 	IConfigurationService,
 	IConfigurationChangeEvent
-} from '../../../../../platform/configuration/common/configuration.js';
-import { IKeybindingService } from '../../../../../platform/keybinding/common/keybinding.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
 import {
 	Verbosity,
 	EditorResourceAccessor,
@@ -48,15 +48,15 @@ import {
 	CloseEditorAction,
 	UnpinEditorAction
 } from '../../../../browser/parts/editor/editorActions.js';
-import { IContextKeyService, ContextKeyExpr } from '../../../../../platform/contextkey/common/contextkey.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { IContextKeyService, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import {
 	asCssVariable,
 	badgeBackground,
 	badgeForeground,
 	contrastBorder
-} from '../../../../../platform/theme/common/colorRegistry.js';
-import { WorkbenchList } from '../../../../../platform/list/browser/listService.js';
+} from '@sidex/platform/theme/common/colorRegistry.js';
+import { WorkbenchList } from '@sidex/platform/list/browser/listService.js';
 import {
 	IListVirtualDelegate,
 	IListRenderer,
@@ -65,12 +65,12 @@ import {
 	IListDragOverReaction,
 	ListDragOverEffectPosition,
 	ListDragOverEffectType
-} from '../../../../../base/browser/ui/list/list.js';
+} from '@sidex/base/browser/ui/list/list.js';
 import { ResourceLabels, IResourceLabel } from '../../../../browser/labels.js';
-import { ActionBar } from '../../../../../base/browser/ui/actionbar/actionbar.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
-import { DisposableMap, IDisposable, dispose } from '../../../../../base/common/lifecycle.js';
-import { MenuId, Action2, registerAction2, MenuRegistry } from '../../../../../platform/actions/common/actions.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { DisposableMap, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
+import { MenuId, Action2, registerAction2, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
 import {
 	OpenEditorsDirtyEditorContext,
 	OpenEditorsGroupContext,
@@ -81,36 +81,36 @@ import {
 	OpenEditorsSelectedFileOrUntitledContext
 } from '../fileConstants.js';
 import { ResourceContextKey, MultipleEditorGroupsContext } from '../../../../common/contextkeys.js';
-import { CodeDataTransfers, containsDragType } from '../../../../../platform/dnd/browser/dnd.js';
+import { CodeDataTransfers, containsDragType } from '@sidex/platform/dnd/browser/dnd.js';
 import { ResourcesDropHandler, fillEditorsDragData } from '../../../../browser/dnd.js';
 import { ViewPane } from '../../../../browser/parts/views/viewPane.js';
 import { IViewletViewOptions } from '../../../../browser/parts/views/viewsViewlet.js';
-import { IDragAndDropData, DataTransfers } from '../../../../../base/browser/dnd.js';
-import { memoize } from '../../../../../base/common/decorators.js';
+import { IDragAndDropData, DataTransfers } from '@sidex/base/browser/dnd.js';
+import { memoize } from '@sidex/base/common/decorators.js';
 import {
 	ElementsDragAndDropData,
 	ListViewTargetSector,
 	NativeDragAndDropData
-} from '../../../../../base/browser/ui/list/listView.js';
+} from '@sidex/base/browser/ui/list/listView.js';
 import { IWorkingCopyService } from '../../../../services/workingCopy/common/workingCopyService.js';
 import { IWorkingCopy, WorkingCopyCapabilities } from '../../../../services/workingCopy/common/workingCopy.js';
 import { IFilesConfigurationService } from '../../../../services/filesConfiguration/common/filesConfigurationService.js';
 import { IViewDescriptorService } from '../../../../common/views.js';
-import { IOpenerService } from '../../../../../platform/opener/common/opener.js';
-import { Orientation } from '../../../../../base/browser/ui/splitview/splitview.js';
-import { IListAccessibilityProvider } from '../../../../../base/browser/ui/list/listWidget.js';
-import { compareFileNamesDefault } from '../../../../../base/common/comparers.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { KeyCode, KeyMod } from '../../../../../base/common/keyCodes.js';
-import { KeybindingWeight } from '../../../../../platform/keybinding/common/keybindingsRegistry.js';
-import { ICommandService } from '../../../../../platform/commands/common/commands.js';
-import { Schemas } from '../../../../../base/common/network.js';
-import { extUriIgnorePathCase } from '../../../../../base/common/resources.js';
-import { ILocalizedString } from '../../../../../platform/action/common/action.js';
-import { mainWindow } from '../../../../../base/browser/window.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Orientation } from '@sidex/base/browser/ui/splitview/splitview.js';
+import { IListAccessibilityProvider } from '@sidex/base/browser/ui/list/listWidget.js';
+import { compareFileNamesDefault } from '@sidex/base/common/comparers.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { Schemas } from '@sidex/base/common/network.js';
+import { extUriIgnorePathCase } from '@sidex/base/common/resources.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import { EditorGroupView } from '../../../../browser/parts/editor/editorGroupView.js';
-import { IHoverService } from '../../../../../platform/hover/browser/hover.js';
-import { IFileService } from '../../../../../platform/files/common/files.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 
 const $ = dom.$;
 

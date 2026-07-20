@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IKeyboardEvent } from '../../../base/browser/keyboardEvent.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
 import {
 	IEditorMouseEvent,
 	IMouseTarget,
@@ -11,7 +11,7 @@ import {
 	IPartialEditorMouseEvent,
 	MouseTargetType
 } from '../editorBrowser.js';
-import { IMouseWheelEvent } from '../../../base/browser/mouseEvent.js';
+import { IMouseWheelEvent } from '@sidex/base/browser/mouseEvent.js';
 import { Position } from '../../common/core/position.js';
 import { ICoordinatesConverter } from '../../common/coordinatesConverter.js';
 

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Event } from '../../../../base/common/event.js';
-import { parse } from '../../../../base/common/json.js';
-import { IDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { Event } from '@sidex/base/common/event.js';
+import { parse } from '@sidex/base/common/json.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IFileDeleteOptions,
 	IFileOverwriteOptions,
@@ -17,17 +17,17 @@ import {
 	IStat,
 	IWatchOptions,
 	IFileSystemProviderWithFileReadWriteCapability
-} from '../../../../platform/files/common/files.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/files/common/files.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import { IWorkbenchContribution } from '../../../common/contributions.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
 import {
 	readTrustedDomains,
 	TRUSTED_DOMAINS_CONTENT_STORAGE_KEY,
 	TRUSTED_DOMAINS_STORAGE_KEY
 } from './trustedDomains.js';
-import { assertReturnsDefined } from '../../../../base/common/types.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { assertReturnsDefined } from '@sidex/base/common/types.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 
 const TRUSTED_DOMAINS_SCHEMA = 'trustedDomains';
 

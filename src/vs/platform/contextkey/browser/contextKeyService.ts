@@ -3,14 +3,14 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter, Event, PauseableEmitter } from '../../../base/common/event.js';
-import { Iterable } from '../../../base/common/iterator.js';
-import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '../../../base/common/lifecycle.js';
-import { MarshalledObject } from '../../../base/common/marshalling.js';
-import { MarshalledId } from '../../../base/common/marshallingIds.js';
-import { cloneAndChange, distinct, equals } from '../../../base/common/objects.js';
-import { TernarySearchTree } from '../../../base/common/ternarySearchTree.js';
-import { URI } from '../../../base/common/uri.js';
+import { Emitter, Event, PauseableEmitter } from '@sidex/base/common/event.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { Disposable, DisposableStore, IDisposable, MutableDisposable } from '@sidex/base/common/lifecycle.js';
+import { MarshalledObject } from '@sidex/base/common/marshalling.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
+import { cloneAndChange, distinct, equals } from '@sidex/base/common/objects.js';
+import { TernarySearchTree } from '@sidex/base/common/ternarySearchTree.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
 import { CommandsRegistry } from '../../commands/common/commands.js';
 import { ConfigurationTarget, IConfigurationService } from '../../configuration/common/configuration.js';
@@ -29,7 +29,7 @@ import {
 } from '../common/contextkey.js';
 import { ServicesAccessor } from '../../instantiation/common/instantiation.js';
 import { InputFocusedContext } from '../common/contextkeys.js';
-import { mainWindow } from '../../../base/browser/window.js';
+import { mainWindow } from '@sidex/base/browser/window.js';
 import {
 	addDisposableListener,
 	EventType,
@@ -37,7 +37,7 @@ import {
 	isEditableElement,
 	onDidRegisterWindow,
 	trackFocus
-} from '../../../base/browser/dom.js';
+} from '@sidex/base/browser/dom.js';
 
 const KEYBINDING_CONTEXT_ATTR = 'data-keybinding-context';
 

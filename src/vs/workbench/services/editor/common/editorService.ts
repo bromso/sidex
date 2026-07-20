@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IResourceEditorInput,
 	IEditorOptions,
 	IResourceEditorInputIdentifier,
 	ITextResourceEditorInput
-} from '../../../../platform/editor/common/editor.js';
+} from '@sidex/platform/editor/common/editor.js';
 import {
 	IEditorPane,
 	GroupIdentifier,
@@ -28,12 +28,12 @@ import {
 	ITextResourceDiffEditorInput
 } from '../../../common/editor.js';
 import { EditorInput } from '../../../common/editor/editorInput.js';
-import { Event } from '../../../../base/common/event.js';
-import { IEditor, IDiffEditor } from '../../../../editor/common/editorCommon.js';
+import { Event } from '@sidex/base/common/event.js';
+import { IEditor, IDiffEditor } from '@sidex/editor/common/editorCommon.js';
 import { ICloseEditorOptions, IEditorGroup, IEditorGroupsContainer, isEditorGroup } from './editorGroupsService.js';
-import { URI } from '../../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { IGroupModelChangeEvent } from '../../../common/editor/editorGroupModel.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 
 export const IEditorService = createDecorator<IEditorService>('editorService');
 

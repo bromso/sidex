@@ -5,9 +5,9 @@
 
 import { IRange, Range } from '../core/range.js';
 import { Searcher } from '../model/textModelSearch.js';
-import * as strings from '../../../base/common/strings.js';
+import * as strings from '@sidex/base/common/strings.js';
 import { IUnicodeHighlightsResult } from './editorWorker.js';
-import { assertNever } from '../../../base/common/assert.js';
+import { assertNever } from '@sidex/base/common/assert.js';
 import { DEFAULT_WORD_REGEXP, getWordAtText } from '../core/wordHelper.js';
 
 export class UnicodeTextModelHighlighter {

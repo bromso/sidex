@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken } from '../../../../../base/common/cancellation.js';
-import { Color } from '../../../../../base/common/color.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
-import { IThemeService } from '../../../../../platform/theme/common/themeService.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { Color } from '@sidex/base/common/color.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
 import { IActiveCodeEditor, ICodeEditor } from '../../../../browser/editorBrowser.js';
 import { LanguageFeatureRegistry } from '../../../../common/languageFeatureRegistry.js';
 import { DocumentColorProvider, IColorInformation } from '../../../../common/languages.js';
@@ -24,7 +24,7 @@ import {
 import { ColorPickerWidget } from '../colorPickerWidget.js';
 import { Range } from '../../../../common/core/range.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
-import { Dimension } from '../../../../../base/browser/dom.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
 
 export class StandaloneColorPickerHover implements BaseColor {
 	constructor(

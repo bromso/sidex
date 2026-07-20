@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { localize } from '@sidex/base/nls.js';
-import { Codicon } from '../../../../base/common/codicons.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
 import { SimpleButton } from '../../find/browser/findWidget.js';
-import { status } from '../../../../base/browser/ui/aria/aria.js';
+import { status } from '@sidex/base/browser/ui/aria/aria.js';
 
 /**
  * A button that appears in hover parts to copy their content to the clipboard.

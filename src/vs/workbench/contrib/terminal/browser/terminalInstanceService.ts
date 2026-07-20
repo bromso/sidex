@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { ITerminalInstance, ITerminalInstanceService } from './terminal.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IShellLaunchConfig,
 	ITerminalBackend,
@@ -13,17 +13,17 @@ import {
 	ITerminalProfile,
 	TerminalExtensions,
 	TerminalLocation
-} from '../../../../platform/terminal/common/terminal.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+} from '@sidex/platform/terminal/common/terminal.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import { TerminalInstance } from './terminalInstance.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { IWorkbenchEnvironmentService } from '../../../services/environment/common/environmentService.js';
-import { promiseWithResolvers } from '../../../../base/common/async.js';
-import { hasKey } from '../../../../base/common/types.js';
+import { promiseWithResolvers } from '@sidex/base/common/async.js';
+import { hasKey } from '@sidex/base/common/types.js';
 
 export class TerminalInstanceService extends Disposable implements ITerminalInstanceService {
 	declare _serviceBrand: undefined;

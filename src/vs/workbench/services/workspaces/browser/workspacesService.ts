@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	IWorkspacesService,
 	IWorkspaceFolderCreationData,
@@ -18,10 +18,10 @@ import {
 	getStoredWorkspaceFolder,
 	IStoredWorkspace,
 	isRecentWorkspace
-} from '../../../../platform/workspaces/common/workspaces.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter } from '../../../../base/common/event.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
+} from '@sidex/platform/workspaces/common/workspaces.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
 import {
 	isTemporaryWorkspace,
 	IWorkspaceContextService,
@@ -29,17 +29,17 @@ import {
 	IWorkspaceIdentifier,
 	WorkbenchState,
 	WORKSPACE_EXTENSION
-} from '../../../../platform/workspace/common/workspace.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/workspace/common/workspace.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { getWorkspaceIdentifier } from './workspaces.js';
-import { IFileService, FileOperationError, FileOperationResult } from '../../../../platform/files/common/files.js';
+import { IFileService, FileOperationError, FileOperationResult } from '@sidex/platform/files/common/files.js';
 import { IWorkbenchEnvironmentService } from '../../environment/common/environmentService.js';
-import { joinPath } from '../../../../base/common/resources.js';
-import { VSBuffer } from '../../../../base/common/buffer.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { IWorkspaceBackupInfo, IFolderBackupInfo } from '../../../../platform/backup/common/backup.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { joinPath } from '@sidex/base/common/resources.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceBackupInfo, IFolderBackupInfo } from '@sidex/platform/backup/common/backup.js';
+import { Schemas } from '@sidex/base/common/network.js';
 
 export class BrowserWorkspacesService extends Disposable implements IWorkspacesService {
 	static readonly RECENTLY_OPENED_KEY = 'recently.opened';

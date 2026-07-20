@@ -10,7 +10,7 @@ import {
 	IExtensionIdentifier,
 	IExtensionManifest,
 	TargetPlatform
-} from '../../../../platform/extensions/common/extensions.js';
+} from '@sidex/platform/extensions/common/extensions.js';
 import {
 	ILocalExtension,
 	IGalleryExtension,
@@ -20,20 +20,20 @@ import {
 	InstallOptions,
 	IProductVersion,
 	IAllowedExtensionsService
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { URI } from '../../../../base/common/uri.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import {
 	areSameExtensions,
 	getGalleryExtensionId
-} from '../../../../platform/extensionManagement/common/extensionManagementUtil.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagementUtil.js';
 import {
 	IProfileAwareExtensionManagementService,
 	IScannedExtension,
 	IWebExtensionsScannerService
 } from './extensionManagement.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import {
 	AbstractExtensionManagementService,
 	AbstractExtensionTask,
@@ -42,20 +42,20 @@ import {
 	IUninstallExtensionTask,
 	toExtensionManagementError,
 	UninstallExtensionTaskOptions
-} from '../../../../platform/extensionManagement/common/abstractExtensionManagementService.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/extensionManagement/common/abstractExtensionManagementService.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { IExtensionManifestPropertiesService } from '../../extensions/common/extensionManifestPropertiesService.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
-import { isBoolean, isUndefined } from '../../../../base/common/types.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
+import { isBoolean, isUndefined } from '@sidex/base/common/types.js';
 import {
 	DidChangeUserDataProfileEvent,
 	IUserDataProfileService
 } from '../../userDataProfile/common/userDataProfile.js';
-import { delta } from '../../../../base/common/arrays.js';
-import { compare } from '../../../../base/common/strings.js';
-import { IUserDataProfilesService } from '../../../../platform/userDataProfile/common/userDataProfile.js';
-import { IUriIdentityService } from '../../../../platform/uriIdentity/common/uriIdentity.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+import { delta } from '@sidex/base/common/arrays.js';
+import { compare } from '@sidex/base/common/strings.js';
+import { IUserDataProfilesService } from '@sidex/platform/userDataProfile/common/userDataProfile.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 
 export class WebExtensionManagementService
 	extends AbstractExtensionManagementService

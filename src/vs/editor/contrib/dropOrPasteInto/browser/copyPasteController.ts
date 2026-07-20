@@ -3,41 +3,41 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IAction } from '../../../../base/common/actions.js';
-import { coalesce } from '../../../../base/common/arrays.js';
+import { IAction } from '@sidex/base/common/actions.js';
+import { coalesce } from '@sidex/base/common/arrays.js';
 import {
 	CancelablePromise,
 	createCancelablePromise,
 	DeferredPromise,
 	raceCancellation
-} from '../../../../base/common/async.js';
-import { CancellationToken, CancellationTokenSource } from '../../../../base/common/cancellation.js';
+} from '@sidex/base/common/async.js';
+import { CancellationToken, CancellationTokenSource } from '@sidex/base/common/cancellation.js';
 import {
 	createStringDataTransferItem,
 	IReadonlyVSDataTransfer,
 	matchesMimeType,
 	UriList,
 	VSDataTransfer
-} from '../../../../base/common/dataTransfer.js';
-import { isCancellationError } from '../../../../base/common/errors.js';
-import { HierarchicalKind } from '../../../../base/common/hierarchicalKind.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { Mimes } from '../../../../base/common/mime.js';
-import { upcast } from '../../../../base/common/types.js';
-import { generateUuid } from '../../../../base/common/uuid.js';
+} from '@sidex/base/common/dataTransfer.js';
+import { isCancellationError } from '@sidex/base/common/errors.js';
+import { HierarchicalKind } from '@sidex/base/common/hierarchicalKind.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { Mimes } from '@sidex/base/common/mime.js';
+import { upcast } from '@sidex/base/common/types.js';
+import { generateUuid } from '@sidex/base/common/uuid.js';
 import { localize } from '@sidex/base/nls.js';
-import { IClipboardService } from '../../../../platform/clipboard/common/clipboardService.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { IProgressService, ProgressLocation } from '../../../../platform/progress/common/progress.js';
+import { IClipboardService } from '@sidex/platform/clipboard/common/clipboardService.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IProgressService, ProgressLocation } from '@sidex/platform/progress/common/progress.js';
 import {
 	IQuickInputService,
 	IQuickPickItem,
 	IQuickPickSeparator
-} from '../../../../platform/quickinput/common/quickInput.js';
+} from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IClipboardCopyEvent,
 	IClipboardPasteEvent,

@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Queue } from '../../../base/common/async.js';
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { ResourceMap } from '../../../base/common/map.js';
-import { URI, UriComponents } from '../../../base/common/uri.js';
+import { Queue } from '@sidex/base/common/async.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
+import { URI, UriComponents } from '@sidex/base/common/uri.js';
 import { Metadata, isIExtensionIdentifier } from './extensionManagement.js';
 import { areSameExtensions } from './extensionManagementUtil.js';
 import { IExtension, IExtensionIdentifier } from '../../extensions/common/extensions.js';
@@ -17,8 +17,8 @@ import { createDecorator } from '../../instantiation/common/instantiation.js';
 import { ILogService } from '../../log/common/log.js';
 import { IUserDataProfilesService } from '../../userDataProfile/common/userDataProfile.js';
 import { IUriIdentityService } from '../../uriIdentity/common/uriIdentity.js';
-import { Mutable, isObject, isString, isUndefined } from '../../../base/common/types.js';
-import { getErrorMessage } from '../../../base/common/errors.js';
+import { Mutable, isObject, isString, isUndefined } from '@sidex/base/common/types.js';
+import { getErrorMessage } from '@sidex/base/common/errors.js';
 
 interface IStoredProfileExtension {
 	identifier: IExtensionIdentifier;

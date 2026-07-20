@@ -3,25 +3,25 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { MarkdownString } from '../../../base/common/htmlContent.js';
-import { IJSONSchema } from '../../../base/common/jsonSchema.js';
-import { Disposable } from '../../../base/common/lifecycle.js';
-import * as resources from '../../../base/common/resources.js';
-import { isFalsyOrWhitespace } from '../../../base/common/strings.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
-import { URI } from '../../../base/common/uri.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IJSONSchema } from '@sidex/base/common/jsonSchema.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import * as resources from '@sidex/base/common/resources.js';
+import { isFalsyOrWhitespace } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { localize } from '@sidex/base/nls.js';
-import { ContextKeyExpr } from '../../../platform/contextkey/common/contextkey.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	ExtensionIdentifier,
 	ExtensionIdentifierSet,
 	IExtensionDescription,
 	IExtensionManifest
-} from '../../../platform/extensions/common/extensions.js';
-import { SyncDescriptor } from '../../../platform/instantiation/common/descriptors.js';
-import { IInstantiationService } from '../../../platform/instantiation/common/instantiation.js';
-import { ILogService } from '../../../platform/log/common/log.js';
-import { Registry } from '../../../platform/registry/common/platform.js';
+} from '@sidex/platform/extensions/common/extensions.js';
+import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import { PaneCompositeRegistry, Extensions as ViewletExtensions } from '../../browser/panecomposite.js';
 import { CustomTreeView, TreeViewPane } from '../../browser/parts/views/treeView.js';
 import { ViewPaneContainer } from '../../browser/parts/views/viewPaneContainer.js';

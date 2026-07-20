@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { ButtonBar, IButton } from '../../../base/browser/ui/button/button.js';
-import { createInstantHoverDelegate } from '../../../base/browser/ui/hover/hoverDelegateFactory.js';
+import { ButtonBar, IButton } from '@sidex/base/browser/ui/button/button.js';
+import { createInstantHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
 import {
 	ActionRunner,
 	IAction,
@@ -12,12 +12,12 @@ import {
 	SubmenuAction,
 	WorkbenchActionExecutedClassification,
 	WorkbenchActionExecutedEvent
-} from '../../../base/common/actions.js';
-import { Codicon } from '../../../base/common/codicons.js';
-import { Emitter, Event } from '../../../base/common/event.js';
-import { IMarkdownString, isMarkdownString, MarkdownString } from '../../../base/common/htmlContent.js';
-import { DisposableStore } from '../../../base/common/lifecycle.js';
-import { ThemeIcon } from '../../../base/common/themables.js';
+} from '@sidex/base/common/actions.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { IMarkdownString, isMarkdownString, MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
 import { getActionBarActions } from './menuEntryActionViewItem.js';
 import { IToolBarRenderOptions } from './toolbar.js';

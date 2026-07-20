@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { raceTimeout } from '../../../../base/common/async.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
-import { IStringDictionary } from '../../../../base/common/collections.js';
-import { IExtensionRecommendations } from '../../../../base/common/product.js';
+import { raceTimeout } from '@sidex/base/common/async.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IStringDictionary } from '@sidex/base/common/collections.js';
+import { IExtensionRecommendations } from '@sidex/base/common/product.js';
 import { localize } from '@sidex/base/nls.js';
-import { RawContextKey } from '../../../../platform/contextkey/common/contextkey.js';
+import { RawContextKey } from '@sidex/platform/contextkey/common/contextkey.js';
 import {
 	IExtensionGalleryService,
 	IGalleryExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { createDecorator } from '../../../../platform/instantiation/common/instantiation.js';
-import { IProductService } from '../../../../platform/product/common/productService.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IProductService } from '@sidex/platform/product/common/productService.js';
 import { ISearchResult, ISettingsEditorModel } from '../../../services/preferences/common/preferences.js';
 
 export interface IWorkbenchSettingsConfiguration {

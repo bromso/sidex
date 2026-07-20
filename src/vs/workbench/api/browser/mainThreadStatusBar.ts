@@ -10,16 +10,16 @@ import {
 	StatusBarItemDto,
 	ExtHostStatusBarShape
 } from '../common/extHost.protocol.js';
-import { ThemeColor } from '../../../base/common/themables.js';
+import { ThemeColor } from '@sidex/base/common/themables.js';
 import { extHostNamedCustomer, IExtHostContext } from '../../services/extensions/common/extHostCustomers.js';
-import { DisposableMap, toDisposable, Disposable } from '../../../base/common/lifecycle.js';
-import { Command } from '../../../editor/common/languages.js';
-import { IAccessibilityInformation } from '../../../platform/accessibility/common/accessibility.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
+import { DisposableMap, toDisposable, Disposable } from '@sidex/base/common/lifecycle.js';
+import { Command } from '@sidex/editor/common/languages.js';
+import { IAccessibilityInformation } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
 import { IExtensionStatusBarItemService, StatusBarUpdateKind } from './statusBarExtensionPoint.js';
 import { IStatusbarEntry, StatusbarAlignment } from '../../services/statusbar/browser/statusbar.js';
-import { IManagedHoverTooltipMarkdownString } from '../../../base/browser/ui/hover/hover.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
+import { IManagedHoverTooltipMarkdownString } from '@sidex/base/browser/ui/hover/hover.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 
 @extHostNamedCustomer(MainContext.MainThreadStatusBar)
 export class MainThreadStatusBar extends Disposable implements MainThreadStatusBarShape {

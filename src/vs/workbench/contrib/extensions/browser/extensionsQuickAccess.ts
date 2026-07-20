@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IQuickPickSeparator } from '../../../../platform/quickinput/common/quickInput.js';
+import { IQuickPickSeparator } from '@sidex/platform/quickinput/common/quickInput.js';
 import {
 	IPickerQuickAccessItem,
 	PickerQuickAccessProvider
-} from '../../../../platform/quickinput/browser/pickerQuickAccess.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+} from '@sidex/platform/quickinput/browser/pickerQuickAccess.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { localize } from '@sidex/base/nls.js';
 import {
 	IExtensionGalleryService,
 	IExtensionManagementService,
 	IGalleryExtension
-} from '../../../../platform/extensionManagement/common/extensionManagement.js';
-import { INotificationService } from '../../../../platform/notification/common/notification.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { DisposableStore } from '../../../../base/common/lifecycle.js';
+} from '@sidex/platform/extensionManagement/common/extensionManagement.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { DisposableStore } from '@sidex/base/common/lifecycle.js';
 import { IExtensionsWorkbenchService } from '../common/extensions.js';
 
 export class InstallExtensionQuickAccessProvider extends PickerQuickAccessProvider<IPickerQuickAccessItem> {

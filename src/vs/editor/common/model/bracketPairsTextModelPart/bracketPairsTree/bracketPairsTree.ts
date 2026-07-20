@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Emitter } from '../../../../../base/common/event.js';
-import { Disposable } from '../../../../../base/common/lifecycle.js';
+import { Emitter } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { Range } from '../../../core/range.js';
 import { ITextModel } from '../../../model.js';
 import { BracketInfo, BracketPairWithMinIndentationInfo, IFoundBracket } from '../../../textModelBracketPairs.js';
@@ -30,7 +30,7 @@ import { DenseKeyProvider } from './smallImmutableSet.js';
 import { FastTokenizer, TextBufferTokenizer } from './tokenizer.js';
 import { BackgroundTokenizationState } from '../../../tokenizationTextModelPart.js';
 import { Position } from '../../../core/position.js';
-import { CallbackIterable } from '../../../../../base/common/arrays.js';
+import { CallbackIterable } from '@sidex/base/common/arrays.js';
 import { combineTextEditInfos } from './combineTextEditInfos.js';
 import { ClosingBracketKind, OpeningBracketKind } from '../../../languages/supports/languageBracketsConfiguration.js';
 

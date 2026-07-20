@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { LanguageFeatureRegistry, NotebookInfo, NotebookInfoResolver } from '../languageFeatureRegistry.js';
 import {
 	CodeActionProvider,
@@ -39,7 +39,7 @@ import {
 	NewSymbolNamesProvider
 } from '../languages.js';
 import { ILanguageFeaturesService } from './languageFeatures.js';
-import { InstantiationType, registerSingleton } from '../../../platform/instantiation/common/extensions.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 
 export class LanguageFeaturesService implements ILanguageFeaturesService {
 	declare _serviceBrand: undefined;

@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { DisposableStore, dispose, IDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import { DisposableStore, dispose, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	IUntitledFileWorkingCopy,
 	IUntitledFileWorkingCopyInitialContents,
@@ -13,15 +13,15 @@ import {
 	IUntitledFileWorkingCopySaveDelegate,
 	UntitledFileWorkingCopy
 } from './untitledFileWorkingCopy.js';
-import { Event, Emitter } from '../../../../base/common/event.js';
-import { Schemas } from '../../../../base/common/network.js';
+import { Event, Emitter } from '@sidex/base/common/event.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import { IWorkingCopyService } from './workingCopyService.js';
-import { ILabelService } from '../../../../platform/label/common/label.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
 import { IWorkingCopyBackupService } from './workingCopyBackup.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { BaseFileWorkingCopyManager, IBaseFileWorkingCopyManager } from './abstractFileWorkingCopyManager.js';
-import { ResourceMap } from '../../../../base/common/map.js';
+import { ResourceMap } from '@sidex/base/common/map.js';
 
 export interface IUntitledFileWorkingCopySaveEvent {
 	/**

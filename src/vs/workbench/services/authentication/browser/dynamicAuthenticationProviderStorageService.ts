@@ -3,19 +3,19 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { InstantiationType, registerSingleton } from '../../../../platform/instantiation/common/extensions.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import {
 	IDynamicAuthenticationProviderStorageService,
 	DynamicAuthenticationProviderInfo,
 	DynamicAuthenticationProviderTokensChangeEvent
 } from '../common/dynamicAuthenticationProviderStorage.js';
-import { ISecretStorageService } from '../../../../platform/secrets/common/secrets.js';
-import { IAuthorizationTokenResponse, isAuthorizationTokenResponse } from '../../../../base/common/oauth.js';
-import { ILogService } from '../../../../platform/log/common/log.js';
-import { Emitter, Event } from '../../../../base/common/event.js';
-import { Disposable } from '../../../../base/common/lifecycle.js';
-import { Queue } from '../../../../base/common/async.js';
+import { ISecretStorageService } from '@sidex/platform/secrets/common/secrets.js';
+import { IAuthorizationTokenResponse, isAuthorizationTokenResponse } from '@sidex/base/common/oauth.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Queue } from '@sidex/base/common/async.js';
 
 export class DynamicAuthenticationProviderStorageService
 	extends Disposable

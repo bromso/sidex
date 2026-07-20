@@ -4,13 +4,13 @@
  *--------------------------------------------------------------------------------------------*/
 import './output.css';
 import * as nls from '@sidex/base/nls.js';
-import { ICodeEditor } from '../../../../editor/browser/editorBrowser.js';
-import { IEditorOptions as ICodeEditorOptions } from '../../../../editor/common/config/editorOptions.js';
-import { ITelemetryService } from '../../../../platform/telemetry/common/telemetry.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../platform/storage/common/storage.js';
-import { ITextResourceConfigurationService } from '../../../../editor/common/services/textResourceConfiguration.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
-import { IContextKeyService, IContextKey, ContextKeyExpr } from '../../../../platform/contextkey/common/contextkey.js';
+import { ICodeEditor } from '@sidex/editor/browser/editorBrowser.js';
+import { IEditorOptions as ICodeEditorOptions } from '@sidex/editor/common/config/editorOptions.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { IContextKeyService, IContextKey, ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import { IEditorOpenContext } from '../../../common/editor.js';
 import { AbstractTextResourceEditor } from '../../../browser/parts/editor/textResourceEditor.js';
 import {
@@ -24,46 +24,46 @@ import {
 	ILogEntry,
 	HIDE_CATEGORY_FILTER_CONTEXT
 } from '../../../services/output/common/output.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { IEditorGroupsService } from '../../../services/editor/common/editorGroupsService.js';
-import { CancellationToken } from '../../../../base/common/cancellation.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
-import { CursorChangeReason } from '../../../../editor/common/cursorEvents.js';
+import { CursorChangeReason } from '@sidex/editor/common/cursorEvents.js';
 import { IViewPaneOptions, FilterViewPane } from '../../../browser/parts/views/viewPane.js';
-import { IKeybindingService } from '../../../../platform/keybinding/common/keybinding.js';
-import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
+import { IKeybindingService } from '@sidex/platform/keybinding/common/keybinding.js';
+import { IContextMenuService } from '@sidex/platform/contextview/browser/contextView.js';
 import { IViewDescriptorService } from '../../../common/views.js';
 import { TextResourceEditorInput } from '../../../common/editor/textResourceEditorInput.js';
-import { IOpenerService } from '../../../../platform/opener/common/opener.js';
-import { Dimension } from '../../../../base/browser/dom.js';
-import { ITextEditorOptions } from '../../../../platform/editor/common/editor.js';
-import { CancelablePromise, createCancelablePromise } from '../../../../base/common/async.js';
-import { IFileService } from '../../../../platform/files/common/files.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
+import { Dimension } from '@sidex/base/browser/dom.js';
+import { ITextEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { CancelablePromise, createCancelablePromise } from '@sidex/base/common/async.js';
+import { IFileService } from '@sidex/platform/files/common/files.js';
 import { ResourceContextKey } from '../../../common/contextkeys.js';
-import { ServiceCollection } from '../../../../platform/instantiation/common/serviceCollection.js';
+import { ServiceCollection } from '@sidex/platform/instantiation/common/serviceCollection.js';
 import { IEditorConfiguration } from '../../../browser/parts/editor/textEditor.js';
 import { computeEditorAriaLabel } from '../../../browser/editor.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
 import { localize } from '@sidex/base/nls.js';
-import { Disposable, DisposableStore } from '../../../../base/common/lifecycle.js';
-import { LogLevel } from '../../../../platform/log/common/log.js';
+import { Disposable, DisposableStore } from '@sidex/base/common/lifecycle.js';
+import { LogLevel } from '@sidex/platform/log/common/log.js';
 import {
 	IEditorContributionDescription,
 	EditorExtensionsRegistry,
 	EditorContributionInstantiation,
 	EditorContributionCtor
-} from '../../../../editor/browser/editorExtensions.js';
-import { ICodeEditorWidgetOptions } from '../../../../editor/browser/widget/codeEditor/codeEditorWidget.js';
-import { IEditorContribution, IEditorDecorationsCollection } from '../../../../editor/common/editorCommon.js';
-import { IModelDeltaDecoration, ITextModel } from '../../../../editor/common/model.js';
-import { Range } from '../../../../editor/common/core/range.js';
-import { FindDecorations } from '../../../../editor/contrib/find/browser/findDecorations.js';
+} from '@sidex/editor/browser/editorExtensions.js';
+import { ICodeEditorWidgetOptions } from '@sidex/editor/browser/widget/codeEditor/codeEditorWidget.js';
+import { IEditorContribution, IEditorDecorationsCollection } from '@sidex/editor/common/editorCommon.js';
+import { IModelDeltaDecoration, ITextModel } from '@sidex/editor/common/model.js';
+import { Range } from '@sidex/editor/common/core/range.js';
+import { FindDecorations } from '@sidex/editor/contrib/find/browser/findDecorations.js';
 import { Memento } from '../../../common/memento.js';
 import { Markers } from '../../markers/common/markers.js';
-import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
+import { Action2, registerAction2 } from '@sidex/platform/actions/common/actions.js';
 import { viewFilterSubmenu } from '../../../browser/parts/views/viewFilter.js';
-import { escapeRegExpCharacters } from '../../../../base/common/strings.js';
+import { escapeRegExpCharacters } from '@sidex/base/common/strings.js';
 
 interface IOutputViewState {
 	filter?: string;

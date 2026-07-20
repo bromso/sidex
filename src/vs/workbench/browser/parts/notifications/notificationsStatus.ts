@@ -20,11 +20,11 @@ import {
 	IStatusbarEntryAccessor,
 	IStatusbarEntry
 } from '../../../services/statusbar/browser/statusbar.js';
-import { Disposable, IDisposable, dispose } from '../../../../base/common/lifecycle.js';
+import { Disposable, IDisposable, dispose } from '@sidex/base/common/lifecycle.js';
 import { HIDE_NOTIFICATIONS_CENTER, SHOW_NOTIFICATIONS_CENTER } from './notificationsCommands.js';
 import { localize } from '@sidex/base/nls.js';
-import { INotificationService, NotificationsFilter } from '../../../../platform/notification/common/notification.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { INotificationService, NotificationsFilter } from '@sidex/platform/notification/common/notification.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 
 export class NotificationsStatus extends Disposable {
 	private notificationsCenterStatusItem: IStatusbarEntryAccessor | undefined;

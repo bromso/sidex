@@ -3,67 +3,67 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { VSBuffer } from '../../../base/common/buffer.js';
-import { CancellationToken } from '../../../base/common/cancellation.js';
-import { IRemoteConsoleLog } from '../../../base/common/console.js';
-import { SerializedError } from '../../../base/common/errors.js';
-import { IRelativePattern } from '../../../base/common/glob.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { IDisposable } from '../../../base/common/lifecycle.js';
+import { VSBuffer } from '@sidex/base/common/buffer.js';
+import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { IRemoteConsoleLog } from '@sidex/base/common/console.js';
+import { SerializedError } from '@sidex/base/common/errors.js';
+import { IRelativePattern } from '@sidex/base/common/glob.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IAuthorizationProtectedResourceMetadata,
 	IAuthorizationServerMetadata,
 	IAuthorizationTokenResponse
-} from '../../../base/common/oauth.js';
-import * as performance from '../../../base/common/performance.js';
-import Severity from '../../../base/common/severity.js';
-import { ThemeColor, ThemeIcon } from '../../../base/common/themables.js';
-import { URI, UriComponents, UriDto } from '../../../base/common/uri.js';
-import { RenderLineNumbersType, TextEditorCursorStyle } from '../../../editor/common/config/editorOptions.js';
-import { ISingleEditOperation } from '../../../editor/common/core/editOperation.js';
-import { IPosition } from '../../../editor/common/core/position.js';
-import { IRange } from '../../../editor/common/core/range.js';
-import { ISelection, Selection } from '../../../editor/common/core/selection.js';
-import { IChange } from '../../../editor/common/diff/legacyLinesDiffComputer.js';
-import * as editorCommon from '../../../editor/common/editorCommon.js';
-import { StandardTokenType } from '../../../editor/common/encodedTokenAttributes.js';
-import * as languages from '../../../editor/common/languages.js';
-import { CompletionItemLabel } from '../../../editor/common/languages.js';
-import { CharacterPair, CommentRule, EnterAction } from '../../../editor/common/languages/languageConfiguration.js';
-import { EndOfLineSequence } from '../../../editor/common/model.js';
-import { EditSuggestionId } from '../../../editor/common/textModelEditSource.js';
-import { ISerializedModelContentChangedEvent } from '../../../editor/common/textModelEvents.js';
-import { IAccessibilityInformation } from '../../../platform/accessibility/common/accessibility.js';
-import { ILocalizedString } from '../../../platform/action/common/action.js';
+} from '@sidex/base/common/oauth.js';
+import * as performance from '@sidex/base/common/performance.js';
+import Severity from '@sidex/base/common/severity.js';
+import { ThemeColor, ThemeIcon } from '@sidex/base/common/themables.js';
+import { URI, UriComponents, UriDto } from '@sidex/base/common/uri.js';
+import { RenderLineNumbersType, TextEditorCursorStyle } from '@sidex/editor/common/config/editorOptions.js';
+import { ISingleEditOperation } from '@sidex/editor/common/core/editOperation.js';
+import { IPosition } from '@sidex/editor/common/core/position.js';
+import { IRange } from '@sidex/editor/common/core/range.js';
+import { ISelection, Selection } from '@sidex/editor/common/core/selection.js';
+import { IChange } from '@sidex/editor/common/diff/legacyLinesDiffComputer.js';
+import * as editorCommon from '@sidex/editor/common/editorCommon.js';
+import { StandardTokenType } from '@sidex/editor/common/encodedTokenAttributes.js';
+import * as languages from '@sidex/editor/common/languages.js';
+import { CompletionItemLabel } from '@sidex/editor/common/languages.js';
+import { CharacterPair, CommentRule, EnterAction } from '@sidex/editor/common/languages/languageConfiguration.js';
+import { EndOfLineSequence } from '@sidex/editor/common/model.js';
+import { EditSuggestionId } from '@sidex/editor/common/textModelEditSource.js';
+import { ISerializedModelContentChangedEvent } from '@sidex/editor/common/textModelEvents.js';
+import { IAccessibilityInformation } from '@sidex/platform/accessibility/common/accessibility.js';
+import { ILocalizedString } from '@sidex/platform/action/common/action.js';
 import {
 	ConfigurationTarget,
 	IConfigurationChange,
 	IConfigurationData,
 	IConfigurationOverrides
-} from '../../../platform/configuration/common/configuration.js';
-import { ConfigurationScope } from '../../../platform/configuration/common/configurationRegistry.js';
-import { IEditorOptions } from '../../../platform/editor/common/editor.js';
-import { IExtensionIdWithVersion } from '../../../platform/extensionManagement/common/extensionStorage.js';
-import { ExtensionIdentifier, IExtensionDescription } from '../../../platform/extensions/common/extensions.js';
-import * as files from '../../../platform/files/common/files.js';
-import { ResourceLabelFormatter } from '../../../platform/label/common/label.js';
-import { ILoggerOptions, ILoggerResource, LogLevel } from '../../../platform/log/common/log.js';
-import { IMarkerData } from '../../../platform/markers/common/markers.js';
-import { IProgressOptions, IProgressStep } from '../../../platform/progress/common/progress.js';
-import * as quickInput from '../../../platform/quickinput/common/quickInput.js';
-import { IRemoteConnectionData, TunnelDescription } from '../../../platform/remote/common/remoteAuthorityResolver.js';
-import { AuthInfo, Credentials } from '../../../platform/request/common/request.js';
+} from '@sidex/platform/configuration/common/configuration.js';
+import { ConfigurationScope } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { IEditorOptions } from '@sidex/platform/editor/common/editor.js';
+import { IExtensionIdWithVersion } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
+import { ExtensionIdentifier, IExtensionDescription } from '@sidex/platform/extensions/common/extensions.js';
+import * as files from '@sidex/platform/files/common/files.js';
+import { ResourceLabelFormatter } from '@sidex/platform/label/common/label.js';
+import { ILoggerOptions, ILoggerResource, LogLevel } from '@sidex/platform/log/common/log.js';
+import { IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import { IProgressOptions, IProgressStep } from '@sidex/platform/progress/common/progress.js';
+import * as quickInput from '@sidex/platform/quickinput/common/quickInput.js';
+import { IRemoteConnectionData, TunnelDescription } from '@sidex/platform/remote/common/remoteAuthorityResolver.js';
+import { AuthInfo, Credentials } from '@sidex/platform/request/common/request.js';
 import {
 	ClassifiedEvent,
 	IGDPRProperty,
 	OmitMetadata,
 	StrictPropertyCheck
-} from '../../../platform/telemetry/common/gdprTypings.js';
-import { TelemetryLevel } from '../../../platform/telemetry/common/telemetry.js';
+} from '@sidex/platform/telemetry/common/gdprTypings.js';
+import { TelemetryLevel } from '@sidex/platform/telemetry/common/telemetry.js';
 import {
 	ISerializableEnvironmentDescriptionMap,
 	ISerializableEnvironmentVariableCollection
-} from '../../../platform/terminal/common/environmentVariable.js';
+} from '@sidex/platform/terminal/common/environmentVariable.js';
 import {
 	ICreateContributedTerminalProfileOptions,
 	IProcessProperty,
@@ -75,16 +75,16 @@ import {
 	TerminalExitReason,
 	TerminalLocation,
 	TerminalShellType
-} from '../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import {
 	ProvidedPortAttributes,
 	TunnelCreationOptions,
 	TunnelOptions,
 	TunnelPrivacyId,
 	TunnelProviderFeatures
-} from '../../../platform/tunnel/common/tunnel.js';
-import { EditSessionIdentityMatch } from '../../../platform/workspace/common/editSessions.js';
-import { WorkspaceTrustRequestOptions } from '../../../platform/workspace/common/workspaceTrust.js';
+} from '@sidex/platform/tunnel/common/tunnel.js';
+import { EditSessionIdentityMatch } from '@sidex/platform/workspace/common/editSessions.js';
+import { WorkspaceTrustRequestOptions } from '@sidex/platform/workspace/common/workspaceTrust.js';
 import { SaveReason } from '../../common/editor.js';
 import { IRevealOptions, ITreeItem, IViewBadge } from '../../common/views.js';
 import { CallHierarchyItem } from '../../contrib/callHierarchy/common/callHierarchy.js';
@@ -171,7 +171,7 @@ import { ISaveProfileResult } from '../../services/userDataProfile/common/userDa
 import { IExtHostDocumentSaveDelegate } from './extHostDocumentData.js';
 import { TerminalShellExecutionCommandLineConfidence } from './extHostTypes.js';
 import * as tasks from './shared/tasks.js';
-import { CDPEvent, CDPRequest, CDPResponse } from '../../../platform/browserView/common/cdp/types.js';
+import { CDPEvent, CDPRequest, CDPResponse } from '@sidex/platform/browserView/common/cdp/types.js';
 
 export type IconPathDto = UriComponents | { light: UriComponents; dark: UriComponents } | ThemeIcon;
 

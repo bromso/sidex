@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { observableFromEvent } from '../../../../base/common/observable.js';
+import { observableFromEvent } from '@sidex/base/common/observable.js';
 import { localize } from '@sidex/base/nls.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
-import { IConfigurationNode } from '../../../../platform/configuration/common/configurationRegistry.js';
-import { Registry } from '../../../../platform/registry/common/platform.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
+import { IConfigurationNode } from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
 import {
 	ConfigurationKeyValuePairs,
 	Extensions,

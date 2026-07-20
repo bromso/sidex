@@ -4,30 +4,30 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { localize } from '@sidex/base/nls.js';
-import Severity from '../../../../base/common/severity.js';
-import { dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import { URI } from '../../../../base/common/uri.js';
+import Severity from '@sidex/base/common/severity.js';
+import { dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { URI } from '@sidex/base/common/uri.js';
 import { EditorInputCapabilities, IEditorIdentifier, IUntypedEditorInput } from '../../../common/editor.js';
-import { IThemeService } from '../../../../platform/theme/common/themeService.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import { IThemeService } from '@sidex/platform/theme/common/themeService.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { EditorInput, IEditorCloseHandler } from '../../../common/editor/editorInput.js';
 import { ITerminalInstance, ITerminalInstanceService, terminalEditorId } from './terminal.js';
 import { getColorClass, getUriClasses } from './terminalIcon.js';
-import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
 import {
 	IShellLaunchConfig,
 	TerminalExitReason,
 	TerminalLocation,
 	TerminalSettingId
-} from '../../../../platform/terminal/common/terminal.js';
+} from '@sidex/platform/terminal/common/terminal.js';
 import { IEditorGroup } from '../../../services/editor/common/editorGroupsService.js';
 import { ILifecycleService, ShutdownReason, WillShutdownEvent } from '../../../services/lifecycle/common/lifecycle.js';
 import { ConfirmOnKill } from '../common/terminal.js';
-import { IContextKey, IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
-import { IConfigurationService } from '../../../../platform/configuration/common/configuration.js';
+import { IContextKey, IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import { TerminalContextKeys } from '../common/terminalContextKey.js';
-import { ConfirmResult, IDialogService } from '../../../../platform/dialogs/common/dialogs.js';
-import { Emitter } from '../../../../base/common/event.js';
+import { ConfirmResult, IDialogService } from '@sidex/platform/dialogs/common/dialogs.js';
+import { Emitter } from '@sidex/base/common/event.js';
 
 export class TerminalEditorInput extends EditorInput implements IEditorCloseHandler {
 	static readonly ID = 'workbench.editors.terminal';

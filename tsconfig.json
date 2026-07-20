@@ -24,7 +24,10 @@
     "baseUrl": "src",
     "paths": {
       "vs/*": ["vs/*"],
-      "@sidex/base/*": ["vs/*"]
+      "@sidex/base/*": ["vs/base/*"],
+      "@sidex/platform/*": ["vs/platform/*"],
+      "@sidex/editor/*": ["vs/editor/*"],
+      "@sidex/workbench/*": ["vs/workbench/*"]
     },
     "types": ["vite/client", "@webgpu/types", "trusted-types"]
   },

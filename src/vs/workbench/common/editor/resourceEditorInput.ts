@@ -10,19 +10,19 @@ import {
 	IFileLimitedEditorInputOptions
 } from '../editor.js';
 import { EditorInput } from './editorInput.js';
-import { URI } from '../../../base/common/uri.js';
+import { URI } from '@sidex/base/common/uri.js';
 import {
 	ByteSize,
 	IFileReadLimits,
 	IFileService,
 	getLargeFileConfirmationLimit
-} from '../../../platform/files/common/files.js';
-import { ILabelService } from '../../../platform/label/common/label.js';
-import { dirname, isEqual } from '../../../base/common/resources.js';
+} from '@sidex/platform/files/common/files.js';
+import { ILabelService } from '@sidex/platform/label/common/label.js';
+import { dirname, isEqual } from '@sidex/base/common/resources.js';
 import { IFilesConfigurationService } from '../../services/filesConfiguration/common/filesConfigurationService.js';
-import { IMarkdownString } from '../../../base/common/htmlContent.js';
-import { isConfigured } from '../../../platform/configuration/common/configuration.js';
-import { ITextResourceConfigurationService } from '../../../editor/common/services/textResourceConfiguration.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { isConfigured } from '@sidex/platform/configuration/common/configuration.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
 import { ICustomEditorLabelService } from '../../services/editor/common/customEditorLabelService.js';
 
 /**

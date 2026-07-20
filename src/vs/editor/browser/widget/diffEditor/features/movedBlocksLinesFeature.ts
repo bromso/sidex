@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { h } from '../../../../../base/browser/dom.js';
-import { ActionBar } from '../../../../../base/browser/ui/actionbar/actionbar.js';
-import { Action } from '../../../../../base/common/actions.js';
+import { h } from '@sidex/base/browser/dom.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { Action } from '@sidex/base/common/actions.js';
 import {
 	booleanComparator,
 	compareBy,
 	numberComparator,
 	tieBreakComparators
-} from '../../../../../base/common/arrays.js';
-import { findMaxIdx } from '../../../../../base/common/arraysFind.js';
-import { Codicon } from '../../../../../base/common/codicons.js';
-import { Disposable, toDisposable } from '../../../../../base/common/lifecycle.js';
+} from '@sidex/base/common/arrays.js';
+import { findMaxIdx } from '@sidex/base/common/arraysFind.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { Disposable, toDisposable } from '@sidex/base/common/lifecycle.js';
 import {
 	IObservable,
 	autorun,
@@ -26,8 +26,8 @@ import {
 	observableSignalFromEvent,
 	observableValue,
 	recomputeInitiallyAndOnChange
-} from '../../../../../base/common/observable.js';
-import { ThemeIcon } from '../../../../../base/common/themables.js';
+} from '@sidex/base/common/observable.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { ICodeEditor } from '../../../editorBrowser.js';
 import { DiffEditorEditors } from '../components/diffEditorEditors.js';
 import { DiffEditorViewModel } from '../diffEditorViewModel.js';

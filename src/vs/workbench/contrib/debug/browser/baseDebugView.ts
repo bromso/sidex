@@ -3,26 +3,26 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../base/browser/dom.js';
-import { IKeyboardEvent } from '../../../../base/browser/keyboardEvent.js';
-import { ActionBar } from '../../../../base/browser/ui/actionbar/actionbar.js';
-import { HighlightedLabel, IHighlight } from '../../../../base/browser/ui/highlightedlabel/highlightedLabel.js';
-import { getDefaultHoverDelegate } from '../../../../base/browser/ui/hover/hoverDelegateFactory.js';
-import { IInputValidationOptions, InputBox } from '../../../../base/browser/ui/inputbox/inputBox.js';
-import { IKeyboardNavigationLabelProvider } from '../../../../base/browser/ui/list/list.js';
-import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '../../../../base/browser/ui/tree/tree.js';
-import { Codicon } from '../../../../base/common/codicons.js';
-import { FuzzyScore, createMatches } from '../../../../base/common/filters.js';
-import { createSingleCallFunction } from '../../../../base/common/functional.js';
-import { KeyCode } from '../../../../base/common/keyCodes.js';
-import { DisposableStore, IDisposable, dispose, toDisposable } from '../../../../base/common/lifecycle.js';
-import { removeAnsiEscapeCodes } from '../../../../base/common/strings.js';
-import { ThemeIcon } from '../../../../base/common/themables.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { IKeyboardEvent } from '@sidex/base/browser/keyboardEvent.js';
+import { ActionBar } from '@sidex/base/browser/ui/actionbar/actionbar.js';
+import { HighlightedLabel, IHighlight } from '@sidex/base/browser/ui/highlightedlabel/highlightedLabel.js';
+import { getDefaultHoverDelegate } from '@sidex/base/browser/ui/hover/hoverDelegateFactory.js';
+import { IInputValidationOptions, InputBox } from '@sidex/base/browser/ui/inputbox/inputBox.js';
+import { IKeyboardNavigationLabelProvider } from '@sidex/base/browser/ui/list/list.js';
+import { IAsyncDataSource, ITreeNode, ITreeRenderer } from '@sidex/base/browser/ui/tree/tree.js';
+import { Codicon } from '@sidex/base/common/codicons.js';
+import { FuzzyScore, createMatches } from '@sidex/base/common/filters.js';
+import { createSingleCallFunction } from '@sidex/base/common/functional.js';
+import { KeyCode } from '@sidex/base/common/keyCodes.js';
+import { DisposableStore, IDisposable, dispose, toDisposable } from '@sidex/base/common/lifecycle.js';
+import { removeAnsiEscapeCodes } from '@sidex/base/common/strings.js';
+import { ThemeIcon } from '@sidex/base/common/themables.js';
 import { localize } from '@sidex/base/nls.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
-import { IContextViewService } from '../../../../platform/contextview/browser/contextView.js';
-import { IHoverService } from '../../../../platform/hover/browser/hover.js';
-import { defaultInputBoxStyles } from '../../../../platform/theme/browser/defaultStyles.js';
+import { ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { IHoverService } from '@sidex/platform/hover/browser/hover.js';
+import { defaultInputBoxStyles } from '@sidex/platform/theme/browser/defaultStyles.js';
 import { IDebugService, IExpression, IScope } from '../common/debug.js';
 import { Variable } from '../common/debugModel.js';
 import { IDebugVisualizerService } from '../common/debugVisualizers.js';

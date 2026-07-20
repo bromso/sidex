@@ -3,18 +3,18 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { URI } from '../../../../base/common/uri.js';
-import Severity from '../../../../base/common/severity.js';
-import { TerminateResponse } from '../../../../base/common/processes.js';
-import { Event } from '../../../../base/common/event.js';
-import { Platform } from '../../../../base/common/platform.js';
-import { IWorkspaceFolder } from '../../../../platform/workspace/common/workspace.js';
+import { URI } from '@sidex/base/common/uri.js';
+import Severity from '@sidex/base/common/severity.js';
+import { TerminateResponse } from '@sidex/base/common/processes.js';
+import { Event } from '@sidex/base/common/event.js';
+import { Platform } from '@sidex/base/common/platform.js';
+import { IWorkspaceFolder } from '@sidex/platform/workspace/common/workspace.js';
 import { Task, ITaskEvent, KeyedTaskIdentifier } from './tasks.js';
-import { ConfigurationTarget } from '../../../../platform/configuration/common/configuration.js';
+import { ConfigurationTarget } from '@sidex/platform/configuration/common/configuration.js';
 
-import { IShellLaunchConfig } from '../../../../platform/terminal/common/terminal.js';
-import { IMarkerData } from '../../../../platform/markers/common/markers.js';
-import type { SingleOrMany } from '../../../../base/common/types.js';
+import { IShellLaunchConfig } from '@sidex/platform/terminal/common/terminal.js';
+import { IMarkerData } from '@sidex/platform/markers/common/markers.js';
+import type { SingleOrMany } from '@sidex/base/common/types.js';
 
 export const enum TaskErrors {
 	NotConfigured,

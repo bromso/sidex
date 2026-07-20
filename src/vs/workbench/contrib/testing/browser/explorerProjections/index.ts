@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IIdentityProvider } from '../../../../../base/browser/ui/list/list.js';
-import { ObjectTree } from '../../../../../base/browser/ui/tree/objectTree.js';
-import { IObjectTreeElement, ObjectTreeElementCollapseState } from '../../../../../base/browser/ui/tree/tree.js';
-import { Emitter, Event } from '../../../../../base/common/event.js';
-import { FuzzyScore } from '../../../../../base/common/filters.js';
-import { IMarkdownString } from '../../../../../base/common/htmlContent.js';
-import { Iterable } from '../../../../../base/common/iterator.js';
-import { IDisposable } from '../../../../../base/common/lifecycle.js';
-import { MarshalledId } from '../../../../../base/common/marshallingIds.js';
+import { IIdentityProvider } from '@sidex/base/browser/ui/list/list.js';
+import { ObjectTree } from '@sidex/base/browser/ui/tree/objectTree.js';
+import { IObjectTreeElement, ObjectTreeElementCollapseState } from '@sidex/base/browser/ui/tree/tree.js';
+import { Emitter, Event } from '@sidex/base/common/event.js';
+import { FuzzyScore } from '@sidex/base/common/filters.js';
+import { IMarkdownString } from '@sidex/base/common/htmlContent.js';
+import { Iterable } from '@sidex/base/common/iterator.js';
+import { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { MarshalledId } from '@sidex/base/common/marshallingIds.js';
 import { ISerializedTestTreeCollapseState, isCollapsedInSerializedTestTree } from './testingViewState.js';
 import { ITestItemContext, InternalTestItem, TestItemExpandState, TestResultState } from '../../common/testTypes.js';
 

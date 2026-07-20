@@ -3,9 +3,9 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancelablePromise, createCancelablePromise, timeout } from '../../../../base/common/async.js';
-import { onUnexpectedError } from '../../../../base/common/errors.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
+import { CancelablePromise, createCancelablePromise, timeout } from '@sidex/base/common/async.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
+import { KeyCode, KeyMod } from '@sidex/base/common/keyCodes.js';
 import { CodeEditorStateFlag, EditorState } from '../../editorState/browser/editorState.js';
 import { ICodeEditor } from '../../../browser/editorBrowser.js';
 import {
@@ -23,7 +23,7 @@ import { ModelDecorationOptions } from '../../../common/model/textModel.js';
 import { IInplaceReplaceSupportResult } from '../../../common/languages.js';
 import { IEditorWorkerService } from '../../../common/services/editorWorker.js';
 import * as nls from '@sidex/base/nls.js';
-import { KeybindingWeight } from '../../../../platform/keybinding/common/keybindingsRegistry.js';
+import { KeybindingWeight } from '@sidex/platform/keybinding/common/keybindingsRegistry.js';
 import { InPlaceReplaceCommand } from './inPlaceReplaceCommand.js';
 import './inPlaceReplace.css';
 

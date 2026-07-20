@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { TimeoutTimer } from '../../../../../base/common/async.js';
-import { Disposable, IDisposable } from '../../../../../base/common/lifecycle.js';
-import { IStorageService, StorageScope, StorageTarget } from '../../../../../platform/storage/common/storage.js';
-import { TerminalShellType } from '../../../../../platform/terminal/common/terminal.js';
+import { TimeoutTimer } from '@sidex/base/common/async.js';
+import { Disposable, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { IStorageService, StorageScope, StorageTarget } from '@sidex/platform/storage/common/storage.js';
+import { TerminalShellType } from '@sidex/platform/terminal/common/terminal.js';
 import { IExtensionService } from '../../../../services/extensions/common/extensions.js';
 
 export const TERMINAL_SUGGEST_DISCOVERABILITY_KEY = 'terminal.suggest.increasedDiscoverability';

@@ -3,10 +3,10 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as dom from '../../../../../base/browser/dom.js';
-import { MarkdownString } from '../../../../../base/common/htmlContent.js';
-import { DisposableStore, IDisposable } from '../../../../../base/common/lifecycle.js';
-import { autorun, autorunWithStore, constObservable } from '../../../../../base/common/observable.js';
+import * as dom from '@sidex/base/browser/dom.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import { DisposableStore, IDisposable } from '@sidex/base/common/lifecycle.js';
+import { autorun, autorunWithStore, constObservable } from '@sidex/base/common/observable.js';
 import { ICodeEditor, IEditorMouseEvent, MouseTargetType } from '../../../../browser/editorBrowser.js';
 import { EditorOption } from '../../../../common/config/editorOptions.js';
 import { Range } from '../../../../common/core/range.js';
@@ -24,11 +24,11 @@ import {
 } from '../../../hover/browser/hoverTypes.js';
 import { InlineCompletionsController } from '../controller/inlineCompletionsController.js';
 import { InlineSuggestionHintsContentWidget } from './inlineCompletionsHintsWidget.js';
-import { IMarkdownRendererService } from '../../../../../platform/markdown/browser/markdownRenderer.js';
+import { IMarkdownRendererService } from '@sidex/platform/markdown/browser/markdownRenderer.js';
 import * as nls from '@sidex/base/nls.js';
-import { IAccessibilityService } from '../../../../../platform/accessibility/common/accessibility.js';
-import { IInstantiationService } from '../../../../../platform/instantiation/common/instantiation.js';
-import { ITelemetryService } from '../../../../../platform/telemetry/common/telemetry.js';
+import { IAccessibilityService } from '@sidex/platform/accessibility/common/accessibility.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ITelemetryService } from '@sidex/platform/telemetry/common/telemetry.js';
 import { GhostTextView } from '../view/ghostText/ghostTextView.js';
 
 export class InlineCompletionsHover implements IHoverPart {
