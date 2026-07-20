@@ -61,26 +61,30 @@ RAM savings are most tested on macOS, WKWebView is shared with Safari. On Window
 
 ## Getting Started
 
+> **Both Bun and Node.js are required.** Bun is the package manager, script
+> runner, and test runner. Node.js executes Vite, because the production build
+> needs `--max-old-space-size=12288` — a V8 flag with no Bun equivalent.
+
 ### Run in Development
 
 ```bash
 git clone https://github.com/Sidenai/sidex.git
 cd sidex
-npm install
-npm run tauri dev
+bun install
+bun run tauri dev
 ```
 
 ### Build from Source
 
 ```bash
-npm install
+bun install
 
 # macOS / Linux
-NODE_OPTIONS="--max-old-space-size=12288" npm run build
+NODE_OPTIONS="--max-old-space-size=12288" bun run build
 
 # Windows (PowerShell)
 $env:NODE_OPTIONS="--max-old-space-size=12288"
-npm run build
+bun run build
 
 npx tauri build
 ```
