@@ -1,0 +1,12 @@
+{
+  "name": "@sidex/workbench",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { "./*": "./src/*" },
+  "dependencies": {
+    "@sidex/base": "workspace:*",
+    "@sidex/editor": "workspace:*",
+    "@sidex/platform": "workspace:*"
+  }
+}

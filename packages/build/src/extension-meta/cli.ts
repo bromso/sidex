@@ -6,7 +6,7 @@ import { collectDescriptors, renderBuiltinExtensionsJs } from './collect';
 const repoRoot = resolve(import.meta.dir, '../../../..');
 const extensionsDir = resolve(repoRoot, 'extensions');
 const metaOutputPath = resolve(repoRoot, 'extensions-meta.json');
-const jsOutputPath = resolve(repoRoot, 'public', 'builtin-extensions.js');
+const jsOutputPath = resolve(repoRoot, 'apps', 'workbench', 'public', 'builtin-extensions.js');
 
 const descriptors = collectDescriptors(extensionsDir);
 

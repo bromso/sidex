@@ -1,0 +1,13 @@
+{
+  "name": "@sidex/app-workbench",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@sidex/base": "workspace:*",
+    "@sidex/editor": "workspace:*",
+    "@sidex/platform": "workspace:*",
+    "@sidex/vscode-dts": "workspace:*",
+    "@sidex/workbench": "workspace:*"
+  }
+}
