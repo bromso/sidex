@@ -26,12 +26,7 @@ export function groupByExtension(files: SizedFile[], extension: string): SizeGro
 	};
 }
 
-export function renderReport(groups: {
-	js: SizeGroup;
-	css: SizeGroup;
-	fonts: SizeGroup;
-	wasm: SizeGroup;
-}): string {
+export function renderReport(groups: { js: SizeGroup; css: SizeGroup; fonts: SizeGroup; wasm: SizeGroup }): string {
 	const { js, css, fonts, wasm } = groups;
 	const total = js.total + css.total + fonts.total + wasm.total;
 	const lines = [
