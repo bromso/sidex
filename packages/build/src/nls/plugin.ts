@@ -8,9 +8,17 @@ export interface NlsPluginOptions {
 	sourceRoot: string;
 }
 
-function walkDir(dir: string): string[] {
+/**
+ * Walks `dir` recursively, returning paths in a stable order.
+ *
+ * The sort matters: it fixes the order in which the prescan assigns NLS table
+ * indices, which is what makes the build reproducible. readdirSync's order is
+ * filesystem-dependent and varies across platforms.
+ */
+export function walkDir(dir: string): string[] {
 	const results: string[] = [];
-	for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+	const entries = fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name));
+	for (const entry of entries) {
 		const full = path.join(dir, entry.name);
 		if (entry.isDirectory()) {
 			results.push(...walkDir(full));
@@ -25,15 +33,10 @@ export function nlsPlugin(options: NlsPluginOptions): Plugin {
 	const collector = createNlsCollector();
 	const sourceRoot = path.resolve(options.sourceRoot);
 	const normalizedRoot = sourceRoot.split(path.sep).join('/');
-	let isBuild = false;
 
 	return {
 		name: 'vite-plugin-nls',
 		enforce: 'pre',
-
-		config(_cfg, env) {
-			isBuild = env.command === 'build';
-		},
 
 		configureServer(server) {
 			server.middlewares.use('/nls.messages.json', (_req, res) => {
@@ -42,10 +45,11 @@ export function nlsPlugin(options: NlsPluginOptions): Plugin {
 			});
 		},
 
+		// The prescan runs for builds as well as dev. Without it, indices are
+		// assigned in Rollup's concurrent transform order, so two builds of the
+		// same tree emit different tables and different chunk hashes. The cost is
+		// ~108 extra entries for messages no reachable module imports.
 		buildStart() {
-			if (isBuild) {
-				return;
-			}
 			const files = walkDir(sourceRoot).filter(f => f.endsWith('.ts'));
 			let count = 0;
 			for (const file of files) {
