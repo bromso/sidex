@@ -5,7 +5,8 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/lint-js.yml"
-      - "src/**"
+      - "apps/**"
+      - "packages/**"
       - "tsconfig.json"
       - "biome.json"
       - "package.json"
@@ -14,7 +15,8 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/lint-js.yml"
-      - "src/**"
+      - "apps/**"
+      - "packages/**"
       - "tsconfig.json"
       - "biome.json"
       - "package.json"
@@ -46,7 +48,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: bunx tsc --noEmit
 
   biome:
     name: Biome
