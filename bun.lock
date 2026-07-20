@@ -42,9 +42,52 @@
         "vite": "^6.0.3",
       },
     },
+    "apps/workbench": {
+      "name": "@sidex/app-workbench",
+      "version": "0.0.0",
+      "dependencies": {
+        "@sidex/base": "workspace:*",
+        "@sidex/editor": "workspace:*",
+        "@sidex/platform": "workspace:*",
+        "@sidex/vscode-dts": "workspace:*",
+        "@sidex/workbench": "workspace:*",
+      },
+    },
+    "packages/base": {
+      "name": "@sidex/base",
+      "version": "0.0.0",
+    },
     "packages/build": {
       "name": "@sidex/build",
       "version": "0.0.0",
+    },
+    "packages/editor": {
+      "name": "@sidex/editor",
+      "version": "0.0.0",
+      "dependencies": {
+        "@sidex/base": "workspace:*",
+        "@sidex/platform": "workspace:*",
+      },
+    },
+    "packages/platform": {
+      "name": "@sidex/platform",
+      "version": "0.0.0",
+      "dependencies": {
+        "@sidex/base": "workspace:*",
+      },
+    },
+    "packages/vscode-dts": {
+      "name": "@sidex/vscode-dts",
+      "version": "0.0.0",
+    },
+    "packages/workbench": {
+      "name": "@sidex/workbench",
+      "version": "0.0.0",
+      "dependencies": {
+        "@sidex/base": "workspace:*",
+        "@sidex/editor": "workspace:*",
+        "@sidex/platform": "workspace:*",
+      },
     },
   },
   "packages": {
@@ -182,7 +225,19 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.60.1", "", { "os": "win32", "cpu": "x64" }, "sha512-lWMnixq/QzxyhTV6NjQJ4SFo1J6PvOX8vUx5Wb4bBPsEb+8xZ89Bz6kOXpfXj9ak9AHTQVQzlgzBEc1SyM27xQ=="],
 
+    "@sidex/app-workbench": ["@sidex/app-workbench@workspace:apps/workbench"],
+
+    "@sidex/base": ["@sidex/base@workspace:packages/base"],
+
     "@sidex/build": ["@sidex/build@workspace:packages/build"],
+
+    "@sidex/editor": ["@sidex/editor@workspace:packages/editor"],
+
+    "@sidex/platform": ["@sidex/platform@workspace:packages/platform"],
+
+    "@sidex/vscode-dts": ["@sidex/vscode-dts@workspace:packages/vscode-dts"],
+
+    "@sidex/workbench": ["@sidex/workbench@workspace:packages/workbench"],
 
     "@tauri-apps/api": ["@tauri-apps/api@2.10.1", "", {}, "sha512-hKL/jWf293UDSUN09rR69hrToyIXBb8CjGaWC7gfinvnQrBVvnLr08FeFi38gxtugAVyVcTa5/FD/Xnkb1siBw=="],
 

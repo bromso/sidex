@@ -45,6 +45,35 @@ Extension Host               →       Sidecar process (in progress)
 └─────────────────────────────────────────────┘
 ```
 
+## Workspace Layout
+
+The JavaScript side is a Bun workspace. Package boundaries follow the layering
+above, and the dependency direction is enforced by module resolution rather than
+convention — `@sidex/base` declares no layer dependencies, so an upward import
+fails to resolve instead of silently working.
+
+| Package | Path | Depends on |
+| --- | --- | --- |
+| `@sidex/base` | `packages/base` | — |
+| `@sidex/platform` | `packages/platform` | base |
+| `@sidex/editor` | `packages/editor` | base, platform |
+| `@sidex/workbench` | `packages/workbench` | base, platform, editor |
+| `@sidex/app-workbench` | `apps/workbench` | all of the above |
+| `@sidex/build` | `packages/build` | — (build tooling; the `bun test` target) |
+| `@sidex/vscode-dts` | `packages/vscode-dts` | — (extension API typings) |
+
+Cross-layer imports are written as `@sidex/<layer>/...`; imports within a layer
+stay relative. Vite resolves the package names through `resolve.alias` and
+TypeScript through `compilerOptions.paths`, both defined once in
+`apps/workbench/vite.config.ts` and `tsconfig.json`.
+
+Rust is a separate Cargo workspace (`crates/`, `src-tauri/`, `src-wasm/`,
+`sidex-extension-sdk/`) and is unaffected by the JavaScript layout.
+
+**Both Bun and Node.js are required.** Bun is the package manager, script
+runner, and test runner; Node.js executes Vite, because the production build
+needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
+
 ## Electron API Replacement Map
 
 | Electron API | Tauri Replacement | Status |
