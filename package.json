@@ -5,11 +5,11 @@
   "scripts": {
     "setup": "node scripts/generate-extension-meta.js",
     "setup:full": "bash scripts/setup-extensions.sh && node scripts/generate-extension-meta.js",
-    "dev": "npm run setup && node --max-old-space-size=8192 node_modules/vite/bin/vite.js",
-    "build": "npm run setup && node --max-old-space-size=12288 node_modules/vite/bin/vite.js build",
+    "dev": "bun run setup && node --max-old-space-size=8192 node_modules/vite/bin/vite.js",
+    "build": "bun run setup && node --max-old-space-size=12288 node_modules/vite/bin/vite.js build",
     "postbuild": "node scripts/postbuild.js",
     "preview": "vite preview",
-    "tauri": "cross-env tauri",
+    "tauri": "tauri",
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,json}'",
@@ -52,13 +52,11 @@
     "@typescript-eslint/parser": "^8.58.2",
     "@webgpu/types": "^0.1.69",
     "@xterm/headless": "^6.0.0",
-    "cross-env": "^10.1.0",
     "eslint": "^9.39.4",
     "jschardet": "^3.1.4",
     "prettier": "^3.8.3",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.58.2",
-    "vite": "^6.0.3",
-    "vite-plugin-static-copy": "^2.2.0"
+    "vite": "^6.0.3"
   }
 }
