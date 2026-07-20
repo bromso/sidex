@@ -15,7 +15,8 @@
 			"!**/*.min.css",
 			"!crates/**",
 			"!src-wasm/**",
-			"!target/**"
+			"!target/**",
+			"!src/vs/platform/extensionManagement/common/extensionNls.ts"
 		]
 	},
 	"formatter": {
@@ -71,6 +72,11 @@
 			"quoteStyle": "single",
 			"attributePosition": "auto",
 			"bracketSpacing": true
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": false
 		}
 	},
 	"html": {
