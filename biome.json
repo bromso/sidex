@@ -14,7 +14,7 @@
 			"!**/*.min.js",
 			"!**/*.min.css",
 			"!crates/**",
-			"!src-wasm/**",
+			"!wasm/**",
 			"!target/**",
 			"!packages/platform/src/extensionManagement/common/extensionNls.ts"
 		]
