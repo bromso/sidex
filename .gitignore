@@ -26,7 +26,7 @@ build/
 # Library lock files should not be committed (Cargo best practice).
 # The application lock (src-tauri/Cargo.lock) IS committed.
 sidex-extension-sdk/Cargo.lock
-extensions-rust/Cargo.lock
+extensions-wasm/Cargo.lock
 examples/**/Cargo.lock
 
 # ── Logs ─────────────────────────────────────────────────────────────────────
@@ -78,30 +78,30 @@ coverage/
 .parcel-cache/
 
 # ── Incomplete Rust WASM extensions (stubs, not yet LSP-backed) ──────────────
-extensions-rust/debug-auto-launch-extension/
-extensions-rust/debug-server-ready-extension/
-extensions-rust/emmet-extension/
-extensions-rust/git-extension/
-extensions-rust/grunt-extension/
-extensions-rust/gulp-extension/
-extensions-rust/html-language-extension/
-extensions-rust/jake-extension/
-extensions-rust/json-language-extension/
-extensions-rust/markdown-extension/
-extensions-rust/merge-conflict-extension/
-extensions-rust/npm-extension/
-extensions-rust/php-language-extension/
-extensions-rust/references-view-extension/
-extensions-rust/terminal-suggest-extension/
+extensions-wasm/debug-auto-launch-extension/
+extensions-wasm/debug-server-ready-extension/
+extensions-wasm/emmet-extension/
+extensions-wasm/git-extension/
+extensions-wasm/grunt-extension/
+extensions-wasm/gulp-extension/
+extensions-wasm/html-language-extension/
+extensions-wasm/jake-extension/
+extensions-wasm/json-language-extension/
+extensions-wasm/markdown-extension/
+extensions-wasm/merge-conflict-extension/
+extensions-wasm/npm-extension/
+extensions-wasm/php-language-extension/
+extensions-wasm/references-view-extension/
+extensions-wasm/terminal-suggest-extension/
 
 # ── Cloudflare Wrangler (marketplace-proxy dev state) ────────────────────────
 infrastructure/marketplace-proxy/.wrangler/
 infrastructure/marketplace-proxy/node_modules/
 
 
-extensions-rust/css-language-extension/css-data.json
-extensions-rust/css-language-extension/css-builtin.json
-extensions-rust/css-language-extension/src/css_data.rs
+extensions-wasm/css-language-extension/css-data.json
+extensions-wasm/css-language-extension/css-builtin.json
+extensions-wasm/css-language-extension/src/css_data.rs
 extensions-meta.json
 apps/workbench/public/builtin-extensions.js
 .superpowers/
