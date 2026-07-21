@@ -176,6 +176,7 @@
 								}
 							}
 						},
+						"useArrayLiterals": "warn",
 						"useAsConstAssertion": "warn",
 						"useBlockStatements": "warn",
 						"useConsistentBuiltinInstantiation": "warn",
