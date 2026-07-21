@@ -34,8 +34,8 @@ Check [Issues](https://github.com/Sidenai/sidex/issues) for open tasks. If you d
 - Use VSCode's DI pattern with `@inject` decorators
 
 ### Rust
-- Commands go in `src-tauri/src/commands/`
-- Register new commands in `src-tauri/src/lib.rs`
+- Commands go in `apps/desktop/src/commands/`
+- Register new commands in `apps/desktop/src/lib.rs`
 - Use `Result<T, String>` for command return types
 - Use `tokio` for async work
 
@@ -48,7 +48,7 @@ Check [Issues](https://github.com/Sidenai/sidex/issues) for open tasks. If you d
 - `packages/{base,platform,editor,workbench}/` — The VSCode workbench (TypeScript), one package per layer
 - `apps/workbench/` — The Tauri webview app: entry point, `index.html`, Vite config
 - `packages/build/` — Build tooling and the `bun test` target
-- `src-tauri/src/` — Rust backend replacing Electron
+- `apps/desktop/src/` — Rust backend replacing Electron
 - `ARCHITECTURE.md` — How VSCode's architecture maps to Tauri, and the workspace layout
 
 Cross-layer imports use `@sidex/<layer>/...`; imports within a layer stay relative.
