@@ -23,7 +23,7 @@ members = [
   "src-tauri",
   "sidex-extension-sdk",
 ]
-exclude = ["extensions-rust"]
+exclude = ["extensions-wasm", "wasm"]
 
 [workspace.package]
 version = "0.2.0"

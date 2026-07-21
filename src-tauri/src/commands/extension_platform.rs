@@ -521,7 +521,7 @@ pub fn extension_search_paths(app: &AppHandle) -> Vec<PathBuf> {
 
     let rust_ext = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
-        .join("extensions-rust");
+        .join("extensions-wasm");
 
     let candidates = vec![
         user_extensions_dir(),
