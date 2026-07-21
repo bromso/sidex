@@ -89,29 +89,29 @@ wasmtime = { version = "43", default-features = false, features = [
 wasmtime-wasi = "43"
 toml = "0.8"
 anyhow = "1"
-sidex-db = { path = "../crates/db" }
-sidex-dap = { path = "../crates/dap" }
-sidex-remote = { path = "../crates/remote" }
-sidex-settings = { path = "../crates/settings" }
-sidex-theme = { path = "../crates/theme" }
+sidex-db = { path = "../../crates/db" }
+sidex-dap = { path = "../../crates/dap" }
+sidex-remote = { path = "../../crates/remote" }
+sidex-settings = { path = "../../crates/settings" }
+sidex-theme = { path = "../../crates/theme" }
 
 # SideX crates
-sidex-git = { path = "../crates/git" }
-sidex-workspace = { path = "../crates/workspace" }
+sidex-git = { path = "../../crates/git" }
+sidex-workspace = { path = "../../crates/workspace" }
 
 # Internal crates
-sidex-text = { path = "../crates/text" }
-sidex-syntax = { path = "../crates/syntax" }
-sidex-tasks = { path = "../crates/tasks" }
-sidex-extensions = { path = "../crates/extensions" }
-sidex-terminal = { path = "../crates/terminal" }
-sidex-lsp = { path = "../crates/lsp" }
-sidex-keymap = { path = "../crates/keymap" }
-sidex-extension-api = { path = "../crates/extension-api" }
-sidex-update = { path = "../crates/update" }
-sidex-profiles = { path = "../crates/profiles" }
-sidex-auth = { path = "../crates/auth" }
-sidex-textmate = { path = "../crates/textmate" }
+sidex-text = { path = "../../crates/text" }
+sidex-syntax = { path = "../../crates/syntax" }
+sidex-tasks = { path = "../../crates/tasks" }
+sidex-extensions = { path = "../../crates/extensions" }
+sidex-terminal = { path = "../../crates/terminal" }
+sidex-lsp = { path = "../../crates/lsp" }
+sidex-keymap = { path = "../../crates/keymap" }
+sidex-extension-api = { path = "../../crates/extension-api" }
+sidex-update = { path = "../../crates/update" }
+sidex-profiles = { path = "../../crates/profiles" }
+sidex-auth = { path = "../../crates/auth" }
+sidex-textmate = { path = "../../crates/textmate" }
 
 tree-sitter = "0.24"
 tree-sitter-rust = "0.23"

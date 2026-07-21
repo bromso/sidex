@@ -2,7 +2,7 @@
 resolver = "2"
 members = [
   "crates/*",
-  "src-tauri",
+  "apps/desktop",
   "sidex-extension-sdk",
 ]
 exclude = ["extensions-wasm", "wasm"]
