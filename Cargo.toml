@@ -1,9 +1,6 @@
 [workspace]
 resolver = "2"
-members = [
-  "crates/*",
-  "apps/desktop",
-]
+members = ["crates/*", "apps/desktop"]
 exclude = ["extensions-wasm", "wasm"]
 
 [workspace.package]
