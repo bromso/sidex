@@ -300,6 +300,7 @@ pub fn resolve_builtin_extensions_dir(app: &AppHandle) -> PathBuf {
 
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
+        .join("..")
         .join("extensions")
 }
 
@@ -521,6 +522,7 @@ pub fn extension_search_paths(app: &AppHandle) -> Vec<PathBuf> {
 
     let rust_ext = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
+        .join("..")
         .join("extensions-wasm");
 
     let candidates = vec![
@@ -532,6 +534,7 @@ pub fn extension_search_paths(app: &AppHandle) -> Vec<PathBuf> {
         dist_ext,
         cwd.join("extensions"),
         PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("..")
             .join("..")
             .join("extensions"),
     ];

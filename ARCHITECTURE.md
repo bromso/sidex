@@ -67,8 +67,19 @@ stay relative. Vite resolves the package names through `resolve.alias` and
 TypeScript through `compilerOptions.paths`, both defined once in
 `apps/workbench/vite.config.ts` and `tsconfig.json`.
 
-Rust is a separate Cargo workspace (`crates/`, `src-tauri/`, `src-wasm/`,
-`sidex-extension-sdk/`) and is unaffected by the JavaScript layout.
+Rust spans three separate Cargo workspaces, each with its own build target and
+release profile (Cargo's `[profile.release]` is workspace-global, and wasm
+crates cannot build for the native host):
+
+| Workspace | Members | Target |
+| --- | --- | --- |
+| native (repo-root `Cargo.toml`) | `apps/desktop` + `crates/*` (incl. `extension-sdk`) | native |
+| `wasm/` | wasm-bindgen modules | wasm32 |
+| `extensions-wasm/` | wit-bindgen component extensions | wasm32 |
+
+Crate directories drop the `sidex-` prefix (`crates/text`), but crate names keep
+it (`sidex-text`), so `use sidex_text::…` is unchanged. Rust is otherwise
+unaffected by the JavaScript layout.
 
 **Both Bun and Node.js are required.** Bun is the package manager, script
 runner, and test runner; Node.js executes Vite, because the production build
@@ -159,7 +170,7 @@ needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
 
 ## Rust Backend Commands
 
-All Tauri commands are registered in `src-tauri/src/lib.rs`.
+All Tauri commands are registered in `apps/desktop/src/lib.rs`.
 
 | Module | Commands |
 |---|---|

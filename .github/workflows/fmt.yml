@@ -44,7 +44,7 @@ jobs:
           components: rustfmt
 
       - name: Check formatting
-        run: cargo fmt --manifest-path src-tauri/Cargo.toml --all -- --check
+        run: cargo fmt --manifest-path apps/desktop/Cargo.toml --all -- --check
 
   taplo:
     name: taplo

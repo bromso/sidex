@@ -39,5 +39,5 @@
     "packages/workbench/src/**/*",
     "packages/vscode-dts/src/**/*"
   ],
-  "exclude": ["node_modules", "src-tauri", "dist", "**/test/**", "packages/build"]
+  "exclude": ["node_modules", "apps/desktop", "dist", "**/test/**", "packages/build"]
 }

@@ -19,10 +19,10 @@
     "lint:fix": "biome lint --write apps packages",
     "format": "biome format --write apps packages",
     "format:check": "biome format apps packages",
-    "rust:check": "cd src-tauri && cargo check",
-    "rust:clippy": "cd src-tauri && cargo clippy --all-targets -- -D warnings",
-    "rust:fmt": "cd src-tauri && cargo fmt --all -- --check",
-    "rust:fmt:fix": "cd src-tauri && cargo fmt --all"
+    "rust:check": "cd apps/desktop && cargo check",
+    "rust:clippy": "cd apps/desktop && cargo clippy --all-targets -- -D warnings",
+    "rust:fmt": "cd apps/desktop && cargo fmt --all -- --check",
+    "rust:fmt:fix": "cd apps/desktop && cargo fmt --all"
   },
   "overrides": {
     "@nevware21/ts-utils": "^0.16.0"

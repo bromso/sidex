@@ -107,25 +107,32 @@ SideX maps VSCode's Electron architecture onto Tauri layer by layer:
 | Renderer (DOM + TypeScript) | Same — runs in native webview |
 | Extension host | Sidecar process (in progress) |
 
-The TypeScript frontend is a direct port of VSCode's workbench. The Rust backend is in `src-tauri/src/commands/` and handles everything that would have been a Node.js native module: file I/O, terminal PTY, Git, file watching, search indexing, SQLite, and process management.
+The TypeScript frontend is a direct port of VSCode's workbench. The Rust backend is in `apps/desktop/src/commands/` and handles everything that would have been a Node.js native module: file I/O, terminal PTY, Git, file watching, search indexing, SQLite, and process management.
 
 ### Project Layout
 
 ```
 sidex/
-├── src/                    # TypeScript workbench (ported from VSCode)
-│   └── vs/
-│       ├── base/           # Core utilities
-│       ├── platform/       # Platform services and dependency injection
-│       ├── editor/         # Monaco editor
-│       └── workbench/      # IDE shell, panels, features, contributions
-├── src-tauri/              # Rust backend
-│   └── src/
-│       ├── commands/       # fs, terminal, git, search, debug, etc.
-│       ├── lib.rs          # App setup and command registration
-│       └── main.rs         # Entry point
-├── index.html
-├── vite.config.ts
+├── apps/
+│   ├── workbench/          # TypeScript workbench frontend (ported from VSCode)
+│   │   ├── src/            # app shell, index.html, vite.config.ts
+│   │   └── ...
+│   └── desktop/            # Rust backend (Tauri binary)
+│       └── src/
+│           ├── commands/   # fs, terminal, git, search, debug, etc.
+│           ├── lib.rs      # App setup and command registration
+│           └── main.rs     # Entry point
+├── packages/               # TypeScript layer libraries
+│   ├── base/               # Core utilities
+│   ├── platform/           # Platform services and dependency injection
+│   ├── editor/             # Monaco editor
+│   ├── workbench/          # IDE shell, panels, features, contributions
+│   ├── vscode-dts/         # extension API typings
+│   └── build/              # build tooling (bun test target)
+├── crates/                 # Rust native libraries + extension-sdk
+├── wasm/                   # Rust wasm-bindgen modules
+├── extensions-wasm/        # Rust wasm-component extensions
+├── infrastructure/         # deployable edge/ops services (marketplace-proxy)
 └── package.json
 ```
 
@@ -162,7 +169,7 @@ This was released early to get outside contributors involved.
 - Follows VSCode's patterns — familiar if you've read the VSCode source
 - TypeScript imports use `.js` extensions (ES module convention)
 - Services use VSCode's `@inject` dependency injection decorators
-- New Rust commands go in `src-tauri/src/commands/` and register in `lib.rs`
+- New Rust commands go in `apps/desktop/src/commands/` and register in `lib.rs`
 ---
 
 ## Community
