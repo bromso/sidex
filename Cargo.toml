@@ -3,7 +3,6 @@ resolver = "2"
 members = [
   "crates/*",
   "apps/desktop",
-  "sidex-extension-sdk",
 ]
 exclude = ["extensions-wasm", "wasm"]
 
@@ -29,7 +28,7 @@ sidex-keymap = { path = "crates/keymap" }
 sidex-settings = { path = "crates/settings" }
 sidex-db = { path = "crates/db" }
 sidex-remote = { path = "crates/remote" }
-sidex-extension-sdk = { path = "sidex-extension-sdk" }
+sidex-extension-sdk = { path = "crates/extension-sdk" }
 sidex-tasks = { path = "crates/tasks" }
 sidex-dap = { path = "crates/dap" }
 sidex-update = { path = "crates/update" }

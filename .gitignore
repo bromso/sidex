@@ -25,7 +25,7 @@ build/
 # ── Cargo.lock for library crates ───────────────────────────────────────────
 # Library lock files should not be committed (Cargo best practice).
 # The application lock (apps/desktop/Cargo.lock) IS committed.
-sidex-extension-sdk/Cargo.lock
+crates/extension-sdk/Cargo.lock
 extensions-wasm/Cargo.lock
 examples/**/Cargo.lock
 
