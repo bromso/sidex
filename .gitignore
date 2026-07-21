@@ -9,6 +9,8 @@ node_modules/
 dist/
 out/
 build/
+# @sidex/build is a workspace package, not build output.
+!packages/build/
 *.tsbuildinfo
 
 # ── Rust / Cargo ─────────────────────────────────────────────────────────────
@@ -101,4 +103,5 @@ extensions-rust/css-language-extension/css-data.json
 extensions-rust/css-language-extension/css-builtin.json
 extensions-rust/css-language-extension/src/css_data.rs
 extensions-meta.json
-public/builtin-extensions.js
+apps/workbench/public/builtin-extensions.js
+.superpowers/

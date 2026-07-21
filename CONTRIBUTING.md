@@ -45,9 +45,15 @@ Check [Issues](https://github.com/Sidenai/sidex/issues) for open tasks. If you d
 
 ## Project Layout
 
-- `src/vs/` — The VSCode workbench (TypeScript)
+- `packages/{base,platform,editor,workbench}/` — The VSCode workbench (TypeScript), one package per layer
+- `apps/workbench/` — The Tauri webview app: entry point, `index.html`, Vite config
+- `packages/build/` — Build tooling and the `bun test` target
 - `src-tauri/src/` — Rust backend replacing Electron
-- `ARCHITECTURE.md` — How VSCode's architecture maps to Tauri
+- `ARCHITECTURE.md` — How VSCode's architecture maps to Tauri, and the workspace layout
+
+Cross-layer imports use `@sidex/<layer>/...`; imports within a layer stay relative.
+The layering is enforced by each package's declared dependencies, so an upward
+import fails to resolve rather than silently working.
 
 ## Questions?
 

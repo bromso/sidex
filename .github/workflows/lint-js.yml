@@ -5,18 +5,20 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/lint-js.yml"
-      - "src/**"
+      - "apps/**"
+      - "packages/**"
       - "tsconfig.json"
-      - "eslint.config.*"
+      - "biome.json"
       - "package.json"
       - "bun.lock"
   pull_request:
     branches: [main]
     paths:
       - ".github/workflows/lint-js.yml"
-      - "src/**"
+      - "apps/**"
+      - "packages/**"
       - "tsconfig.json"
-      - "eslint.config.*"
+      - "biome.json"
       - "package.json"
       - "bun.lock"
 
@@ -46,10 +48,10 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: bunx tsc --noEmit
 
-  eslint:
-    name: ESLint
+  biome:
+    name: Biome
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
