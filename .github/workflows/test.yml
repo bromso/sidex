@@ -6,8 +6,8 @@ on:
     paths:
       - ".github/workflows/test.yml"
       - "crates/**"
-      - "src-tauri/**"
-      - "sidex-extension-sdk/**"
+      - "apps/desktop/**"
+      - "crates/extension-sdk/**"
       - "Cargo.toml"
       - "Cargo.lock"
       - "apps/**"
@@ -20,8 +20,8 @@ on:
     paths:
       - ".github/workflows/test.yml"
       - "crates/**"
-      - "src-tauri/**"
-      - "sidex-extension-sdk/**"
+      - "apps/desktop/**"
+      - "crates/extension-sdk/**"
       - "Cargo.toml"
       - "Cargo.lock"
       - "apps/**"
@@ -87,8 +87,8 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: "./src-tauri -> target"
+          workspaces: "./apps/desktop -> target"
           key: test-${{ matrix.os }}
 
       - name: Run tests
-        run: cargo test --manifest-path src-tauri/Cargo.toml
+        run: cargo test --manifest-path apps/desktop/Cargo.toml
