@@ -111,3 +111,64 @@ describe('checkParity — contrib signals', () => {
 		expect(checkParity(data, emptySnapshot)).toHaveLength(0);
 	});
 });
+
+describe('checkParity — anti-rot', () => {
+	test('flags a Null* stub that no row references', () => {
+		const data: ParityData = { entries: [] };
+		const snapshot: RepoSnapshot = { ...emptySnapshot, stubClasses: ['NullTimelineService'] };
+		const violations = checkParity(data, snapshot);
+		expect(violations).toHaveLength(1);
+		expect(violations[0].id).toBe('NullTimelineService');
+		expect(violations[0].message).toContain('untracked');
+	});
+
+	test('ignore list suppresses an untracked stub', () => {
+		const data: ParityData = { entries: [], ignore: [{ stub_service: 'NullTimelineService', reason: 'intentional' }] };
+		const snapshot: RepoSnapshot = { ...emptySnapshot, stubClasses: ['NullTimelineService'] };
+		expect(checkParity(data, snapshot)).toHaveLength(0);
+	});
+
+	test('a stub referenced by any row is considered tracked', () => {
+		const data: ParityData = {
+			entries: [
+				{
+					id: 'timeline',
+					area: 'Timeline',
+					status: 'stubbed',
+					summary: 'x',
+					signals: { stub_service: 'NullTimelineService' }
+				}
+			]
+		};
+		const snapshot: RepoSnapshot = { ...emptySnapshot, stubClasses: ['NullTimelineService'] };
+		expect(checkParity(data, snapshot)).toHaveLength(0);
+	});
+
+	test('flags a contrib dir that is imported nowhere and tracked by no row', () => {
+		const data: ParityData = { entries: [] };
+		const snapshot: RepoSnapshot = { ...emptySnapshot, contribDirs: ['contrib/timeline'], importedContribs: [] };
+		const violations = checkParity(data, snapshot);
+		expect(violations).toHaveLength(1);
+		expect(violations[0].id).toBe('contrib/timeline');
+		expect(violations[0].message).toContain('untracked');
+	});
+
+	test('does not flag a contrib dir that is imported', () => {
+		const data: ParityData = { entries: [] };
+		const snapshot: RepoSnapshot = {
+			...emptySnapshot,
+			contribDirs: ['contrib/search'],
+			importedContribs: ['contrib/search']
+		};
+		expect(checkParity(data, snapshot)).toHaveLength(0);
+	});
+
+	test('ignore list suppresses an untracked unwired contrib', () => {
+		const data: ParityData = {
+			entries: [],
+			ignore: [{ contrib: 'contrib/terminalContrib', reason: 'loaded transitively' }]
+		};
+		const snapshot: RepoSnapshot = { ...emptySnapshot, contribDirs: ['contrib/terminalContrib'], importedContribs: [] };
+		expect(checkParity(data, snapshot)).toHaveLength(0);
+	});
+});

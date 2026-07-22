@@ -91,5 +91,48 @@ export function checkParity(data: ParityData, snapshot: RepoSnapshot): Violation
 		}
 	}
 
+	const trackedStubs = new Set<string>();
+	const trackedContribs = new Set<string>();
+	for (const entry of data.entries) {
+		for (const stub of toArray(entry.signals?.stub_service)) {
+			trackedStubs.add(stub);
+		}
+		for (const contrib of toArray(entry.signals?.contrib)) {
+			trackedContribs.add(contrib);
+		}
+	}
+
+	const ignoredStubs = new Set<string>();
+	const ignoredContribs = new Set<string>();
+	for (const rule of data.ignore ?? []) {
+		if (rule.stub_service) {
+			ignoredStubs.add(rule.stub_service);
+		}
+		if (rule.contrib) {
+			ignoredContribs.add(rule.contrib);
+		}
+	}
+
+	for (const stub of snapshot.stubClasses) {
+		if (!trackedStubs.has(stub) && !ignoredStubs.has(stub)) {
+			violations.push({
+				id: stub,
+				message: `untracked Null stub '${stub}' — add a matrix row or an ignore rule`,
+				files: ['packages/workbench/src/sidexNullServices.ts']
+			});
+		}
+	}
+
+	for (const contrib of snapshot.contribDirs) {
+		const imported = snapshot.importedContribs.includes(contrib);
+		if (!imported && !trackedContribs.has(contrib) && !ignoredContribs.has(contrib)) {
+			violations.push({
+				id: contrib,
+				message: `untracked unwired contrib '${contrib}' — add a matrix row or an ignore rule`,
+				files: [`packages/workbench/src/${contrib}`]
+			});
+		}
+	}
+
 	return violations;
 }
