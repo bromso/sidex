@@ -17,17 +17,15 @@ async function ensureWasm(): Promise<any> {
 	if (!initPromise) {
 		initPromise = (async () => {
 			try {
-				const wasmPath = '/wasm/tfidf/sidex_tfidf_wasm.js';
-				const resp = await fetch(wasmPath);
+				const resp = await fetch('/wasm/tfidf/sidex_tfidf_wasm.js');
 				if (!resp.ok) {
 					throw new Error(`HTTP ${resp.status}`);
 				}
 				const code = await resp.text();
-				const blob = new Blob([code], { type: 'application/javascript' });
-				const url = URL.createObjectURL(blob);
+				const url = URL.createObjectURL(new Blob([code], { type: 'application/javascript' }));
 				const mod = await import(/* @vite-ignore */ url);
 				URL.revokeObjectURL(url);
-				await mod.default();
+				await mod.default('/wasm/tfidf/sidex_tfidf_wasm_bg.wasm');
 				wasmModule = mod;
 			} catch {
 				initFailed = true;

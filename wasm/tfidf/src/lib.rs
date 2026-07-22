@@ -60,7 +60,7 @@ fn split_terms(input: &str) -> Vec<String> {
                             .iter()
                             .collect::<String>()
                             .to_lowercase();
-                        if part.chars().filter(|c| c.is_alphabetic()).count() >= 3 {
+                        if has_run_of_letters(&part, 3) {
                             terms.push(part);
                         }
                     }
@@ -69,6 +69,23 @@ fn split_terms(input: &str) -> Vec<String> {
         }
     }
     terms
+}
+
+/// True if `s` contains a run of at least `n` consecutive alphabetic chars.
+/// Mirrors the JS reference's `/\p{Letter}{3,}/` requirement for camelCase parts.
+fn has_run_of_letters(s: &str, n: usize) -> bool {
+    let mut run = 0usize;
+    for c in s.chars() {
+        if c.is_alphabetic() {
+            run += 1;
+            if run >= n {
+                return true;
+            }
+        } else {
+            run = 0;
+        }
+    }
+    false
 }
 
 fn term_frequencies(input: &str) -> Vec<(String, u32)> {
@@ -265,4 +282,32 @@ fn escape_json_string(s: &str) -> String {
         }
     }
     escaped
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn run_of_letters_matches_consecutive_only() {
+        assert!(has_run_of_letters("abc", 3));
+        assert!(has_run_of_letters("a1abc", 3));
+        assert!(!has_run_of_letters("a1b2c", 3));
+        assert!(!has_run_of_letters("ab", 3));
+    }
+
+    /// Guards the `split_terms` call site itself (not just the `has_run_of_letters`
+    /// helper), so a revert of `if has_run_of_letters(&part, 3)` back to a plain
+    /// letter-count check fails this test even without the JS parity fixture.
+    #[test]
+    fn split_terms_drops_camel_case_part_without_consecutive_letter_run() {
+        let terms = split_terms("a1b2cWidget");
+        assert!(
+            !terms.contains(&"a1b2c".to_string()),
+            "camelCase part with <3 consecutive letters must be dropped, got: {:?}",
+            terms
+        );
+        assert!(terms.contains(&"a1b2cwidget".to_string()));
+        assert!(terms.contains(&"widget".to_string()));
+    }
 }

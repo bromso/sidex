@@ -77,6 +77,22 @@ crates cannot build for the native host):
 | `wasm/` | wasm-bindgen modules | wasm32 |
 | `extensions-wasm/` | wit-bindgen component extensions | wasm32 |
 
+### WebAssembly acceleration (`wasm/`)
+
+`wasm/` is a Cargo workspace of `wasm-bindgen` crates compiled by `wasm-pack`
+and served at `/wasm/<crate>/` (built into `apps/workbench/public/wasm/`,
+gitignored). Currently one member: `tfidf`, which accelerates Command Palette
+and Settings search scoring. Consumers load the module at runtime with a
+graceful fall back to a JS implementation, so the app never hard-depends on
+wasm; `bun run build` compiles it, `bun run dev` falls back if the toolchain
+is absent.
+
+**Adding a wasm module:**
+1. New crate under `wasm/<name>/` (`crate-type = ["cdylib"]`, `wasm-bindgen`), add it to `wasm/Cargo.toml` members.
+2. Extend `packages/build/src/wasm/build.ts` to emit it to `apps/workbench/public/wasm/<name>/`.
+3. Consumer: dynamic-import `/wasm/<name>/…​.js`, pass the explicit `…_bg.wasm` URL to init, wrap in try/catch with a JS fallback.
+4. If it replaces existing JS behavior, add a parity test (`packages/build/test/…-parity.test.ts`) gating that results match the JS reference.
+
 Crate directories drop the `sidex-` prefix (`crates/text`), but crate names keep
 it (`sidex-text`), so `use sidex_text::…` is unchanged. Rust is otherwise
 unaffected by the JavaScript layout.

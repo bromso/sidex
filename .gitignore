@@ -19,6 +19,10 @@ build/
 # ── WASM build artifacts (wasm-pack output) ──────────────────────────────────
 **/pkg/
 
+# Generated wasm artifacts (built by build:wasm)
+apps/workbench/public/wasm/
+packages/build/test/fixtures/wasm-tfidf/
+
 # ── Extensions (auto-installed on first dev/build via npm run setup) ──────────
 /extensions/
 
@@ -27,6 +31,7 @@ build/
 # The application lock (apps/desktop/Cargo.lock) IS committed.
 crates/extension-sdk/Cargo.lock
 extensions-wasm/Cargo.lock
+wasm/Cargo.lock
 examples/**/Cargo.lock
 
 # ── Logs ─────────────────────────────────────────────────────────────────────

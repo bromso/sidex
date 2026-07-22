@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["scroll", "hash", "tfidf"]
+members = ["tfidf"]
 
 [profile.release]
 opt-level = "s"
