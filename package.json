@@ -1,15 +1,10 @@
 {
   "name": "sidex",
   "version": "0.1.3",
+  "packageManager": "bun@1.3.14",
   "private": true,
   "description": "SideX — VS Code's workbench ported to Tauri (Rust backend + OS-native webview).",
-  "keywords": [
-    "editor",
-    "ide",
-    "tauri",
-    "vscode",
-    "webview"
-  ],
+  "keywords": ["editor", "ide", "tauri", "vscode", "webview"],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -17,12 +12,9 @@
   },
   "homepage": "https://github.com/sidenai/sidex#readme",
   "type": "module",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "infrastructure/*"
-  ],
+  "workspaces": ["apps/*", "packages/*", "infrastructure/*"],
   "scripts": {
+    "prepare": "lefthook install || true",
     "setup": "bun run packages/build/src/extension-meta/cli.ts",
     "setup:full": "bash scripts/setup-extensions.sh && bun run packages/build/src/extension-meta/cli.ts",
     "build:wasm": "bun run packages/build/src/wasm/build.ts",
@@ -37,7 +29,7 @@
     "format": "biome format --write apps packages",
     "format:check": "biome format apps packages",
     "rust:check": "cd apps/desktop && cargo check",
-    "rust:clippy": "cd apps/desktop && cargo clippy --all-targets -- -D warnings",
+    "rust:clippy": "cd apps/desktop && cargo clippy --all-targets --all-features -- -D warnings",
     "rust:fmt": "cd apps/desktop && cargo fmt --all -- --check",
     "rust:fmt:fix": "cd apps/desktop && cargo fmt --all"
   },
@@ -68,6 +60,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.5",
+    "@taplo/cli": "0.7.0",
     "@tauri-apps/cli": "^2.11.4",
     "@tauri-apps/plugin-dialog": "^2.7.2",
     "@types/bun": "1.3.14",
@@ -76,6 +69,7 @@
     "@webgpu/types": "^0.1.71",
     "@xterm/headless": "^6.0.0",
     "jschardet": "^3.1.4",
+    "lefthook": "2.1.10",
     "typescript": "~5.6.2",
     "vite": "^7"
   }
