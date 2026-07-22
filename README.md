@@ -65,6 +65,12 @@ RAM savings are most tested on macOS, WKWebView is shared with Safari. On Window
 > runner, and test runner. Node.js executes Vite, because the production build
 > needs `--max-old-space-size=12288` — a V8 flag with no Bun equivalent.
 
+> **wasm-pack is needed for production builds.** The tfidf search-scoring
+> module is compiled from Rust to WebAssembly. Install once:
+> `curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh`
+> then `rustup target add wasm32-unknown-unknown`. `bun run dev` works
+> without it (it falls back to the JS implementation); `bun run build` requires it.
+
 ### Run in Development
 
 ```bash
