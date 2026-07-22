@@ -2,13 +2,7 @@
   "name": "sidex-marketplace-proxy",
   "version": "0.1.0",
   "description": "Edge-cached dual-backend (Microsoft Marketplace + Open VSX) proxy for SideX.",
-  "keywords": [
-    "sidex",
-    "marketplace",
-    "cloudflare",
-    "proxy",
-    "open-vsx"
-  ],
+  "keywords": ["sidex", "marketplace", "cloudflare", "proxy", "open-vsx"],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,7 +17,7 @@
     "tail": "wrangler tail"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250601.0",
-    "wrangler": "^4.0.0"
+    "@cloudflare/workers-types": "^5.20260722.1",
+    "wrangler": "^4.113.0"
   }
 }
