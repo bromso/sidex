@@ -31,6 +31,7 @@ packages/build/test/fixtures/wasm-tfidf/
 # The application lock (apps/desktop/Cargo.lock) IS committed.
 crates/extension-sdk/Cargo.lock
 extensions-wasm/Cargo.lock
+wasm/Cargo.lock
 examples/**/Cargo.lock
 
 # ── Logs ─────────────────────────────────────────────────────────────────────
