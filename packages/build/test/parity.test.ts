@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { checkParity, type ParityData, type RepoSnapshot } from '../src/parity/parity';
+import { checkParity, type ParityData, type RepoSnapshot, renderMarkdown } from '../src/parity/parity';
 
 const emptySnapshot: RepoSnapshot = { stubClasses: [], importedContribs: [], contribDirs: [] };
 
@@ -170,5 +170,43 @@ describe('checkParity — anti-rot', () => {
 		};
 		const snapshot: RepoSnapshot = { ...emptySnapshot, contribDirs: ['contrib/terminalContrib'], importedContribs: [] };
 		expect(checkParity(data, snapshot)).toHaveLength(0);
+	});
+});
+
+describe('renderMarkdown', () => {
+	const data: ParityData = {
+		entries: [
+			{ id: 'terminal', area: 'Terminal', status: 'done', summary: 'full PTY' },
+			{
+				id: 'notebooks',
+				area: 'Notebooks',
+				status: 'stubbed',
+				summary: '7 Null services',
+				evidence: ['packages/workbench/src/sidexNullServices.ts']
+			},
+			{ id: 'editor', area: 'Editor', status: 'done', summary: 'Monaco' }
+		]
+	};
+
+	test('groups by status and sorts areas alphabetically within a group', () => {
+		const md = renderMarkdown(data);
+		// Editor sorts before Terminal under the Done heading
+		expect(md.indexOf('| Editor ')).toBeLessThan(md.indexOf('| Terminal '));
+		expect(md).toContain('## Done');
+		expect(md).toContain('## Stubbed');
+	});
+
+	test('omits status sections that have no entries', () => {
+		const md = renderMarkdown(data);
+		expect(md).not.toContain('## Missing');
+	});
+
+	test('is deterministic (same input → identical output)', () => {
+		expect(renderMarkdown(data)).toBe(renderMarkdown(data));
+	});
+
+	test('renders evidence as inline code', () => {
+		const md = renderMarkdown(data);
+		expect(md).toContain('`packages/workbench/src/sidexNullServices.ts`');
 	});
 });
