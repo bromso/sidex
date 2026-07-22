@@ -21,6 +21,7 @@ build/
 
 # Generated wasm artifacts (built by build:wasm)
 apps/workbench/public/wasm/
+packages/build/test/fixtures/wasm-tfidf/
 
 # ── Extensions (auto-installed on first dev/build via npm run setup) ──────────
 /extensions/
