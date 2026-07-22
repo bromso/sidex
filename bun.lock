@@ -5,8 +5,8 @@
     "": {
       "name": "sidex",
       "dependencies": {
-        "@microsoft/1ds-core-js": "^4.3.11",
-        "@microsoft/1ds-post-js": "^4.3.11",
+        "@microsoft/1ds-core-js": "^4.4.3",
+        "@microsoft/1ds-post-js": "^4.4.3",
         "@tauri-apps/api": "^2",
         "@tauri-apps/plugin-shell": "^2",
         "@vscode/codicons": "^0.0.45",
@@ -253,11 +253,11 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.9", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.0.3", "@jridgewell/sourcemap-codec": "^1.4.10" } }, "sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ=="],
 
-    "@microsoft/1ds-core-js": ["@microsoft/1ds-core-js@4.3.11", "", { "dependencies": { "@microsoft/applicationinsights-core-js": "3.3.11", "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.4 < 2.x", "@nevware21/ts-utils": ">= 0.11.8 < 2.x" } }, "sha512-QyQE/YzFYB+31WEpX9hvDoXZOIXA7308Z5uuL1mSsyDSkNPl24hBWz9O3vZL+/p9shy756eKLI2nFLwwIAhXyw=="],
+    "@microsoft/1ds-core-js": ["@microsoft/1ds-core-js@4.4.3", "", { "dependencies": { "@microsoft/applicationinsights-core-js": "3.4.3", "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.5 < 0.6.0", "@nevware21/ts-utils": ">= 0.14.0 < 2.x" } }, "sha512-lKMKpXh39c8fB47O6g3rFyVDUb+nweoJuxwZbnOLKkmE7+LrCVGbS+wpJ6Ylwqh2HeUeWoa2Sv/hg/TKcAxHJQ=="],
 
-    "@microsoft/1ds-post-js": ["@microsoft/1ds-post-js@4.3.11", "", { "dependencies": { "@microsoft/1ds-core-js": "4.3.11", "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.4 < 2.x", "@nevware21/ts-utils": ">= 0.11.8 < 2.x" } }, "sha512-V0ZeeALy/Pj8HWgNHDsK+yDeCYnJ9bCgTWhcrna/ZiAT+sGfWs6mDBjAVcG03uP7TDjdWLf8w79lgbXJ3+s3DA=="],
+    "@microsoft/1ds-post-js": ["@microsoft/1ds-post-js@4.4.3", "", { "dependencies": { "@microsoft/applicationinsights-core-js": "3.4.3", "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.5 < 0.6.0", "@nevware21/ts-utils": ">= 0.14.0 < 2.x" } }, "sha512-qKHEU9rtB60b0q2W48hYJZ0mj9u13EuECq3xOCM0GwVIqWuLMxzCAh1PsK4TUvCsINohf135Lrf3c0IXSw4R3w=="],
 
-    "@microsoft/applicationinsights-core-js": ["@microsoft/applicationinsights-core-js@3.3.11", "", { "dependencies": { "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.4 < 2.x", "@nevware21/ts-utils": ">= 0.11.8 < 2.x" }, "peerDependencies": { "tslib": ">= 1.0.0" } }, "sha512-WlBY1sKDNL62T++NifgFCyDuOoNUNrVILfnHubOzgU/od7MFEQYWU8EZyDcBC/+Z8e3TD6jfixurYtWoUC+6Eg=="],
+    "@microsoft/applicationinsights-core-js": ["@microsoft/applicationinsights-core-js@3.4.3", "", { "dependencies": { "@microsoft/applicationinsights-shims": "3.0.1", "@microsoft/dynamicproto-js": "^2.0.3", "@nevware21/ts-async": ">= 0.5.5 < 0.6.0", "@nevware21/ts-utils": ">= 0.14.0 < 2.x" }, "peerDependencies": { "tslib": ">= 1.0.0" } }, "sha512-A+wkMLodF4JJsLoEvovgF3jyhKhbh9FNzO97sM7KQkbWUzdK47z4V/NDIETgwbaxw1O1u8mnP2qnp/2Bj9A0Uw=="],
 
     "@microsoft/applicationinsights-shims": ["@microsoft/applicationinsights-shims@3.0.1", "", { "dependencies": { "@nevware21/ts-utils": ">= 0.9.4 < 2.x" } }, "sha512-DKwboF47H1nb33rSUfjqI6ryX29v+2QWcTrRvcQDA32AZr5Ilkr7whOOSsD1aBzwqX0RJEIP1Z81jfE3NBm/Lg=="],
 
