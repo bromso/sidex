@@ -109,7 +109,7 @@ needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
 | `ipcMain/ipcRenderer` | `invoke()` / `emit()` / `listen()` | Ported |
 | `Menu/MenuItem` | `tauri::menu::Menu` | Ported |
 | `dialog.*` | `@tauri-apps/plugin-dialog` | Ported |
-| `clipboard` | `@tauri-apps/plugin-clipboard-manager` | Ported |
+| `clipboard` | Web Clipboard API (`navigator.clipboard`) | Ported |
 | `shell.openExternal` | `@tauri-apps/plugin-opener` | Ported |
 | `Notification` | `@tauri-apps/plugin-notification` | Ported |
 | `safeStorage` | Rust keyring crate | Partial |
@@ -157,7 +157,7 @@ needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
 | `log` | Rust tracing backend | Partial |
 | `terminal` | Rust portable-pty | Done |
 | `dialogs` | Tauri dialog plugin | Done |
-| `clipboard` | Tauri clipboard plugin | Done |
+| `clipboard` | Web Clipboard API (`navigator.clipboard`) | Done |
 | `native` | Rust OS integration | Partial |
 | `encryption` | Rust keyring | Partial |
 
