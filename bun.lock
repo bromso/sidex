@@ -24,7 +24,7 @@
         "@xterm/addon-webgl": "^0.19.0",
         "@xterm/xterm": "^5.5.0",
         "monaco-editor": "^0.52.2",
-        "tas-client": "^0.3.2",
+        "tas-client": "^0.4.1",
         "vscode-oniguruma": "^2.0.1",
         "vscode-textmate": "^9.3.2",
       },
@@ -475,7 +475,7 @@
 
     "supports-color": ["supports-color@10.2.2", "", {}, "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="],
 
-    "tas-client": ["tas-client@0.3.2", "", {}, "sha512-Hr0k7swJSyI7fsgqWf28GoME3lDXysTV1pJW/OBCrokhkqd3dTL+79SLKRGaYNHNaHii5N7VLRlZZc/up6xdAA=="],
+    "tas-client": ["tas-client@0.4.1", "", {}, "sha512-cNwPitLm+VvWtUYyZu6YOfP1qwgwRzqTHC7StkhCcI4zHp3l/uRAG+29LV4SpRnagd+jAEKmJFOIV6KwZDiA6w=="],
 
     "tiny-inflate": ["tiny-inflate@1.0.3", "", {}, "sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw=="],
 
