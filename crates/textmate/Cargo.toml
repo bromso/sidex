@@ -1,6 +1,7 @@
 [package]
 name = "sidex-textmate"
 description = "Native Rust port of `vscode-textmate` for SideX."
+keywords = ["textmate", "grammars", "tokenization", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

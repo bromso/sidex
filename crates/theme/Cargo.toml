@@ -1,6 +1,7 @@
 [package]
 name = "sidex-theme"
 description = "Theme parsing and color management for SideX"
+keywords = ["theme", "colors", "syntax", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

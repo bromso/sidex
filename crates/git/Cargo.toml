@@ -1,6 +1,7 @@
 [package]
 name = "sidex-git"
 description = "Git integration for SideX"
+keywords = ["git", "vcs", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
