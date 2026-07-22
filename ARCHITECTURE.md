@@ -109,7 +109,7 @@ needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
 | `ipcMain/ipcRenderer` | `invoke()` / `emit()` / `listen()` | Ported |
 | `Menu/MenuItem` | `tauri::menu::Menu` | Ported |
 | `dialog.*` | `@tauri-apps/plugin-dialog` | Ported |
-| `clipboard` | `@tauri-apps/plugin-clipboard-manager` | Ported |
+| `clipboard` | Web Clipboard API (`navigator.clipboard`) | Ported |
 | `shell.openExternal` | `@tauri-apps/plugin-opener` | Ported |
 | `Notification` | `@tauri-apps/plugin-notification` | Ported |
 | `safeStorage` | Rust keyring crate | Partial |
@@ -157,7 +157,7 @@ needs `--max-old-space-size=12288`, a V8 flag with no Bun equivalent.
 | `log` | Rust tracing backend | Partial |
 | `terminal` | Rust portable-pty | Done |
 | `dialogs` | Tauri dialog plugin | Done |
-| `clipboard` | Tauri clipboard plugin | Done |
+| `clipboard` | Web Clipboard API (`navigator.clipboard`) | Done |
 | `native` | Rust OS integration | Partial |
 | `encryption` | Rust keyring | Partial |
 
@@ -197,7 +197,7 @@ All Tauri commands are registered in `apps/desktop/src/lib.rs`.
 | **os** | `get_os_info`, `get_env`, `get_all_env`, `get_shell` |
 | **storage** | `storage_get`, `storage_set`, `storage_delete` |
 | **git** | `git_status`, `git_diff`, `git_log`, `git_log_graph`, `git_add`, `git_commit`, `git_checkout`, `git_branches`, `git_create_branch`, `git_delete_branch`, `git_push`, `git_pull`, `git_fetch`, `git_stash`, `git_reset`, `git_show`, `git_init`, `git_is_repo`, `git_clone`, `git_remote_list`, `git_run` |
-| **ext_host** | `start_extension_host`, `stop_extension_host`, `extension_host_port` |
+| **ext_host** | `extension_platform_bootstrap`, `extension_platform_status`, `extension_platform_restart`, `extension_platform_stop`, `extension_platform_init_data` |
 | **network** | `fetch_url`, `fetch_url_text`, `proxy_request` |
 | **debug** | `debug_spawn_adapter`, `debug_send`, `debug_kill`, `debug_list_adapters` |
 | **tasks** | `task_spawn`, `task_kill`, `task_list` |

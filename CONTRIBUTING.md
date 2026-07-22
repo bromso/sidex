@@ -84,6 +84,19 @@ re-evaluate when the blocker clears rather than re-litigating.
   upstream VS Code's xterm-6 adoption (`Viewport.queueSync()` plus the
   scrollbar-width handling).
 
+## Runtime smoke checklist
+
+Static checks (CI, `tsc`, `cargo build`) do not prove the app renders and the
+OS-native features work. After a change that could affect the webview↔Rust
+boundary, run `bun run tauri dev` and confirm the "Done" capabilities end-to-end:
+
+- [ ] **Terminal** — opens, renders a shell prompt, echoes typed input, and reflows on panel resize.
+- [ ] **Files** — open a file, edit it, save; the change round-trips to disk (verify outside the app).
+- [ ] **Git** — the SCM panel shows status and the current branch for a real repository.
+- [ ] **Search** — a workspace search for a known string returns the expected matches.
+- [ ] **Extension host** — starts with no errors in the devtools console, and a built-in extension activates.
+- [ ] **Window/dialogs** — native open/save dialogs appear and return paths; window title updates.
+
 ## Questions?
 
 Join the Discord if you need help getting set up or want to coordinate: [discord.gg/8CUCnEAC4J](https://discord.gg/8CUCnEAC4J)
