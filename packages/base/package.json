@@ -1,8 +1,8 @@
 {
   "name": "@sidex/base",
   "version": "0.0.0",
-  "description": "SideX base layer — core utilities with no cross-layer dependencies (ported from VS Code).",
-  "keywords": ["sidex", "base", "vscode", "utilities"],
+  "description": "Base layer — core utilities with no cross-layer dependencies (ported from VS Code).",
+  "keywords": ["base", "vscode", "utilities"],
   "license": "MIT",
   "repository": {
     "type": "git",

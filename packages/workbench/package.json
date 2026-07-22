@@ -1,8 +1,8 @@
 {
   "name": "@sidex/workbench",
   "version": "0.0.0",
-  "description": "SideX workbench layer — top-level UI and workbench contributions (ported from VS Code).",
-  "keywords": ["sidex", "workbench", "vscode", "ui"],
+  "description": "Workbench layer — top-level UI and workbench contributions (ported from VS Code).",
+  "keywords": ["workbench", "vscode", "ui"],
   "license": "MIT",
   "repository": {
     "type": "git",

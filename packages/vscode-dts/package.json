@@ -1,9 +1,8 @@
 {
   "name": "@sidex/vscode-dts",
   "version": "0.0.0",
-  "description": "VS Code extension API type definitions used by SideX.",
+  "description": "VS Code extension API type definitions",
   "keywords": [
-    "sidex",
     "vscode",
     "types",
     "extension-api",
