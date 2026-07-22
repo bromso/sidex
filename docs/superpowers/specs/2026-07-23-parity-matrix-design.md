@@ -186,3 +186,12 @@ contrib path is known.
 None blocking. Whether `parity:check` runs in pre-push, CI, or both is a wiring
 detail settled during implementation (default: both, matching the existing
 clippy/test pre-push hooks).
+
+## Known limitations
+
+- Rows whose active `Null*` stubs are covered by an `ignore` rule (e.g. the
+  `remote` partial row) are accuracy-checked by prose review, not by signals —
+  the drift checker can't verify them automatically.
+- An `ignore` rule whose target stub/contrib is later deleted goes silently
+  dead: the anti-rot checks only fire while the entity still exists, so a
+  stale rule won't be flagged.

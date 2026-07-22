@@ -18,6 +18,7 @@ const entryFiles = [
 function findStubClasses(): string[] {
 	const found = new Set<string>();
 	const classRe = /\bclass\s+(Null\w+)/g;
+	const declRe = /(?:const|let|var)\s+(Null\w+)/g;
 	const walk = (dir: string): void => {
 		for (const name of fs.readdirSync(dir)) {
 			const full = path.join(dir, name);
@@ -27,6 +28,9 @@ function findStubClasses(): string[] {
 			} else if (name.endsWith('.ts')) {
 				const text = fs.readFileSync(full, 'utf-8');
 				for (const m of text.matchAll(classRe)) {
+					found.add(m[1]);
+				}
+				for (const m of text.matchAll(declRe)) {
 					found.add(m[1]);
 				}
 			}

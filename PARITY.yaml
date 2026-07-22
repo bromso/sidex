@@ -219,6 +219,13 @@ ignore:
       Internal A/B-testing / feature-flag assignment service (services/assignment),
       registered as the active no-op IWorkbenchAssignmentService. Not a user-facing
       VS Code feature area to compare parity against, so it has no matrix row.
+  - stub_service: NullApiDeprecationService
+    reason: >-
+      A `const` no-op (api/common/extHostApiDeprecationService.ts), never
+      registerSingleton'd or referenced anywhere else in the tree — the active
+      IExtHostApiDeprecationService is the real ExtHostApiDeprecationService,
+      wired via registerSingleton in api/common/extHost.common.services.ts.
+      Ext-host API-deprecation-warning infra, not a workbench parity feature area.
   - contrib: contrib/codeEditor
     reason: >-
       Not imported by literal path in the 3 entry files, but genuinely loaded

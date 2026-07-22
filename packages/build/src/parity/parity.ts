@@ -146,9 +146,15 @@ const STATUS_LABEL: Record<ParityStatus, string> = {
 	missing: 'Missing'
 };
 
+function escapeCell(text: string): string {
+	return text.replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
+}
+
 function renderRow(entry: ParityEntry): string {
-	const evidence = (entry.evidence ?? []).map(e => `\`${e}\``).join(', ');
-	return `| ${entry.area} | ${entry.summary} | ${evidence} |`;
+	const area = escapeCell(entry.area);
+	const summary = escapeCell(entry.summary);
+	const evidence = (entry.evidence ?? []).map(e => `\`${escapeCell(e)}\``).join(', ');
+	return `| ${area} | ${summary} | ${evidence} |`;
 }
 
 export function renderMarkdown(data: ParityData): string {

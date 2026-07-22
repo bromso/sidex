@@ -209,4 +209,25 @@ describe('renderMarkdown', () => {
 		const md = renderMarkdown(data);
 		expect(md).toContain('`packages/workbench/src/sidexNullServices.ts`');
 	});
+
+	test('escapes pipe characters in area/summary/evidence so the table does not break', () => {
+		const dirty: ParityData = {
+			entries: [
+				{
+					id: 'pipes',
+					area: 'Pi|pes',
+					status: 'done',
+					summary: 'a | b',
+					evidence: ['packages/workbench/src/pi|pe.ts']
+				}
+			]
+		};
+		const md = renderMarkdown(dirty);
+		expect(md).toContain('a \\| b');
+		expect(md).toContain('Pi\\|pes');
+		expect(md).toContain('`packages/workbench/src/pi\\|pe.ts`');
+		const row = md.split('\n').find(line => line.startsWith('| Pi'));
+		// exactly 3 escaped-safe columns: unescaped pipes would split into more cells
+		expect(row?.split(' | ')).toHaveLength(3);
+	});
 });
