@@ -3,6 +3,7 @@ name = "sidex-extension-sdk"
 version = "0.1.0"
 edition = "2021"
 description = "SDK for building native SideX extensions in Rust (WASM Component Model)"
+keywords = ["extensions", "wasm", "component-model", "sdk", "sidex"]
 license = "MIT"
 repository = "https://github.com/sidenai/sidex"
 

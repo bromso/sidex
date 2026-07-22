@@ -9,6 +9,7 @@ edition = "2021"
 rust-version = "1.91.0"
 license = "MIT"
 repository = "https://github.com/sidenai/sidex"
+homepage = "https://github.com/sidenai/sidex"
 
 [workspace.dependencies]
 # Internal crates

@@ -1,9 +1,20 @@
 {
   "name": "@sidex/workbench",
   "version": "0.0.0",
+  "description": "SideX workbench layer — top-level UI and workbench contributions (ported from VS Code).",
+  "keywords": ["sidex", "workbench", "vscode", "ui"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sidenai/sidex.git",
+    "directory": "packages/workbench"
+  },
+  "homepage": "https://github.com/sidenai/sidex#readme",
   "private": true,
   "type": "module",
-  "exports": { "./*": "./src/*" },
+  "exports": {
+    "./*": "./src/*"
+  },
   "dependencies": {
     "@sidex/base": "workspace:*",
     "@sidex/editor": "workspace:*",

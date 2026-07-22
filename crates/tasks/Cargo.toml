@@ -1,6 +1,7 @@
 [package]
 name = "sidex-tasks"
 description = "Task runner for SideX — npm scripts, make, custom tasks"
+keywords = ["tasks", "task-runner", "npm", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

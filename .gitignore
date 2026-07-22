@@ -49,7 +49,9 @@ Desktop.ini
 ehthumbs.db
 
 # ── IDE / Editor ─────────────────────────────────────────────────────────────
-.vscode/
+# Personal .vscode files stay ignored; shared editor config is opted in below.
+.vscode/*
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo

@@ -1,6 +1,7 @@
 [package]
 name = "sidex-db"
 description = "SQLite state persistence for SideX"
+keywords = ["sqlite", "database", "persistence", "state", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

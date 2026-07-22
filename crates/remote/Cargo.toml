@@ -1,6 +1,7 @@
 [package]
 name = "sidex-remote"
 description = "Remote development for SideX — SSH, WSL, Dev Containers, Codespaces, Tunnels"
+keywords = ["remote", "ssh", "wsl", "dev-containers", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

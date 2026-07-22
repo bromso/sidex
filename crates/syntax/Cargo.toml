@@ -1,6 +1,7 @@
 [package]
 name = "sidex-syntax"
 description = "Syntax highlighting and parsing for SideX via tree-sitter and TextMate grammars"
+keywords = ["syntax", "tree-sitter", "textmate", "highlighting", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

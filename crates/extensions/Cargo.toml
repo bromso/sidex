@@ -1,6 +1,7 @@
 [package]
 name = "sidex-extensions"
 description = "Extension host management for SideX — Node.js extension host + WASM extensions"
+keywords = ["extensions", "extension-host", "wasm", "nodejs", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

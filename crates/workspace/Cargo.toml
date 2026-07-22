@@ -1,6 +1,7 @@
 [package]
 name = "sidex-workspace"
 description = "Workspace management — file tree, watcher, search for SideX"
+keywords = ["workspace", "file-tree", "search", "watcher", "sidex"]
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
