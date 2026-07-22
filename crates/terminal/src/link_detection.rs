@@ -252,13 +252,7 @@ fn detect_absolute_paths(text: &str, row: u16, links: &mut Vec<TerminalLink>) {
         let start = if cfg!(target_os = "windows") {
             remaining
                 .find(|c: char| c.is_ascii_alphabetic())
-                .and_then(|i| {
-                    if remaining.get(i + 1..i + 3) == Some(":\\") {
-                        Some(i)
-                    } else {
-                        None
-                    }
-                })
+                .filter(|&i| remaining.get(i + 1..i + 3) == Some(":\\"))
         } else {
             remaining
                 .find('/')
