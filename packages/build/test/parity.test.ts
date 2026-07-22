@@ -73,3 +73,41 @@ describe('checkParity — stub signals', () => {
 		expect(checkParity(data, snapshot)).toHaveLength(0);
 	});
 });
+
+describe('checkParity — contrib signals', () => {
+	const done = (contrib: string): ParityData => ({
+		entries: [{ id: 'comments', area: 'Comments', status: 'done', summary: 'x', signals: { contrib } }]
+	});
+
+	test('flags a done row whose contrib is imported in no entry file', () => {
+		const violations = checkParity(done('contrib/comments'), emptySnapshot);
+		expect(violations).toHaveLength(1);
+		expect(violations[0].message).toContain('unwired');
+	});
+
+	test('accepts a done row whose contrib is imported', () => {
+		const snapshot: RepoSnapshot = { ...emptySnapshot, importedContribs: ['contrib/comments'] };
+		expect(checkParity(done('contrib/comments'), snapshot)).toHaveLength(0);
+	});
+
+	test('flags an unwired row whose contrib is now imported (promote)', () => {
+		const data: ParityData = {
+			entries: [
+				{ id: 'comments', area: 'Comments', status: 'unwired', summary: 'x', signals: { contrib: 'contrib/comments' } }
+			]
+		};
+		const snapshot: RepoSnapshot = { ...emptySnapshot, importedContribs: ['contrib/comments'] };
+		const violations = checkParity(data, snapshot);
+		expect(violations).toHaveLength(1);
+		expect(violations[0].message).toContain('promote');
+	});
+
+	test('accepts an unwired row whose contrib is imported nowhere', () => {
+		const data: ParityData = {
+			entries: [
+				{ id: 'comments', area: 'Comments', status: 'unwired', summary: 'x', signals: { contrib: 'contrib/comments' } }
+			]
+		};
+		expect(checkParity(data, emptySnapshot)).toHaveLength(0);
+	});
+});

@@ -70,6 +70,25 @@ export function checkParity(data: ParityData, snapshot: RepoSnapshot): Violation
 				});
 			}
 		}
+
+		const contribs = toArray(entry.signals?.contrib);
+		for (const contrib of contribs) {
+			const imported = snapshot.importedContribs.includes(contrib);
+			if ((entry.status === 'done' || entry.status === 'partial') && !imported) {
+				violations.push({
+					id: entry.id,
+					message: `claims '${entry.status}' but '${contrib}' is imported in no entry file (unwired)`,
+					files: entry.evidence ?? []
+				});
+			}
+			if ((entry.status === 'unwired' || entry.status === 'stubbed' || entry.status === 'missing') && imported) {
+				violations.push({
+					id: entry.id,
+					message: `claims '${entry.status}' but '${contrib}' is now imported — promote it`,
+					files: entry.evidence ?? []
+				});
+			}
+		}
 	}
 
 	return violations;
