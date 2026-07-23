@@ -1,8 +1,8 @@
 {
   "name": "@sidex/app-workbench",
   "version": "0.0.0",
-  "description": "SideX webview frontend — the Vite-built workbench UI.",
-  "keywords": ["sidex", "workbench", "vite", "webview", "frontend"],
+  "description": "Webview frontend — the Vite-built workbench UI.",
+  "keywords": ["workbench", "vite", "webview", "frontend"],
   "license": "MIT",
   "repository": {
     "type": "git",

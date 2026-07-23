@@ -1,8 +1,8 @@
 {
   "name": "@sidex/platform",
   "version": "0.0.0",
-  "description": "SideX platform layer — services built on the base layer (ported from VS Code).",
-  "keywords": ["sidex", "platform", "vscode", "services"],
+  "description": "Platform layer — services built on the base layer (ported from VS Code).",
+  "keywords": ["platform", "vscode", "services"],
   "license": "MIT",
   "repository": {
     "type": "git",

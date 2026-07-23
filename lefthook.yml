@@ -21,3 +21,5 @@ pre-push:
       run: bun run rust:clippy
     test:
       run: bun test
+    parity:
+      run: bun run parity:check

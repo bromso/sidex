@@ -3,9 +3,9 @@
  *  Copyright (c) Siden Technologies, Inc. MIT Licensed.
  *--------------------------------------------------------------------------------------------*/
 
+import { Emitter, Event } from '@sidex/base/common/event.js';
 import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
 import { createDecorator } from '@sidex/platform/instantiation/common/instantiation.js';
-import { Emitter, Event } from '@sidex/base/common/event.js';
 import { IWorkbenchIssueService } from './contrib/issue/common/issue.js';
 
 // --- IAccessibleViewService ---
@@ -65,12 +65,38 @@ class NullNotebookService implements INotebookService {
 registerSingleton(INotebookService, NullNotebookService, InstantiationType.Delayed);
 
 // --- INotebookEditorService ---
+// Note: `createDecorator` is keyed by the id string, so this resolves to the same
+// service id as the real `INotebookEditorService` in contrib/notebook. Consumers
+// (e.g. the Search view) import the real interface and call these members at
+// runtime, so the null stub must actually provide them — an empty stub makes the
+// Search view throw `onDidAddNotebookEditor is not a function` during construction.
 const INotebookEditorService = createDecorator<INotebookEditorService>('notebookEditorService');
 interface INotebookEditorService {
 	readonly _serviceBrand: undefined;
+	readonly onDidAddNotebookEditor: Event<any>;
+	readonly onDidRemoveNotebookEditor: Event<any>;
+	retrieveWidget(..._args: any[]): any;
+	retrieveExistingWidgetFromURI(_resource: any): any | undefined;
+	retrieveAllExistingWidgets(): any[];
+	listNotebookEditors(): readonly any[];
 }
 class NullNotebookEditorService implements INotebookEditorService {
 	declare readonly _serviceBrand: undefined;
+	private readonly _e = new Emitter<any>();
+	readonly onDidAddNotebookEditor = this._e.event;
+	readonly onDidRemoveNotebookEditor = this._e.event;
+	retrieveWidget() {
+		return undefined;
+	}
+	retrieveExistingWidgetFromURI() {
+		return undefined;
+	}
+	retrieveAllExistingWidgets(): any[] {
+		return [];
+	}
+	listNotebookEditors(): readonly any[] {
+		return [];
+	}
 }
 registerSingleton(INotebookEditorService, NullNotebookEditorService, InstantiationType.Delayed);
 

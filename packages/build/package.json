@@ -1,7 +1,7 @@
 {
   "name": "@sidex/build",
   "version": "0.0.0",
-  "description": "SideX build tooling — NLS, WASM, and postbuild plugins and generators.",
+  "description": "Build tooling — NLS, WASM, and postbuild plugins and generators.",
   "keywords": ["sidex", "build", "vite", "tooling", "wasm"],
   "license": "MIT",
   "repository": {

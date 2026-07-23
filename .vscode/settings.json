@@ -1,4 +1,46 @@
 {
+	"rust-analyzer.linkedProjects": ["Cargo.toml", "wasm/Cargo.toml"],
+	"rust-analyzer.check.command": "clippy",
+	"rust-analyzer.cargo.targetDir": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	},
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
+	"javascript.format.enable": false,
+	"typescript.format.enable": false,
+	"files.exclude": {
+		"**/target": true,
+		"**/pkg": true,
+		"dist": true,
+		"out": true,
+		"build": true,
+		"apps/workbench/public/wasm": true,
+		"extensions": true,
+		"apps/desktop/gen": true,
+		"coverage": true
+	},
+	"search.exclude": {
+		"**/target": true,
+		"**/pkg": true,
+		"dist": true,
+		"out": true,
+		"build": true,
+		"apps/workbench/public/wasm": true,
+		"extensions": true,
+		"apps/desktop/gen": true,
+		"coverage": true,
+		"bun.lock": true
+	},
+	"files.watcherExclude": {
+		"**/target/**": true,
+		"**/node_modules/**": true,
+		"**/dist/**": true,
+		"**/pkg/**": true
+	},
 	"cSpell.words": [
 		"aabbcc",
 		"ABDE",
@@ -255,7 +297,12 @@
 		"zdir",
 		"zdot",
 		"zdotdir",
-		"שלום"
+		"שלום",
+		"tamasfe",
+		"vadimcn",
+		"esbenp",
+		"dbaeumer",
+		"rustc"
 	],
 	"cSpell.ignorePaths": [
 		"node_modules/**",
@@ -276,47 +323,5 @@
 		"packages/editor/**",
 		"packages/workbench/**",
 		"packages/vscode-dts/**"
-	],
-	"rust-analyzer.linkedProjects": ["Cargo.toml", "wasm/Cargo.toml"],
-	"rust-analyzer.check.command": "clippy",
-	"rust-analyzer.cargo.targetDir": true,
-	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "biomejs.biome",
-	"[rust]": {
-		"editor.defaultFormatter": "rust-lang.rust-analyzer"
-	},
-	"[toml]": {
-		"editor.defaultFormatter": "tamasfe.even-better-toml"
-	},
-	"javascript.format.enable": false,
-	"typescript.format.enable": false,
-	"files.exclude": {
-		"**/target": true,
-		"**/pkg": true,
-		"dist": true,
-		"out": true,
-		"build": true,
-		"apps/workbench/public/wasm": true,
-		"extensions": true,
-		"apps/desktop/gen": true,
-		"coverage": true
-	},
-	"search.exclude": {
-		"**/target": true,
-		"**/pkg": true,
-		"dist": true,
-		"out": true,
-		"build": true,
-		"apps/workbench/public/wasm": true,
-		"extensions": true,
-		"apps/desktop/gen": true,
-		"coverage": true,
-		"bun.lock": true
-	},
-	"files.watcherExclude": {
-		"**/target/**": true,
-		"**/node_modules/**": true,
-		"**/dist/**": true,
-		"**/pkg/**": true
-	}
+	]
 }

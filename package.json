@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "packageManager": "bun@1.3.14",
   "private": true,
-  "description": "SideX — VS Code's workbench ported to Tauri (Rust backend + OS-native webview).",
+  "description": "VS Code's workbench ported to Tauri (Rust backend + OS-native webview).",
   "keywords": ["editor", "ide", "tauri", "vscode", "webview"],
   "license": "MIT",
   "repository": {
@@ -22,6 +22,8 @@
     "dev": "bun run setup && bun run build:wasm -- --optional && node --max-old-space-size=8192 node_modules/vite/bin/vite.js --config apps/workbench/vite.config.ts",
     "build": "bun run setup && bun run build:wasm && node --max-old-space-size=12288 node_modules/vite/bin/vite.js build --config apps/workbench/vite.config.ts",
     "postbuild": "bun run packages/build/src/postbuild/cli.ts",
+    "parity:check": "bun packages/build/src/parity/cli.ts check",
+    "parity:gen": "bun packages/build/src/parity/cli.ts gen",
     "preview": "vite preview --config apps/workbench/vite.config.ts",
     "tauri": "tauri",
     "lint": "biome lint apps packages",
