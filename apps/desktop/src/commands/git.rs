@@ -595,7 +595,7 @@ mod file_log_tests {
             .current_dir(dir)
             .status()
             .unwrap();
-        assert!(status.success(), "git {:?} failed", args);
+        assert!(status.success(), "git {args:?} failed");
     }
 
     #[tokio::test]
