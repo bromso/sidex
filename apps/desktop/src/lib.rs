@@ -653,6 +653,7 @@ pub fn run() {
             commands::git_diff,
             commands::git_log,
             commands::git_file_log,
+            commands::git_show_at_commit,
             commands::git_add,
             commands::git_commit,
             commands::git_checkout,

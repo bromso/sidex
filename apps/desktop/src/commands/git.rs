@@ -367,6 +367,16 @@ pub async fn git_show(path: String, file: String) -> Result<Vec<u8>, String> {
 }
 
 #[tauri::command]
+pub async fn git_show_at_commit(
+    root: String,
+    hash: String,
+    path: String,
+) -> Result<String, String> {
+    validate_path(&root)?;
+    sidex_git::operations::show_at_commit(Path::new(&root), &hash, &path).map_err(git_err)
+}
+
+#[tauri::command]
 pub async fn git_run(path: String, args: Vec<String>) -> Result<String, String> {
     validate_path(&path)?;
     let repo = Path::new(&path);
