@@ -652,6 +652,7 @@ pub fn run() {
             commands::git_status,
             commands::git_diff,
             commands::git_log,
+            commands::git_file_log,
             commands::git_add,
             commands::git_commit,
             commands::git_checkout,

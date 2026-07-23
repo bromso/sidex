@@ -138,6 +138,37 @@ pub async fn git_log(path: String, limit: Option<u32>) -> Result<Vec<GitLogEntry
 }
 
 #[tauri::command]
+pub async fn git_file_log(
+    root: String,
+    path: String,
+    limit: Option<u32>,
+) -> Result<Vec<GitLogEntry>, String> {
+    validate_path(&root)?;
+    let repo = Path::new(&root);
+    let file = Path::new(&path);
+    let count = limit.unwrap_or(50) as usize;
+
+    let commits = sidex_git::log::get_file_log(repo, file, count).map_err(git_err)?;
+
+    let entries = commits
+        .into_iter()
+        .map(|c| GitLogEntry {
+            hash: c.hash,
+            message: c.message,
+            author: c.author,
+            date: c.date,
+            parent_hashes: None,
+            email: None,
+            files_changed: None,
+            insertions: None,
+            deletions: None,
+        })
+        .collect();
+
+    Ok(entries)
+}
+
+#[tauri::command]
 pub async fn git_add(path: String, files: Vec<String>) -> Result<(), String> {
     validate_path(&path)?;
     let repo = Path::new(&path);
@@ -541,4 +572,46 @@ pub async fn git_get_remotes(path: String) -> Result<Vec<RemoteInfo>, String> {
     validate_path(&path)?;
     let repo = Path::new(&path);
     sidex_git::get_remotes(repo).map_err(git_err)
+}
+
+#[cfg(test)]
+mod file_log_tests {
+    use super::*;
+    use std::process::Command;
+
+    fn run(dir: &std::path::Path, args: &[&str]) {
+        let status = Command::new("git")
+            .args(args)
+            .current_dir(dir)
+            .status()
+            .unwrap();
+        assert!(status.success(), "git {:?} failed", args);
+    }
+
+    #[tokio::test]
+    async fn git_file_log_returns_only_the_files_history() {
+        let tmp = std::env::temp_dir().join(format!("sidex-tl-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        std::fs::create_dir_all(&tmp).unwrap();
+        run(&tmp, &["init", "-q"]);
+        run(&tmp, &["config", "user.email", "t@t.t"]);
+        run(&tmp, &["config", "user.name", "t"]);
+        std::fs::write(tmp.join("a.txt"), "1").unwrap();
+        run(&tmp, &["add", "a.txt"]);
+        run(&tmp, &["commit", "-qm", "a1"]);
+        std::fs::write(tmp.join("b.txt"), "x").unwrap();
+        run(&tmp, &["add", "b.txt"]);
+        run(&tmp, &["commit", "-qm", "b1"]);
+        std::fs::write(tmp.join("a.txt"), "2").unwrap();
+        run(&tmp, &["add", "a.txt"]);
+        run(&tmp, &["commit", "-qm", "a2"]);
+
+        let root = tmp.to_string_lossy().into_owned();
+        let file = tmp.join("a.txt").to_string_lossy().into_owned();
+        let entries = git_file_log(root, file, Some(50)).await.unwrap();
+
+        let msgs: Vec<&str> = entries.iter().map(|e| e.message.trim()).collect();
+        assert_eq!(msgs, vec!["a2", "a1"]); // only a.txt history, newest first, no "b1"
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
 }
