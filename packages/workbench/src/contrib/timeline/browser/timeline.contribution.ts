@@ -20,8 +20,10 @@ import {
 } from '../../../common/contributions.js';
 import { Extensions, IViewDescriptor, IViewsRegistry } from '../../../common/views.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
+import { IWorkingCopyHistoryService } from '../../../services/workingCopy/common/workingCopyHistory.js';
 import { VIEW_CONTAINER } from '../../files/browser/explorerViewlet.js';
 import { GIT_TIMELINE_SCHEME, GitTimelineContentProvider, GitTimelineProvider } from './gitTimelineProvider.js';
+import { LocalHistoryTimelineProvider } from './localHistoryTimelineProvider.js';
 import { TimelinePane } from './timelinePane.js';
 
 // The service registers itself via registerSingleton on import.
@@ -55,8 +57,8 @@ CommandsRegistry.registerCommand('timeline.openDiff', async (accessor: ServicesA
 	});
 });
 
-// Registers the built-in timeline providers (currently: git per-file history) and their
-// content providers. Local history (Task 6) registers its provider inside this same class.
+// Registers the built-in timeline providers (git per-file history, local save history) and
+// their content providers.
 class TimelineProvidersContribution extends Disposable implements IWorkbenchContribution {
 	static readonly ID = 'sidex.contrib.timelineProviders';
 
@@ -65,7 +67,8 @@ class TimelineProvidersContribution extends Disposable implements IWorkbenchCont
 		@IWorkspaceContextService contextService: IWorkspaceContextService,
 		@ITextModelService textModelService: ITextModelService,
 		@IModelService modelService: IModelService,
-		@ILanguageService languageService: ILanguageService
+		@ILanguageService languageService: ILanguageService,
+		@IWorkingCopyHistoryService historyService: IWorkingCopyHistoryService
 	) {
 		super();
 		const git = this._register(new GitTimelineProvider(contextService));
@@ -78,6 +81,10 @@ class TimelineProvidersContribution extends Disposable implements IWorkbenchCont
 				new GitTimelineContentProvider(modelService, languageService)
 			)
 		);
+
+		const local = this._register(new LocalHistoryTimelineProvider(historyService));
+		timelineService.registerTimelineProvider(local);
+		this._register({ dispose: () => timelineService.unregisterTimelineProvider(local.id) });
 	}
 }
 
