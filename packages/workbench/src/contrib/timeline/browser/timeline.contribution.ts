@@ -2,19 +2,31 @@
  *  SideX: registers the Timeline view into the Explorer and the generic openDiff command.
  *--------------------------------------------------------------------------------------------*/
 
+import { Disposable } from '@sidex/base/common/lifecycle.js';
 import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { ITextModelService } from '@sidex/editor/common/services/resolverService.js';
 import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
 import { SyncDescriptor } from '@sidex/platform/instantiation/common/descriptors.js';
 import { ServicesAccessor } from '@sidex/platform/instantiation/common/instantiation.js';
 import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import {
+	IWorkbenchContribution,
+	registerWorkbenchContribution2,
+	WorkbenchPhase
+} from '../../../common/contributions.js';
 import { Extensions, IViewDescriptor, IViewsRegistry } from '../../../common/views.js';
 import { IEditorService } from '../../../services/editor/common/editorService.js';
 import { VIEW_CONTAINER } from '../../files/browser/explorerViewlet.js';
+import { GIT_TIMELINE_SCHEME, GitTimelineContentProvider, GitTimelineProvider } from './gitTimelineProvider.js';
 import { TimelinePane } from './timelinePane.js';
 
 // The service registers itself via registerSingleton on import.
 import './timelineService.js';
+import { ITimelineService } from '../common/timeline.js';
 
 const viewDescriptor: IViewDescriptor = {
 	id: TimelinePane.ID,
@@ -42,3 +54,35 @@ CommandsRegistry.registerCommand('timeline.openDiff', async (accessor: ServicesA
 		options: { pinned: true }
 	});
 });
+
+// Registers the built-in timeline providers (currently: git per-file history) and their
+// content providers. Local history (Task 6) registers its provider inside this same class.
+class TimelineProvidersContribution extends Disposable implements IWorkbenchContribution {
+	static readonly ID = 'sidex.contrib.timelineProviders';
+
+	constructor(
+		@ITimelineService timelineService: ITimelineService,
+		@IWorkspaceContextService contextService: IWorkspaceContextService,
+		@ITextModelService textModelService: ITextModelService,
+		@IModelService modelService: IModelService,
+		@ILanguageService languageService: ILanguageService
+	) {
+		super();
+		const git = this._register(new GitTimelineProvider(contextService));
+		timelineService.registerTimelineProvider(git);
+		this._register({ dispose: () => timelineService.unregisterTimelineProvider(git.id) });
+
+		this._register(
+			textModelService.registerTextModelContentProvider(
+				GIT_TIMELINE_SCHEME,
+				new GitTimelineContentProvider(modelService, languageService)
+			)
+		);
+	}
+}
+
+registerWorkbenchContribution2(
+	TimelineProvidersContribution.ID,
+	TimelineProvidersContribution,
+	WorkbenchPhase.AfterRestored
+);
