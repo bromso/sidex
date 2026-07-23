@@ -65,6 +65,13 @@ entries:
     summary: contrib/snippets wired
     signals:
       contrib: contrib/snippets
+  - id: local-history
+    area: Local History
+    status: done
+    summary: Working-copy history service + timeline provider surfacing per-file snapshots
+    evidence:
+      - packages/workbench/src/services/workingCopy/browser/workingCopyHistoryService.ts
+      - packages/workbench/src/contrib/timeline/browser/localHistoryTimelineProvider.ts
   - id: testing
     area: Testing
     status: partial
@@ -133,8 +140,8 @@ entries:
       contrib: contrib/comments
   - id: timeline
     area: Timeline
-    status: unwired
-    summary: contrib/timeline not imported anywhere
+    status: done
+    summary: Native Timeline view + git and local-history providers (contrib/timeline wired)
     signals:
       contrib: contrib/timeline
   - id: merge-editor

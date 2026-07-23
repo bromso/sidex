@@ -616,6 +616,12 @@ pub fn remote_list(repo_root: &Path) -> GitResult<Vec<GitRemote>> {
     Ok(remotes)
 }
 
+/// Returns the content of `rel_path` as it existed at `hash` (`git show <hash>:<rel_path>`).
+pub fn show_at_commit(repo_root: &Path, hash: &str, rel_path: &str) -> GitResult<String> {
+    let spec = format!("{hash}:{rel_path}");
+    crate::cmd::run_git(repo_root, &["show", &spec])
+}
+
 /// Show the HEAD version of a file as raw bytes.
 pub fn show_file(repo_root: &Path, file: &str) -> GitResult<Vec<u8>> {
     let rev_file = format!("HEAD:{file}");
@@ -1045,5 +1051,50 @@ mod tests {
         let tmp = TempDir::new().unwrap();
         init(tmp.path()).unwrap();
         assert!(tmp.path().join(".git").exists());
+    }
+}
+
+#[cfg(test)]
+mod show_at_commit_tests {
+    use super::*;
+    use std::process::Command;
+
+    fn run(dir: &std::path::Path, args: &[&str]) {
+        assert!(Command::new("git")
+            .args(args)
+            .current_dir(dir)
+            .status()
+            .unwrap()
+            .success());
+    }
+
+    #[test]
+    fn show_at_commit_returns_file_content_at_that_commit() {
+        let tmp = std::env::temp_dir().join(format!("sidex-show-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        std::fs::create_dir_all(&tmp).unwrap();
+        run(&tmp, &["init", "-q"]);
+        run(&tmp, &["config", "user.email", "t@t.t"]);
+        run(&tmp, &["config", "user.name", "t"]);
+        std::fs::write(tmp.join("a.txt"), "first").unwrap();
+        run(&tmp, &["add", "a.txt"]);
+        run(&tmp, &["commit", "-qm", "c1"]);
+        let hash = String::from_utf8(
+            Command::new("git")
+                .args(["rev-parse", "HEAD"])
+                .current_dir(&tmp)
+                .output()
+                .unwrap()
+                .stdout,
+        )
+        .unwrap()
+        .trim()
+        .to_string();
+        std::fs::write(tmp.join("a.txt"), "second").unwrap();
+        run(&tmp, &["commit", "-aqm", "c2"]);
+
+        let content = show_at_commit(&tmp, &hash, "a.txt").unwrap();
+        assert_eq!(content, "first");
+        let _ = std::fs::remove_dir_all(&tmp);
     }
 }

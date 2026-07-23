@@ -95,6 +95,7 @@ boundary, run `bun run tauri dev` and confirm the "Done" capabilities end-to-end
 - [ ] **Git** — the SCM panel shows status and the current branch for a real repository.
 - [ ] **Search** — a workspace search for a known string returns the expected matches.
 - [ ] **Extension host** — starts with no errors in the devtools console, and a built-in extension activates.
+- [ ] **Timeline** — open a tracked file, open the Timeline view; git commit history and local edit history both list, newest first, and clicking an entry opens a diff.
 - [ ] **Window/dialogs** — native open/save dialogs appear and return paths; window title updates.
 
 ## Questions?
