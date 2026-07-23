@@ -5,6 +5,7 @@
 import * as dom from '@sidex/base/browser/dom.js';
 import { IListRenderer, IListVirtualDelegate } from '@sidex/base/browser/ui/list/list.js';
 import { CancellationToken } from '@sidex/base/common/cancellation.js';
+import { onUnexpectedError } from '@sidex/base/common/errors.js';
 import { URI } from '@sidex/base/common/uri.js';
 import * as nls from '@sidex/base/nls.js';
 import { ICommandService } from '@sidex/platform/commands/common/commands.js';
@@ -93,9 +94,9 @@ export class TimelinePane extends ViewPane {
 			hoverService
 		);
 
-		this._register(this.editorService.onDidActiveEditorChange(() => this.refresh()));
-		this._register(this.timelineService.onDidChangeProviders(() => this.refresh()));
-		this._register(this.timelineService.onDidChangeTimeline(() => this.refresh()));
+		this._register(this.editorService.onDidActiveEditorChange(() => this.refresh().catch(onUnexpectedError)));
+		this._register(this.timelineService.onDidChangeProviders(() => this.refresh().catch(onUnexpectedError)));
+		this._register(this.timelineService.onDidChangeTimeline(() => this.refresh().catch(onUnexpectedError)));
 	}
 
 	protected override renderBody(container: HTMLElement): void {
@@ -116,12 +117,14 @@ export class TimelinePane extends ViewPane {
 			this.list.onDidOpen(e => {
 				const item = e.element;
 				if (item?.command) {
-					this.commandService.executeCommand(item.command.id, ...(item.command.arguments ?? []));
+					this.commandService
+						.executeCommand(item.command.id, ...(item.command.arguments ?? []))
+						.catch(onUnexpectedError);
 				}
 			})
 		);
 
-		this.refresh();
+		this.refresh().catch(onUnexpectedError);
 	}
 
 	protected override layoutBody(height: number, width: number): void {
