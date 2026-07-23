@@ -49,7 +49,12 @@ export class GitTimelineProvider extends Disposable implements TimelineProvider 
 			return { source: this.id, items: [] };
 		}
 		const root = folder.uri.fsPath;
-		const relPath = uri.fsPath.startsWith(root) ? uri.fsPath.slice(root.length).replace(/^[/\\]/, '') : uri.fsPath;
+		const relPath = uri.fsPath.startsWith(root)
+			? uri.fsPath
+					.slice(root.length)
+					.replace(/^[/\\]/, '')
+					.replaceAll('\\', '/')
+			: uri.fsPath;
 
 		let entries: RustGitLogEntry[];
 		try {
