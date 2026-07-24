@@ -1303,6 +1303,8 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 
 		this._register(
 			CommandsRegistry.registerCommand('git.openAllChanges', async accessor => {
+				const editorService = accessor.get(IEditorService);
+				const instantiationService = accessor.get(IInstantiationService);
 				try {
 					const status = await invokeGit<TauriGitStatus>('git_status', { path: rootPath });
 					if (!status?.changes?.length) {
@@ -1310,14 +1312,19 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 					}
 					const descriptors = buildWorkingTreeDescriptors(provider.rootUri, status.changes, GIT_ORIGINAL_SCHEME);
 					const source = URI.from({ scheme: 'scm-multi-diff', path: `/${rootPath}/working-tree` });
-					const editorService = accessor.get(IEditorService);
-					const instantiationService = accessor.get(IInstantiationService);
 					const input = instantiationService.createInstance(
 						MultiDiffEditorInput,
 						source,
 						'Working Tree Changes',
 						descriptors
 					);
+					// Close any already-open tab for this source so the fresh input (current
+					// changes) opens instead of `editorService.openEditor` reusing the stale one
+					// (MultiDiffEditorInput.matches() compares multiDiffSource, which is stable).
+					const existing = editorService.findEditors(source);
+					if (existing.length) {
+						await editorService.closeEditors(existing);
+					}
 					await editorService.openEditor(input);
 				} catch (err) {
 					console.error('[TauriGit] open all changes failed', err);

@@ -68,4 +68,10 @@ export class MultiDiffEditor extends EditorPane {
 	override getControl(): MultiDiffEditorWidget | undefined {
 		return this._widget;
 	}
+
+	override dispose(): void {
+		this._viewModel?.dispose();
+		this._viewModel = undefined;
+		super.dispose();
+	}
 }
