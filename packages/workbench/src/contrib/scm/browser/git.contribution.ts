@@ -4,66 +4,76 @@
  *  instead of the VS Code extension host protocol.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '@sidex/base/common/lifecycle.js';
-import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import type { CancellationToken } from '@sidex/base/common/cancellation.js';
+import type { Event } from '@sidex/base/common/event.js';
 import { Emitter } from '@sidex/base/common/event.js';
-import { observableValue } from '@sidex/base/common/observable.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import type { IObservable } from '@sidex/base/common/observable.js';
-import { URI } from '@sidex/base/common/uri.js';
+import { observableValue } from '@sidex/base/common/observable.js';
+import { basename, relativePath } from '@sidex/base/common/resources.js';
 import { ResourceTree } from '@sidex/base/common/resourceTree.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
-import { basename, relativePath } from '@sidex/base/common/resources.js';
-import { Schemas } from '@sidex/base/common/network.js';
-import { MarkdownString } from '@sidex/base/common/htmlContent.js';
-import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
-import type { IWorkbenchContribution } from '../../../common/contributions.js';
-import {
-	ISCMService,
-	ISCMProvider,
-	ISCMResource,
-	ISCMResourceGroup,
-	ISCMResourceDecorations,
-	ISCMActionButtonDescriptor
-} from '../common/scm.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import type { Command } from '@sidex/editor/common/languages.js';
+import type { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import type {
-	ISCMHistoryProvider,
-	ISCMHistoryOptions,
+	IFileChange,
+	IFileDeleteOptions,
+	IFileOverwriteOptions,
+	IFileSystemProvider,
+	IFileWriteOptions,
+	IStat,
+	IWatchOptions
+} from '@sidex/platform/files/common/files.js';
+import {
+	FilePermission,
+	FileSystemProviderCapabilities,
+	FileType,
+	IFileService
+} from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import type { IWorkbenchContribution } from '../../../common/contributions.js';
+import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
+import {
+	IDecorationData,
+	IDecorationsProvider,
+	IDecorationsService
+} from '../../../services/decorations/common/decorations.js';
+import { IEditorService } from '../../../services/editor/common/editorService.js';
+import {
+	buildWorkingTreeDescriptors,
+	MultiDiffEditorInput
+} from '../../multiDiffEditor/browser/multiDiffEditorInput.js';
+import type { ISCMArtifactProvider } from '../common/artifact.js';
+import type {
 	ISCMHistoryItem,
 	ISCMHistoryItemChange,
 	ISCMHistoryItemRef,
-	ISCMHistoryItemRefsChangeEvent
+	ISCMHistoryItemRefsChangeEvent,
+	ISCMHistoryOptions,
+	ISCMHistoryProvider
 } from '../common/history.js';
-import type { CancellationToken } from '@sidex/base/common/cancellation.js';
-import type { ISCMArtifactProvider } from '../common/artifact.js';
-import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
-import { IModelService } from '@sidex/editor/common/services/model.js';
-import { ILanguageService } from '@sidex/editor/common/languages/language.js';
-import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
-import { ILogService } from '@sidex/platform/log/common/log.js';
-import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
-import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
-import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
-import { IFileService } from '@sidex/platform/files/common/files.js';
-import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
-import { FileSystemProviderCapabilities, FileType, FilePermission } from '@sidex/platform/files/common/files.js';
-import type {
-	IFileSystemProvider,
-	IStat,
-	IFileDeleteOptions,
-	IFileOverwriteOptions,
-	IFileWriteOptions,
-	IWatchOptions,
-	IFileChange
-} from '@sidex/platform/files/common/files.js';
-import type { ITextModel } from '@sidex/editor/common/model.js';
-import type { Command } from '@sidex/editor/common/languages.js';
-import type { Event } from '@sidex/base/common/event.js';
 import {
-	IDecorationsService,
-	IDecorationsProvider,
-	IDecorationData
-} from '../../../services/decorations/common/decorations.js';
-import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+	ISCMActionButtonDescriptor,
+	ISCMProvider,
+	ISCMResource,
+	ISCMResourceDecorations,
+	ISCMResourceGroup,
+	ISCMService
+} from '../common/scm.js';
 import { historyItemRefColor, historyItemRemoteRefColor } from './scmHistory.js';
 
 // ─── Tauri invoke() bridge ──────────────────────────────────────────────────
@@ -1292,27 +1302,23 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 		);
 
 		this._register(
-			CommandsRegistry.registerCommand('git.openAllChanges', async () => {
+			CommandsRegistry.registerCommand('git.openAllChanges', async accessor => {
 				try {
-					const commandService = (globalThis as any).__sidex_commandService;
-					if (!commandService) {
-						return;
-					}
 					const status = await invokeGit<TauriGitStatus>('git_status', { path: rootPath });
-					if (!status) {
+					if (!status?.changes?.length) {
 						return;
 					}
-					for (const change of status.changes) {
-						const fileUri = URI.joinPath(provider.rootUri, change.path);
-						if (change.status === 'untracked' || change.status === 'added') {
-							await commandService.executeCommand('vscode.open', fileUri);
-						} else {
-							const relPath = change.path;
-							const originalUri = URI.from({ scheme: GIT_ORIGINAL_SCHEME, path: `/${relPath}` });
-							const fileName = basename(fileUri);
-							await commandService.executeCommand('vscode.diff', originalUri, fileUri, `${fileName} (Working Tree)`);
-						}
-					}
+					const descriptors = buildWorkingTreeDescriptors(provider.rootUri, status.changes, GIT_ORIGINAL_SCHEME);
+					const source = URI.from({ scheme: 'scm-multi-diff', path: `/${rootPath}/working-tree` });
+					const editorService = accessor.get(IEditorService);
+					const instantiationService = accessor.get(IInstantiationService);
+					const input = instantiationService.createInstance(
+						MultiDiffEditorInput,
+						source,
+						'Working Tree Changes',
+						descriptors
+					);
+					await editorService.openEditor(input);
 				} catch (err) {
 					console.error('[TauriGit] open all changes failed', err);
 				}
