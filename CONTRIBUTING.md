@@ -96,6 +96,7 @@ boundary, run `bun run tauri dev` and confirm the "Done" capabilities end-to-end
 - [ ] **Search** — a workspace search for a known string returns the expected matches.
 - [ ] **Extension host** — starts with no errors in the devtools console, and a built-in extension activates.
 - [ ] **Timeline** — open a tracked file, open the Timeline view; git commit history and local edit history both list, newest first, and clicking an entry opens a diff.
+- [ ] **Multi-diff** — make several edits (modify/add/delete files), run "Open All Changes" from the SCM view; one tab opens showing every changed file's diff, scrollable, with added/deleted files rendered one-sided.
 - [ ] **Window/dialogs** — native open/save dialogs appear and return paths; window title updates.
 
 ## Questions?

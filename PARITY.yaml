@@ -152,8 +152,8 @@ entries:
       contrib: contrib/mergeEditor
   - id: multi-diff
     area: Multi-diff Editor
-    status: unwired
-    summary: contrib/multiDiffEditor not imported
+    status: done
+    summary: MultiDiffEditor pane hosts the multi-diff widget; git.openAllChanges opens one multi-file diff
     signals:
       contrib: contrib/multiDiffEditor
   - id: custom-editors
