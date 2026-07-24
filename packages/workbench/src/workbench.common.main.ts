@@ -214,6 +214,9 @@ import './contrib/search/browser/searchView.js';
 // Search Editor
 import './contrib/searchEditor/browser/searchEditor.contribution.js';
 
+// Multi Diff Editor
+import './contrib/multiDiffEditor/browser/multiDiffEditor.contribution.js';
+
 // Sash
 import './contrib/sash/browser/sash.contribution.js';
 
