@@ -179,7 +179,7 @@ import: `import './contrib/mergeEditor/browser/mergeEditor.contribution.js';`
   focuses the SCM view. This mirrors `extensions/git/src/commands.ts:1829`.
 - **Provider fix.** `TauriGitOriginalFileProvider.readFile` currently falls back
   to HEAD content when `git show` fails. Change: when `resource.query` is
-  non-empty and not `HEAD`, a failed show returns an **empty** buffer (a missing
+  non-empty, a failed show returns an **empty** buffer (a missing
   stage — e.g. no base for an `AA` conflict — must read as empty, not as HEAD).
   The HEAD fallback stays for the empty-query case Timeline and Multi-diff rely on.
 
