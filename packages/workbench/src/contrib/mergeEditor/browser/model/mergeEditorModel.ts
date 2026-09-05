@@ -9,6 +9,7 @@ import {
 	autorunHandleChanges,
 	derived,
 	IObservable,
+	IObservableWithChange,
 	IReader,
 	ISettableObservable,
 	ITransaction,
@@ -327,7 +328,8 @@ export class MergeEditorModel extends EditorModel {
 	public readonly baseInput1Diffs;
 
 	public readonly baseInput2Diffs;
-	public readonly baseResultDiffs;
+	// SideX: explicit type; TS 6 infers `unknown` for this untyped property, breaking `.read(reader)` consumers in the view.
+	public readonly baseResultDiffs: IObservableWithChange<DetailedLineRangeMapping[], TextModelDiffChangeReason>;
 	public get isApplyingEditInResult(): boolean {
 		return this.resultTextModelDiffs.isApplyingChange;
 	}

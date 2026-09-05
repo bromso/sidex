@@ -220,6 +220,9 @@ import './contrib/codeEditor/browser/toggleWordWrap.js';
 // Multi Diff Editor
 import './contrib/multiDiffEditor/browser/multiDiffEditor.contribution.js';
 
+// Merge Editor
+import './contrib/mergeEditor/browser/mergeEditor.contribution.js';
+
 // Sash
 import './contrib/sash/browser/sash.contribution.js';
 
