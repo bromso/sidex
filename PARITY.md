@@ -15,6 +15,7 @@ Feature-area parity with stock VS Code. Regenerate with `bun run parity:gen`;
 | Git / SCM | ~55 git commands via crates/git |  |
 | Keybindings | Chord resolution via crates/keymap |  |
 | Local History | Working-copy history service + timeline provider surfacing per-file snapshots | `packages/workbench/src/services/workingCopy/browser/workingCopyHistoryService.ts`, `packages/workbench/src/contrib/timeline/browser/localHistoryTimelineProvider.ts` |
+| Merge Editor | Three-way MergeEditor pane (verbatim port of contrib/mergeEditor); git opens UU/AA conflicts in it and git.acceptMerge stages the result | `packages/workbench/src/contrib/mergeEditor/browser/mergeEditor.contribution.ts`, `packages/workbench/src/contrib/scm/browser/git.contribution.ts` |
 | Multi-diff Editor | MultiDiffEditor pane hosts the multi-diff widget; git.openAllChanges opens one multi-file diff |  |
 | Search | Workspace grep + replace via commands/search.rs |  |
 | Settings / Config | JSONC modify via crates/settings |  |
@@ -50,7 +51,6 @@ Feature-area parity with stock VS Code. Regenerate with `bun run parity:gen`;
 | Custom Editors | contrib/customEditor not imported |  |
 | External URI Opener | contrib/externalUriOpener defines IExternalUriOpenerService but no implementation is ever registerSingleton'd; not imported by any entry file |  |
 | Interactive Window | contrib/interactive not imported |  |
-| Merge Editor | contrib/mergeEditor not imported |  |
 | Simple Browser | contrib/browserView is explicitly commented "stub for removed" browser view/CDP service; not imported |  |
 | Type Hierarchy | contrib/typeHierarchy has only the common type file — no browser/ peek UI or commands were ported |  |
 

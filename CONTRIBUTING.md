@@ -97,6 +97,7 @@ boundary, run `bun run tauri dev` and confirm the "Done" capabilities end-to-end
 - [ ] **Extension host** — starts with no errors in the devtools console, and a built-in extension activates.
 - [ ] **Timeline** — open a tracked file, open the Timeline view; git commit history and local edit history both list, newest first, and clicking an entry opens a diff.
 - [ ] **Multi-diff** — make several edits (modify/add/delete files), run "Open All Changes" from the SCM view; one tab opens showing every changed file's diff, scrollable, with added/deleted files rendered one-sided.
+- [ ] **Merge editor** — in a scratch repo, create a same-line conflict across two branches and `git merge`; in the SCM view click the file under Merge Changes; one tab opens with Current, Incoming and Result (base toggle in the toolbar); accept one side on a conflict and the Result updates; **Complete Merge** stages the file (it moves to Staged Changes) and the file on disk has no `<<<<<<<` markers. With `git.mergeEditor` set to false, clicking opens the plain file instead.
 - [ ] **Window/dialogs** — native open/save dialogs appear and return paths; window title updates.
 
 ## Questions?

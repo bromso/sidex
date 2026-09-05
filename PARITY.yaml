@@ -146,10 +146,13 @@ entries:
       contrib: contrib/timeline
   - id: merge-editor
     area: Merge Editor
-    status: unwired
-    summary: contrib/mergeEditor not imported
+    status: done
+    summary: Three-way MergeEditor pane (verbatim port of contrib/mergeEditor); git opens UU/AA conflicts in it and git.acceptMerge stages the result
     signals:
       contrib: contrib/mergeEditor
+    evidence:
+      - packages/workbench/src/contrib/mergeEditor/browser/mergeEditor.contribution.ts
+      - packages/workbench/src/contrib/scm/browser/git.contribution.ts
   - id: multi-diff
     area: Multi-diff Editor
     status: done
