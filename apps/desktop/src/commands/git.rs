@@ -13,6 +13,8 @@ pub struct GitChange {
     pub path: String,
     pub status: String,
     pub staged: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub conflict: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -87,6 +89,7 @@ pub async fn git_status(path: String) -> Result<GitStatus, String> {
             path: e.path,
             status: file_status_str(e.status).to_string(),
             staged: e.staged,
+            conflict: e.conflict,
         })
         .collect();
 
