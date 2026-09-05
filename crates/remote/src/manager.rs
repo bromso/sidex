@@ -165,7 +165,7 @@ impl RemoteManager {
 
     /// Connect via a remote tunnel (placeholder — requires a `TunnelClient`
     /// to be wired into `RemoteTransport`).
-    #[allow(clippy::unused_async)]
+    #[allow(unknown_lints, clippy::unused_async, clippy::unused_async_trait_impl)]
     pub async fn connect_tunnel(&mut self, _tunnel_id: &str) -> Result<ConnectionId> {
         bail!("tunnel transport not yet wired into RemoteTransport")
     }

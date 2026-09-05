@@ -134,31 +134,31 @@ import './services/editor/common/customEditorLabelService.js';
 import './services/dataChannel/browser/dataChannelService.js';
 import './services/log/common/defaultLogLevels.js';
 
-import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { OpenerService } from '@sidex/editor/browser/services/openerService.js';
+import { IMarkerDecorationsService } from '@sidex/editor/common/services/markerDecorations.js';
+import { MarkerDecorationsService } from '@sidex/editor/common/services/markerDecorationsService.js';
+import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
+import { TextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfigurationService.js';
+import { ContextKeyService } from '@sidex/platform/contextkey/browser/contextKeyService.js';
+import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
+import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
+import { ContextViewService } from '@sidex/platform/contextview/browser/contextViewService.js';
+import { IDownloadService } from '@sidex/platform/download/common/download.js';
+import { DownloadService } from '@sidex/platform/download/common/downloadService.js';
 import { GlobalExtensionEnablementService } from '@sidex/platform/extensionManagement/common/extensionEnablementService.js';
 import {
 	IAllowedExtensionsService,
 	IGlobalExtensionEnablementService
 } from '@sidex/platform/extensionManagement/common/extensionManagement.js';
-import { ContextViewService } from '@sidex/platform/contextview/browser/contextViewService.js';
-import { IContextViewService } from '@sidex/platform/contextview/browser/contextView.js';
-import { IListService, ListService } from '@sidex/platform/list/browser/listService.js';
-import { MarkerDecorationsService } from '@sidex/editor/common/services/markerDecorationsService.js';
-import { IMarkerDecorationsService } from '@sidex/editor/common/services/markerDecorations.js';
-import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
-import { MarkerService } from '@sidex/platform/markers/common/markerService.js';
-import { ContextKeyService } from '@sidex/platform/contextkey/browser/contextKeyService.js';
-import { IContextKeyService } from '@sidex/platform/contextkey/common/contextkey.js';
-import { ITextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfiguration.js';
-import { TextResourceConfigurationService } from '@sidex/editor/common/services/textResourceConfigurationService.js';
-import { IDownloadService } from '@sidex/platform/download/common/download.js';
-import { DownloadService } from '@sidex/platform/download/common/downloadService.js';
-import { OpenerService } from '@sidex/editor/browser/services/openerService.js';
-import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 import {
 	ExtensionStorageService,
 	IExtensionStorageService
 } from '@sidex/platform/extensionManagement/common/extensionStorage.js';
+import { InstantiationType, registerSingleton } from '@sidex/platform/instantiation/common/extensions.js';
+import { IListService, ListService } from '@sidex/platform/list/browser/listService.js';
+import { MarkerService } from '@sidex/platform/markers/common/markerService.js';
+import { IMarkerService } from '@sidex/platform/markers/common/markers.js';
+import { IOpenerService } from '@sidex/platform/opener/common/opener.js';
 // Null UserDataSync stubs (avoid importing heavy userDataSync modules)
 import '@sidex/platform/userDataSync/common/nullUserDataSync.js';
 import { AllowedExtensionsService } from '@sidex/platform/extensionManagement/common/allowedExtensionsService.js';
@@ -213,6 +213,15 @@ import './contrib/search/browser/searchView.js';
 
 // Search Editor
 import './contrib/searchEditor/browser/searchEditor.contribution.js';
+
+// Code Editor: word wrap toggle (also provides transient word-wrap state for the Merge Editor)
+import './contrib/codeEditor/browser/toggleWordWrap.js';
+
+// Multi Diff Editor
+import './contrib/multiDiffEditor/browser/multiDiffEditor.contribution.js';
+
+// Merge Editor
+import './contrib/mergeEditor/browser/mergeEditor.contribution.js';
 
 // Sash
 import './contrib/sash/browser/sash.contribution.js';
@@ -283,6 +292,9 @@ import './contrib/limitIndicator/browser/limitIndicator.contribution.js';
 
 // Themes
 import './contrib/themes/browser/themes.contribution.js';
+
+// Timeline
+import './contrib/timeline/browser/timeline.contribution.js';
 
 // Language Status
 import './contrib/languageStatus/browser/languageStatus.contribution.js';

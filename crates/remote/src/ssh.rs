@@ -724,7 +724,7 @@ impl SshTransport {
     }
 
     /// Reverse port forward: remote -> local.
-    #[allow(clippy::unused_async)]
+    #[allow(unknown_lints, clippy::unused_async, clippy::unused_async_trait_impl)]
     pub async fn reverse_forward_port(
         &self,
         remote_port: u16,

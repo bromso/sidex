@@ -16,7 +16,7 @@ bun run tauri dev           # run the desktop app (Tauri auto-discovers apps/des
 bun run dev                 # frontend only (Vite dev server on :1420)
 bun run build               # production frontend build → repo-root dist/
 
-bun test                    # JS tests — ONLY packages/build has tests (build tooling)
+bun test                    # JS tests — packages/build (build tooling) + one pure workbench test (contrib/mergeEditor/test)
 bun test packages/build/test/nls-transform.test.ts     # a single test file
 bun test -t "reads a plain string key"                 # a single test by name
 

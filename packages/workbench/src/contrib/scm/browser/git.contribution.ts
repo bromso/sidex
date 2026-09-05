@@ -4,66 +4,86 @@
  *  instead of the VS Code extension host protocol.
  *--------------------------------------------------------------------------------------------*/
 
-import { Disposable } from '@sidex/base/common/lifecycle.js';
-import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import type { CancellationToken } from '@sidex/base/common/cancellation.js';
+import type { Event } from '@sidex/base/common/event.js';
 import { Emitter } from '@sidex/base/common/event.js';
-import { observableValue } from '@sidex/base/common/observable.js';
+import { MarkdownString } from '@sidex/base/common/htmlContent.js';
+import type { IDisposable } from '@sidex/base/common/lifecycle.js';
+import { Disposable } from '@sidex/base/common/lifecycle.js';
+import { Schemas } from '@sidex/base/common/network.js';
 import type { IObservable } from '@sidex/base/common/observable.js';
-import { URI } from '@sidex/base/common/uri.js';
+import { observableValue } from '@sidex/base/common/observable.js';
+import { basename, relativePath } from '@sidex/base/common/resources.js';
 import { ResourceTree } from '@sidex/base/common/resourceTree.js';
 import { ThemeIcon } from '@sidex/base/common/themables.js';
-import { basename, relativePath } from '@sidex/base/common/resources.js';
-import { Schemas } from '@sidex/base/common/network.js';
-import { MarkdownString } from '@sidex/base/common/htmlContent.js';
-import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
-import type { IWorkbenchContribution } from '../../../common/contributions.js';
+import { URI } from '@sidex/base/common/uri.js';
+import { ILanguageService } from '@sidex/editor/common/languages/language.js';
+import type { Command } from '@sidex/editor/common/languages.js';
+import type { ITextModel } from '@sidex/editor/common/model.js';
+import { IModelService } from '@sidex/editor/common/services/model.js';
+import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
+import { CommandsRegistry, ICommandService } from '@sidex/platform/commands/common/commands.js';
+import { IConfigurationService } from '@sidex/platform/configuration/common/configuration.js';
 import {
-	ISCMService,
-	ISCMProvider,
-	ISCMResource,
-	ISCMResourceGroup,
-	ISCMResourceDecorations,
-	ISCMActionButtonDescriptor
-} from '../common/scm.js';
+	Extensions as ConfigurationExtensions,
+	ConfigurationScope,
+	IConfigurationRegistry
+} from '@sidex/platform/configuration/common/configurationRegistry.js';
+import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
 import type {
-	ISCMHistoryProvider,
-	ISCMHistoryOptions,
+	IFileChange,
+	IFileDeleteOptions,
+	IFileOverwriteOptions,
+	IFileSystemProvider,
+	IFileWriteOptions,
+	IStat,
+	IWatchOptions
+} from '@sidex/platform/files/common/files.js';
+import {
+	FilePermission,
+	FileSystemProviderCapabilities,
+	FileType,
+	IFileService
+} from '@sidex/platform/files/common/files.js';
+import { IInstantiationService } from '@sidex/platform/instantiation/common/instantiation.js';
+import { ILogService } from '@sidex/platform/log/common/log.js';
+import { INotificationService } from '@sidex/platform/notification/common/notification.js';
+import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
+import { Registry } from '@sidex/platform/registry/common/platform.js';
+import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
+import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
+import type { IWorkbenchContribution } from '../../../common/contributions.js';
+import { registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
+import {
+	IDecorationData,
+	IDecorationsProvider,
+	IDecorationsService
+} from '../../../services/decorations/common/decorations.js';
+import { IEditorService } from '../../../services/editor/common/editorService.js';
+import { MergeEditorInput } from '../../mergeEditor/browser/mergeEditorInput.js';
+import { ctxIsMergeEditor } from '../../mergeEditor/common/mergeEditor.js';
+import {
+	buildWorkingTreeDescriptors,
+	MultiDiffEditorInput
+} from '../../multiDiffEditor/browser/multiDiffEditorInput.js';
+import type { ISCMArtifactProvider } from '../common/artifact.js';
+import type {
 	ISCMHistoryItem,
 	ISCMHistoryItemChange,
 	ISCMHistoryItemRef,
-	ISCMHistoryItemRefsChangeEvent
+	ISCMHistoryItemRefsChangeEvent,
+	ISCMHistoryOptions,
+	ISCMHistoryProvider
 } from '../common/history.js';
-import type { CancellationToken } from '@sidex/base/common/cancellation.js';
-import type { ISCMArtifactProvider } from '../common/artifact.js';
-import { IWorkspaceContextService } from '@sidex/platform/workspace/common/workspace.js';
-import { IModelService } from '@sidex/editor/common/services/model.js';
-import { ILanguageService } from '@sidex/editor/common/languages/language.js';
-import { IUriIdentityService } from '@sidex/platform/uriIdentity/common/uriIdentity.js';
-import { ILogService } from '@sidex/platform/log/common/log.js';
-import { CommandsRegistry } from '@sidex/platform/commands/common/commands.js';
-import { MenuId, MenuRegistry } from '@sidex/platform/actions/common/actions.js';
-import { ContextKeyExpr } from '@sidex/platform/contextkey/common/contextkey.js';
-import { IFileService } from '@sidex/platform/files/common/files.js';
-import { IQuickInputService } from '@sidex/platform/quickinput/common/quickInput.js';
-import { FileSystemProviderCapabilities, FileType, FilePermission } from '@sidex/platform/files/common/files.js';
-import type {
-	IFileSystemProvider,
-	IStat,
-	IFileDeleteOptions,
-	IFileOverwriteOptions,
-	IFileWriteOptions,
-	IWatchOptions,
-	IFileChange
-} from '@sidex/platform/files/common/files.js';
-import type { ITextModel } from '@sidex/editor/common/model.js';
-import type { Command } from '@sidex/editor/common/languages.js';
-import type { Event } from '@sidex/base/common/event.js';
 import {
-	IDecorationsService,
-	IDecorationsProvider,
-	IDecorationData
-} from '../../../services/decorations/common/decorations.js';
-import { registerColor } from '@sidex/platform/theme/common/colorRegistry.js';
+	ISCMActionButtonDescriptor,
+	ISCMProvider,
+	ISCMResource,
+	ISCMResourceDecorations,
+	ISCMResourceGroup,
+	ISCMService
+} from '../common/scm.js';
 import { historyItemRefColor, historyItemRemoteRefColor } from './scmHistory.js';
 
 // ─── Tauri invoke() bridge ──────────────────────────────────────────────────
@@ -72,6 +92,8 @@ interface TauriGitChange {
 	path: string;
 	status: string;
 	staged: boolean;
+	/** Porcelain XY code for conflicts (`UU`, `AA`, `DU`, ...); absent otherwise. */
+	conflict?: string;
 }
 
 interface TauriGitStatus {
@@ -117,6 +139,11 @@ async function invokeGit<T>(cmd: string, args?: Record<string, unknown>): Promis
 // ─── Git Original File System Provider ──────────────────────────────────────
 
 const GIT_ORIGINAL_SCHEME = 'git-original';
+
+/** True for the status strings git_status emits for unmerged entries. */
+function isConflictStatus(status: string | undefined): boolean {
+	return status === 'conflicted' || status === 'conflict';
+}
 
 class TauriGitOriginalFileProvider implements IFileSystemProvider {
 	readonly capabilities = FileSystemProviderCapabilities.FileReadWrite | FileSystemProviderCapabilities.Readonly;
@@ -168,6 +195,12 @@ class TauriGitOriginalFileProvider implements IFileSystemProvider {
 			})) as string;
 			return new TextEncoder().encode(output);
 		} catch {
+			if (resource.query) {
+				// An explicit ref (a merge stage such as ':1' for a both-added
+				// conflict, or a commit) that git cannot show reads as empty —
+				// never as HEAD content.
+				return new Uint8Array();
+			}
 			try {
 				const bytes = (await invoke('git_show', { path: this._workspaceRoot, file: filePath })) as number[];
 				return new Uint8Array(bytes);
@@ -196,14 +229,27 @@ class TauriGitResource implements ISCMResource {
 		readonly sourceUri: URI,
 		private readonly _status: string,
 		private readonly _staged: boolean,
-		private readonly _workspaceRootUri: URI
+		private readonly _workspaceRootUri: URI,
+		/** Porcelain XY code when this resource is a merge conflict. */
+		readonly conflict?: string,
+		mergeEditorEnabled = false
 	) {
 		this.decorations = TauriGitResource._decorationForStatus(_status);
 		this.contextValue = _staged ? 'staged' : 'unstaged';
 
 		const relPath = relativePath(_workspaceRootUri, sourceUri) ?? sourceUri.path;
+		const isConflict = isConflictStatus(_status);
 
-		if (_status === 'untracked' || _status === 'added') {
+		if (isConflict) {
+			// Matches upstream: only both-modified / both-added conflicts get the
+			// three-way editor; delete/modify conflicts open the working-tree file.
+			const useMergeEditor = mergeEditorEnabled && (conflict === 'UU' || conflict === 'AA');
+			this.command = useMergeEditor
+				? { id: 'git.openMergeEditor', title: 'Open in Merge Editor' }
+				: { id: 'git.openFile', title: 'Open File' };
+			this.multiDiffEditorOriginalUri = URI.from({ scheme: GIT_ORIGINAL_SCHEME, path: `/${relPath}` });
+			this.multiDiffEditorModifiedUri = sourceUri;
+		} else if (_status === 'untracked' || _status === 'added') {
 			this.command = { id: 'git.openFile', title: 'Open File' };
 			this.multiDiffEditorOriginalUri = undefined;
 			this.multiDiffEditorModifiedUri = sourceUri;
@@ -231,6 +277,8 @@ class TauriGitResource implements ISCMResource {
 		}
 		if (this.command?.id === 'git.openDiff') {
 			await commandService.executeCommand('git.openDiff', this);
+		} else if (this.command?.id === 'git.openMergeEditor') {
+			await commandService.executeCommand('git.openMergeEditor', this);
 		} else {
 			await commandService.executeCommand('git.openFile', this);
 		}
@@ -747,7 +795,8 @@ class TauriGitSCMProvider extends Disposable implements ISCMProvider {
 		modelService: IModelService,
 		languageService: ILanguageService,
 		private readonly uriIdentityService: IUriIdentityService,
-		private readonly logService: ILogService
+		private readonly logService: ILogService,
+		private readonly _mergeEditorEnabled: () => boolean = () => true
 	) {
 		super();
 
@@ -824,14 +873,20 @@ class TauriGitSCMProvider extends Disposable implements ISCMProvider {
 		const stagedResources: ISCMResource[] = [];
 		const changesResources: ISCMResource[] = [];
 
-		const CONFLICT_XY_CODES = new Set(['UU', 'AA', 'DD', 'AU', 'UA', 'DU', 'UD']);
-		const isConflictStatus = (status: string): boolean =>
-			status === 'conflicted' || status === 'conflict' || CONFLICT_XY_CODES.has(status);
-
 		for (const change of status.changes) {
 			const fileUri = URI.joinPath(this.rootUri, change.path);
 			if (isConflictStatus(change.status)) {
-				mergeResources.push(new TauriGitResource(this._mergeGroup, fileUri, change.status, false, this.rootUri));
+				mergeResources.push(
+					new TauriGitResource(
+						this._mergeGroup,
+						fileUri,
+						change.status,
+						false,
+						this.rootUri,
+						change.conflict,
+						this._mergeEditorEnabled()
+					)
+				);
 			} else if (change.staged) {
 				stagedResources.push(new TauriGitResource(this._stagedGroup, fileUri, change.status, true, this.rootUri));
 			} else {
@@ -1089,6 +1144,7 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 		@ILogService private readonly logService: ILogService,
 		@IFileService private readonly fileService: IFileService,
 		@IDecorationsService private readonly decorationsService: IDecorationsService,
+		@IConfigurationService private readonly configurationService: IConfigurationService,
 		@IQuickInputService quickInputService: IQuickInputService
 	) {
 		super();
@@ -1129,7 +1185,15 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 			this.modelService,
 			this.languageService,
 			this.uriIdentityService,
-			this.logService
+			this.logService,
+			() => this.configurationService.getValue<boolean>('git.mergeEditor') !== false
+		);
+		this._register(
+			this.configurationService.onDidChangeConfiguration(e => {
+				if (e.affectsConfiguration('git.mergeEditor')) {
+					provider.refresh();
+				}
+			})
 		);
 
 		const repository = this.scmService.registerSCMProvider(provider);
@@ -1179,7 +1243,7 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 		});
 	}
 
-	private _registerDiffCommands(provider: TauriGitSCMProvider, _rootPath: string): void {
+	private _registerDiffCommands(provider: TauriGitSCMProvider, rootPath: string): void {
 		this._register(
 			CommandsRegistry.registerCommand('git.openDiff', async (_accessor, ...args: any[]) => {
 				try {
@@ -1204,6 +1268,84 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 				} catch (err) {
 					console.error('[TauriGit] open diff failed:', err);
 				}
+			})
+		);
+
+		this._register(
+			CommandsRegistry.registerCommand('git.openMergeEditor', async (accessor, ...args: any[]) => {
+				const commandService = accessor.get(ICommandService);
+				const editorService = accessor.get(IEditorService);
+				const notificationService = accessor.get(INotificationService);
+
+				const resource = args[0];
+				let uri: URI | undefined = resource?.sourceUri ?? (URI.isUri(resource) ? resource : undefined);
+				if (!uri) {
+					uri = editorService.activeEditor?.resource;
+				}
+				if (!uri || uri.scheme !== Schemas.file) {
+					notificationService.info('Open in Merge Editor needs a file inside the current git repository.');
+					return;
+				}
+				const relPath = relativePath(provider.rootUri, uri);
+				if (!relPath) {
+					notificationService.info('Open in Merge Editor needs a file inside the current git repository.');
+					return;
+				}
+
+				// Ours and theirs must be present; base may legitimately be absent (both-added).
+				// Probed with `cat-file -e` (existence only) rather than reading the blobs.
+				try {
+					await invokeGit('git_run', { path: rootPath, args: ['cat-file', '-e', `:2:${relPath}`] });
+					await invokeGit('git_run', { path: rootPath, args: ['cat-file', '-e', `:3:${relPath}`] });
+				} catch (err) {
+					notificationService.error(
+						`Cannot open ${relPath} in the merge editor: ${err instanceof Error ? err.message : String(err)}`
+					);
+					await commandService.executeCommand('vscode.open', uri);
+					return;
+				}
+
+				const stageUri = (stage: string) =>
+					URI.from({ scheme: GIT_ORIGINAL_SCHEME, path: `/${relPath}`, query: stage });
+				await commandService.executeCommand('_open.mergeEditor', {
+					base: stageUri(':1'),
+					input1: { uri: stageUri(':2'), title: 'Current' },
+					input2: { uri: stageUri(':3'), title: 'Incoming' },
+					output: uri
+				});
+			})
+		);
+
+		this._register(
+			CommandsRegistry.registerCommand('git.acceptMerge', async accessor => {
+				const commandService = accessor.get(ICommandService);
+				const editorService = accessor.get(IEditorService);
+				const notificationService = accessor.get(INotificationService);
+
+				const input = editorService.activeEditor;
+				if (!(input instanceof MergeEditorInput)) {
+					return;
+				}
+				const resultUri = input.result;
+
+				// Saves the result and closes the editor on success (upstream mergeEditor.acceptMerge).
+				const outcome = (await commandService.executeCommand('mergeEditor.acceptMerge')) as
+					| { successful: boolean }
+					| undefined;
+				if (!outcome?.successful) {
+					return;
+				}
+
+				try {
+					await invokeGit('git_add', { path: rootPath, files: [resultUri.fsPath] });
+				} catch (err) {
+					notificationService.error(
+						`Merge completed but staging ${basename(resultUri)} failed: ${err instanceof Error ? err.message : String(err)}`
+					);
+					return;
+				}
+				await provider.refresh();
+				await commandService.executeCommand('workbench.view.scm');
 			})
 		);
 
@@ -1292,27 +1434,30 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 		);
 
 		this._register(
-			CommandsRegistry.registerCommand('git.openAllChanges', async () => {
+			CommandsRegistry.registerCommand('git.openAllChanges', async accessor => {
+				const editorService = accessor.get(IEditorService);
+				const instantiationService = accessor.get(IInstantiationService);
 				try {
-					const commandService = (globalThis as any).__sidex_commandService;
-					if (!commandService) {
-						return;
-					}
 					const status = await invokeGit<TauriGitStatus>('git_status', { path: rootPath });
-					if (!status) {
+					if (!status?.changes?.length) {
 						return;
 					}
-					for (const change of status.changes) {
-						const fileUri = URI.joinPath(provider.rootUri, change.path);
-						if (change.status === 'untracked' || change.status === 'added') {
-							await commandService.executeCommand('vscode.open', fileUri);
-						} else {
-							const relPath = change.path;
-							const originalUri = URI.from({ scheme: GIT_ORIGINAL_SCHEME, path: `/${relPath}` });
-							const fileName = basename(fileUri);
-							await commandService.executeCommand('vscode.diff', originalUri, fileUri, `${fileName} (Working Tree)`);
-						}
+					const descriptors = buildWorkingTreeDescriptors(provider.rootUri, status.changes, GIT_ORIGINAL_SCHEME);
+					const source = URI.from({ scheme: 'scm-multi-diff', path: `/${rootPath}/working-tree` });
+					const input = instantiationService.createInstance(
+						MultiDiffEditorInput,
+						source,
+						'Working Tree Changes',
+						descriptors
+					);
+					// Close any already-open tab for this source so the fresh input (current
+					// changes) opens instead of `editorService.openEditor` reusing the stale one
+					// (MultiDiffEditorInput.matches() compares multiDiffSource, which is stable).
+					const existing = editorService.findEditors(source);
+					if (existing.length) {
+						await editorService.closeEditors(existing);
 					}
+					await editorService.openEditor(input);
 				} catch (err) {
 					console.error('[TauriGit] open all changes failed', err);
 				}
@@ -1380,7 +1525,8 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 						const commandService = (globalThis as any).__sidex_commandService;
 						if (commandService) {
 							const status = (resource as any)?._status;
-							if (status && status !== 'untracked' && status !== 'added' && status !== 'deleted') {
+							const isConflict = isConflictStatus(status);
+							if (status && !isConflict && status !== 'untracked' && status !== 'added' && status !== 'deleted') {
 								await commandService.executeCommand('git.openDiff', resource);
 							} else {
 								await commandService.executeCommand('vscode.open', uri);
@@ -1989,6 +2135,22 @@ CommandsRegistry.registerCommand('git.showOutput', async () => {
 	}
 });
 
+Registry.as<IConfigurationRegistry>(ConfigurationExtensions.Configuration).registerConfiguration({
+	id: 'git',
+	order: 6,
+	title: 'Git',
+	type: 'object',
+	scope: ConfigurationScope.WINDOW,
+	properties: {
+		'git.mergeEditor': {
+			type: 'boolean',
+			default: true,
+			description:
+				'Open both-modified and both-added merge conflicts in the three-way Merge Editor instead of the text editor.'
+		}
+	}
+});
+
 // ─── SCM Source Control ("...") menu items ──────────────────────────────────
 
 // Define submenus matching VS Code's Git extension
@@ -2331,4 +2493,27 @@ MenuRegistry.appendMenuItem(MenuId.SCMResourceContext, {
 	group: 'inline',
 	order: 1,
 	when: ContextKeyExpr.equals('scmResourceGroup', 'staged')
+});
+
+MenuRegistry.appendMenuItem(MenuId.EditorTitle, {
+	command: { id: 'git.acceptMerge', title: 'Complete Merge' },
+	when: ctxIsMergeEditor,
+	group: 'navigation',
+	order: 10
+});
+
+MenuRegistry.appendMenuItem(MenuId.SCMResourceContext, {
+	command: { id: 'git.openMergeEditor', title: 'Open in Merge Editor' },
+	when: ContextKeyExpr.equals('scmResourceGroup', 'merge'),
+	group: 'navigation',
+	order: 1
+});
+
+MenuRegistry.appendMenuItem(MenuId.CommandPalette, {
+	command: { id: 'git.openMergeEditor', title: 'Git: Open in Merge Editor' }
+});
+
+MenuRegistry.appendMenuItem(MenuId.CommandPalette, {
+	command: { id: 'git.acceptMerge', title: 'Git: Complete Merge' },
+	when: ctxIsMergeEditor
 });

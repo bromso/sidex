@@ -358,7 +358,7 @@ impl RemoteTransport for WslTransport {
 #[cfg(not(target_os = "windows"))]
 impl WslTransport {
     /// Connect to a named WSL distribution. Returns an error on non-Windows.
-    #[allow(clippy::unused_async)]
+    #[allow(unknown_lints, clippy::unused_async, clippy::unused_async_trait_impl)]
     pub async fn connect(_distro: &str) -> Result<Self> {
         wsl_unavailable()
     }

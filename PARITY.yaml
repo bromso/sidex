@@ -65,6 +65,13 @@ entries:
     summary: contrib/snippets wired
     signals:
       contrib: contrib/snippets
+  - id: local-history
+    area: Local History
+    status: done
+    summary: Working-copy history service + timeline provider surfacing per-file snapshots
+    evidence:
+      - packages/workbench/src/services/workingCopy/browser/workingCopyHistoryService.ts
+      - packages/workbench/src/contrib/timeline/browser/localHistoryTimelineProvider.ts
   - id: testing
     area: Testing
     status: partial
@@ -133,20 +140,23 @@ entries:
       contrib: contrib/comments
   - id: timeline
     area: Timeline
-    status: unwired
-    summary: contrib/timeline not imported anywhere
+    status: done
+    summary: Native Timeline view + git and local-history providers (contrib/timeline wired)
     signals:
       contrib: contrib/timeline
   - id: merge-editor
     area: Merge Editor
-    status: unwired
-    summary: contrib/mergeEditor not imported
+    status: done
+    summary: Three-way MergeEditor pane (verbatim port of contrib/mergeEditor); git opens UU/AA conflicts in it and git.acceptMerge stages the result
     signals:
       contrib: contrib/mergeEditor
+    evidence:
+      - packages/workbench/src/contrib/mergeEditor/browser/mergeEditor.contribution.ts
+      - packages/workbench/src/contrib/scm/browser/git.contribution.ts
   - id: multi-diff
     area: Multi-diff Editor
-    status: unwired
-    summary: contrib/multiDiffEditor not imported
+    status: done
+    summary: MultiDiffEditor pane hosts the multi-diff widget; git.openAllChanges opens one multi-file diff
     signals:
       contrib: contrib/multiDiffEditor
   - id: custom-editors
