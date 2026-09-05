@@ -2,7 +2,8 @@
 /**
  * Copies files from an upstream VS Code checkout (src/vs layout) into the
  * matching @sidex layer package, rewriting cross-layer relative imports to
- * `@sidex/<layer>/...` and `.../nls.js` imports to `@sidex/base/nls.js`.
+ * `@sidex/<layer>/...` specifiers and root-level imports (nls.ts, amdX.ts,
+ * sidex-bridge.ts) to `@sidex/base/...` specifiers.
  *
  * Usage:
  *   bun packages/build/src/codemod/port-upstream-cli.ts --upstream .cache/vscode-1.115.0 \
@@ -15,7 +16,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { LAYERS, type Layer, layerOf, rewriteSource } from './rewrite-imports';
+import { LAYERS, type Layer, layerOf, rewriteRelocatedRoots, rewriteSource } from './rewrite-imports';
 
 const repoRoot = path.resolve(import.meta.dir, '../../../..');
 const args = process.argv.slice(2);
@@ -33,8 +34,11 @@ if (!fs.existsSync(vsRoot)) {
 }
 const layerRoots = Object.fromEntries(LAYERS.map(l => [l, path.join(vsRoot, l)])) as Record<Layer, string>;
 
-// Matches `from '../../nls.js'` (any number of ../ segments) in import/export/dynamic-import position.
-const NLS_RE = /((?:\bfrom|\bimport)\s*\(?\s*)(['"])(?:\.\.\/)+nls\.js\2/g;
+const RELOCATED: Record<string, string> = {
+	'nls.ts': 'nls.js',
+	'amdX.ts': 'amdX.js',
+	'sidex-bridge.ts': 'sidex-bridge.js'
+};
 
 function portFile(relPath: string): void {
 	const src = path.join(vsRoot, relPath);
@@ -47,7 +51,7 @@ function portFile(relPath: string): void {
 	let code = fs.readFileSync(src, 'utf8');
 	if (relPath.endsWith('.ts')) {
 		code = rewriteSource(code, src, layerRoots) ?? code;
-		code = code.replace(NLS_RE, '$1$2@sidex/base/nls.js$2');
+		code = rewriteRelocatedRoots(code, src, vsRoot, RELOCATED) ?? code;
 	}
 	fs.mkdirSync(path.dirname(dest), { recursive: true });
 	fs.writeFileSync(dest, code);
