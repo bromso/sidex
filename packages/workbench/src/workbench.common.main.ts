@@ -214,6 +214,9 @@ import './contrib/search/browser/searchView.js';
 // Search Editor
 import './contrib/searchEditor/browser/searchEditor.contribution.js';
 
+// Code Editor: word wrap toggle (also provides transient word-wrap state for the Merge Editor)
+import './contrib/codeEditor/browser/toggleWordWrap.js';
+
 // Multi Diff Editor
 import './contrib/multiDiffEditor/browser/multiDiffEditor.contribution.js';
 
