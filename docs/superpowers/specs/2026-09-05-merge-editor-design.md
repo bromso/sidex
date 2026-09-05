@@ -97,7 +97,7 @@ mechanical rewrite every prior port used). File disposition:
 | Keep (verbatim, imports rewritten) | Drop |
 |---|---|
 | `browser/mergeEditor.contribution.ts` (minus dev actions) | `browser/commands/devCommands.ts` |
-| `browser/mergeEditorInput.ts` (replaces the stub) | `browser/telemetry.ts` → replaced by a no-op `MergeEditorTelemetry` with the same method names |
+| `browser/mergeEditorInput.ts` (replaces the stub) | |
 | `browser/mergeEditorInputModel.ts` (workspace mode only) | `electron-browser/*` |
 | `browser/mergeEditorSerializer.ts` | `test/browser/*` (see Testing) |
 | `browser/mergeEditorAccessibilityHelp.ts` | |
@@ -105,15 +105,14 @@ mechanical rewrite every prior port used). File disposition:
 | `browser/model/*` (8 files: model, diffComputer, editing, lineRange, mapping, modifiedBaseRange, rangeUtils, textModelDiffs) | |
 | `browser/view/*` (mergeEditor, viewModel, conflictActions, viewZones, scrollSynchronizer, lineAlignment, editorGutter, fixedZoneWidget, colors, `editors/*` ×4, `media/mergeEditor.css`) | |
 | `browser/mergeMarkers/mergeMarkersController.ts` | |
-| `browser/utils.ts`, `common/mergeEditor.ts` | |
+| `browser/utils.ts`, `common/mergeEditor.ts`, `browser/telemetry.ts` (verbatim: SideX's `ITelemetryService` is a no-op sink, so no rewrite is needed) | |
 
 Registration stays inside the ported contribution file exactly as upstream:
 editor pane (`MergeEditor` for `MergeEditorInput`), serializer, the
 `MergeEditorResolverContribution` and `MergeEditorOpenHandlerContribution`
 workbench contributions, the `mergeEditor.diffAlgorithm` and
 `mergeEditor.showDeletionMarkers` settings, the accessible-view help provider,
-and the actions. The telemetry class is reduced to a no-op so every call site
-compiles unchanged.
+and the actions.
 
 **Entry wiring:** one line in `workbench.common.main.ts` next to the multi-diff
 import: `import './contrib/mergeEditor/browser/mergeEditor.contribution.js';`
@@ -133,8 +132,13 @@ import: `import './contrib/mergeEditor/browser/mergeEditor.contribution.js';`
 
 - `crates/git/src/status.rs`: add `pub conflict: Option<String>` to
   `StatusEntry` (`None` for every non-unmerged entry). `parse_unmerged_entry`
-  sets it to `parts[1]` (e.g. `"UU"`, `"AA"`, `"DU"`). Unit test: one `u`
-  porcelain-v2 line per code parses to the expected `conflict`.
+  sets it to `parts[1]` (e.g. `"UU"`, `"AA"`, `"DU"`). **Also fixes a
+  pre-existing bug found during planning:** porcelain v2 unmerged lines have
+  ten fields before the path (`u XY sub m1 m2 m3 mW h1 h2 h3 path`) but the
+  parser used `splitn(8)` and `parts[7]`, so every conflicted path came back
+  as `"<h1> <h2> <h3> <path>"`. Tests: a literal `u UU …` line parses to the
+  real path and `Some("UU")`; a real two-branch conflict in a temp repo is
+  reported as `Conflicted` with `UU` under its true path.
 - `apps/desktop/src/commands/git.rs`: the `git_status` DTO gains
   `conflict: Option<String>` (serde skips `None`), so the frontend sees
   `{ status: "conflicted", conflict: "UU" }`. No other command changes.
@@ -147,6 +151,10 @@ import: `import './contrib/mergeEditor/browser/mergeEditor.contribution.js';`
   window) in the git contribution's configuration block. Description: "Open
   both-modified and both-added merge conflicts in the three-way Merge Editor
   instead of the text editor."
+- **`git.openFile` for conflicts.** Today it routes every non-untracked/added/
+  deleted status, conflicts included, to a HEAD-vs-working-tree diff. Conflicts
+  now open the plain working-tree file (`vscode.open`), which is what upstream
+  does for delete/modify conflicts and for `git.mergeEditor: false`.
 - **Resource command.** `TauriGitResource` gains a `conflict?: string` field
   populated from the new DTO property. In its constructor, when the status is a
   conflict, `conflict` is `UU` or `AA`, and `git.mergeEditor` is true, set
@@ -227,17 +235,17 @@ reload → MergeEditorSerializer restores the tab from the four URIs
 Only `packages/build` currently has a bun-test target; workbench TS is verified
 by build + runtime smoke. This feature adds one optional, timeboxed exception.
 
-- **Model unit tests (attempt).** Upstream's `test/browser/model.test.ts` (405
-  lines) and `mapping.test.ts` exercise `MergeEditorModel` with an in-memory
-  instantiation service and no DOM. Task: port them to
-  `packages/workbench/src/contrib/mergeEditor/test/browser/*.test.ts` on bun's
-  test runner (`suite`/`test` → `describe`/`it`, `assert` → bun's), relying on
-  the root `tsconfig.json` path aliases for `@sidex/*`. **Timebox: one task.**
-  If bun cannot load the workbench module graph headlessly, delete the files,
-  record why in the plan, and rely on the smoke check. `bun test` must stay
-  green either way.
+- **Mapping unit test.** Upstream's `test/browser/mapping.test.ts` (87 lines)
+  exercises `DocumentRangeMap`/`RangeMapping` with real modules only. It is
+  ported to `packages/workbench/src/contrib/mergeEditor/test/browser/mapping.test.ts`
+  on bun's test runner, relying on the root `tsconfig.json` path aliases for
+  `@sidex/*` (verified: bun resolves them). Upstream's `model.test.ts` is
+  **not** ported: it needs `editor/test/common/testTextModel.ts`, a
+  test-services harness SideX has never ported (`packages/{base,editor}/src/test/`
+  do not exist). The model is covered by the runtime smoke check.
 - **Build gate:** every TS task must pass `bun run build` (tsc via Vite) and
-  `bun run lint` with no new warnings.
+  `bun run lint` with zero errors (warnings are tolerated, as today's 72 are,
+  but any increase is noted in the commit body).
 - **Runtime smoke** (`bun run tauri dev`): in a scratch repo, create a same-line
   conflict across two branches, `git merge`, open the SCM view, click the file
   under **Merge Changes** → one tab with Current / Incoming / Result (base
