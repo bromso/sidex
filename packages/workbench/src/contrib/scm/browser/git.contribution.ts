@@ -140,6 +140,11 @@ async function invokeGit<T>(cmd: string, args?: Record<string, unknown>): Promis
 
 const GIT_ORIGINAL_SCHEME = 'git-original';
 
+/** True for the status strings git_status emits for unmerged entries. */
+function isConflictStatus(status: string | undefined): boolean {
+	return status === 'conflicted' || status === 'conflict';
+}
+
 class TauriGitOriginalFileProvider implements IFileSystemProvider {
 	readonly capabilities = FileSystemProviderCapabilities.FileReadWrite | FileSystemProviderCapabilities.Readonly;
 
@@ -233,7 +238,7 @@ class TauriGitResource implements ISCMResource {
 		this.contextValue = _staged ? 'staged' : 'unstaged';
 
 		const relPath = relativePath(_workspaceRootUri, sourceUri) ?? sourceUri.path;
-		const isConflict = _status === 'conflicted' || _status === 'conflict';
+		const isConflict = isConflictStatus(_status);
 
 		if (isConflict) {
 			// Matches upstream: only both-modified / both-added conflicts get the
@@ -868,10 +873,6 @@ class TauriGitSCMProvider extends Disposable implements ISCMProvider {
 		const stagedResources: ISCMResource[] = [];
 		const changesResources: ISCMResource[] = [];
 
-		const CONFLICT_XY_CODES = new Set(['UU', 'AA', 'DD', 'AU', 'UA', 'DU', 'UD']);
-		const isConflictStatus = (status: string): boolean =>
-			status === 'conflicted' || status === 'conflict' || CONFLICT_XY_CODES.has(status);
-
 		for (const change of status.changes) {
 			const fileUri = URI.joinPath(this.rootUri, change.path);
 			if (isConflictStatus(change.status)) {
@@ -1242,7 +1243,7 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 		});
 	}
 
-	private _registerDiffCommands(provider: TauriGitSCMProvider, _rootPath: string): void {
+	private _registerDiffCommands(provider: TauriGitSCMProvider, rootPath: string): void {
 		this._register(
 			CommandsRegistry.registerCommand('git.openDiff', async (_accessor, ...args: any[]) => {
 				try {
@@ -1282,17 +1283,20 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 					uri = editorService.activeEditor?.resource;
 				}
 				if (!uri || uri.scheme !== Schemas.file) {
+					notificationService.info('Open in Merge Editor needs a file inside the current git repository.');
 					return;
 				}
 				const relPath = relativePath(provider.rootUri, uri);
 				if (!relPath) {
+					notificationService.info('Open in Merge Editor needs a file inside the current git repository.');
 					return;
 				}
 
-				// Ours and theirs must be readable; base may legitimately be absent (both-added).
+				// Ours and theirs must be present; base may legitimately be absent (both-added).
+				// Probed with `cat-file -e` (existence only) rather than reading the blobs.
 				try {
-					await invokeGit('git_run', { path: _rootPath, args: ['show', `:2:${relPath}`] });
-					await invokeGit('git_run', { path: _rootPath, args: ['show', `:3:${relPath}`] });
+					await invokeGit('git_run', { path: rootPath, args: ['cat-file', '-e', `:2:${relPath}`] });
+					await invokeGit('git_run', { path: rootPath, args: ['cat-file', '-e', `:3:${relPath}`] });
 				} catch (err) {
 					notificationService.error(
 						`Cannot open ${relPath} in the merge editor: ${err instanceof Error ? err.message : String(err)}`
@@ -1316,6 +1320,7 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 			CommandsRegistry.registerCommand('git.acceptMerge', async accessor => {
 				const commandService = accessor.get(ICommandService);
 				const editorService = accessor.get(IEditorService);
+				const notificationService = accessor.get(INotificationService);
 
 				const input = editorService.activeEditor;
 				if (!(input instanceof MergeEditorInput)) {
@@ -1331,7 +1336,14 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 					return;
 				}
 
-				await invokeGit('git_add', { path: _rootPath, files: [resultUri.fsPath] });
+				try {
+					await invokeGit('git_add', { path: rootPath, files: [resultUri.fsPath] });
+				} catch (err) {
+					notificationService.error(
+						`Merge completed but staging ${basename(resultUri)} failed: ${err instanceof Error ? err.message : String(err)}`
+					);
+					return;
+				}
 				await provider.refresh();
 				await commandService.executeCommand('workbench.view.scm');
 			})
@@ -1513,7 +1525,7 @@ class TauriGitContribution extends Disposable implements IWorkbenchContribution 
 						const commandService = (globalThis as any).__sidex_commandService;
 						if (commandService) {
 							const status = (resource as any)?._status;
-							const isConflict = status === 'conflicted' || status === 'conflict';
+							const isConflict = isConflictStatus(status);
 							if (status && !isConflict && status !== 'untracked' && status !== 'added' && status !== 'deleted') {
 								await commandService.executeCommand('git.openDiff', resource);
 							} else {
